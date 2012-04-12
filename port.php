@@ -121,7 +121,7 @@ foreach($control as $package) {
 	foreach(array("conflicts", "breaks", "replaces") as $header) {
 		if(isset($package[$header])) {
 			$package[$header] = removeOld($package[$header]);
-			if(count($package[$header]) == 0) {
+			if(trim($package[$header]) == "") {
 				unset($package[$header]);
 			}
 		}

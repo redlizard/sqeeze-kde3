@@ -63,7 +63,6 @@ Section: libdevel
 Architecture: any
 Depends: kde3-kdelibs4c2a (= ${binary:Version}), libart-2.0-dev (>= 2.3.17), libarts1-dev (>= 1.5.0), ${libasound2-dev}, libacl1-dev, libattr1-dev, libaspell-dev, libbz2-dev, libcups2-dev, libfam-dev | libgamin-dev, libidn11-dev, libjasper-dev (>= 1.900.1), libkrb5-dev, libopenexr-dev (>= 1.2.2-4.1), libpcre3-dev, liblualib50-dev, libqt3-mt-dev (>= 3:3.3.5), libsasl2-dev, libssl-dev, libtiff4-dev (>= 3.7.3-1), libxml2-dev, libxml2-utils, libxslt1-dev, libavahi-client-dev (>= 0.4), libavahi-qt3-dev (>= 0.4)
 Provides: kdelibs-dev
-Replaces: 
 Description: development files for the KDE core libraries
  This package contains all the headers and other related files needed
  to compile KDE applications, or develop applications which use the
@@ -88,8 +87,6 @@ Package: kde3-kdelibs-dbg
 Section: libdevel
 Architecture: any
 Priority: extra
-Conflicts: kdelibs4-dbg, kdelibs4c2-dbg, kdelibs4c2a-dbg
-Replaces: kdelibs4-dbg, kdelibs4c2-dbg, kdelibs4c2a-dbg
 Depends: kde3-kdelibs4c2a (= ${binary:Version}), qt-x11-free-dbg, libc6-dbg [amd64]
 Description: debugging symbols for kdelibs
  This package contains the debugging symbols associated with kdelibs.
