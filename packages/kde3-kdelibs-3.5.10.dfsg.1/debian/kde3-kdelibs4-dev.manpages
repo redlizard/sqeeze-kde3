@@ -1,0 +1,5 @@
+./debian/man/kconfig_compiler.1
+./debian/man/ksvgtopng.1
+./debian/man/kunittestmodrunner.1
+./debian/man/makekdewidgets.1
+./debian/man/preparetips.1

@@ -1,0 +1,31 @@
+--- a/kdecore/kstandarddirs.cpp
++++ b/kdecore/kstandarddirs.cpp
+@@ -834,6 +834,10 @@
+                     if ((local || testdir.exists()) && !candidates->contains(path))
+                         candidates->append(path);
+                 }
++		// UGLY HACK - Chris CHeney
++		if (local && (!strcmp("config", type)))
++		  candidates->append("/etc/kde3/");
++		//
+                 local = false;
+             }
+         }
+@@ -1021,7 +1025,7 @@
+     if (!strcmp(type, "data"))
+ 	return "share/apps/";
+     if (!strcmp(type, "html"))
+-	return "share/doc/HTML/";
++	return "share/doc/kde/HTML/";
+     if (!strcmp(type, "icon"))
+ 	return "share/icons/";
+     if (!strcmp(type, "config"))
+@@ -1041,7 +1045,7 @@
+     if (!strcmp(type, "mime"))
+ 	return "share/mimelnk/";
+     if (!strcmp(type, "cgi"))
+-	return "cgi-bin/";
++	return "lib/cgi-bin/";
+     if (!strcmp(type, "wallpaper"))
+ 	return "share/wallpapers/";
+     if (!strcmp(type, "templates"))

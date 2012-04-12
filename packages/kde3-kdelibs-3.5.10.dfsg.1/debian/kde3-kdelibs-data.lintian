@@ -1,0 +1,4 @@
+#these aren't license files, just docbook snippets to point to licenses.
+kdelibs-data: extra-license-file usr/share/doc/kde/HTML/en/common/fdl-license
+kdelibs-data: extra-license-file usr/share/doc/kde/HTML/en/common/gpl-license
+kdelibs-data: extra-license-file usr/share/doc/kde/HTML/en/common/lgpl-license

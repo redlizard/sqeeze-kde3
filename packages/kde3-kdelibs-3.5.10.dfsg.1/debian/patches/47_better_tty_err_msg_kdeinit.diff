@@ -1,0 +1,24 @@
+--- a/kinit/kinit.cpp
++++ b/kinit/kinit.cpp
+@@ -256,18 +256,18 @@
+     int fd = open( tty, O_WRONLY );
+     if( fd < 0 )
+     {
+-        perror( "kdeinit: couldn't open() tty" );
++        fprintf(stderr, "kdeinit: couldn't open() %s: %s\n", tty, strerror (errno) );
+         return;
+     }
+     if( dup2( fd, STDOUT_FILENO ) < 0 )
+     {
+-        perror( "kdeinit: couldn't dup2() tty" );
++        fprintf(stderr, "kdeinit: couldn't dup2() %s: %s\n", tty, strerror (errno) );
+         close( fd );
+         return;
+     }
+     if( dup2( fd, STDERR_FILENO ) < 0 )
+     {
+-        perror( "kdeinit: couldn't dup2() tty" );
++        fprintf(stderr, "kdeinit: couldn't dup2() %s: %s\n", tty, strerror (errno) );
+         close( fd );
+         return;
+     }

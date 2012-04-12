@@ -1,0 +1,50 @@
+--- a/kdeprint/cups/cupsdconf2/cupsd.conf.template
++++ b/kdeprint/cups/cupsdconf2/cupsd.conf.template
+@@ -272,12 +272,12 @@
+ # <b>Group (Group)</b>
+ # <p>
+ # The group the server runs under.  Normally this
+-# must be <b>sys</b>, however you can configure things for another
++# must be <b>lpadmin</b>, however you can configure things for another
+ # group as needed.</p>
+ # <p>
+-# <i>ex</i>: sys</p>
++# <i>ex</i>: lpadmin</p>
+ $$
+-#Group sys
++#Group lpadmin
+ @@
+ 
+ %%ripcache
+@@ -592,9 +592,9 @@
+ # access.  The default varies depending on the operating system, but
+ # will be <b>sys</b>, <b>system</b>, or <b>root</b> (checked for in that order).</p>
+ # <p>
+-# <i>ex</i>: sys</p>
++# <i>ex</i>: lpadmin</p>
+ $$
+-#SystemGroup sys
++#SystemGroup lpadmin
+ @@
+ 
+ %%servercertificate
+--- a/kdeprint/cups/cupsdconf2/cupsdconf.cpp
++++ b/kdeprint/cups/cupsdconf2/cupsdconf.cpp
+@@ -90,7 +90,7 @@
+ 	printcap_ = "/etc/printcap";
+ 	printcapformat_ = PRINTCAP_BSD;
+ 	remoteroot_ = "remroot";
+-	systemgroup_ = "sys";
++	systemgroup_ = "lpadmin";
+ 	encryptcert_ = serverfiles_+"/ssl/server.crt";
+ 	encryptkey_ = serverfiles_+"/ssl/server.key";
+ 	hostnamelookup_ = HOSTNAME_OFF;
+@@ -115,7 +115,7 @@
+ 	maxjobsperprinter_ = 0;
+ 	maxjobsperuser_ = 0;
+ 	user_ = "lp";
+-	group_ = "sys";
++	group_ = "lpadmin";
+ 	ripcache_ = "8m";
+ 	filterlimit_ = 0;
+ 	browsing_ = true;

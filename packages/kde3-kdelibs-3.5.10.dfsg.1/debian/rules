@@ -1,0 +1,46 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_KDE_APIDOX := yes
+
+version=Debian Package $(DEB_VERSION)
+DEB_OPT_FLAG += -DDEBIAN_VERSION=$(DEB_VERSION)
+
+DEB_CONFIGURE_EXTRA_FLAGS := \
+	--enable-mitshm --with-alsa --enable-dnotify --enable-inotify \
+	--with-lua-includes=/usr/include/lua50  \
+	--with-distribution="$(version) (`cat /etc/debian_version`)"
+
+DEB_FIXPERMS_EXCLUDE := \
+	opt/kde3/bin/fileshareset	\
+	opt/kde3/bin/kgrantpty	\
+	opt/kde3/bin/kpac_dhcp_helper \
+	opt/kde3/bin/start_kdeinit
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-kdelibs-dbg
+
+DEB_DH_MAKESHLIBS_ARGS_kdelibs4c2a := -V'kdelibs4c2a (>= 4:3.5.9)'
+
+#shlibs_ver = 4:3.5.0-1
+#$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
+
+binary-install/kdelibs-data::
+	install -p -D -m644 kded/applications.menu debian/kdelibs-data/etc/xdg/menus/kde-applications.menu
+
+###
+
+DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+
+binary-predeb/kdelibs4-dev::
+ifeq (linux,$(DEB_HOST_ARCH_OS))
+	echo "libasound2-dev=libasound2-dev" >> debian/kdelibs4-dev.substvars
+endif
+
+
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+

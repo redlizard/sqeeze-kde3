@@ -1,0 +1,25 @@
+--- a/kdeprint/cups/cupsdconf2/cupsd.conf.template
++++ b/kdeprint/cups/cupsdconf2/cupsd.conf.template
+@@ -100,9 +100,9 @@
+ # The root directory for HTTP documents that are served.
+ # By default the compiled-in directory.</p>
+ # <p>
+-# <i>ex</i>: /usr/share/cups/doc</p>
++# <i>ex</i>: /usr/share/cups/doc-root</p>
+ $$
+-#DocumentRoot /usr/share/cups/doc
++#DocumentRoot /usr/share/cups/doc-root
+ @@
+ 
+ %%errorlog
+--- a/kdeprint/cups/cupsdconf2/cupsdconf.cpp
++++ b/kdeprint/cups/cupsdconf2/cupsdconf.cpp
+@@ -66,7 +66,7 @@
+ 			<< "/usr/local/share/cups"
+ 			<< "/opt/share/cups"
+ 			<< "/opt/local/share/cups");
+-	documentdir_ = findDir(QStringList(datadir_+"/doc")
++	documentdir_ = findDir(QStringList(datadir_+"/doc-root")
+ 			<< datadir_.left(datadir_.length()-5)+"/doc/cups");
+ 	//fontpath_ << (datadir_+"/fonts");
+ 	requestdir_ = findDir(QStringList("/var/spool/cups")

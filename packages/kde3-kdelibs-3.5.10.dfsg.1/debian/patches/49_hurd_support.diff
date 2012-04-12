@@ -1,0 +1,134 @@
+--- a/kio/kio/kurlcompletion.cpp
++++ b/kio/kio/kurlcompletion.cpp
+@@ -231,6 +231,9 @@
+ 		while ( !terminationRequested() &&
+ 		        (dirEntry = ::readdir( dir)))
+ #else
++#if !defined(MAXPATHLEN) && defined(__GNU__)
++#define MAXPATHLEN UCHAR_MAX
++#endif
+ 		struct dirent *dirPosition = (struct dirent *) malloc( sizeof( struct dirent ) + MAXPATHLEN + 1 );
+ 		struct dirent *dirEntry = 0;
+ 		while ( !terminationRequested() &&
+--- a/kdoctools/meinproc.cpp
++++ b/kdoctools/meinproc.cpp
+@@ -136,9 +136,18 @@
+     }
+ 
+     if ( args->isSet( "check" ) ) {
++#if !defined(PATH_MAX) && defined(__GLIBC__)
++        char *pwd_buffer;
++#else
+         char pwd_buffer[PATH_MAX];
++#endif
+         QFileInfo file( QFile::decodeName(args->arg( 0 )) );
+-        if ( !getcwd( pwd_buffer, sizeof(pwd_buffer) - 1 ) ) {
++#if !defined(PATH_MAX) && defined(__GLIBC__)
++        if ( !(pwd_buffer = getcwd( NULL, 0 ) ) )
++#else
++        if ( !getcwd( pwd_buffer, sizeof(pwd_buffer) - 1 ) )
++#endif
++	{
+ 	     kdError() << "getcwd failed." << endl;
+              return 2;
+ 	}
+@@ -175,11 +184,18 @@
+             }
+             pclose( xmllint );
+             chdir( pwd_buffer );
+-            if ( !noout )
++            if ( !noout ) {
++#if !defined(PATH_MAX) && defined(__GLIBC__)
++                free( pwd_buffer );
++#endif
+                 return 1;
++            }
+         } else {
+             kdWarning() << "couldn't find xmllint" << endl;
+         }
++#if !defined(PATH_MAX) && defined(__GLIBC__)
++        free( pwd_buffer );
++#endif
+     }
+ 
+     xmlSubstituteEntitiesDefault(1);
+--- a/kioslave/file/file.cc
++++ b/kioslave/file/file.cc
+@@ -1234,8 +1234,13 @@
+        directories we keep as active directory. And
+        as the slave runs in the background, it's hard
+        to see for the user what the problem would be */
++#if !defined(PATH_MAX) && defined(__GLIBC__)
++    char *path_buffer;
++    path_buffer = getcwd(NULL, 0);
++#else
+     char path_buffer[PATH_MAX];
+     (void) getcwd(path_buffer, PATH_MAX - 1);
++#endif
+     if ( chdir( _path.data() ) )  {
+         if (errno == EACCES)
+             error(ERR_ACCESS_DENIED, _path);
+@@ -1261,6 +1266,9 @@
+     kdDebug(7101) << "============= COMPLETED LIST ============" << endl;
+ 
+     chdir(path_buffer);
++#if !defined(PATH_MAX) && defined(__GLIBC__)
++    free(path_buffer);
++#endif
+ 
+     finished();
+ }
+--- a/libkmid/fmout.cc
++++ b/libkmid/fmout.cc
+@@ -127,8 +127,8 @@
+ void FMOut::loadFMPatches(void)
+ {
+ #ifdef HAVE_OSS_SUPPORT
+-  char patchesfile[PATH_MAX];
+-  char drumsfile[PATH_MAX];
++  char patchesfile[strlen(FMPatchesDirectory)+7+1];
++  char drumsfile[strlen(FMPatchesDirectory)+9+1];
+   int size;
+   struct sbi_instrument instr;
+   char tmp[60];
+@@ -141,12 +141,12 @@
+ 
+   if (opl==3)
+   {
+-    snprintf(patchesfile, PATH_MAX, "%s/std.o3",FMPatchesDirectory);
++    snprintf(patchesfile, sizeof(patchesfile), "%s/std.o3",FMPatchesDirectory);
+     size=60;
+   }
+   else
+   {
+-    snprintf(patchesfile, PATH_MAX, "%s/std.sb",FMPatchesDirectory);
++    snprintf(patchesfile, sizeof(patchesfile), "%s/std.sb",FMPatchesDirectory);
+     size=52;
+   }
+   fh=fopen(patchesfile,"rb");
+@@ -171,11 +171,11 @@
+ 
+   if (opl==3)
+   {
+-    snprintf(drumsfile, PATH_MAX, "%s/drums.o3",FMPatchesDirectory);
++    snprintf(drumsfile, sizeof(drumsfile), "%s/drums.o3",FMPatchesDirectory);
+   }
+   else
+   {
+-    snprintf(drumsfile, PATH_MAX, "%s/drums.sb",FMPatchesDirectory);
++    snprintf(drumsfile, sizeof(drumsfile), "%s/drums.sb",FMPatchesDirectory);
+   }
+ 
+   fh=fopen(drumsfile,"rb");
+--- a/kinit/lnusertemp.c
++++ b/kinit/lnusertemp.c
+@@ -89,6 +89,9 @@
+ }
+ 
+ 
++#ifndef PATH_MAX
++#define PATH_MAX 4096
++#endif
+ int build_link(const char *tmp_prefix, const char *kde_prefix)
+ {
+   struct passwd *pw_ent;

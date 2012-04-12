@@ -1,0 +1,24 @@
+--- a/kdecore/Makefile.am
++++ b/kdecore/Makefile.am
+@@ -34,7 +34,7 @@
+ AM_LDFLAGS = $(LDFLAGS_AS_NEEDED) $(LDFLAGS_NEW_DTAGS)
+ 
+ lib_LTLIBRARIES = libkdefakes.la libkdecore.la
+-lib_LIBRARIES = libkdefakes_nonpic.a
++lib_LIBRARIES = libkdefakes_nonpic.a libkdefakes_pic.a
+ 
+ include_HEADERS = kconfig.h kconfigskeleton.h \
+ 	kconfigdata.h ksimpleconfig.h kconfigdialogmanager.h \
+@@ -75,6 +75,12 @@
+ 	-rm -f vsnprintf_nonpic.c
+ 	$(LN_S) $(srcdir)/vsnprintf.c vsnprintf_nonpic.c
+ 
++libkdefakes_pic.a: libkdefakes.la
++	-rm -f libkdefakes_pic.a fakes_pic.o vsnprintf_pic.o
++	cp -f .libs/fakes.o fakes_pic.o; cp -f .libs/vsnprintf.o vsnprintf_pic.o
++	ar cru libkdefakes_pic.a fakes_pic.o vsnprintf_pic.o
++	ranlib libkdefakes_pic.a
++
+ noinst_HEADERS = kaccelaction.h kaccelbase.h kaccelprivate.h kckey.h \
+ 	kcompletion_private.h netwm_p.h \
+ 	kglobalaccel_x11.h kglobalaccel_win.h kkeyserver_x11.h kkeyserver.h \

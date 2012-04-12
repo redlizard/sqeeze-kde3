@@ -1,0 +1,62 @@
+--- a/kdoctools/Makefile.am
++++ b/kdoctools/Makefile.am
+@@ -5,18 +5,17 @@
+ noinst_LTLIBRARIES = libkbzipfilter_dummy.la
+ 
+ libkbzipfilter_dummy_la_SOURCES = kbzip2filter.cpp
+-libkbzipfilter_dummy_la_LIBADD = $(LIB_KIO) $(LIBBZ2)
+ 
+ ####### Files
+ 
+ kde_module_LTLIBRARIES = kio_help.la kio_ghelp.la
+ 
+ kio_help_la_SOURCES = kio_help.cpp main.cpp xslt.cpp
+-kio_help_la_LIBADD = $(LIBXSLT_LIBS) $(LIBXML_LIBS)  libkbzipfilter_dummy.la
++kio_help_la_LIBADD = $(LIBXSLT_LIBS) $(LIBXML_LIBS)  libkbzipfilter_dummy.la $(LIB_KIO) $(LIBBZ2)
+ kio_help_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ kio_ghelp_la_SOURCES = kio_help.cpp main_ghelp.cpp xslt.cpp
+-kio_ghelp_la_LIBADD = $(LIBXSLT_LIBS) $(LIBXML_LIBS) libkbzipfilter_dummy.la
++kio_ghelp_la_LIBADD = $(LIBXSLT_LIBS) $(LIBXML_LIBS) libkbzipfilter_dummy.la $(LIB_KIO) $(LIBBZ2)
+ kio_ghelp_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = kio_help.h
+@@ -25,7 +24,7 @@
+ kdelnkdir = $(kde_servicesdir)
+ 
+ bin_PROGRAMS = meinproc 
+-meinproc_LDADD = xslt_pure.o libkbzipfilter_dummy.la $(LIBXSLT_LIBS) $(LIBXML_LIBS) 
++meinproc_LDADD = xslt_pure.o libkbzipfilter_dummy.la $(LIBXSLT_LIBS) $(LIBXML_LIBS) $(LIB_KIO) $(LIBBZ2)
+ meinproc_SOURCES = meinproc.cpp
+ 
+ xslt_pure.o: xslt.cpp
+--- a/kspell2/Makefile.am
++++ b/kspell2/Makefile.am
+@@ -17,7 +17,6 @@
+ 	defaultdictionary.cpp 
+ 
+ libkspell2base_la_LDFLAGS = -no-undefined $(all_libraries)
+-libkspell2base_la_LIBADD  = $(LIB_KPARTS) ../kutils/libkutils.la 
+ 
+ servicetype_DATA = kspellclient.desktop
+ servicetypedir = $(kde_servicetypesdir)
+--- a/kspell2/ui/Makefile.am
++++ b/kspell2/ui/Makefile.am
+@@ -18,4 +18,4 @@
+ 
+ libkspell2_la_SOURCES = dialog.cpp
+ libkspell2_la_LDFLAGS = -no-undefined -version-info 1:0:0 $(all_libraries)
+-libkspell2_la_LIBADD = libkspell2_noinst.la ../libkspell2base.la
++libkspell2_la_LIBADD = libkspell2_noinst.la ../libkspell2base.la $(LIB_KPARTS) ../../kutils/libkutils.la 
+--- a/kspell2/tests/Makefile.am
++++ b/kspell2/tests/Makefile.am
+@@ -18,7 +18,7 @@
+ test_dialog_LDADD = ../ui/libkspell2.la $(LIB_KDECORE)
+ 
+ test_highlighter_SOURCES = test_highlighter.cpp
+-test_highlighter_LDADD = ../ui/libkspell2_noinst.la ../libkspell2base.la $(LIB_KDECORE)
++test_highlighter_LDADD = ../ui/libkspell2_noinst.la ../libkspell2base.la $(LIB_KDECORE) $(LIB_KPARTS) ../../kutils/libkutils.la
+ 
+ test_configdialog_SOURCES = test_configdialog.cpp
+-test_configdialog_LDADD = ../ui/libkspell2_noinst.la ../libkspell2base.la $(LIB_KDECORE)
++test_configdialog_LDADD = ../ui/libkspell2_noinst.la ../libkspell2base.la $(LIB_KDECORE) $(LIB_KPARTS) ../../kutils/libkutils.la

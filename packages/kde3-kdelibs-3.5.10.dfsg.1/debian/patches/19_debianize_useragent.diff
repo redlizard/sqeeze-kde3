@@ -1,0 +1,39 @@
+--- a/kio/kio/kprotocolmanager.cpp
++++ b/kio/kio/kprotocolmanager.cpp
+@@ -450,14 +450,19 @@
+      return d->useragent;
+ 
+   QString supp;
++  int debian_append = 0;
+   struct utsname nam;
+   if( uname(&nam) >= 0 )
+   {
+     if( modifiers.contains('o') )
+     {
+       supp += QString("; %1").arg(nam.sysname);
++      debian_append = 1;
+       if ( modifiers.contains('v') )
++      {
+         supp += QString(" %1").arg(nam.release);
++        debian_append = 2;
++      }
+     }
+     if( modifiers.contains('p') )
+     {
+@@ -485,6 +490,16 @@
+   }
+   d->modifiers = modifiers;
+   d->useragent = CFG_DEFAULT_UAGENT(supp);
++
++  if (debian_append == 1)
++    d->useragent.append(" (Debian)");
++  else if (debian_append == 2)
++  {
++#define STRINGIFY(macro_or_string) STRINGIFY_ARG(macro_or_string)
++#define STRINGIFY_ARG(contents) #contents
++    d->useragent.append(" (Debian package " STRINGIFY(DEBIAN_VERSION) ")");
++  }
++  
+   return d->useragent;
+ }
+ 

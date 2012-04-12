@@ -1,0 +1,15 @@
+--- a/kded/applications.menu
++++ b/kded/applications.menu
+@@ -465,5 +465,12 @@
+ 		</And>
+ 	</Include>
+ 	<DefaultMergeDirs/>
++
++	<Menu>
++		<Name>Debian</Name>
++		<Directory>debian.directory</Directory>
++		<MergeFile>debian-menu.menu</MergeFile>
++	</Menu>
++
+ 	<MergeFile>applications-kmenuedit.menu</MergeFile>
+ </Menu>

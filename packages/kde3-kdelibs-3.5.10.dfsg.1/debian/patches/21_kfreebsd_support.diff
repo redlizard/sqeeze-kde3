@@ -1,0 +1,97 @@
+--- a/configure.in.in
++++ b/configure.in.in
+@@ -48,7 +48,7 @@
+ KDE_CHECK_STL
+ AC_HEADER_DIRENT
+ AC_HEADER_STDC
+-AC_CHECK_HEADERS(sys/param.h sys/mman.h sys/time.h sysent.h strings.h sys/stat.h sys/select.h paths.h malloc.h limits.h sys/soundcard.h dlfcn.h termios.h)
++AC_CHECK_HEADERS(sys/param.h sys/mman.h sys/time.h sysent.h strings.h sys/stat.h sys/select.h paths.h malloc.h limits.h sys/soundcard.h dlfcn.h termios.h sys/prctl.h)
+ 
+ AC_ARG_WITH(acl,
+   [AC_HELP_STRING(--with-acl,
+@@ -164,7 +164,7 @@
+ AC_CHECK_MKSTEMPS
+ AC_CHECK_MKSTEMP
+ AC_CHECK_MKDTEMP
+-AC_CHECK_FUNCS(strtoll socket seteuid setegid strfmon stpcpy gettimeofday readdir_r setpriority)
++AC_CHECK_FUNCS(strtoll socket seteuid setegid strfmon stpcpy gettimeofday readdir_r setpriority tcgetattr tcsetattr)
+ 
+ AH_BOTTOM([
+ /* provide a definition for a 32 bit entity, usable as a typedef, possibly
+--- a/kdecore/kpty.cpp
++++ b/kdecore/kpty.cpp
+@@ -95,24 +95,24 @@
+ # endif
+ #endif
+ 
+-#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__bsdi__) || defined(__APPLE__) || defined (__DragonFly__)
++#if defined(HAVE_TCGETATTR)
++# define _tcgetattr(fd, ttmode) tcgetattr(fd, ttmode)
++#elif defined(TIOCGETA)
+ # define _tcgetattr(fd, ttmode) ioctl(fd, TIOCGETA, (char *)ttmode)
++#elif defined(TCGETS)
++# define _tcgetattr(fd, ttmode) ioctl(fd, TCGETS, (char *)ttmode)
+ #else
+-# if defined(_HPUX_SOURCE) || defined(__Lynx__) || defined (__CYGWIN__)
+-#  define _tcgetattr(fd, ttmode) tcgetattr(fd, ttmode)
+-# else
+-#  define _tcgetattr(fd, ttmode) ioctl(fd, TCGETS, (char *)ttmode)
+-# endif
++# error
+ #endif
+ 
+-#if defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined (__bsdi__) || defined(__APPLE__) || defined (__DragonFly__)
++#if defined(HAVE_TCSETATTR) && defined(TCSANOW)
++# define _tcsetattr(fd, ttmode) tcsetattr(fd, TCSANOW, ttmode)
++#elif defined(TIOCSETA)
+ # define _tcsetattr(fd, ttmode) ioctl(fd, TIOCSETA, (char *)ttmode)
++#elif defined(TCSETS)
++# define _tcsetattr(fd, ttmode) ioctl(fd, TCSETS, (char *)ttmode)
+ #else
+-# if defined(_HPUX_SOURCE) || defined(__CYGWIN__)
+-#  define _tcsetattr(fd, ttmode) tcsetattr(fd, TCSANOW, ttmode) 
+-# else
+-#  define _tcsetattr(fd, ttmode) ioctl(fd, TCSETS, (char *)ttmode)
+-# endif
++# error
+ #endif
+ 
+ #if defined (_HPUX_SOURCE)
+--- a/kinit/kinit.cpp
++++ b/kinit/kinit.cpp
+@@ -60,7 +60,7 @@
+ #include <kapplication.h>
+ #include <klocale.h>
+ 
+-#ifdef Q_OS_LINUX
++#ifdef HAVE_SYS_PRCTL_H
+ #include <sys/prctl.h>
+ #ifndef PR_SET_NAME
+ #define PR_SET_NAME 15
+@@ -571,7 +571,7 @@
+        d.argv[argc] = 0;
+ 
+        /** Give the process a new name **/
+-#ifdef Q_OS_LINUX
++#ifdef HAVE_SYS_PRCTL_H
+        /* set the process name, so that killall works like intended */
+        r = prctl(PR_SET_NAME, (unsigned long) name.data(), 0, 0, 0);
+        if ( r == 0 )
+--- a/kio/kfile/kpropertiesdialog.cpp
++++ b/kio/kfile/kpropertiesdialog.cpp
+@@ -1881,7 +1881,14 @@
+     fileSystemSupportsACLs = ( statfs( pathCString.data(), &buf ) == 0 ) && ( buf.f_flags & MNT_ACLS );
+ #else
+     fileSystemSupportsACLs =
+-      getxattr( pathCString.data(), "system.posix_acl_access", NULL, 0 ) >= 0 || errno == ENODATA;
++      getxattr( pathCString.data(), "system.posix_acl_access", NULL, 0 ) >= 0 
++#ifdef ENODATA      
++			|| (errno == ENODATA)
++#endif
++#ifdef ENOATTR      
++			|| (errno == ENOATTR)
++#endif
++			;
+ #endif
+     return fileSystemSupportsACLs;
+ }

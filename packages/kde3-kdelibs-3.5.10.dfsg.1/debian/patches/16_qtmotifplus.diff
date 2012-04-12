@@ -1,0 +1,8 @@
+--- a/kstyles/themes/qtmotifplus.themerc
++++ b/kstyles/themes/qtmotifplus.themerc
+@@ -98,5 +98,3 @@
+ Comment[zu]=Isitayela se-Mofit esenziwe ngcono
+ [KDE]
+ WidgetStyle=MotifPlus
+-[Desktop Entry]
+-Hidden=true

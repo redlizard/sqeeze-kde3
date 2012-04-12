@@ -1,0 +1,48 @@
+--- a/kate/part/katesearch.cpp	
++++ b/kate/part/katesearch.cpp	
+@@ -377,23 +377,35 @@
+ {
+   QString replaceWith = m_replacement;
+   if ( s.flags.regExp && s.flags.useBackRefs ) {
+-    // replace each "(?!\)\d+" with the corresponding capture
+-    QRegExp br("\\\\(\\d+)");
++    // Replace each "\0"..."\9" with the corresponding capture,
++    // "\n" and "\t" with newline and tab,
++    // "\\" with "\",
++    // and remove the "\" for any other sequence.
++    QRegExp br("\\\\(.)");
+     int pos = br.search( replaceWith );
+     int ncaps = m_re.numCaptures();
+     while ( pos >= 0 ) {
+-      QString sc;
+-      if ( !pos ||  replaceWith.at( pos-1) != '\\' ) {
+-        int ccap = br.cap(1).toInt();
++      QString substitute;
++      QChar argument = br.cap(1).at(0);
++      if ( argument.isDigit() ) {
++        // the second character is a digit, this is a backreference
++        int ccap = argument.digitValue();
+         if (ccap <= ncaps ) {
+-          sc = m_re.cap( ccap );
+-          replaceWith.replace( pos, br.matchedLength(), sc );
+-        }
+-        else {
++          substitute = m_re.cap( ccap );
++        } else {
+           kdDebug()<<"KateSearch::replaceOne(): you don't have "<<ccap<<" backreferences in regexp '"<<m_re.pattern()<<"'"<<endl;
++          break;
+         }
++      } else if ( argument == 'n' ) {
++        substitute = '\n';
++      } else if ( argument == 't' ) {
++        substitute = '\t';
++      } else {
++        // handle a validly escaped backslash, or an invalid escape.
++        substitute = argument;
+       }
+-      pos = br.search( replaceWith, pos + (int)sc.length() );
++      replaceWith.replace( pos, br.matchedLength(), substitute );
++      pos = br.search( replaceWith, pos + substitute.length() );
+     }
+   }
+ 

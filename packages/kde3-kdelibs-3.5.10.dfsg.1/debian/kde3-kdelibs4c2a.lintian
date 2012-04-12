@@ -1,0 +1,18 @@
+kdelibs4c2a: setuid-binary usr/bin/fileshareset 4755 root/root
+kdelibs4c2a: setuid-binary usr/bin/kgrantpty 4755 root/root
+kdelibs4c2a: setuid-binary usr/bin/kpac_dhcp_helper 4755 root/root
+kdelibs4c2a: setuid-binary usr/bin/start_kdeinit 4755 root/root
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_kaddprinterwizard.so for usr/lib/libkdeinit_kaddprinterwizard.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_klauncher.so for usr/lib/libkdeinit_klauncher.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_kio_uiserver.so for usr/lib/libkdeinit_kio_uiserver.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_kio_http_cache_cleaner.so for usr/lib/libkdeinit_kio_http_cache_cleaner.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_kded.so for usr/lib/libkdeinit_kded.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_kcookiejar.so for usr/lib/libkdeinit_kcookiejar.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_dcopserver.so for usr/lib/libkdeinit_dcopserver.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_kbuildsycoca.so for usr/lib/libkdeinit_kbuildsycoca.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_kconf_update.so for usr/lib/libkdeinit_kconf_update.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_cupsdconf.so for usr/lib/libkdeinit_cupsdconf.so
+kdelibs4c2a: shlib-missing-in-control-file libkdeinit_kcmshell.so for usr/lib/libkdeinit_kcmshell.so
+kdelibs4c2a: package-name-doesnt-match-sonames libDCOP4 libartskde1 libkabc1 libkabc-dir1 libkabc-file1 libkabc-ldapkio1 libkatepartinterfaces0 libkdecore4 libkdefakes4 libkdefx4 libkdeinit-cupsdconf libkdeinit-dcopserver libkdeinit-kaddprinterwizard libkdeinit-kbuildsycoca libkdeinit-kcmshell libkdeinit-kconf-update libkdeinit-kcookiejar libkdeinit-kded libkdeinit-kio-http-cache-cleaner libkdeinit-kio-uiserver libkdeinit-klauncher libkdeprint4 libkdeprint-management4 libkdesasl1 libkdesu4 libkdeui4 libkdnssd1 libkhtml4 libkimproxy0 libkio4 libkjava1 libkjs1 libkmdi1 libkmdi2-1 libkmediaplayer0 libkmid0 libknewstuff1 libkntlm0 libkparts2 libkresources1 libkscreensaver4 libkscript0 libkspell4 libkspell2-1 libktexteditor0 libkunittest1 libkutils1 libkwalletbackend1 libkwalletclient1 libvcard0
+
+

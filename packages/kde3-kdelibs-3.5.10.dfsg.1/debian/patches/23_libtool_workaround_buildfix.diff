@@ -1,0 +1,11 @@
+--- a/kdoctools/Makefile.am
++++ b/kdoctools/Makefile.am
+@@ -24,7 +24,7 @@
+ kdelnkdir = $(kde_servicesdir)
+ 
+ bin_PROGRAMS = meinproc 
+-meinproc_LDADD = xslt_pure.o libkbzipfilter_dummy.la $(LIBXSLT_LIBS) $(LIBXML_LIBS) $(LIB_KIO) $(LIBBZ2)
++meinproc_LDADD = xslt_pure.o libkbzipfilter_dummy.la $(LIBXSLT_LIBS) $(LIBXML_LIBS) $(LIB_KIO) $(LIBBZ2) $(LIB_KDECORE)
+ meinproc_SOURCES = meinproc.cpp
+ 
+ xslt_pure.o: xslt.cpp

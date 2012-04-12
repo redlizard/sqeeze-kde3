@@ -1,0 +1,106 @@
+--- a/kio/misc/kwalletd/kwalletd.cpp
++++ b/kio/misc/kwalletd/kwalletd.cpp
+@@ -829,6 +829,12 @@
+ 
+ 	if ((b = getWallet(friendlyDCOPPeerName(), handle))) {
+ 		bool rc = b->removeFolder(f);
++		// write changes to disk immediately
++		QByteArray p;
++		QString wallet = b->walletName();
++		p.duplicate(_passwords[wallet].data(), _passwords[wallet].length());
++		b->sync(p);
++		p.fill(0);
+ 		QByteArray data;
+ 		QDataStream ds(data, IO_WriteOnly);
+ 		ds << b->walletName();
+@@ -845,6 +851,12 @@
+ 
+ 	if ((b = getWallet(friendlyDCOPPeerName(), handle))) {
+ 		bool rc = b->createFolder(f);
++		// write changes to disk immediately
++		QByteArray p;
++		QString wallet = b->walletName();
++		p.duplicate(_passwords[wallet].data(), _passwords[wallet].length());
++		b->sync(p);
++		p.fill(0);
+ 		QByteArray data;
+ 		QDataStream ds(data, IO_WriteOnly);
+ 		ds << b->walletName();
+@@ -987,6 +999,12 @@
+ 		e.setValue(value);
+ 		e.setType(KWallet::Wallet::Map);
+ 		b->writeEntry(&e);
++		// write changes to disk immediately
++		QByteArray p;
++		QString wallet = b->walletName();
++		p.duplicate(_passwords[wallet].data(), _passwords[wallet].length());
++		b->sync(p);
++		p.fill(0);
+ 		emitFolderUpdated(b->walletName(), folder);
+ 		return 0;
+ 	}
+@@ -1005,6 +1023,12 @@
+ 		e.setValue(value);
+ 		e.setType(KWallet::Wallet::EntryType(entryType));
+ 		b->writeEntry(&e);
++		// write changes to disk immediately
++		QByteArray p;
++		QString wallet = b->walletName();
++		p.duplicate(_passwords[wallet].data(), _passwords[wallet].length());
++		b->sync(p);
++		p.fill(0);
+ 		emitFolderUpdated(b->walletName(), folder);
+ 		return 0;
+ 	}
+@@ -1023,6 +1047,12 @@
+ 		e.setValue(value);
+ 		e.setType(KWallet::Wallet::Stream);
+ 		b->writeEntry(&e);
++		// write changes to disk immediately
++		QByteArray p;
++		QString wallet = b->walletName();
++		p.duplicate(_passwords[wallet].data(), _passwords[wallet].length());
++		b->sync(p);
++		p.fill(0);
+ 		emitFolderUpdated(b->walletName(), folder);
+ 		return 0;
+ 	}
+@@ -1041,6 +1071,12 @@
+ 		e.setValue(value);
+ 		e.setType(KWallet::Wallet::Password);
+ 		b->writeEntry(&e);
++		// write changes to disk immediately
++		QByteArray p;
++		QString wallet = b->walletName();
++		p.duplicate(_passwords[wallet].data(), _passwords[wallet].length());
++		b->sync(p);
++		p.fill(0);
+ 		emitFolderUpdated(b->walletName(), folder);
+ 		return 0;
+ 	}
+@@ -1090,6 +1126,12 @@
+ 		}
+ 		b->setFolder(folder);
+ 		bool rc = b->removeEntry(key);
++		// write changes to disk immediately
++		QByteArray p;
++		QString wallet = b->walletName();
++		p.duplicate(_passwords[wallet].data(), _passwords[wallet].length());
++		b->sync(p);
++		p.fill(0);
+ 		emitFolderUpdated(b->walletName(), folder);
+ 		return rc ? 0 : -3;
+ 	}
+@@ -1183,6 +1225,12 @@
+ 	if ((b = getWallet(friendlyDCOPPeerName(), handle))) {
+ 		b->setFolder(folder);
+ 		int rc = b->renameEntry(oldName, newName);
++		// write changes to disk immediately
++		QByteArray p;
++		QString wallet = b->walletName();
++		p.duplicate(_passwords[wallet].data(), _passwords[wallet].length());
++		b->sync(p);
++		p.fill(0);
+ 		emitFolderUpdated(b->walletName(), folder);
+ 		return rc;
+ 	}
