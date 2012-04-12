@@ -23,21 +23,21 @@ DEB_FIXPERMS_EXCLUDE := \
 
 DEB_DH_STRIP_ARGS  := --dbg-package=kde3-kdelibs-dbg
 
-DEB_DH_MAKESHLIBS_ARGS_kdelibs4c2a := -V'kdelibs4c2a (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kdelibs4c2a := -V'kde3-kdelibs4c2a (>= 4:3.5.9)'
 
 #shlibs_ver = 4:3.5.0-1
 #$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
 
-binary-install/kdelibs-data::
-	install -p -D -m644 kded/applications.menu debian/kdelibs-data/etc/xdg/menus/kde-applications.menu
+binary-install/kde3-kdelibs-data::
+	install -p -D -m644 kded/applications.menu debian/kde3-kdelibs-data/etc/xdg/menus/kde-applications.menu
 
 ###
 
 DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
 
-binary-predeb/kdelibs4-dev::
+binary-predeb/kde3-kdelibs4-dev::
 ifeq (linux,$(DEB_HOST_ARCH_OS))
-	echo "libasound2-dev=libasound2-dev" >> debian/kdelibs4-dev.substvars
+	echo "libasound2-dev=libasound2-dev" >> debian/kde3-kdelibs4-dev.substvars
 endif
 
 
