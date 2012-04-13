@@ -1,0 +1,7 @@
+#
+# /etc/pam.d/kscreensaver - specify the PAM behaviour of kscreensaver
+#
+@include common-auth
+@include common-account
+@include common-password
+@include common-session

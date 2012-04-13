@@ -1,0 +1,9 @@
+debian/tmp/opt/kde3/bin/ksmserver
+debian/tmp/opt/kde3/bin/startkde
+debian/tmp/opt/kde3/lib/kde3/ksmserver.la
+debian/tmp/opt/kde3/lib/kde3/ksmserver.so
+debian/tmp/opt/kde3/lib/libkdeinit_ksmserver.so
+debian/tmp/opt/kde3/share/apps/kconf_update/ksmserver.upd
+debian/tmp/opt/kde3/share/apps/kconf_update/move_session_config.sh
+debian/tmp/opt/kde3/share/apps/kdm/sessions/kde.desktop	usr/share/xsessions/
+debian/tmp/opt/kde3/share/apps/ksmserver/pics/shutdownkonq.png

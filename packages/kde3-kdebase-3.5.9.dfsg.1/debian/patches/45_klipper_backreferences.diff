@@ -1,0 +1,109 @@
+--- a/klipper/urlgrabber.cpp
++++ b/klipper/urlgrabber.cpp
+@@ -51,7 +51,6 @@
+ {
+     if( m_config == NULL )
+         m_config = kapp->config();
+-    myCurrentAction = 0L;
+     myMenu = 0L;
+     myPopupKillTimeout = 8;
+     m_stripWhiteSpace = true;
+@@ -160,6 +159,7 @@
+ 
+         QString item;
+         myCommandMapper.clear();
++        myGroupingMapper.clear();
+ 
+         myPopupKillTimer->stop();
+         delete myMenu;
+@@ -184,6 +184,7 @@
+                 else
+                     id = myMenu->insertItem( SmallIcon(command->pixmap), item);
+                 myCommandMapper.insert( id, command );
++                myGroupingMapper.insert( id, action->capturedTexts() );
+             }
+         }
+ 
+@@ -224,19 +225,27 @@
+ 	break;
+     default:
+         ClipCommand *command = myCommandMapper.find( id );
+-        if ( !command )
++        QStringList *backrefs = myGroupingMapper.find( id );
++        if ( !command || !backrefs )
+             qWarning("Klipper: can't find associated action");
+         else
+-            execute( command );
++            execute( command, backrefs );
+     }
+ }
+ 
+ 
+-void URLGrabber::execute( const struct ClipCommand *command ) const
++void URLGrabber::execute( const struct ClipCommand *command,
++                          QStringList *backrefs) const
+ {
+     if ( command->isEnabled ) {
+         QMap<QChar,QString> map;
+         map.insert( 's', myClipData );
++		int brCounter = -1;
++		QStringList::Iterator it = backrefs->begin();
++		while( it != backrefs->end() ) {
++			map.insert( char(++brCounter + '0') , *it );
++			++it;
++		}
+         QString cmdLine = KMacroExpander::expandMacrosShellQuote( command->command, map );
+ 
+         if ( cmdLine.isEmpty() )
+--- a/klipper/urlgrabber.h
++++ b/klipper/urlgrabber.h
+@@ -72,7 +72,8 @@
+     
+ private:
+   const ActionList& matchingActions( const QString& );
+-  void execute( const struct ClipCommand *command ) const;
++  void execute( const struct ClipCommand *command, 
++                QStringList *backrefs ) const;
+   void editData();
+   bool isAvoidedWindow() const;
+   void actionMenu( bool wm_class_check );
+@@ -83,6 +84,7 @@
+   QString myClipData;
+   ClipAction *myCurrentAction;
+   QIntDict<ClipCommand> myCommandMapper;
++  QIntDict<QStringList> myGroupingMapper;
+   KPopupMenu *myMenu;
+   QTimer *myPopupKillTimer;
+   int myPopupKillTimeout;
+@@ -127,8 +129,13 @@
+ 
+   void  setRegExp( const QString& r) 	      { myRegExp = QRegExp( r ); }
+   QString regExp() 			const { return myRegExp.pattern(); }
+-  inline bool matches( const QString& string ) const {
+-      return ( myRegExp.search( string ) != -1 );
++  inline bool matches( const QString& string ) {
++    int res = myRegExp.search( string ) ;
++    if ( res != -1 ) {
++      myCapturedTexts = myRegExp.capturedTexts();
++      return true;
++    } 
++    return false;
+   }
+ 
+   void 	setDescription( const QString& d)     { myDescription = d; }
+@@ -147,9 +154,15 @@
+    */
+   void save( KConfig * ) const;
+ 
++  /**
++   * Returns the most recent list of matched group backreferences.
++   * Note: you probably need to call matches() first.
++   */
++  inline const QStringList* capturedTexts() const { return &myCapturedTexts; }
+ 
+ private:
+   QRegExp 		myRegExp;
++  QStringList	myCapturedTexts;
+   QString 		myDescription;
+   QPtrList<ClipCommand> 	myCommands;
+ 

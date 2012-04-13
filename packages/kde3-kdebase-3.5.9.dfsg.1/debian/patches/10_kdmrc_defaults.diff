@@ -1,0 +1,98 @@
+--- a/kcontrol/kdm/kdm-appear.cpp
++++ b/kcontrol/kdm/kdm-appear.cpp
+@@ -442,7 +442,7 @@
+   config->setGroup("X-*-Greeter");
+ 
+   // Read the greeting string
+-  greetstr_lined->setText(config->readEntry("GreetString", i18n("Welcome to %s at %n")));
++  greetstr_lined->setText(config->readEntry("GreetString", i18n("Welcome to Debian at %n")));
+ 
+   // Regular logo or clock
+   QString logoArea = config->readEntry("LogoArea", "Logo" );
+@@ -485,7 +485,7 @@
+ 
+ void KDMAppearanceWidget::defaults()
+ {
+-  greetstr_lined->setText( i18n("Welcome to %s at %n") );
++  greetstr_lined->setText( i18n("Welcome to Debian at %n") );
+   logoRadio->setChecked( true );
+   slotAreaRadioClicked( KdmLogo );
+   setLogo( "" );
+--- a/kdm/config.def
++++ b/kdm/config.def
+@@ -47,11 +47,11 @@
+ #endif
+ 
+ #if defined(BSD) || defined(__linux__)
+-# define DEF_USER_PATH "/usr/local/bin:/usr/bin:/bin:" XBINDIR ":/usr/games"
+-# define DEF_SYSTEM_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:" XBINDIR
++# define DEF_USER_PATH "/usr/local/bin:/usr/bin:/bin:/usr/games"
++# define DEF_SYSTEM_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ #else
+-# define DEF_USER_PATH "/usr/local/bin:/usr/bin:/bin:" XBINDIR ":/usr/games:/usr/ucb"
+-# define DEF_SYSTEM_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:" XBINDIR ":/etc:/usr/ucb"
++# define DEF_USER_PATH "/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/ucb"
++# define DEF_SYSTEM_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/etc:/usr/ucb"
+ #endif
+ 
+ #if 0 /*def HASXDMAUTH*/
+@@ -1355,7 +1355,7 @@
+  This string is subject to word splitting.
+  </para><para>
+  The default is something reasonable for the system on which &kdm; was built,
+- like <command>/usr/X11R6/bin/X</command>.
++ like <command>/usr/bin/X</command>.
+ 
+ Key: ServerArgsLocal
+ Type: string
+@@ -1921,10 +1921,10 @@
+ 
+ Key: SessionsDirs
+ Type: list
+-Default: KDMDATA "/sessions"
++Default: "/usr/share/xsessions,/var/lib/menu-xdg/xsessions,/usr/share/apps/kdm/sessions"
+ User: core
+ User: greeter-c
+-Instance: #*/"/etc/X11/sessions,/usr/share/xsessions"
++Instance: #*/"/usr/share/xsessions,/var/lib/menu-xdg/xsessions,/usr/share/apps/kdm/sessions"
+ Comment:
+  The directories containing session type definitions in .desktop format.
+ Description:
+@@ -1948,7 +1948,7 @@
+ 
+ Key: UseSessReg
+ Type: bool
+-Default: true
++Default: false
+ User: core
+ Instance: #*/!
+ Comment:
+@@ -2044,9 +2044,9 @@
+ 
+ Key: GreetString
+ Type: string
+-Default: "Welcome to %s at %n"
++Default: "Welcome to Debian at %n"
+ User: greeter
+-Instance: #*/"K Desktop Environment (%n)"
++Instance: #*/"Welcome to Debian at %n"
+ Comment:
+  The headline in the greeter. The following character pairs are replaced:
+  - %d -> current display
+@@ -2482,7 +2482,6 @@
+ Default: 0
+ User: greeter
+ Instance: #*/
+-Update: upd_forgingseed
+ Comment:
+  Random seed for forging saved session types, etc. of unknown users.
+  This value should be random but constant across the login domain.
+@@ -2579,7 +2578,7 @@
+ Type: bool
+ Default: true
+ User: greeter
+-Instance: :*/false
++Instance: :*/true
+ Comment: &
+ Description:
+  Show the <guilabel>Restart X Server</guilabel>/<guilabel>Close Connection</guilabel> action in the greeter.

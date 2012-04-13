@@ -1,0 +1,65 @@
+--- a/khelpcenter/searchhandlers/khc_docbookdig.pl.in
++++ b/khelpcenter/searchhandlers/khc_docbookdig.pl.in
+@@ -26,10 +26,12 @@
+ 
+ use Getopt::Long;
+ 
+-my $htdigdata = "/srv/www/htdig/common/";
++my $htdigdata = "/etc/htdig";
+ my $htdigbin = "/usr/bin";
+ my $kdeprefix = "@prefix@";
++my $kdehtmldir = `kde-config --expandvars --install html`;
+ chomp $kdeprefix;
++chomp $kdehtmldir;
+ 
+ my $dbg = 1;
+ 
+@@ -89,7 +91,7 @@
+ $ENV{ CDPATH } = '';
+ $ENV{ ENV } = '';
+ 
+-my $findpath = "$kdeprefix/share/doc/HTML/$lang/";
++my $findpath = "$kdehtmldir/$lang/";
+ my $findcmd = "find $findpath -name index.docbook";
+ 
+ print STDERR "FINDCMD: $findcmd\n";
+@@ -140,7 +142,7 @@
+   help:/*)
+ 	orig=\${orig/help:\\//}
+ 	orig=\${orig/\/index.docbook/}
+-	cd $kdeprefix/share/doc/HTML/en/\$orig
++	cd $kdehtmldir/en/\$orig
+ 	file=index.docbook
+ 	;;
+   *)	
+@@ -167,7 +169,7 @@
+ locale:                 $locale
+ database_dir:           $htdigdb
+ database_base:		\${database_dir}/$identifier
+-local_urls:             help://=$kdeprefix/share/doc/HTML/en/ file://=/
++local_urls:             help://=$kdehtmldir/en/ file://=/
+ local_urls_only:        true
+ limit_urls_to:          file:// help:/
+ ignore_noindex:         true
+--- a/khelpcenter/searchhandlers/khc_htdig.pl.in
++++ b/khelpcenter/searchhandlers/khc_htdig.pl.in
+@@ -26,7 +26,7 @@
+ 
+ use Getopt::Long;
+ 
+-my $htdigdata = "/srv/www/htdig/common/";
++my $htdigdata = "/etc/htdig";
+ my $htdigbin = "/usr/bin";
+ my $kdeprefix = "@prefix@";
+ chomp $kdeprefix;
+--- a/khelpcenter/searchhandlers/khc_htsearch.pl
++++ b/khelpcenter/searchhandlers/khc_htsearch.pl
+@@ -8,7 +8,7 @@
+ use open IO => ':utf8';
+ use open ':std';
+ 
+-my $htsearchpath="/srv/www/cgi-bin/htsearch";
++my $htsearchpath="/usr/lib/cgi-bin/htsearch";
+ 
+ my $config;
+ my $format;

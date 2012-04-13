@@ -1,0 +1,34 @@
+--- a/doc/kdeprint/cups-config.docbook
++++ b/doc/kdeprint/cups-config.docbook
+@@ -487,11 +487,11 @@
+ <term><guilabel>Server group</guilabel></term>
+ <listitem>
+ <para>The group the server runs under.  Normally this must be
+-<systemitem class="groupname">sys</systemitem>, however you can
++<systemitem class="groupname">lpadmin</systemitem>, however you can
+ configure things for another group as needed.</para>
+ 
+ <informalexample>
+-<para>Enter for example <userinput>sys</userinput>.</para>
++<para>Enter for example <userinput>lpadmin</userinput>.</para>
+ </informalexample>
+ </listitem>
+ </varlistentry>
+@@ -1012,7 +1012,7 @@
+ <listitem>
+ <para>The root folder for &HTTP; documents that are served.  By
+ default the compiled in folder, <filename
+-class="directory">/usr/share/cups/doc</filename></para>
++class="directory">/usr/share/cups/doc-root</filename></para>
+ </listitem>
+ </varlistentry>
+ 
+@@ -1756,7 +1756,7 @@
+ <para>The group name for <systemitem
+ class="groupname">System</systemitem> or printer administration
+ access.  The default varies depending on the operating system, but
+-will be <systemitem class="groupname">sys</systemitem>, <systemitem
++will be <systemitem class="groupname">lpadmin</systemitem>, <systemitem
+ class="groupname">system</systemitem> or <systemitem
+ class="groupname">root</systemitem> (checked for in that order).</para>
+ </listitem>

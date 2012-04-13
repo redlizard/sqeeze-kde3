@@ -1,0 +1,6 @@
+kicker: package-name-doesnt-match-sonames libkasbar1 libkdeinit-appletproxy libkdeinit-extensionproxy libkdeinit-kicker libkickermain1 libtaskbar1 libtaskmanager1
+kicker: shlib-missing-in-control-file libkdeinit_extensionproxy.so for usr/lib/libkdeinit_extensionproxy.so
+kicker: shlib-missing-in-control-file libkdeinit_kicker.so for usr/lib/libkdeinit_kicker.so
+kicker: shlib-missing-in-control-file libkdeinit_appletproxy.so for usr/lib/libkdeinit_appletproxy.so
+
+

@@ -1,0 +1,6 @@
+kmenuedit: no-shlibs-control-file usr/lib/libkdeinit_kcontroledit.so
+kmenuedit: no-shlibs-control-file usr/lib/libkdeinit_kmenuedit.so
+kmenuedit: postinst-must-call-ldconfig usr/lib/libkdeinit_kcontroledit.so
+kmenuedit: postrm-should-call-ldconfig usr/lib/libkdeinit_kcontroledit.so
+kmenuedit: package-name-doesnt-match-sonames libkdeinit-kcontroledit libkdeinit-kmenuedit
+

@@ -1,0 +1,4 @@
+kdesktop: no-shlibs-control-file usr/lib/libkdeinit_kdesktop.so
+kdesktop: package-name-doesnt-match-sonames libkdeinit-kdesktop
+kdesktop: postinst-must-call-ldconfig usr/lib/libkdeinit_kdesktop.so
+kdesktop: package-contains-empty-directory usr/share/templates/.source/emptydir/

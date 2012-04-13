@@ -1,0 +1,79 @@
+--- a/konsole/konsole/konsole_wcwidth.cpp
++++ b/konsole/konsole/konsole_wcwidth.cpp
+@@ -9,6 +9,10 @@
+ 
+ #include "konsole_wcwidth.h"
+ 
++#include <stdlib.h> // for getenv()
++
++
++
+ struct interval {
+   unsigned short first;
+   unsigned short last;
+@@ -65,7 +69,7 @@
+  * in ISO 10646.
+  */
+ 
+-int konsole_wcwidth(Q_UINT16 ucs)
++int konsole_wcwidth_normal(Q_UINT16 ucs)
+ {
+   /* sorted list of non-overlapping intervals of non-spacing characters */
+   static const struct interval combining[] = {
+@@ -131,7 +135,6 @@
+       (ucs >= 0x20000 && ucs <= 0x2ffff) */));
+ }
+ 
+-#if 0
+ /*
+  * The following function is the same as konsole_wcwidth(), except that
+  * spacing characters in the East Asian Ambiguous (A) category as
+@@ -202,15 +205,31 @@
+ 	       sizeof(ambiguous) / sizeof(struct interval) - 1))
+     return 2;
+ 
+-  return konsole_wcwidth(ucs);
++  return konsole_wcwidth_normal(ucs);
+ }
+-#endif
+ 
+ // single byte char: +1, multi byte char: +2
+ int string_width( const QString &txt )
+ {
+   int w = 0;
+-  for ( uint i = 0; i < txt.length(); ++i )
+-     w += konsole_wcwidth( txt[ i ].unicode() );
++
++  for ( uint i = 1; i < txt.length(); ++i ) {
++    w += konsole_wcwidth(txt[i].unicode());
++  }
+  return w;
+ }
++
++
++int konsole_wcwidth(Q_UINT16 ucs) {
++
++  static int use_wcwidth_cjk = (getenv("KONSOLE_WCWIDTH_CJK")) ? 1: 0;
++
++  if (use_wcwidth_cjk) {
++    return konsole_wcwidth_cjk(ucs);
++  } else {
++    return konsole_wcwidth_normal(ucs);
++  }
++
++}
++
++
+--- a/konsole/konsole/konsole_wcwidth.h
++++ b/konsole/konsole/konsole_wcwidth.h
+@@ -10,9 +10,7 @@
+ #include <qstring.h>
+ 
+ int konsole_wcwidth(Q_UINT16 ucs);
+-#if 0
+-int konsole_wcwidth_cjk(Q_UINT16 ucs);
+-#endif
++//int konsole_wcwidth_cjk(Q_UINT16 ucs);
+ 
+ int string_width( const QString &txt );
+ 

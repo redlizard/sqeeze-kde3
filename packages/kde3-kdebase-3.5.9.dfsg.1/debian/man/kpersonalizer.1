@@ -1,0 +1,66 @@
+.TH KPERSONALIZER 1
+.SH NAME
+kpersonalizer - KDE basic settings wizard
+
+.SH SYNOPSIS
+
+.B kpersonalizer [OPTION...]
+
+.SH DESCRIPTION
+
+The KDE Personalizer (KPersonalizer) is a wizard to configure KDE, and should automatically be run the first time a user runs KDE, to allow the user to configure basic KDE settings.
+.PP
+KPersonalizer allows the user to set locales, desktop behavior, enable accessibility features, and so forth. The options can be changed later by the KDE Control Center application.
+
+.SH OPTIONS
+
+KPersonalizer accepts the following options:
+.PP
+.B Help options
+.TP
+.B \-\-help
+Show help about options.
+.TP
+.B \-\-help-qt
+Show Qt specific options.
+.TP
+.B \-\-help-kde 
+Show KDE specific options.
+.TP
+.B \-\-help-all 
+Show all options.
+.TP
+.B \-\-author
+Show author information.
+.TP
+.B \-v, \-\-version
+Show version information.
+.TP
+.B \-\-license 
+Show license information. 
+
+.PP
+.B Options
+.TP
+.B \-r 
+KPersonalizer is restarted by itself. 
+.TP
+.B \-\-before-session 
+KPersonalizer is started before the KDE session.
+
+.SH EXAMPLES
+.TP
+.B kpersonalizer
+Run kpersonalizer to set (or reset) KDE preferences.
+.TP
+.B kpersonalizer --before-session
+Run kpersonalizer before the first KDE session. 
+
+.SH AUTHORS
+
+Kpersonalizer was written by Ralf Nolden <nolden@kde.org>, Carsten Wolff <wolff@kde.org>, qwertz <kraftw@gmx.de>, and Bernhard Rosenkraenzer <bero@redhat.com>.
+.PP
+This  manual page was written by Joe Brockmeier <jzb@zonker.net>, for the Debian GNU/Linux project, but may be used by others.
+.SH "SEE ALSO"
+.TP
+.BR khelpcenter (1)

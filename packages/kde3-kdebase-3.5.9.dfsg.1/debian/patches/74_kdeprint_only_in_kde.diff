@@ -1,0 +1,9 @@
+--- kdebase-3.5.9.dfsg.1.orig/kdeprint/printmgr/printers.desktop
++++ kdebase-3.5.9.dfsg.1/kdeprint/printmgr/printers.desktop
+@@ -227,5 +227,5 @@
+ Keywords[zh_CN]=print,printer,printing management,打印,打印机,打印管理
+ Keywords[zh_TW]=print,printer,printing management,列印,印表機,列印管理
+ Keywords[zu]=shicilela,umshicileli,abaphathi boshicilelo
+-
+ Categories=Qt;KDE;X-KDE-settings-hardware;Settings;
++OnlyShowIn=KDE

@@ -1,0 +1,102 @@
+.TH KDESU 1 "May 2005" "K Desktop Environment" "Runs a program with elevated privileges."
+.SH NAME
+kdesu \- Runs a program with elevated privileges.
+.SH SYNOPSIS
+\fBkdesu\fR [Qt\-options] [KDE\-options] [kdesu options] command 
+.SH DESCRIPTION
+Runs a program with elevated privileges.
+.PP
+KDE su is a graphical front end to the Unix \fBsu\fR utility. It allows you to run programs as another user by entering their password. It is not a SUID root program, but runs unprivileged. The system program \fBsu\fR is used for acquiring special privileges.
+.PP
+\fBkdesu\fR has the ability to store passwords for the convenience of users. The passwords are NOT written to disk, but stored in memory using a special program, \fBkdesud\fR. This is only done if the user specifies that the password be remembered. In this case, passwords are stored in memory for a certain period of time before being removed. \fBkdesud\fR runs in such a way that only the user who entered the password originally can use it, though no one, not even the user who originally entered the password, can retrieve the password that is stored by \fBkdesud\fR. Through these measures, users can avoid having to repeatedly enter root passwords or other passwords, without a significant risk to overall system security.
+.PP
+\fBkdesu\fR uses normally \fBsu\fR to gain root by using the root password. \fBkdesu\fR can also be configured to use other commands to gain root like sudo to use users password.
+.SH OPTIONS
+.SS Generic options:
+.TP
+.B  --help
+Show help about options
+.TP
+.B  --help-qt
+Show Qt specific options
+.TP
+.B  --help-kde
+Show KDE specific options
+.TP
+.B  --help-all
+Show all options
+.TP
+.B  --author
+Show author information
+.TP
+.B -v,  --version
+Show version information
+.TP
+.B  --license
+Show license information
+.SS
+.SS kdesu Options:
+.TP
+.TP
+.B -c <command>
+Specifies the command to run
+.TP
+.B -f <file>
+Run command under target uid if <file> is not writable
+.TP
+.B -u <user>
+Specifies the target uid [default is root]
+.TP
+.B -n
+Do not keep password
+.TP
+.B -s
+Stop the daemon (forgets all passwords)
+.TP
+.B -t
+Enable terminal output (no password keeping)
+.TP
+.B -p <prio>
+Set priority value: 0 <= prio <= 100, 0 is lowest [default is 50]
+.TP
+.B -r
+Use realtime scheduling
+.TP
+.B  --nonewdcop
+Let command use existing dcopserver
+.TP
+.B -i <icon name>
+Specify icon to use in the password dialog
+.TP
+.B -d
+Do not show the command to be run in the dialog
+.SS 
+.SS Arguments:
+.TP
+.B command
+Specifies the command to run
+
+.SH CONFIGURATION FILES
+.PP
+\fBkdesu\fR can be configured with a default configuration file /etc/kde3/kdesurc and with a per user configuration file in .kde/share/config/kdesurc. Alternative a section could be added to kdeglobals.
+.SH EXAMPLE
+The configuration item for the configuration files is the following:
+.br
+[super-user-command] 
+.br
+super-user-command=sudo
+
+.SH SEE ALSO
+Full user documentation is available through the KDE Help Center. You can also enter the URL
+.BR help:/kdesu/
+directly into konqueror or you can run 
+.BR "`khelpcenter help:/kdesu/'"
+from the command-line.
+.br
+.SH AUTHORS
+.br
+Geert Jansen <jansen@kde.org>
+.br
+Pietro Iglio <iglio@fub.it>
+.PP
+This manual page was written by Christopher Martin <chrsmrtn@debian.org> for Debian GNU/Linux, but may be used by others. It borrows from an earlier manpage by Karolina Lindqvist <pgd\-karolinali@algonet.se>.

@@ -1,0 +1,11 @@
+Document: kdebase-doc-html-konqueror
+Title: Konqueror Handbook
+Author: Pamela Roberts
+Abstract: Konqueror is KDE's advanced File Manager, Web Browser and
+ Universal Viewing Application.
+Section: Network/Web Browsing
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/konqueror/index.html
+Files: /usr/share/doc/kde/HTML/en/konqueror/*.html
+

@@ -1,0 +1,17 @@
+debian/man/drkonqi.1
+debian/man/kblankscrn.kss.1
+debian/man/kcheckpass.1
+debian/man/kcminit.1
+debian/man/kdcop.1
+debian/man/kdebugdialog.1
+debian/man/kdesu.1
+debian/man/kdialog.1
+debian/man/khotkeys.1
+debian/man/kio_system_documenthelper.1
+debian/man/knetattach.1
+debian/man/krandom.kss.1
+debian/man/kreadconfig.1
+debian/man/kstart.1
+debian/man/ksystraycmd.1
+debian/man/kwriteconfig.1
+debian/man/kxkb.1

@@ -1,0 +1,53 @@
+--- a/kdm/kfrontend/kgreeter.cpp
++++ b/kdm/kfrontend/kgreeter.cpp
+@@ -173,6 +173,13 @@
+ KGreeter::insertUser( const QImage &default_pix,
+                       const QString &username, struct passwd *ps )
+ {
++        if (setegid( ps->pw_gid ))
++                return;
++        if (seteuid( ps->pw_uid )) {
++                setegid(0);
++                return;
++        }
++
+ 	if (userList)
+ 		userList->append( username );
+ 	if (!userView)
+@@ -236,6 +243,9 @@
+ 		realname.append( "\n" ).append( username );
+ 		new UserListViewItem( userView, realname, QPixmap( p ), username );
+ 	}
++
++        seteuid( 0 );
++        setegid( 0 );
+ }
+ 
+ class KCStringList : public QValueList<QCString> {
+@@ -282,15 +292,8 @@
+ {
+ 	struct passwd *ps;
+ 
+-	// XXX remove seteuid-voodoo when we run as nobody
+ 	if (!(ps = getpwnam( "nobody" )))
+ 		return;
+-        if (setegid( ps->pw_gid )) 
+-                return;
+-        if (seteuid( ps->pw_uid )) {
+-                setegid(0);
+-                return;
+-        }
+ 
+ 	QImage default_pix;
+ 	if (userView) {
+@@ -354,10 +357,6 @@
+ 		if (userList)
+ 			userList->sort();
+ 	}
+-
+-	// XXX remove seteuid-voodoo when we run as nobody
+-	seteuid( 0 );
+-        setegid( 0 );
+ }
+ 
+ void

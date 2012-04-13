@@ -1,0 +1,511 @@
+Source: kde3-kdebase
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Armin Berres <trigger+debian@space-based.de>, Fathi Boudra <fabo@debian.org>, Modestas Vainius <modestas@vainius.eu>, Pino Toscano <pino@kde.org>, Sune Vuorela <debian@pusling.com>
+Build-Depends: cdbs (>= 0.4.48), debhelper (>= 5.0.42), autotools-dev, gawk, gettext, sharutils, texinfo, xutils-dev, xfonts-utils, kde3-kdelibs4-dev (>= 4:3.5.8-5), libavahi-compat-libdnssd-dev (>= 0.4), kde3-libdbus-qt-1-dev (>= 0.60), libfontenc-dev, libldap2-dev, libncurses5-dev, libpam0g-dev, libpopt-dev, libsmbclient-dev, libusb-dev, libxcomposite-dev, libxdamage-dev, libxkbfile-dev, kde3-libxxf86misc-dev, libxss-dev, libxtst-dev, libhal-dev (>= 0.5.5.1-2) [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libhal-storage-dev (>= 0.5.5.1-2) [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libraw1394-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libsensors4-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], 
+Build-Depends-Indep: doxygen, qt3-doc, graphviz, gsfonts-x11, kde3-kdelibs4-doc
+Build-Conflicts: nvidia-glx (<< 1.0.8774-6)
+Standards-Version: 3.7.3
+Homepage: http://www.kde.org
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdebase
+Vcs-Svn: svn://svn.debian.org/pkg-kde/trunk/packages/kdebase
+
+Package: kde3-kdebase
+Section: kde
+Architecture: all
+Depends: kde3-kappfinder (>= ${source:Version}), kde3-kate (>= ${source:Version}), kde3-kcontrol (>= ${source:Version}), kde3-kdebase-bin (>= ${source:Version}), kde3-kdebase-data (>= ${source:Version}), kde3-kdebase-kio-plugins (>= ${source:Version}), kde3-kdepasswd (>= ${source:Version}), kde3-kdeprint (>= ${source:Version}), kde3-kdesktop (>= ${source:Version}), kde3-kfind (>= ${source:Version}), kde3-khelpcenter (>= ${source:Version}), kde3-kicker (>= ${source:Version}), kde3-klipper (>= ${source:Version}), kde3-kmenuedit (>= ${source:Version}), kde3-konqueror-nsplugins (>= ${source:Version}), kde3-konqueror (>= ${source:Version}), kde3-konsole (>= ${source:Version}), kde3-kpager (>= ${source:Version}), kde3-kpersonalizer (>= ${source:Version}), kde3-ksmserver (>= ${source:Version}), kde3-ksplash (>= ${source:Version}), kde3-ksysguard (>= ${source:Version}), kde3-ktip (>= ${source:Version}), kde3-kwin (>= ${source:Version}), kde3-libkonq4 (>= ${source:Version}), hal | kfreebsd-gnu | hurd, pmount | kfreebsd-gnu | hurd
+Recommends: kde3-kdm (>= ${source:Version})
+Suggests: kde3-kdebase-doc-html (>= ${source:Version})
+Description: base components from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes the nucleus of KDE, namely the minimal package
+ set necessary to run KDE as a desktop environment. This includes the
+ window manager, taskbar, control center, a text editor, file manager,
+ web browser, X terminal emulator, and many other programs and components.
+
+Package: kde3-kappfinder
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: non-KDE application finder for KDE
+ kappfinder searches your workstation for many common applications and
+ creates menu entries for them.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kate
+Section: editors
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: kde3-kregexpeditor
+Suggests: aspell | ispell | hspell, kde3-kate-plugins, kde3-khelpcenter, kde3-konsole
+Description: advanced text editor for KDE
+ Kate is a multi document editor, based on a rewritten version of the kwrite
+ editing widget of KDE.
+ .
+ It is a multi-view editor that lets you view several instances of the same
+ document with all instances being synced, or view more files at the same
+ time for easy reference or simultaneous editing. The terminal emulation
+ and sidebar are docked windows that can be plugged out of the main window,
+ or replaced therein according to your preference.
+ .
+ Some random features:
+ .
+  * Editing of big files
+  * Extensible syntax highlighting
+  * Folding
+  * Dynamic word wrap
+  * Selectable encoding
+  * Filter command
+  * Global grep dialog
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kcontrol
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-kdebase-data, usbutils
+Recommends: udev
+Suggests: kde3-khelpcenter, ntpdate | ntp-simple
+Description: control center for KDE
+ The KDE Control Center provides you with a centralized and convenient
+ way to configure all of your KDE settings.
+ .
+ It is made up of multiple modules. Each module is a separate application,
+ but the control center organizes all of these programs into a convenient
+ location.
+ .
+ In combination with udev KControl supports the advanced
+ configuration of Logitech mice, though the user must be a member of the
+ plugdev group.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdebase-bin
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, libpam-runtime (>= 0.76-14)
+Suggests: kde3-khelpcenter, gdb
+Description: core binaries for the KDE base module
+ This package contains miscellaneous programs needed by other
+ KDE applications, particularly those in the KDE base module.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdebase-data
+Section: kde
+Architecture: all
+Description: shared data files for the KDE base module
+ This package contains the architecture-independent shared data files
+ needed for a basic KDE desktop installation.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdebase-dev
+Section: devel
+Architecture: any
+Depends: kde3-kate (= ${binary:Version}), kde3-kcontrol (= ${binary:Version}), kde3-kdebase-bin (= ${binary:Version}), kde3-kicker (= ${binary:Version}), kde3-konqueror (= ${binary:Version}), kde3-ksplash (= ${binary:Version}), kde3-ksysguard (= ${binary:Version}), kde3-kwin (= ${binary:Version}), kde3-kdelibs4-dev (>= 4:3.5.8-5)
+Description: development files for the KDE base module
+ This package contains headers and other development files needed to
+ compile software based on the KDE base module.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdebase-doc
+Section: doc
+Architecture: all
+Description: developer documentation for the KDE base module
+ This package contains documentation for the KDE base module, of
+ use more for developers creating applications than regular users.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdebase-doc-html
+Architecture: all
+Section: doc
+Suggests: kde3-konqueror | www-browser, kde3-kdebase
+Description: KDE base documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE base documentation converted to
+ HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/kate/. Documentation is provided for most
+ KDE base packages.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdebase-kio-plugins
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, libsasl2-modules, psmisc, kde3-kdeeject, man-db (>= 2.5.1-1)
+Recommends: hal, pmount, kde3-kamera, kde3-kdemultimedia-kio-plugins
+Suggests: kde3-khelpcenter, mtools, djvulibre-bin
+Description: core I/O slaves for KDE
+ This package includes the base kioslaves. They include, amongst many
+ others, file, http, ftp, smtp, pop and imap.
+ .
+ It also includes the media kioslave, which handles removable devices,
+ and which works best with hal (and therefore udev) and pmount. Media
+ also extends the functionality of many other kioslaves. To use this
+ service, please make sure that your user is a member of the plugdev
+ group.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdeeject
+Section: utils
+Architecture: all
+Depends: eject
+Description: script used by KDE to eject removable media
+ This package provides a shell script called 'kdeeject' which is used
+ by a few other  kdebase components to eject removable media like
+ CD/DVD-ROMs or USB Flash Drives. This script relies on 'eject' utility
+ to do its real work.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdepasswd
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: password changer for KDE
+ This is a simple application which allows users to change their
+ system passwords.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdeprint
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}, enscript, poster, psutils
+Recommends: kde3-kghostview | postscript-viewer
+Suggests: kde3-khelpcenter, efax | hylafax-client | mgetty-fax, smbclient
+Description: print system for KDE
+ This package contains the KDE printing subsystem. It can use CUPS,
+ lpd-ng or the traditional lpd. It also includes support for fax and
+ pdf printing.
+ .
+ Installation of smbclient will make you able to use smb shared printers.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdesktop
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-kdebase-bin (= ${binary:Version}), kde3-kdeeject
+Description: miscellaneous binaries and files for the KDE desktop
+ This package contains miscellaneous binaries and files integral to
+ the KDE desktop.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdm
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-kdebase-bin (= ${binary:Version}), kde3-kdebase-data, debconf (>= 1.2.9) | debconf-2.0, libpam-runtime (>= 0.76-14)
+Recommends: logrotate, xserver-xorg
+Suggests: kde3-khelpcenter, kde3-ksmserver (= ${binary:Version}), kde3-kdepasswd (= ${binary:Version}), menu
+Provides: x-display-manager
+Description: X display manager for KDE
+ kdm manages a collection of X servers, which may be on the local host or
+ remote machines. It provides services similar to those provided by init,
+ getty, and login on character-based terminals: prompting for login name and
+ password, authenticating the user, and running a session. kdm supports XDMCP
+ (X Display Manager Control Protocol) and can also be used to run a chooser
+ process which presents the user with a menu of possible hosts that offer
+ XDMCP display management.
+ .
+ A collection of icons to associate with individual users is included with
+ KDE, but as part of the kdepasswd package.
+ .
+ The menu package will help to provide KDM with a list of window managers
+ that can be launched, if the window manager does not register with KDM
+ already. Most users won't need this.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kfind
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: file-find utility for KDE 
+ kfind can be used to find files and directories on your
+ workstations.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-khelpcenter
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, htdig
+Description: help center for KDE
+ The KDE Help Center provides documentation on how to use the KDE desktop.
+ .
+ The htdig package is needed to build a searchable archive of KDE
+ documentation.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kicker
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-kdebase-data
+Suggests: kde3-khelpcenter, kde3-kicker-applets, menu
+Description: desktop panel for KDE
+ Kicker provides the KDE panel on you desktop. It can be used as a
+ program launcher and can load plugins to provide additional
+ functionality.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-klipper
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: clipboard utility for KDE
+ klipper provides standard clipboard functions (cut and paste, history
+ saving) plus additional features, like the ability to offer actions to 
+ take dependent on the clipboard contents. For example, it can launch a 
+ web browser if the clipboard contains a URL.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kmenuedit
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: menu editor for KDE
+ The KDE menu editor allows you to make customisations to the KDE menu
+ structure.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-konqueror
+Section: web
+Architecture: any
+Provides: info-browser, man-browser, www-browser
+Depends: ${shlibs:Depends}, kde3-kcontrol (= ${binary:Version}), kde3-kdebase-kio-plugins (= ${binary:Version}), kde3-kdesktop (= ${binary:Version}), kde3-kfind (= ${binary:Version})
+Suggests: kde3-khelpcenter, kde3-konq-plugins, kde3-ksvg, gij-4.1, libgcj7-awt, libjessie-java
+Description: KDE's advanced file manager, web browser and document viewer
+ Konqueror is the file manager for the K Desktop Environment.
+ It supports basic file management on local UNIX filesystems,
+ from simple cut/copy and paste operations to advanced remote
+ and local network file browsing.
+ .
+ It is also the canvas for all the latest KDE technology,
+ from KIO slaves (which provide mechanisms for file access) to
+ component embedding via the KParts object interface, and it
+ is one of the most customizable applications available.
+ .
+ Konqueror is an Open Source web browser with HTML4.0 compliance,
+ supporting Java applets, JavaScript, CSS1 and (partially) CSS2,
+ as well as Netscape plugins (for example, Flash or RealVideo plugins).
+ .
+ It is a universal viewing application, capable of embedding
+ read-only viewing components in itself to view documents without
+ ever launching another application.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-konqueror-nsplugins
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-konqueror (= ${binary:Version})
+Description: Netscape plugin support for Konqueror
+ This package includes support for Netscape plugins in Konqueror.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-konsole
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Provides: x-terminal-emulator
+Description: X terminal emulator for KDE
+ Konsole is an X terminal emulation which provides a command-line interface
+ (CLI) while using the graphical K Desktop Environment. Konsole helps to
+ better organize user's desktop by containing multiple sessions in a single
+ window (a less cluttered desktop).
+ .
+ Its advanced features include a simple configuration and the ability to use
+ multiple terminal shells in a single window
+ .
+ Using Konsole, a user can open:
+ .
+  Linux console sessions
+  Midnight Commander file manager sessions
+  Shell sessions
+  Root consoles sessions
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kpager
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: desktop pager for KDE
+ This package contains KDE's desktop pager, which displays your virtual
+ desktops iconically in a window, along with icons of any running
+ applications. It is used to switch between applications or desktops.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kpersonalizer
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-kdebase-data
+Description: installation personalizer for KDE
+ KDE Personalizer is the application that configures the KDE desktop for you.
+ It's a very useful wizard that allows you to quickly change the KDE desktop to
+ suit your own needs. When you run KDE for the first time, KPersonalizer is
+ automatically started. KPersonalizer can also be called later.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-ksmserver
+Section: kde
+Architecture: any
+Provides: x-session-manager
+Depends: ${shlibs:Depends}, kde3-kwin (= ${binary:Version}) | x-window-manager, x11-utils
+Recommends: kde3-kpersonalizer (= ${binary:Version})
+Description: session manager for KDE
+ This package contains the KDE session manager. It is responsible for
+ restoring your KDE session on login. It is also needed to properly
+ start a KDE session. It registers KDE with X display managers, and
+ provides the 'startkde' command, for starting an X session with KDE
+ from the console.
+ .
+ If you are running KDE for the first time for a certain user,
+ kpersonalizer is used to help with setup. If it is not present,
+ KDE will start, but many good defaults will not be set.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-ksplash
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-kdebase-data
+Suggests: kde3-khelpcenter
+Description: the KDE splash screen
+ This package includes the KDE Splash screen, which is seen when
+ a KDE session is launched.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-ksysguard
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-ksysguardd (= ${binary:Version})
+Suggests: kde3-khelpcenter
+Description: system guard for KDE
+ KDE System Guard allows you to monitor various statistics about your
+ computer.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-ksysguardd
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: system guard daemon for KDE
+ KDE System Guard Daemon is the daemon part of ksysguard. The daemon can
+ be installed on a remote machine to enable ksysguard on another machine
+ to monitor it through the daemon running there.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-ktip
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: useful tips for KDE
+ ktip provides many useful tips on using KDE when you log in.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kwin
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Provides: x-window-manager
+Suggests: kde3-kdebase-bin (= ${binary:Version}), kde3-kdebase-data, kde3-kdesktop (= ${binary:Version}), kde3-kicker (= ${binary:Version}), kde3-kpager (= ${binary:Version}), kde3-kpersonalizer (= ${binary:Version}), kde3-ksmserver (= ${binary:Version}), kde3-ksplash (= ${binary:Version})
+Description: the KDE window manager
+ This package contains the default X window manager for KDE.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-libkonq4
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: core libraries for Konqueror
+ These libraries are used by several KDE applications, most notably
+ Konqueror and the kdesktop package.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-libkonq4-dev
+Section: libdevel
+Architecture: any
+Depends: kde3-libkonq4 (= ${binary:Version}), kde3-kdelibs4-dev (>= 4:3.5.8-5)
+Description: development files for Konqueror's core libraries
+ This package contains headers and other development files for the core
+ Konqueror libraries.
+ .
+ This package is part of KDE, and a component of the KDE base module.
+ See the 'kde' and 'kdebase' packages for more information.
+
+Package: kde3-kdebase-dbg
+Section: libdevel
+Architecture: any
+Priority: extra
+Depends: kde3-libkonq4 (= ${binary:Version}), kde3-kdelibs-dbg
+Description: debugging symbols for kdebase
+ This package contains the debugging symbols associated with kdebase.
+ They will automatically be used by gdb for debugging kdebase-related
+ issues.
+

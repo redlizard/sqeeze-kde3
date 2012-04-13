@@ -1,0 +1,123 @@
+--- a/kcontrol/krdb/themes/Plastik/Plastik.xml
++++ b/kcontrol/krdb/themes/Plastik/Plastik.xml
+@@ -113,12 +113,12 @@
+   </panel>
+   <widgets name="Plastik" />
+   <fonts>
+-    <font value="Arial,12,-1,5,50,0,0,0,0,0" object="General" />
+-    <fixed value="Courier New,10,-1,5,50,0,0,0,0,0" object="General" />
+-    <toolBarFont value="Arial,12,-1,5,50,0,0,0,0,0" object="General" />
+-    <menuFont value="Arial,12,-1,5,50,0,0,0,0,0" object="General" />
+-    <activeFont value="Arial,12,-1,5,75,0,0,0,0,0" object="WM" />
+-    <taskbarFont value="Arial,11,-1,5,50,0,0,0,0,0" object="General" />
++    <font value="Sans Serif,10,-1,5,50,0,0,0,0,0" object="General" />
++    <fixed value="Monospace,10,-1,5,50,0,0,0,0,0" object="General" />
++    <toolBarFont value="Sans Serif,10,-1,5,50,0,0,0,0,0" object="General" />
++    <menuFont value="Sans Serif,10,-1,5,50,0,0,0,0,0" object="General" />
++    <activeFont value="Sans Serif,10,-1,5,75,0,0,0,0,0" object="WM" />
++    <taskbarFont value="Sans Serif,10,-1,5,50,0,0,0,0,0" object="General" />
+     <StandardFont value="" object="FMSettings" />
+   </fonts>
+ </ktheme>
+--- a/kcontrol/kdm/kdm-font.cpp
++++ b/kcontrol/kdm/kdm-font.cpp
+@@ -92,7 +92,7 @@
+ {
+   stdFontChooser->setFont(QFont("Sans Serif", 10));
+   failFontChooser->setFont(QFont("Sans Serif", 10, QFont::Bold));
+-  greetingFontChooser->setFont(QFont("Serif", 20));
++  greetingFontChooser->setFont(QFont("Sans Serif", 22));
+ }
+ 
+ void KDMFontWidget::save()
+@@ -128,7 +128,7 @@
+ void KDMFontWidget::defaults()
+ {
+   set_def();
+-  aacb->setChecked(false);
++  aacb->setChecked(true);
+ }
+ 
+ #include "kdm-font.moc"
+--- a/kdm/config.def
++++ b/kdm/config.def
+@@ -2096,19 +2096,19 @@
+ # This needs to come _in front_ of the font settings to be effective!
+ Key: AntiAliasing
+ Type: bool
+-Default: false
++Default: true
+ User: greeter
+-Instance: #*/!
++Instance: */
+ Comment: &
+ Description:
+  Whether the fonts used in the greeter should be antialiased.
+ 
+ Key: GreetFont
+ Type: string
+-Default: "Serif,20,5,0,50,0"
++Default: "Sans Serif,22,5,0,50,0"
+ CDefault: "Serif,20,bold"
+ User: greeter:font
+-Instance: #*/"Serif,20,5,0,50,0"
++Instance: #*/"Sans Serif,22,5,0,50,0"
+ Comment: &
+ Description:
+  The font for the greeter headline.
+--- a/kcontrol/fonts/fonts.cpp
++++ b/kcontrol/fonts/fonts.cpp
+@@ -331,7 +331,7 @@
+     kglobals.setReadDefaults( useDefaults );
+ 
+     kglobals.setGroup("General");
+-    hStyle=KXftConfig::Hint::Medium;
++    hStyle=KXftConfig::Hint::Full;
+     xft.setHintStyle(hStyle);
+     xft.apply();  // Save this setting
+     kglobals.writeEntry("XftHintStyle", KXftConfig::toStr(hStyle));
+@@ -449,7 +449,7 @@
+     if(hintingStyle->currentText()==KXftConfig::description((KXftConfig::Hint::Style)s))
+       return (KXftConfig::Hint::Style)s;
+ 
+-  return KXftConfig::Hint::Medium;
++  return KXftConfig::Hint::Full;
+ }
+ #endif
+ 
+@@ -527,13 +527,13 @@
+   QFont f0("Sans Serif", 10);
+   QFont f1("Monospace", 10);
+   QFont f2("Sans Serif", 10);
+-  QFont f3("Sans Serif", 9, QFont::Bold);
++  QFont f3("Sans Serif", 10, QFont::Bold);
+   QFont f4("Sans Serif", 10);
+ 
+   f0.setPointSize(10);
+   f1.setPointSize(10);
+   f2.setPointSize(10);
+-  f3.setPointSize(9);
++  f3.setPointSize(10);
+   f4.setPointSize(10);
+ 
+   defaultFontList << f0 << f1 << f2 << f0 << f3 << f4 << f0;
+--- a/kcontrol/krdb/krdb.cpp
++++ b/kcontrol/krdb/krdb.cpp
+@@ -524,7 +524,7 @@
+ 
+     if (kglobals.hasKey("XftHintStyle"))
+     {
+-      QString hintStyle = kglobals.readEntry("XftHintStyle", "hintmedium");
++      QString hintStyle = kglobals.readEntry("XftHintStyle", "hintfull");
+       contents += "Xft.hinting: ";
+       if(hintStyle.isEmpty())
+         contents += "-1\n";
+@@ -540,7 +540,7 @@
+ 
+     if (kglobals.hasKey("XftSubPixel"))
+     {
+-      QString subPixel = kglobals.readEntry("XftSubPixel");
++      QString subPixel = kglobals.readEntry("XftSubPixel", "none");
+       if(!subPixel.isEmpty())
+         contents += "Xft.rgba: " + subPixel + '\n';
+     }

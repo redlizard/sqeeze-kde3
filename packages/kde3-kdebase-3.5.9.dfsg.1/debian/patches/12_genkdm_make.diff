@@ -1,0 +1,9 @@
+--- a/kdm/kfrontend/Makefile.am
++++ b/kdm/kfrontend/Makefile.am
+@@ -1,5 +1,5 @@
+ # use 'make GENKDMCONF_FLAGS=... install' to override
+-GENKDMCONF_FLAGS =
++GENKDMCONF_FLAGS = --no-old
+ 
+ SUBDIRS = themer themes pics sessions
+ 

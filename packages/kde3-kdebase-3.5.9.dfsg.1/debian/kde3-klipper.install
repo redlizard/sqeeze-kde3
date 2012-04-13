@@ -1,0 +1,28 @@
+debian/tmp/etc/kde3/klipperrc
+debian/tmp/opt/kde3/bin/klipper
+debian/tmp/opt/kde3/lib/kde3/klipper.la
+debian/tmp/opt/kde3/lib/kde3/klipper_panelapplet.la
+debian/tmp/opt/kde3/lib/kde3/klipper_panelapplet.so
+debian/tmp/opt/kde3/lib/kde3/klipper.so
+debian/tmp/opt/kde3/lib/libkdeinit_klipper.so
+debian/tmp/opt/kde3/share/applications/kde/klipper.desktop
+debian/tmp/opt/kde3/share/apps/kconf_update/klipper-1-2.pl
+debian/tmp/opt/kde3/share/apps/kconf_update/klipper-kde31.sh
+debian/tmp/opt/kde3/share/apps/kconf_update/klipperrc.upd
+debian/tmp/opt/kde3/share/apps/kconf_update/klippershortcuts.upd
+debian/tmp/opt/kde3/share/apps/kicker/applets/klipper.desktop
+debian/tmp/opt/kde3/share/autostart/klipper.desktop
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/klipper/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/klipper/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/klipper/index.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/klipper/screenshot.png
+debian/tmp/opt/kde3/share/icons/hicolor/128x128/apps/klipper.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/klipper.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/klipper.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/klipper.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/klipper.png
+debian/tmp/opt/kde3/share/icons/hicolor/64x64/apps/klipper.png
+debian/tmp/opt/kde3/share/icons/hicolor/scalable/apps/klipper.svgz
+
+debian/icons/klipper.xpm		/usr/share/pixmaps
+debian/icons/klipper-16.xpm		/usr/share/pixmaps

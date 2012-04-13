@@ -1,0 +1,4 @@
+kcontrol: shlib-missing-in-control-file libkdeinit_kaccess.so for usr/lib/libkdeinit_kaccess.so
+kcontrol: shlib-missing-in-control-file libkdeinit_kcontrol.so for usr/lib/libkdeinit_kcontrol.so
+kcontrol: package-name-doesnt-match-sonames libkdeinit-kaccess libkdeinit-kcontrol libkfontinst0
+

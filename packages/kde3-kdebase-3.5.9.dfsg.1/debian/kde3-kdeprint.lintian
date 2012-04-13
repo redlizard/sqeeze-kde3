@@ -1,0 +1,6 @@
+kdeprint: no-shlibs-control-file usr/lib/libkdeinit_kjobviewer.so
+kdeprint: no-shlibs-control-file usr/lib/libkdeinit_kprinter.so
+kdeprint: postinst-must-call-ldconfig usr/lib/libkdeinit_kjobviewer.so
+kdeprint: postrm-should-call-ldconfig usr/lib/libkdeinit_kjobviewer.so
+kdeprint: package-name-doesnt-match-sonames libkdeinit-kjobviewer libkdeinit-kprinter
+

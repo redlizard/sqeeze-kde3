@@ -1,0 +1,30 @@
+--- a/configure.in
++++ b/configure.in
+@@ -1928,6 +1928,7 @@
+ case "$host" in 
+   *-*-linux*) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-freebsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
++  *-*-kfreebsd*-gnu) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-dragonfly*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
+   *-*-netbsd*) ksysguardd_compile=yes; UNAME='NetBSD' ;;
+   *-*-solaris*) ksysguardd_compile=yes; UNAME='Solaris' ;;
+--- a/configure
++++ b/configure
+@@ -54545,6 +54545,7 @@
+ case "$host" in
+   *-*-linux*) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-freebsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
++  *-*-kfreebsd*-gnu) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-dragonfly*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
+   *-*-netbsd*) ksysguardd_compile=yes; UNAME='NetBSD' ;;
+   *-*-solaris*) ksysguardd_compile=yes; UNAME='Solaris' ;;
+--- a/ksysguard/configure.in.in
++++ b/ksysguard/configure.in.in
+@@ -3,6 +3,7 @@
+ case "$host" in 
+   *-*-linux*) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-freebsd*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
++  *-*-kfreebsd*-gnu) ksysguardd_compile=yes; UNAME='Linux' ;;
+   *-*-dragonfly*) ksysguardd_compile=yes; UNAME='FreeBSD' ;;
+   *-*-netbsd*) ksysguardd_compile=yes; UNAME='NetBSD' ;;
+   *-*-solaris*) ksysguardd_compile=yes; UNAME='Solaris' ;;

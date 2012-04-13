@@ -1,0 +1,38 @@
+#! /bin/sh -e
+
+case "$1" in
+    purge)
+	rm -rf /var/log/kdm.log*
+    ;;
+
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+
+    ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+if [ "$1" = "abort-install" -o "$1" = "abort-upgrade" ]; then
+  # roll back displacement of default display manager file
+  if [ -e "$DEFAULT_DISPLAY_MANAGER_FILE.dpkg-tmp" ]; then
+    # FIXME - redo this part uses shell-lib.sh from xfree86
+    #observe "rolling back change of default X display manager"
+    mv "$DEFAULT_DISPLAY_MANAGER_FILE.dpkg-tmp" "$DEFAULT_DISPLAY_MANAGER_FILE"
+  fi
+fi
+
+if [ "$1" = "purge" ]; then
+  for DIR in /var/lib/kdm; do
+    if [ -d "$DIR" ]; then
+      rm -rf "$DIR"
+    fi
+  done
+  rm -f /var/log/kdm.log*
+fi
+
+#DEBHELPER#
+
+exit 0

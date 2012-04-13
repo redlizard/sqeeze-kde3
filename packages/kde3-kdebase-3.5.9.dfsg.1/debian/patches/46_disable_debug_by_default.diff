@@ -1,0 +1,11 @@
+--- a/kdebugdialog/klistdebugdialog.cpp
++++ b/kdebugdialog/klistdebugdialog.cpp
+@@ -127,7 +127,7 @@
+   {
+       pConfig->setGroup( (*it)->name() ); // Group name = debug area code = cb's name
+ 
+-      int setting = pConfig->readNumEntry( "InfoOutput", 2 );
++      int setting = pConfig->readNumEntry( "InfoOutput", 4 );
+       // override setting if in m_changes
+       if( m_changes.find( (*it)->name() ) != m_changes.end() ) {
+         setting = m_changes[ (*it)->name() ];

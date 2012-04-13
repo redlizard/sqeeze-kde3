@@ -1,0 +1,28 @@
+--- a/doc/kate/part.docbook	2006-01-19 17:01:27.000000000 +0000
++++ b/doc/kate/part.docbook	2008-06-17 15:19:08.000000000 +0100
+@@ -342,16 +342,25 @@
+ 
+ <varlistentry>
+ <term><guilabel>Replace With</guilabel></term>
+ <listitem><para>This is where to enter the replacement
+ string.</para></listitem>
+ </varlistentry>
+ 
+ <varlistentry>
++<term><guilabel>Use Placeholders</guilabel></term>
++<listitem><para>If selected, the replacement string may use
++backreferences (see <link linkend="regular-expressions">Regular
++Expressions</link>).  Backslashes, newlines and tabs may be
++inserted with the sequences "\\", "\n" and "\t" respectively.
++</para></listitem>
++</varlistentry>
++
++<varlistentry>
+ <term><guilabel>Selected Text</guilabel></term>
+ <listitem>
+ <para>This option is disabled if no text is selected, or if the
+ <guilabel>Prompt on Replace</guilabel>
+ option is enabled. If checked, all matches of the search string within
+ the selected text will be replaced with the replace string.</para>
+ </listitem>
+ </varlistentry>

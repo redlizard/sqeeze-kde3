@@ -1,0 +1,162 @@
+# translation of ro.po to Romanian
+# debconf templates for xorg-x11 package
+#
+# $Id: pothead.in 189 2005-06-11 00:04:27Z branden $
+#
+# Copyright:
+#
+# This file is distributed under the same license as the xorg-x11 package.
+# Please see debian/copyright.
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf is available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+# Branden Robinson, 2000--2004.
+# Rușeț Zeno <rzeno@cwazy.co.uk>, 2005.
+# Eddy Petrișor <eddy.petrisor@gmail.com>, 2005, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: ro\n"
+"Report-Msgid-Bugs-To: debian-qt-kde@lists.debian.org\n"
+"POT-Creation-Date: 2007-03-23 07:15+0100\n"
+"PO-Revision-Date: 2007-04-05 11:21+0300\n"
+"Last-Translator: Eddy Petrișor <eddy.petrisor@gmail.com>\n"
+"Language-Team: Romanian <debian-l10n-romanian@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
+
+#. Type: select
+#. Description
+#: ../kdm.templates:1001
+msgid "Default display manager:"
+msgstr "Managerul de ecran implicit:"
+
+#. Type: select
+#. Description
+#: ../kdm.templates:1001
+msgid ""
+"A display manager is a program that provides graphical login capabilities "
+"for the X Window System."
+msgstr ""
+"Un manager de ecran este un program care oferă facilitatea de autentificare "
+"grafică sistemului de ferestre X."
+
+#. Type: select
+#. Description
+#: ../kdm.templates:1001
+msgid ""
+"Only one display manager can manage a given X server, but multiple display "
+"manager packages are installed. Please select which display manager should "
+"run by default."
+msgstr ""
+"Doar un singur manager de ecran poate gestiona un anumit server X, dar "
+"acum sunt instalați mai mulți. Selectați managerul care ar trebui să pornească în mod implicit."
+
+#. Type: select
+#. Description
+#: ../kdm.templates:1001
+msgid ""
+"Multiple display managers can run simultaneously if they are configured to "
+"manage different servers; to achieve this, configure the display managers "
+"accordingly, edit each of their init scripts in /etc/init.d, and disable the "
+"check for a default display manager."
+msgstr ""
+"Mai mulți manageri de ecran pot rula simultan dacă sunt configurați să "
+"gestioneze servere diferite; pentru a obține acest lucru, configurați "
+"managerii de ecran în mod corespunzător, editați fiecare dintre script-urile lor de "
+"inițializare din /etc/init.d și dezactivați testul legat de managerul de ecran "
+"implicit."
+
+#. Type: boolean
+#. Description
+#: ../kdm.templates:3001
+msgid "Stop the kdm daemon?"
+msgstr "Se oprește serviciul kdm?"
+
+#. Type: boolean
+#. Description
+#: ../kdm.templates:3001
+msgid ""
+"The K Desktop manager (kdm) daemon is typically stopped on package upgrade "
+"and removal, but it appears to be managing at least one running X session."
+msgstr ""
+"Serviciul K de management al ecranului (kdm) este, în mod obișnuit, oprit la "
+"înnoirea sau ștergerea pachetului, dar acum se pare că acesta gestionează cel "
+"puțin o sesiune X."
+
+#. Type: boolean
+#. Description
+#: ../kdm.templates:3001
+msgid ""
+"If kdm is stopped now, any X sessions it manages will be terminated. "
+"Otherwise, the new version will take effect the next time the daemon is "
+"restarted."
+msgstr ""
+"În cazul în care kdm este oprit acum, orice sesiune X gestionată de el va fi terminată. Altfel, "
+"noua versiune va avea efect la următoarea repornire a serviciului."
+
+#, fuzzy
+#~ msgid ""
+#~ "The X display manager (kdm) daemon is typically stopped on package "
+#~ "upgrade and removal, but it appears to be managing at least one running X "
+#~ "session."
+#~ msgstr ""
+#~ "Demonul X de management al ecranului (kdm) este, în mod obișnuit oprit la "
+#~ "înnoirea sau ștergerea pachetului, dar se pare că acesta guvernează cel "
+#~ "puțin o sesiune X care rulează acum. Dacă kdm este oprit acum, orice "
+#~ "sesiune guvernată de el va fi terminată. Altfel, îl puteți lăsa pe kdm să "
+#~ "ruleze și noua versiune va avea efect la următoarea repornire a demonului."
+
+#~ msgid "Select the desired default display manager."
+#~ msgstr "Alegeți administratorul de ecran implicit, pe care îl doriți."
+
+#~ msgid ""
+#~ "Only one display manager can manage a given X server, but multiple "
+#~ "display manager packages are installed.  Please select which display "
+#~ "manager should run by default."
+#~ msgstr ""
+#~ "Doar un singur administrator de ecran poate administra un server X dat, "
+#~ "dar sunt instalați mai mulți administratori. Alegeți care administrator "
+#~ "de ecran să ruleze implicit."
+
+#~ msgid ""
+#~ "(Multiple display managers can run simultaneously if they are configured "
+#~ "to manage different servers; to achieve this, configure the display "
+#~ "managers accordingly, edit each of their init scripts in /etc/init.d, and "
+#~ "disable the check for a default display manager.)"
+#~ msgstr ""
+#~ "(Simultan pot rula mai mulți administratori de ecran dacă sunt "
+#~ "configurați să administreze servere diferite; pentru a obține acest "
+#~ "lucru, configurați administratorul de ecran pentru această funcție, "
+#~ "editați scripturile de inițiere din /etc/init.d, și dezactivați opțiunea "
+#~ "de verificare a administratorului de ecran implicit.)"
+
+#~ msgid "Do you wish to stop the kdm daemon?"
+#~ msgstr "Doriți să opriți demonul kdm?"
+
+#~ msgid ""
+#~ "The K Desktop manager (kdm) daemon is typically stopped on package "
+#~ "upgrade and removal, but it appears to be managing at least one running X "
+#~ "session. If kdm is stopped now, any X sessions it manages will be "
+#~ "terminated. Otherwise you may leave kdm running, and the new version will "
+#~ "take effect the next time the daemon is restarted."
+#~ msgstr ""
+#~ "Demonul K Desktop manager (kdm) este oprit de obicei la actualizarea "
+#~ "pachetuluiși la eliminarea sa, dar se pare că acum administrează o "
+#~ "sesiune X de lucru.Dacă demonul kdm este oprit acum, orice sesiune X pe "
+#~ "care o administrează va fi oprită. O alternativă ar fi să lăsați kdm să "
+#~ "ruleze, iar noua versiune va ruladata viitoare când demonul va fi "
+#~ "repornit."
+

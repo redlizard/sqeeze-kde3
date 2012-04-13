@@ -1,0 +1,16 @@
+debian/tmp/opt/kde3/lib/kde3/kded_favicons.la
+debian/tmp/opt/kde3/lib/kde3/kded_favicons.so
+debian/tmp/opt/kde3/lib/kde3/konq_sound.la
+debian/tmp/opt/kde3/lib/kde3/konq_sound.so
+debian/tmp/opt/kde3/lib/libkonq.so.4
+debian/tmp/opt/kde3/lib/libkonq.so.4.2.0
+debian/tmp/opt/kde3/share/apps/kbookmark/directory_bookmarkbar.desktop
+debian/tmp/opt/kde3/share/apps/kconf_update/favicons.upd
+debian/tmp/opt/kde3/share/apps/kconf_update/move_favicons.sh
+debian/tmp/opt/kde3/share/apps/konqueror/pics/arrow_bottomleft.png
+debian/tmp/opt/kde3/share/apps/konqueror/pics/arrow_bottomright.png
+debian/tmp/opt/kde3/share/apps/konqueror/pics/arrow_topleft.png
+debian/tmp/opt/kde3/share/apps/konqueror/pics/arrow_topright.png
+debian/tmp/opt/kde3/share/apps/konqueror/pics/thumbnailfont_7x4.png
+debian/tmp/opt/kde3/share/services/kded/favicons.desktop
+debian/tmp/opt/kde3/share/servicetypes/konqpopupmenuplugin.desktop

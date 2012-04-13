@@ -1,0 +1,928 @@
+KDE Xinerama patches
+
+Patches for KDE3.x with several Xinerama improvements:
+
+ * Alt+tab list of windows can be restriced to a single screen
+ * shortcut for moving the active window to a specific/other Xinerama screen
+ * possibility of configuring on which Xinerama screen new windows will be
+   placed
+ * slightly improved dialog placement in some cases
+ * newly launched applications appear on the same Xinerama screen where minicli
+   was shown
+ * possibility of configuring the active Xinerama screen to be the one with the
+   active window instead of the one with the cursor
+ * shortcut for activating specific/other Xinerama screen
+
+Author: Lubos Lunak <l.lunak@kde.org>
+
+--- a/kdesktop/minicli.cpp
++++ b/kdesktop/minicli.cpp
+@@ -369,6 +369,17 @@
+     cmd = uri.path();
+   else
+     cmd = uri.url();
++    
++  QCString asn;
++  if( qApp->desktop()->isVirtualDesktop())
++  {
++    asn = KStartupInfo::createNewStartupId();
++    KStartupInfoId id;
++    id.initId( asn );
++    KStartupInfoData data;
++    data.setXinerama( qApp->desktop()->screenNumber( this ));
++    KStartupInfo::sendChange( id, data );
++  }
+ 
+   // Determine whether the application should be run through
+   // the command line (terminal) interface...
+@@ -504,7 +515,7 @@
+         case KURIFilterData::HELP:
+         {
+           // No need for kfmclient, KRun does it all (David)
+-          (void) new KRun( m_filterData->uri(), parentWidget());
++          (void) new KRun( m_filterData->uri(), parentWidget(), asn );
+           return 0;
+         }
+         case KURIFilterData::EXECUTABLE:
+@@ -516,7 +527,7 @@
+             if (service && service->isValid() && service->type() == "Application")
+             {
+               notifyServiceStarted(service);
+-              KRun::run(*service, KURL::List());
++              KRun::run(*service, KURL::List(), parentWidget(), asn );
+               return 0;
+             }
+           }
+@@ -551,7 +562,7 @@
+           if (service && service->isValid() && service->type() == "Application")
+           {
+             notifyServiceStarted(service);
+-            KRun::run(*service, KURL::List(), this);
++            KRun::run(*service, KURL::List(), parentWidget(), asn );
+             return 0;
+           }
+ 
+@@ -559,7 +570,7 @@
+           if (service && service->isValid() && service->type() == "Application")
+           {
+             notifyServiceStarted(service);
+-            KRun::run(*service, KURL::List(), this);
++            KRun::run(*service, KURL::List(), parentWidget(), asn );
+             return 0;
+           }
+ 
+@@ -571,7 +582,7 @@
+       }
+     }
+ 
+-    if ( KRun::runCommand( cmd, exec, m_iconName ) )
++    if ( KRun::runCommand( cmd, exec, m_iconName, parentWidget(), asn ) )
+       return 0;
+     else
+     {
+--- a/kdesktop/desktop.cc
++++ b/kdesktop/desktop.cc
+@@ -516,9 +516,12 @@
+   if ( m_miniCli->isVisible() ) {
+       KWin::forceActiveWindow( m_miniCli->winId() );
+   } else {
+-      QRect rect = KGlobalSettings::desktopGeometry(QCursor::pos());
+-      m_miniCli->move(rect.x() + (rect.width() - m_miniCli->width())/2,
+-                      rect.y() + (rect.height() - m_miniCli->height())/2);
++      NETRootInfo i( qt_xdisplay(), NET::Supported );
++      if( !i.isSupported( NET::WM2FullPlacement )) {
++          QRect rect = KGlobalSettings::desktopGeometry(QCursor::pos());
++          m_miniCli->move(rect.x() + (rect.width() - m_miniCli->width())/2,
++                          rect.y() + (rect.height() - m_miniCli->height())/2);
++      }
+       m_miniCli->show(); // non-modal
+   }
+ }
+--- a/kwin/useractions.cpp
++++ b/kwin/useractions.cpp
+@@ -482,27 +482,33 @@
+         case Options::MouseActivateAndRaise:
+             replay = isActive(); // for clickraise mode
+             workspace()->takeActivity( this, ActivityFocus | ActivityRaise, handled && replay );
++            workspace()->setActiveScreenMouse( globalPos );
+             break;
+         case Options::MouseActivateAndLower:
+             workspace()->requestFocus( this );
+             workspace()->lowerClient( this );
++            workspace()->setActiveScreenMouse( globalPos );
+             break;
+         case Options::MouseActivate:
+             replay = isActive(); // for clickraise mode
+             workspace()->takeActivity( this, ActivityFocus, handled && replay );
++            workspace()->setActiveScreenMouse( globalPos );
+             break;
+         case Options::MouseActivateRaiseAndPassClick:
+             workspace()->takeActivity( this, ActivityFocus | ActivityRaise, handled );
++            workspace()->setActiveScreenMouse( globalPos );
+             replay = TRUE;
+             break;
+         case Options::MouseActivateAndPassClick:
+             workspace()->takeActivity( this, ActivityFocus, handled );
++            workspace()->setActiveScreenMouse( globalPos );
+             replay = TRUE;
+             break;
+         case Options::MouseActivateRaiseAndMove:
+         case Options::MouseActivateRaiseAndUnrestrictedMove:
+             workspace()->raiseClient( this );
+             workspace()->requestFocus( this );
++            workspace()->setActiveScreenMouse( globalPos );
+             if( options->moveMode == Options::Transparent && isMovable())
+                 move_faked_activity = workspace()->fakeRequestedActivity( this );
+         // fallthrough
+@@ -709,6 +715,40 @@
+             sendClientToDesktop( c, i, true );
+     }
+ 
++void Workspace::slotSwitchToScreen( int i )
++    {
++    setCurrentScreen( i );
++    }
++
++void Workspace::slotSwitchToNextScreen()
++    {
++    slotSwitchToScreen(( activeScreen() + 1 ) % numScreens());
++    }
++
++void Workspace::slotWindowToScreen( int i )
++    {
++    Client* c = active_popup_client ? active_popup_client : active_client;
++    if( i >= 0 && i <= numScreens() && c
++        && !c->isDesktop()
++        && !c->isDock()
++        && !c->isTopMenu())
++        {
++        sendClientToScreen( c, i );
++        }
++    }
++
++void Workspace::slotWindowToNextScreen()
++    {
++    Client* c = active_popup_client ? active_popup_client : active_client;
++    if( c
++        && !c->isDesktop()
++        && !c->isDock()
++        && !c->isTopMenu())
++        {
++        sendClientToScreen( c, ( c->screen() + 1 ) % numScreens());
++        }
++    }
++
+ /*!
+   Maximizes the popup client
+  */
+--- a/kwin/options.h
++++ b/kwin/options.h
+@@ -124,6 +124,11 @@
+          */
+         enum AltTabStyle { KDE, CDE };
+         AltTabStyle altTabStyle;
++        
++        // whether to see Xinerama screens separately for focus (in Alt+Tab, when activating next client)
++        bool separateScreenFocus;
++        // whether active Xinerama screen is the one with mouse (or with the active window)
++        bool activeMouseScreen;
+ 
+         /**
+          * Xinerama options
+@@ -133,6 +138,9 @@
+         bool xineramaMovementEnabled;
+         bool xineramaMaximizeEnabled;
+         bool xineramaFullscreenEnabled;
++        
++        // number, or -1 = active screen (Workspace::activeScreen())
++        int xineramaPlacementScreen;
+ 
+         /**
+            MoveResizeMode, either Tranparent or Opaque.
+--- a/kwin/workspace.h
++++ b/kwin/workspace.h
+@@ -91,6 +91,7 @@
+ 
+         QRect clientArea( clientAreaOption, const QPoint& p, int desktop ) const;
+         QRect clientArea( clientAreaOption, const Client* c ) const;
++        QRect clientArea( clientAreaOption, int screen, int desktop ) const;
+ 
+         /**
+          * @internal
+@@ -161,6 +162,13 @@
+          */
+         int numberOfDesktops() const;
+         void setNumberOfDesktops( int n );
++        
++        int activeScreen() const;
++        int numScreens() const;
++        void checkActiveScreen( const Client* c );
++        void setActiveScreenMouse( QPoint mousepos );
++        QRect screenGeometry( int screen ) const;
++        int screenNumber( QPoint pos ) const;
+ 
+         QWidget* desktopWidget();
+ 
+@@ -186,6 +194,7 @@
+         void sendClientToDesktop( Client* c, int desktop, bool dont_activate );
+         void windowToPreviousDesktop( Client* c );
+         void windowToNextDesktop( Client* c );
++        void sendClientToScreen( Client* c, int screen );
+ 
+     // KDE4 remove me - and it's also in the DCOP interface :(
+         void showWindowMenuAt( unsigned long id, int x, int y );
+@@ -224,6 +233,7 @@
+         void nextDesktop();
+         void previousDesktop();
+         void circulateDesktopApplications();
++        void setCurrentScreen( int new_screen );
+ 
+         QString desktopName( int desk ) const;
+         virtual void setDesktopLayout(int , int , int );
+@@ -301,6 +311,10 @@
+     //void slotSwitchToWindow( int );
+         void slotWindowToDesktop( int );
+     //void slotWindowToListPosition( int );
++        void slotSwitchToScreen( int );
++        void slotWindowToScreen( int );
++        void slotSwitchToNextScreen();
++        void slotWindowToNextScreen();
+ 
+         void slotWindowMaximize();
+         void slotWindowMaximizeVertical();
+@@ -481,6 +495,7 @@
+         int current_desktop;
+         int number_of_desktops;
+         QMemArray<int> desktop_focus_chain;
++        int active_screen;
+ 
+         QWidget* active_popup;
+         Client* active_popup_client;
+--- a/kwin/tabbox.cpp
++++ b/kwin/tabbox.cpp
+@@ -23,7 +23,6 @@
+ #include <klocale.h>
+ #include <qapplication.h>
+ #include <qdesktopwidget.h>
+-#include <qcursor.h>
+ #include <kstringhandler.h>
+ #include <stdarg.h>
+ #include <kdebug.h>
+@@ -110,26 +109,36 @@
+ 
+     while ( c )
+         {
++        Client* add = NULL;
+         if ( ((desktop == -1) || c->isOnDesktop(desktop))
+              && c->wantsTabFocus() )
++            { // don't add windows that have modal dialogs
++            Client* modal = c->findModal();
++            if( modal == NULL || modal == c )
++                add = c;
++            else if( !list.contains( modal ))
++                add = modal;
++            else
++                {
++                // nothing
++                }
++            }
++
++        if( options->separateScreenFocus && options->xineramaEnabled )
+             {
+-            if ( start == c )
++            if( c->screen() != workspace()->activeScreen())
++                add = NULL;
++            }
++
++        if( add != NULL )
++            {
++            if ( start == add )
+                 {
+-                list.remove( c );
+-                list.prepend( c );
++                list.remove( add );
++                list.prepend( add );
+                 }
+             else
+-                { // don't add windows that have modal dialogs
+-                Client* modal = c->findModal();
+-                if( modal == NULL || modal == c )
+-                    list += c;
+-                else if( !list.contains( modal ))
+-                    list += modal;
+-                else
+-                    {
+-                    // nothing
+-                    }
+-                }
++                list += add;
+             }
+ 
+         if ( chain )
+@@ -156,7 +165,7 @@
+     {
+     int w, h, cw = 0, wmax = 0;
+ 
+-    QRect r = KGlobalSettings::desktopGeometry(QCursor::pos());
++    QRect r = workspace()->screenGeometry( workspace()->activeScreen());
+ 
+     // calculate height of 1 line
+     // fontheight + 1 pixel above + 1 pixel below, or 32x32 icon + 2 pixel above + below
+--- a/kwin/kcmkwin/kwinoptions/windows.h
++++ b/kwin/kcmkwin/kwinoptions/windows.h
+@@ -86,6 +86,7 @@
+   void delayFocusOnTog(bool);
+   void clickRaiseOnTog(bool);
+   void updateAltTabMode();
++  void updateActiveMouseScreen();
+ 	void changed() { emit KCModule::changed(true); }
+ 
+ 
+@@ -101,6 +102,8 @@
+   void setDelayFocusInterval(int);
+   void setDelayFocus(bool);
+   void setClickRaise(bool);
++  void setSeparateScreenFocus(bool);
++  void setActiveMouseScreen(bool);
+   void setAltTabMode(bool);
+   void setTraverseAll(bool);
+   void setRollOverDesktops(bool);
+@@ -113,6 +116,8 @@
+   QCheckBox *clickRaiseOn;
+   KIntNumInput *autoRaise;
+   KIntNumInput *delayFocus;
++  QCheckBox *separateScreenFocus;
++  QCheckBox *activeMouseScreen;
+ 
+   QButtonGroup *kbdBox;
+   QCheckBox    *altTabPopup;
+--- a/kwin/kcmkwin/kwinoptions/windows.cpp
++++ b/kwin/kcmkwin/kwinoptions/windows.cpp
+@@ -76,6 +76,8 @@
+ #define KWIN_SHADEHOVER_INTERVAL   "ShadeHoverInterval"
+ #define KWIN_FOCUS_STEALING        "FocusStealingPreventionLevel"
+ #define KWIN_HIDE_UTILITY          "HideUtilityWindowsForInactive"
++#define KWIN_SEPARATE_SCREEN_FOCUS "SeparateScreenFocus"
++#define KWIN_ACTIVE_MOUSE_SCREEN   "ActiveMouseScreen"
+ 
+ // kwm config keywords
+ #define KWM_ELECTRIC_BORDER                  "ElectricBorders"
+@@ -209,6 +211,27 @@
+     QWhatsThis::add( delayFocus, i18n("This is the delay after which the window the mouse pointer is over"
+                                        " will automatically receive focus.") );
+ 
++    separateScreenFocus = new QCheckBox( i18n( "S&eparate screen focus" ), fcsBox );
++    fLay->addWidget( separateScreenFocus );
++    wtstr = i18n( "When this option is enabled, focus operations are limited only to the active Xinerama screen" );
++    QWhatsThis::add( separateScreenFocus, wtstr );
++
++    activeMouseScreen = new QCheckBox( i18n( "Active &mouse screen" ), fcsBox );
++    fLay->addWidget( activeMouseScreen );
++    wtstr = i18n( "When this option is enabled, active Xinerama screen (where for example new windows appear)"
++                  " is the screen with the mouse pointer. When disabled, the active Xinerama screen is the screen"
++                  " with the focused window. This option is by default disabled for Click to focus and"
++                  " enabled for other focus policies." );
++    QWhatsThis::add( activeMouseScreen, wtstr );
++    connect(focusCombo, SIGNAL(activated(int)), this, SLOT(updateActiveMouseScreen()));
++
++    if (!QApplication::desktop()->isVirtualDesktop() ||
++        QApplication::desktop()->numScreens() == 1) // No Ximerama 
++    {
++        separateScreenFocus->hide();
++        activeMouseScreen->hide();
++    }
++
+     lay->addWidget(fcsBox);
+ 
+     kbdBox = new QButtonGroup(i18n("Navigation"), this);
+@@ -260,6 +283,8 @@
+     connect(fcsBox, SIGNAL(clicked(int)), SLOT(changed()));
+     connect(autoRaise, SIGNAL(valueChanged(int)), SLOT(changed()));
+     connect(delayFocus, SIGNAL(valueChanged(int)), SLOT(changed()));
++    connect(separateScreenFocus, SIGNAL(clicked()), SLOT(changed()));
++    connect(activeMouseScreen, SIGNAL(clicked()), SLOT(changed()));
+     connect(altTabPopup, SIGNAL(clicked()), SLOT(changed()));
+     connect(traverseAll, SIGNAL(clicked()), SLOT(changed()));
+     connect(rollOverDesktops, SIGNAL(clicked()), SLOT(changed()));
+@@ -366,6 +391,22 @@
+ void KFocusConfig::clickRaiseOnTog(bool ) {
+ }
+ 
++void KFocusConfig::setSeparateScreenFocus(bool s) {
++    separateScreenFocus->setChecked(s);
++}
++
++void KFocusConfig::setActiveMouseScreen(bool a) {
++    activeMouseScreen->setChecked(a);
++}
++
++void KFocusConfig::updateActiveMouseScreen()
++{
++    // on by default for non click to focus policies
++    KConfigGroup cfg( config, "Windows" );
++    if( !cfg.hasKey( KWIN_ACTIVE_MOUSE_SCREEN ))
++        setActiveMouseScreen( focusCombo->currentItem() != 0 );
++}
++
+ void KFocusConfig::setAltTabMode(bool a) {
+     altTabPopup->setChecked(a);
+ }
+@@ -412,6 +453,10 @@
+     setClickRaise(key != "off");
+     setAutoRaiseEnabled();      // this will disable/hide the auto raise delay widget if focus==click
+     setDelayFocusEnabled();
++    
++    setSeparateScreenFocus( config->readBoolEntry(KWIN_SEPARATE_SCREEN_FOCUS, false));
++    // on by default for non click to focus policies
++    setActiveMouseScreen( config->readBoolEntry(KWIN_ACTIVE_MOUSE_SCREEN, focusCombo->currentItem() != 0 ));
+ 
+     key = config->readEntry(KWIN_ALTTABMODE, "KDE");
+     setAltTabMode(key == "KDE");
+@@ -467,6 +512,9 @@
+     else
+         config->writeEntry(KWIN_CLICKRAISE, "off");
+ 
++    config->writeEntry(KWIN_SEPARATE_SCREEN_FOCUS, separateScreenFocus->isChecked());
++    config->writeEntry(KWIN_ACTIVE_MOUSE_SCREEN, activeMouseScreen->isChecked());
++
+     if (altTabPopup->isChecked())
+         config->writeEntry(KWIN_ALTTABMODE, "KDE");
+     else
+@@ -500,6 +548,9 @@
+     setAutoRaise(false);
+     setDelayFocus(false);
+     setClickRaise(true);
++    setSeparateScreenFocus( false );
++    // on by default for non click to focus policies
++    setActiveMouseScreen( focusCombo->currentItem() != 0 );
+     setAltTabMode(true);
+     setTraverseAll( false );
+     setRollOverDesktops(true);
+--- a/kwin/popupinfo.h
++++ b/kwin/popupinfo.h
+@@ -24,7 +24,7 @@
+     {
+     Q_OBJECT
+     public:
+-        PopupInfo( const char *name=0 );
++        PopupInfo( Workspace* ws, const char *name=0 );
+         ~PopupInfo();
+ 
+         void reset();
+@@ -43,6 +43,7 @@
+         bool m_show;
+         bool m_shown;
+         QString m_infoString;
++        Workspace* workspace;
+     };
+ 
+ } // namespace
+--- a/kwin/options.cpp
++++ b/kwin/options.cpp
+@@ -71,6 +71,9 @@
+     altTabStyle = KDE; // what a default :-)
+     if ( val == "CDE" )
+         altTabStyle = CDE;
++        
++    separateScreenFocus = config->readBoolEntry( "SeparateScreenFocus", false );
++    activeMouseScreen = config->readBoolEntry( "ActiveMouseScreen", focusPolicy != ClickToFocus );
+ 
+     rollOverDesktops = config->readBoolEntry("RollOverDesktops", TRUE);
+     
+@@ -100,9 +103,10 @@
+     delete gc;
+ 
+     placement = Placement::policyFromString( config->readEntry("Placement"), true );
++    xineramaPlacementScreen = KCLAMP( config->readNumEntry( "XineramaPlacementScreen", -1 ),
++        -1, qApp->desktop()->numScreens() - 1 );
+ 
+     animateShade = config->readBoolEntry("AnimateShade", TRUE );
+-
+     animateMinimize = config->readBoolEntry("AnimateMinimize", TRUE );
+     animateMinimizeSpeed = config->readNumEntry("AnimateMinimizeSpeed", 5 );
+ 
+--- a/kwin/placement.cpp
++++ b/kwin/placement.cpp
+@@ -473,7 +473,7 @@
+          it != mainwindows.end();
+          ++it )
+         {
+-        if( (*it)->isSpecialWindow())
++        if( mainwindows.count() > 1 && (*it)->isSpecialWindow())
+             continue; // don't consider toolbars etc when placing
+         ++mains_count;
+         place_on2 = *it;
+@@ -502,6 +502,11 @@
+             }
+         place_on = place_on2; // use the only window filtered together with 'mains_count'
+         }
++    if( place_on->isDesktop())
++        {
++        place( c, area, Centered );
++        return;
++        }
+     QRect geom = c->geometry();
+     geom.moveCenter( place_on->geometry().center());
+     c->move( geom.topLeft());
+--- a/kwin/client.cpp
++++ b/kwin/client.cpp
+@@ -1255,6 +1255,20 @@
+     return isOnDesktop( workspace()->currentDesktop());
+     }
+ 
++int Client::screen() const
++    {
++    if( !options->xineramaEnabled )
++        return 0;
++    return workspace()->screenNumber( geometry().center());
++    }
++
++bool Client::isOnScreen( int screen ) const
++    {
++    if( !options->xineramaEnabled )
++        return screen == 0;
++    return workspace()->screenGeometry( screen ).intersects( geometry());
++    }
++
+ // performs activation and/or raising of the window
+ void Client::takeActivity( int flags, bool handled, allowed_t )
+     {
+--- a/kwin/popupinfo.cpp
++++ b/kwin/popupinfo.cpp
+@@ -25,7 +25,6 @@
+ #include <klocale.h>
+ #include <qapplication.h>
+ #include <qdesktopwidget.h>
+-#include <qcursor.h>
+ #include <kstringhandler.h>
+ #include <kglobalsettings.h>
+ 
+@@ -34,8 +33,8 @@
+ namespace KWinInternal
+ {
+ 
+-PopupInfo::PopupInfo( const char *name )
+-    : QWidget( 0, name )
++PopupInfo::PopupInfo( Workspace* ws, const char *name )
++    : QWidget( 0, name ), workspace( ws )
+     {
+     m_infoString = "";
+     m_shown = false;
+@@ -60,7 +59,7 @@
+  */
+ void PopupInfo::reset()
+     {
+-    QRect r = KGlobalSettings::desktopGeometry(QCursor::pos());
++    QRect r = workspace->screenGeometry( workspace->activeScreen());
+ 
+     int w = fontMetrics().width( m_infoString ) + 30;
+ 
+--- a/kwin/geometry.cpp
++++ b/kwin/geometry.cpp
+@@ -211,14 +211,11 @@
+ 
+   \sa geometry()
+  */
+-QRect Workspace::clientArea( clientAreaOption opt, const QPoint& p, int desktop ) const
++QRect Workspace::clientArea( clientAreaOption opt, int screen, int desktop ) const
+     {
+     if( desktop == NETWinInfo::OnAllDesktops || desktop == 0 )
+         desktop = currentDesktop();
+     QDesktopWidget *desktopwidget = KApplication::desktop();
+-    int screen = desktopwidget->isVirtualDesktop() ? desktopwidget->screenNumber( p ) : desktopwidget->primaryScreen();
+-    if( screen < 0 )
+-        screen = desktopwidget->primaryScreen();
+     QRect sarea = screenarea // may be NULL during KWin initialization
+         ? screenarea[ desktop ][ screen ]
+         : desktopwidget->screenGeometry( screen );
+@@ -263,11 +260,21 @@
+     return QRect();
+     }
+ 
++QRect Workspace::clientArea( clientAreaOption opt, const QPoint& p, int desktop ) const
++    {
++    QDesktopWidget *desktopwidget = KApplication::desktop();
++    int screen = desktopwidget->screenNumber( p );
++    if( screen < 0 )
++        screen = desktopwidget->primaryScreen();
++    return clientArea( opt, screen, desktop );
++    }
++
+ QRect Workspace::clientArea( clientAreaOption opt, const Client* c ) const
+     {
+     return clientArea( opt, c->geometry().center(), c->desktop());
+     }
+ 
++
+ /*!
+   Client \a c is moved around to position \a pos. This gives the
+   workspace the opportunity to interveniate and to implement
+@@ -896,10 +903,6 @@
+             setGeometry( area );
+         return;
+         }
+-    if( maximizeMode() != MaximizeRestore )
+-	// TODO update geom_restore?
+-        changeMaximize( false, false, true ); // adjust size
+-
+     if( isFullScreen())
+         {
+         QRect area = workspace()->clientArea( FullScreenArea, this );
+@@ -926,6 +929,10 @@
+         return;
+         }
+ 
++    if( maximizeMode() != MaximizeRestore )
++	// TODO update geom_restore?
++        changeMaximize( false, false, true ); // adjust size
++
+     if( !isShade()) // TODO
+         {
+         int old_diff_x = workarea_diff_x;
+@@ -1722,6 +1729,7 @@
+     sendSyntheticConfigureNotify();
+     updateWindowRules();
+     checkMaximizeGeometry();
++    workspace()->checkActiveScreen( this );
+     }
+ 
+ void Client::plainResize( int w, int h, ForceGeometry_t force )
+@@ -1775,6 +1783,7 @@
+     sendSyntheticConfigureNotify();
+     updateWindowRules();
+     checkMaximizeGeometry();
++    workspace()->checkActiveScreen( this );
+     }
+ 
+ /*!
+@@ -1795,6 +1804,7 @@
+     sendSyntheticConfigureNotify();
+     updateWindowRules();
+     checkMaximizeGeometry();
++    workspace()->checkActiveScreen( this );
+     }
+ 
+ 
+--- a/kwin/kwin.kcfg
++++ b/kwin/kwin.kcfg
+@@ -60,6 +60,9 @@
+   <entry key="IgnorePositionClasses" type="StringList" />
+   <entry key="KillPingTimeout" type="Int" />
+   <entry key="ShowDesktopIsMinimizeAll" type="Bool" />
++  <entry key="SeparateScreenFocus" type="Bool" />
++  <entry key="ActiveMouseScreen" type="Bool" />
++  <entry key="XineramaPlacementScreen" type="Int" />
+   </group>
+ 
+  <group name="WM" >
+--- a/kwin/client.h
++++ b/kwin/client.h
+@@ -118,6 +118,9 @@
+         bool isOnCurrentDesktop() const;
+         bool isOnAllDesktops() const;
+         void setOnAllDesktops( bool set );
++        
++        bool isOnScreen( int screen ) const; // true if it's at least partially there
++        int screen() const; // the screen where the center is
+ 
+     // !isMinimized() && not hidden, i.e. normally visible on some virtual desktop
+         bool isShown( bool shaded_is_shown ) const;
+--- a/kwin/manage.cpp
++++ b/kwin/manage.cpp
+@@ -166,7 +166,7 @@
+                  it != mainclients.end();
+                  ++it )
+                 {
+-                if( (*it)->isSpecialWindow())
++                if( mainclients.count() > 1 && (*it)->isSpecialWindow())
+                     continue; // don't consider toolbars etc when placing
+                 maincl = *it;
+                 if( (*it)->isOnCurrentDesktop())
+@@ -202,9 +202,14 @@
+     if( isMapped || session )
+         area = workspace()->clientArea( FullArea, geom.center(), desktop());
+     else if( options->xineramaPlacementEnabled )
+-        area = workspace()->clientArea( PlacementArea, QCursor::pos(), desktop());
++        {
++        int screen = options->xineramaPlacementScreen;
++        if( screen == -1 ) // active screen
++            screen = asn_data.xinerama() == -1 ? workspace()->activeScreen() : asn_data.xinerama();
++        area = workspace()->clientArea( PlacementArea, workspace()->screenGeometry( screen ).center(), desktop());
++        }
+     else
+-        area = workspace()->clientArea( PlacementArea, geom.center(), desktop());
++        area = workspace()->clientArea( PlacementArea, QCursor::pos(), desktop());
+ 
+     if( int type = checkFullScreenHack( geom ))
+         {
+--- a/kwin/workspace.cpp
++++ b/kwin/workspace.cpp
+@@ -71,6 +71,7 @@
+     QObject           (0, "workspace"),
+     current_desktop   (0),
+     number_of_desktops(0),
++    active_screen     (0),
+     active_popup( NULL ),
+     active_popup_client( NULL ),
+     desktop_widget    (0),
+@@ -191,7 +192,7 @@
+     client_keys = new KGlobalAccel( this );
+     initShortcuts();
+     tab_box = new TabBox( this );
+-    popupinfo = new PopupInfo( );
++    popupinfo = new PopupInfo( this );
+ 
+     init();
+ 
+@@ -290,6 +291,7 @@
+         NET::WM2ExtendedStrut |
+         NET::WM2KDETemporaryRules |
+         NET::WM2ShowingDesktop |
++        NET::WM2FullPlacement |
+         NET::WM2DesktopLayout |
+         0
+         ,
+@@ -1527,6 +1529,83 @@
+     { // DCOP-only, unused
+     }
+ 
++int Workspace::numScreens() const
++    {
++    if( !options->xineramaEnabled )
++        return 0;
++    return qApp->desktop()->numScreens();
++    }
++
++int Workspace::activeScreen() const
++    {
++    if( !options->xineramaEnabled )
++        return 0;
++    if( !options->activeMouseScreen )
++        {
++        if( activeClient() != NULL && !activeClient()->isOnScreen( active_screen ))
++            return qApp->desktop()->screenNumber( activeClient()->geometry().center());
++        return active_screen;
++        }
++    return qApp->desktop()->screenNumber( QCursor::pos());
++    }
++
++// check whether a client moved completely out of what's considered the active screen,
++// if yes, set a new active screen
++void Workspace::checkActiveScreen( const Client* c )
++    {
++    if( !options->xineramaEnabled )
++        return;
++    if( !c->isActive())
++        return;
++    if( !c->isOnScreen( active_screen ))
++        active_screen = c->screen();
++    }
++
++// called e.g. when a user clicks on a window, set active screen to be the screen
++// where the click occured
++void Workspace::setActiveScreenMouse( QPoint mousepos )
++    {
++    if( !options->xineramaEnabled )
++        return;
++    active_screen = qApp->desktop()->screenNumber( mousepos );
++    }
++
++QRect Workspace::screenGeometry( int screen ) const
++    {
++    if( !options->xineramaEnabled )
++        return qApp->desktop()->geometry();
++    return qApp->desktop()->screenGeometry( screen );
++    }
++
++int Workspace::screenNumber( QPoint pos ) const
++    {
++    if( !options->xineramaEnabled )
++        return 0;
++    return qApp->desktop()->screenNumber( pos );
++    }
++
++
++void Workspace::sendClientToScreen( Client* c, int screen )
++    {
++    if( c->screen() == screen ) // don't use isOnScreen(), that's true even when only parti
++                                // ally
++        return;
++    GeometryUpdatesPostponer blocker( c );
++    QRect old_sarea = clientArea( MaximizeArea, c );
++    QRect sarea = clientArea( MaximizeArea, screen, c->desktop());
++    c->setGeometry( sarea.x() - old_sarea.x() + c->x(), sarea.y() - old_sarea.y() + c->y(),
++        c->size().width(), c->size().height());
++    c->checkWorkspacePosition();
++    ClientList transients_stacking_order = ensureStackingOrder( c->transients());
++    for( ClientList::ConstIterator it = transients_stacking_order.begin();
++         it != transients_stacking_order.end();
++         ++it )
++        sendClientToScreen( *it, screen );
++    if( c->isActive())
++        active_screen = screen;
++    }
++
++
+ void Workspace::updateDesktopLayout()
+     {
+     // rootInfo->desktopLayoutCorner(); // I don't find this worth bothering, feel free to
+--- a/kwin/activation.cpp
++++ b/kwin/activation.cpp
+@@ -360,6 +360,8 @@
+         return;
+         }
+     c->takeActivity( flags, handled, Allowed );
++    if( !c->isOnScreen( active_screen ))
++        active_screen = c->screen();
+     }
+ 
+ void Workspace::handleTakeActivity( Client* c, Time /*timestamp*/, int flags )
+@@ -413,6 +415,13 @@
+                 {
+                 if( !(*it)->isShown( false ) || !(*it)->isOnCurrentDesktop())
+                     continue;
++                if( options->separateScreenFocus )
++                    {
++                    if( c != NULL && !(*it)->isOnScreen( c->screen()))
++                        continue;
++                    if( c == NULL && !(*it)->isOnScreen( activeScreen()))
++                        continue;
++                    }
+                 if( mainwindows.contains( *it ))
+                     {
+                     get_focus = *it;
+@@ -438,6 +447,31 @@
+     return true;
+     }
+ 
++void Workspace::setCurrentScreen( int new_screen )
++    {
++    if (new_screen < 0 || new_screen > numScreens())
++        return;
++    if ( !options->focusPolicyIsReasonable())
++        return;
++    closeActivePopup();
++    Client* get_focus = NULL;
++    for( ClientList::ConstIterator it = focus_chain[currentDesktop()].fromLast();
++         it != focus_chain[currentDesktop()].end();
++         --it )
++        {
++        if( !(*it)->isShown( false ) || !(*it)->isOnCurrentDesktop())
++            continue;
++        if( !(*it)->screen() == new_screen )
++            continue;
++        get_focus = *it;
++        break;
++        }
++    if( get_focus == NULL )
++        get_focus = findDesktop( true, currentDesktop());
++    if( get_focus != NULL && get_focus != mostRecentlyActivatedClient())
++        requestFocus( get_focus );
++    active_screen = new_screen;
++    }
+ 
+ void Workspace::gotFocusIn( const Client* c )
+     {
+@@ -860,6 +894,8 @@
+         desktop = asn_data.desktop();
+     if( !isOnAllDesktops())
+         workspace()->sendClientToDesktop( this, desktop, true );
++    if( asn_data.xinerama() != -1 )
++        workspace()->sendClientToScreen( this, asn_data.xinerama());
+     Time timestamp = asn_id.timestamp();
+     if( timestamp == 0 && asn_data.timestamp() != -1U )
+         timestamp = asn_data.timestamp();
+--- a/kwin/kwinbindings.cpp
++++ b/kwin/kwinbindings.cpp
+@@ -104,6 +104,15 @@
+ 	DEF( I18N_NOOP("Window One Desktop to the Left"),      0, 0, slotWindowToDesktopLeft() );
+ 	DEF( I18N_NOOP("Window One Desktop Up"),               0, 0, slotWindowToDesktopUp() );
+ 	DEF( I18N_NOOP("Window One Desktop Down"),             0, 0, slotWindowToDesktopDown() );
++	DEF( I18N_NOOP("Window to Screen 0"),                  0, 0, slotWindowToScreen(int) );
++	DEF( I18N_NOOP("Window to Screen 1"),                  0, 0, slotWindowToScreen(int) );
++	DEF( I18N_NOOP("Window to Screen 2"),                  0, 0, slotWindowToScreen(int) );
++	DEF( I18N_NOOP("Window to Screen 3"),                  0, 0, slotWindowToScreen(int) );
++	DEF( I18N_NOOP("Window to Screen 4"),                  0, 0, slotWindowToScreen(int) );
++	DEF( I18N_NOOP("Window to Screen 5"),                  0, 0, slotWindowToScreen(int) );
++	DEF( I18N_NOOP("Window to Screen 6"),                  0, 0, slotWindowToScreen(int) );
++	DEF( I18N_NOOP("Window to Screen 7"),                  0, 0, slotWindowToScreen(int) );
++	DEF( I18N_NOOP("Window to Next Screen"),               0, 0, slotWindowToNextScreen() );
+ 
+ 	keys->insert( "Group:Desktop Switching", i18n("Desktop Switching") );
+ 	DEF( I18N_NOOP("Switch to Desktop 1"),  CTRL+Qt::Key_F1, WIN+Qt::Key_F1, slotSwitchToDesktop(int) );
+@@ -132,6 +141,15 @@
+ 	DEF( I18N_NOOP("Switch One Desktop to the Left"),      0, 0, slotSwitchDesktopLeft() );
+ 	DEF( I18N_NOOP("Switch One Desktop Up"),               0, 0, slotSwitchDesktopUp() );
+ 	DEF( I18N_NOOP("Switch One Desktop Down"),             0, 0, slotSwitchDesktopDown() );
++	DEF( I18N_NOOP("Switch to Screen 0"),                  0, 0, slotSwitchToScreen(int) );
++	DEF( I18N_NOOP("Switch to Screen 1"),                  0, 0, slotSwitchToScreen(int) );
++	DEF( I18N_NOOP("Switch to Screen 2"),                  0, 0, slotSwitchToScreen(int) );
++	DEF( I18N_NOOP("Switch to Screen 3"),                  0, 0, slotSwitchToScreen(int) );
++	DEF( I18N_NOOP("Switch to Screen 4"),                  0, 0, slotSwitchToScreen(int) );
++	DEF( I18N_NOOP("Switch to Screen 5"),                  0, 0, slotSwitchToScreen(int) );
++	DEF( I18N_NOOP("Switch to Screen 6"),                  0, 0, slotSwitchToScreen(int) );
++	DEF( I18N_NOOP("Switch to Screen 7"),                  0, 0, slotSwitchToScreen(int) );
++	DEF( I18N_NOOP("Switch to Next Screen"),               0, 0, slotSwitchToNextScreen() );
+ 
+ 	keys->insert( "Group:Miscellaneous", i18n("Miscellaneous") );
+ 	DEF( I18N_NOOP("Mouse Emulation"),                     ALT+Qt::Key_F12, 0, slotMouseEmulation() );

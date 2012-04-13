@@ -1,0 +1,6 @@
+kdebase-bin: setgid-binary usr/bin/kdesud 2755 root/nogroup
+kdebase-bin: shlib-missing-in-control-file libkdeinit_kcminit_startup.so for usr/lib/libkdeinit_kcminit_startup.so
+kdebase-bin: shlib-missing-in-control-file libkdeinit_kcminit.so for usr/lib/libkdeinit_kcminit.so
+kdebase-bin: shlib-missing-in-control-file libkdeinit_khotkeys.so for usr/lib/libkdeinit_khotkeys.so
+kdebase-bin: shlib-missing-in-control-file libkdeinit_kxkb.so for usr/lib/libkdeinit_kxkb.so
+

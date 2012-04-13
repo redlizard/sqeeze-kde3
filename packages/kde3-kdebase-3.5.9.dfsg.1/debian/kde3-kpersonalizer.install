@@ -1,0 +1,13 @@
+debian/tmp/opt/kde3/bin/kpersonalizer
+debian/tmp/opt/kde3/share/applications/kde/kpersonalizer.desktop
+debian/tmp/opt/kde3/share/applnk/System/kpersonalizer.desktop
+debian/tmp/opt/kde3/share/apps/kpersonalizer/pics/step1.png
+debian/tmp/opt/kde3/share/apps/kpersonalizer/pics/step2.png
+debian/tmp/opt/kde3/share/apps/kpersonalizer/pics/step3.png
+debian/tmp/opt/kde3/share/apps/kpersonalizer/pics/step4.png
+debian/tmp/opt/kde3/share/apps/kpersonalizer/pics/step5.png
+debian/tmp/opt/kde3/share/icons/crystalsvg/16x16/apps/kpersonalizer.png
+debian/tmp/opt/kde3/share/icons/crystalsvg/32x32/apps/kpersonalizer.png
+
+debian/icons/kpersonalizer.xpm		/usr/share/pixmaps
+debian/icons/kpersonalizer-16.xpm	/usr/share/pixmaps

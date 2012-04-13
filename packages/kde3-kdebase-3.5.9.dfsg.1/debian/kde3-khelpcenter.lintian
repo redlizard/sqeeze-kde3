@@ -1,0 +1,10 @@
+khelpcenter: no-shlibs-control-file usr/lib/libkdeinit_khelpcenter.so
+khelpcenter: postinst-must-call-ldconfig usr/lib/libkdeinit_khelpcenter.so
+khelpcenter: postrm-should-call-ldconfig usr/lib/libkdeinit_khelpcenter.so
+khelpcenter: package-name-doesnt-match-sonames libkdeinit-khelpcenter
+#libexec wasn't invented back then
+khelpcenter: script-with-language-extension usr/bin/khc_docbookdig.pl
+khelpcenter: script-with-language-extension usr/bin/khc_htdig.pl
+khelpcenter: script-with-language-extension usr/bin/khc_htsearch.pl
+khelpcenter: script-with-language-extension usr/bin/khc_mansearch.pl
+

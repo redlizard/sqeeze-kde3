@@ -1,0 +1,57 @@
+Source: kde3-libxxf86misc
+Section: x11
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: David Nusinow <dnusinow@debian.org>, Andres Salomon <dilinger@debian.org>, Drew Parsons <dparsons@debian.org>, Julien Cristau <jcristau@debian.org>
+Build-Depends: debhelper (>= 5.0.0), libx11-dev (>= 1:0.99.2), x11proto-xf86misc-dev, libxext-dev (>= 1:0.99.1), pkg-config, quilt
+Standards-Version: 3.7.3
+Vcs-Git: git://git.debian.org/git/pkg-xorg/lib/libxxf86misc
+Vcs-Browser: http://git.debian.org/?p=pkg-xorg/lib/libxxf86misc.git
+
+Package: kde3-libxxf86misc1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: X11 XFree86 miscellaneous extension library
+ libXxf86misc provides an interface to the XFree86-Misc extension, which
+ allows client applications to query the current keyboard and mouse settings
+ of the running XFree86-based (XFree86, Xorg) server.
+ .
+ More information about X.Org can be found at:
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+
+Package: kde3-libxxf86misc1-dbg
+Section: libdevel
+Architecture: any
+Priority: extra
+Depends: ${shlibs:Depends}, ${misc:Depends}, kde3-libxxf86misc1 (= ${binary:Version})
+Description: X11 XFree86 miscellaneous extension library (debug package)
+ libXxf86misc provides an interface to the XFree86-Misc extension, which
+ allows client applications to query the current keyboard and mouse settings
+ of the running XFree86-based (XFree86, Xorg) server.
+ .
+ This package contains the debug versions of the library found in libxxf86misc1.
+ Non-developers likely have little use for this package.
+ .
+ More information about X.Org can be found at:
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+
+Package: kde3-libxxf86misc-dev
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, kde3-libxxf86misc1 (= ${binary:Version}), libx11-dev, x11proto-xf86misc-dev
+Pre-Depends: x11-common (>= 1:7.0.0)
+Description: X11 XFree86 miscellaneous extension library (development headers)
+ libXxf86misc provides an interface to the XFree86-Misc extension, which
+ allows client applications to query the current keyboard and mouse settings
+ of the running XFree86-based (XFree86, Xorg) server.
+ .
+ This package contains the development headers for the library found in
+ libxxf86misc1.  Non-developers likely have little use for this package.
+ .
+ More information about X.Org can be found at:
+ <URL:http://xorg.freedesktop.org>
+ <URL:http://lists.freedesktop.org/mailman/listinfo/xorg>
+

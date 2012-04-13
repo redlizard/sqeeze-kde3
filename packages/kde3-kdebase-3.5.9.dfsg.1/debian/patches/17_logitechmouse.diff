@@ -1,0 +1,57 @@
+--- a/kcontrol/input/consoleUserPerms
++++ b/kcontrol/input/consoleUserPerms
+@@ -1,42 +1,16 @@
+-#!/bin/bash
+-#
+-# /etc/hotplug/usb/consoleUserPerms
+-#
+-# Sets up newly plugged in USB device so that the user who owns
+-# the console according to pam_console can access it from user space
+-#
+-# Note that for this script to work, you'll need all of the following:
+-# a) a line in the file /etc/hotplug/usb.usermap or another usermap file
+-#    in /etc/hotplug/usb/ that corresponds to the device you are using.
+-# b) a setup using pam_console creates the respective lock files
+-#    containing the name of the respective user. You can check for that
+-#    by executing "echo `cat /var/{run,lock}/console.lock`" and
+-#    verifying the appropriate user is mentioned somewhere there.
+-# c) a Linux kernel supporting hotplug and usbdevfs
+-# d) the hotplug package (http://linux-hotplug.sourceforge.net/)
+-#
+-# In the usermap file, the first field "usb module" should be named
+-# "consoleUserPerms" to invoke this script.
+-#
++#!/bin/sh
+ 
+-if [ "${ACTION}" = "add" ] && [ -f "${DEVICE}" ]
++GROUP=plugdev
++
++if [ "${ACTION}" = "add" ]
+ then
+-    # New code, using lock files instead of copying /dev/console permissions
+-    # This also works with non-kdm logins (e.g. on a virtual terminal)
+-    # Idea and code from Nalin Dahyabhai <nalin@redhat.com>
+-    if [ -f /var/run/console.lock ]
+-    then
+-        CONSOLEOWNER=`cat /var/run/console.lock`
+-    elif [ -f /var/lock/console.lock ]
+-    then
+-        CONSOLEOWNER=`cat /var/lock/console.lock`
+-    else
+-        CONSOLEOWNER=
+-    fi
+-    if [ -n "$CONSOLEOWNER" ]
+-    then
+-        chmod 0000 "${DEVICE}"
+-        chown "$CONSOLEOWNER" "${DEVICE}"
+-        chmod 0600 "${DEVICE}"
++    if getent group $GROUP > /dev/null; then
++	N=0
++	while [ ! -e $DEVICE ] && [ $N -lt 25 ]; do
++		sleep 1
++		N=$(expr $N + 1)
++	done
++	chmod 660 "${DEVICE}"
++	chown root:$GROUP "${DEVICE}"
+     fi
+ fi

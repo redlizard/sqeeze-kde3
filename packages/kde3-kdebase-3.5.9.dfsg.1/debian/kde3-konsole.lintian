@@ -1,0 +1,5 @@
+konsole: no-shlibs-control-file usr/lib/libkdeinit_konsole.so
+konsole: postinst-must-call-ldconfig usr/lib/libkdeinit_konsole.so
+konsole: postrm-should-call-ldconfig usr/lib/libkdeinit_konsole.so
+konsole: package-name-doesnt-match-sonames libkdeinit-konsole
+

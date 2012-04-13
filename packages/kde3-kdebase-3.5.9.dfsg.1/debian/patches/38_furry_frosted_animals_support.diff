@@ -1,0 +1,22 @@
+--- a/kcontrol/konqhtml/pluginopts.cpp
++++ b/kcontrol/konqhtml/pluginopts.cpp
+@@ -376,6 +376,8 @@
+     else {//keep sync with kdebase/nsplugins
+         paths.append("$HOME/.mozilla/plugins");
+         paths.append("$HOME/.netscape/plugins");
++	paths.append("/usr/lib/iceweasel/plugins");
++        paths.append("/usr/lib/iceape/plugins");
+         paths.append("/usr/lib/firefox/plugins");
+         paths.append("/usr/lib64/browser-plugins");
+         paths.append("/usr/lib/browser-plugins");
+--- a/nsplugins/plugin_paths.cpp
++++ b/nsplugins/plugin_paths.cpp
+@@ -41,6 +41,8 @@
+         // keep sync with kdebase/kcontrol/konqhtml
+         paths.append("$HOME/.mozilla/plugins");
+         paths.append("$HOME/.netscape/plugins");
++	paths.append("/usr/lib/iceweasel/plugins");
++	paths.append("/usr/lib/iceape/plugins");
+         paths.append("/usr/lib/firefox/plugins");
+         paths.append("/usr/lib64/browser-plugins");
+         paths.append("/usr/lib/browser-plugins");

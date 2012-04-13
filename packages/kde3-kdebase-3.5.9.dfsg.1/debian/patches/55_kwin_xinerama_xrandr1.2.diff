@@ -1,0 +1,82 @@
+diff -uNr kdebase-3.5.9.dfsg.1/kwin/geometry.cpp kdebase-3.5.9.dfsg.1.n/kwin/geometry.cpp
+--- kdebase-3.5.9.dfsg.1/kwin/geometry.cpp	2008-03-10 16:48:43.000000000 +0200
++++ kdebase-3.5.9.dfsg.1.n/kwin/geometry.cpp	2008-03-10 16:56:12.000000000 +0200
+@@ -47,6 +47,11 @@
+     NETSize desktop_geometry;
+     desktop_geometry.width = geom.width();
+     desktop_geometry.height = geom.height();
++
++    // Xinerama might have been dinamically enabled with XRandr >= 1.2
++    // Update appropriate settings
++    options->updateXineramaSettings();
++
+     rootInfo->setDesktopGeometry( -1, desktop_geometry );
+ 
+     updateClientArea();
+diff -uNr kdebase-3.5.9.dfsg.1/kwin/options.cpp kdebase-3.5.9.dfsg.1.n/kwin/options.cpp
+--- kdebase-3.5.9.dfsg.1/kwin/options.cpp	2008-03-10 16:48:43.000000000 +0200
++++ kdebase-3.5.9.dfsg.1.n/kwin/options.cpp	2008-03-10 16:54:15.000000000 +0200
+@@ -84,23 +84,7 @@
+     if( !focusPolicyIsReasonable()) // #48786, comments #7 and later
+         focusStealingPreventionLevel = 0;
+ 
+-    KConfig *gc = new KConfig("kdeglobals", false, false);
+-    bool isVirtual = KApplication::desktop()->isVirtualDesktop();
+-    gc->setGroup("Windows");
+-    xineramaEnabled = gc->readBoolEntry ("XineramaEnabled", isVirtual ) &&
+-                      isVirtual;
+-    if (xineramaEnabled) 
+-        {
+-        xineramaPlacementEnabled = gc->readBoolEntry ("XineramaPlacementEnabled", true);
+-        xineramaMovementEnabled = gc->readBoolEntry ("XineramaMovementEnabled", true);
+-        xineramaMaximizeEnabled = gc->readBoolEntry ("XineramaMaximizeEnabled", true);
+-        xineramaFullscreenEnabled = gc->readBoolEntry ("XineramaFullscreenEnabled", true);
+-        }
+-    else 
+-        {
+-        xineramaPlacementEnabled = xineramaMovementEnabled = xineramaMaximizeEnabled = xineramaFullscreenEnabled = false;
+-        }
+-    delete gc;
++    updateXineramaSettings();
+ 
+     placement = Placement::policyFromString( config->readEntry("Placement"), true );
+     xineramaPlacementScreen = KCLAMP( config->readNumEntry( "XineramaPlacementScreen", -1 ),
+@@ -223,6 +207,27 @@
+     return changed;
+     }
+ 
++void Options::updateXineramaSettings()
++    {
++    KConfig *gc = new KConfig("kdeglobals", false, false);
++    bool isVirtual = KApplication::desktop()->isVirtualDesktop();
++    gc->setGroup("Windows");
++    xineramaEnabled = gc->readBoolEntry ("XineramaEnabled", isVirtual ) &&
++                      isVirtual;
++    if (xineramaEnabled) 
++        {
++        xineramaPlacementEnabled = gc->readBoolEntry ("XineramaPlacementEnabled", true);
++        xineramaMovementEnabled = gc->readBoolEntry ("XineramaMovementEnabled", true);
++        xineramaMaximizeEnabled = gc->readBoolEntry ("XineramaMaximizeEnabled", true);
++        xineramaFullscreenEnabled = gc->readBoolEntry ("XineramaFullscreenEnabled", true);
++        }
++    else 
++        {
++        xineramaPlacementEnabled = xineramaMovementEnabled = xineramaMaximizeEnabled = xineramaFullscreenEnabled = false;
++        }
++    delete gc;
++    }
++
+ 
+ // restricted should be true for operations that the user may not be able to repeat
+ // if the window is moved out of the workspace (e.g. if the user moves a window
+diff -uNr kdebase-3.5.9.dfsg.1/kwin/options.h kdebase-3.5.9.dfsg.1.n/kwin/options.h
+--- kdebase-3.5.9.dfsg.1/kwin/options.h	2008-03-10 16:48:43.000000000 +0200
++++ kdebase-3.5.9.dfsg.1.n/kwin/options.h	2008-03-10 16:54:48.000000000 +0200
+@@ -33,6 +33,7 @@
+         ~Options();
+ 
+         virtual unsigned long updateSettings();
++        void updateXineramaSettings();
+ 
+         /*!
+           Different focus policies:

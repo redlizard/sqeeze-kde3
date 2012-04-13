@@ -1,0 +1,60 @@
+--- a/kdm/kfrontend/sessions/matchbox.desktop
++++ b/kdm/kfrontend/sessions/matchbox.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=XSession
+-Exec=matchbox
+-TryExec=matchbox
++Exec=matchbox-window-manager
++TryExec=matchbox-window-manager
+ Name=Matchbox
+ Name[bn]=ম্যাচবক্স
+ Name[eo]=Alumetujo
+--- a/kdm/kfrontend/sessions/olvwm.desktop
++++ b/kdm/kfrontend/sessions/olvwm.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=XSession
+-Exec=
+-TryExec=
++Exec=olvwm-x-window-manager
++TryExec=olvwm-x-window-manager
+ Name=OLVWM
+ Name[br]=OVLWM
+ Name[eo]=OLVFA
+--- a/kdm/kfrontend/sessions/pwm.desktop
++++ b/kdm/kfrontend/sessions/pwm.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=XSession
+-Exec=pwm
+-TryExec=pwm
++Exec=pwm1
++TryExec=pwm1
+ Name=PWM
+ Name[eo]=UnuFA
+ Name[hi]=पीडबल्यूएम
+--- a/kdm/kfrontend/sessions/ude.desktop
++++ b/kdm/kfrontend/sessions/ude.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=XSession
+-Exec=ude
+-TryExec=ude
++Exec=uwm
++TryExec=uwm
+ Name=UDE
+ Name[eo]=ULĈ
+ Name[hi]=यूडीई
+--- a/kdm/kfrontend/sessions/olwm.desktop
++++ b/kdm/kfrontend/sessions/olwm.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=XSession
+-Exec=olwm
+-TryExec=olwm
++Exec=olwm-x-window-manager
++TryExec=olwm-x-window-manager
+ Name=OLWM
+ Name[eo]=OLFA
+ Name[hi]=ओएलडबल्यूएम

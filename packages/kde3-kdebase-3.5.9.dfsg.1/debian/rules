@@ -1,0 +1,80 @@
+#!/usr/bin/make -f
+
+DEB_DH_GENCONTROL_ARGS = $(DEB_DH_GENCONTROL_ARGS_ALL) $(DEB_DH_GENCONTROL_ARGS_$(cdbs_curpkg))
+UNEPOCHEDCURRENTVERSION := $(shell head -1 debian/changelog  | sed 's/[^(]*(\([^)]*\)).*/\1/'| sed 's/[[:digit:]]*://')
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_KDE_APIDOX := yes
+
+CXXFLAGS := -DSMB_CTX_FLAG_USE_KERBEROS -DSMB_CTX_FLAG_FALLBACK_AFTER_KERBEROS -g -Wall $(DEB_OPT_FLAG)
+
+DEB_CONFIGURE_EXTRA_FLAGS := --with-shadow --without-java --with-pam=kde \
+	--with-kcp-pam=kcheckpass --with-kdm-pam=kdm --with-kss-pam=kscreensaver \
+	--with-extra-includes=/usr/include/sasl --with-usbids=/usr/share/misc/usb.ids
+
+DEB_FIXPERMS_EXCLUDE := opt/kde3/bin/kdesud
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-kdebase-dbg
+
+DOC_HTML_PRUNE := kinfocenter ksplashml kcontrol khelpcenter kdesu knetattach kioslave kxkb kdebugdialog kdcop
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-kate		:= -V'kde3-kate (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kcontrol		:= -V'kde3-kcontrol (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kdebase-bin		:= -V'kde3-kdebase-bin (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kicker		:= -V'kde3-kicker (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-konqueror		:= -V'kde3-konqueror (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-ksplash		:= -V'kde3-ksplash (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-ksysguard		:= -V'kde3-ksysguard (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kwin		:= -V'kde3-kwin (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkonq4		:= -V'kde3-libkonq4 (>= 4:3.5.9)'
+DEB_DH_GENCONTROL_ARGS_kde3-khelpcenter 	:= -- -v4:4.0.0.really.$(UNEPOCHEDCURRENTVERSION)
+
+#shlibs_ver = 4:3.5.0-1
+#$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
+
+makebuilddir::
+	touch kcontrol/energy/pics/energybig.png
+	touch kcontrol/energy/pics/lo-energy.png
+	uudecode -o kcontrol/pics/cr128-app-energy_star.png debian/img/cr128-app-energy_star.png.uu
+	uudecode -o kcontrol/pics/cr16-app-energy_star.png debian/img/cr16-app-energy_star.png.uu
+	uudecode -o kcontrol/pics/cr32-app-energy_star.png debian/img/cr32-app-energy_star.png.uu
+	uudecode -o kcontrol/pics/cr48-app-energy_star.png debian/img/cr48-app-energy_star.png.uu
+	uudecode -o kcontrol/pics/cr64-app-energy_star.png debian/img/cr64-app-energy_star.png.uu
+
+common-install-prehook-arch::
+	grep -v -e joystick -e view1394  debian/kde3-kcontrol.install > debian/kde3-kcontrol.install.kfreebsd-i386
+	grep -v -e joystick -e view1394  debian/kde3-kcontrol.install > debian/kde3-kcontrol.install.kfreebsd-amd64
+	grep -v -e media_propsdlgplugin  debian/kde3-kdebase-kio-plugins.install > debian/kde3-kdebase-kio-plugins.install.kfreebsd-i386
+	grep -v -e media_propsdlgplugin  debian/kde3-kdebase-kio-plugins.install > debian/kde3-kdebase-kio-plugins.install.kfreebsd-amd64
+
+clean::
+	rm -f debian/kde3-kcontrol.install.kfreebsd* debian/kde3-kdebase-kio-plugins.install.kfreebs*
+	rm -f kcontrol/pics/cr*-app-energy_star.png kcontrol/energy/pics/energybig.png kcontrol/energy/pics/lo-energy.png
+
+binary-install/kde3-kdebase-bin::
+	install -p -D -m644 debian/kde3-kcheckpass.pam debian/kde3-kdebase-bin/etc/pam.d/kde3-kcheckpass
+	install -p -D -m644 debian/kde3-kscreensaver.pam debian/kde3-kdebase-bin/etc/pam.d/kde3-kscreensaver
+
+binary-install/kde3-kdebase-data::
+	# hack the oui.db install, as under kfreebsd it does not get installed and then breaks at dh_install time
+	# it's in fact a linux specific file...
+	install -p -D -m644 kcontrol/view1394/oui.db debian/kde3-kdebase-data/usr/share/apps/kcmview1394/oui.db
+	
+binary-install/kde3-kdm::
+	install -p -D -m644 debian/kde3-kdm.pam debian/kde3-kdm/etc/pam.d/kde3-kdm
+	install -p -D -m644 debian/kde3-kdm-np.pam debian/kde3-kdm/etc/pam.d/kde3-kdm-np
+
+binary-install/kde3-kcontrol::
+	mkdir -p debian/kde3-kcontrol/etc/udev/rules.d
+	chmod +x debian/usermap.pl
+	debian/usermap.pl kcontrol/input/logitechmouse.usermap > debian/kde3-kcontrol/etc/udev/kde3-logitechmouse.rules
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share

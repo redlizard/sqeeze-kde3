@@ -1,0 +1,5 @@
+konqueror: package-name-doesnt-match-sonames libkdeinit-keditbookmarks libkdeinit-kfmclient libkdeinit-konqueror libkonqsidebarplugin1
+konqueror: shlib-missing-in-control-file libkdeinit_keditbookmarks.so for usr/lib/libkdeinit_keditbookmarks.so
+konqueror: shlib-missing-in-control-file libkdeinit_kfmclient.so for usr/lib/libkdeinit_kfmclient.so
+konqueror: shlib-missing-in-control-file libkdeinit_konqueror.so for usr/lib/libkdeinit_konqueror.so
+

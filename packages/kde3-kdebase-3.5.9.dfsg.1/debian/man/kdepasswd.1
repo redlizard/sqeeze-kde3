@@ -1,0 +1,169 @@
+.TH KDEPASSWD 1
+
+.SH NAME
+kdepasswd \- graphical frontend to change the user's password
+
+.SH SYNOPSIS
+.B kdepasswd [ \fIQt-options\fR ] [ \fIKDE-options\fR ] \fIoptions\fR
+
+.SH DESCRIPTION
+Changes a UNIX password.
+
+.SH OPTIONS
+.B Generic options:
+.TP
+.HP
+.B \-\-help
+Show help about options
+.TP
+.HP
+.B \-\-help\-qt
+Show Qt specific options
+.TP
+.HP
+.B \-\-help\-kde
+Show KDE specific options
+.TP
+.HP
+.B \-\-help\-all
+Show all options
+.TP
+.HP
+.B \-\-author
+Show author information
+.TP
+.HP
+.B \-v\fR, \fB \-\-version
+Show version information
+.TP
+.HP
+.B \-\-license
+Show license information
+.TP
+.B Qt options:
+.TP
+.HP
+.B \-\-display <displayname>
+Use the X-server display 'displayname'.
+.TP
+.HP
+.B \-\-session <sessionId>
+Restore the application for the given 'sessionId'.
+.TP
+.HP
+.B \-\-cmap
+Causes the application to install a private 
+color map on an 8-bit display.
+.TP
+.HP
+.B \-\-ncols <count>
+Limits the number of colors allocated in the color
+cube on an 8-bit display, if the application is
+using the QApplication::ManyColor color
+specification.
+.TP
+.HP
+.B \-\-nograb
+Tells Qt to never grab the mouse or the keyboard.
+.TP
+.HP
+.B \-\-dograb
+Running under a debugger can cause an implicit
+-nograb, use -dograb to override.
+.TP
+.HP
+.B \-\-sync
+Switches to synchronous mode for debugging.
+.TP
+.HP
+.B \-\-fn, \-\-font <fontname>
+Defines the application font.
+.TP
+.HP
+.B \-\-bg, \-\-background <color> 
+sets the default background color and an
+application palette (light and dark shades are
+calculated).
+.TP
+.HP
+.B \-\-fg, \-\-foreground <color> 
+Sets the default foreground color.
+.TP
+.HP
+.B \-\-btn, \-\-button <color>
+Sets the default button color.
+.TP
+.HP
+.B \-\-name <name>
+Sets the application name.
+.TP
+.HP
+.B \-\-title <title>
+Sets the application title (caption).
+.TP
+.HP
+.B \-\-visual TrueColor
+Forces the application to use a TrueColor visual on
+an 8-bit display.
+.TP
+.HP
+.B \-\-inputstyle <inputstyle>
+Sets XIM (X Input Method) input style. Possible
+values are onthespot, overthespot, offthespot and
+root.
+.TP
+.HP
+.B \-\-im <XIM server>
+Set XIM server.
+.TP
+.HP
+.B \-\-noxim
+Disable XIM.
+.TP
+.HP
+.B \-\-reverse
+Mirrors the whole layout of widgets.
+.TP
+.B KDE options:
+.TP
+.HP
+.B \-\-caption <caption>
+Use 'caption' as name in the titlebar.
+.TP
+.HP
+.B \-\-icon <icon>
+Use 'icon' as the application icon.
+.TP
+.HP
+.B \-\-miniicon <icon>
+Use 'icon' as the icon in the titlebar.
+.TP
+.HP
+.B \-\-config <filename>
+Use alternative configuration file.
+.TP
+.HP
+.B \-\-dcopserver <server>
+Use the DCOP Server specified by 'server'.
+.TP
+.HP
+.B \-\-nocrashhandler
+Disable crash handler, to get core dumps.
+.TP
+.HP
+.B \-\-waitforwm
+Waits for a WM_NET compatible windowmanager.
+.TP
+.HP
+.B \-\-style <style>
+Sets the application GUI style.
+.TP
+.HP
+.B \-\-geometry <geometry>
+Sets the client geometry of the main widget.
+
+.SH "SEE ALSO"
+.BR passwd (1).
+
+.SH AUTHOR
+Andre Ramos <andre@alunos.di.fc.ul.pt>

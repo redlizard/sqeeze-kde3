@@ -1,0 +1,4 @@
+debian/tmp/opt/kde3/bin/kdebugdialog
+debian/tmp/opt/kde3/bin/kreadconfig
+debian/tmp/opt/kde3/bin/kwriteconfig
+debian/tmp/opt/kde3/bin/kstart

@@ -1,0 +1,4 @@
+ksmserver: no-shlibs-control-file usr/lib/libkdeinit_ksmserver.so
+ksmserver: postinst-must-call-ldconfig usr/lib/libkdeinit_ksmserver.so
+ksmserver: package-name-doesnt-match-sonames libkdeinit-ksmserver
+

@@ -1,0 +1,24 @@
+#! /bin/sh -e
+
+case "$1" in
+
+    upgrade)
+	rm -f /etc/kde3/konsolerc
+    ;;
+
+    install)
+    ;;
+
+    abort-upgrade)
+    ;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+
+esac
+
+#DEBHELPER#
+
+exit 0

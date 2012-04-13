@@ -1,0 +1,5 @@
+klipper: no-shlibs-control-file usr/lib/libkdeinit_klipper.so
+klipper: postinst-must-call-ldconfig usr/lib/libkdeinit_klipper.so
+klipper: postrm-should-call-ldconfig usr/lib/libkdeinit_klipper.so
+klipper: package-name-doesnt-match-sonames libkdeinit-klipper
+

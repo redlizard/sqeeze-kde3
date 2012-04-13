@@ -1,0 +1,16 @@
+KDE and media kioslave support
+==============================
+
+The media kioslave, new in KDE 3.4, supports the automatic mounting of
+removable devices, such as CD-ROM and DVD drives, USB pen drives, digital
+cameras, and many other types of equipment.
+
+While some functionality is available without the use of HAL, media works
+best with HAL (and therefore udev), in combination with pmount. Media
+also extends the functionality of many other kioslaves. Check which
+packages are recommended by the kdebase-kio-plugins package, and install
+accordingly.
+
+Note that for regular users to use media in conjunction with HAL, they must
+be members of the plugdev group. (permanently, not through
+/etc/security/group.conf).

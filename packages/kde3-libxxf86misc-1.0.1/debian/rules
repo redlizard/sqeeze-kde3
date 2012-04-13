@@ -1,0 +1,96 @@
+#!/usr/bin/make -f
+# debian/rules for the Debian libxxf86misc package.
+# Copyright © 2004 Scott James Remnant <scott@netsplit.com>
+# Copyright © 2005 Daniel Stone <daniel@fooishbar.org>
+# Copyright © 2005 David Nusinow <dnusinow@debian.org>
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# set this to the name of the main shlib's binary package
+PACKAGE = kde3-libxxf86misc1
+
+include debian/xsfbs/xsfbs.mk
+
+CFLAGS = -Wall -g
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+DEB_HOST_ARCH      ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+DEB_HOST_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
+	confflags += --build=$(DEB_HOST_GNU_TYPE)
+else
+	confflags += --build=$(DEB_BUILD_GNU_TYPE) --host=$(DEB_HOST_GNU_TYPE)
+endif
+
+
+build: patch build-stamp
+build-stamp:
+	dh_testdir
+
+	test -d obj-$(DEB_BUILD_GNU_TYPE) || mkdir obj-$(DEB_BUILD_GNU_TYPE)
+	cd obj-$(DEB_BUILD_GNU_TYPE) && \
+	../configure --prefix=/opt/kde3 --mandir=\$${prefix}/share/man \
+	             --infodir=\$${prefix}/share/info $(confflags) \
+	             CFLAGS="$(CFLAGS)" 
+	cd obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE)
+
+	touch build-stamp
+
+clean: xsfclean
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+
+	rm -f config.cache config.log config.status
+	rm -f */config.cache */config.log */config.status
+	rm -f conftest* */conftest*
+	rm -rf autom4te.cache */autom4te.cache
+	rm -rf obj-*
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	cd obj-$(DEB_BUILD_GNU_TYPE) && $(MAKE) DESTDIR=$(CURDIR)/debian/tmp install
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+
+	dh_installdocs
+	dh_install --sourcedir=debian/tmp --list-missing --exclude=libXxf86misc.la --exclude=opt/kde3/share/man/man3
+	dh_installman
+	mkdir -p debian/kde3-libxxf86misc-dev/opt/kde3/share
+	mv debian/kde3-libxxf86misc-dev/usr/share/man debian/kde3-libxxf86misc-dev/opt/kde3/share
+	dh_installchangelogs
+	dh_link
+	dh_strip --dbg-package=$(PACKAGE)-dbg
+	dh_compress
+	dh_fixperms
+	dh_makeshlibs
+	dh_shlibdeps
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+# Build architecture-independent files here.
+binary-indep: build install
+# Nothing to do
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

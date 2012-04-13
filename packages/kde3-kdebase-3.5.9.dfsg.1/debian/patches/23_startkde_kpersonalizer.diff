@@ -1,0 +1,35 @@
+--- a/startkde
++++ b/startkde
+@@ -287,17 +287,21 @@
+ 
+ # run KPersonalizer before the session, if this is the first login
+ if test "$kpersonalizerrc_general_firstlogin" = "true"; then
+-    # start only dcopserver, don't start whole kdeinit (takes too long)
+-    echo 'startkde: Running kpersonalizer...'  1>&2
+-    dcopserver
+-    kwin --lock &
+-    kpersonalizer --before-session
+-    # handle kpersonalizer restarts (language change)
+-    while test $? -eq 1; do
+-        kpersonalizer --r --before-session
+-    done
+-    dcopquit kwin
+-    dcopserver_shutdown --wait
++    if [ ! -x /usr/bin/kpersonalizer ]; then
++        echo 'startkde: kpersonalizer not found! Please install to properly configure your user.'  1>&2
++    else
++        # start only dcopserver, don't start whole kdeinit (takes too long)
++        echo 'startkde: Running kpersonalizer...'  1>&2
++        dcopserver
++        kwin --lock &
++        kpersonalizer --before-session
++        # handle kpersonalizer restarts (language change)
++        while test $? -eq 1; do
++            kpersonalizer --r --before-session
++        done
++        dcopquit kwin
++        dcopserver_shutdown --wait
++    fi
+ fi
+ 
+ if test -z "$dl"; then

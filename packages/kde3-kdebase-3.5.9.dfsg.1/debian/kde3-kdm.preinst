@@ -1,0 +1,29 @@
+#! /bin/sh -e
+
+case "$1" in
+
+    upgrade)
+	rm -f /etc/kde3/debian/kdm-update-menu.sh
+	rm -f /etc/kde3/debian/kdm.options
+	rm -f /etc/kde3/kdm/pixmaps/XFree86bw.xpm
+	rm -f /etc/kde3/kdm/pixmaps/XFree86.xpm
+	rm -f /etc/kde3/kdm/Xresources
+	rm -f /etc/menu-methods/kdm
+    ;;
+
+    install)
+    ;;
+
+    abort-upgrade)
+    ;;
+
+    *)
+        echo "preinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+
+esac
+
+#DEBHELPER#
+
+exit 0

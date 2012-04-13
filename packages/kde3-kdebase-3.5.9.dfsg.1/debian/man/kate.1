@@ -1,0 +1,83 @@
+.TH KATE 1 "May 2006"
+.SH NAME
+kate \- KDE Advanced Text Editor
+.SH SYNOPSIS
+.B kate
+.RI [ options ] [file(s)]
+.SH DESCRIPTION
+This manual page documents briefly the
+.B kate
+command.
+This manual page was written for the Debian distribution
+because the original program does not have a manual page.
+.PP
+.\" TeX users may be more comfortable with the \fB<whatever>\fP and
+.\" \fI<whatever>\fP escape sequences to invode bold face and italics, 
+.\" respectively.
+\fBkate\fP is a powerful text editor for KDE. It allows multiple documents (MDI interface), syntax coloration for many languages, ...
+
+It is able to expand or collapse parts of code (C functions, ...), can handle complete projects, and includes a terminal emulator.
+
+Kate is primarily intended for developers but can be used by anyone. It will for example be very useful to edit configuration files for example.
+
+It can handle plugins to expand its capabilities (more languages support, vim/Emacs compatibility, ...)
+
+.SH OPTIONS
+These programs follow the usual GNU command line syntax, with long
+options starting with two dashes (`-').
+A summary of options is included below.
+.TP
+.B  \-\-help
+Show summary of options.
+.TP
+.B \-\-help\-qt
+Show QT specific help (common for all QT apps).
+.TP
+.B \-\-help\-kde
+Show KDE specific help (common for all KDE apps).
+.TP
+.B \-\-help\-all
+Show the complete help.
+.TP
+.B \-\-author
+Show program author(s).
+.TP
+.B \-\-license
+Show program license.
+.TP
+.B \-v, \-\-version
+Show version of program.
+.TP
+.B \-s, \-\-start <name>
+Start Kate with a given session
+.TP
+.B \-u, \-\-use
+Use a already running kate instance (if possible)
+.TP
+.B \-p, \-\-pid <pid>
+Only try to reuse kate instance with this pid
+.TP
+.B \-e, \-\-encoding <name>
+Set encoding for the file to open
+.TP
+.B \-l, \-\-line <line>
+Navigate to this line
+.TP
+.B \-c, \-\-column <column>
+Navigate to this column
+.TP
+.B \-i, \-\-stdin
+Read the contents of stdin
+.TP
+.B file(s)
+is the file or the files to open
+
+.SH SEE ALSO
+.BR kwrite (1)
+.PP
+For more details, you should have a look at the KDE Help center, available
+from the K menu.
+.SH AUTHOR
+This manual page was written by Clement Stenac <zorglub@via.ecp.fr>, for Debian GNU/Linux, but may be used by others.
+.PP
+kate was written by the KDE project

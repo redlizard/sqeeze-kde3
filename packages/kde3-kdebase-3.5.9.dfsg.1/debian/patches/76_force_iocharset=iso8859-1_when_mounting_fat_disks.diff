@@ -1,0 +1,27 @@
+--- a/kioslave/media/mediamanager/halbackend.cpp
++++ b/kioslave/media/mediamanager/halbackend.cpp
+@@ -863,6 +863,12 @@
+         value = config.readBoolEntry("utf8", true);
+         tmp = QString("utf8=%1").arg(value ? "true" : "false");
+         result << tmp;
++        if(value && fstype.endsWith("fat"))
++        {
++            tmp = QString("iocharset=iso8859-1");
++            result <<tmp;
++        }
++
+     }
+ 
+     if (valids.contains("shortname"))
+@@ -1182,6 +1188,11 @@
+         soptions << QString("shortname=%1").arg(valids["shortname"]);
+     }
+ 
++    if (valids.contains("iocharset"))
++    {
++        soptions << QString("iocharset=%1").arg(valids["iocharset"]);
++    }
++
+     if (valids.contains("journaling"))
+     {
+         QString option = valids["journaling"];

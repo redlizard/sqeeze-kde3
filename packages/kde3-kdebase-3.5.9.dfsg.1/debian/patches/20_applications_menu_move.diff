@@ -1,0 +1,20 @@
+--- a/doc/userguide/kde-for-admins.docbook
++++ b/doc/userguide/kde-for-admins.docbook
+@@ -1669,7 +1669,7 @@
+ </para>
+ 
+ <informalexample>
+-<para>Example from <filename>applications.menu</filename>:
++<para>Example from <filename>kde-applications.menu</filename>:
+ <programlisting>
+ <markup>
+ 	&lt;Menu&gt;
+@@ -1743,7 +1743,7 @@
+ information, see <ulink url="http://www.freedesktop.org/Standards/basedir-spec">http://www.freedesktop.org/Standards/basedir-spec</ulink></para>
+ 
+ <informalexample>
+-<para>Example from <filename>applications.menu</filename>:
++<para>Example from <filename>kde-applications.menu</filename>:
+ <programlisting>
+ <markup>
+              &lt;Menu&gt;

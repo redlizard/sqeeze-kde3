@@ -1,0 +1,6 @@
+debian/tmp/opt/kde3/include/dbus*/dbus/dbus-qt.h
+debian/tmp/opt/kde3/include/dbus*/dbus/connection.h
+debian/tmp/opt/kde3/include/dbus*/dbus/server.h
+debian/tmp/opt/kde3/include/dbus*/dbus/message.h
+debian/tmp/opt/kde3/lib/libdbus-qt-*.a
+debian/tmp/opt/kde3/lib/libdbus-qt-*.so

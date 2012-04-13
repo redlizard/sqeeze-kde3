@@ -1,0 +1,14 @@
+--- a/kcontrol/kcontrol/KControl.desktop
++++ b/kcontrol/kcontrol/KControl.desktop
+@@ -90,3 +90,4 @@
+ 
+ X-DCOP-ServiceType=Unique
+ Categories=Qt;KDE;Core;
++OnlyShowIn=KDE;
+--- a/kcontrol/kcontrol/kinfocenter.desktop
++++ b/kcontrol/kcontrol/kinfocenter.desktop
+@@ -105,3 +105,4 @@
+ 
+ X-DCOP-ServiceType=Unique
+ Categories=Qt;KDE;System;
++OnlyShowIn=KDE;

@@ -1,0 +1,2359 @@
+--- kdebase-3.5.9.dfsg.1/kate/app/Makefile.am	2005-10-10 18:03:41.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kate/app/Makefile.am	2008-03-08 15:52:38.000000000 +0200
+@@ -12,16 +12,18 @@
+   kateexternaltools.cpp katesavemodifieddialog.cpp kateviewspacecontainer.cpp \
+   katemwmodonhddialog.cpp katesession.cpp katemdi.cpp katetabwidget.cpp
+ 
+-libkateinterfaces_la_LIBADD   = ../interfaces/libkateinterfacesprivate.la $(LIB_KUTILS) ../utils/libkateutils.la
++libkateinterfaces_la_LIBADD   = ../interfaces/libkateinterfacesprivate.la $(LIB_KUTILS) $(LIB_KPARTS) \
++	-lkatepartinterfaces $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KIO) -lktexteditor
+ 
+ libkateinterfaces_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined
+ 
+ kate_la_SOURCES = katemain.cpp
+-kate_la_LIBADD = libkateinterfaces.la
++kate_la_LIBADD = libkateinterfaces.la $(LIB_QT) $(LIB_KDECORE) -lDCOP 
+ kate_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module -avoid-version
+ 
+ kwrite_la_SOURCES = kwritemain.cpp
+-kwrite_la_LIBADD   = -lkatepartinterfaces  ../utils/libkateutils.la
++kwrite_la_LIBADD   = -lkatepartinterfaces $(LIB_QT) $(LIB_KDEUI) $(LIB_KPARTS) \
++	$(LIB_KDECORE) -lDCOP $(LIB_KIO) -lktexteditor
+ kwrite_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module -avoid-version
+ 
+ METASOURCES = AUTO
+--- kdebase-3.5.9.dfsg.1/kate/utils/Makefile.am	2005-09-10 11:24:58.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kate/utils/Makefile.am	2008-03-08 15:53:00.000000000 +0200
+@@ -8,7 +8,7 @@
+ 
+ libkateutils_la_LDFLAGS = $(all_libraries) -no-undefined
+                       
+-libkateutils_la_LIBADD = $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KIO)
++libkateutils_la_LIBADD = $(LIB_KDEUI) $(LIB_QT)
+ 
+ libkateutils_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kcheckpass/Makefile.am	2005-11-09 00:36:11.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcheckpass/Makefile.am	2008-03-08 17:45:40.000000000 +0200
+@@ -9,7 +9,7 @@
+ kcheckpass_SOURCES = kcheckpass.c \
+ 	checkpass_etcpasswd.c checkpass_pam.c checkpass_shadow.c \
+ 	checkpass_osfc2passwd.c checkpass_aix.c
+-kcheckpass_LDADD = -lkdefakes $(PASSWDLIBS) $(LIBSOCKET)
++kcheckpass_LDADD = $(PASSWDLIBS) $(LIBSOCKET)
+ kcheckpass_LDFLAGS = $(KDE_USE_PIE) $(all_libraries)
+ 
+ noinst_HEADERS = kcheckpass.h
+--- kdebase-3.5.9.dfsg.1/kcminit/Makefile.am	2006-05-22 21:12:41.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcminit/Makefile.am	2008-03-08 17:43:22.000000000 +0200
+@@ -22,11 +22,11 @@
+ lib_LTLIBRARIES=
+ 
+ kcminit_la_SOURCES = main.cpp main.skel
+-kcminit_la_LIBADD = $(LIB_KDEUI) $(LIB_KUTILS)
++kcminit_la_LIBADD = $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KIO)
+ kcminit_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ kcminit_startup_la_SOURCES = main.cpp main.skel
+-kcminit_startup_la_LIBADD = $(LIB_KDEUI) $(LIB_KUTILS)
++kcminit_startup_la_LIBADD = $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KIO)
+ kcminit_startup_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ AM_CPPFLAGS = $(all_includes)
+--- kdebase-3.5.9.dfsg.1/kcontrol/access/Makefile.am	2005-09-10 11:25:08.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/access/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -9,11 +9,11 @@
+ 
+ kaccess_la_SOURCES = kaccess.cpp main.cpp
+ kaccess_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kaccess_la_LIBADD = $(LIB_KDEUI)
++kaccess_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) $(LIB_X11) -lDCOP
+ 
+ kcm_access_la_SOURCES = kcmaccess.cpp 
+ kcm_access_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_access_la_LIBADD = $(LIB_KIO)
++kcm_access_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_X11) $(LIB_KDEUI)
+ 
+ noinst_HEADERS = kcmaccess.h
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/arts/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/arts/Makefile.am	2008-03-08 17:29:42.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_arts_la_SOURCES = arts.cpp generaltab.ui hardwaretab.ui krichtextlabel.cpp
+ 
+ kcm_arts_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_arts_la_LIBADD = $(LIB_KIO) $(LIB_KUTILS) -lkmid
++kcm_arts_la_LIBADD = $(LIB_KIO) -lkmid $(LIB_QT) -lDCOP $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ AM_CPPFLAGS = -I$(kde_includes)/arts  $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/background/Makefile.am	2006-03-17 12:17:11.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/background/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ kcm_background_la_SOURCES = main.cpp
+ kcm_background_la_LDFLAGS = $(KDE_RPATH) -module -avoid-version $(all_libraries) -no-undefined
+-kcm_background_la_LIBADD = libkcmbgnd.la libbgnd.la $(LIB_KFILE) $(LIB_KNEWSTUFF)
++kcm_background_la_LIBADD = libkcmbgnd.la libbgnd.la $(LIB_KFILE) $(LIB_KNEWSTUFF) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) -lkdefx -lDCOP $(LIB_X11)
+ 
+ METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/bell/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/bell/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_bell_la_SOURCES = bell.cpp
+ 
+ kcm_bell_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_bell_la_LIBADD = -lkdeui
++kcm_bell_la_LIBADD = -lkdeui $(LIB_QT) $(LIB_KDECORE) $(LIB_X11)
+ 
+ AM_CPPFLAGS= $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/clock/Makefile.am	2005-09-10 11:25:11.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/clock/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_clock_la_SOURCES = dtime.cpp tzone.cpp main.cpp 
+ 
+ kcm_clock_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_clock_la_LIBADD = $(LIB_KIO)
++kcm_clock_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) -lDCOP
+ 
+ AM_CPPFLAGS = $(all_includes)
+  
+--- kdebase-3.5.9.dfsg.1/kcontrol/colors/Makefile.am	2006-03-17 12:17:17.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/colors/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kcm_colors_la_SOURCES = colorscm.cpp widgetcanvas.cpp 
+ kcm_colors_la_LDFLAGS = $(KDE_RPATH) -module -avoid-version $(all_libraries) -no-undefined
+-kcm_colors_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(top_builddir)/kcontrol/krdb/libkrdb.la
++kcm_colors_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(top_builddir)/kcontrol/krdb/libkrdb.la $(LIB_QT) $(LIB_KDECORE) -lkdefx $(LIB_X11) -lDCOP
+ METASOURCES = colorscm.moc widgetcanvas.moc
+ 
+ noinst_HEADERS = colorscm.h widgetcanvas.h
+--- kdebase-3.5.9.dfsg.1/kcontrol/componentchooser/Makefile.am	2005-09-10 11:25:04.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/componentchooser/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ 
+ kcm_componentchooser_la_SOURCES = componentchooser_ui.ui componentconfig_ui.ui emailclientconfig_ui.ui terminalemulatorconfig_ui.ui browserconfig_ui.ui componentchooser.cpp kcm_componentchooser.cpp
+ kcm_componentchooser_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_componentchooser_la_LIBADD =  $(LIB_KIO)
++kcm_componentchooser_la_LIBADD =  $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP
+ 
+ xdg_apps_DATA = componentchooser.desktop
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/crypto/Makefile.am	2007-10-08 12:51:15.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/crypto/Makefile.am	2008-03-08 17:31:51.000000000 +0200
+@@ -6,7 +6,7 @@
+ AM_CXXFLAGS = $(CXXFLAGS) -DLIBDIR=$(libdir)
+ 
+ kcm_crypto_la_LDFLAGS  = $(KDE_RPATH) $(all_libraries) $(SSL_LDFLAGS) -module -avoid-version -no-undefined
+-kcm_crypto_la_LIBADD = -lkdeui $(LIB_KIO) $(LIBSSL)
++kcm_crypto_la_LIBADD = -lkdeui $(LIB_KIO) -lssl $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/css/Makefile.am	2005-09-10 11:25:10.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/css/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ kde_module_LTLIBRARIES = kcm_css.la
+ kcm_css_la_SOURCES = template.cpp cssconfig.ui csscustom.ui kcmcss.cpp preview.ui
+ kcm_css_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_css_la_LIBADD = -lkdeui $(LIB_KIO)
++kcm_css_la_LIBADD = -lkdeui $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+  
+--- kdebase-3.5.9.dfsg.1/kcontrol/display/Makefile.am	2005-09-10 11:25:12.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/display/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_display_la_SOURCES = display.cpp
+ 
+ kcm_display_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_display_la_LIBADD = $(LIB_KUTILS)
++kcm_display_la_LIBADD = $(LIB_KUTILS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ AM_CPPFLAGS = $(all_includes) 
+ 
+ METASOURCES = AUTO
+--- kdebase-3.5.9.dfsg.1/kcontrol/dnssd/Makefile.am	2005-09-10 11:25:12.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/dnssd/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kcm_kdnssd_la_SOURCES = configdialog.ui kcmdnssd.cpp kcmdnssd.h
+ 
+ xdg_apps_DATA = kcm_kdnssd.desktop
+-kcm_kdnssd_la_LIBADD = $(LIB_KDNSSD) $(LIB_KDEUI)
++kcm_kdnssd_la_LIBADD = $(LIB_KDNSSD) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ messages: rc.cpp
+ 	$(EXTRACTRC) *.ui *.rc >> rc.cpp
+--- kdebase-3.5.9.dfsg.1/kcontrol/ebrowsing/Makefile.am	2006-01-19 19:00:46.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/ebrowsing/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -9,7 +9,7 @@
+ kcm_kurifilt_la_SOURCES = filteropts.cpp main.cpp
+ 
+ kcm_kurifilt_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_kurifilt_la_LIBADD = $(LIB_KSYCOCA)
++kcm_kurifilt_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ # Don't link this lib to the plugins. They are dlopened and linking to them
+ # results in crashes when closing kcmshell.
+ # plugins/ikws/libkuriikwsfilter.la plugins/shorturi/libkshorturifilter.la
+--- kdebase-3.5.9.dfsg.1/kcontrol/ebrowsing/plugins/ikws/Makefile.am	2005-09-10 11:25:07.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/ebrowsing/plugins/ikws/Makefile.am	2008-03-08 17:38:35.000000000 +0200
+@@ -9,10 +9,10 @@
+ kde_module_LTLIBRARIES = libkuriikwsfilter.la libkurisearchfilter.la
+ 
+ libkuriikwsfilter_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-libkuriikwsfilter_la_LIBADD = $(LIB_KSYCOCA) $(LIB_KDEUI)
++libkuriikwsfilter_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ libkurisearchfilter_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-libkurisearchfilter_la_LIBADD = $(LIB_KSYCOCA) $(LIB_KDEUI)
++libkurisearchfilter_la_LIBADD = $(LIB_KSYCOCA) $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ 
+ libkuriikwsfilter_la_SOURCES = kuriikwsfiltereng.cpp kuriikwsfilter.skel \
+     kuriikwsfilter.cpp searchprovider.cpp
+--- kdebase-3.5.9.dfsg.1/kcontrol/ebrowsing/plugins/localdomain/Makefile.am	2005-09-10 11:25:07.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/ebrowsing/plugins/localdomain/Makefile.am	2008-03-08 15:55:58.000000000 +0200
+@@ -6,7 +6,7 @@
+ kde_module_LTLIBRARIES = liblocaldomainurifilter.la
+ 
+ liblocaldomainurifilter_la_LDFLAGS = -module $(KDE_PLUGIN)
+-liblocaldomainurifilter_la_LIBADD = $(LIB_KIO) $(LIB_KDEUI) $(LIB_KDECORE)
++liblocaldomainurifilter_la_LIBADD = $(LIB_KIO) $(LIB_KDECORE) $(LIB_QT) -lDCOP
+ 
+ liblocaldomainurifilter_la_SOURCES = localdomainurifilter.cpp localdomainurifilter.skel
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/ebrowsing/plugins/shorturi/Makefile.am	2005-09-10 11:25:07.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/ebrowsing/plugins/shorturi/Makefile.am	2008-03-08 15:55:27.000000000 +0200
+@@ -6,7 +6,7 @@
+ kde_module_LTLIBRARIES = libkshorturifilter.la
+ 
+ libkshorturifilter_la_LDFLAGS = -module $(KDE_PLUGIN)
+-libkshorturifilter_la_LIBADD = $(LIB_KSYCOCA) $(LIB_KDEUI)
++libkshorturifilter_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ libkshorturifilter_la_SOURCES = kshorturifilter.cpp kshorturifilter.skel
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/energy/Makefile.am	2006-03-17 12:17:17.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/energy/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ kcm_energy_la_SOURCES = energy.cpp
+ kcm_energy_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_energy_la_LIBADD = $(DPMSLIB) $(LIB_KDEUI) $(LIB_KIO)
++kcm_energy_la_LIBADD = $(DPMSLIB) $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) $(LIB_XEXT) $(LIB_KDECORE)
+ METASOURCES = energy.moc
+ 
+ noinst_HEADERS = energy.h
+--- kdebase-3.5.9.dfsg.1/kcontrol/filetypes/Makefile.am	2005-09-10 11:25:08.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/filetypes/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -1,6 +1,6 @@
+ AM_CPPFLAGS = $(all_includes)
+ 
+-kcm_filetypes_la_LIBADD	= libfiletypes.la $(LIB_KIO)
++kcm_filetypes_la_LIBADD	= libfiletypes.la $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ kcm_filetypes_la_LDFLAGS = -module -avoid-version -no-undefined $(all_libraries)
+ METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/fonts/Makefile.am	2007-05-14 10:55:34.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/fonts/Makefile.am	2008-03-08 18:56:11.000000000 +0200
+@@ -9,8 +9,9 @@
+ kde_module_LTLIBRARIES = kcm_fonts.la
+ 
+ kcm_fonts_la_SOURCES = fonts.cpp
+-kcm_fonts_la_LDFLAGS = $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) $(FREETYPE2_LDFLAGS) -module -avoid-version $(all_libraries) -no-undefined
+-kcm_fonts_la_LIBADD = libkxftconfig.la $(top_builddir)/kcontrol/krdb/libkrdb.la $(LIB_KDEUI) $(LIBFONTCONFIG_LIBS)
++kcm_fonts_la_LDFLAGS = $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) -lfreetype -module -avoid-version $(all_libraries) -no-undefined
++kcm_fonts_la_LIBADD = libkxftconfig.la $(top_builddir)/kcontrol/krdb/libkrdb.la $(LIB_KDEUI) $(LIBFONTCONFIG_LIBS) \
++	$(LIB_QT) $(LIB_KDECORE) -lkdefx $(LIB_X11) -lDCOP
+ METASOURCES = AUTO
+ 
+ noinst_HEADERS = fonts.h kxftconfig.h
+--- kdebase-3.5.9.dfsg.1/kcontrol/icons/Makefile.am	2006-03-17 12:17:18.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/icons/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kcm_icons_la_SOURCES = iconthemes.cpp icons.cpp main.cpp
+ kcm_icons_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_icons_la_LIBADD = $(LIB_KIO)
++kcm_icons_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO 
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/info/Makefile.am	2006-07-22 11:15:25.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/info/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ kcm_info_la_SOURCES = main.cpp memory.cpp opengl.cpp
+ 
+ kcm_info_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined $(FRAMEWORK_COREAUDIO)
+-kcm_info_la_LIBADD = $(LIBALIB) $(LIB_KDEUI) $(LIB_TRU64_MACH) $(LIBCFG) $(LIBODM) $(LIBKSTAT) $(LIBDEVINFO) $(GLLIB)
++kcm_info_la_LIBADD = $(LIBALIB) $(LIB_KDEUI) $(LIB_TRU64_MACH) $(LIBCFG) $(LIBODM) $(LIBKSTAT) $(LIBDEVINFO) $(GLLIB) $(LIB_QT) $(LIB_KDECORE)
+ METASOURCES = AUTO
+ 
+ AM_CPPFLAGS= $(all_includes) $(GLINC)
+--- kdebase-3.5.9.dfsg.1/kcontrol/input/Makefile.am	2005-09-10 11:25:07.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/input/Makefile.am	2008-03-08 17:33:03.000000000 +0200
+@@ -22,7 +22,8 @@
+ 
+ kcm_input_la_SOURCES = mouse.cpp kmousedlg.ui main.cpp logitechmouse.cpp logitechmouse_base.ui
+ kcm_input_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_input_la_LIBADD = $(THEMEPAGE_LIB) $(XTESTLIB) $(LIB_KIO) $(LIB_XCURSOR) $(USB_LIBS)
++kcm_input_la_LIBADD = $(THEMEPAGE_LIB) $(LIB_KIO) $(LIB_XCURSOR) $(USB_LIBS) \
++	$(LIB_QT) $(LIB_KDEUI) -lDCOP $(LIB_X11) $(LIB_KDECORE) $(LIB_XRENDER)
+ 
+ METASOURCES = AUTO 
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/ioslaveinfo/Makefile.am	2006-03-17 12:17:16.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/ioslaveinfo/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_ioslaveinfo_la_SOURCES = kcmioslaveinfo.cpp
+ 
+ kcm_ioslaveinfo_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_ioslaveinfo_la_LIBADD = -lkdeui $(LIB_KIO)
++kcm_ioslaveinfo_la_LIBADD = -lkdeui $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ AM_CPPFLAGS= $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/joystick/Makefile.am	2005-09-10 11:25:11.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/joystick/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kde_module_LTLIBRARIES = kcm_joystick.la
+ 
+ kcm_joystick_la_SOURCES = joystick.cpp joywidget.cpp poswidget.cpp joydevice.cpp caldialog.cpp
+-kcm_joystick_la_LIBADD = $(LIB_KDEUI)
++kcm_joystick_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ kcm_joystick_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+ 
+ xdg_apps_DATA = joystick.desktop
+--- kdebase-3.5.9.dfsg.1/kcontrol/kcontrol/Makefile.am	2005-10-10 18:03:43.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kcontrol/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -32,7 +32,7 @@
+ 	moduleIface.cpp moduleIface.skel global.cpp modules.cpp \
+ 	proxywidget.cpp kcrootonly.cpp searchwidget.cpp
+ 
+-kcontrol_la_LIBADD  = $(LIB_KDEUI) $(LIB_KUTILS) $(LIB_KHTML)
++kcontrol_la_LIBADD  = $(LIB_KDEUI) $(LIB_KUTILS) $(LIB_KHTML) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KIO) $(LIB_X11)
+ kcontrol_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ rccontroldir = $(kde_datadir)/kcontrol
+--- kdebase-3.5.9.dfsg.1/kcontrol/kded/Makefile.am	2005-09-10 11:25:08.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kded/Makefile.am	2008-03-08 17:36:01.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_kded_la_SOURCES = kcmkded.cpp
+ 
+ kcm_kded_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_kded_la_LIBADD =  $(LIB_KIO)
++kcm_kded_la_LIBADD =  $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_KDEUI)
+ 
+ AM_CPPFLAGS= $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/kdm/Makefile.am	2005-09-10 11:25:12.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kdm/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 	kdm-users.cpp kdm-conv.cpp main.cpp kbackedcombobox.cpp
+ 
+ kcm_kdm_la_LDFLAGS  = $(KDE_RPATH) $(all_libraries) -module -avoid-version -no-undefined
+-kcm_kdm_la_LIBADD = $(top_builddir)/kcontrol/background/libkcmbgnd.la $(top_builddir)/kcontrol/background/libbgnd.la $(LIB_KIO) $(LIB_KNEWSTUFF)
++kcm_kdm_la_LIBADD = $(top_builddir)/kcontrol/background/libkcmbgnd.la $(top_builddir)/kcontrol/background/libbgnd.la $(LIB_KIO) $(LIB_KNEWSTUFF) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) -lkdefx -lDCOP $(LIB_X11)
+ 
+ AM_CPPFLAGS= -I$(top_builddir)/kcontrol/background \
+           -I$(top_srcdir)/kcontrol/background \
+--- kdebase-3.5.9.dfsg.1/kcontrol/keys/Makefile.am	2005-09-10 11:25:12.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/keys/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -1,7 +1,7 @@
+ kde_module_LTLIBRARIES = kcm_keys.la
+ 
+ kcm_keys_la_SOURCES =  shortcuts.cpp modifiers.cpp main.cpp khotkeys.cpp treeview.cpp commandShortcuts.cpp
+-kcm_keys_la_LIBADD   = -lkdeui -lkio
++kcm_keys_la_LIBADD   = -lkdeui -lkio $(LIB_QT) $(LIB_KDECORE) $(LIB_X11)
+ kcm_keys_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+ 
+ AM_CPPFLAGS= $(all_includes)
+--- kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/kcmfontinst/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/kcmfontinst/Makefile.am	2008-03-08 17:28:32.000000000 +0200
+@@ -4,10 +4,10 @@
+ endif
+ 
+ kde_module_LTLIBRARIES = kcm_fontinst.la
+-kcm_fontinst_la_LIBADD  = $(LIB_KIO) $(FONTINST_PRINT_LIB) $(LIBFREETYPE_LIBS) $(LIBFONTCONFIG_LIBS) ../lib/libkfontinst.la
++kcm_fontinst_la_LIBADD  = $(LIB_KIO) $(FONTINST_PRINT_LIB) ../lib/libkfontinst.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KDEPRINT)
+ METASOURCES = AUTO
+ kcm_fontinst_la_LDFLAGS = $(KDE_PLUGIN) $(all_libraries) $(KDE_RPATH) -module -avoid-version -no-undefined
+-AM_CPPFLAGS = -I$(srcdir)/../lib $(FONTINST_PRINT_INC) -I$(srcdir)/../../fonts $(all_includes) $(LIBFREETYPE_CFLAGS) $(LIBFONTCONFIG_CFLAGS)
++AM_CPPFLAGS = -I$(srcdir)/../lib $(FONTINST_PRINT_INC) -I$(srcdir)/../../fonts $(all_includes)
+  
+ xdg_apps_DATA = kcmfontinst.desktop
+  
+--- kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/kfile-plugin/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/kfile-plugin/Makefile.am	2008-03-08 17:29:14.000000000 +0200
+@@ -1,13 +1,13 @@
+ kde_module_LTLIBRARIES = kfile_font.la
+ 
+ kfile_font_la_SOURCES = KFileFont.cpp
+-kfile_font_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBFREETYPE_RPATH) -module $(KDE_PLUGIN)
+-kfile_font_la_LIBADD = $(LIB_KIO) $(LIBFREETYPE_LIBS) ../lib/libkfontinst.la
++kfile_font_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module $(KDE_PLUGIN)
++kfile_font_la_LIBADD = $(LIB_KIO) ../lib/libkfontinst.la $(LIB_QT) $(LIB_KDECORE)
+ 
+ kdelnkdir = $(kde_servicesdir)
+ kde_services_DATA = kfile_font.desktop
+ 
+-AM_CPPFLAGS = -I$(srcdir)/../lib -I$(srcdir)/../../fonts $(all_includes) $(LIBFREETYPE_CFLAGS)
++AM_CPPFLAGS = -I$(srcdir)/../lib -I$(srcdir)/../../fonts $(all_includes)
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = KFileFont.h
+--- kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/kfontinst/Makefile.am	2007-05-14 10:55:38.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/kfontinst/Makefile.am	2008-03-08 17:27:30.000000000 +0200
+@@ -11,6 +11,6 @@
+ Fontmap.h \
+ XConfig.h
+ 
+-kfontinst_LDADD = ../../fonts/libkxftconfig.la $(LIBFONTCONFIG_LIBS) $(LIBFREETYPE_LIBS) $(LIBZ) $(LIB_KIO) ../lib/libkfontinst.la
++kfontinst_LDADD = ../../fonts/libkxftconfig.la ../lib/libkfontinst.la
+ kfontinst_LDFLAGS = $(all_libraries) $(LIBFONTCONFIG_RPATH) $(LIBFREETYPE_RPATH) $(KDE_RPATH)
+ AM_CPPFLAGS= -DOS_$(UNAME) -I$(srcdir)/../lib -I$(srcdir)/../../fonts $(all_includes) $(LIBFREETYPE_CFLAGS) $(LIBFONTCONFIG_CFLAGS)
+--- kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/kio/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/kio/Makefile.am	2008-03-08 17:35:07.000000000 +0200
+@@ -2,9 +2,9 @@
+ kio_fonts_la_SOURCES = \
+ KioFonts.cpp
+ 
+-kio_fonts_la_LIBADD = ../../fonts/libkxftconfig.la $(LIBFONTCONFIG_LIBS) $(LIBFREETYPE_LIBS) $(LIB_KIO) -lkdesu ../lib/libkfontinst.la
+-kio_fonts_la_LDFLAGS = $(KDE_PLUGIN) $(all_libraries) $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) $(LIBFREETYPE_RPATH) -module -avoid-version -no-undefined
+-AM_CPPFLAGS= -I$(srcdir)/../lib -I$(srcdir)/../../fonts $(all_includes) $(LIBFREETYPE_CFLAGS) $(LIBFONTCONFIG_CFLAGS) -D_LARGEFILE64_SOURCE
++kio_fonts_la_LIBADD = ../../fonts/libkxftconfig.la $(LIBFONTCONFIG_LIBS) $(LIB_KIO) -lkdesu ../lib/libkfontinst.la $(LIB_QT) $(LIB_KDECORE) $(LIB_X11)
++kio_fonts_la_LDFLAGS = $(KDE_PLUGIN) $(all_libraries) $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) -module -avoid-version -no-undefined
++AM_CPPFLAGS= -I$(srcdir)/../lib -I$(srcdir)/../../fonts $(all_includes) $(LIBFONTCONFIG_CFLAGS) -D_LARGEFILE64_SOURCE
+ 
+ # The kxftconfig stuf really belongs to kdebase/kcontrol/fonts - here only so that can distribute this as an archive.
+ noinst_HEADERS = \
+--- kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/lib/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/lib/Makefile.am	2008-03-08 17:37:04.000000000 +0200
+@@ -9,6 +9,6 @@
+ FcEngine.h \
+ KfiConstants.h
+ 
+-libkfontinst_la_LIBADD = $(LIB_KDECORE) $(LIBFONTCONFIG_LIBS) $(LIBFREETYPE_LIBS) $(LIB_KIO) $(LIBXFT_LIB)
+-libkfontinst_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) $(LIBFREETYPE_RPATH) -no-undefined
+-AM_CPPFLAGS= $(all_includes) $(LIBFREETYPE_CFLAGS) $(LIBFONTCONFIG_CFLAGS) -D_LARGEFILE64_SOURCE
++libkfontinst_la_LIBADD = $(LIB_KDECORE) $(LIBFONTCONFIG_LIBS) $(LIB_KIO) $(LIBXFT_LIB) $(LIB_QT)
++libkfontinst_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBFONTCONFIG_RPATH) -no-undefined
++AM_CPPFLAGS= $(all_includes) $(LIBFREETYPE_CFLAGS) $(LIBFONTCONFIG_CFLAGS) -D_LARGEFILE64_SOURCE
+--- kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/thumbnail/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/thumbnail/Makefile.am	2008-03-08 17:39:05.000000000 +0200
+@@ -1,8 +1,8 @@
+ kde_module_LTLIBRARIES = fontthumbnail.la
+ 
+ fontthumbnail_la_SOURCES = FontThumbnail.cpp
+-fontthumbnail_la_LIBADD = $(LIBFREETYPE_LIBS) $(LIB_KDECORE) $(LIB_KIO) ../lib/libkfontinst.la
+-fontthumbnail_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LIBFREETYPE_RPATH) -module $(KDE_PLUGIN)
++fontthumbnail_la_LIBADD = $(LIB_KDECORE) ../lib/libkfontinst.la $(LIB_QT)
++fontthumbnail_la_LDFLAGS = $(all_libraries) $(KDE_RPATH)-module $(KDE_PLUGIN)
+ METASOURCES = AUTO
+ 
+ noinst_HEADERS = FontThumbnail.h
+--- kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/viewpart/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kfontinst/viewpart/Makefile.am	2008-03-08 17:19:25.000000000 +0200
+@@ -7,7 +7,7 @@
+ 
+ libkfontviewpart_la_SOURCES = FontViewPart.cpp FontViewPartFactory.cpp FontPreview.cpp
+ libkfontviewpart_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-libkfontviewpart_la_LIBADD = $(LIB_KPARTS) libkfontinstprint.la ../lib/libkfontinst.la
++libkfontviewpart_la_LIBADD = $(LIB_KPARTS) libkfontinstprint.la ../lib/libkfontinst.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) $(LIBFONTCONFIG_LIBS) $(LIB_KIO) $(LIB_KDEPRINT)
+ 
+ noinst_HEADERS  = FontViewPart.h FontViewPartFactory.h FontPreview.h FontViewerApp.h KfiPrint.h
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/kicker/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kicker/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+                         positionconfig.cpp hidingconfig.cpp menuconfig.cpp lookandfeelconfig.cpp
+ 
+ kcm_kicker_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_kicker_la_LIBADD = $(top_builddir)/kicker/libkicker/libkickermain.la ../background/libbgnd.la $(LIB_KIO) $(LIB_KUTILS)
++kcm_kicker_la_LIBADD = $(top_builddir)/kicker/libkicker/libkickermain.la ../background/libbgnd.la $(LIB_KIO) $(LIB_KUTILS) $(LIB_QT) -lDCOP $(LIB_KDEUI) $(LIB_KDECORE) -lkdefx $(LIB_X11)
+ AM_CPPFLAGS = -I$(top_srcdir)/kicker/kicker/core -I$(top_srcdir)/kicker/libkicker \
+ 	-I$(top_builddir)/kicker/libkicker -I$(srcdir)/../background $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/kio/Makefile.am	2005-09-10 11:25:10.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kio/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -17,7 +17,7 @@
+       manualproxy_ui.ui envvarproxy_ui.ui cache_ui.ui
+ 
+ kcm_kio_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kcm_kio_la_LIBADD = $(LIB_KIO) $(LIB_KUTILS)
++kcm_kio_la_LIBADD = $(LIB_KIO) $(LIB_KUTILS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) -lDCOP
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp -o $(podir)/kcmkio.pot
+--- kdebase-3.5.9.dfsg.1/kcontrol/knotify/Makefile.am	2005-09-10 11:25:04.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/knotify/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kcm_knotify_la_SOURCES = knotify.cpp playersettings.ui
+ 
+ kcm_knotify_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_knotify_la_LIBADD = $(LIB_KIO)
++kcm_knotify_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) -lDCOP
+ AM_CPPFLAGS = $(all_includes)
+  
+ METASOURCES = AUTO 
+--- kdebase-3.5.9.dfsg.1/kcontrol/konq/Makefile.am	2005-09-10 11:25:08.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/konq/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -11,7 +11,7 @@
+ 		desktopbehavior.ui
+ 
+ kcm_konq_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_konq_la_LIBADD = $(LIB_KIO) $(LIB_KDEUI) $(LIB_KSYCOCA) $(LIB_KUTILS)
++kcm_konq_la_LIBADD = $(LIB_KIO) $(LIB_KDEUI) $(LIB_KSYCOCA) $(LIB_KUTILS) $(LIB_QT) $(LIB_KDECORE) $(LIB_X11) -lDCOP
+ 
+ kcm_konq_la_DATA = overlapping.png onlyone.png
+ kcm_konq_ladir = $(kde_datadir)/kcontrol/pics
+--- kdebase-3.5.9.dfsg.1/kcontrol/konqhtml/Makefile.am	2005-09-10 11:25:11.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/konqhtml/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -13,7 +13,7 @@
+ 			     filteropts.cpp
+ 
+ kcm_konqhtml_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_konqhtml_la_LIBADD = -lkhtml -lkdeui
++kcm_konqhtml_la_LIBADD = -lkhtml -lkdeui $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KIO)
+ 
+ xdg_apps_DATA = khtml_behavior.desktop khtml_java_js.desktop khtml_fonts.desktop khtml_filter.desktop
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/konsole/Makefile.am	2005-09-10 11:25:12.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/konsole/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 	schemadialog.ui sessiondialog.ui kcmkonsoledialog.ui
+ 
+ kcm_konsole_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_konsole_la_LIBADD = -lkdeui $(LIB_KIO)
++kcm_konsole_la_LIBADD = -lkdeui $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP -lkdefx
+ AM_CPPFLAGS = $(all_includes) 
+ 
+ METASOURCES = AUTO 
+--- kdebase-3.5.9.dfsg.1/kcontrol/kthememanager/Makefile.am	2005-09-10 11:25:12.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/kthememanager/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ kde_module_LTLIBRARIES = kcm_kthememanager.la
+ 
+ kcm_kthememanager_la_SOURCES = kthemedlg.ui newthemewidget.ui knewthemedlg.cpp ktheme.cpp kthememanager.cpp
+-kcm_kthememanager_la_LIBADD = $(LIB_KIO)
++kcm_kthememanager_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP -lkdefx
+ kcm_kthememanager_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ 
+ noinst_HEADERS = kthememanager.h ktheme.h knewthemedlg.h kthemedlg.ui.h
+--- kdebase-3.5.9.dfsg.1/kcontrol/launch/Makefile.am	2005-09-10 11:25:12.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/launch/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ AM_CPPFLAGS                      = $(all_includes) 
+ kcm_launch_la_SOURCES      = kcmlaunch.cpp
+ kcm_launch_la_LDFLAGS      = $(all_libraries) $(KDE_PLUGIN) -module
+-kcm_launch_la_LIBADD       = $(LIB_KDEUI)
++kcm_launch_la_LIBADD       = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ METASOURCES  = AUTO
+ noinst_HEADERS                = kcmlaunch.h
+ xdg_apps_DATA = kcmlaunch.desktop
+--- kdebase-3.5.9.dfsg.1/kcontrol/locale/Makefile.am	2005-09-10 11:25:08.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/locale/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -10,7 +10,7 @@
+ noinst_HEADERS = toplevel.h kcmlocale.h klocalesample.h localenum.h localemon.h localetime.h localeother.h 
+ 
+ kcm_locale_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_locale_la_LIBADD = $(LIB_KIO)
++kcm_locale_la_LIBADD = $(LIB_KIO) $(LIB_KDECORE) $(LIB_QT) $(LIB_KDEUI)
+ 
+ # Note: newer glibc (e.g. zonetab version 1.31 (cvs revision 1.22) have more/other data than older ones (e.g. zonetab version 1.28)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/nics/Makefile.am	2005-09-10 11:25:05.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/nics/Makefile.am	2008-03-08 15:56:29.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_nic_la_SOURCES = nic.cpp
+ 
+ kcm_nic_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_nic_la_LIBADD = -lkdeui $(LIB_KIO) $(LIBSOCKET)
++kcm_nic_la_LIBADD = $(LIB_KDEUI) $(LIBSOCKET) $(LIB_QT) $(LIB_KDECORE)
+ 
+ AM_CPPFLAGS= $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/performance/Makefile.am	2005-09-10 11:25:11.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/performance/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ kcm_performance_la_SOURCES = kcmperformance.cpp konqueror.cpp konqueror_ui.ui system.cpp system_ui.ui
+ kcm_performance_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_performance_la_LIBADD = -lkdeui
++kcm_performance_la_LIBADD = -lkdeui $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ AM_CPPFLAGS= $(all_includes) 
+ 
+ METASOURCES = AUTO
+--- kdebase-3.5.9.dfsg.1/kcontrol/privacy/Makefile.am	2005-09-10 11:25:09.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/privacy/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ kcm_privacy_la_SOURCES = privacy.cpp kprivacysettings.ui kcmprivacydialog.ui kprivacymanager.cpp
+ 
+ kcm_privacy_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_privacy_la_LIBADD = $(LIB_KDEUI) -lkio
++kcm_privacy_la_LIBADD = $(LIB_KDEUI) -lkio $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/randr/Makefile.am	2006-03-17 12:17:17.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/randr/Makefile.am	2008-03-08 17:35:36.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kcm_randr_la_SOURCES = krandrmodule.cpp
+ kcm_randr_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_randr_la_LIBADD = librandrinternal.la $(LIB_KDEUI) $(LIB_XRANDR)
++kcm_randr_la_LIBADD = librandrinternal.la $(LIB_KDEUI) $(LIB_XRANDR) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noinst_HEADERS = randr.h krandrmodule.h krandrtray.h krandrapp.h ktimerdialog.h \
+     krandrpassivepopup.h
+@@ -30,7 +30,7 @@
+ 
+ krandrtray_SOURCES = main.cpp krandrtray.cpp krandrapp.cpp krandrpassivepopup.cpp
+ krandrtray_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+-krandrtray_LDADD = librandrinternal.la $(LIB_KFILE) $(LIB_KUTILS) $(LIB_XRANDR)
++krandrtray_LDADD = librandrinternal.la $(LIB_KUTILS) $(LIB_XRANDR)
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp -o $(podir)/krandr.pot
+--- kdebase-3.5.9.dfsg.1/kcontrol/samba/Makefile.am	2005-09-10 11:25:10.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/samba/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_samba_la_SOURCES = main.cpp ksmbstatus.cpp kcmsambaimports.cpp kcmsambalog.cpp kcmsambastatistics.cpp
+ 
+ kcm_samba_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_samba_la_LIBADD = $(LIB_KIO)
++kcm_samba_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ AM_CPPFLAGS = $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/screensaver/Makefile.am	2005-09-10 11:25:10.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/screensaver/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ kcm_screensaver_la_SOURCES = advanceddialogimpl.ui scrnsave.cpp testwin.cpp saverlist.cpp \
+         saverconfig.cpp advanceddialog.cpp kswidget.cpp
+ kcm_screensaver_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_screensaver_la_LIBADD = $(LIB_KSYCOCA) $(DPMSLIB) $(GLLIB)
++kcm_screensaver_la_LIBADD = $(LIB_KSYCOCA) $(DPMSLIB) $(GLLIB) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP
+ METASOURCES = AUTO
+ 
+ noinst_HEADERS = scrnsave.h
+--- kdebase-3.5.9.dfsg.1/kcontrol/smserver/Makefile.am	2005-09-10 11:25:08.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/smserver/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ kcm_smserver_la_SOURCES = kcmsmserver.cpp smserverconfigdlg.ui smserverconfigimpl.cpp
+ kcm_smserver_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_smserver_la_LIBADD = -lkdeui
++kcm_smserver_la_LIBADD = -lkdeui $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ AM_CPPFLAGS= $(all_includes) 
+ 
+ METASOURCES = AUTO
+--- kdebase-3.5.9.dfsg.1/kcontrol/spellchecking/Makefile.am	2005-09-10 11:25:12.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/spellchecking/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_spellchecking_la_SOURCES = spellchecking.cpp
+ 
+ kcm_spellchecking_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_spellchecking_la_LIBADD = -lkdeui
++kcm_spellchecking_la_LIBADD = -lkdeui $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ AM_CPPFLAGS= $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/style/keramik/Makefile.am	2005-09-10 11:25:11.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/style/keramik/Makefile.am	2008-03-08 17:25:44.000000000 +0200
+@@ -3,7 +3,7 @@
+ noinst_HEADERS = keramikconf.h
+ kde_module_LTLIBRARIES = kstyle_keramik_config.la
+ kstyle_keramik_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kstyle_keramik_config_la_LIBADD  = $(LIB_KDEUI)
++kstyle_keramik_config_la_LIBADD  = $(LIB_QT) $(LIB_KDECORE)
+ kstyle_keramik_config_la_SOURCES = keramikconf.cpp
+ METASOURCES = AUTO 
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/style/Makefile.am	2006-03-17 12:17:17.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/style/Makefile.am	2008-03-08 15:56:57.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ kcm_style_la_SOURCES = kcmstyle.cpp stylepreview.ui menupreview.cpp styleconfdialog.cpp
+ kcm_style_la_LDFLAGS = $(KDE_RPATH) -module -avoid-version $(all_libraries) -no-undefined
+-kcm_style_la_LIBADD = $(LIB_KIO) ../krdb/libkrdb.la
++kcm_style_la_LIBADD = ../krdb/libkrdb.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lkdefx $(LIB_X11) -lDCOP
+ METASOURCES = AUTO 
+ 
+ noinst_HEADERS = kcmstyle.h stylepreview.h menupreview.h
+--- kdebase-3.5.9.dfsg.1/kcontrol/taskbar/Makefile.am	2005-09-10 11:25:04.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/taskbar/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ kcm_taskbar_la_SOURCES = kcmtaskbarui.ui kcmtaskbar.cpp
+ kcm_taskbar_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_taskbar_la_LIBADD = $(top_builddir)/kicker/taskbar/libtaskbar.la -lkdeui
++kcm_taskbar_la_LIBADD = $(top_builddir)/kicker/taskbar/libtaskbar.la -lkdeui $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ AM_CPPFLAGS = -I$(top_builddir)/kicker/taskbar $(all_includes) 
+ 
+ METASOURCES = AUTO
+--- kdebase-3.5.9.dfsg.1/kcontrol/usbview/Makefile.am	2006-01-19 19:00:37.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kcontrol/usbview/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_usb_la_SOURCES = kcmusb.cpp usbdevices.cpp usbdb.cpp
+ 
+ kcm_usb_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_usb_la_LIBADD = $(LIB_KDEUI)
++kcm_usb_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ AM_CPPFLAGS= $(all_includes) 
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/view1394/Makefile.am	2005-09-10 11:25:11.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/view1394/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_view1394_la_SOURCES = view1394widget.ui view1394.cpp
+ 
+ kcm_view1394_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_view1394_la_LIBADD = $(LIB_KDEUI) -lraw1394
++kcm_view1394_la_LIBADD = $(LIB_KDEUI) -lraw1394 $(LIB_QT) $(LIB_KDECORE)
+ 
+ AM_CPPFLAGS= $(all_includes) 
+ 
+--- kdebase-3.5.9.dfsg.1/kcontrol/xinerama/Makefile.am	2005-09-10 11:25:11.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kcontrol/xinerama/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kcm_xinerama_la_SOURCES = kcmxinerama.cpp xineramawidget.ui
+ 
+ kcm_xinerama_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_xinerama_la_LIBADD = -lkdeui
++kcm_xinerama_la_LIBADD = -lkdeui $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ METASOURCES = AUTO 
+ 
+--- kdebase-3.5.9.dfsg.1/kdepasswd/kcm/Makefile.am	2005-09-10 11:24:59.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdepasswd/kcm/Makefile.am	2008-03-08 13:34:25.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_useraccount_la_SOURCES = main_widget.ui chfnprocess.cpp \
+ 			     main.cpp chfacedlg.cpp settings.kcfgc pass.kcfgc
+ kcm_useraccount_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_useraccount_la_LIBADD = $(top_builddir)/libkonq/libkonq.la
++kcm_useraccount_la_LIBADD = $(top_builddir)/libkonq/libkonq.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KIO) $(LIB_KDEUI) -lkdesu
+ 
+ AM_CPPFLAGS = -I$(top_srcdir)/libkonq $(all_includes)
+ 
+--- kdebase-3.5.9.dfsg.1/kdepasswd/Makefile.am	2005-09-10 11:24:59.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdepasswd/Makefile.am	2008-03-08 18:30:53.000000000 +0200
+@@ -4,7 +4,7 @@
+ bin_PROGRAMS = kdepasswd
+ kdepasswd_SOURCES = kdepasswd.cpp passwd.cpp passwddlg.cpp
+ kdepasswd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+-kdepasswd_LDADD = $(LIB_KIO)
++kdepasswd_LDADD = $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lkdesu
+ 
+ METASOURCES =  AUTO
+ AM_CPPFLAGS= -I$(top_srcdir)/libkonq $(all_includes)
+--- kdebase-3.5.9.dfsg.1/kdeprint/kdeprint_part/Makefile.am	2005-09-10 11:25:38.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdeprint/kdeprint_part/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ libkdeprint_part_la_SOURCES = printpart.cpp
+ libkdeprint_part_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-libkdeprint_part_la_LIBADD = -lkdeprint_management $(LIB_KPARTS)
++libkdeprint_part_la_LIBADD = -lkdeprint_management $(LIB_KPARTS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ noinst_HEADERS = printpart.h
+ 
+--- kdebase-3.5.9.dfsg.1/kdeprint/kjobviewer/Makefile.am	2005-09-10 11:25:38.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdeprint/kjobviewer/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -8,7 +8,7 @@
+ 
+ kjobviewer_la_SOURCES = kjobviewer.cpp main.cpp
+ kjobviewer_la_METASOURCES = AUTO
+-kjobviewer_la_LIBADD = -lkdeprint_management $(LIB_KDEUI)
++kjobviewer_la_LIBADD = -lkdeprint_management $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_KDEPRINT)
+ kjobviewer_la_LDFLAGS = -module -avoid-version $(all_libraries) $(KDE_RPATH)
+ 
+ noinst_HEADERS = kjobviewer.h
+--- kdebase-3.5.9.dfsg.1/kdeprint/kprinter/Makefile.am	2005-09-10 11:25:39.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdeprint/kprinter/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ kdeinit_LTLIBRARIES = kprinter.la
+ 
+ kprinter_la_SOURCES = main.cpp printwrapper.cpp
+-kprinter_la_LIBADD = -lkdeprint
++kprinter_la_LIBADD = -lkdeprint $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ kprinter_la_LDFLAGS = -module -avoid-version $(all_libraries) $(KDE_RPATH)
+ kprinter_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kdeprint/printmgr/Makefile.am	2006-05-22 21:12:45.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdeprint/printmgr/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ kcm_printmgr_la_SOURCES = kcmprintmgr.cpp
+ kcm_printmgr_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_printmgr_la_LIBADD = -lkdeprint_management
++kcm_printmgr_la_LIBADD = -lkdeprint_management $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ noinst_HEADERS = kcmprintmgr.h
+ 
+--- kdebase-3.5.9.dfsg.1/kdeprint/slave/Makefile.am	2005-09-10 11:25:39.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdeprint/slave/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ kde_module_LTLIBRARIES = kio_print.la
+ 
+ kio_print_la_SOURCES = kio_print.cpp
+-kio_print_la_LIBADD = $(LIB_KIO) -lkdeprint
++kio_print_la_LIBADD = $(LIB_KIO) -lkdeprint $(LIB_QT) $(LIB_KDECORE)
+ kio_print_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ METASOURCES = AUTO
+--- kdebase-3.5.9.dfsg.1/kdesktop/Makefile.am	2006-05-22 21:12:51.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdesktop/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ INCLUDES = -I$(top_srcdir)/kcontrol/background -I$(top_srcdir)/libkonq -I$(top_srcdir)/kdmlib $(all_includes)
+ kdesktop_la_LDFLAGS  = $(all_libraries) -module $(KDE_PLUGIN)
+-kdesktop_la_LIBADD   = libkdesktopsettings.la $(top_builddir)/libkonq/libkonq.la $(top_builddir)/kcontrol/background/libbgnd.la $(top_builddir)/kdmlib/libdmctl.la $(LIB_XSS) $(LIB_KUTILS) $(LIB_XCURSOR)
++kdesktop_la_LIBADD   = libkdesktopsettings.la $(top_builddir)/libkonq/libkonq.la $(top_builddir)/kcontrol/background/libbgnd.la $(top_builddir)/kdmlib/libdmctl.la $(LIB_XSS) $(LIB_KUTILS) $(LIB_XCURSOR) -lXau -lkdesu $(LIB_KDECORE) $(LIB_QT) -lDCOP $(LIB_KIO) $(LIB_KDEUI) $(LIB_X11) -lkdefx $(LIB_XEXT)
+ 
+ SUBDIRS = . lock pics patterns programs init kwebdesktop
+ 
+--- kdebase-3.5.9.dfsg.1/kdm/backend/Makefile.am	2008-03-08 19:05:46.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kdm/backend/Makefile.am	2008-03-08 18:33:46.000000000 +0200
+@@ -3,8 +3,8 @@
+ CPPFLAGS = $(USER_INCLUDES) $(X_INCLUDES) $(KRB4_INCS) $(KRB5_INCS) $(DBUS_INCS) -I.. -I../..
+ LDFLAGS = $(USER_LDFLAGS) $(X_LDFLAGS) $(X_RPATH) $(KRB4_RPATH) $(KRB5_RPATH)
+ LDADD = $(LIB_X11) -lXau $(LIBXDMCP) $(PASSWDLIBS) $(LIBSHADOW) $(LIBGEN) \
+-    $(LIB_LIBS) $(KRB4_LIBS) $(KRB5_LIBS) $(DBUS_LIBS) $(LIBSOCKET) $(LIBRESOLV) \
+-    $(LIBUCB) $(LIBUTIL) $(LIBPOSIX4)
++    $(LIB_LIBS) $(KRB4_LIBS) $(KRB5_LIBS) $(DBUS_LIBS) $(LIBSOCKET) \
++    $(LIBUCB) $(LIBPOSIX4)
+ 
+ bin_PROGRAMS = kdm
+ kdm_SOURCES = \
+--- kdebase-3.5.9.dfsg.1/kdm/kfrontend/Makefile.am	2008-03-08 19:05:43.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kdm/kfrontend/Makefile.am	2008-03-08 18:32:41.000000000 +0200
+@@ -9,7 +9,7 @@
+ bin_PROGRAMS = kdm_config kdm_greet krootimage genkdmconf kdmctl
+ 
+ kdm_config_SOURCES = kdm_config.c
+-kdm_config_LDADD = $(LIBRESOLV) $(LIBSOCKET) $(LIBPOSIX4)
++kdm_config_LDADD = $(LIBSOCKET) $(LIBPOSIX4)
+ 
+ kdm_greet_SOURCES = \
+     kdm_greet.c \
+--- kdebase-3.5.9.dfsg.1/kdmlib/Makefile.am	2005-10-10 18:03:54.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kdmlib/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,11 +4,11 @@
+ 
+ kgreet_classic_la_SOURCES = kgreet_classic.cpp
+ kgreet_classic_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kgreet_classic_la_LIBADD = $(LIB_KDEUI)
++kgreet_classic_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kgreet_winbind_la_SOURCES = kgreet_winbind.cpp
+ kgreet_winbind_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kgreet_winbind_la_LIBADD = $(LIB_KDEUI)
++kgreet_winbind_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noinst_LTLIBRARIES = libdmctl.la
+ libdmctl_la_SOURCES = dmctl.cpp
+--- kdebase-3.5.9.dfsg.1/kfind/Makefile.am	2005-09-10 11:25:00.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kfind/Makefile.am	2008-03-08 18:34:00.000000000 +0200
+@@ -14,7 +14,7 @@
+ 
+ libkfindpart_la_SOURCES = kfindpart.cpp
+ libkfindpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN)
+-libkfindpart_la_LIBADD = libkfind_common.la $(LIB_KPARTS) $(top_builddir)/libkonq/libkonq.la 
++libkfindpart_la_LIBADD = libkfind_common.la $(LIB_KPARTS) $(top_builddir)/libkonq/libkonq.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ 
+ noinst_HEADERS>= kftabdlg.h kfind.h version.h kquery.h  kdatecombo.h
+ 
+@@ -30,7 +30,7 @@
+ 
+ bin_PROGRAMS = kfind
+ kfind_SOURCES = kfwin.cpp kfinddlg.cpp main.cpp 
+-kfind_LDADD   =  libkfind_common.la $(LIB_KPARTS)
++kfind_LDADD   =  libkfind_common.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ 
+ # the library search path.
+ kfind_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+--- kdebase-3.5.9.dfsg.1/khelpcenter/Makefile.am	2005-09-10 11:25:18.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/khelpcenter/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -13,7 +13,7 @@
+ kdeinit_LTLIBRARIES = khelpcenter.la
+ 
+ khelpcenter_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-khelpcenter_la_LIBADD = $(LIB_KHTML)
++khelpcenter_la_LIBADD = $(LIB_KHTML) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KPARTS) $(LIB_KIO)
+ khelpcenter_la_SOURCES = navigator.cpp \
+ 	navigatoritem.cpp navigatorappitem.cpp view.cpp \
+ 	searchwidget.cpp searchengine.cpp \
+--- kdebase-3.5.9.dfsg.1/khotkeys/app/Makefile.am	2005-11-19 13:05:32.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/khotkeys/app/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,11 +4,11 @@
+ kde_module_LTLIBRARIES = kded_khotkeys.la
+ 
+ khotkeys_la_SOURCES = app.cpp app.skel
+-khotkeys_la_LIBADD   = ../shared/libkhotkeys_shared.la $(LIB_KDECORE)
++khotkeys_la_LIBADD   = ../shared/libkhotkeys_shared.la $(LIB_KDECORE) $(LIB_QT) -lDCOP $(LIB_X11)
+ khotkeys_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+ 
+ kded_khotkeys_la_SOURCES = kded.cpp kded.skel
+-kded_khotkeys_la_LIBADD = ../shared/libkhotkeys_shared.la $(LIB_KDECORE)
++kded_khotkeys_la_LIBADD = ../shared/libkhotkeys_shared.la $(LIB_KDECORE) $(LIB_QT) -lDCOP -lkdeinit_kded
+ kded_khotkeys_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ noinst_HEADERS = app.h kded.h
+--- kdebase-3.5.9.dfsg.1/khotkeys/arts/Makefile.am	2006-01-19 19:02:21.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/khotkeys/arts/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -1,7 +1,7 @@
+ kde_module_LTLIBRARIES = khotkeys_arts.la
+ 
+ khotkeys_arts_la_SOURCES = soundrecorder_arts.cpp voicerecorder_arts.cpp
+-khotkeys_arts_la_LIBADD  = ../shared/libkhotkeys_shared.la $(LIB_ARTS)
++khotkeys_arts_la_LIBADD  = ../shared/libkhotkeys_shared.la $(LIB_ARTS) $(LIB_QT) $(LIB_KDECORE)
+ khotkeys_arts_la_LDFLAGS = $(all_libraries) $(X_LDFLAGS) -module -avoid-version -no-undefined
+ 
+ INCLUDES = $(all_includes) -I$(srcdir)/../shared/ -I$(srcdir)/../kcontrol -I../kcontrol
+--- kdebase-3.5.9.dfsg.1/khotkeys/kcontrol/Makefile.am	2005-11-19 13:05:33.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/khotkeys/kcontrol/Makefile.am	2008-03-08 17:42:42.000000000 +0200
+@@ -12,12 +12,12 @@
+     windowselector.cpp gestures_settings_tab.cpp general_settings_tab.cpp \
+     voicerecorder.cpp voicerecordpage.cpp voice_settings_tab.cpp
+     
+-kcm_khotkeys_la_LIBADD  = ui/libui.la $(LIB_KDEUI) $(LIB_ARTS) 
++kcm_khotkeys_la_LIBADD  = ui/libui.la $(LIB_KDEUI) $(LIB_QT) $(top_builddir)/khotkeys/shared/libkhotkeys_shared.la $(LIB_KDECORE) -lDCOP $(LIB_X11) $(LIB_KIO)
+ kcm_khotkeys_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+ 
+ kcm_khotkeys_init_la_SOURCES = init.cpp
+     
+-kcm_khotkeys_init_la_LIBADD  = $(LIB_KDECORE)
++kcm_khotkeys_init_la_LIBADD  = $(LIB_KDECORE) $(LIB_QT) -lDCOP
+ kcm_khotkeys_init_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+ 
+ noinst_HEADERS = menuedit.h window_trigger_widget.h \
+--- kdebase-3.5.9.dfsg.1/khotkeys/shared/Makefile.am	2006-01-19 19:02:21.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/khotkeys/shared/Makefile.am	2008-03-08 17:44:01.000000000 +0200
+@@ -3,7 +3,7 @@
+ libkhotkeys_shared_la_SOURCES = action_data.cpp khotkeysglobal.cpp triggers.cpp windows.cpp \
+     settings.cpp actions.cpp input.cpp conditions.cpp khlistview.cpp khlistbox.cpp \
+     gestures.cpp voices.cpp voicesignature.cpp sound.cpp soundrecorder.cpp
+-libkhotkeys_shared_la_LIBADD  = $(LIB_KIO) $(XTESTLIB) -lXext -lX11 $(X_PRE_LIBS)
++libkhotkeys_shared_la_LIBADD  = $(LIB_KIO) $(XTESTLIB) $(LIB_X11) $(X_PRE_LIBS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ libkhotkeys_shared_la_LDFLAGS = $(all_libraries) $(X_LDFLAGS) -version-info 1:0:0 -no-undefined
+ 
+ INCLUDES = $(all_includes)
+--- kdebase-3.5.9.dfsg.1/kicker/applets/clock/Makefile.am	2005-09-10 11:25:35.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/clock/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -16,7 +16,7 @@
+ EXTRA_DIST = $(lnk_DATA) $(pic_DATA)
+ 
+ clock_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-clock_panelapplet_la_LIBADD =  ../../libkicker/libkickermain.la $(LIB_KDEUI)
++clock_panelapplet_la_LIBADD =  ../../libkicker/libkickermain.la $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ srcdoc:
+ 	kdoc -a -p -H -d $$HOME/web/src/clockapplet clockapplet *.h -lqt -lkdecore -lkdeui -lkfile
+--- kdebase-3.5.9.dfsg.1/kicker/applets/launcher/Makefile.am	2006-03-17 12:17:32.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kicker/applets/launcher/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -16,7 +16,7 @@
+ launcher_panelapplet_la_LDFLAGS = -module $(KDE_RPATH) $(all_libraries) -avoid-version -no-undefined
+ launcher_panelapplet_la_LIBADD = ../../kicker/core/libkicker_core.la  ../../kicker/buttons/libkicker_buttons.la \
+ 				../../kicker/ui/libkicker_ui.la ../../libkicker/libkickermain.la $(LIB_KIO) \
+-				$(LIB_KSYCOCA) $(LIB_KDEUI) $(LIB_KUTILS)
++				$(LIB_KSYCOCA) $(LIB_KDEUI) $(LIB_KUTILS) -lXau $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_X11) $(top_builddir)/libkonq/libkonq.la
+ 
+ kde_kcfg_DATA = launcherapplet.kcfg
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/applets/lockout/Makefile.am	2005-09-10 11:25:31.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/lockout/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ lockout_panelapplet_la_SOURCES = lockout.cpp
+ lockout_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-lockout_panelapplet_la_LIBADD = $(LIB_KSYCOCA)
++lockout_panelapplet_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP
+ 
+ noinst_HEADERS = lockout.h
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/applets/media/Makefile.am	2006-07-22 11:15:16.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/media/Makefile.am	2008-03-08 18:36:04.000000000 +0200
+@@ -13,7 +13,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ media_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-media_panelapplet_la_LIBADD = ../../../libkonq/libkonq.la ../../libkicker/libkickermain.la $(LIB_KDEUI) $(LIB_KIO) $(LIB_KUTILS)
++media_panelapplet_la_LIBADD = ../../../libkonq/libkonq.la ../../libkicker/libkickermain.la $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/mediaapplet.pot
+--- kdebase-3.5.9.dfsg.1/kicker/applets/menu/Makefile.am	2005-09-10 11:25:31.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/menu/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -14,7 +14,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ menu_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-menu_panelapplet_la_LIBADD = $(LIB_KDEUI)
++menu_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_X11)
+ 
+ messages:
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/kmenuapplet.pot
+--- kdebase-3.5.9.dfsg.1/kicker/applets/minipager/Makefile.am	2005-09-10 11:25:35.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/minipager/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -16,7 +16,7 @@
+ minipager_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ minipager_panelapplet_la_LIBADD = $(LIB_KDEUI) \
+ 	../../taskmanager/libtaskmanager.la \
+-	../../libkicker/libkickermain.la
++	../../libkicker/libkickermain.la $(LIB_QT) $(LIB_KDECORE) -lkdefx -lDCOP $(LIB_X11)
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/kminipagerapplet.pot
+--- kdebase-3.5.9.dfsg.1/kicker/applets/naughty/Makefile.am	2005-09-10 11:25:31.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/naughty/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -23,7 +23,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ naughty_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-naughty_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIB_KVM)
++naughty_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIB_KVM) $(LIB_QT) $(LIB_KDECORE)
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/naughtyapplet.pot
+--- kdebase-3.5.9.dfsg.1/kicker/applets/run/Makefile.am	2005-09-10 11:25:31.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/run/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -13,7 +13,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ run_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-run_panelapplet_la_LIBADD = $(LIB_KSYCOCA) $(LIB_KDEUI)
++run_panelapplet_la_LIBADD = $(LIB_KSYCOCA) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ messages:
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/krunapplet.pot
+--- kdebase-3.5.9.dfsg.1/kicker/applets/systemtray/Makefile.am	2005-09-10 11:25:31.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/systemtray/Makefile.am	2008-03-08 18:36:25.000000000 +0200
+@@ -14,7 +14,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ systemtray_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-systemtray_panelapplet_la_LIBADD = ../../libkicker/libkickermain.la $(LIB_KDEUI) $(LIB_KIO)
++systemtray_panelapplet_la_LIBADD = ../../libkicker/libkickermain.la $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_X11)
+ 
+ 
+ messages:
+--- kdebase-3.5.9.dfsg.1/kicker/applets/taskbar/Makefile.am	2005-09-10 11:25:34.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/taskbar/Makefile.am	2008-03-08 18:34:51.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ taskbar_panelapplet_la_METASOURCES = AUTO
+ taskbar_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-taskbar_panelapplet_la_LIBADD = $(LIB_KDEUI) ../../taskbar/libtaskbar.la ../../libkicker/libkickermain.la
++taskbar_panelapplet_la_LIBADD = $(LIB_KDEUI) ../../taskbar/libtaskbar.la $(LIB_QT) $(LIB_KDECORE)
+ 
+ noinst_HEADERS = taskbarapplet.h
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/applets/trash/Makefile.am	2006-10-01 20:31:52.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/applets/trash/Makefile.am	2008-03-08 18:37:36.000000000 +0200
+@@ -14,7 +14,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ trash_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-trash_panelapplet_la_LIBADD = ../../libkicker/libkickermain.la ../../../libkonq/libkonq.la $(LIB_KDEUI) $(LIB_KIO) $(LIB_KUTILS)
++trash_panelapplet_la_LIBADD = ../../libkicker/libkickermain.la ../../../libkonq/libkonq.la $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/trashapplet.pot
+--- kdebase-3.5.9.dfsg.1/kicker/extensions/dockbar/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/extensions/dockbar/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ dockbar_panelextension_la_SOURCES = dockcontainer.cpp dockbarextension.cpp
+ dockbar_panelextension_la_METASOURCES = AUTO
+ dockbar_panelextension_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-dockbar_panelextension_la_LIBADD = $(LIB_KDEUI)
++dockbar_panelextension_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_X11) $(LIB_KDECORE)
+ 
+ noinst_HEADERS = dockcontainer.h dockbarextension.h
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/extensions/kasbar/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/extensions/kasbar/Makefile.am	2008-03-08 18:35:41.000000000 +0200
+@@ -14,7 +14,7 @@
+ 			kasloaditem.cpp
+ 
+ libkasbar_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined
+-libkasbar_la_LIBADD = $(LIB_KDEUI) ../../taskmanager/libtaskmanager.la
++libkasbar_la_LIBADD = $(LIB_KDEUI) ../../taskmanager/libtaskmanager.la $(LIB_QT) $(LIB_KDECORE) -lkdefx
+ 
+ #
+ # Panel Extension
+@@ -23,7 +23,7 @@
+ 
+ kasbar_panelextension_la_SOURCES =  kasbarextension.cpp
+ kasbar_panelextension_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kasbar_panelextension_la_LIBADD =  libkasbar.la
++kasbar_panelextension_la_LIBADD =  libkasbar.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ noinst_HEADERS = kasbar.h kasitem.h kasbarextension.h \
+ 		kastaskitem.h kastasker.h kaspopup.h kasstartupitem.h \
+@@ -39,7 +39,7 @@
+ kasbar_SOURCES = kasbarapp.cpp
+ kasbar_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ kasbar_LDADD = 	libkasbar.la \
+-		$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
++		$(LIB_QT) $(LIB_KDECORE)
+ 
+ 
+ messages:
+--- kdebase-3.5.9.dfsg.1/kicker/extensions/sidebar/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/extensions/sidebar/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ sidebar_panelextension_la_METASOURCES = AUTO
+ sidebar_panelextension_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-sidebar_panelextension_la_LIBADD =  $(LIB_KDEUI) $(LIB_KPARTS) ../../../libkonq/libkonq.la
++sidebar_panelextension_la_LIBADD =  $(LIB_KDEUI) $(LIB_KPARTS) ../../../libkonq/libkonq.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KIO)
+ 
+ 
+ lnkdir = $(kde_datadir)/kicker/extensions
+--- kdebase-3.5.9.dfsg.1/kicker/extensions/taskbar/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/extensions/taskbar/Makefile.am	2008-03-08 18:38:21.000000000 +0200
+@@ -5,10 +5,9 @@
+ taskbar_panelextension_la_SOURCES = taskbarextension.cpp taskbarextension.skel
+ taskbar_panelextension_la_METASOURCES = AUTO
+ taskbar_panelextension_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-taskbar_panelextension_la_LIBADD = $(LIB_KDEUI) $(LIB_KPARTS) \
++taskbar_panelextension_la_LIBADD = $(LIB_KDEUI) \
+                                    ../../libkicker/libkickermain.la \
+-                                   ../../taskmanager/libtaskmanager.la \
+-                                   ../../taskbar/libtaskbar.la
++                                   ../../taskbar/libtaskbar.la $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ noinst_HEADERS = taskbarextension.h
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/kicker/Makefile.am	2005-09-10 11:25:31.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/kicker/Makefile.am	2008-03-08 18:36:55.000000000 +0200
+@@ -9,7 +9,8 @@
+ CLEANFILES = dummy.cpp
+ 
+ kicker_la_LIBADD = core/libkicker_core.la  buttons/libkicker_buttons.la \
+-	ui/libkicker_ui.la ../libkicker/libkickermain.la $(LIB_KIO) $(LIB_KUTILS)
++	ui/libkicker_ui.la ../libkicker/libkickermain.la $(LIB_KIO) $(LIB_KUTILS) \
++	$(top_builddir)/libkonq/libkonq.la -lXau $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_KDEUI) $(LIB_X11)
+ 
+ kicker_la_SOURCES = dummy.cpp
+ kicker_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+--- kdebase-3.5.9.dfsg.1/kicker/libkicker/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/libkicker/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -11,7 +11,7 @@
+ libkickermain_la_METASOURCES = AUTO
+ 
+ libkickermain_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined
+-libkickermain_la_LIBADD = $(LIB_KIO)
++libkickermain_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ kde_kcfg_DATA = kickerSettings.kcfg
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/find/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/find/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_find_la_SOURCES = findmenu.cpp
+ kickermenu_find_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kickermenu_find_la_LIBADD = $(LIB_KDEUI)
++kickermenu_find_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kickermenu_find_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/kate/Makefile.am	2007-01-15 13:31:27.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/kate/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_kate_la_SOURCES = katesessionmenu.cpp
+ kickermenu_kate_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kickermenu_kate_la_LIBADD = $(LIB_KDEUI)
++kickermenu_kate_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kickermenu_kate_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/kdeprint/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/kdeprint/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_kdeprint_la_SOURCES = print_mnu.cpp
+ kickermenu_kdeprint_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kickermenu_kdeprint_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) -lkdeprint
++kickermenu_kdeprint_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) -lkdeprint $(LIB_QT) $(LIB_KDECORE)
+ 
+ kickermenu_kdeprint_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/konq-profiles/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/konq-profiles/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_konqueror_la_SOURCES = konqy_menu.cpp
+ kickermenu_konqueror_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kickermenu_konqueror_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO)
++kickermenu_konqueror_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kickermenu_konqueror_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/konsole/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/konsole/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_konsole_la_SOURCES = konsole_mnu.cpp konsolebookmarkhandler.cpp konsolebookmarkmenu.cpp
+ kickermenu_konsole_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kickermenu_konsole_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO)
++kickermenu_konsole_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kickermenu_konsole_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/prefmenu/Makefile.am	2006-03-17 23:48:32.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/prefmenu/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_prefmenu_la_SOURCES = prefmenu.cpp
+ kickermenu_prefmenu_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kickermenu_prefmenu_la_LIBADD = $(LIB_KDEUI) $(top_builddir)/kicker/libkicker/libkickermain.la
++kickermenu_prefmenu_la_LIBADD = $(LIB_KDEUI) $(top_builddir)/kicker/libkicker/libkickermain.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KIO)
+ 
+ kickermenu_prefmenu_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/recentdocs/Makefile.am	2006-03-17 12:17:31.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/recentdocs/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_recentdocs_la_SOURCES = recentdocsmenu.cpp
+ kickermenu_recentdocs_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kickermenu_recentdocs_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO)
++kickermenu_recentdocs_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kickermenu_recentdocs_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/remote/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/remote/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_remotemenu_la_SOURCES = remotemenu.cpp remotemenu.skel
+ kickermenu_remotemenu_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kickermenu_remotemenu_la_LIBADD = $(LIB_KDEUI) $(top_builddir)/kicker/libkicker/libkickermain.la
++kickermenu_remotemenu_la_LIBADD = $(LIB_KDEUI) $(top_builddir)/kicker/libkicker/libkickermain.la $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_KIO)
+ 
+ kickermenu_remotemenu_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/menuext/system/Makefile.am	2006-03-17 23:48:32.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kicker/menuext/system/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kickermenu_systemmenu_la_SOURCES = systemmenu.cpp
+ kickermenu_systemmenu_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kickermenu_systemmenu_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(top_builddir)/kicker/libkicker/libkickermain.la
++kickermenu_systemmenu_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(top_builddir)/kicker/libkicker/libkickermain.la $(LIB_QT) $(LIB_KDECORE)
+ 
+ kickermenu_systemmenu_la_METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/proxy/Makefile.am	2006-10-01 20:31:51.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/proxy/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,11 +7,11 @@
+ 
+ METASOURCES = AUTO
+ 
+-appletproxy_la_LIBADD = $(LIB_KDEUI) ../libkicker/libkickermain.la
++appletproxy_la_LIBADD = $(LIB_KDEUI) ../libkicker/libkickermain.la $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ appletproxy_la_SOURCES = appletproxy.cpp
+ appletproxy_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module -avoid-version
+ 
+-extensionproxy_la_LIBADD = $(LIB_KDEUI) ../libkicker/libkickermain.la
++extensionproxy_la_LIBADD = $(LIB_KDEUI) ../libkicker/libkickermain.la $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ extensionproxy_la_SOURCES = extensionproxy.cpp
+ extensionproxy_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module -avoid-version
+ 
+--- kdebase-3.5.9.dfsg.1/kicker/taskbar/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/taskbar/Makefile.am	2008-03-08 18:37:14.000000000 +0200
+@@ -9,7 +9,7 @@
+ libtaskbar_la_METASOURCES = AUTO
+ 
+ libtaskbar_la_LDFLAGS = -version-info 3:0:2 $(all_libraries) -no-undefined
+-libtaskbar_la_LIBADD = $(LIB_KDEUI) $(LIB_KUTILS) ../libkicker/libkickermain.la ../taskmanager/libtaskmanager.la
++libtaskbar_la_LIBADD = $(LIB_KDEUI) ../libkicker/libkickermain.la ../taskmanager/libtaskmanager.la $(LIB_QT) -lDCOP $(LIB_KDECORE) -lkdefx
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/libtaskbar.pot
+--- kdebase-3.5.9.dfsg.1/kicker/taskmanager/Makefile.am	2005-09-10 11:25:29.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kicker/taskmanager/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ libtaskmanager_la_METASOURCES = AUTO
+ 
+ libtaskmanager_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined
+-libtaskmanager_la_LIBADD = $(LIB_KDECORE) $(LIB_XFIXES) $(LIB_XRENDER) $(LIB_XCOMPOSITE) ../libkicker/libkickermain.la
++libtaskmanager_la_LIBADD = $(LIB_KDECORE) $(LIB_XFIXES) $(LIB_XRENDER) $(LIB_XCOMPOSITE) ../libkicker/libkickermain.la $(LIB_QT) $(LIB_X11)
+ 
+ messages:
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/libtaskmanager.pot
+--- kdebase-3.5.9.dfsg.1/kioslave/about/Makefile.am	2006-03-17 12:17:35.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kioslave/about/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -8,7 +8,7 @@
+ kde_module_LTLIBRARIES = kio_about.la
+ 
+ kio_about_la_SOURCES = kio_about.cpp
+-kio_about_la_LIBADD = $(LIB_KSYCOCA)
++kio_about_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ kio_about_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ noinst_HEADERS = kio_about.h
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/cgi/kcmcgi/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/cgi/kcmcgi/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ 
+ kcm_cgi_la_SOURCES = kcmcgi.cpp
+ kcm_cgi_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_cgi_la_LIBADD = -lkdeui $(LIB_KIO)
++kcm_cgi_la_LIBADD = -lkdeui $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ INCLUDES= $(all_includes) 
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/cgi/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/cgi/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kde_module_LTLIBRARIES = kio_cgi.la
+ 
+ kio_cgi_la_SOURCES = cgi.cpp
+-kio_cgi_la_LIBADD = $(LIB_KIO)
++kio_cgi_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ kio_cgi_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = cgi.h
+--- kdebase-3.5.9.dfsg.1/kioslave/filter/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/filter/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kde_module_LTLIBRARIES = kio_filter.la
+ 
+ kio_filter_la_SOURCES = filter.cc
+-kio_filter_la_LIBADD = $(LIB_KSYCOCA)
++kio_filter_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ kio_filter_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ noinst_HEADERS = filter.h
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/finger/Makefile.am	2005-09-10 11:25:38.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/finger/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -9,7 +9,7 @@
+ kde_module_LTLIBRARIES = kio_finger.la
+ 
+ kio_finger_la_SOURCES = kio_finger.cpp 
+-kio_finger_la_LIBADD = -lkio
++kio_finger_la_LIBADD = -lkio $(LIB_QT) $(LIB_KDECORE)
+ kio_finger_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = kio_finger.h 
+--- kdebase-3.5.9.dfsg.1/kioslave/fish/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/fish/Makefile.am	2008-03-08 17:19:25.000000000 +0200
+@@ -4,7 +4,7 @@
+ AM_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ 
+ kio_fish_la_SOURCES = fish.cpp
+-kio_fish_la_LIBADD = $(LIB_KSYCOCA) #$(LIBUTIL) 
++kio_fish_la_LIBADD = $(LIB_KSYCOCA) $(LIBUTIL) $(LIB_QT) $(LIB_KDECORE)
+ kio_fish_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ noinst_HEADERS = fishcode.h fish.h
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/floppy/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/floppy/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -8,7 +8,7 @@
+ kde_module_LTLIBRARIES = kio_floppy.la
+ 
+ kio_floppy_la_SOURCES = kio_floppy.cpp program.cpp
+-kio_floppy_la_LIBADD = $(LIB_KIO)
++kio_floppy_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ kio_floppy_la_LDFLAGS = -module $(KDE_PLUGIN)
+ 
+ kdelnk_DATA = floppy.protocol
+--- kdebase-3.5.9.dfsg.1/kioslave/home/kdedmodule/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/home/kdedmodule/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ kded_homedirnotify_la_SOURCES = homedirnotify.cpp homedirnotify.skel homedirnotifymodule.cpp homedirnotifymodule.skel
+ kded_homedirnotify_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kded_homedirnotify_la_LIBADD = $(LIB_KSYCOCA)
++kded_homedirnotify_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) -lDCOP $(LIB_KDECORE) -lkdeinit_kded
+ 
+ 
+ servicesdir = $(kde_servicesdir)/kded
+--- kdebase-3.5.9.dfsg.1/kioslave/home/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/home/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ kde_module_LTLIBRARIES = kio_home.la
+ 
+ kio_home_la_SOURCES = dummy.cpp
+-kio_home_la_LIBADD  = libkiohome.la $(LIB_KIO)
++kio_home_la_LIBADD  = libkiohome.la $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kio_home_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN) -no-undefined
+ 
+ dummy.cpp:
+--- kdebase-3.5.9.dfsg.1/kioslave/info/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/info/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -9,7 +9,7 @@
+ kde_module_LTLIBRARIES = kio_info.la
+ 
+ kio_info_la_SOURCES = info.cc
+-kio_info_la_LIBADD = $(LIB_KIO)
++kio_info_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ kio_info_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ noinst_HEADERS = info.h
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/ldap/configure.in.in	2005-10-10 18:04:01.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/ldap/configure.in.in	2008-03-08 18:26:23.000000000 +0200
+@@ -69,7 +69,7 @@
+     fi
+     LDAP_LIBS="${LDAP_LIBS}-lldap"
+   fi
+-  LDAP_LIBS="${LDAP_LIBS} ${LIB_LBER} ${LIBRESOLV}"
++  LDAP_LIBS="${LDAP_LIBS}"
+ 
+   kde_safe_LIBS="$LIBS"
+   kde_safe_CFLAGS="$CFLAGS"
+--- kdebase-3.5.9.dfsg.1/kioslave/ldap/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/ldap/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -10,7 +10,7 @@
+ kde_module_LTLIBRARIES = kio_ldap.la
+ 
+ kio_ldap_la_SOURCES = kio_ldap.cpp
+-kio_ldap_la_LIBADD = $(LIB_KIO) $(LDAP_LIBS) $(LIB_KABC)
++kio_ldap_la_LIBADD = $(LIB_KIO) $(LDAP_LIBS) $(LIB_KABC) $(LIB_QT) $(LIB_KDECORE)
+ kio_ldap_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LDAP_RPATH) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = kio_ldap.h
+--- kdebase-3.5.9.dfsg.1/kioslave/mac/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/mac/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -8,7 +8,7 @@
+ kde_module_LTLIBRARIES = kio_mac.la
+ 
+ kio_mac_la_SOURCES = kio_mac.cpp
+-kio_mac_la_LIBADD = -lkio
++kio_mac_la_LIBADD = -lkio $(LIB_QT) $(LIB_KDECORE)
+ kio_mac_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = kio_mac.h
+--- kdebase-3.5.9.dfsg.1/kioslave/man/Makefile.am	2006-03-17 12:17:36.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kioslave/man/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -16,13 +16,13 @@
+ kde_module_LTLIBRARIES = kio_man.la  libkmanpart.la
+ 
+ kio_man_la_SOURCES = man2html.cpp kio_man.cpp
+-kio_man_la_LIBADD = $(LIB_KSYCOCA)
++kio_man_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ kio_man_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ noinst_HEADERS = kio_man.h
+ ### TODO Why is man2htmk.h distributed?
+ 
+ libkmanpart_la_SOURCES = kmanpart.cpp
+-libkmanpart_la_LIBADD = -lkhtml $(LIB_KPARTS)
++libkmanpart_la_LIBADD = -lkhtml $(LIB_KPARTS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KIO)
+ libkmanpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN)
+ 
+ kdelnk_DATA = man.protocol kmanpart.desktop
+--- kdebase-3.5.9.dfsg.1/kioslave/media/kcmodule/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/media/kcmodule/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -9,7 +9,7 @@
+                        main.cpp
+ 
+ kcm_media_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kcm_media_la_LIBADD = ../libmediacommon/libmediacommon.la $(LIB_KIO)
++kcm_media_la_LIBADD = ../libmediacommon/libmediacommon.la $(LIB_KIO) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ noinst_HEADERS = notifiermodule.h managermodule.h \
+                  serviceconfigdialog.h mimetypelistboxitem.h \
+--- kdebase-3.5.9.dfsg.1/kioslave/media/kfile-plugin/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/media/kfile-plugin/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ kfile_media_la_SOURCES = kfilemediaplugin.cpp
+ kfile_media_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module $(KDE_PLUGIN)
+-kfile_media_la_LIBADD = $(LIB_KIO) ../libmediacommon/libmediacommon.la
++kfile_media_la_LIBADD = $(LIB_KIO) ../libmediacommon/libmediacommon.la $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ kdelnkdir = $(kde_servicesdir)
+ kde_services_DATA = kfile_media.desktop
+--- kdebase-3.5.9.dfsg.1/kioslave/media/Makefile.am	2006-07-22 11:15:45.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/media/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -11,7 +11,7 @@
+ kde_module_LTLIBRARIES = kio_media.la
+ 
+ kio_media_la_SOURCES = dummy.cpp
+-kio_media_la_LIBADD  = libkiomedia.la libmediacommon/libmediacommon.la $(LIB_KIO)
++kio_media_la_LIBADD  = libkiomedia.la libmediacommon/libmediacommon.la $(LIB_KIO) $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ kio_media_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN) -no-undefined
+ 
+ dummy.cpp:
+--- kdebase-3.5.9.dfsg.1/kioslave/media/mediamanager/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/media/mediamanager/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -24,7 +24,8 @@
+ 
+ kded_mediamanager_la_SOURCES = mediamanager.cpp mediamanager.skel medialist.cpp backendbase.cpp fstabbackend.cpp removablebackend.cpp mediadirnotify.cpp mediadirnotify.skel
+ kded_mediamanager_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kded_mediamanager_la_LIBADD = $(LIB_KSYCOCA) ../libmediacommon/libmediacommon.la $(HALBACKEND_LIB) $(LINUXCDPOLLING_LIB)
++kded_mediamanager_la_LIBADD = $(LIB_KSYCOCA) ../libmediacommon/libmediacommon.la $(HALBACKEND_LIB) $(LINUXCDPOLLING_LIB) \
++	$(libhalbackend_la_LIBADD) $(LIB_QT) -lDCOP $(LIB_KDECORE) -lkdeinit_kded
+ 
+ 
+ servicesdir = $(kde_servicesdir)/kded
+--- kdebase-3.5.9.dfsg.1/kioslave/media/medianotifier/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/media/medianotifier/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ kde_module_LTLIBRARIES = kded_medianotifier.la
+ kded_medianotifier_la_LDFLAGS = -module -avoid-version $(all_libraries)
+ kded_medianotifier_la_LIBADD = ../libmediacommon/libmediacommon.la $(LIB_KDECORE) \
+-                               $(LIB_KDEUI) $(LIB_KIO)
++                               $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) -lDCOP -lkdeinit_kded
+ kded_medianotifier_la_SOURCES = medianotifier.cpp medianotifier.skel \
+                                 notificationdialog.cpp notificationdialogview.ui
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/media/propsdlgplugin/Makefile.am	2006-07-22 11:15:43.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/media/propsdlgplugin/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ kde_module_LTLIBRARIES = media_propsdlgplugin.la
+ 
+-media_propsdlgplugin_la_LIBADD = ../libmediacommon/libmediacommon.la $(LIB_KIO)
++media_propsdlgplugin_la_LIBADD = ../libmediacommon/libmediacommon.la $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) -lDCOP $(LIB_KDECORE)
+ media_propsdlgplugin_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ AM_CPPFLAGS = $(all_includes)
+--- kdebase-3.5.9.dfsg.1/kioslave/nfs/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/nfs/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -8,7 +8,7 @@
+ kde_module_LTLIBRARIES = kio_nfs.la
+ 
+ kio_nfs_la_SOURCES = kio_nfs.cpp mount_xdr.c nfs_prot_xdr.c
+-kio_nfs_la_LIBADD = -lkio $(LIBRPC)
++kio_nfs_la_LIBADD = -lkio $(LIBRPC) $(LIB_QT) $(LIB_KDECORE)
+ kio_nfs_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ noinst_HEADERS = nfs_prot.h mount.h
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/nntp/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/nntp/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kde_module_LTLIBRARIES = kio_nntp.la
+ 
+ kio_nntp_la_SOURCES = nntp.cpp
+-kio_nntp_la_LIBADD  = $(LIB_KIO)
++kio_nntp_la_LIBADD  = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ kio_nntp_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ METASOURCES = AUTO
+--- kdebase-3.5.9.dfsg.1/kioslave/pop3/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/pop3/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kde_module_LTLIBRARIES = kio_pop3.la
+ 
+ kio_pop3_la_SOURCES = pop3.cc
+-kio_pop3_la_LIBADD  = $(LIB_KIO) $(SASL2_LIBS)
++kio_pop3_la_LIBADD  = $(LIB_KIO) $(SASL2_LIBS) $(LIB_QT) $(LIB_KDECORE)
+ kio_pop3_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = pop3.h
+--- kdebase-3.5.9.dfsg.1/kioslave/remote/kdedmodule/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/remote/kdedmodule/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ kded_remotedirnotify_la_SOURCES = remotedirnotify.cpp remotedirnotify.skel remotedirnotifymodule.cpp remotedirnotifymodule.skel
+ kded_remotedirnotify_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kded_remotedirnotify_la_LIBADD = $(LIB_KSYCOCA)
++kded_remotedirnotify_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) -lDCOP $(LIB_KDECORE) -lkdeinit_kded
+ 
+ 
+ servicesdir = $(kde_servicesdir)/kded
+--- kdebase-3.5.9.dfsg.1/kioslave/remote/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/remote/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ kde_module_LTLIBRARIES = kio_remote.la
+ 
+ kio_remote_la_SOURCES = dummy.cpp
+-kio_remote_la_LIBADD  = libkioremote.la $(LIB_KIO)
++kio_remote_la_LIBADD  = libkioremote.la $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kio_remote_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN) -no-undefined
+ 
+ dummy.cpp:
+--- kdebase-3.5.9.dfsg.1/kioslave/settings/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/settings/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kde_module_LTLIBRARIES = kio_settings.la
+ 
+ kio_settings_la_SOURCES = kio_settings.cc
+-kio_settings_la_LIBADD  = $(LIB_KSYCOCA)
++kio_settings_la_LIBADD  = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kio_settings_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = kio_settings.h
+--- kdebase-3.5.9.dfsg.1/kioslave/sftp/Makefile.am	2005-09-10 11:25:38.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/sftp/Makefile.am	2008-03-08 13:36:37.000000000 +0200
+@@ -14,7 +14,7 @@
+ kde_module_LTLIBRARIES = kio_sftp.la
+ 
+ kio_sftp_la_SOURCES = process.cpp atomicio.cpp kio_sftp.cpp sftpfileattr.cpp ksshprocess.cpp
+-kio_sftp_la_LIBADD = $(LIB_KIO)
++kio_sftp_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lkdesu
+ kio_sftp_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ noinst_HEADERS = atomicio.h kio_sftp.h ksshprocess.h process.h sftpfileattr.h sftp.h
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/system/kdedmodule/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/system/kdedmodule/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ kded_systemdirnotify_la_SOURCES = systemdirnotify.cpp systemdirnotify.skel systemdirnotifymodule.cpp systemdirnotifymodule.skel
+ kded_systemdirnotify_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kded_systemdirnotify_la_LIBADD = $(LIB_KSYCOCA)
++kded_systemdirnotify_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) -lDCOP $(LIB_KDECORE) -lkdeinit_kded
+ 
+ 
+ servicesdir = $(kde_servicesdir)/kded
+--- kdebase-3.5.9.dfsg.1/kioslave/system/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/system/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ kde_module_LTLIBRARIES = kio_system.la
+ 
+ kio_system_la_SOURCES = dummy.cpp
+-kio_system_la_LIBADD  = libkiosystem.la $(LIB_KIO)
++kio_system_la_LIBADD  = libkiosystem.la $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kio_system_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN) -no-undefined
+ 
+ dummy.cpp:
+--- kdebase-3.5.9.dfsg.1/kioslave/smb/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/smb/Makefile.am	2008-03-08 18:23:01.000000000 +0200
+@@ -14,7 +14,7 @@
+              kio_smb_internal.cpp \
+ 	     kio_smb_mount.cpp
+ 
+-kio_smb_la_LIBADD = -lkio -lsmbclient $(SMBCLIENT_EXTRA_LIBS)
++kio_smb_la_LIBADD = -lkio -lsmbclient $(LIB_QT) $(LIB_KDECORE)
+ 
+ kio_smb_la_LDFLAGS = -module $(KDE_PLUGIN)
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/smtp/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/smtp/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ kde_module_LTLIBRARIES = kio_smtp.la
+ 
+ kio_smtp_la_SOURCES = smtp.cc request.cc response.cc capabilities.cc command.cc transactionstate.cc
+-kio_smtp_la_LIBADD  = $(LIB_KIO) $(SASL2_LIBS)
++kio_smtp_la_LIBADD  = $(LIB_KIO) $(SASL2_LIBS) $(LIB_QT) $(LIB_KDECORE)
+ kio_smtp_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = smtp.h request.h response.h capabilities.h command.h transactionstate.h
+--- kdebase-3.5.9.dfsg.1/kioslave/tar/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/tar/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ kde_module_LTLIBRARIES = kio_tar.la
+ 
+ kio_tar_la_SOURCES = tar.cc
+-kio_tar_la_LIBADD = $(LIB_KSYCOCA)
++kio_tar_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ kio_tar_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ check_PROGRAMS = ktartest
+--- kdebase-3.5.9.dfsg.1/kioslave/thumbnail/configure.in.in	2006-07-22 11:15:46.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/thumbnail/configure.in.in	2008-03-08 18:29:30.000000000 +0200
+@@ -9,6 +9,9 @@
+   if test "x$with_openexr" != xcheck && test -z "$LIB_EXR"; then
+     AC_MSG_ERROR([--with-openexr was given, but test for OpenEXR failed])
+   fi
++  if test -n "$LIB_EXR"; then
++    LIB_EXR="`echo $LIB_EXR | sed 's/-lHalf//'`"
++  fi
+ fi
+ 
+ AM_CONDITIONAL(include_EXR_MODULES, test -n "$LIB_EXR")
+--- kdebase-3.5.9.dfsg.1/kioslave/thumbnail/Makefile.am	2006-01-19 19:00:59.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kioslave/thumbnail/Makefile.am	2008-03-08 18:30:15.000000000 +0200
+@@ -20,31 +20,31 @@
+ 	$(EXR_MODULE)
+ 
+ kio_thumbnail_la_SOURCES = thumbnail.cpp
+-kio_thumbnail_la_LIBADD = $(LIB_KIO)
++kio_thumbnail_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lkdefx
+ kio_thumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ imagethumbnail_la_SOURCES = imagecreator.cpp
+-imagethumbnail_la_LIBADD = $(LIB_KIO) # for kimageio
++imagethumbnail_la_LIBADD = $(LIB_KIO) $(LIB_QT) # for kimageio
+ imagethumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ textthumbnail_la_SOURCES = textcreator.cpp
+-textthumbnail_la_LIBADD = $(LIB_KIO) # for kmimetype
++textthumbnail_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lkdefx # for kmimetype
+ textthumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ htmlthumbnail_la_SOURCES = htmlcreator.cpp
+-htmlthumbnail_la_LIBADD = $(LIB_KHTML)
++htmlthumbnail_la_LIBADD = $(LIB_KHTML) $(LIB_QT) $(LIB_KDECORE)
+ htmlthumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ djvuthumbnail_la_SOURCES = djvucreator.cpp
+-djvuthumbnail_la_LIBADD = $(LIB_KDECORE)
++djvuthumbnail_la_LIBADD = $(LIB_QT)
+ djvuthumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ cursorthumbnail_la_SOURCES = cursorcreator.cpp
+-cursorthumbnail_la_LIBADD = $(LIB_KDECORE) $(LIB_XCURSOR)
++cursorthumbnail_la_LIBADD = $(LIB_XCURSOR) $(LIB_QT)
+ cursorthumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ exrthumbnail_la_SOURCES = exrcreator.cpp
+-exrthumbnail_la_LIBADD = $(LIB_KDECORE) $(LIB_EXR)
++exrthumbnail_la_LIBADD = $(LIB_KDECORE) $(LIB_EXR) $(LIB_QT)
+ exrthumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = thumbnail.h imagecreator.h textcreator.h htmlcreator.h \
+--- kdebase-3.5.9.dfsg.1/kioslave/trash/kfile-plugin/Makefile.am	2005-09-10 11:25:36.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/trash/kfile-plugin/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ kfile_trash_la_SOURCES = kfile_trash.cpp
+ kfile_trash_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_trash_la_LIBADD = ../libtrashcommon.la $(LIB_KIO)
++kfile_trash_la_LIBADD = ../libtrashcommon.la $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kioslave/trash/Makefile.am	2005-09-10 11:25:37.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kioslave/trash/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ kde_module_LTLIBRARIES = kio_trash.la
+ 
+ kio_trash_la_SOURCES = kio_trash.cpp
+-kio_trash_la_LIBADD  = libtrashcommon.la $(LIB_KIO)
++kio_trash_la_LIBADD  = libtrashcommon.la $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kio_trash_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN) -no-undefined
+ 
+ bin_PROGRAMS = ktrash
+--- kdebase-3.5.9.dfsg.1/klipper/Makefile.am	2006-03-17 12:17:30.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/klipper/Makefile.am	2008-03-08 13:31:45.000000000 +0200
+@@ -16,11 +16,11 @@
+ libklipper_common_la_METASOURCES = AUTO
+ libklipper_common_la_LDFLAGS = $(all_libraries)
+ 
+-klipper_la_LIBADD = libklipper_common.la
++klipper_la_LIBADD = libklipper_common.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KIO) $(LIB_KDEUI) -lDCOP $(LIB_X11) $(LIBZ) $(LIB_XFIXES)
+ klipper_la_SOURCES = dummy.cpp
+ klipper_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+-klipper_panelapplet_la_LIBADD = libklipper_common.la
++klipper_panelapplet_la_LIBADD = libklipper_common.la $(LIB_XFIXES) $(LIB_QT) -lDCOP $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KIO) $(LIB_X11) $(LIBZ)
+ klipper_panelapplet_la_SOURCES = applet.cpp applet.skel
+ klipper_panelapplet_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+--- kdebase-3.5.9.dfsg.1/kmenuedit/Makefile.am	2006-03-17 12:17:38.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kmenuedit/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -15,11 +15,11 @@
+ libkmenueditcommon_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ kmenuedit_la_SOURCES = main.cpp
+-kmenuedit_la_LIBADD = libkmenueditcommon.la
++kmenuedit_la_LIBADD = libkmenueditcommon.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KIO) -lDCOP $(LIB_KDECORE)
+ kmenuedit_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ kcontroledit_la_SOURCES = kcontrol_main.cpp
+-kcontroledit_la_LIBADD = libkmenueditcommon.la
++kcontroledit_la_LIBADD = libkmenueditcommon.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KIO) $(LIB_KDECORE)
+ kcontroledit_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ noinst_HEADERS = kmenuedit.h treeview.h basictab.h khotkeys.h \
+--- kdebase-3.5.9.dfsg.1/konqueror/about/Makefile.am	2005-09-10 11:25:48.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/about/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ INCLUDES = -I$(srcdir)/.. -I$(top_srcdir)/libkonq $(all_includes)
+ konq_aboutpage_la_SOURCES = konq_aboutpage.cc
+ konq_aboutpage_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-konq_aboutpage_la_LIBADD = $(LIB_KHTML)
++konq_aboutpage_la_LIBADD = $(LIB_KHTML) $(LIB_QT) $(LIB_KDEUI) $(LIB_KPARTS) $(LIB_KDECORE)
+ 
+ kde_services_DATA = konq_aboutpage.desktop
+ kde_servicetypes_DATA = konqaboutpage.desktop
+--- kdebase-3.5.9.dfsg.1/konqueror/client/Makefile.am	2005-09-10 11:25:48.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/client/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ INCLUDES= -I.. $(all_includes)
+ kfmclient_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kfmclient_la_LIBADD =  $(LIB_KIO)
++kfmclient_la_LIBADD =  $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_X11) $(LIB_KDEUI)
+ kfmclient_la_SOURCES = kfmclient.cc KonquerorIface.stub KDesktopIface.stub
+ 
+ noinst_HEADERS = kfmclient.h
+--- kdebase-3.5.9.dfsg.1/konqueror/iconview/Makefile.am	2005-09-10 11:25:46.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/iconview/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ 
+ konq_iconview_la_SOURCES = konq_iconview.cc
+ konq_iconview_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-konq_iconview_la_LIBADD = $(top_builddir)/libkonq/libkonq.la
++konq_iconview_la_LIBADD = $(top_builddir)/libkonq/libkonq.la $(LIB_KPARTS) $(LIB_QT) $(LIB_KIO) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ noinst_HEADERS = konq_iconview.h
+ 
+--- kdebase-3.5.9.dfsg.1/konqueror/keditbookmarks/Makefile.am	2005-09-10 11:25:49.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/keditbookmarks/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -14,7 +14,7 @@
+ keditbookmarks_la_SOURCES = main.cpp listview.cpp toplevel.cpp actionsimpl.cpp commands.cpp importers.cpp dcop.skel dcop.cpp bookmarkiterator.cpp  \
+                             testlink.cpp favicons.cpp updater.cpp exporters.cpp kbookmarknotifier.stub bookmarkinfo.cpp kebsearchline.cpp settings.kcfgc
+ kbookmarknotifier_DIR = $(includedir)
+-keditbookmarks_la_LIBADD  = $(top_builddir)/libkonq/libkonq.la
++keditbookmarks_la_LIBADD  = $(top_builddir)/libkonq/libkonq.la $(LIB_QT) $(LIB_KDEUI) -lDCOP $(LIB_KDECORE) $(LIB_KIO) $(LIB_KPARTS)
+ keditbookmarks_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ rcdir = $(kde_datadir)/keditbookmarks
+--- kdebase-3.5.9.dfsg.1/konqueror/kttsplugin/Makefile.am	2005-09-10 11:25:46.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/kttsplugin/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ kde_module_LTLIBRARIES = libkhtmlkttsdplugin.la
+ 
+ libkhtmlkttsdplugin_la_SOURCES = khtmlkttsd.cpp
+-libkhtmlkttsdplugin_la_LIBADD  = $(LIB_KHTML)
++libkhtmlkttsdplugin_la_LIBADD  = $(LIB_KHTML) $(LIB_QT) $(LIB_KDECORE) $(LIB_KPARTS) $(LIB_KDEUI) -lDCOP $(LIB_KIO)
+ libkhtmlkttsdplugin_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ 
+ pluginsdir = $(kde_datadir)/khtml/kpartplugins
+--- kdebase-3.5.9.dfsg.1/konqueror/listview/Makefile.am	2005-09-10 11:25:47.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/listview/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -13,7 +13,7 @@
+                           konq_listviewsettings.kcfgc 
+                              
+ konq_listview_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-konq_listview_la_LIBADD = $(top_builddir)/libkonq/libkonq.la
++konq_listview_la_LIBADD = $(top_builddir)/libkonq/libkonq.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KPARTS) $(LIB_KDECORE) $(LIB_KIO)
+ 
+ kde_services_DATA = konq_treeview.desktop konq_detailedlistview.desktop \
+                     konq_textview.desktop konq_infolistview.desktop
+--- kdebase-3.5.9.dfsg.1/konqueror/Makefile.am	2007-10-08 12:51:30.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -49,7 +49,7 @@
+ 	konq_view.h konq_viewmgr.h konq_extensionmanager.h version.h
+ 
+ konqueror_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-konqueror_la_LIBADD = ../libkonq/libkonq.la libkonqueror_intern.la $(LIBMALLOC) $(LIB_KUTILS)
++konqueror_la_LIBADD = ../libkonq/libkonq.la libkonqueror_intern.la $(LIBMALLOC) $(LIB_KUTILS) $(LIB_KDEUI) $(LIB_KIO) $(LIB_KPARTS) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_X11)
+ 
+ # Hmm, this experiment of a static konq failed, don't trust it...
+ # (but feel free to fix it :)
+--- kdebase-3.5.9.dfsg.1/konqueror/preloader/Makefile.am	2006-03-17 12:17:39.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/konqueror/preloader/Makefile.am	2008-03-08 18:39:34.000000000 +0200
+@@ -5,7 +5,7 @@
+ INCLUDES= -I.. $(all_includes)
+ kded_konqy_preloader_la_SOURCES = preloader.cc preloader.skel
+ kded_konqy_preloader_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kded_konqy_preloader_la_LIBADD = ../libkonqueror_intern.la $(LIB_KSYCOCA) $(LIB_KDECORE)
++kded_konqy_preloader_la_LIBADD = ../libkonqueror_intern.la $(LIB_KDECORE) $(LIB_QT) -lDCOP -lkdeinit_kded
+ 
+ METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/konqueror/remoteencodingplugin/Makefile.am	2005-09-10 11:25:46.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/remoteencodingplugin/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ 
+ kde_module_LTLIBRARIES = konq_remoteencoding.la
+ konq_remoteencoding_la_SOURCES = kremoteencodingplugin.cpp
+-konq_remoteencoding_la_LIBADD = $(top_builddir)/libkonq/libkonq.la
++konq_remoteencoding_la_LIBADD = $(top_builddir)/libkonq/libkonq.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KPARTS) $(LIB_KIO) -lDCOP $(LIB_KDEUI)
+ konq_remoteencoding_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ 
+ iconviewdir = $(kde_datadir)/konqiconview/kpartplugins
+--- kdebase-3.5.9.dfsg.1/konqueror/shellcmdplugin/Makefile.am	2005-09-10 11:25:48.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/shellcmdplugin/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ kde_module_LTLIBRARIES = konq_shellcmdplugin.la
+ konq_shellcmdplugin_la_SOURCES = kshellcmdexecutor.cpp kshellcmddialog.cpp \
+ 	kshellcmdplugin.cpp
+-konq_shellcmdplugin_la_LIBADD = $(top_builddir)/libkonq/libkonq.la
++konq_shellcmdplugin_la_LIBADD = $(top_builddir)/libkonq/libkonq.la -lkdesu $(LIB_QT) $(LIB_KIO) $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_KDECORE)
+ konq_shellcmdplugin_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ 
+ iconviewdir = $(kde_datadir)/konqiconview/kpartplugins
+--- kdebase-3.5.9.dfsg.1/konqueror/sidebar/Makefile.am	2005-09-10 11:25:47.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/sidebar/Makefile.am	2008-03-08 18:43:24.000000000 +0200
+@@ -22,11 +22,11 @@
+ # the Part's source, library search path, and link libraries
+ konq_sidebar_la_SOURCES = konqsidebar.cpp sidebar_widget.cpp 
+ konq_sidebar_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-konq_sidebar_la_LIBADD  = $(LIB_KPARTS) $(LIB_KIO) ../../libkonq/libkonq.la ./libkonqsidebarplugin.la $(LIB_KUTILS)
++konq_sidebar_la_LIBADD  = $(LIB_KPARTS) $(LIB_KIO) ../../libkonq/libkonq.la ./libkonqsidebarplugin.la $(LIB_KUTILS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ libkonqsidebarplugin_la_SOURCES=konqsidebarplugin.cpp
+ libkonqsidebarplugin_la_LDFLAGS = -version-info 3:0:2 $(all_libraries) -no-undefined
+-libkonqsidebarplugin_la_LIBADD = $(LIB_KPARTS)
++libkonqsidebarplugin_la_LIBADD = $(LIB_QT)
+ 
+ # this is where the desktop file will go 
+ partdesktopdir   = $(kde_servicesdir)
+--- kdebase-3.5.9.dfsg.1/konqueror/sidebar/trees/bookmark_module/Makefile.am	2005-09-10 11:25:47.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/sidebar/trees/bookmark_module/Makefile.am	2008-03-08 18:42:45.000000000 +0200
+@@ -6,5 +6,5 @@
+ 
+ konq_sidebartree_bookmarks_la_SOURCES = bookmark_module.cpp bookmark_item.cpp
+ konq_sidebartree_bookmarks_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-konq_sidebartree_bookmarks_la_LIBADD = ../../libkonqsidebarplugin.la ../libkonq_sidebar_tree.la
++konq_sidebartree_bookmarks_la_LIBADD = ../libkonq_sidebar_tree.la $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KIO) $(LIB_KDECORE) $(LIB_KPARTS) $(top_builddir)/libkonq/libkonq.la
+ 
+--- kdebase-3.5.9.dfsg.1/konqueror/sidebar/trees/dirtree_module/Makefile.am	2005-09-10 11:25:47.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/sidebar/trees/dirtree_module/Makefile.am	2008-03-08 18:44:23.000000000 +0200
+@@ -5,6 +5,6 @@
+ METASOURCES = AUTO
+ konq_sidebartree_dirtree_la_SOURCES = dirtree_module.cpp dirtree_item.cpp
+ konq_sidebartree_dirtree_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-konq_sidebartree_dirtree_la_LIBADD = ../../libkonqsidebarplugin.la ../libkonq_sidebar_tree.la
++konq_sidebartree_dirtree_la_LIBADD = ../libkonq_sidebar_tree.la $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KIO) $(LIB_KDECORE) $(LIB_KPARTS) $(top_builddir)/libkonq/libkonq.la
+ 
+ 
+--- kdebase-3.5.9.dfsg.1/konqueror/sidebar/trees/history_module/Makefile.am	2005-09-10 11:25:47.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/sidebar/trees/history_module/Makefile.am	2008-03-08 18:42:24.000000000 +0200
+@@ -7,10 +7,10 @@
+ konq_sidebartree_history_la_SOURCES = history_module.cpp history_item.cpp \
+ 	history_settings.cpp history_settings.skel
+ konq_sidebartree_history_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-konq_sidebartree_history_la_LIBADD =  ../../libkonqsidebarplugin.la ../libkonq_sidebar_tree.la
++konq_sidebartree_history_la_LIBADD = ../libkonq_sidebar_tree.la $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KIO) $(LIB_KPARTS) $(top_builddir)/libkonq/libkonq.la
+ 
+ kcm_history_la_SOURCES = kcmhistory.cpp history_dlg.ui history_settings.cpp history_settings.skel
+ kcm_history_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_history_la_LIBADD = -lkdeui $(top_builddir)/libkonq/libkonq.la
++kcm_history_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ xdg_apps_DATA = kcmhistory.desktop
+--- kdebase-3.5.9.dfsg.1/konqueror/sidebar/trees/Makefile.am	2005-09-10 11:25:47.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/sidebar/trees/Makefile.am	2008-03-08 18:44:13.000000000 +0200
+@@ -13,5 +13,5 @@
+ 
+ konqsidebar_tree_la_SOURCES = konqsidebar_tree.cpp
+ konqsidebar_tree_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-konqsidebar_tree_la_LIBADD = $(top_builddir)/libkonq/libkonq.la ../libkonqsidebarplugin.la libkonq_sidebar_tree.la
++konqsidebar_tree_la_LIBADD = $(top_builddir)/libkonq/libkonq.la ../libkonqsidebarplugin.la libkonq_sidebar_tree.la $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KIO) $(LIB_KDECORE) $(LIB_KPARTS)
+ 
+--- kdebase-3.5.9.dfsg.1/konqueror/sidebar/web_module/Makefile.am	2005-09-10 11:25:47.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/konqueror/sidebar/web_module/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ konqsidebar_web_la_SOURCES = web_module.cpp
+ konqsidebar_web_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-konqsidebar_web_la_LIBADD = $(LIB_KPARTS) $(LIB_KHTML) ../libkonqsidebarplugin.la ../../../libkonq/libkonq.la
++konqsidebar_web_la_LIBADD = $(LIB_KPARTS) $(LIB_KHTML) ../libkonqsidebarplugin.la ../../../libkonq/libkonq.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ #plugindir=$(kde_datadir)/konqsidebartng/entries
+ #plugin_DATA=websidebar.desktop
+--- kdebase-3.5.9.dfsg.1/konsole/konsole/Makefile.am	2006-03-17 12:17:43.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/konsole/konsole/Makefile.am	2008-03-08 18:46:35.000000000 +0200
+@@ -25,7 +25,7 @@
+         sessioniface.skel
+ 
+ libkonsolepart_la_LDFLAGS = $(KDE_PLUGIN) $(all_libraries)
+-libkonsolepart_la_LIBADD = $(XTESTLIB) $(LIB_KPARTS)
++libkonsolepart_la_LIBADD = $(LIB_KPARTS) $(LIB_QT) $(LIB_X11) -lDCOP $(LIB_KIO) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ fontembedder_SOURCES = fontembedder.cpp
+ fontembedder_LDFLAGS = $(all_libraries)
+@@ -33,7 +33,7 @@
+ 
+ # kwrited kded module
+ kded_kwrited_la_SOURCES = kwrited.cpp TEPty.cpp kwrited.skel
+-kded_kwrited_la_LIBADD  = $(LIB_KDECORE) 
++kded_kwrited_la_LIBADD  = $(LIB_KDECORE)  $(LIB_QT) -lDCOP -lkdeinit_kded
+ kded_kwrited_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ # konsole kdeinit module
+@@ -42,7 +42,7 @@
+      konsole_wcwidth.cpp konsolebookmarkhandler.cpp konsolebookmarkmenu.cpp \
+      zmodem_dialog.cpp printsettings.cpp
+ konsole_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-konsole_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(LIB_KDEPRINT) $(LIBUTIL) $(XTESTLIB) $(LIB_XRENDER)
++konsole_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(LIB_KDEPRINT) $(LIB_XRENDER) $(LIBDL) $(LIB_KDECORE) $(LIB_QT) -lDCOP $(LIB_X11)
+ 
+ # kcmkonsole_SOURCES = kcmkonsole.cpp schema.cpp
+ # kcmkonsole_LDADD   = $(LIB_KDEUI)
+--- kdebase-3.5.9.dfsg.1/ksysguard/gui/ksgrd/Makefile.am	2005-09-10 11:26:15.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/ksysguard/gui/ksgrd/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ lib_LTLIBRARIES = libksgrd.la
+ 
+ libksgrd_la_LDFLAGS = -no-undefined -version-info 3:0:2 $(all_libraries)
+-libksgrd_la_LIBADD = $(LIB_KDEUI)
++libksgrd_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # Which sources should be compiled for ksysguard.
+ libksgrd_la_SOURCES = \
+--- kdebase-3.5.9.dfsg.1/ksysguard/gui/Makefile.am	2005-09-10 11:26:15.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/ksysguard/gui/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -49,7 +49,7 @@
+ sysguard_panelapplet_la_LIBADD = \
+ 	ksgrd/libksgrd.la \
+ 	SensorDisplayLib/libsensordisplays.la \
+-	$(LIB_KDEUI) $(LIB_KIO)
++	$(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ sysguard_panelapplet_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ 
+ EXTRA_DIST = $(lnk_DATA)
+--- kdebase-3.5.9.dfsg.1/ksysguard/ksysguardd/Makefile.am	2007-05-14 10:55:53.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/ksysguard/ksysguardd/Makefile.am	2008-03-08 18:50:54.000000000 +0200
+@@ -32,4 +32,4 @@
+ 
+ ksysguardd_SOURCES = Command.c conf.c ksysguardd.c PWUIDCache.c
+ ksysguardd_LDFLAGS = $(all_libraries)
+-ksysguardd_LDADD =  $(top_builddir)/ksysguard/ksysguardd/$(UNAME)/libksysguardd.a ../CContLib/libccont.a -lkdefakes_nonpic $(LIBHOSTS) $(LIB_DNSSD) $(LIB_KINFO)
++ksysguardd_LDADD =  $(top_builddir)/ksysguard/ksysguardd/$(UNAME)/libksysguardd.a ../CContLib/libccont.a -lkdefakes_nonpic $(LIB_DNSSD) $(LIB_KINFO)
+--- kdebase-3.5.9.dfsg.1/ksmserver/Makefile.am	2006-01-19 19:01:08.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/ksmserver/Makefile.am	2008-03-08 17:19:25.000000000 +0200
+@@ -31,7 +31,7 @@
+ 	KSMServerInterface.skel server.skel
+ 
+ ksmserver_la_LDFLAGS = $(all_libraries) -avoid-version -module
+-ksmserver_la_LIBADD = ../kdmlib/libdmctl.la $(LIB_KDEUI)
++ksmserver_la_LIBADD = ../kdmlib/libdmctl.la -lXau $(LIB_KDEUI) $(LIB_QT) $(LIBSM) -lDCOP $(LIB_KDECORE) $(LIB_X11) -lkdefx
+ 
+ picsdir = $(kde_datadir)/ksmserver/pics
+ pics_DATA = shutdownkonq.png
+--- kdebase-3.5.9.dfsg.1/ksplashml/kcmksplash/Makefile.am	2005-09-10 11:25:50.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/ksplashml/kcmksplash/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -9,7 +9,7 @@
+ kcm_ksplashthemes_la_SOURCES = installer.cpp main.cpp
+ noinst_HEADERS = installer.h
+ 
+-kcm_ksplashthemes_la_LIBADD = $(LIB_KIO) 
++kcm_ksplashthemes_la_LIBADD = $(LIB_KIO)  $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ kcm_ksplashthemes_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ 
+ xdg_apps_DATA = ksplashthememgr.desktop
+--- kdebase-3.5.9.dfsg.1/ksplashml/themeengine/default/Makefile.am	2005-09-10 11:25:50.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/ksplashml/themeengine/default/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ ksplashdefault_la_SOURCES = main.cpp
+ ksplashdefault_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(KDE_PLUGIN) -module
+-ksplashdefault_la_LIBADD = $(LIB_KDEUI) ../libksplashthemes.la libthemedefault.la
++ksplashdefault_la_LIBADD = $(LIB_KDEUI) ../libksplashthemes.la libthemedefault.la $(LIB_QT) $(LIB_KDECORE)
+ METASOURCES = AUTO
+ 
+ servicesdir = $(kde_servicesdir)
+--- kdebase-3.5.9.dfsg.1/ksplashml/themeengine/Makefile.am	2006-03-17 12:17:40.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/ksplashml/themeengine/Makefile.am	2008-03-08 18:48:43.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ libksplashthemes_la_SOURCES = themeengine.cpp objkstheme.cpp
+ libksplashthemes_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -no-undefined
+-libksplashthemes_la_LIBADD = $(LIB_KDEUI) $(LIB_XCURSOR)
++libksplashthemes_la_LIBADD = $(LIB_QT) $(LIB_X11) $(LIB_KDECORE)
+ METASOURCES = AUTO
+ 
+ # install this header for theme developers.
+--- kdebase-3.5.9.dfsg.1/ksplashml/themeengine/redmond/Makefile.am	2005-09-10 11:25:50.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/ksplashml/themeengine/redmond/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ ksplashredmond_la_SOURCES = previewredmond.cpp themeredmond.cpp
+ ksplashredmond_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module $(KDE_PLUGIN)
+-ksplashredmond_la_LIBADD  = $(LIB_KDEUI) $(LIB_KIO) ../libksplashthemes.la
++ksplashredmond_la_LIBADD  = $(LIB_KDEUI) $(LIB_KIO) ../libksplashthemes.la $(LIB_QT) $(LIB_KDECORE) -lkdefx
+ METASOURCES = AUTO
+ 
+ kde_module_LTLIBRARIES = ksplashredmond.la
+--- kdebase-3.5.9.dfsg.1/ksplashml/themeengine/standard/Makefile.am	2005-09-10 11:25:50.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/ksplashml/themeengine/standard/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -11,7 +11,7 @@
+ 
+ ksplashstandard_la_SOURCES = themestandardlib.cpp
+ ksplashstandard_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(KDE_PLUGIN) -module
+-ksplashstandard_la_LIBADD = $(LIB_KDEUI) ../libksplashthemes.la libthemestandard.la
++ksplashstandard_la_LIBADD = $(LIB_KDEUI) ../libksplashthemes.la libthemestandard.la $(LIB_QT) $(LIB_KDECORE) -lkdefx
+ METASOURCES = AUTO
+ 
+ noinst_HEADERS = themestandard.h wndicon.h wndstatus.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/b2/config/Makefile.am	2005-09-10 11:25:55.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/b2/config/Makefile.am	2008-03-08 18:52:17.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kwin_b2_config_la_SOURCES = config.cpp
+ kwin_b2_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin_b2_config_la_LIBADD = $(LIB_KDEUI)
++kwin_b2_config_la_LIBADD = $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = config.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/b2/Makefile.am	2005-09-10 11:25:55.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/b2/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -8,7 +8,7 @@
+ kwin3_b2_la_SOURCES = b2client.cpp
+ kwin3_b2_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ # kwin_b2_la_LDFLAGS = $(all_libraries) -avoid-version -module $(KDE_RPATH) $(KDE_MT_LDFLAGS)
+-kwin3_b2_la_LIBADD  = ../../lib/libkdecorations.la
++kwin3_b2_la_LIBADD  = ../../lib/libkdecorations.la $(LIB_QT) $(LIB_X11) $(LIB_KDECORE) -lkdefx
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = b2client.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/default/config/Makefile.am	2005-09-10 11:25:55.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/default/config/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kwin_default_config_la_SOURCES = config.cpp
+ kwin_default_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin_default_config_la_LIBADD = $(LIB_KDEUI)
++kwin_default_config_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = config.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/default/Makefile.am	2005-09-10 11:25:55.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/default/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -7,7 +7,7 @@
+ 
+ kwin3_default_la_SOURCES = kdedefault.cpp
+ kwin3_default_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin3_default_la_LIBADD  = $(LIB_KDECORE) ../../lib/libkdecorations.la
++kwin3_default_la_LIBADD  = $(LIB_KDECORE) ../../lib/libkdecorations.la $(LIB_QT) -lkdefx
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = kdedefault.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/keramik/config/Makefile.am	2005-09-10 11:25:55.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/keramik/config/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kwin_keramik_config_la_SOURCES = config.cpp keramikconfig.ui
+ kwin_keramik_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin_keramik_config_la_LIBADD  = $(LIB_KDEUI)
++kwin_keramik_config_la_LIBADD  = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES                    = AUTO
+ noinst_HEADERS                 = config.h keramikconfig.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/keramik/Makefile.am	2005-09-10 11:25:55.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/keramik/Makefile.am	2008-03-08 18:53:22.000000000 +0200
+@@ -15,7 +15,7 @@
+ kwin3_keramik_la_SOURCES   = keramik.cpp
+ kwin3_keramik_la_COMPILE_FIRST = tiles.h
+ kwin3_keramik_la_LDFLAGS   = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin3_keramik_la_LIBADD    = $(LIB_KDEUI) ../../lib/libkdecorations.la
++kwin3_keramik_la_LIBADD    = ../../lib/libkdecorations.la $(LIB_QT) $(LIB_KDECORE)
+ #kwin3_keramik_la_LDFLAGS   = $(all_libraries) -avoid-version -module $(KDE_RPATH) $(KDE_MT_LDFLAGS)
+ 
+ METASOURCES               = AUTO
+--- kdebase-3.5.9.dfsg.1/kwin/clients/laptop/Makefile.am	2005-09-10 11:25:55.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/laptop/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ kwin3_laptop_la_SOURCES = laptopclient.cpp
+ kwin3_laptop_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module 
+-kwin3_laptop_la_LIBADD  = ../../lib/libkdecorations.la
++kwin3_laptop_la_LIBADD  = ../../lib/libkdecorations.la $(LIB_QT) -lkdefx $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = laptopclient.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/modernsystem/config/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/modernsystem/config/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ kwin_modernsys_config_la_SOURCES = config.cpp
+ kwin_modernsys_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin_modernsys_config_la_LIBADD = $(LIB_KDEUI)
++kwin_modernsys_config_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = config.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/modernsystem/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/modernsystem/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -6,7 +6,7 @@
+ kde_module_LTLIBRARIES = kwin3_modernsys.la
+ 
+ kwin3_modernsys_la_SOURCES = modernsys.cpp
+-kwin3_modernsys_la_LIBADD = ../../lib/libkdecorations.la
++kwin3_modernsys_la_LIBADD = ../../lib/libkdecorations.la $(LIB_QT) -lkdefx $(LIB_KDECORE)
+ kwin3_modernsys_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ 
+ METASOURCES = AUTO
+--- kdebase-3.5.9.dfsg.1/kwin/clients/plastik/config/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/plastik/config/Makefile.am	2008-03-08 18:51:45.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kwin_plastik_config_la_SOURCES = config.cpp configdialog.ui
+ kwin_plastik_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin_plastik_config_la_LIBADD  = $(LIB_KDEUI)
++kwin_plastik_config_la_LIBADD  = $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES                  = AUTO
+ noinst_HEADERS               = config.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/plastik/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/plastik/Makefile.am	2008-03-08 18:53:10.000000000 +0200
+@@ -12,7 +12,7 @@
+ kde_module_LTLIBRARIES = kwin3_plastik.la
+ kwin3_plastik_la_SOURCES = plastik.cpp plastikclient.cpp plastikbutton.cpp misc.cpp
+ kwin3_plastik_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin3_plastik_la_LIBADD = $(LIB_KDEUI) ../../lib/libkdecorations.la
++kwin3_plastik_la_LIBADD = ../../lib/libkdecorations.la $(LIB_QT) -lkdefx $(LIB_KDECORE)
+ kwin3_plastik_la_METASOURCES = AUTO
+ 
+ DISTCLEANFILES = $(kwin3_plastik_la_METASOURCES)
+--- kdebase-3.5.9.dfsg.1/kwin/clients/quartz/config/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/quartz/config/Makefile.am	2008-03-08 18:51:30.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kwin_quartz_config_la_SOURCES = config.cpp
+ kwin_quartz_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin_quartz_config_la_LIBADD = $(LIB_KDEUI)
++kwin_quartz_config_la_LIBADD = $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = config.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/quartz/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/quartz/Makefile.am	2008-03-08 18:52:38.000000000 +0200
+@@ -7,7 +7,7 @@
+ 
+ kwin3_quartz_la_SOURCES = quartz.cpp
+ kwin3_quartz_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin3_quartz_la_LIBADD  = $(LIB_KDEUI)  ../../lib/libkdecorations.la
++kwin3_quartz_la_LIBADD  = ../../lib/libkdecorations.la $(LIB_QT) -lkdefx $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = quartz.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/redmond/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/redmond/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ kwin3_redmond_la_SOURCES = redmond.cpp
+ kwin3_redmond_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin3_redmond_la_LIBADD = $(LIB_KDECORE) ../../lib/libkdecorations.la
++kwin3_redmond_la_LIBADD = $(LIB_KDECORE) ../../lib/libkdecorations.la $(LIB_QT) -lkdefx
+ 
+ METASOURCES = AUTO
+ noinst_HEADERS = redmond.h
+--- kdebase-3.5.9.dfsg.1/kwin/clients/web/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/clients/web/Makefile.am	2008-03-08 18:52:52.000000000 +0200
+@@ -6,7 +6,7 @@
+ noinst_HEADERS            = Web.h WebButton.h
+ 
+ kwin3_web_la_LDFLAGS      = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin3_web_la_LIBADD       = $(LIB_KDEUI) ../../lib/libkdecorations.la
++kwin3_web_la_LIBADD       = ../../lib/libkdecorations.la $(LIB_QT) $(LIB_KDECORE)
+ METASOURCES               = AUTO
+ 
+ linkdir                   = $(kde_datadir)/kwin/
+--- kdebase-3.5.9.dfsg.1/kwin/kcmkwin/kwindecoration/Makefile.am	2005-09-10 11:25:56.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/kcmkwin/kwindecoration/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -8,7 +8,7 @@
+ kcm_kwindecoration_la_LDFLAGS = \
+   -module -avoid-version $(all_libraries) -no-undefined
+ 
+-kcm_kwindecoration_la_LIBADD = $(LIB_KDEUI) ../../lib/libkdecorations.la
++kcm_kwindecoration_la_LIBADD = $(LIB_KDEUI) ../../lib/libkdecorations.la $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_XEXT)
+ 
+ METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/kwin/kcmkwin/kwinoptions/Makefile.am	2005-09-10 11:26:02.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/kcmkwin/kwinoptions/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ kcm_kwinoptions_la_SOURCES = windows.cpp mouse.cpp main.cpp
+ kcm_kwinoptions_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_kwinoptions_la_LIBADD = $(LIB_KDEUI)
++kcm_kwinoptions_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ noinst_HEADERS = windows.h mouse.h 
+ 
+--- kdebase-3.5.9.dfsg.1/kwin/kcmkwin/kwinrules/Makefile.am	2006-05-22 21:13:01.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/kcmkwin/kwinrules/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -15,12 +15,12 @@
+ 
+ kcm_kwinrules_la_SOURCES = kcm.cpp 
+ kcm_kwinrules_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_kwinrules_la_LIBADD = libkwinrules.la 
++kcm_kwinrules_la_LIBADD = libkwinrules.la  $(LIB_KDECORE) $(LIB_QT) $(LIB_KDEUI) -lDCOP $(LIB_X11)
+ kcm_kwinrules_la_COMPILE_FIRST = ruleslistbase.h ruleswidgetbase.h editshortcutbase.h
+ 
+ kwin_rules_dialog_la_SOURCES = main.cpp 
+ kwin_rules_dialog_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kwin_rules_dialog_la_LIBADD = libkwinrules.la 
++kwin_rules_dialog_la_LIBADD = libkwinrules.la $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) -lDCOP $(LIB_X11)
+ kwin_rules_dialog_la_COMPILE_FIRST = ruleslistbase.h ruleswidgetbase.h editshortcutbase.h
+ 
+ messages: rc.cpp
+--- kdebase-3.5.9.dfsg.1/kwin/lib/Makefile.am	2005-09-10 11:26:02.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/lib/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ 
+ libkdecorations_la_SOURCES = kdecoration.cpp kdecoration_p.cpp kdecoration_plugins_p.cpp \
+         kdecorationfactory.cpp kcommondecoration.cpp
+-libkdecorations_la_LIBADD = $(LIB_KDECORE)
++libkdecorations_la_LIBADD = $(LIB_KDECORE) $(LIB_QT)
+ libkdecorations_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined
+ 
+ # FRAME
+--- kdebase-3.5.9.dfsg.1/kwin/Makefile.am	2005-09-10 11:26:03.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/kwin/Makefile.am	2008-03-08 17:19:25.000000000 +0200
+@@ -17,7 +17,7 @@
+ 	manage.cpp notifications.cpp activation.cpp useractions.cpp \
+ 	geometry.cpp rules.cpp
+ 
+-kwin_la_LIBADD = $(LIB_KDEUI) lib/libkdecorations.la
++kwin_la_LIBADD = $(LIB_KDEUI) lib/libkdecorations.la $(LIB_KDECORE) $(LIB_QT) $(LIBSM) -lDCOP $(LIB_XEXT) $(LIB_X11)
+ kwin_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ include_HEADERS = KWinInterface.h
+--- kdebase-3.5.9.dfsg.1/kxkb/Makefile.am	2006-03-17 12:17:41.000000000 +0200
++++ kdebase-3.5.9.dfsg.1/kxkb/Makefile.am	2008-03-08 18:20:41.000000000 +0200
+@@ -13,14 +13,14 @@
+ kcm_keyboard_la_SOURCES = extension.cpp x11helper.cpp rules.cpp kxkbconfig.cpp pixmap.cpp \
+ 	kcmlayout.cpp kcmlayoutwidget.ui kcmmisc.cpp kcmmiscwidget.ui
+ kcm_keyboard_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_keyboard_la_LIBADD = -lxkbfile $(XTESTLIB) $(LIB_KIO)
++kcm_keyboard_la_LIBADD = -lxkbfile $(XTESTLIB) $(LIB_QT) $(LIB_X11) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ #kxkb_la_includedir = .
+ #kxkb_la_include_HEADERS = kxkb.h
+ kxkb_la_SOURCES = extension.cpp x11helper.cpp rules.cpp kxkbconfig.cpp pixmap.cpp \
+ 	layoutmap.cpp kxkb.cpp kxkbtraywindow.cpp kxkb.skel
+ kxkb_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kxkb_la_LIBADD = -lxkbfile -lX11 -lXext $(LIB_KDEUI)
++kxkb_la_LIBADD = -lxkbfile $(LIB_X11) $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ 
+ xdg_apps_DATA = keyboard.desktop keyboard_layout.desktop
+ 
+--- kdebase-3.5.9.dfsg.1/libkonq/favicons/Makefile.am	2005-09-10 11:25:53.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/libkonq/favicons/Makefile.am	2008-03-08 13:31:05.000000000 +0200
+@@ -3,7 +3,7 @@
+ INCLUDES = $(all_includes)
+ kded_favicons_la_SOURCES = favicons.cpp favicons.skel
+ kded_favicons_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kded_favicons_la_LIBADD = $(LIB_KSYCOCA)
++kded_favicons_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) -lDCOP $(LIB_KDECORE) -lkdeinit_kded
+ 
+ METASOURCES = AUTO
+ 
+--- kdebase-3.5.9.dfsg.1/libkonq/Makefile.am	2005-10-10 18:04:21.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/libkonq/Makefile.am	2008-03-08 17:20:40.000000000 +0200
+@@ -21,7 +21,7 @@
+ 
+ lib_LTLIBRARIES = libkonq.la
+ libkonq_la_LDFLAGS = $(all_libraries) -version-info 6:0:2 -no-undefined
+-libkonq_la_LIBADD = $(LIB_KPARTS)
++libkonq_la_LIBADD = $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_KDECORE) -lDCOP $(LIB_QT) $(LIB_KIO) $(LIBZ) -lkdefx $(LIB_X11)
+ 
+ libkonq_la_SOURCES = konq_popupmenu.cc knewmenu.cc \
+    konq_xmlguiclient.cc\
+@@ -60,7 +60,7 @@
+ kde_module_LTLIBRARIES = $(ARTS_MODULE)
+ konq_sound_la_SOURCES = konq_sound.cc
+ konq_sound_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-konq_sound_la_LIBADD = -lsoundserver_idl -lartskde
++konq_sound_la_LIBADD = -lsoundserver_idl -lartskde $(LIB_QT) $(LIB_KDECORE) -lmcop
+ 
+ noinst_HEADERS = konq_sound.h
+ 
+--- kdebase-3.5.9.dfsg.1/nsplugins/Makefile.am	2007-10-08 12:51:24.000000000 +0300
++++ kdebase-3.5.9.dfsg.1/nsplugins/Makefile.am	2008-03-08 18:45:19.000000000 +0200
+@@ -11,16 +11,16 @@
+ 			NSPluginCallbackIface.skel
+ 
+ libnsplugin_la_LDFLAGS = $(all_libraries) -avoid-version -module $(KDE_PLUGIN) -no-undefined
+-libnsplugin_la_LIBADD  = -lkparts
++libnsplugin_la_LIBADD  = -lkparts $(LIB_QT) -lDCOP $(LIB_KIO) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ bin_PROGRAMS = nspluginscan
+ nspluginscan_SOURCES = pluginscan.cpp 
+ nspluginscan_LDFLAGS =  $(KDE_RPATH) $(all_libraries) -export-dynamic
+-nspluginscan_LDADD = $(LIB_KDEUI) $(LIB_KSYCOCA) -lXt libpluginpaths.la
++nspluginscan_LDADD = $(LIB_KSYCOCA) -lXt libpluginpaths.la
+ 
+ kcm_nsplugins_la_SOURCES = kcm_nsplugins.cpp 
+ kcm_nsplugins_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_nsplugins_la_LIBADD = $(LIB_KDECORE) libpluginpaths.la
++kcm_nsplugins_la_LIBADD = $(LIB_KDECORE) libpluginpaths.la $(LIB_QT)
+ 
+ noinst_LTLIBRARIES = libpluginpaths.la
+ libpluginpaths_la_SOURCES = plugin_paths.cpp

@@ -1,0 +1,16 @@
+debian/tmp/opt/kde3/bin/ktip
+debian/tmp/opt/kde3/share/applications/kde/ktip.desktop
+debian/tmp/opt/kde3/share/applnk/Toys/ktip.desktop
+debian/tmp/opt/kde3/share/apps/kdewizard/pics/wizard_small.png
+debian/tmp/opt/kde3/share/apps/kdewizard/tips
+debian/tmp/opt/kde3/share/autostart/ktip.desktop
+debian/tmp/opt/kde3/share/icons/hicolor/128x128/apps/ktip.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/ktip.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/ktip.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/ktip.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/ktip.png
+debian/tmp/opt/kde3/share/icons/hicolor/64x64/apps/ktip.png
+debian/tmp/opt/kde3/share/icons/hicolor/scalable/apps/ktip.svgz
+
+debian/icons/ktip.xpm		/usr/share/pixmaps
+debian/icons/ktip-16.xpm	/usr/share/pixmaps

@@ -1,0 +1,10 @@
+Document: kdebase-doc-html-kdeprint
+Title: KDEPrint Handbook
+Author: Kurt Pfeifle
+Abstract: KDEPrint is the official printing system of KDE. 
+Section: System/Administration
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kdeprint/index.html
+Files: /usr/share/doc/kde/HTML/en/kdeprint/*.html
+
