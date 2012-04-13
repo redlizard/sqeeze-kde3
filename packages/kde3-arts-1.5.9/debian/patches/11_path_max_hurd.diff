@@ -1,0 +1,372 @@
+--- a/soundserver/artsplay.cc
++++ b/soundserver/artsplay.cc
+@@ -42,13 +42,19 @@
+ {
+ 	if(path[0] == '/') return path;
+ 
+-	char buffer[PATH_MAX];
+-	getcwd(buffer,PATH_MAX);
++	int size = 4096;
+ 
+-	if(buffer[strlen(buffer)-1] == '/')
+-		return buffer + path;
+-	else
+-		return string(buffer) + '/' + path;
++	while (1) {
++		char buffer[size];
++		if (getcwd(buffer,size))
++		{
++			if(buffer[strlen(buffer)-1] == '/')
++				return buffer + path;
++			else
++				return string(buffer) + '/' + path;
++		}
++		size *= 2;
++	}
+ }
+ 
+ int main(int argc, char **argv)
+--- a/mcop/mcoputils.cc
++++ b/mcop/mcoputils.cc
+@@ -71,8 +71,8 @@
+ static char *locate_mcop_dir()
+ {
+   struct passwd *pw_ent;
+-  char kde_tmp_dir[PATH_MAX+1];
+-  char user_tmp_dir[PATH_MAX+1];
++  string kde_tmp_dir;
++  string user_tmp_dir;
+   int uid = getuid();
+   const char *home_dir = getenv("HOME");
+   const char *kde_home = uid ? getenv("KDEHOME") : getenv("KDEROOTHOME");
+@@ -88,7 +88,7 @@
+   if (!tmp || !tmp[0])
+      tmp = "/tmp";
+           
+-  kde_tmp_dir[0] = 0;
++  kde_tmp_dir = "";
+ 
+   pw_ent = getpwuid(uid);
+   if (!pw_ent)
+@@ -97,12 +97,7 @@
+      return 0;
+   }
+ 
+-  strncpy(user_tmp_dir, tmp, PATH_MAX );
+-  user_tmp_dir[ PATH_MAX ] = '\0';
+-  strncat(user_tmp_dir, "/ksocket-", PATH_MAX - strlen(user_tmp_dir) );
+-  user_tmp_dir[ PATH_MAX ] = '\0';
+-  strncat(user_tmp_dir, pw_ent->pw_name, PATH_MAX - strlen(user_tmp_dir));
+-  user_tmp_dir[ PATH_MAX ] = '\0';
++  user_tmp_dir = string(tmp) + "/ksocket-" + string(pw_ent->pw_name);
+ 
+   if (!kde_home || !kde_home[0])
+   {
+@@ -119,44 +114,37 @@
+      {
+         arts_fatal("Aborting. $HOME not set!");
+      }
+-     if (strlen(home_dir) > (PATH_MAX-100))
+-     {
+-        arts_fatal("Aborting. Home directory path too long!");
+-     }
+      kde_home++;
+-     strncpy(kde_tmp_dir, home_dir, PATH_MAX);
+-     kde_tmp_dir[ PATH_MAX ] = '\0';
++     kde_tmp_dir = string(home_dir);
+   }
+-  strncat(kde_tmp_dir, kde_home, PATH_MAX - strlen(kde_tmp_dir));
++  kde_tmp_dir += kde_home;
+ 
+   /** Strip trailing '/' **/
+-  if ( kde_tmp_dir[strlen(kde_tmp_dir)-1] == '/')
+-     kde_tmp_dir[strlen(kde_tmp_dir)-1] = 0;
++  if ( kde_tmp_dir[kde_tmp_dir.length()-1] == '/')
++     kde_tmp_dir.resize(kde_tmp_dir.length()-1);
+ 
+-  result = stat(kde_tmp_dir, &stat_buf);
++  result = stat(kde_tmp_dir.c_str(), &stat_buf);
+   if (result == -1)
+   {
+      return 0;
+   }  
+ 
+-  strncat(kde_tmp_dir, kde_prefix, PATH_MAX - strlen(kde_tmp_dir));
+-  if (gethostname(kde_tmp_dir+strlen(kde_tmp_dir), PATH_MAX - strlen(kde_tmp_dir) - 1) != 0)
++  kde_tmp_dir += kde_prefix;
+   {
+-     arts_fatal("Aborting. Could not determine hostname or hostname too long.");
++     char buf[1024];
++     if (gethostname(buf, sizeof(buf)-1) != 0)
++     {
++        arts_fatal("Aborting. Could not determine hostname or hostname too long.");
++     }
++     buf[sizeof(buf)-1] = '\0';
++     kde_tmp_dir += buf;
+   }
+-  kde_tmp_dir[sizeof(kde_tmp_dir)-1] = '\0';
+ 
+-  result = lstat(kde_tmp_dir, &stat_buf);
++  result = lstat(kde_tmp_dir.c_str(), &stat_buf);
+   if ((result == 0) && (S_ISDIR(stat_buf.st_mode)))
+   {
+      /* $KDEHOME/socket-$HOSTNAME is a normal directory. Do nothing. */
+-     tmp_buf = (char *) malloc(PATH_MAX+1);
+-     if (!tmp_buf)
+-        return 0;
+-
+-     strncpy(tmp_buf, kde_tmp_dir, PATH_MAX);
+-     tmp_buf[ PATH_MAX ] = '\0';
+-        
++     tmp_buf = strdup(kde_tmp_dir.c_str());
+      return tmp_buf;
+   }
+   
+@@ -167,26 +155,32 @@
+   }
+   if ((result == -1) || (!S_ISLNK(stat_buf.st_mode)))
+   {
+-     arts_warning("Error: \"%s\" is not a link or a directory.\n", kde_tmp_dir);
++     arts_warning("Error: \"%s\" is not a link or a directory.\n", kde_tmp_dir.c_str());
+      return 0;
+   }
+-  tmp_buf = (char *) malloc(PATH_MAX+1);
+-  if (!tmp_buf)
+-     return 0;
+ 
+   /* kde_tmp_dir is a link. Check whether it points to a valid directory. */
+-  result = readlink(kde_tmp_dir, tmp_buf, PATH_MAX);
+-  if (result == -1)
+-  {
+-     arts_warning("Error: \"%s\" could not be read.\n", kde_tmp_dir);
+-     free(tmp_buf);
+-     return 0;
+-  }
++  ssize_t size = 2048;
++  tmp_buf = NULL;
++  do {
++     size *= 2;
++     tmp_buf = (char *) realloc(tmp_buf, size);
++     if (!tmp_buf)
++	return 0;
++     result = readlink(kde_tmp_dir.c_str(), tmp_buf, size - 1);
++     if (result == -1)
++     {
++	arts_warning("Error: \"%s\" could not be read.\n", kde_tmp_dir.c_str());
++	free(tmp_buf);
++	return 0;
++     }
++  } while(result == size - 1);
+   tmp_buf[result] = '\0';  
++
+ //  printf("Link points to \"%s\"\n", tmp_buf);
+-  if (strncmp(tmp_buf, user_tmp_dir, strlen(user_tmp_dir)) != 0)
++  if (strncmp(tmp_buf, user_tmp_dir.c_str(), user_tmp_dir.length()) != 0)
+   {
+-     arts_warning("Error: \"%s\" points to \"%s\" instead of \"%s\".\n", kde_tmp_dir, tmp_buf, user_tmp_dir);
++     arts_warning("Error: \"%s\" points to \"%s\" instead of \"%s\".\n", kde_tmp_dir.c_str(), tmp_buf, user_tmp_dir.c_str());
+      free(tmp_buf);
+      return 0;
+   }
+@@ -221,19 +215,19 @@
+ 
+ 
+ static
+-int build_link(const char *tmp_prefix, const char *kde_prefix)
++int build_link(string tmp_prefix, const char *kde_prefix)
+ {
+   struct passwd *pw_ent;
+-  char kde_tmp_dir[PATH_MAX+1];
+-  char user_tmp_dir[PATH_MAX+1];
+-  char tmp_buf[PATH_MAX+1];
++  string kde_tmp_dir;
++  string user_tmp_dir;
++  char *tmp_buf;
+   int uid = getuid();
+   const char *home_dir = getenv("HOME");
+   const char *kde_home = uid ? getenv("KDEHOME") : getenv("KDEROOTHOME");
+   int result;
+   struct stat stat_buf;
+ 
+-  kde_tmp_dir[0] = 0;
++  kde_tmp_dir = "";
+ 
+   pw_ent = getpwuid(uid);
+   if (!pw_ent)
+@@ -242,9 +236,7 @@
+      return 1;
+   }
+ 
+-  strncpy(user_tmp_dir, tmp_prefix, PATH_MAX);
+-  user_tmp_dir[ PATH_MAX ] = '\0';
+-  strncat(user_tmp_dir, pw_ent->pw_name, PATH_MAX - strlen(tmp_prefix));
++  user_tmp_dir = tmp_prefix + string(pw_ent->pw_name);
+ 
+   if (!kde_home || !kde_home[0])
+   {
+@@ -262,89 +254,106 @@
+         fprintf(stderr, "Aborting. $HOME not set!");
+         exit(255);
+      }
+-     if (strlen(home_dir) > (PATH_MAX-100))
+-     {
+-        fprintf(stderr, "Aborting. Home directory path too long!");
+-        exit(255);
+-     }
+      kde_home++;
+-     strncpy(kde_tmp_dir, home_dir, PATH_MAX);
+-     kde_tmp_dir[ PATH_MAX ] = '\0';
++     kde_tmp_dir = string(home_dir);
+   }
+-  strncat(kde_tmp_dir, kde_home, PATH_MAX - strlen(kde_tmp_dir));
++  kde_tmp_dir += kde_home;
+ 
+   /** Strip trailing '/' **/
+-  if ( kde_tmp_dir[strlen(kde_tmp_dir)-1] == '/')
+-     kde_tmp_dir[strlen(kde_tmp_dir)-1] = 0;
++  if ( kde_tmp_dir[kde_tmp_dir.length()-1] == '/')
++     kde_tmp_dir.resize(kde_tmp_dir.length()-1);
+ 
+-  result = stat(kde_tmp_dir, &stat_buf);
++  result = stat(kde_tmp_dir.c_str(), &stat_buf);
+   if ((result == -1) && (errno == ENOENT))
+   {
+-     result = mkdir(kde_tmp_dir, 0700);
++     result = mkdir(kde_tmp_dir.c_str(), 0700);
+   }
+   if (result == -1)
+   {
+      return 1;
+   }
+ 
+-  strncat(kde_tmp_dir, kde_prefix, PATH_MAX - strlen(kde_tmp_dir));
+-  if (gethostname(kde_tmp_dir+strlen(kde_tmp_dir), PATH_MAX - strlen(kde_tmp_dir) - 1) != 0)
++  kde_tmp_dir += kde_prefix;
+   {
+-     perror("Aborting. Could not determine hostname: ");
+-     exit(255);
++     char buf[1024];
++     if (gethostname(buf, sizeof(buf)-1) != 0)
++     {
++        arts_fatal("Aborting. Could not determine hostname or hostname too long.");
++     }
++     buf[sizeof(buf)-1] = '\0';
++     kde_tmp_dir += buf;
+   }
+-  kde_tmp_dir[sizeof(kde_tmp_dir)-1] = '\0';
+ 
+-  result = lstat(kde_tmp_dir, &stat_buf);
++  result = lstat(kde_tmp_dir.c_str(), &stat_buf);
+   if ((result == 0) && (S_ISDIR(stat_buf.st_mode)))
+   {
+      /* $KDEHOME/tmp is a normal directory. Do nothing. */
+-     printf("Directory \"%s\" already exists.\n", kde_tmp_dir);
++     printf("Directory \"%s\" already exists.\n", kde_tmp_dir.c_str());
+      return 0;
+   }
+   if ((result == -1) && (errno == ENOENT))
+   {
+-     printf("Creating link %s.\n", kde_tmp_dir);
+-     result = create_link(kde_tmp_dir, user_tmp_dir);
++     printf("Creating link %s.\n", kde_tmp_dir.c_str());
++     result = create_link(kde_tmp_dir.c_str(), user_tmp_dir.c_str());
+      if (result == 0) return 0; /* Success */
+-     unlink(kde_tmp_dir);
+-     strncat(user_tmp_dir, "XXXXXX", PATH_MAX - strlen(user_tmp_dir));
+-     mktemp(user_tmp_dir); /* We want a directory, not a file, so using mkstemp makes no sense and is wrong */
+-     return create_link(kde_tmp_dir, user_tmp_dir);
++     unlink(kde_tmp_dir.c_str());
++     user_tmp_dir += "XXXXXX";
++     tmp_buf = strdup(user_tmp_dir.c_str());
++     mktemp(tmp_buf); /* We want a directory, not a file, so using mkstemp makes no sense and is wrong */
++     result = create_link(kde_tmp_dir.c_str(), tmp_buf);
++     free(tmp_buf);
++     return result;
+   }
+   if ((result == -1) || (!S_ISLNK(stat_buf.st_mode)))
+   {
+-     fprintf(stderr, "Error: \"%s\" is not a link or a directory.\n", kde_tmp_dir);
++     fprintf(stderr, "Error: \"%s\" is not a link or a directory.\n", kde_tmp_dir.c_str());
+      return 1;
+   }
+   /* kde_tmp_dir is a link. Check whether it points to a valid directory. */
+-  result = readlink(kde_tmp_dir, tmp_buf, PATH_MAX);
+-  if (result == -1)
+-  {
+-     fprintf(stderr, "Error: \"%s\" could not be read.\n", kde_tmp_dir);
+-     return 1;
+-  }
++  ssize_t size = 2048;
++  tmp_buf = NULL;
++  do {
++     size *= 2;
++     tmp_buf = (char *) realloc(tmp_buf, size);
++     if (!tmp_buf)
++	return 0;
++     result = readlink(kde_tmp_dir.c_str(), tmp_buf, size - 1);
++     if (result == -1)
++     {
++	arts_warning("Error: \"%s\" could not be read.\n", kde_tmp_dir.c_str());
++	free(tmp_buf);
++	return 0;
++     }
++  } while(result == size - 1);
+   tmp_buf[result] = '\0';
++
+   printf("Link points to \"%s\"\n", tmp_buf);
+-  if (strncmp(tmp_buf, user_tmp_dir, strlen(user_tmp_dir)) != 0)
++  if (strncmp(tmp_buf, user_tmp_dir.c_str(), user_tmp_dir.length()) != 0)
+   {
+-     fprintf(stderr, "Error: \"%s\" points to \"%s\" instead of \"%s\".\n", kde_tmp_dir, tmp_buf, user_tmp_dir);
+-     unlink(kde_tmp_dir);
+-     printf("Creating link %s.\n", kde_tmp_dir);
+-     result = create_link(kde_tmp_dir, user_tmp_dir);
++     fprintf(stderr, "Error: \"%s\" points to \"%s\" instead of \"%s\".\n", kde_tmp_dir.c_str(), tmp_buf, user_tmp_dir.c_str());
++     free(tmp_buf);
++     unlink(kde_tmp_dir.c_str());
++     printf("Creating link %s.\n", kde_tmp_dir.c_str());
++     result = create_link(kde_tmp_dir.c_str(), user_tmp_dir.c_str());
+      if (result == 0) return 0; /* Success */
+-     unlink(kde_tmp_dir);
+-     strncat(user_tmp_dir, "XXXXXX", PATH_MAX - strlen(user_tmp_dir));
+-     mktemp(user_tmp_dir); /* We want a directory, not a file, so using mkstemp makes no sense and is wrong */
+-     return create_link(kde_tmp_dir, user_tmp_dir);
+-     return 1;
++     unlink(kde_tmp_dir.c_str());
++     user_tmp_dir += "XXXXXX";
++     tmp_buf = strdup(user_tmp_dir.c_str());
++     mktemp(tmp_buf); /* We want a directory, not a file, so using mkstemp makes no sense and is wrong */
++     result = create_link(kde_tmp_dir.c_str(), tmp_buf);
++     free(tmp_buf);
++     return result;
+   }
+   result = check_tmp_dir(tmp_buf);
++  free(tmp_buf);
+   if (result == 0) return 0; /* Success */
+-  unlink(kde_tmp_dir);
+-  strncat(user_tmp_dir, "XXXXXX", PATH_MAX - strlen(user_tmp_dir));
+-  mktemp(user_tmp_dir); /* We want a directory, not a file, so using mkstemp makes no sense and is wrong */
+-  return create_link(kde_tmp_dir, user_tmp_dir);
++  unlink(kde_tmp_dir.c_str());
++  user_tmp_dir += "XXXXXX";
++  tmp_buf = strdup(user_tmp_dir.c_str());
++  mktemp(tmp_buf); /* We want a directory, not a file, so using mkstemp makes no sense and is wrong */
++  result = create_link(kde_tmp_dir.c_str(), tmp_buf);
++  free(tmp_buf);
++  return result;
+ }
+ 
+ string MCOPUtils::createFilePath(string name)
+@@ -364,11 +373,7 @@
+            if (!tmp || !tmp[0])
+              tmp = "/tmp";
+ 
+-           char tmp_prefix[PATH_MAX+1];
+-           strcpy(tmp_prefix, tmp);
+-           strcat(tmp_prefix, "/ksocket-");
+-
+-           build_link(tmp_prefix, "/socket-");
++           build_link(string(tmp) + "/ksocket-", "/socket-");
+ 	   mcop_dir = locate_mcop_dir();
+ 	}
+ 	if (!mcop_dir)

@@ -1,0 +1,11 @@
+--- a/artsc/artsc-config.in
++++ b/artsc/artsc-config.in
+@@ -27,7 +27,7 @@
+ do
+   case $1 in
+     --libs)
+-	  flags="$flags -L$libdir $libdl -lartsc @USE_THREADS@ @LIBPTHREAD@ @GLIB_LDFLAGS@ @GLIB_LIBADD@"
++	  flags="$flags -L$libdir -lartsc"
+ 	  ;;
+     --cflags)
+ 	  flags="$flags -I$includedir/artsc @GLIB_CFLAGS@"

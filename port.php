@@ -152,7 +152,7 @@ while(($file = readdir($dir)) !== false) {
 		$newname = $binaries[$prefix] . substr($file, $pos);
 		rename("$targetDirectory/debian/$file", "$targetDirectory/debian/$newname");
 		
-		if(substr($file, strrpos($file, ".") + 1) == "install") {
+		if(substr($file, strrpos($file, ".") + 1) == "install" || substr($file, strrpos($file, ".") + 1) == "manpages") {
 			$install = array();
 			foreach(explode("\n", file_get_contents("$targetDirectory/debian/$newname")) as $line) {
 				$old = "debian/tmp/usr/";
@@ -168,14 +168,19 @@ while(($file = readdir($dir)) !== false) {
 }
 closedir($dir);
 
-file_put_contents("$targetDirectory/debian/rules", file_get_contents("$targetDirectory/debian/rules") . "\n\nDEB_CONFIGURE_PREFIX := /opt/kde3\n\n");
+$extrarules = <<<RULES
 
-foreach(explode("\n", `find $targetDirectory -name Makefile.in`) as $makefile) {
-	if($makefile == "") {
-		continue;
-	}
-	file_put_contents($makefile, str_replace('-I$(includedir)/arts', '-I$(includedir)/arts -I/usr/include/kde/arts', file_get_contents($makefile)));
-}
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+
+
+RULES;
+
+file_put_contents("$targetDirectory/debian/rules", file_get_contents("$targetDirectory/debian/rules") . $extrarules);
+
 
 function parseControl($control)
 {

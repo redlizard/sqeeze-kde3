@@ -1,0 +1,154 @@
+--- arts-1.5.9/artsc/Makefile.am	2005-09-10 11:13:34.000000000 +0300
++++ arts-1.5.9/artsc/Makefile.am	2008-02-20 20:38:11.000000000 +0200
+@@ -11,20 +11,20 @@
+ 
+ libartsdsp_la_SOURCES = artsdsp.c
+ libartsdsp_la_LDFLAGS = -no-undefined -module $(all_libraries)
+-libartsdsp_la_LIBADD = libartsc.la
++libartsdsp_la_LIBADD = libartsc.la $(LIBDL)
+ 
+ libartsdsp_st_la_SOURCES = artsc.c artsdsp.c
+ libartsdsp_st_la_LDFLAGS = -no-undefined -module $(all_libraries)
+-libartsdsp_st_la_LIBADD = $(top_builddir)/libltdl/libltdlc.la
++libartsdsp_st_la_LIBADD = $(top_builddir)/libltdl/libltdlc.la $(LIBDL)
+ 
+ libartsc_la_SOURCES = artsc.c
+ libartsc_la_LDFLAGS = -no-undefined $(USE_THREADS) $(all_libraries)
+-libartsc_la_LIBADD = $(top_builddir)/libltdl/libltdlc.la $(LIBPTHREAD)
++libartsc_la_LIBADD = $(top_builddir)/libltdl/libltdlc.la $(LIBDL)
+ 
+ libartscbackend_la_SOURCES = artscbackend.cc
+ libartscbackend_la_LDFLAGS = -no-undefined -module $(KDE_RPATH) $(all_libraries)
+ libartscbackend_la_LIBADD = $(FLOWLIBS) \
+-    $(top_builddir)/soundserver/libsoundserver_idl.la
++    $(top_builddir)/soundserver/libsoundserver_idl.la $(top_builddir)/mcop/libmcop.la $(top_builddir)/flow/libartsflow_idl.la
+ 
+ artscincludedir = $(includedir)/artsc
+ artscinclude_HEADERS = artsc.h artsc_export.h
+--- arts-1.5.9/flow/Makefile.am	2005-09-10 11:13:33.000000000 +0300
++++ arts-1.5.9/flow/Makefile.am	2008-02-20 20:58:43.000000000 +0200
+@@ -11,8 +11,9 @@
+ libartsflow_idl_la_LDFLAGS = -no-undefined -version-info 1:0 $(all_libraries)
+ libartsflow_idl_la_LIBADD = $(top_builddir)/mcop/libmcop.la $(LIBPOSIX4)
+ 
+-libartsflow_la_LIBADD = $(top_builddir)/mcop/libmcop.la libartsflow_idl.la $(top_builddir)/flow/gslpp/libgslpp.la $(LIBAUDIOFILE) $(LIBASOUND) $(LIBAUDIOIO) $(LIBOSSAUDIO) $(LIBAUDIONAS) $(LIBCSL) $(SGILIBAUDIO) $(LIBESD) $(LIBMAS) $(JACK_LIBADD) -lm \
+-  $(top_builddir)/flow/gsl/libgsl.la
++libartsflow_la_LIBADD = $(top_builddir)/mcop/libmcop.la libartsflow_idl.la $(top_builddir)/flow/gslpp/libgslpp.la $(LIBAUDIOFILE) \
++	$(LIBASOUND) $(LIBAUDIOIO) $(LIBOSSAUDIO) $(LIBAUDIONAS) $(LIBCSL) $(LIBESD) $(SGILIBAUDIO) $(LIBMAS) $(JACK_LIBADD) -lm \
++	$(top_builddir)/flow/gsl/libgsl.la $(GSL_LIBS) -lgthread-2.0 -lglib-2.0
+ libartsflow_la_LDFLAGS = $(MAS_LDFLAGS) $(JACK_LDFLAGS) $(LIBAUDIOFILE_LDFLAGS) $(LIBAUDIONAS_LDFLAGS) $(LIBESD_LDFLAGS) -no-undefined -version-info 1:0
+ libartsflow_la_COMPILE_FIRST = artsflow.h
+ libartsflow_la_SOURCES =  synth_play_impl.cc \
+--- arts-1.5.9/mcop/Makefile.am	2005-09-10 11:13:32.000000000 +0300
++++ arts-1.5.9/mcop/Makefile.am	2008-02-20 20:47:32.000000000 +0200
+@@ -16,7 +16,7 @@
+ 	 trader_impl.cc dynamicrequest.cc anyref.cc loopback.cc \
+ 	 delayedreturn.cc thread.cc dynamicskeleton.cc
+ 
+-libmcop_la_LIBADD = $(LIBSOCKET) $(GLIB_LIBADD) $(top_builddir)/libltdl/libltdlc.la
++libmcop_la_LIBADD = $(LIBSOCKET) $(top_builddir)/libltdl/libltdlc.la $(LIBDL)
+ libmcop_la_LDFLAGS = -no-undefined -version-info 1:0 $(GLIB_LDFLAGS) $(all_libraries)
+ 
+ artsincludedir = $(includedir)/arts
+--- arts-1.5.9/mcop_mt/Makefile.am	2005-09-10 11:13:32.000000000 +0300
++++ arts-1.5.9/mcop_mt/Makefile.am	2008-02-20 20:34:22.000000000 +0200
+@@ -3,7 +3,5 @@
+ lib_LTLIBRARIES = libmcop_mt.la
+ 
+ libmcop_mt_la_SOURCES = threads_posix.cc
+-libmcop_mt_la_LIBADD = $(top_builddir)/mcop/libmcop.la \
+-	$(top_builddir)/flow/libartsflow.la $(LIBPTHREAD) \
+-	$(LIBPOSIX4) $(LIBSEM)
++libmcop_mt_la_LIBADD = $(top_builddir)/mcop/libmcop.la $(LIBPTHREAD) $(LIBPOSIX4)
+ libmcop_mt_la_LDFLAGS = -no-undefined -version-info 1:0 $(USE_THREADS) $(all_libraries)
+--- arts-1.5.9/soundserver/Makefile.am	2005-09-10 11:13:31.000000000 +0300
++++ arts-1.5.9/soundserver/Makefile.am	2008-02-20 20:49:06.000000000 +0200
+@@ -22,30 +22,30 @@
+ AM_LDFLAGS = $(LDFLAGS_AS_NEEDED)
+ 
+ libsoundserver_idl_la_LIBADD = libkmedia2_idl.la \
+-                          $(top_builddir)/flow/libartsflow_idl.la
++                          $(top_builddir)/flow/libartsflow_idl.la $(top_builddir)/mcop/libmcop.la
+ libsoundserver_idl_la_LDFLAGS = -no-undefined -version-info 1:0 $(all_libraries)
+ libsoundserver_idl_la_SOURCES = soundserver.cc
+ libsoundserver_idl_la_COMPILE_FIRST = soundserver.h
+ 
+ libkmedia2_idl_la_SOURCES = kmedia2.cc
+ libkmedia2_idl_la_COMPILE_FIRST = kmedia2.h
+-libkmedia2_idl_la_LIBADD  = $(top_builddir)/flow/libartsflow.la
++libkmedia2_idl_la_LIBADD  = $(top_builddir)/flow/libartsflow_idl.la $(top_builddir)/mcop/libmcop.la
+ libkmedia2_idl_la_LDFLAGS = -no-undefined -version-info 1:0 $(all_libraries)
+ 
+ libkmedia2_la_SOURCES = fileinputstream_impl.cc stdoutwriter_impl.cc
+-libkmedia2_la_LIBADD  = libkmedia2_idl.la $(FLOWLIBS)
++libkmedia2_la_LIBADD  = libkmedia2_idl.la $(FLOWLIBS) $(top_builddir)/flow/libartsflow_idl.la $(top_builddir)/mcop/libmcop.la
+ libkmedia2_la_LDFLAGS = -no-undefined -version-info 1:0 $(all_libraries)
+ libkmedia2_la_COMPILE_FIRST = kmedia2.h ../flow/artsflow.h
+ 
+ libartswavplayobject_la_SOURCES = wavplayobject_impl.cc
+-libartswavplayobject_la_LIBADD  = $(top_builddir)/mcop/libmcop.la \
+-                                  libsoundserver_idl.la $(FLOWLIBS)
++libartswavplayobject_la_LIBADD  = $(top_builddir)/mcop/libmcop.la libkmedia2_idl.la \
++                                  libsoundserver_idl.la $(FLOWLIBS) $(top_builddir)/flow/libartsflow_idl.la
+ libartswavplayobject_la_LDFLAGS = -no-undefined -module $(all_libraries)
+ libartswavplayobject_la_COMPILE_FIRST = soundserver.h ../flow/artsflow.h
+ 
+ libartsgslplayobject_la_SOURCES = gslplayobject_impl.cc
+-libartsgslplayobject_la_LIBADD  = $(top_builddir)/mcop/libmcop.la \
+-                                  libsoundserver_idl.la $(FLOWLIBS)
++libartsgslplayobject_la_LIBADD  = $(top_builddir)/mcop/libmcop.la libkmedia2_idl.la \
++                                  libsoundserver_idl.la $(FLOWLIBS) $(top_builddir)/flow/libartsflow_idl.la
+ libartsgslplayobject_la_LDFLAGS = -no-undefined -module $(all_libraries)
+ libartsgslplayobject_la_COMPILE_FIRST = soundserver.h ../flow/artsflow.h
+ 
+@@ -53,8 +53,7 @@
+ 
+ bin_PROGRAMS = artsd artsplay artscat artswrapper artsshell artsrec
+ 
+-artsd_LDADD = libsoundserver_idl.la $(FLOWLIBS) \
+-              $(top_builddir)/mcop_mt/libmcop_mt.la
++artsd_LDADD = libsoundserver_idl.la $(FLOWLIBS)
+ artsd_LDFLAGS = $(USE_THREADS)
+ artsd_SOURCES = soundserverv2_impl.cc soundserver_impl.cc simplesoundserver_impl.cc artsd.cc cpuusage.cc samplestorage_impl.cc crashhandler.cc soundserverstartup_impl.cc
+ artsd_COMPILE_FIRST = soundserver.h artsversion.h
+--- arts-1.5.9/configure.in.in	2008-02-20 20:59:12.000000000 +0200
++++ arts-1.5.9/configure.in.in	2008-02-20 21:55:18.000000000 +0200
+@@ -172,7 +172,7 @@
+   if test "x$arts_libaudionas_include" = "xyes"; then
+     AC_CHECK_LIB(audio,AuOpenServer,[
+      dnl LDFLAGS in case it's in KDEDIR/lib
+-     LIBAUDIONAS="-laudio -lXt"
++     LIBAUDIONAS="-laudio"
+      LIBAUDIONAS_LDFLAGS="$LDFLAGS"
+      AC_DEFINE(HAVE_LIBAUDIONAS, 1,
+         [Define if you have libaudio (required if you want to have NAS support)])
+@@ -789,6 +789,7 @@
+     JACK_CFLAGS="`$PKG_CONFIG --cflags jack`"
+     JACK_LIBADD="`$PKG_CONFIG --libs-only-l jack`"
+     JACK_LDFLAGS="`$PKG_CONFIG --libs-only-L jack`"
++    JACK_LIBADD="-ljack"
+     AC_MSG_RESULT(yes)
+     AC_DEFINE(HAVE_LIBJACK, 1,
+           [Define if you have libjack (required if you want Jack support)])
+--- arts-1.5.9/flow/gsl/configure.in.in	2008-02-13 11:35:23.000000000 +0200
++++ arts-1.5.9/flow/gsl/configure.in.in	2008-02-20 20:44:23.000000000 +0200
+@@ -54,7 +54,7 @@
+           ,
+           ov_headers=0, -lvorbisenc -lvorbis -logg)
+         if test $ov_headers = 3 ; then
+-          GSL_LIBS="$GSL_LIBS -lvorbisfile -lvorbisenc -lvorbis -logg"
++          GSL_LIBS="$GSL_LIBS -lvorbisfile -lvorbis"
+           GSL_HAVE_OGGVORBIS=1
+         else
+           GSL_HAVE_OGGVORBIS=0
+--- arts-1.5.9/gmcop/Makefile.am	2008-02-20 22:01:18.000000000 +0200
++++ arts-1.5.9/gmcop/Makefile.am	2008-02-20 22:02:16.000000000 +0200
+@@ -3,7 +3,7 @@
+ INCLUDES = -I$(top_srcdir)/mcop -I$(top_builddir)/mcop $(GLIB_CFLAGS) $(all_includes)
+ 
+ libgmcop_la_SOURCES = giomanager.cc
+-libgmcop_la_LIBADD = $(top_builddir)/mcop/libmcop.la $(GLIB_LIBADD)
++libgmcop_la_LIBADD = $(top_builddir)/mcop/libmcop.la -lglib-2.0
+ libgmcop_la_LDFLAGS = -no-undefined -version-info 1:0 $(GLIB_LDFLAGS) $(all_libraries)
+ 
+ artsincludedir = $(includedir)/arts

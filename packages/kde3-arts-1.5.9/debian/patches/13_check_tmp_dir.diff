@@ -1,0 +1,17 @@
+--- a/mcop/mcoputils.cc
++++ b/mcop/mcoputils.cc
+@@ -49,7 +49,13 @@
+   result = lstat(tmp_dir, &stat_buf);
+   if ((result == -1) && (errno == ENOENT))
+   {
+-    return 1;
++    result = mkdir(tmp_dir, 0700);
++    if (result == -1)
++    {
++       arts_warning("Error: Can not create directory \"%s\".\n", tmp_dir);
++       return 1;
++    }
++    result = stat(tmp_dir, &stat_buf);
+   }
+   if ((result == -1) || (!S_ISDIR(stat_buf.st_mode)))
+   {

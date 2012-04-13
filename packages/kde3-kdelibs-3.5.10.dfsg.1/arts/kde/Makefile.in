@@ -440,7 +440,7 @@ xdg_appsdir = @xdg_appsdir@
 xdg_directorydir = @xdg_directorydir@
 xdg_menudir = @xdg_menudir@
 INCLUDES = -I$(top_builddir)/arts/kde \
-           -I$(top_srcdir) -I$(includedir)/arts -I/usr/include/kde/arts $(all_includes)
+           -I$(top_srcdir) -I$(includedir)/arts $(all_includes)
 
 lib_LTLIBRARIES = libartskde.la
 libartskde_la_SOURCES = artskde.cc kioinputstream_impl.cpp kplayobject.cc \
@@ -844,7 +844,7 @@ uninstall-am: uninstall-artskdeincludeHEADERS uninstall-libLTLIBRARIES
 artskde.mcoptype: artskde.h
 artskde.mcopclass: artskde.h
 artskde.cc artskde.h: $(top_srcdir)/arts/kde/artskde.idl $(MCOPIDL)
-	     $(MCOPIDL) -I$(includedir)/arts -I/usr/include/kde/arts -t $(MCOPINC) $(top_srcdir)/arts/kde/artskde.idl
+	     $(MCOPIDL) -I$(includedir)/arts -t $(MCOPINC) $(top_srcdir)/arts/kde/artskde.idl
 
 # vim: ts=8 noet
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

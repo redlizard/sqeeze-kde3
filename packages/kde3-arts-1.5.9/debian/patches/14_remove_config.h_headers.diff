@@ -1,0 +1,23 @@
+--- a/flow/cachedwav.h
++++ b/flow/cachedwav.h
+@@ -23,8 +23,8 @@
+ #ifndef CACHEDWAV_H
+ #define CACHEDWAV_H
+ 
+-#include "config.h"
+ #include "arts_export.h"
++
+ #ifdef HAVE_LIBAUDIOFILE
+ #include "cache.h"
+ #include <sys/stat.h>
+--- a/flow/synthschedule.h
++++ b/flow/synthschedule.h
+@@ -23,8 +23,6 @@
+ #ifndef SYNTHSCHEDULE_H
+ #define SYNTHSCHEDULE_H
+ 
+-#include "config.h"
+-
+ #ifdef __GNUC__
+ #warning " *   <synthschedule.h> included!   *"
+ #warning " * include <gslschedule.h> instead *"

@@ -1,0 +1,224 @@
+dnl Portability defines that help interoperate with classic and modern autoconfs
+ifdef([AC_TR_SH],[
+define([GLIB_TR_SH],[AC_TR_SH([$1])])
+define([GLIB_TR_CPP],[AC_TR_CPP([$1])])
+], [
+define([GLIB_TR_SH],
+       [patsubst(translit([[$1]], [*+], [pp]), [[^a-zA-Z0-9_]], [_])])
+define([GLIB_TR_CPP],
+       [patsubst(translit([[$1]],
+                          [*abcdefghijklmnopqrstuvwxyz],
+                          [PABCDEFGHIJKLMNOPQRSTUVWXYZ]),
+                 [[^A-Z0-9_]], [_])])
+])
+
+
+dnl GLIB_SIZEOF (INCLUDES, TYPE, ALIAS [, CROSS-SIZE])
+AC_DEFUN([GLIB_SIZEOF],
+[pushdef([glib_Sizeof], GLIB_TR_SH([glib_cv_sizeof_$3]))dnl
+AC_CACHE_CHECK([size of $2], glib_Sizeof,
+[AC_TRY_RUN([#include <stdio.h>
+#if STDC_HEADERS
+#include <stdlib.h>
+#include <stddef.h>
+#endif
+$1
+main()
+{
+  FILE *f=fopen("conftestval", "w");
+  if (!f) exit(1);
+  fprintf(f, "%d\n", sizeof($2));
+  exit(0);
+}],
+  [glib_Sizeof=`cat conftestval`  dnl''
+],
+  [glib_Sizeof=0],
+  ifelse([$4], [], [], [glib_Sizeof=$4]))])
+AC_DEFINE_UNQUOTED(GLIB_TR_CPP(glib_sizeof_$3), [$[]glib_Sizeof], [Size of $3])
+popdef([glib_Sizeof])dnl
+])
+
+AC_DEFUN([AC_GSL_REQUIREMENTS],
+[
+    dnl === Ogg/Vorbis check ===
+    AC_ARG_ENABLE(vorbis,
+    [  --disable-arts-vorbis       disable arts Ogg Vorbis support],
+    [arts_want_vorbis="$enableval"],[arts_want_vorbis="yes"])
+
+    if test "$arts_want_vorbis" = "yes"; then
+        ov_headers=0
+        AC_CHECK_LIB(vorbisfile, ov_read_float,
+          [KDE_CHECK_HEADER(ogg/ogg.h, ov_headers=`expr $ov_headers + 1`)]
+          [KDE_CHECK_HEADER(vorbis/vorbisfile.h, ov_headers=`expr $ov_headers + 1`)]
+          [KDE_CHECK_HEADER(vorbis/vorbisenc.h, ov_headers=`expr $ov_headers + 1`)]
+          ,
+          ov_headers=0, -lvorbisenc -lvorbis -logg)
+        if test $ov_headers = 3 ; then
+          GSL_LIBS="$GSL_LIBS -lvorbisfile -lvorbisenc -lvorbis -logg"
+          GSL_HAVE_OGGVORBIS=1
+        else
+          GSL_HAVE_OGGVORBIS=0
+        fi
+        dnl AC_DEFINE(GSL_HAVE_OGGVORBIS,1,[Define if you want Ogg Vorbis support unconditionally])
+    else
+      GSL_HAVE_OGGVORBIS=0
+      dnl AC_MSG_WARN([failed to detect Ogg/Vorbis library (>=1.0rc3) or headers])
+    fi
+    AC_SUBST(GSL_HAVE_OGGVORBIS)
+
+    dnl check for ov_read_float parameter count (differs in 1.0 vs. rc3)
+    if test $GSL_HAVE_OGGVORBIS = 1; then
+      AC_MSG_CHECKING([for ov_read_float() from rc3])
+      AC_TRY_COMPILE([
+        #include <vorbis/vorbisfile.h>
+      ], [
+        ov_read_float(0,0,0);
+      ], [
+        GSL_HAVE_OGGVORBIS_RC3=1
+        AC_MSG_RESULT(yes)
+      ], [
+        GSL_HAVE_OGGVORBIS_RC3=0
+        AC_MSG_RESULT(no)
+      ])
+      AC_SUBST(GSL_HAVE_OGGVORBIS_RC3)
+    fi
+
+    dnl === libmad MPEG decoder check ===
+    AC_ARG_ENABLE(libmad,
+    [  --disable-libmad       disable arts MAD mp3 decoder support],
+    [arts_want_libmad="$enableval"],[arts_want_libmad="yes"])
+
+    if test "$arts_want_libmad" = "yes"; then
+        mad_detect=0
+        AC_CHECK_LIB(mad, mad_synth_frame,
+          [AC_CHECK_HEADER(mad.h, mad_detect=1)]
+          ,
+          mad_detect=0, -lmad)
+        if test $mad_detect = 1 ; then
+          GSL_LIBS="$GSL_LIBS -lmad"
+          GSL_HAVE_LIBMAD=1
+        else
+          dnl AC_MSG_WARN([failed to detect libmad (MPEG I-III audio decoder) or headers])
+          GSL_HAVE_LIBMAD=0
+        fi
+    else
+      dnl AC_MSG_WARN([failed to detect libmad (MPEG I-III audio decoder) or headers])
+      GSL_HAVE_LIBMAD=0
+    fi
+    AC_SUBST(GSL_HAVE_LIBMAD)
+
+    dnl === Check library requirements ===
+    AC_MSG_CHECKING([the required GSL-Loader library set])
+    if true; then dnl echo $GSL_LIBS | grep ".*-lvorbis.*" >/dev/null ; then
+      AC_MSG_RESULT([complete])
+    else
+      AC_MSG_RESULT([])
+      AC_MSG_ERROR([Ogg/Vorbis is missing, but required])
+    fi
+    AC_SUBST(GSL_LIBS)
+
+    dnl === sizeof types ===
+    GLIB_SIZEOF([#include <pthread.h>], pthread_mutex_t, pth_mutex_t)
+    GSL_SIZEOF_PTH_MUTEX_T="$glib_cv_sizeof_pth_mutex_t"
+    AC_SUBST(GSL_SIZEOF_PTH_MUTEX_T)
+    GLIB_SIZEOF([#include <pthread.h>], pthread_cond_t, pth_cond_t)
+    GSL_SIZEOF_PTH_COND_T="$glib_cv_sizeof_pth_cond_t"
+    AC_SUBST(GSL_SIZEOF_PTH_COND_T)
+    GLIB_SIZEOF([#include <inttypes.h>], intmax_t, std_intmax_t)
+    GSL_SIZEOF_STD_INTMAX_T="$glib_cv_sizeof_std_intmax_t"
+    AC_SUBST(GSL_SIZEOF_STD_INTMAX_T)
+
+    dnl === pthread_mutexattr_settype ===
+    AC_MSG_CHECKING([for pthread_mutexattr_settype()])
+    AC_TRY_COMPILE([
+      #define _XOPEN_SOURCE   500
+      #include <pthread.h>
+    ], [
+      int (*attr_settype) (pthread_mutexattr_t *__attr, int __kind) = pthread_mutexattr_settype;
+      int val = PTHREAD_MUTEX_RECURSIVE;
+      attr_settype = 0; val = 0;
+    ],
+      GSL_HAVE_MUTEXATTR_SETTYPE=1
+      AC_MSG_RESULT(yes)
+    ,
+      GSL_HAVE_MUTEXATTR_SETTYPE=0
+      AC_MSG_RESULT(no)
+    )
+    AC_SUBST(GSL_HAVE_MUTEXATTR_SETTYPE)
+])
+
+AC_DEFUN([AC_GSL_GLIB_REQUIREMENTS],
+[
+	AC_CHECK_FUNCS(getcwd)
+	AC_FUNC_ALLOCA
+
+dnl **********************
+dnl *** va_copy checks ***
+dnl **********************
+dnl we currently check for all three va_copy possibilities, so we get
+dnl all results in config.log for bug reports.
+AC_CACHE_CHECK([for an implementation of va_copy()],glib_cv_va_copy,[
+	AC_TRY_RUN([
+	#include <stdarg.h>
+	void f (int i, ...) {
+	va_list args1, args2;
+	va_start (args1, i);
+	va_copy (args2, args1);
+	if (va_arg (args2, int) != 42 || va_arg (args1, int) != 42)
+	  exit (1);
+	va_end (args1); va_end (args2);
+	}
+	int main() {
+	  f (0, 42);
+	  return 0;
+	}],
+	[glib_cv_va_copy=yes],
+	[glib_cv_va_copy=no],
+	[])
+])
+AC_CACHE_CHECK([for an implementation of __va_copy()],glib_cv___va_copy,[
+	AC_TRY_RUN([
+	#include <stdarg.h>
+	void f (int i, ...) {
+	va_list args1, args2;
+	va_start (args1, i);
+	__va_copy (args2, args1);
+	if (va_arg (args2, int) != 42 || va_arg (args1, int) != 42)
+	  exit (1);
+	va_end (args1); va_end (args2);
+	}
+	int main() {
+	  f (0, 42);
+	  return 0;
+	}],
+	[glib_cv___va_copy=yes],
+	[glib_cv___va_copy=no],
+	[])
+])
+
+if test "x$glib_cv_va_copy" = "xyes"; then
+  g_va_copy_func=va_copy
+else if test "x$glib_cv___va_copy" = "xyes"; then
+  g_va_copy_func=__va_copy
+fi
+fi
+])
+
+AC_GSL_REQUIREMENTS
+AC_GSL_GLIB_REQUIREMENTS
+
+dnl get rid of lots and lots of useless warnings
+
+GSL_CFLAGS="$CFLAGS"
+for warn in -W -Wshadow -pedantic # -Wwrite-strings
+do
+	GSL_CFLAGS="`echo $GSL_CFLAGS | sed 's/ '$warn' / /g'`"
+done
+AC_SUBST(GSL_CFLAGS)
+
+dnl enable aRts version of glib / thread support
+
+GSL_USE_GSL_GLIB=1
+GSL_USE_ARTS_THREADS=1
+AC_SUBST(GSL_USE_GSL_GLIB)
+AC_SUBST(GSL_USE_ARTS_THREADS)

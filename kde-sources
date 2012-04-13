@@ -9,6 +9,7 @@ bibletime
 bulmages
 codeine
 d3lphin
+dbus-qt3
 dc-qt
 eqonomize
 filelight-l10n
@@ -164,3 +165,5 @@ tork
 videocut
 vym
 yakuake
+arts
+libxxf86misc

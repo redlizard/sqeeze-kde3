@@ -27,6 +27,8 @@ bulmafact-plugins
 bulmatpv-plugins
 codeine
 d3lphin
+libdbus-qt-1-1c2
+libdbus-qt-1-dev
 dc-qt
 eqonomize
 eqonomize-doc
@@ -705,3 +707,12 @@ tork-data
 videocut
 vym
 yakuake
+arts
+libarts1c2a
+libarts1-dev
+libartsc0
+libartsc0-dev
+arts-dbg
+libxxf86misc1
+libxxf86misc1-dbg
+libxxf86misc-dev

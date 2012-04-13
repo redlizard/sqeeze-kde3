@@ -1,0 +1,11 @@
+dnl put here things which have to be done as very last part of configure
+
+if test "x$arts_audiolib_found" = "xno"; then
+  echo ""
+  echo "You're missing libaudiofile. aRts won't be able to load or play"
+  echo "any samples without it, so please install it."
+  echo "Have a look at http://www.68k.org/~michael/audiofile/ or find a"
+  echo "binary package for your platform."
+  echo ""
+  all_tests=bad
+fi

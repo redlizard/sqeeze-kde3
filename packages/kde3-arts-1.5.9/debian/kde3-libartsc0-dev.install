@@ -1,0 +1,6 @@
+debian/tmp/opt/kde3/bin/artsc-config
+debian/tmp/opt/kde3/include/kde/artsc/artsc.h
+debian/tmp/opt/kde3/include/kde/artsc/artsc_export.h
+debian/tmp/opt/kde3/lib/libartsc.a
+debian/tmp/opt/kde3/lib/libartsc.la
+debian/tmp/opt/kde3/lib/libartsc.so

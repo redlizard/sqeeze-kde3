@@ -1,0 +1,73 @@
+Those are aRts/KDE-specific changes which won't be backfolded into the
+original GSL repository but are needed here:
+
+--- gsldatahandle-vorbis.c	Tue Jul 30 01:26:06 2002
++++ /usr/src/arts.dh/flow/gsl/gsldatahandle-vorbis.c	Tue Jul 30 17:46:33 2002
+@@ -19,4 +19,5 @@
+ #include "gsldatahandle-vorbis.h"
+ 
++#if GSL_HAVE_OGGVORBIS
+ #include "gslfilehash.h"
+ #include <ogg/ogg.h>
+@@ -239,5 +240,9 @@ read_packet (VorbisHandle *vhandle)
+   
+   vhandle->pcm_pos = ov_pcm_tell (&vhandle->ofile) - vhandle->soffset;
++#if GSL_HAVE_OGGVORBIS_RC3
+   vhandle->pcm_length = ov_read_float (&vhandle->ofile, &pcm, &stream_id);
++#else
++  vhandle->pcm_length = ov_read_float (&vhandle->ofile, &pcm, (~0U>>1), &stream_id);
++#endif
+   if (vhandle->pcm_pos < 0 || vhandle->pcm_length < 0 || stream_id != vhandle->stream)
+     {
+@@ -368,2 +373,4 @@ gsl_data_handle_new_ogg_vorbis (const gc
+     }
+ }
++#endif /* GSL_HAVE_OGGVORBIS */
++
+--- gsldefs.h	Wed Jul 24 05:50:17 2002
++++ /usr/src/arts.dh/flow/gsl/gsldefs.h	Tue Jul 30 02:29:55 2002
+@@ -20,5 +20,8 @@
+ #define __GSL_DEFS_H__
+ 
+-#ifdef	GSL_WANT_GLIB_WRAPPER
++/* configure checks */
++#include <gsl/gslconfig.h>
++
++#if	GSL_USE_GSL_GLIB
+ #include <gsl/gslglib.h>	/* GSL just uses a certain subset of GLib */
+ #else
+@@ -26,9 +29,4 @@
+ #endif
+ 
+-
+-/* configure checks */
+-#include <gsl/gslconfig.h>
+-
+-
+ #ifdef __cplusplus
+ extern "C" {
+@@ -103,5 +101,5 @@ typedef void     (*GslModuleFreeFunc)   
+ 
+ #if defined (BSE_COMPILATION) || defined (BSE_PLUGIN_FALLBACK) \
+-    || defined (GSL_WANT_GLIB_WRAPPER) || defined (GSL_EXTENSIONS)
++    || (GSL_USE_GSL_GLIB) || defined (GSL_EXTENSIONS)
+ #  define if_expect(cond)		if (GSL_GCC_EXPECT (cond))
+ #  define if_reject(cond)		if (GSL_GCC_REJECT (cond))
+--- gslloader-oggvorbis.c	Tue Jul 30 01:26:06 2002
++++ /usr/src/arts.dh/flow/gsl/gslloader-oggvorbis.c	Tue Jul 30 05:06:32 2002
+@@ -19,4 +19,5 @@
+ #include "gsl/gslloader.h"
+ 
++#if GSL_HAVE_OGGVORBIS
+ #include <gsl/gsldatahandle.h>
+ #include "gsldatahandle-vorbis.h"
+@@ -168,2 +169,9 @@ _gsl_init_loader_oggvorbis (void)
+   gsl_loader_register (&loader);
+ }
++#else
++void
++_gsl_init_loader_oggvorbis (void)
++{
++  /* dummy */
++}
++#endif /* GSL_HAVE_OGGVORBIS */

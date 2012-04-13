@@ -1,0 +1,100 @@
+Source: arts
+Section: libs
+Priority: optional
+Maintainer: @@@MAINTAINER@@@
+Uploaders: @@@UPLOADERS@@@
+Build-Depends: cdbs (>= 0.4.48), debhelper (>= 6), autotools-dev,
+ docbook-to-man, gawk, gettext, sharutils, texinfo,
+ libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386],
+ libaudio-dev, libaudiofile-dev, libesd0-dev, libglib2.0-dev,
+ libjack0.100.0-dev, libmad0-dev, libogg-dev, libqt3-mt-dev (>= 3:3.3.7),
+ libvorbis-dev
+Build-Conflicts: libmas-dev
+Standards-Version: 3.7.3
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/arts
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/arts
+
+Package: arts
+Architecture: all
+Section: sound
+Depends: libartsc0 (>= ${source:Version}), libarts1c2a (>= ${source:Version})
+Description: sound system from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes the complete aRts sound system, without
+ development packages. aRts is the core sound system for KDE.
+
+Package: libarts1c2a
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, oss-compat
+Recommends: libarts1-akode
+Conflicts: libarts1, libarts1c2, libarts (<< 4:3.0.0), libarts-alsa (<< 4:3.0.0), kdelibs4c2a (<< 4:3.5.9)
+Replaces: libarts1, libarts1c2, libarts (<< 4:3.0.0), libarts-alsa (<< 4:3.0.0)
+Description: aRts sound system core components
+ aRts is a short form for "analog realtime synthesizer". aRts is highly
+ modular, creating and processing sound using small modules performing
+ specific tasks. These may create a waveform (oscillators), play samples,
+ filter data, add signals, perform effects like delay/flanger/chorus, or
+ output the data to the soundcard.
+ .
+ This package contains the aRts sound system, its libraries and binaries,
+ including the aRts daemon, artsd.
+ .
+ The 'akode' package adds several plug-ins to arts that can dramatically
+ improve performance and help maintain uninterrupted playback. Its use
+ with aRts is recommended.
+ .
+ This package is part of KDE, and a component of the KDE aRts module.
+ See the 'kde' and 'arts' packages for more information.
+
+Package: libarts1-dev
+Architecture: any
+Section: libdevel
+Depends: libarts1c2a (= ${binary:Version}), libartsc0-dev (= ${binary:Version}), ${libasound2-dev}, libaudio-dev, libaudiofile-dev, libesd0-dev, libglib2.0-dev, libjack0.100.0-dev, libmad0-dev, libogg-dev, libqt3-mt-dev (>= 3:3.3.5), libvorbis-dev
+Conflicts: libarts (<< 4:3.0.0), libarts-alsa (<< 4:3.0.0)
+Replaces: libarts (<< 4:3.0.0), libarts-alsa (<< 4:3.0.0)
+Description: development files for the aRts sound system core components
+ This package contains the header files needed to build applications that
+ use the aRts sound system.
+ .
+ This package is part of KDE, and a component of the KDE aRts module.
+ See the 'kde' and 'arts' packages for more information.
+
+Package: libartsc0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}
+Conflicts: libarts (<< 4:3.0.0), libarts-alsa (<< 4:3.0.0)
+Replaces: libarts (<< 4:3.0.0), libarts-alsa (<< 4:3.0.0)
+Description: aRts sound system C support library
+ This package contains the C bindings for the aRts sound daemon.
+ .
+ This package is part of KDE, and a component of the KDE aRts module.
+ See the 'kde' and 'arts' packages for more information.
+
+Package: libartsc0-dev
+Architecture: any
+Section: libdevel
+Depends: libartsc0 (= ${binary:Version}), libglib2.0-dev
+Conflicts: libarts (<< 4:3.0.0), libarts-alsa (<< 4:3.0.0)
+Replaces: libarts (<< 4:3.0.0), libarts-alsa (<< 4:3.0.0)
+Description: development files for the aRts sound system C support library
+ This package contains the header files needed to build applications that
+ use the aRts sound daemon's C bindings.
+ .
+ This package is part of KDE, and a component of the KDE aRts module.
+ See the 'kde' and 'arts' packages for more information.
+
+Package: arts-dbg
+Section: libdevel
+Architecture: any
+Priority: extra
+Depends: libarts1c2a (= ${binary:Version})
+Description: debugging symbols for arts
+ This package contains the debugging symbols associated with arts.
+ They will automatically be used by gdb for debugging arts-related
+ issues.

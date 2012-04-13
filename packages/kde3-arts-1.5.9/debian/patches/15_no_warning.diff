@@ -1,0 +1,16 @@
+--- a/soundserver/artsd.cc
++++ b/soundserver/artsd.cc
+@@ -296,9 +296,10 @@
+ 
+ 	if(cfgForceStart && !AudioSubSystem::the()->check())
+ 	{
+-		warnNullDevice  = "Error while initializing the sound driver:\n";
+-		warnNullDevice += AudioSubSystem::the()->error();
+-		warnNullDevice += "\n\nThe sound server will continue, using the null output device.";
++		//Don't show an error, kmix makes it obvious if sound isn't working
++		//warnNullDevice  = "Error while initializing the sound driver:\n";
++		//warnNullDevice += AudioSubSystem::the()->error();
++		//warnNullDevice += "\n\nThe sound server will continue, using the null output device.";
+ 		
+ 		AudioSubSystem::the()->audioIO("null");
+ 	}

@@ -425,7 +425,7 @@ x_libraries = @x_libraries@
 xdg_appsdir = @xdg_appsdir@
 xdg_directorydir = @xdg_directorydir@
 xdg_menudir = @xdg_menudir@
-INCLUDES = -I$(includedir)/arts -I/usr/include/kde/arts -I$(top_srcdir)/arts/kde $(all_includes)
+INCLUDES = -I$(includedir)/arts -I$(top_srcdir)/arts/kde $(all_includes)
 #>- lib_LTLIBRARIES = 
 #>+ 1
 lib_LTLIBRARIES =   libkdeinit_kmcop.la
