@@ -1,0 +1,25 @@
+debian/tmp/opt/kde3/bin/khexedit
+debian/tmp/opt/kde3/lib/kde3/libkbyteseditwidget.la
+debian/tmp/opt/kde3/lib/kde3/libkbyteseditwidget.so
+debian/tmp/opt/kde3/lib/kde3/libkhexedit2part.la
+debian/tmp/opt/kde3/lib/kde3/libkhexedit2part.so
+debian/tmp/opt/kde3/lib/libkhexeditcommon.so.0
+debian/tmp/opt/kde3/lib/libkhexeditcommon.so.0.0.0
+debian/tmp/opt/kde3/share/applications/kde/khexedit.desktop
+debian/tmp/opt/kde3/share/apps/khexedit/khexeditui.rc
+debian/tmp/opt/kde3/share/apps/khexedit/pics/hexdrag.png
+debian/tmp/opt/kde3/share/apps/khexedit/pics/hexmask.png
+debian/tmp/opt/kde3/share/apps/khexedit/pics/hexwrite.png
+debian/tmp/opt/kde3/share/apps/khexedit2part/khexedit2partui.rc
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/khexedit/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/khexedit/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/khexedit/index.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/khexedit/khexedit1.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/khexedit.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/khexedit.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/khexedit.png
+debian/tmp/opt/kde3/share/services/kbyteseditwidget.desktop
+debian/tmp/opt/kde3/share/services/khexedit2part.desktop
+
+debian/icons/khexedit.xpm		/opt/kde3/share/pixmaps
+debian/icons/khexedit-16.xpm		/opt/kde3/share/pixmaps

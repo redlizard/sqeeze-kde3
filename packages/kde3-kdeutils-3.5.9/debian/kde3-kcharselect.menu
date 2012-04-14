@@ -1,0 +1,9 @@
+?package(kcharselect):\
+	needs="X11"\
+	section="Applications/Text"\
+	hints="KDE,Characters"\
+	title="KCharSelect"\
+	icon32x32="/opt/kde3/share/pixmaps/kcharselect.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kcharselect-16.xpm"\
+	command="/opt/kde3/bin/kcharselect"
+

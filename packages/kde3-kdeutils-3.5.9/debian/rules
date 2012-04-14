@@ -1,0 +1,31 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_KDE_APIDOX := yes
+
+DOC_HTML_PRUNE := kde3-kcontrol kde3-kinfocenter kde3-ktimer kde3-kcharselect kde3-ksim
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-kdeutils-dbg
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-khexedit		:= -V'kde3-khexedit (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-klaptopdaemon	:= -V'kde3-klaptopdaemon (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kmilo		:= -V'kde3-kmilo (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kregexpeditor	:= -V'kde3-kregexpeditor (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-ksim		:= -V'kde3-ksim (>= 4:3.5.9)'
+
+#shlibs_ver = 4:3.5.0-1
+#$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
+
+binary-install/kde3-superkaramba::
+	rm -f debian/kde3-superkaramba/usr/share/doc/kde3-superkaramba/examples/globalMouse/xcursor.so
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+

@@ -1,0 +1,14 @@
+kdeutils (4:3.5.9-2) unstable; urgency=high
+                                                                  
+  * klatopdaemon does not work with Debian kernels 2.6.25 or newer.
+    Those kernels are built without the option: ACPI_PROCFS_POWER which 
+       provided the battery and ac interfaces on /proc/acpi/{ac,BAT} on 
+       what klaptopdaemon uses. Since the ACPI_PROCFS_POWER is not going to
+       be renabled by the kernel team, klaptopdaemon is no longer usable   
+       in Debian.                                                          
+       So now, klaptopdaemon is now a transitional package that installs   
+       kpowersave a nice replacement that does not have this problem.      
+       The Depends on klaptopdaemon | kpowersave have been removed from the
+       metapackage and a Recommends on kpowersave have been added instead.  
+                                                                           
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Fri, 18 Jul 2008 19:00:21 +0200

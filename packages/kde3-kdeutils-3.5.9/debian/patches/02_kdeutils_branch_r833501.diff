@@ -1,0 +1,626 @@
+#DPATCHLEVEL=0
+--- kgpg/listkeys.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kgpg/listkeys.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1527,10 +1527,10 @@
+                 if (page->checkServer->isChecked()) {
+                         keyServer *expServer=new keyServer(0,"server_export",false);
+                         expServer->page->exportAttributes->setChecked(exportAttr);
+-                        QString exportKeysList;
++                        QStringList exportKeysList;
+                         for ( uint i = 0; i < exportList.count(); ++i )
+                                 if ( exportList.at(i) )
+-                                        exportKeysList.append(" "+exportList.at(i)->text(6).stripWhiteSpace());
++                                        exportKeysList << exportList.at(i)->text(6).stripWhiteSpace();
+                         expServer->slotExport(exportKeysList);
+                         return;
+                 }
+--- kgpg/kgpginterface.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kgpg/kgpginterface.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -143,7 +143,7 @@
+                                 QCString passphrase;
+                                 int code=KPasswordDialog::getNewPassword(passphrase,i18n("Enter passphrase for your file (symmetrical encryption):"));
+                                 if (code!=QDialog::Accepted) {
+-                                        delete p;
++                                        p->deleteLater();
+                                         emit processaborted(true);
+                                         return;
+                                 }
+@@ -224,7 +224,7 @@
+                                 passdlgmessage+=i18n("Enter passphrase for <b>%1</b>").arg(userIDs);
+                                 int code=KPasswordDialog::getPassword(passphrase,passdlgmessage);
+                                 if (code!=QDialog::Accepted) {
+-                                        delete p;
++                                        p->deleteLater();
+                                         emit processaborted(true);
+                                         return;
+                                 }
+@@ -303,7 +303,7 @@
+               int code=KPasswordDialog::getNewPassword(passphrase,passdlgmessage);
+ 	      if (code!=QDialog::Accepted)
+                 {
+-                  delete p;
++                  p->deleteLater();
+                   return;
+                 }
+               p->writeStdin(passphrase,true);
+@@ -400,7 +400,7 @@
+ 			int code=KPasswordDialog::getPassword(passphrase,passdlgmessage);
+ 			if (code!=QDialog::Accepted)
+ 			{
+-				delete p;
++				p->deleteLater();
+ 				emit processaborted(true);
+ 				return;
+ 			}
+@@ -506,7 +506,7 @@
+               int code=KPasswordDialog::getPassword(passphrase,passdlgmessage);
+ 	      if (code!=QDialog::Accepted)
+                 {
+-                  delete p;
++                  p->deleteLater();
+                   return;
+                 }
+               p->writeStdin(passphrase,true);
+@@ -744,7 +744,7 @@
+                                 passdlgmessage+=i18n("Enter passphrase for <b>%1</b>").arg(userIDs);
+                                 int code=KPasswordDialog::getPassword(passphrase,passdlgmessage);
+                                 if (code!=QDialog::Accepted) {
+-                                        delete p;
++                                        p->deleteLater();
+                                         emit signfinished();
+                                         return;
+                                 }
+@@ -1281,7 +1281,7 @@
+                                         p->writeStdin("quit");
+                                         //				 p->closeWhenDone();
+                                         emit processaborted(true);
+-                                        delete p;
++                                        p->deleteLater();
+                                         return;
+                                 }
+                                 p->writeStdin(passphrase,true);
+--- kgpg/keyservers.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kgpg/keyservers.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -314,9 +314,8 @@
+                         QString subkey=required.stripWhiteSpace();
+ 			if (subkey.find(" key ")!=-1 && subkey.at(0).isDigit ())
+ 			{
+-                        QString kid=subkey.section(" key ",1,1);
+-                        kid=kid.stripWhiteSpace();
+-                        kid=kid.left(8);
++                        QString kid=subkey.section(",",0,0).stripWhiteSpace();
++                        kid=kid.right(8);
+ 			kitem->setText(3,kid);
+ 			QString creation=subkey.section("created",1,1);
+ 			if (creation.startsWith(":")) creation=creation.right(creation.length()-1);
+@@ -343,10 +342,10 @@
+ 
+ void keyServer::slotPreExport()
+ {
+-slotExport(page->kCBexportkey->currentText().section(':',0,0));
++	slotExport(QStringList(page->kCBexportkey->currentText().section(':', 0, 0)));
+ }
+ 
+-void keyServer::slotExport(QString keyId)
++void keyServer::slotExport(QStringList keyIds)
+ {
+         if (page->kCBexportks->currentText().isEmpty())
+                 return;
+@@ -363,7 +362,7 @@
+                 *exportproc<<	"--keyserver-options"<<"honor-http-proxy";
+         } else
+                 *exportproc<<	"--keyserver-options"<<"no-honor-http-proxy";
+-        *exportproc<<"--status-fd=2"<<"--keyserver"<<keyserv<<"--send-keys"<<keyId;
++        *exportproc << "--status-fd=2" << "--keyserver" << keyserv << "--send-keys" << keyIds;
+ 
+         QObject::connect(exportproc, SIGNAL(processExited(KProcess *)),this, SLOT(slotexportresult(KProcess *)));
+         QObject::connect(exportproc, SIGNAL(readReady(KProcIO *)),this, SLOT(slotimportread(KProcIO *)));
+--- kgpg/keyservers.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kgpg/keyservers.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -51,7 +51,7 @@
+         void slotimportread(KProcIO *p);
+         void slotprocread(KProcIO *p);
+         void slotPreExport();
+-	void slotExport(QString keyId);
++	void slotExport(QStringList keyIds);
+         void preimport();
+         void slotsearchresult(KProcess *);
+         void slotEnableProxyI(bool on);
+--- kgpg/keyinfowidget.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kgpg/keyinfowidget.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -303,8 +303,9 @@
+ }
+ 
+ 
+-void KgpgKeyInfo::slotMainImageRead(KProcess *)
++void KgpgKeyInfo::slotMainImageRead(KProcess *p)
+ {
++	p->deleteLater();
+ 	QPixmap pixmap;
+         pixmap.load(kgpginfotmp->name());
+ 	emit changeMainPhoto(pixmap);
+--- khexedit/parts/kbytesedit/kbyteseditwidget.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ khexedit/parts/kbytesedit/kbyteseditwidget.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -52,11 +52,11 @@
+     /** hands over to the editor a new byte array.
+       * If there exists an old one and autodelete is set the old one gets deleted.
+       * @param D pointer to memory
+-      * @param DS size of used memory
+-      * @param RS real size of the memory
+-      * @param KM keep the memory on resize (RS is the maximum size)
++      * @param DS_ size of used memory
++      * @param RS_ real size of the memory
++      * @param KM keep the memory on resize (RS_ is the maximum size)
+       */
+-    virtual void setData( char *D, int DS, int RS = -1, bool KM = true );
++    virtual void setData( char *D, int DS_, int RS_ = -1, bool KM = true );
+ 
+     /** sets the maximal size of the actual byte array. If the actual array is already larger
+       * it will not be modified but there can be only done non-inserting actions
+--- khexedit/lib/kbytesedit.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ khexedit/lib/kbytesedit.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -24,18 +24,18 @@
+ using namespace KHE;
+ 
+ 
+-KBytesEdit::KBytesEdit( char *D, int DS, int RS, bool KM, QWidget *Parent, const char *Name, WFlags F )
++KBytesEdit::KBytesEdit( char *D, int DS_, int RS_, bool KM, QWidget *Parent, const char *Name, WFlags F )
+  : KHexEdit( 0L, Parent, Name, F ),
+    AutoDelete( false )
+ {
+-  setData( D, DS, RS, KM );
++  setData( D, DS_, RS_, KM );
+ }
+ 
+-KBytesEdit::KBytesEdit( char *D, int DS, QWidget *Parent, const char *Name, WFlags F )
++KBytesEdit::KBytesEdit( char *D, int DS_, QWidget *Parent, const char *Name, WFlags F )
+  : KHexEdit( 0L, Parent, Name, F ),
+    AutoDelete( false )
+ {
+-  setData( D, DS );
++  setData( D, DS_ );
+ }
+ 
+ 
+@@ -73,9 +73,9 @@
+ }
+ 
+ 
+-void KBytesEdit::setData( char *D, int S, int RS, bool KM )
++void KBytesEdit::setData( char *D, int S, int RS_, bool KM )
+ {
+-  KPlainBuffer *NewBuffer = new KPlainBuffer( D, S, RS, KM );
++  KPlainBuffer *NewBuffer = new KPlainBuffer( D, S, RS_, KM );
+   if( DataBuffer )
+   {
+     // take the settings
+--- khexedit/lib/kbufferranges.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ khexedit/lib/kbufferranges.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -99,42 +99,42 @@
+ 
+   if( OldSelection == Selection )
+     return;
+-  int CS;
+-  int CE;
++  int CS_;
++  int CE_;
+   // changes at the end?
+   if( Selection.start() == OldSelection.start() )
+   {
+-    CS = OldSelection.end()+1;
+-    CE = Selection.end();
+-    if( CE < CS )
++    CS_ = OldSelection.end()+1;
++    CE_ = Selection.end();
++    if( CE_ < CS_ )
+     {
+-      CS = Selection.end()+1;
+-      CE = OldSelection.end();
++      CS_ = Selection.end()+1;
++      CE_ = OldSelection.end();
+     }
+   }
+   // changes at the start?
+   else if( Selection.end() == OldSelection.end() )
+   {
+-    CS = OldSelection.start();
+-    CE = Selection.start()-1;
+-    if( CE < CS )
++    CS_ = OldSelection.start();
++    CE_ = Selection.start()-1;
++    if( CE_ < CS_ )
+     {
+-      CS = Selection.start();
+-      CE = OldSelection.start()-1;
++      CS_ = Selection.start();
++      CE_ = OldSelection.start()-1;
+     }
+   }
+   // change over the anchor
+   else
+   {
+-    CS = OldSelection.start();
+-    CE = Selection.end();
+-    if( CE < CS )
++    CS_ = OldSelection.start();
++    CE_ = Selection.end();
++    if( CE_ < CS_ )
+     {
+-      CS = Selection.start();
+-      CE = OldSelection.end();
++      CS_ = Selection.start();
++      CE_ = OldSelection.end();
+     }
+   }
+-  KSection C( CS, CE );
++  KSection C( CS_, CE_ );
+ 
+   bool Changed = C.isValid();
+   if( Changed )
+--- khexedit/lib/kbytesedit.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ khexedit/lib/kbytesedit.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -67,27 +67,27 @@
+     /** creates a new widget to view/edit data
+       * @param D pointer to memory
+       * @param S size of used memory
+-      * @param RS real size of the memory
+-      * @param KM keep the memory on resize (RS is then the maximum size)
++      * @param RS_ real size of the memory
++      * @param KM keep the memory on resize (RS_ is then the maximum size)
+       * @param Parent parent widget
+       * @param Name name for this widget
+       * @param F flags
+       */
+-    KBytesEdit( char *D, int DS, int RS, bool KM, QWidget *Parent = 0, const char *Name = 0, WFlags F = 0 );
++    KBytesEdit( char *D, int DS_, int RS_, bool KM, QWidget *Parent = 0, const char *Name = 0, WFlags F = 0 );
+     /** hands over to the editor a new byte array.
+       * If there exists an old one and autodelete is set the old one gets deleted.
+       * @param D pointer to memory
+       * @param S size of used memory
+-      * @param RS real size of the memory
+-      * @param KM keep the memory on resize (RS is the maximum size)
++      * @param RS_ real size of the memory
++      * @param KM keep the memory on resize (RS_ is the maximum size)
+       */
+-    KBytesEdit( char *D, int DS, QWidget *Parent = 0, const char *Name = 0, WFlags F = 0 );
++    KBytesEdit( char *D, int DS_, QWidget *Parent = 0, const char *Name = 0, WFlags F = 0 );
+     /** hands over to the editor a new byte array.
+       * If there exists an old one and autodelete is set the old one gets deleted.
+       * @param D pointer to memory
+       * @param S size of used memory
+-      * @param RS real size of the memory
+-      * @param KM keep the memory on resize (RS is the maximum size)
++      * @param RS_ real size of the memory
++      * @param KM keep the memory on resize (RS_ is the maximum size)
+       */
+     KBytesEdit( QWidget *Parent = 0, const char *Name = 0, WFlags F = 0 );
+     virtual ~KBytesEdit();
+@@ -116,10 +116,10 @@
+       * If there exists an old one and autodelete is set the old one gets deleted.
+       * @param D pointer to memory
+       * @param S size of used memory
+-      * @param RS real size of the memory
+-      * @param KM keep the memory on resize (RS is the maximum size)
++      * @param RS_ real size of the memory
++      * @param KM keep the memory on resize (RS_ is the maximum size)
+       */
+-    void setData( char *D, int S, int RS = -1, bool KM = true );
++    void setData( char *D, int S, int RS_ = -1, bool KM = true );
+ 
+     /** sets whether the given array should be handled read only or not */
+     virtual void setReadOnly( bool RO = true );
+--- superkaramba/src/richtextlabel.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/richtextlabel.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -31,7 +31,7 @@
+ 
+     void setText(QString text, bool linkUnderline = false);
+     void setValue(QString text);
+-    void setValue(int v);
++    void setValue(long v);
+     QString getStringValue() { return source; };
+ 
+     void setFont(QString font);
+--- superkaramba/src/graph.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/graph.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -29,7 +29,7 @@
+     delete[] values;
+ }
+ 
+-void Graph::setValue( int v)
++void Graph::setValue( long v)
+ {
+     if( v > maxValue)
+     {
+@@ -48,7 +48,7 @@
+ 
+ void Graph::setValue( QString v )
+ {
+-  setValue((int)(v.toDouble() + 0.5));
++  setValue((long)(v.toDouble() + 0.5));
+ }
+ 
+ void Graph::mUpdate(QPainter *p)
+--- superkaramba/src/textlabel.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/textlabel.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -93,7 +93,7 @@
+     calculateTextSize();
+ }
+ 
+-void TextLabel::setValue( int v)
++void TextLabel::setValue( long v)
+ {
+     value = QStringList( QString::number( v ) );
+     calculateTextSize();
+--- superkaramba/src/clickarea.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/clickarea.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -87,7 +87,7 @@
+ }
+ 
+ 
+-void ClickArea::setValue( int v)
++void ClickArea::setValue( long v)
+ {
+ 
+     setValue( QString::number( v ) );
+--- superkaramba/src/meter.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/meter.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -39,17 +39,17 @@
+ 
+   virtual void setSize(int ix, int iy, int iw, int ih);
+ 
+-  virtual void setMax(int max) { maxValue = max; };
+-  virtual void setMin(int min) { minValue = min; };
+-  virtual int getMax() { return minValue; };
+-  virtual int getMin() { return maxValue; };
++  virtual void setMax(long max) { maxValue = max; };
++  virtual void setMin(long min) { minValue = min; };
++  virtual long getMax() { return minValue; };
++  virtual long getMin() { return maxValue; };
+ 
+   void setThemePath( QString );
+ 
+   virtual void mUpdate(QPainter *)=0 ;
+ 
+-  virtual void setValue(int) {};
+-  virtual int getValue() { return -1; };
++  virtual void setValue(long) {};
++  virtual long getValue() { return -1; };
+   virtual void setValue(QString) {};
+   virtual QString getStringValue() const { return QString::null; };
+   virtual void recalculateValue() {};
+@@ -89,8 +89,8 @@
+ 
+   bool clickable;
+   int hidden;
+-  int minValue;
+-  int maxValue;
++  long minValue;
++  long maxValue;
+ 
+   QColor color;
+   karamba* m_karamba;
+--- superkaramba/src/textlabel.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/textlabel.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -33,7 +33,7 @@
+ 
+     void setTextProps( TextField* );
+     void setValue( QString );
+-    void setValue( int );
++    void setValue( long );
+     //virtual QString getStringValue() const { return value.join("\n"); };
+     QString getStringValue() const { return value.join("\n"); };
+     void setFontSize( int );
+--- superkaramba/src/bar.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/bar.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -51,7 +51,7 @@
+   return res;
+ }
+ 
+-void Bar::setValue( int v )
++void Bar::setValue( long v )
+ {
+   if(v > maxValue)
+   {
+@@ -67,16 +67,16 @@
+ 
+   barValue = v;
+ 
+-  int diff = maxValue - minValue;
++  long diff = maxValue - minValue;
+   if(diff != 0)
+   {
+     if(vertical)
+     {
+-      value = int((v-minValue)*getHeight() / diff + 0.5);
++      value = long((v-minValue)*getHeight() / diff + 0.5);
+     }
+     else // horizontal
+     {
+-      value = int((v-minValue)*getWidth() / diff + 0.5);
++      value = long((v-minValue)*getWidth() / diff + 0.5);
+     }
+   }
+   else
+@@ -87,16 +87,16 @@
+ 
+ void Bar::setValue(QString v)
+ {
+-  setValue((int)(v.toDouble() + 0.5));
++  setValue((long)(v.toDouble() + 0.5));
+ }
+ 
+-void Bar::setMax(int m)
++void Bar::setMax(long m)
+ {
+   Meter::setMax(m);
+   recalculateValue();
+ }
+ 
+-void Bar::setMin(int m)
++void Bar::setMin(long m)
+ {
+   Meter::setMin(m);
+   recalculateValue();
+--- superkaramba/src/imagelabel.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/imagelabel.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -155,7 +155,7 @@
+   }
+ }
+ 
+-void ImageLabel::setValue(int v)
++void ImageLabel::setValue(long v)
+ {
+  setValue( QString::number( v ) );
+ }
+--- superkaramba/src/clickarea.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/clickarea.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -54,7 +54,7 @@
+     QRect getRectangle();
+ 
+     void mUpdate( QPainter* );
+-    void setValue( int );
++    void setValue( long );
+     void setValue( QString );
+ 
+     QRect rect;
+--- superkaramba/src/disksensor.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/disksensor.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -32,27 +32,27 @@
+ DiskSensor::~DiskSensor()
+ {}
+ 
+-int DiskSensor::getFreeSpace(QString mntPt) const
++long DiskSensor::getFreeSpace(QString mntPt) const
+ {
+     QRegExp rx( "^\\S*\\s*\\d+\\s+\\d+\\s+(\\d+)");
+     rx.search(mntMap[mntPt]);
+-    return rx.cap(1).toInt();
++    return rx.cap(1).toLong();
+ }
+ 
+-int DiskSensor::getUsedSpace(QString mntPt) const
++long DiskSensor::getUsedSpace(QString mntPt) const
+ {
+     QRegExp rx( "^\\S*\\s*\\d+\\s+(\\d+)\\s+\\d+");
+     rx.search(mntMap[mntPt]);
+-    return rx.cap(1).toInt();
++    return rx.cap(1).toLong();
+ }
+ 
+-int DiskSensor::getTotalSpace(QString mntPt) const
++long DiskSensor::getTotalSpace(QString mntPt) const
+ {
+ 
+     QRegExp rx( "^\\S*\\s*(\\d+)\\s+\\d+\\s+\\d+");
+     rx.search(mntMap[mntPt]);
+ 
+-    return rx.cap(1).toInt();
++    return rx.cap(1).toLong();
+ 
+ }
+ 
+--- superkaramba/src/clickmap.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/clickmap.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -30,7 +30,7 @@
+     virtual bool click( QMouseEvent* );
+     void mUpdate( QPainter* );
+     void setValue( QString );
+-    void setValue( int );
++    void setValue( long );
+     void setTextProps( TextField * );
+ 
+ private:
+--- superkaramba/src/richtextlabel.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/richtextlabel.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -80,7 +80,7 @@
+   setText(text);
+ }
+ 
+-void RichTextLabel::setValue(int v)
++void RichTextLabel::setValue(long v)
+ {
+   setText(QString::number(v));
+ }
+--- superkaramba/src/graph.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/graph.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -24,8 +24,8 @@
+   Graph();
+   ~Graph();
+ 
+-  void setValue( int );
+-  int getValue() { return lastValue; };
++  void setValue( long );
++  long getValue() { return lastValue; };
+   void setValue( QString );
+   void mUpdate( QPainter * );
+ 
+--- superkaramba/src/bar.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/bar.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -24,15 +24,15 @@
+ 
+     void mUpdate( QPainter * );
+ 
+-    virtual void setMax( int m );
+-    virtual void setMin( int m );
++    virtual void setMax( long m );
++    virtual void setMin( long m );
+ 
+ public slots:
+     bool setImage( QString imagePath );
+     QString getImage() { return imagePath; };
+ 
+-    void setValue( int );
+-    int  getValue() { return barValue; };
++    void setValue( long );
++    long  getValue() { return barValue; };
+     void setValue( QString );
+     void recalculateValue() {setValue(barValue); };
+ 
+@@ -40,8 +40,8 @@
+     int  getVertical() { return vertical; };
+ 
+ private:
+-    int barValue;
+-    int value;
++    long barValue;
++    long value;
+ 
+     int pixmapWidth;
+     int pixmapHeight;
+--- superkaramba/src/clickmap.cpp	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/clickmap.cpp	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -84,7 +84,7 @@
+     }
+ }
+ 
+-void ClickMap::setValue( int v )
++void ClickMap::setValue( long v )
+ {
+     if ( v == 0 )
+     {
+--- superkaramba/src/imagelabel.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/imagelabel.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -107,7 +107,7 @@
+   ~ImageLabel();
+   void setValue( QString imagePath );
+ 
+-  void setValue( int );
++  void setValue( long );
+   void setValue( QPixmap& );
+   QString getStringValue() { return imagePath; };
+   void scale( int, int );
+--- superkaramba/src/disksensor.h	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/disksensor.h	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -26,9 +26,9 @@
+   void setMaxValue( SensorParams *sp );
+ 
+ private:
+-  int getFreeSpace(QString mntPt) const;
+-  int getUsedSpace(QString mntPt) const;
+-  int getTotalSpace(QString mntPt) const;
++  long getFreeSpace(QString mntPt) const;
++  long getUsedSpace(QString mntPt) const;
++  long getTotalSpace(QString mntPt) const;
+   int getPercentUsed(QString mntPt) const;
+   int getPercentFree(QString mntPt) const;
+ 

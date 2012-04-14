@@ -1,0 +1,9 @@
+Add OnlyShowIn=KDE to kdewalletmanager so it is only shown in the KDE
+desktop. (Closes: #489985)
+--- kdeutils-3.5.9.orig/kwallet/kwalletmanager.desktop
++++ kdeutils-3.5.9/kwallet/kwalletmanager.desktop
+@@ -61,3 +61,4 @@
+ X-KDE-StartupNotify=false
+ Categories=Qt;KDE;Settings;
+ DocPath=kwallet/index.html
++OnlyShowIn=KDE

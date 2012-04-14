@@ -1,0 +1,37 @@
+debian/tmp/opt/kde3/bin/ark
+debian/tmp/opt/kde3/lib/kde3/ark.la
+debian/tmp/opt/kde3/lib/kde3/ark.so
+debian/tmp/opt/kde3/lib/kde3/libarkpart.la
+debian/tmp/opt/kde3/lib/kde3/libarkpart.so
+debian/tmp/opt/kde3/lib/libkdeinit_ark.so
+debian/tmp/opt/kde3/share/applications/kde/ark.desktop
+debian/tmp/opt/kde3/share/apps/ark/ark_part.rc
+debian/tmp/opt/kde3/share/apps/ark/ark_part_readonly.rc
+debian/tmp/opt/kde3/share/apps/ark/arkui.rc
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/22x22/actions/ark_adddir.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/22x22/actions/ark_addfile.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/22x22/actions/ark_delete.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/22x22/actions/ark_extract.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/22x22/actions/ark_selectall.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/22x22/actions/ark_view.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/32x32/actions/ark_adddir.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/32x32/actions/ark_addfile.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/32x32/actions/ark_delete.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/32x32/actions/ark_extract.png
+debian/tmp/opt/kde3/share/apps/ark/icons/crystalsvg/32x32/actions/ark_view.png
+debian/tmp/opt/kde3/share/config.kcfg/ark.kcfg
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ark/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ark/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ark/index.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ark/man-ark.1.docbook
+debian/tmp/opt/kde3/share/icons/hicolor/128x128/apps/ark.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/ark.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/ark.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/ark.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/ark.png
+debian/tmp/opt/kde3/share/icons/hicolor/64x64/apps/ark.png
+debian/tmp/opt/kde3/share/icons/hicolor/scalable/apps/ark.svgz
+debian/tmp/opt/kde3/share/services/ark_part.desktop
+
+debian/icons/ark.xpm		/opt/kde3/share/pixmaps
+debian/icons/ark-16.xpm		/opt/kde3/share/pixmaps

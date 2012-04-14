@@ -1,0 +1,8 @@
+?package(kfloppy):\
+	needs="X11"\
+	section="Applications/System/Hardware"\
+	hints="KDE"\
+	title="KFloppy"\
+	icon32x32="/opt/kde3/share/pixmaps/kfloppy.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kfloppy-16.xpm"\
+	command="/opt/kde3/bin/kfloppy"

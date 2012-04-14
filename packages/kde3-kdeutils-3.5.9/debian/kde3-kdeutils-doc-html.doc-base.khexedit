@@ -1,0 +1,10 @@
+Document: kdeutils-doc-html-khexedit
+Title: KHexEdit Handbook
+Author: Jonathan Singer
+Abstract: KHexEdit is a hexadecimal editor for KDE
+Section: Editors
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/khexedit/index.html
+Files: /usr/share/doc/kde/HTML/en/khexedit/*.html
+

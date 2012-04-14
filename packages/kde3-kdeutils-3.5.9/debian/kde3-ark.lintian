@@ -1,0 +1,4 @@
+ark: package-name-doesnt-match-sonames libkdeinit-ark
+ark: no-shlibs-control-file usr/lib/libkdeinit_ark.so
+ark: postinst-must-call-ldconfig usr/lib/libkdeinit_ark.so
+ark: postrm-should-call-ldconfig usr/lib/libkdeinit_ark.so

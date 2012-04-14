@@ -1,0 +1,187 @@
+.TH KGPG "1" "December 2002" "KDE" "KDE Application"
+.SH NAME
+kgpg \- a KDE frontend for GNU Privacy Guard (GnuPG)
+.SH SYNOPSIS
+.B kgpg
+[\fIQt-options\fR] [\fIKDE-options\fR] [\fIoptions\fR] \fIfile\fR
+.SH DESCRIPTION
+This manual page documents briefly the
+.B Kgpg
+KDE Application.
+This manual page was written for the Debian GNU/Linux distribution
+because the original program does not have a manual page.
+.PP
+.B Kgpg
+is a simple graphical interface for gpg (http://gnupg.org).
+Basically, It allows you to encrypt and decrypt files or messages, and to manage your keys. 
+.PP
+Kgpg can be used in different ways: 
+.IP "1 -" 4
+Open Kgpg. You will see an editor. Just type or paste your text in the editor. You can then easily encrypt/decrypt the text. 
+.IP "2 -" 4
+On your Desktop or from a Konqueror window, right click on a file and you will see an encrypt file entry in the menu. just select it to encrypt the file. In the same way, simply left click on an encrypted file to decrypt it. 
+.IP "3 -" 4
+If you enable Kgpg's Klipper action, as soon as you copy an encrypted text to the clipboard, a popup menu will ask you if you want to decrypt it. 
+.SH OPTIONS
+.TP
+.B \-e
+encrypt file
+.TP
+.B \-s
+show encrypted file
+.TP
+.B \-S
+sign file
+.TP
+.B \-V
+verify signature
+.SS "Arguments:"
+.TP 12
+file
+file to open
+.SS "Generic options:"
+.TP 12
+.B \-\-help
+Show help about options
+.TP
+.B \-\-help\-qt
+Show Qt specific options
+.TP
+.B \-\-help\-kde
+Show KDE specific options
+.TP
+.B \-\-help\-all
+Show all options
+.TP
+.B \-\-author
+Show author information
+.TP
+.B \-v\fR, \fB\-\-version
+Show version information
+.TP
+.B \-\-license
+Show license information
+.TP
+.B \-\-
+End of options
+.SS "Qt options"
+.TP 12
+.BI \-\-display \ displayname
+Use the X-server display \fIdisplayname\fP.
+.TP
+.BI \-\-session \ sessionId
+Restore the application for the given \fIsessionId\fP.
+.TP
+.B \-\-cmap
+Causes the application to install a private color
+map on an 8-bit display.
+.TP
+.BI \-\-ncols \ count
+Limits the number of colors allocated in the color
+cube on an 8-bit display, if the application is
+using the QApplication::ManyColor color
+specification.
+.TP
+.B \-\-nograb
+tells Qt to never grab the mouse or the keyboard.
+.TP
+.B \-\-dograb
+running under a debugger can cause an implicit
+.B \-nograb, use \fB\-dograb\fR to override.
+.TP
+.B \-\-sync
+switches to synchronous mode for debugging.
+.TP
+.BI "\-\-fn\fR, \fP\-\-font" \ fontname
+defines the application font.
+.TP
+.BI "-\-bg\fR, \fB\-\-background"  \ color
+sets the default background color and an
+application palette (light and dark shades are
+calculated).
+.TP
+.BI "\-\-fg\fR, \fB\-\-foreground"  \ color
+sets the default foreground color.
+.TP
+.BI \-\-btn\fR, \fB\-\-button \ color
+sets the default button color.
+.TP
+.BI \-\-name \ name
+sets the application name.
+.TP
+.BI \-\-title \ title
+sets the application title (caption).
+.TP
+.B \-\-visual TrueColor
+forces the application to use a TrueColor visual on
+an 8-bit display.
+.TP
+.BI \-\-inputstyle \ inputstyle
+sets XIM (X Input Method) input style. Possible
+values are 
+.BR onthespot ", " overthespot ", " offthespot and root .
+.TP
+.BI \-\-im " XIM-server"
+set XIM server.
+.TP
+.B \-\-noxim
+disable XIM.
+.TP
+.B \-\-reverse
+mirrors the whole layout of widgets.
+.SS "KDE options"
+.TP 12
+.BI \-\-caption \ caption
+Use \fIcaption\fP as name in the titlebar.
+.TP
+.BI \-\-icon \ icon
+Use \fIicon\fP as the application icon.
+.TP
+.BI \-\-miniicon \ icon
+Use \fIicon\fP as the icon in the titlebar.
+.TP
+.BI \-\-config \ filename
+Use alternative configuration file.
+.TP
+.BI \-\-dcopserver \ server
+Use the DCOP Server specified by \fIserver\fP.
+.TP
+.B \-\-nocrashhandler
+Disable crash handler, to get core dumps.
+.TP
+.B \-\-waitforwm
+Waits for a WM_NET compatible windowmanager.
+.TP
+.BI \-\-style \ style
+sets the application GUI style.
+.TP
+.BI \-\-geometry \ geometry
+sets the client geometry of the main widget.
+.SH AUTHOR
+kgpg was written by
+.nh
+.ad l
+y0k0 <bj@altern.org>,
+.br
+.hy
+This manual page was prepared by
+.nh
+.ad l
+Karolina Lindqvist <pgd\-karolinali@algonet.se>
+.hy
+for the Debian GNU/Linux system (but may be used by others).
+.SH "SEE ALSO"
+The full documentation for
+.B Kgpg
+is maintained as a docbook manual.  If the
+.B khelpcenter
+program is properly installed at your site, the command
+.IP
+.B khelpcenter help:/kgpg
+.PP
+should give you access to the complete manual.
+.P
+Alternatively the manual can be browsed in
+.B konqueror
+giving it the URL help:/kgpg
+

@@ -1,0 +1,16 @@
+debian/tmp/opt/kde3/bin/kjots
+debian/tmp/opt/kde3/share/applications/kde/Kjots.desktop
+debian/tmp/opt/kde3/share/apps/kjots/kjotsui.rc
+debian/tmp/opt/kde3/share/apps/kjots/pics/filedel.png
+debian/tmp/opt/kde3/share/config.kcfg/kjots.kcfg
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kjots/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kjots/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kjots/index.docbook
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kjots.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/kjots.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kjots.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kjots.png
+debian/tmp/opt/kde3/share/icons/hicolor/64x64/apps/kjots.png
+
+debian/icons/kjots.xpm		/opt/kde3/share/pixmaps
+debian/icons/kjots-16.xpm	/opt/kde3/share/pixmaps

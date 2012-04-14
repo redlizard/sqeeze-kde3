@@ -1,0 +1,4 @@
+kedit: package-name-doesnt-match-sonames libkdeinit-kedit
+kedit: no-shlibs-control-file usr/lib/libkdeinit_kedit.so
+kedit: postinst-must-call-ldconfig usr/lib/libkdeinit_kedit.so
+kedit: postrm-should-call-ldconfig usr/lib/libkdeinit_kedit.so

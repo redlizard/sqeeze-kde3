@@ -1,0 +1,10 @@
+Document: kdeutils-doc-html-kcalc
+Title: KCalc Handbook
+Author: Bernd Johannes Wuebben, Pamela Roberts
+Abstract: KCalc is a scientific calculator for KDE
+Section: Science/Mathematics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kcalc/index.html
+Files: /usr/share/doc/kde/HTML/en/kcalc/*.html
+

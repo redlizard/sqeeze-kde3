@@ -1,0 +1,8 @@
+?package(kcalc):\
+	needs="X11"\
+	section="Applications/Science/Mathematics"\
+	hints="KDE,Calculators"\
+	title="KCalc"\
+	icon32x32="/opt/kde3/share/pixmaps/kcalc.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kcalc-16.xpm"\
+	command="/opt/kde3/bin/kcalc"

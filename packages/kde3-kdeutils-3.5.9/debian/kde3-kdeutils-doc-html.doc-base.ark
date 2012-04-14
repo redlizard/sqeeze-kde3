@@ -1,0 +1,10 @@
+Document: kdeutils-doc-html-ark
+Title: Ark Handbook
+Author: Matt Johnston, Henrique Pinto
+Abstract: Ark is an archive manager for KDE
+Section: File Management
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/ark/index.html
+Files: /usr/share/doc/kde/HTML/en/ark/*.html
+

@@ -1,0 +1,18 @@
+?package(kdf):\
+	needs="X11"\
+	section="Applications/System/Monitoring"\
+	hints="KDE"\
+	title="KDiskFree"\
+	icon32x32="/opt/kde3/share/pixmaps/kdf.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kdf-16.xpm"\
+	command="/opt/kde3/bin/kdf"
+
+?package(kdf):\
+	needs="X11"\
+	section="Applications/System/Monitoring"\
+	hints="KDE"\
+	title="kwikdisk"\
+	icon32x32="/opt/kde3/share/pixmaps/kwikdisk.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kwikdisk-16.xpm"\
+	command="/opt/kde3/bin/kwikdisk"
+

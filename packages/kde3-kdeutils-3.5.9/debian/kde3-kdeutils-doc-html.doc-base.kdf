@@ -1,0 +1,11 @@
+Document: kdeutils-doc-html-kdf
+Title: KDiskFree Handbook
+Author: Jonathan Singer, Michael Kropfberger
+Abstract: KDiskFree displays available file devices, along with information about them.
+Section: System/Monitoring
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kdf/index.html
+Files: /usr/share/doc/kde/HTML/en/kdf/*.html
+
+

@@ -1,0 +1,9 @@
+Document: kdeutils-doc-html-kregexpeditor
+Title: The Regular Expression Editor Manual
+Author: Jesper K. Pedersen
+Abstract: This Handbook describes the Regular Expression Editor widget
+Section: Editors
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/KRegExpEditor/index.html
+Files: /usr/share/doc/kde/HTML/en/KRegExpEditor/*.html

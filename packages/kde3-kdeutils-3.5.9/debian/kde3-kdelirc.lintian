@@ -1,0 +1,3 @@
+kdelirc: package-name-doesnt-match-sonames libkdeinit-irkick
+kdelirc: no-shlibs-control-file usr/lib/libkdeinit_irkick.so
+kdelirc: postinst-must-call-ldconfig usr/lib/libkdeinit_irkick.so

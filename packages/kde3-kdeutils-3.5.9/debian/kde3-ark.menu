@@ -1,0 +1,8 @@
+?package(ark):\
+	needs="X11"\
+	section="Applications/File Management"\
+	hints="KDE"\
+	title="Ark"\
+	icon32x32="/opt/kde3/share/pixmaps/ark.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ark-16.xpm"\
+	command="/opt/kde3/bin/ark"

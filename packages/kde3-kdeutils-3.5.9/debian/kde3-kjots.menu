@@ -1,0 +1,9 @@
+?package(kjots):\
+	needs="X11"\
+	section="Applications/Data Management"\
+	hints="KDE"\
+	title="KJots"\
+	icon32x32="/opt/kde3/share/pixmaps/kjots.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kjots-16.xpm"\
+	command="/opt/kde3/bin/kjots"
+

@@ -1,0 +1,34 @@
+--- kde.orig/klaptopdaemon/apm.cpp
++++ kde.new/klaptopdaemon/apm.cpp
+@@ -187,14 +187,6 @@
+ 	unsigned long len, crc;
+ 	QString helper = KStandardDirs::findExe("klaptop_acpi_helper");
+ 	checkcrc(helper.latin1(), len, crc);
+-	if (len != file_len || crc != file_crc) {
+-		QString str(i18n("The %1 application does not seem to have "
+-					"the same size or checksum as when it was compiled we do NOT recommend "
+-					"you proceed with making it setuid-root without further investigation").arg(helper));
+-		int rc = KMessageBox::warningContinueCancel(0, str, i18n("KLaptopDaemon"), i18n("Run Nevertheless"));
+-		if (rc != KMessageBox::Continue) 
+-			return;
+-	}
+ 
+ 	QString kdesu = KStandardDirs::findExe("kdesu");
+ 	if (!kdesu.isEmpty()) {
+--- kde.orig/klaptopdaemon/acpi.cpp
++++ kde.new/klaptopdaemon/acpi.cpp
+@@ -165,14 +165,6 @@
+ 	unsigned long len, crc;
+ 	QString helper = KStandardDirs::findExe("klaptop_acpi_helper");
+ 	checkcrc(QFile::encodeName(helper), len, crc);
+-	if (len != file_len || crc != file_crc) {
+-		QString str(i18n("The %1 application does not seem to have "
+-					"the same size or checksum as when it was compiled we do NOT recommend "
+-					"you proceed with making it setuid-root without further investigation").arg(helper));
+-		int rc = KMessageBox::warningContinueCancel(0, str, i18n("KLaptopDaemon"), i18n("Run Nevertheless"));
+-		if (rc != KMessageBox::Continue) 
+-			return;
+-	}
+ 
+ 	QString kdesu = KStandardDirs::findExe("kdesu");
+ 	if (!kdesu.isEmpty()) {

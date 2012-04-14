@@ -1,0 +1,1246 @@
+--- charselectapplet/kcharselectapplet.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ charselectapplet/kcharselectapplet.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Character Selector
+ Name[ar]=أداة اختيار الرموز
+ Name[az]=Xarakter Seçici
+@@ -27,6 +26,7 @@
+ Name[is]=Stafaval
+ Name[it]=Selettore di caratteri
+ Name[ja]=文字の選択
++Name[ka]=სიმბოლოთა შემრჩეველი
+ Name[kk]=Таңба тергіш
+ Name[km]=កម្មវិធី​ជ្រើស​តួអក្សរ
+ Name[nb]=Tegnvelger
+@@ -46,7 +46,8 @@
+ Name[sv]=Teckenväljare
+ Name[ta]= எழுத்து தேர்ந்தெடுப்பான்
+ Name[uk]=Вибір символів
+-Name[uz]=Ҳарф танлагич
++Name[uz]=Harf tanlagich
++Name[uz@cyrillic]=Ҳарф танлагич
+ Name[zh_CN]=字符选择器
+ Name[zh_TW]=字元選擇器
+ Icon=kcharselect
+@@ -73,6 +74,7 @@
+ Comment[is]=Velur útlenda og sérstaka stafi fyrir klippispjaldið
+ Comment[it]=Seleziona caratteri speciali e stranieri per gli appunti
+ Comment[ja]=クリップボードに外国語文字または特殊文字をピックアップする
++Comment[ka]=გაცვლის ბუფერისთვის უცხოური და სპეციალური სიმბოლოების აღება
+ Comment[kk]=Пернетақтада жоқ таңбаларды алмасу буферіне теріп алу
+ Comment[km]=ជ្រើស​តួអក្សរ​បរទេស និង​ពិសេស​សម្រាប់​ក្តារតម្បៀតខ្ទាស់
+ Comment[lt]=Parinkite užsienietiškus ar ypatingus simbolius talpyklei
+@@ -92,6 +94,7 @@
+ Comment[sv]=Välj främmande tecken och specialtecken för klippbordet
+ Comment[tr]=Yabancı ve özel karakterleri panoya kopyalar
+ Comment[uk]=Вибрати і вставити в кишеню іноземні та спеціальні символи
+-Comment[uz]=Ҳарф ва махсус белгиларни хотирага олиш воситаси
++Comment[uz]=Harf va maxsus belgilarni xotiraga olish vositasi
++Comment[uz@cyrillic]=Ҳарф ва махсус белгиларни хотирага олиш воситаси
+ Comment[zh_CN]=将外语和特殊字符拾取到剪贴板
+ Comment[zh_TW]=為剪貼簿選擇外國與特殊字元
+--- kfloppy/floppy_format.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kfloppy/floppy_format.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -21,6 +21,7 @@
+ Name[is]=Forsníða
+ Name[it]=Formatta
+ Name[ja]=フォーマット
++Name[ka]=ფორმატი
+ Name[kk]=Дискетаны пішімдеу
+ Name[km]=ធ្វើ​ទ្រង់ទ្រាយ
+ Name[lt]=Formatas
+@@ -40,7 +41,8 @@
+ Name[sr@Latn]=Formatiraj
+ Name[tr]=Biçimlendir
+ Name[uk]=Форматування
+-Name[uz]=Форматлаш
++Name[uz]=Formatlash
++Name[uz@cyrillic]=Форматлаш
+ Name[wa]=Abwesner
+ Name[zh_CN]=格式化
+ Name[zh_TW]=格式化
+--- kfloppy/KFloppy.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kfloppy/KFloppy.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Floppy Formatter
+ GenericName[af]=Sagteskyf Formateerder
+ GenericName[ar]=مهئ الأقراص المرنة
+@@ -30,6 +29,7 @@
+ GenericName[is]=Tól til að forsníða disklinga
+ GenericName[it]=Formattatore di dischetti
+ GenericName[ja]=フロッピーをフォーマット
++GenericName[ka]=დისკეტის დამფორმატებელი
+ GenericName[kk]=Иілгіш дискін пішімдеу
+ GenericName[km]=កម្មវិធី​ធ្វើទ្រង់ទ្រាយ​ថាស់ទន់
+ GenericName[ko]=플로피 디스크를 포맷해주는 도구
+@@ -59,7 +59,8 @@
+ GenericName[th]=เครื่องมือฟอร์แมตแผ่นฟลอปปี้้
+ GenericName[tr]=Disket Biçimlendirici
+ GenericName[uk]=Відформатувати дискету
+-GenericName[uz]=Дискетни форматлагич
++GenericName[uz]=Disketni formatlagich
++GenericName[uz@cyrillic]=Дискетни форматлагич
+ GenericName[ven]=Muvhekanyi wa Floppy
+ GenericName[vi]=Trình định dạng đĩa 
+ GenericName[wa]=Usteye po-z abwesner des plaketes
+--- kcharselect/KCharSelect.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kcharselect/KCharSelect.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Character Selector
+ GenericName[af]=Karakter Kiesser
+ GenericName[ar]=أداة اختيار الرموز
+@@ -30,6 +29,7 @@
+ GenericName[is]=Stafaval
+ GenericName[it]=Selettore di caratteri
+ GenericName[ja]=文字の選択
++GenericName[ka]=სიმბოლოთა შემრჩეველი
+ GenericName[kk]=Таңба тергіш
+ GenericName[km]=កម្មវិធី​ជ្រើស​តួអក្សរ
+ GenericName[ko]=글자 고르기
+@@ -58,7 +58,8 @@
+ GenericName[th]=เครื่องมือเลือกอักขระ
+ GenericName[tr]=Karakter Seçici
+ GenericName[uk]=Таблиця символів
+-GenericName[uz]=Ҳарф танлагич
++GenericName[uz]=Harf tanlagich
++GenericName[uz@cyrillic]=Ҳарф танлагич
+ GenericName[ven]=Munangi wa muanewa
+ GenericName[vi]=Trình chọn kí tự 
+ GenericName[wa]=Tchoezixheu di caracteres
+--- kgpg/kgpg.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kgpg/kgpg.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kgpg %U
+ Icon=kgpg
+@@ -31,6 +30,7 @@
+ GenericName[is]=Dulritunartól
+ GenericName[it]=Strumento di crittografia
+ GenericName[ja]=暗号化ツール
++GenericName[ka]=დაშიფვრის ხელსაწყო
+ GenericName[kk]=Шифрлау құралы
+ GenericName[km]=ឧបករណ៍​អ៊ិនគ្រីប
+ GenericName[lt]=Šifravimo įrankis
+@@ -81,6 +81,7 @@
+ Comment[is]=Viðmót á GnuPG
+ Comment[it]=Interfaccia grafica per GnuPG
+ Comment[ja]=GnuPG のフロントエンド
++Comment[ka]=GnuPG გრაფიკული გარსი
+ Comment[kk]=GnuPG интерфейсі
+ Comment[km]=កម្មវិធី​ខាងមុខ GnuPG
+ Comment[lt]=GnuPG naudotojo sąsaja
+@@ -104,7 +105,8 @@
+ Comment[tg]=Пешохири GnuPG
+ Comment[tr]=Bir GnuPG arayüzü
+ Comment[uk]=Інтерфейс до GnuPG
+-Comment[uz]=GnuPG учун график интерфейс
++Comment[uz]=GnuPG uchun grafik interfeys
++Comment[uz@cyrillic]=GnuPG учун график интерфейс
+ Comment[wa]=Ene eterface po GnuPG
+ Comment[zh_CN]=GnuPG 前端
+ Comment[zh_TW]=GnuPG 前端軟體
+--- kgpg/encryptfolder.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kgpg/encryptfolder.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -25,6 +25,7 @@
+ Name[is]=Pakka og dulrita möppu
+ Name[it]=Archivia e cifra cartella
+ Name[ja]=フォルダをアーカイブ化 & 暗号化
++Name[ka]=არქივი და დაშიფრვის საქაღალდე
+ Name[kk]=Қапшықты архивтеп шифрлау
+ Name[km]=ថត​ប័ណ្ណសារ & អ៊ិនគ្រីប
+ Name[lt]=Archyvuoti ir šifruoti aplanką
+--- kgpg/encryptfile.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kgpg/encryptfile.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -29,6 +29,7 @@
+ Name[is]=Dulrita skrá
+ Name[it]=Cifratura file
+ Name[ja]=ファイルを暗号化
++Name[ka]=დაილის დაშიფრვა
+ Name[kk]=Файлды шифрлау
+ Name[km]=អ៊ិនគ្រីប​ឯកសារ
+ Name[lt]=Šifruoti bylą
+--- kjots/Kjots.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kjots/Kjots.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ DocPath=kjots/index.html
+ Name=KJots
+ Name[af]=Kjots
+--- ktimer/ktimer.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ktimer/ktimer.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Countdown Launcher
+ GenericName[ar]=بادئ العدّ التنازلى
+ GenericName[bg]=Хронометър
+--- kedit/KEdit.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kedit/KEdit.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ MimeType=text/plain;
+ GenericName=Simple Text Editor
+ GenericName[ar]=محرر نصوص بسيط
+@@ -25,6 +24,7 @@
+ GenericName[is]=Einfaldur textaritill
+ GenericName[it]=Semplice editor di testi
+ GenericName[ja]=シンプルなテキストエディタ
++GenericName[ka]=მარტივი ტექსტის რედაქტორი
+ GenericName[kk]=Қарапайым мәтін редакторы
+ GenericName[km]=កម្មវិធី​និពន្ធ​អត្ថបទ
+ GenericName[lt]=Paprastas teksto redaktorius
+@@ -50,7 +50,8 @@
+ GenericName[tg]=Муҳаррири Оддии Матн
+ GenericName[tr]=Basit Metin Düzenleyici
+ GenericName[uk]=Простий редактор текстів
+-GenericName[uz]=Оддий матн таҳрирчи
++GenericName[uz]=Oddiy matn tahrirchi
++GenericName[uz@cyrillic]=Оддий матн таҳрирчи
+ GenericName[wa]=Simpe aspougneu di tecse
+ GenericName[zh_CN]=简单文本编辑器
+ GenericName[zh_TW]=簡單的文字編輯器
+--- ksim/monitors/mail/mail.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/monitors/mail/mail.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -24,6 +24,7 @@
+ Comment[is]=Pósteftirlitsforrit
+ Comment[it]=Plugin di controllo posta
+ Comment[ja]=メールモニタプラグイン
++Comment[ka]= ფოსტის მონიტორის მოდული
+ Comment[kk]=Поштаны бақылау модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​របស់​កម្មវិធី​ត្រួតពិនិត្យ​សំបុត្រ
+ Comment[lt]=Pašto stebėtojo priedas
+@@ -50,7 +51,8 @@
+ Comment[th]=ปลั๊กอินตรวจสอบจดหมาย
+ Comment[tr]=Posta İzleyici Eklentisi
+ Comment[uk]=Втулок датчика пошти
+-Comment[uz]=Хат-хабарни назорат қилиш плагини
++Comment[uz]=Xat-xabarni nazorat qilish plagini
++Comment[uz@cyrillic]=Хат-хабарни назорат қилиш плагини
+ Comment[wa]=Tchôke-divins di corwaitaedje di l' emilaedje
+ Comment[xh]=Iplagi efakiweyo Monitor Yeposi
+ Comment[zh_CN]=邮件监视器插件
+@@ -81,6 +83,7 @@
+ Name[is]=Póstur
+ Name[it]=Posta
+ Name[ja]=メール
++Name[ka]=ფოსტა
+ Name[kk]=Пошта
+ Name[km]=សំបុត្រ
+ Name[lt]=Paštas
+@@ -106,7 +109,8 @@
+ Name[th]=จดหมาย
+ Name[tr]=E-posta
+ Name[uk]=Пошта
+-Name[uz]=Хат-хабар
++Name[uz]=Xat-xabar
++Name[uz@cyrillic]=Хат-хабар
+ Name[wa]=Emilaedje
+ Name[xh]=Iposi
+ Name[zh_CN]=邮件
+--- ksim/monitors/filesystem/DFree.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/monitors/filesystem/DFree.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -45,6 +45,7 @@
+ Comment[is]=Eftirlit með tengdum disksneiðum
+ Comment[it]=Controllo delle partizioni montate
+ Comment[ja]=マウントされたパーティションのモニタ
++Comment[ka]= მონტირებული პარტიციების მონიტორი
+ Comment[kk]=Тіркеген бөлімдерді бақылау
+ Comment[km]=កម្មវិធី​ត្រួតពិនិត្យ​ភាគ​ដែល​បាន​ម៉ោន
+ Comment[lt]=Sumontuotų skirsnių stebėtojas
+@@ -71,7 +72,8 @@
+ Comment[th]=สอดส่องพาร์ติชันที่เมานท์ไว้แล้ว
+ Comment[tr]=Bağlanmış Disk Bölümü İzleyici
+ Comment[uk]=Монітор змонтованих розділів
+-Comment[uz]=Дискнинг уланган қисмларини назорат қилиш плагини
++Comment[uz]=Diskning ulangan qismlarini nazorat qilish plagini
++Comment[uz@cyrillic]=Дискнинг уланган қисмларини назорат қилиш плагини
+ Comment[wa]=Corwaitoe des montêyès pårticions
+ Comment[xh]=Ulwahlulo Lonyuso lwe Monitor
+ Comment[zh_CN]=已挂载分区监视器
+--- ksim/monitors/lm_sensors/Lm_sensors.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/monitors/lm_sensors/Lm_sensors.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -23,6 +23,7 @@
+ Comment[is]=Eftirlit með stöðu Lm_sensors
+ Comment[it]=Controllo di stato Lm_sensors
+ Comment[ja]=Lm センサーの状態モニタ
++Comment[ka]=Lm_sensors სტატუსის მონიტორი
+ Comment[kk]=Lm_sensor сенсорларының күйін бақылау
+ Comment[km]=កម្មវិធី​ត្រួតពិនិត្យ​ស្ថានភាព Lm_sensors
+ Comment[lt]=Lm_sensors būsenos stebėtojas
+--- ksim/monitors/net/Net.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/monitors/net/Net.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -23,6 +23,7 @@
+ Comment[is]=Eftirlit með stöðu netsins
+ Comment[it]=Controllo dello stato della rete
+ Comment[ja]=ネットワーク状態モニタ
++Comment[ka]=ქსელის სტატუსის სტატუსი
+ Comment[kk]=Желінің күйін бақылау
+ Comment[km]=កម្មវិធី​ត្រួតពិនិត្យ​ស្ថានភាព​បណ្តាញ
+ Comment[lt]=Net būsenos stebėtojas
+@@ -49,7 +50,8 @@
+ Comment[th]=เครื่องมือสอดส่องสถานะของเน็ต
+ Comment[tr]=Ağ İçin Durum İzleyici
+ Comment[uk]=Монітор стану мережі
+-Comment[uz]=Тармоқни назорат қилиш плагини
++Comment[uz]=Tarmoqni nazorat qilish plagini
++Comment[uz@cyrillic]=Тармоқни назорат қилиш плагини
+ Comment[wa]=Corwaitoe di l' estat del rantoele
+ Comment[zh_CN]=网络状态监视器
+ Comment[zh_TW]=網路狀態監視器
+@@ -95,7 +97,8 @@
+ Name[th]=เน็ต
+ Name[tr]=ağ
+ Name[uk]=Мережа
+-Name[uz]=Тармоқ
++Name[uz]=Tarmoq
++Name[uz@cyrillic]=Тармоқ
+ Name[wa]=Rantoele
+ Name[xh]=Umnatha
+ Name[zh_CN]=网络
+--- ksim/monitors/cpu/cpu.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/monitors/cpu/cpu.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -25,7 +25,8 @@
+ Name[th]=ซีพียู
+ Name[tr]=İşlemci
+ Name[uk]=ЦП
+-Name[uz]=Процессор
++Name[uz]=Protsessor
++Name[uz@cyrillic]=Процессор
+ Name[wa]=Processeu
+ Comment=CPU Monitor Plugin
+ Comment[af]=Sve Monitor Inplak
+@@ -52,6 +53,7 @@
+ Comment[is]=Örgjörva eftirlitsíforrit
+ Comment[it]=Plugin di controllo CPU
+ Comment[ja]=CPU モニタプラグイン
++Comment[ka]= პროცესორის მონიტორის მოდული
+ Comment[kk]=Процессорды бақылау модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​នៃ​កម្មវិធី​ត្រួតពិនិត្យ​ថាស CPU Monitor
+ Comment[lt]=CPU stebėtojo priedas
+@@ -78,7 +80,8 @@
+ Comment[th]=ปลั๊กอินสอดส่องซีพียู
+ Comment[tr]=İşlemci İzleyici Eklentisi
+ Comment[uk]=Втулок датчика ЦП
+-Comment[uz]=Процессорни назорат қилиш плагини
++Comment[uz]=Protsessorni nazorat qilish plagini
++Comment[uz@cyrillic]=Процессорни назорат қилиш плагини
+ Comment[wa]=Tchôke-divins di corwaitaedje do CPU
+ Comment[xh]=Iplagi yangaphakathi ye Monitor CPU
+ Comment[zh_CN]=CPU 监视器插件
+--- ksim/monitors/disk/disk.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/monitors/disk/disk.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -24,6 +24,7 @@
+ Comment[is]=Disk eftirlitsforrit
+ Comment[it]=Plugin di controllo disco
+ Comment[ja]=ディスクモニタプラグイン
++Comment[ka]= დისკის მონიტორის მოდული
+ Comment[kk]=Дискін бақылау модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​នៃ​កម្មវិធី​ត្រួតពិនិត្យ​ថាស
+ Comment[lt]=Disko stebėtojo priedas
+@@ -50,7 +51,8 @@
+ Comment[th]=ปลั๊กอินตรวจการทำงานดิสก์
+ Comment[tr]=Disk İzleyici Eklentisi
+ Comment[uk]=Втулок датчика диску
+-Comment[uz]=Дискни назорат қилиш плагини
++Comment[uz]=Diskni nazorat qilish plagini
++Comment[uz@cyrillic]=Дискни назорат қилиш плагини
+ Comment[wa]=Tchôke-divins di corwaitaedje del deure plake
+ Comment[xh]=Iplagi efakiweyo ye Monitor Yediski
+ Comment[zh_CN]=磁盘监视器插件
+@@ -96,7 +98,7 @@
+ Name[tg]=Диск
+ Name[th]=ดิสก์
+ Name[uk]=Диск
+-Name[uz]=Диск
++Name[uz@cyrillic]=Диск
+ Name[wa]=Deure plake
+ Name[xh]=Idiski
+ Name[zh_CN]=磁盘
+--- ksim/monitors/i8k/i8k.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/monitors/i8k/i8k.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -20,6 +20,7 @@
+ Comment[is]=Íforrit til að fylgjast með Dell I8K vélbúnaði
+ Comment[it]=Plugin di controllo hardware Dell I8K
+ Comment[ja]=Dell I8K ハードウェアモニタプラグイン
++Comment[ka]=Dell I8K მოწყობილობათა მონიტორის მოდული
+ Comment[kk]=Dell I8K жабдықтарын бақылау модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​របស់​កម្មវិធី​ត្រួតពិនិត្យផ្នែករឹង Dell I8K
+ Comment[lt]=Dell I8K aparatinės įrangos stebėjimo priedas
+--- ksim/monitors/snmp/Snmp.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/monitors/snmp/Snmp.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -22,6 +22,7 @@
+ Comment[is]=Snmp eftirlitstól
+ Comment[it]=Controllo di stato SNMP
+ Comment[ja]=Snmp ステータスモニタ
++Comment[ka]=Snmp სტატუსის მონიტორი
+ Comment[kk]=SNMP күйін бақылау
+ Comment[km]=កម្មវិធី​ត្រួតពិនិត្យ​ស្ថានភាព Snmp
+ Comment[lt]=Snmp būsenos stebėtojas
+--- ksim/ksim.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ksim/ksim.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -29,6 +29,7 @@
+ GenericName[is]=Kerfiseftirlit
+ GenericName[it]=Controllo di sistema
+ GenericName[ja]=システムモニタ
++GenericName[ka]=სისტემური მონიტორი
+ GenericName[kk]=Жүйені қадағалау
+ GenericName[km]=កម្មវិធី​ត្រួតពិនិត្យ​ប្រព័ន្ធ
+ GenericName[ko]=X용 시스템 지켜보기 (Xosview)
+@@ -60,7 +61,8 @@
+ GenericName[th]=สอดส่องการทำงานของระบบ
+ GenericName[tr]=Sistem İzleyici
+ GenericName[uk]=Монітор системи
+-GenericName[uz]=Тизимни назорат қилиш
++GenericName[uz]=Tizimni nazorat qilish
++GenericName[uz@cyrillic]=Тизимни назорат қилиш
+ GenericName[ven]=Mugadi wa Maitele
+ GenericName[vi]=Trình theo dõi hềEthống 
+ GenericName[wa]=Corwaitoe do sistinme
+@@ -90,6 +92,7 @@
+ Comment[is]=Kerfisupplýsingavaki (líkur GKrellM)
+ Comment[it]=Controllo delle informazioni di sistema (simile a GKrellM)
+ Comment[ja]=システム情報モニタ (GKrellM スタイル)
++Comment[ka]= სისტემური ინფორმაციის მონიტორი (GKrellM style)
+ Comment[kk]=Жүені қадағалау ақпараты (GKrellM стилінде)
+ Comment[km]=កម្មវិធី​ត្រួតពិនិត្យ​ព័ត៌មាន​របស់​ប្រព័ន្ធ (GKrellM style)
+ Comment[lt]=Sistemos informacijos stebėtojas (GKrellM stilius)
+--- kwallet/kwalletmanager-kwalletd.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kwallet/kwalletmanager-kwalletd.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Wallet Management Tool
+ Name[ar]=أداة إدارة المحفظة
+ Name[bg]=Портфейл
+@@ -24,6 +23,7 @@
+ Name[is]=Tól til að stýra eiginleikum veskisins
+ Name[it]=Strumento per la gestione dei portafogli
+ Name[ja]=ウォレット管理ツール
++Name[ka]=Wallet-ის მმართველი მოწყობილობა
+ Name[kk]=Әмиянін басқару құралы
+ Name[km]=ឧបករណ៍​គ្រប់គ្រង​កាបូប
+ Name[lt]=Spatažodinių tvarkymo įrankis
+@@ -48,7 +48,8 @@
+ Name[tg]=Асбоби Идоракунии Ҳамён
+ Name[tr]=Cüzdan Yönetim Aracı
+ Name[uk]=Засіб керування торбинками
+-Name[uz]=Қопчиқ бошқариш воситаси
++Name[uz]=Qopchiq boshqarish vositasi
++Name[uz@cyrillic]=Қопчиқ бошқариш воситаси
+ Name[zh_CN]=钱包管理工具
+ Name[zh_TW]=錢包管理工具
+ Exec=kwalletmanager --kwalletd
+--- kwallet/kwalletmanager.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kwallet/kwalletmanager.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Wallet Management Tool
+ Name[ar]=أداة إدارة المحفظة
+ Name[bg]=Портфейл
+@@ -24,6 +23,7 @@
+ Name[is]=Tól til að stýra eiginleikum veskisins
+ Name[it]=Strumento per la gestione dei portafogli
+ Name[ja]=ウォレット管理ツール
++Name[ka]=Wallet-ის მმართველი მოწყობილობა
+ Name[kk]=Әмиянін басқару құралы
+ Name[km]=ឧបករណ៍​គ្រប់គ្រង​កាបូប
+ Name[lt]=Spatažodinių tvarkymo įrankis
+@@ -48,7 +48,8 @@
+ Name[tg]=Асбоби Идоракунии Ҳамён
+ Name[tr]=Cüzdan Yönetim Aracı
+ Name[uk]=Засіб керування торбинками
+-Name[uz]=Қопчиқ бошқариш воситаси
++Name[uz]=Qopchiq boshqarish vositasi
++Name[uz@cyrillic]=Қопчиқ бошқариш воситаси
+ Name[zh_CN]=钱包管理工具
+ Name[zh_TW]=錢包管理工具
+ Exec=kwalletmanager %u
+--- kwallet/konfigurator/kwallet_config.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kwallet/konfigurator/kwallet_config.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Exec=kcmshell --caption %c kwalletconfig
+ Icon=kwalletmanager
+@@ -42,6 +41,7 @@
+ Name[tg]=KDE Ҳамён
+ Name[tr]=KDE Cüzdan
+ Name[uk]=Торбинки KDE
+-Name[uz]=KDE қопчиқ
++Name[uz]=KDE qopchiq
++Name[uz@cyrillic]=KDE қопчиқ
+ Name[zh_CN]=KDE 钱包
+ Name[zh_TW]=KDE 錢包
+--- kwallet/konfigurator/kwalletconfig.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kwallet/konfigurator/kwalletconfig.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kwalletmanager
+ Type=Application
+ Exec=kcmshell kwalletconfig
+@@ -46,7 +45,8 @@
+ Name[tg]=KDE Ҳамён
+ Name[tr]=KDE Cüzdan
+ Name[uk]=Торбинки KDE
+-Name[uz]=KDE қопчиқ
++Name[uz]=KDE qopchiq
++Name[uz@cyrillic]=KDE қопчиқ
+ Name[zh_CN]=KDE 钱包
+ Name[zh_TW]=KDE 錢包
+ Comment=KDE Wallet Configuration
+@@ -73,6 +73,7 @@
+ Comment[is]=Stillingar veskisins
+ Comment[it]=Configurazione portafogli di KDE
+ Comment[ja]=KDE ウォレットの設定
++Comment[ka]=KDE Wallet-ის კონფიგურაცია
+ Comment[kk]=KDE әмияннің баптауы
+ Comment[km]=ការកំណត់​រចនា​សម្ព័ន្ធ​កាបូប KDE
+ Comment[lt]=KDE slaptažodinių konfigūravimas
+@@ -97,7 +98,8 @@
+ Comment[tg]=KDE Танзими Ҳамён
+ Comment[tr]=KDE Cüzdan Ayarı
+ Comment[uk]=Налаштування KWallet
+-Comment[uz]=KDE қопчиқ хизматини мослаш
++Comment[uz]=KDE qopchiq xizmatini moslash
++Comment[uz@cyrillic]=KDE қопчиқ хизматини мослаш
+ Comment[zh_CN]=KDE 钱包配置
+ Comment[zh_TW]=KDE 錢包設定
+ Keywords=Wallet,Form Fill,Passwords,Form Data
+@@ -121,6 +123,7 @@
+ Keywords[hu]=digitális notesz,űrlapkitöltés,jelszavak,űrlapadatok
+ Keywords[it]=portafogli,wallet,riempimento moduli,moduli,form,password,dati moduli
+ Keywords[ja]=ウォレット,フォームフィル,パスワード,フォームデータ
++Keywords[ka]=Wallet,ფორმის შევსება,პაროლები,ფორმათა მონაცემები
+ Keywords[km]=កាបូប,ការបំពេញ​សំណុំ​បែបបទ,ពាក្យ​សម្ងាត់,ទិន្នន័យ​សំណុំ​បែបបទ
+ Keywords[lt]=Wallet, slaptažodinė,Form Fill,Passwords,Form Data,formų pildymas,slaptažodžiai,formų duomenys
+ Keywords[mk]=Wallet,Form Fill,Passwords,Form Data, Паричник, формулар, лозинки
+--- kwallet/konfigurator/kwalletmanager_show.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kwallet/konfigurator/kwalletmanager_show.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Wallet Management Tool
+ Name[ar]=أداة إدارة المحفظة
+ Name[bg]=Портфейл
+@@ -24,6 +23,7 @@
+ Name[is]=Tól til að stýra eiginleikum veskisins
+ Name[it]=Strumento per la gestione dei portafogli
+ Name[ja]=ウォレット管理ツール
++Name[ka]=Wallet-ის მმართველი მოწყობილობა
+ Name[kk]=Әмиянін басқару құралы
+ Name[km]=ឧបករណ៍​គ្រប់គ្រង​កាបូប
+ Name[lt]=Spatažodinių tvarkymo įrankis
+@@ -48,7 +48,8 @@
+ Name[tg]=Асбоби Идоракунии Ҳамён
+ Name[tr]=Cüzdan Yönetim Aracı
+ Name[uk]=Засіб керування торбинками
+-Name[uz]=Қопчиқ бошқариш воситаси
++Name[uz]=Qopchiq boshqarish vositasi
++Name[uz@cyrillic]=Қопчиқ бошқариш воситаси
+ Name[zh_CN]=钱包管理工具
+ Name[zh_TW]=錢包管理工具
+ Exec=kwalletmanager --show %u
+--- kdf/kwikdisk.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kdf/kwikdisk.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KwikDisk
+ Name[af]=Kwikdisk
+ Name[eo]=Diskokroĉilo
+@@ -42,6 +41,7 @@
+ GenericName[is]=Diskatól
+ GenericName[it]=Accessorio per i supporti rimovibili
+ GenericName[ja]=リムーバブルメディアユーティリティ
++GenericName[ka]=მოხსნადი მედიის უტილიტა
+ GenericName[kk]=Ауыстырмалы тасушының утилитасы
+ GenericName[km]=ឧបករណ៍​មេឌៀ​ដែល​អាច​យក​ចេញ
+ GenericName[lt]=Keičiamų diskų ar kitų įrenginių programa
+--- kdf/kcmdf.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kdf/kcmdf.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-ModuleType=Library
+ X-KDE-Library=kdf
+ X-KDE-FactoryName=kdf
+@@ -34,6 +33,7 @@
+ Name[is]=Minnisbúnaður
+ Name[it]=Dispositivi di memorizzazione
+ Name[ja]=ストレージデバイス
++Name[ka]=ინფორმაციის შემნახველი მოწყობილობები
+ Name[kk]=Жинақтаушы құрылғылар
+ Name[km]=ឧបករណ៍​ផ្ទុក
+ Name[lt]=Saugojimo įrenginiai
+@@ -60,7 +60,8 @@
+ Name[th]=อุปกรณ์เก็บข้อมูล
+ Name[tr]=Depolama Aygıtları
+ Name[uk]=Пристрої накопичення
+-Name[uz]=Сақлаш ускуналари
++Name[uz]=Saqlash uskunalari
++Name[uz@cyrillic]=Сақлаш ускуналари
+ Name[wa]=Éndjins di wårdaedje
+ Name[xh]=Amacebo Okugcina
+ Name[zh_CN]=存储设备
+@@ -97,6 +98,7 @@
+ Comment[is]=Sýnir nýtingu diskanna sem eru tengdir skráarkerfinu
+ Comment[it]=Mostra l'uso del disco dei dispositivi montati
+ Comment[ja]=マウントされているデバイスのディスク使用状況を表示
++Comment[ka]=მონტირებული დისკების გამოყენებას
+ Comment[kk]=Тіркеген құрылғыларда бар орынды көрсетеді
+ Comment[km]=បង្ហាញ​ការប្រើប្រាស់​ថាស​របស់​ឧបករណ៍​ដែល​បាន​ម៉ោន
+ Comment[ko]=마운트된 장치의 디스크 사용을 보여줍니다.
+--- kdf/kdf.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kdf/kdf.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KDiskFree
+ Name[af]=Kdiskfree
+ Name[eo]=Diskuzo
+@@ -46,6 +45,7 @@
+ GenericName[is]=Skoða nýtni á diskum
+ GenericName[it]=Mostra lo spazio disco libero
+ GenericName[ja]=ディスク使用状況を表示
++GenericName[ka]=იხილეთ დისკის გამოყენება
+ GenericName[kk]=Дискідегі орынды көрсету
+ GenericName[km]=មើល​ការប្រើប្រាស់​ថាស
+ GenericName[lt]=Žiūrėti disko panaudojimą
+--- khexedit/parts/kpart/khexedit2part.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ khexedit/parts/kpart/khexedit2part.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,7 +1,6 @@
+ [Desktop Entry]
+ Type=Service
+ Icon=khexedit
+-Encoding=UTF-8
+ Name=Embedded Binary Viewer
+ Name[ar]=عارض ثنائى مدمج
+ Name[bg]=Вграден двоичен преглед
+@@ -71,6 +70,7 @@
+ Comment[is]=Innbyggður tvíundakerfisskoðari
+ Comment[it]=Visore binario integrabile
+ Comment[ja]=埋め込みバイナリビューア
++Comment[ka]=ჩაშენებული ბინარული დამთვალიერებელი
+ Comment[kk]=Ендірілетін бинарлық қарау құралы
+ Comment[km]=កម្មវិធី​មើល​គោលពីរ​ដែល​បាន​បង្កប់
+ Comment[lt]=Įdedama dvejetainių duomenų žiūryklė
+--- khexedit/parts/kbytesedit/kbyteseditwidget.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ khexedit/parts/kbytesedit/kbyteseditwidget.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=BytesEdit Widget
+ Name[ar]=كائن BytesEdit
+--- khexedit/khexedit.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ khexedit/khexedit.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Binary Editor
+ GenericName[af]=Binêre Redigeerder
+ GenericName[ar]=محرر ثنائى
+@@ -27,6 +26,7 @@
+ GenericName[is]=Tvíunda-ritill
+ GenericName[it]=Editor binario
+ GenericName[ja]=バイナリエディタ
++GenericName[ka]=ბინარული რედაქტორი
+ GenericName[kk]=Бинарлық редактор
+ GenericName[km]=កម្មវិធី​និពន្ធ​គោលពីរ
+ GenericName[lt]=Dvejetainio kodo redaktorius
+--- kmilo/kmilod/kmilod.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/kmilod/kmilod.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KDEDModule
+ X-KDE-ModuleType=Library
+--- kmilo/kmilod/kmilopluginsvc.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/kmilod/kmilopluginsvc.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KMilo Plugin
+ 
+--- kmilo/thinkpad/kmilo_thinkpad.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/thinkpad/kmilo_thinkpad.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KMilo Plugin
+ X-KDE-ModuleType=Plugin
+@@ -25,6 +24,7 @@
+ Name[is]=Thinkpad íforrit
+ Name[it]=Plugin Thinkpad
+ Name[ja]=シンクパッド プラグイン
++Name[ka]=Thinkpad-ის მოდული
+ Name[kk]=Thinkpad модулі
+ Name[km]=កម្មវិធី​ជំនួយ Thinkpad Plugin
+ Name[lt]=Thinkpad priedas
+@@ -47,7 +47,8 @@
+ Name[ta]=திங்க்பேட் செருகி
+ Name[tr]=Thinkpad Eklentisi
+ Name[uk]=Втулок Thinkpad
+-Name[uz]=Thinkpad плагини
++Name[uz]=Thinkpad plagini
++Name[uz@cyrillic]=Thinkpad плагини
+ Name[zh_CN]=Thinkpad 插件
+ Name[zh_TW]=Thinkpad 外掛程式
+ Comment=Enables support for special Thinkpad keys
+@@ -72,6 +73,7 @@
+ Comment[is]=Virkjar stuðning fyrir sérhnappa Thinkpad véla
+ Comment[it]=Abilita il supporto per i tasti speciali Thinkpad
+ Comment[ja]=シンクパッドの特殊キーをサポートします
++Comment[ka]=რთავს Thinkpad-ის სპეციალური კლავიშების მხარდაჭერას
+ Comment[kk]=Thinkpad-тың арнаулы пернелерін қолдауы
+ Comment[km]=បើក​ការគាំទ្រ​សម្រាប់​គ្រាប់ចុច Thinkpad ពិសេស
+ Comment[lt]=įgalina ypatingų Thinkpad raktų paramą
+--- kmilo/thinkpad/kcmthinkpad/thinkpad.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/thinkpad/kcmthinkpad/thinkpad.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kcmshell thinkpad
+ Icon=laptop
+@@ -51,7 +50,8 @@
+ Name[ta]=ஐபிஎம் திங்க்பாட் மடிக்கணினி
+ Name[tr]=IBM Thinkpad Dizüstü
+ Name[uk]=Лептоп IBM Thinkpad
+-Name[uz]=IBM Thinkpad лаптопи
++Name[uz]=IBM Thinkpad laptopi
++Name[uz@cyrillic]=IBM Thinkpad лаптопи
+ Name[zh_CN]=ThinkPad 便携电脑
+ Name[zh_TW]=IBM Thinkpad 筆記型電腦
+ Comment=Configure the KDE Interface to the IBM Thinkpad Special Controls
+@@ -76,6 +76,7 @@
+ Comment[is]=Stilla viðmót KDE á IBM Thinkpad stýringuna
+ Comment[it]=Configura l'interfaccia KDE ai controlli speciali dei Thinkpad IBM
+ Comment[ja]=IBM シンクパッド特殊コントロールの KDE インターフェースを設定
++Comment[ka]= KDE ინტერფეისის IBM Thinkpad-ის სპეციალური კონტროლებისთვის კონფიგურაცია
+ Comment[kk]=IBM Thinkpad арнаулы тетіктерінің KDE интерфейсін баптау
+ Comment[km]=កំណត់​រចនា​សម្ព័ន្ធ​ចំណុច​ប្រទាក់ KDE ទៅ​ការត្រួតពិនិត្យ IBM Thinkpad ពិសេស
+ Comment[lt]=IBM Thinkpad ypatingiems valdymo moduliams KDE sąsaja
+--- kmilo/demo/kmilo_demo.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/demo/kmilo_demo.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KMilo Plugin
+ X-KDE-ModuleType=Plugin
+@@ -25,6 +24,7 @@
+ Name[is]=Sýnishorn af íforriti
+ Name[it]=Plugin dimostrativo
+ Name[ja]=デモプラグイン
++Name[ka]=Demo მოდული
+ Name[kk]=Үлгілі модулі
+ Name[km]=កម្មវិធី​ជំនួយ​សាកល្បង
+ Name[lt]=Demo priedas
+@@ -48,7 +48,8 @@
+ Name[ta]= முன்னோட்ட சொருகி
+ Name[tg]=Модули Намоиш
+ Name[uk]=Демонстраційний втулок
+-Name[uz]=Демо плагини
++Name[uz]=Demo plagini
++Name[uz@cyrillic]=Демо плагини
+ Name[wa]=Tchôke-divins di mostraedje
+ Name[zh_CN]=演示插件
+ Name[zh_TW]=示範用外掛程式
+@@ -75,6 +76,7 @@
+ Comment[is]=Þetta íforrit gerir ekki neitt.
+ Comment[it]=Questo plugin non fa niente
+ Comment[ja]=このプラグインは何もしません
++Comment[ka]=ეს მოდული არაფერს არ აკეთებს
+ Comment[kk]=Бұл модуль ештеңе істемейді.
+ Comment[km]=កម្មវិធី​ជំនួយ​នេះ​មិន​ធ្វើ​អ្វី ។
+ Comment[lt]=Šis priedas nieko nedaro.
+@@ -100,7 +102,8 @@
+ Comment[tg]=Ин модул ҳеҷ чиз намекунад.
+ Comment[tr]=Bu plugin birşey yapmaz.
+ Comment[uk]=Цей втулок нічого не робить.
+-Comment[uz]=Бу плагин ҳеч нарса бажармайди.
++Comment[uz]=Bu plagin hech narsa bajarmaydi.
++Comment[uz@cyrillic]=Бу плагин ҳеч нарса бажармайди.
+ Comment[wa]=Ci tchôke-divins chal ni fwait rén do tot.
+ Comment[zh_CN]=此插件不完成任何工作。
+ Comment[zh_TW]=這個外掛程式不做任何事。
+--- kmilo/kmilo_kvaio/kcmkvaio/kvaio.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/kmilo_kvaio/kcmkvaio/kvaio.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kcmshell kvaio
+ Icon=laptop
+@@ -52,7 +51,8 @@
+ Name[ta]=சோனி வையோ மடிக் கணிப்பொறி
+ Name[tr]=Sony Vaio Dizüstü
+ Name[uk]=Лептоп Sony Vaio
+-Name[uz]=Sony Vaio лаптопи
++Name[uz]=Sony Vaio laptopi
++Name[uz@cyrillic]=Sony Vaio лаптопи
+ Name[zh_CN]=索尼 Vaio 插件
+ Name[zh_TW]=Sony Vaio 筆記型電腦
+ Comment=Configure the KDE Interface to the Sony Programmable Interrupt Controller Driver
+--- kmilo/kmilo_kvaio/kmilo_kvaio.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/kmilo_kvaio/kmilo_kvaio.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KMilo Plugin
+ X-KDE-ModuleType=Plugin
+@@ -25,6 +24,7 @@
+ Name[is]=Sony Vaio íforrit
+ Name[it]=Plugin per Sony Vaio
+ Name[ja]=Sony Vaio プラグイン
++Name[ka]=Sony Vaio მოდული
+ Name[kk]=Sony Vaio модулі
+ Name[km]=កម្មវិធី​ជំនួយ Sony Vaio
+ Name[lt]=Sony Vaio priedas
+@@ -49,7 +49,8 @@
+ Name[tg]=Модули Sony Vaio
+ Name[tr]=Sony Vaio Eklentisi
+ Name[uk]=Втулок Sony Vaio
+-Name[uz]=Sony Vaio плагини
++Name[uz]=Sony Vaio plagini
++Name[uz@cyrillic]=Sony Vaio плагини
+ Name[wa]=Tchôke-divins Sony Vaio
+ Name[zh_CN]=索尼 Vaio 插件
+ Name[zh_TW]=Sony Vaio 外掛程式
+@@ -76,6 +77,7 @@
+ Comment[is]=KMilo eining fyrir Sony Vaio kjöltutölvur
+ Comment[it]=Modulo di KMilo per il supporto dei portatili Sony Vaio
+ Comment[ja]=Sony Vaio ラップトップをサポートする KMilo モジュール
++Comment[ka]=Sony Vaio ლეპტოპის მხარდამჭერი KMilo მოდული
+ Comment[kk]=Sony Vaio ноутбукті қолдау KMilo модулі
+ Comment[km]=ម៉ូឌុល KMilo សម្រាប់​ការគាំទ្រ​កុំព្យូទ័រ​យួរដៃ Sony Vaio
+ Comment[lt]=KMilo modulis Sony Vaio Laptop palaikymui
+--- kmilo/powerbook/kmilo_powerbook.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/powerbook/kmilo_powerbook.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KMilo Plugin
+ X-KDE-ModuleType=Plugin
+@@ -25,6 +24,7 @@
+ Name[is]=Apple (R) PowerBook (R) íforrit
+ Name[it]=Plugin per Apple (R) PowerBook (R)
+ Name[ja]=Apple (R) PowerBook (R) プラグイン
++Name[ka]=Apple (R) PowerBook (R) მოდული
+ Name[kk]=Apple (R) PowerBook (R) модулі
+ Name[km]=កម្មវិធី​ជំនួយ Apple (R) PowerBook (R)
+ Name[lt]=Apple (R) PowerBook (R) priedas
+@@ -49,7 +49,8 @@
+ Name[tg]=Модули Apple (R) PowerBook (R)
+ Name[tr]=Apple (R) PowerBook (R) Eklentisi
+ Name[uk]=Втулок Apple (R) PowerBook (R)
+-Name[uz]=Apple (R) PowerBook (R) плагини
++Name[uz]=Apple (R) PowerBook (R) plagini
++Name[uz@cyrillic]=Apple (R) PowerBook (R) плагини
+ Name[zh_CN]=Apple(R) PowerBook(R) 插件
+ Name[zh_TW]=Apple (R) PowerBook (R) 外掛程式
+ Comment=This plugin enables support for special keys on Apple (R) PowerBook (R) laptops via pbbuttonsd.
+@@ -75,6 +76,7 @@
+ Comment[is]=Þetta íforrit gerir þér kleyft að nota sérhnappana á Apple (R) PowerBook (R) með pbbuttonsd þjóninum.
+ Comment[it]=Questo plugin abilita il supporto per i tasti speciali sui portatili Apple (R) PowerBook (R) tramite pbbuttonsd.
+ Comment[ja]=このプラグインは pbbuttonsd を通して Apple (R) PowerBook (R) ラップトップの特殊キーをサポートします
++Comment[ka]=.ეს მოდული რთავს Apple (R) PowerBook (R)  ლეპტოპის სპეციალური კლავიშების მხარდაჭერას pbbuttonsd-ის მეშვეობით.
+ Comment[kk]=Бұл модуль Apple (R) PowerBook (R) ноутбуктерінде pbbuttonsd арқылы арнаулы пернелерді қолдау үшін.
+ Comment[km]=កម្មវិធី​ជំនួយនេះបើក​ការគាំទ្រ​សម្រាប់​គ្រាប់ចុច​ពិសេសនៅ​លើកុំព្យូទ័រ​យួរដៃ Apple (R) PowerBook (R) តាម​រយៈ pbbuttonsd ។
+ Comment[lt]=Šis priedas įgalina specialiųjų raktų Apple (R) PowerBook (R) nešiojamuose kompiuteriuose palaikymą per pbbuttonsd.
+--- kmilo/powerbook2/kmilo_powerbook.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/powerbook2/kmilo_powerbook.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KMilo Plugin
+ X-KDE-ModuleType=Plugin
+@@ -24,6 +23,7 @@
+ Name[is]=Apple PowerBook íforrit
+ Name[it]=Plugin per Apple PowerBook
+ Name[ja]=Apple PowerBook プラグイン
++Name[ka]=Apple PowerBook მოდული
+ Name[kk]=Apple PowerBook модулі
+ Name[km]=កម្មវិធីជំនួយ Apple PowerBook
+ Name[lt]=Apple PowerBook priedas
+@@ -49,7 +49,8 @@
+ Name[tg]=Модули Apple PowerBook
+ Name[tr]=Apple PowerBook Eklentisi
+ Name[uk]=Втулок Apple PowerBook
+-Name[uz]=Apple PowerBook плагини
++Name[uz]=Apple PowerBook plagini
++Name[uz@cyrillic]=Apple PowerBook плагини
+ Name[zh_CN]=Apple PowerBook 插件
+ Name[zh_TW]=Apple Powerbook 外掛程式
+ Comment=This plugin enabled support for special keys on Apple PowerBooks via pbbuttonsd.
+@@ -75,6 +76,7 @@
+ Comment[is]=Þetta íforrit gerir þér kleyft að nota sérhnappana á Apple PowerBook með pbbuttonsd þjóninum.
+ Comment[it]=Questo plugin abilita il supporto per i tasti speciali sui portatili Apple PowerBook tramite pbbuttonsd.
+ Comment[ja]=このプラグインは pbbuttonsd を通して Apple PowerBook の特殊キーをサポートします
++Comment[ka]= ეს მოდული რთავს Apple PowerBooks-ის სპეციალური კლავიშების მხარდაჭერას pbbuttonsd-ის მეშვეობით.
+ Comment[kk]=Бұл модуль Apple PowerBook ноутбуктерінде pbbuttonsd арқылы арнаулы пернелерді қолдау үшін.
+ Comment[km]=កម្មវិធី​ជំនួយ​នេះបើក​ការគាំទ្រ​សម្រាប់​គ្រាប់ចុច​ពិសេសនៅលើ Apple PowerBooks តាមរយៈ pbbuttonsd ។
+ Comment[lt]=Šis priedas įgalina specialiųjų raktų Apple PowerBook nešiojamuose kompiuteriuose palaikymą per pbbuttonsd.
+--- kmilo/asus/kmilo_asus.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/asus/kmilo_asus.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KMilo Plugin
+ X-KDE-ModuleType=Plugin
+@@ -24,6 +23,7 @@
+ Name[is]=Asus ferðatölvuíforrit
+ Name[it]=Plugin per portatili Asus
+ Name[ja]=Asus ラップトップ プラグイン
++Name[ka]=Asus-ის ლეპტოპის მოდული
+ Name[kk]=Asus ноутбуктің модулі
+ Name[km]=កម្មវិធី​ជំនួយកុំព្យូទ័រ​យួរដៃ Asus
+ Name[lt]=Asus Laptop priedas
+@@ -45,7 +45,8 @@
+ Name[ta]=Asus மடிக்கணினி சொருகுப்பொருள்
+ Name[tr]=Asus Dizüstü Bilgisayar Eklentisi
+ Name[uk]=Втулок лептопа Asus
+-Name[uz]=Asus лаптопи учун плагин
++Name[uz]=Asus laptopi uchun plagin
++Name[uz@cyrillic]=Asus лаптопи учун плагин
+ Name[zh_CN]=华硕笔记本插件
+ Name[zh_TW]=華碩筆記型電腦外掛程式
+ Comment=Enables support for special Asus laptop keys
+@@ -69,6 +70,7 @@
+ Comment[is]=Virkjar stuðning fyrir sérhnappa Asus ferðavéla
+ Comment[it]=Abilita il supporto per i tasti speciali dei portatili Asus
+ Comment[ja]=Asus ラップトップの特殊キーをサポートします
++Comment[ka]=რთავს Asus-ის ლეპტოპის სპეციალური კლავიშების მხარდაჭერას
+ Comment[kk]=Asus ноутбугінің арнаулы пернелерін қолдауы
+ Comment[km]=បើក​ការគាំទ្រ​គ្រាប់ចុច​កុំព្យូទ័រ​យួរដៃ Asus ពិសេស
+ Comment[lt]=Įgalina specialų Asus laptop raktų palaikymą
+--- kmilo/delli8k/kmilo_delli8k.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/delli8k/kmilo_delli8k.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KMilo Plugin
+ X-KDE-ModuleType=Plugin
+@@ -24,6 +23,7 @@
+ Name[is]=Dell I8k ferðatölvuíforrit
+ Name[it]=Plugin portatili Dell I8k
+ Name[ja]=Dell I8k ラップトップ プラグイン
++Name[ka]=Dell I8k ლეპტოპის მოდული
+ Name[kk]=Dell I8k ноутбуктің модулі
+ Name[km]=កម្មវិធី​ជំនួយកុំព្យូទ័រ​យួរដៃ Dell I8k
+ Name[lt]=Dell I8k Laptop priedas
+@@ -45,7 +45,8 @@
+ Name[ta]=டெல் 18கே மடிக்கணினி சொருகுப்பொருள்
+ Name[tr]=Dell I8k Laptop Eklentisi
+ Name[uk]=Втулок лептопа Dell I8k
+-Name[uz]=Dell I8k лаптопи учун плагин
++Name[uz]=Dell I8k laptopi uchun plagin
++Name[uz@cyrillic]=Dell I8k лаптопи учун плагин
+ Name[zh_CN]=Dell I8k 笔记本插件
+ Name[zh_TW]=Dell I8k 筆記型電腦外掛程式
+ Comment=Enables support for special Dell laptop keys
+@@ -69,6 +70,7 @@
+ Comment[is]=Virkjar stuðning fyrir sérhnappa Dell ferðavéla
+ Comment[it]=Abilita il supporto per i tasti speciali dei portatili Dell
+ Comment[ja]=Dell ラップトップの特殊キーをサポートします
++Comment[ka]=რთავს Dell-ის ლეპტოპის სპეციალური კლავიშების მხარდაჭერას
+ Comment[kk]=Dell ноутбуктің арнаулы пернелерін қолдауы
+ Comment[km]=បើក​ការគាំទ្រ​សម្រាប់គ្រាប់ចុច​កុំព្យូទ័រ​យួរដៃ Dell
+ Comment[lt]=Įgalina specialų Dell nešiojamo kompiuterio raktų palaikymą
+--- kmilo/generic/kmilo_generic.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kmilo/generic/kmilo_generic.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KMilo Plugin
+ X-KDE-ModuleType=Plugin
+@@ -27,6 +26,7 @@
+ Name[is]=Almennt lyklaborðsíforrit
+ Name[it]=Plugin tastiera generica
+ Name[ja]=一般キーボードプラグイン
++Name[ka]=სტანდარტული კლავიატურა მოდული
+ Name[kk]=Негізгі пернетақта модулі
+ Name[km]=កម្មវិធី​ជំនួយ​ក្តារចុច​ទូទៅ
+ Name[lt]=Bendro pobūdžio klaviatūros priedas
+@@ -51,7 +51,8 @@
+ Name[tg]=Модули Умумии Забонак
+ Name[tr]=Generic Klavye Plugini
+ Name[uk]=Загальний втулок клавіатури
+-Name[uz]=Умумий тугматаг плагини
++Name[uz]=Umumiy tugmatag plagini
++Name[uz@cyrillic]=Умумий тугматаг плагини
+ Name[wa]=Tchôke-divins djenerike di taprece
+ Name[zh_CN]=常规键盘插件
+ Name[zh_TW]=一般鍵盤外掛程式
+@@ -78,6 +79,7 @@
+ Comment[is]=Þetta íforrit virkjar sérhnappana sem eru á allskynd gerðum lyklaborða og ferðavéla.
+ Comment[it]=Questo plugin abilita il supporto per i tasti speciali su qualsiasi tipo di tastiera e portatile.
+ Comment[ja]=このプラグインはあらゆる種類のキーボードとラップトップで特殊キーをサポートします
++Comment[ka]=ეს მოდული რთავს ყველანაერი ტიპის კლავიატურების (მათ შორის ლეპტოპების) სპეციალური კლავიშების მხარდაჭერას.
+ Comment[kk]=Бұл модуль барлық пернетақталар мен ноутбуктердегі арнаулы пернелерді қолдайды.
+ Comment[km]=កម្មវិធី​ជំនួយ​នេះបើក​ការគាំទ្រ សម្រាប់​គ្រាប់ចុច​ពិសេស​នៅ​លើ​ប្រភេទ​ក្តារចុច និង​កុំព្យូទ័រ​យួរដៃ​ទាំងអស់ ។
+ Comment[lt]=Šis priedas įgalina ypatingų klavišų palaikymą įvairių tipų klaviatūrose bei nešiojamuose kompiuteriuose.
+--- kregexpeditor/kregexpeditor.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kregexpeditor/kregexpeditor.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KRegExpEditor
+ Name[cs]=Editor regulárních výrazů
+ Name[et]=Regulaaravaldiste redaktor
+@@ -39,6 +38,7 @@
+ GenericName[is]=Ritill fyrir reglulegar segðir
+ GenericName[it]=Editor di espressioni regolari
+ GenericName[ja]=正規表現エディタ
++GenericName[ka]=მარტივი გამოსახულების რედაქტორი
+ GenericName[kk]=Үлгі өрнегінің редакторы
+ GenericName[km]=កម្មវិធី​និពន្ធ​កន្សោម​ធម្មតា
+ GenericName[lt]=Įprastųjų išraiškų redaktorius
+@@ -64,7 +64,8 @@
+ GenericName[tg]=Муҳаррири Ифодаҳои Муқаррарӣ
+ GenericName[tr]=Tam İfade Düzenleyici
+ GenericName[uk]=Редактор формальних виразів
+-GenericName[uz]=Доимий ифода таҳрирчи
++GenericName[uz]=Doimiy ifoda tahrirchi
++GenericName[uz@cyrillic]=Доимий ифода таҳрирчи
+ GenericName[wa]=Aspougneu d' erîlêyès ratourneures
+ GenericName[zh_CN]=正规表达式编辑器
+ GenericName[zh_TW]=正規表示式編輯器
+--- kregexpeditor/kregexpeditorgui.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kregexpeditor/kregexpeditorgui.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=RegExp Editor Widget
+ Name[af]=Regexp Redigeerder Gui-element
+--- kdelirc/kcmlirc/kcmlirc.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kdelirc/kcmlirc/kcmlirc.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=irkick
+ Comment=Configure your remote controls for use with applications
+ Comment[ar]=إعداد التحكّم عن بعد لاستخدامه في تطبيقاتك
+@@ -24,6 +23,7 @@
+ Comment[is]=Her má stilla fjarstýringar ýmissa forrita
+ Comment[it]=Configura i telecomandi per l'uso con le applicazioni
+ Comment[ja]=アプリケーションで使用するリモートコントロールを設定
++Comment[ka]=დააკონფიგურირეთ თქვენი დაშორებული მართვა ამ პროგრამით
+ Comment[kk]=Қашықтан басқаруды қолданбалармен қолдану үшін баптау
+ Comment[km]=កំណត់​រចនាសម្ព័ន្ធ​ការបញ្ជា​ពី​ចម្ងាយ​របស់​អ្នក សម្រាប់​ការប្រើ​ជាមួយនឹង​កម្មវិធី
+ Comment[lt]=Nuotolinio valdymo programomis konfigūravimas
+@@ -57,7 +57,8 @@
+ Keywords[pl]=KCMLirc,kcmlirc,piloty,podczerwień
+ Keywords[pt]=kcmlirc
+ Keywords[ta]= KCMLirc,kcmlirc
+-Keywords[uz]=KCMLirc,kcmlirc,инфрақизил нур
++Keywords[uz]=KCMLirc,kcmlirc,infraqizil nur
++Keywords[uz@cyrillic]=KCMLirc,kcmlirc,инфрақизил нур
+ Name=Remote Controls
+ Name[ar]=التحكّم عن بعد
+ Name[bg]=Дистанционно
+@@ -82,6 +83,7 @@
+ Name[is]=Fjarstýringar
+ Name[it]=Telecomandi
+ Name[ja]=リモートコントロール
++Name[ka]=დაშორებული მართვა
+ Name[kk]=Қашықтан басқару
+ Name[km]=បញ្ជា​ពី​ចម្ងាយ
+ Name[lt]=Nuotolinis valdymas
+--- kdelirc/irkick/irkick.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kdelirc/irkick/irkick.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -26,6 +26,7 @@
+ GenericName[is]=KDE LIRC þjónn
+ GenericName[it]=Server LIRC di KDE
+ GenericName[ja]=KDE LIRC サーバ
++GenericName[ka]=KDE LIRC სერვერი
+ GenericName[kk]=KDE LIRC сервері
+ GenericName[km]=ម៉ាស៊ីន​បម្រើ KDE LIRC
+ GenericName[lt]=KDE LIRC serveris
+@@ -47,7 +48,8 @@
+ GenericName[ta]=KDE LIRC சேவகன்
+ GenericName[tr]=KDE LIRC Sunucusu
+ GenericName[uk]=Сервер LIRC для KDE
+-GenericName[uz]=KDE LIRC сервери
++GenericName[uz]=KDE LIRC serveri
++GenericName[uz@cyrillic]=KDE LIRC сервери
+ GenericName[zh_CN]=KDE LIRC 服务器
+ GenericName[zh_TW]=KDE LIRC 伺服器
+ 
+@@ -84,6 +86,7 @@
+ Comment[is]=KDE Linux innrauða fjarstýringarstjórnborðið
+ Comment[it]=Server KDE per i telecomandi ad infrarossi
+ Comment[ja]=KDE Linux 赤外線リモートコントロールサーバ
++Comment[ka]= KDE ლინუქსის ინფრაწითელი დაშორებული მართვის სერვერი
+ Comment[kk]=KDE Linux инфрақызыл порт арқылы басқару сервері.
+ Comment[km]=ម៉ាស៊ីន​បម្រើ​បញ្ជា KDE Linux infrared ពី​ចម្ងាយ ។
+ Comment[lt]=KDE Linux infraraudonųjų spindulių sąsajos nuotolinio valdymo serveris
+@@ -107,7 +110,7 @@
+ Comment[tg]=Хидматрасони идоракунии дурдасти инфрасурхи KDE Linux.
+ Comment[tr]=KDE Linux kızılötesi uzaktan kontrol sunucusu.
+ Comment[uk]=Сервер дистанційного керування інфрачервоними пристроями для Linux та KDE.
+-Comment[uz]=Инфрақизил нур билан масофадан бошқариш сервери
++Comment[uz]=Infraqizil nur bilan masofadan boshqarish serveri
++Comment[uz@cyrillic]=Инфрақизил нур билан масофадан бошқариш сервери
+ Comment[zh_CN]=KDE Linux 红外远程控制服务器。
+ Comment[zh_TW]=KDE Linux 紅外線遙控伺服器。
+-Encoding=UTF-8
+--- kcalc/kcalc.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ kcalc/kcalc.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KCalc
+ Name[af]=Kcalc
+ Name[ar]=حاسبة ك
+@@ -13,7 +12,8 @@
+ Name[ta]=கேகணிப்பான்
+ Name[tg]=KМошинаи ҳисобкунак
+ Name[th]=เครื่องคิดเลข
+-Name[uz]=Калкулятор
++Name[uz]=Kalkulyator
++Name[uz@cyrillic]=Калкулятор
+ Name[zh_TW]=KDE 計算機
+ Exec=kcalc  -caption "%c" %i %m
+ Icon=kcalc
+@@ -45,6 +45,7 @@
+ GenericName[is]=Öflug reiknivél
+ GenericName[it]=Calcolatrice scientifica
+ GenericName[ja]=科学電卓
++GenericName[ka]=მეცნიერული კალკულატორი
+ GenericName[kk]=Ғылыми калькулятор
+ GenericName[km]=ម៉ាស៊ីន​គិត​លេខ​វិទ្យាសាស្ត្រ
+ GenericName[lt]=Mokslinis skaičiuotuvas
+@@ -72,7 +73,8 @@
+ GenericName[th]=เครื่องคิดเลขแบบวิทยาศาสตร์
+ GenericName[tr]=Bilimsel Hesap Makinesi
+ GenericName[uk]=Калькулятор для науковців
+-GenericName[uz]=Илмий калкулятор
++GenericName[uz]=Ilmiy kalkulyator
++GenericName[uz@cyrillic]=Илмий калкулятор
+ GenericName[ven]=Khalikhuleitha ya tshisaintsi
+ GenericName[vi]=Máy tính khoa học 
+ GenericName[wa]=Carculete syintifike
+--- ark/ark_part.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ark/ark_part.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ MimeType=application/x-gzip;application/x-lha;application/x-tar;application/x-tgz;application/x-tbz;application/x-tbz2;application/x-zip;application/x-bzip;application/x-tzo;application/x-lzop;application/x-rar;application/x-zoo;application/x-tarz;application/x-archive;application/x-bzip2;application/x-jar;application/x-deb;application/x-ace;application/x-7z;application/x-arc;application/x-arj;application/x-compress;application/x-cpio;application/x-pak
+ Comment=Archive Handling Tool
+ Comment[af]=Argief Handtering Program
+@@ -31,6 +30,7 @@
+ Comment[is]=Vinna með safnskrár
+ Comment[it]=Gestione degli archivi
+ Comment[ja]=アーカイバツール
++Comment[ka]=არქივებთან სამუშაო ხელსაწყო
+ Comment[kk]=Архивпен айналысу құралы
+ Comment[km]=ឧបករណ៍​គ្រប់គ្រង​ប័ណ្ណសារ
+ Comment[lt]=Archyvo valdymo priemonė
+@@ -59,7 +59,8 @@
+ Comment[th]=เครื่องมือจัดการแฟ้มบีบอัดทั้งหลาย
+ Comment[tr]=Arşiv İşleme Aracı
+ Comment[uk]=Засіб роботи з архівами
+-Comment[uz]=Архив учун восита
++Comment[uz]=Arxiv uchun vosita
++Comment[uz@cyrillic]=Архив учун восита
+ Comment[ven]=Tshishumiswa tshau fara tsha fhethu huno vhulungwa zwa kale
+ Comment[vi]=Công cụ xử lí các file nén 
+ Comment[wa]=Usteye po-z apougnî les årtchives
+@@ -93,6 +94,7 @@
+ Name[is]=Skráasafnari
+ Name[it]=Utilità di archiviazione
+ Name[ja]=アーカイバ
++Name[ka]=არქივარიუსი
+ Name[kk]=Архивтегіш
+ Name[km]=កម្មវិធី​ប័ណ្ណសារ
+ Name[lt]=Archyvatorius
+@@ -119,7 +121,8 @@
+ Name[th]=อาร์ไคว์ฟเออร์
+ Name[tr]=Arşivci
+ Name[uk]=Архіватор
+-Name[uz]=Архивлагич
++Name[uz]=Arxivlagich
++Name[uz@cyrillic]=Архивлагич
+ Name[ven]=Muvhulungi nwa zwithu zwa kale
+ Name[vi]=Luư trữ 
+ Name[wa]=Årtchiveu
+--- ark/ark.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ ark/ark.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+-MimeType=application/x-gzip;application/x-lha;application/x-tar;application/x-tgz;application/x-tbz;application/x-tbz2;application/x-zip;application/zip;application/x-bzip;application/x-tzo;application/x-lzop;application/x-rar;application/x-zoo;application/x-tarz;application/x-archive;application/x-bzip2;application/x-jar;application/x-deb;application/x-ace;application/x-7z;application/x-arc;application/x-arj;application/x-compress;application/x-cpio;application/x-pak;
++MimeType=application/x-gzip;application/x-lha;application/x-tar;application/x-tgz;application/x-tbz;application/x-tbz2;application/x-zip;application/zip;application/x-bzip;application/x-tzo;application/x-lzop;application/x-rar;application/x-zoo;application/x-tarz;application/x-archive;application/x-bzip2;application/x-jar;application/x-deb;application/x-ace;application/x-7z;application/x-arc;application/x-arj;application/x-compress;application/x-cpio;application/x-pak;application/x-zip-compressed
+ GenericName=Archiving Tool
+ GenericName[af]=Argiveer Program
+ GenericName[ar]=أداة أرشفة
+@@ -28,6 +27,7 @@
+ GenericName[is]=Vinna með safnskrár
+ GenericName[it]=Strumento di archiviazione
+ GenericName[ja]=アーカイバツール
++GenericName[ka]=არქივებთან სამუშაო უტილიტა
+ GenericName[kk]=Архивтеу құралы
+ GenericName[km]=ឧបករណ៍​ប័ណ្ណសារ
+ GenericName[lt]=Archyvavimo priemonė
+@@ -56,7 +56,8 @@
+ GenericName[th]=เครื่องมือจัดการแฟ้มบีบอัด
+ GenericName[tr]=Arşivleme Aracı
+ GenericName[uk]=Засіб роботи з архівами
+-GenericName[uz]=Архивлаш воситаси
++GenericName[uz]=Arxivlash vositasi
++GenericName[uz@cyrillic]=Архивлаш воситаси
+ GenericName[ven]=Tshishumiswa tsha fhethu huno vhulungelwa hone zwithu zwa kale
+ GenericName[vi]=Công cụ nén
+ GenericName[wa]=Usteye d' årtchivaedje
+--- superkaramba/src/superkaramba.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/src/superkaramba.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=SuperKaramba
+ Name[ar]=سوبركارامبا
+ Name[is]=SúperKaramba
+@@ -72,6 +71,7 @@
+ GenericName[is]=Skjáborðshlutir
+ GenericName[it]=Elementi desktop
+ GenericName[ja]=デスクトップウィジェット
++GenericName[ka]=სამუშაო მაგიდის ელემენტები
+ GenericName[kk]=Үстелдің бөлшектері
+ GenericName[km]=វត្ថុ​មើលឃើញ​របស់​ផ្ទៃតុ
+ GenericName[lt]=Darbastalio valdikliai
+--- superkaramba/mimetypes/x-superkaramba.desktop	(.../tags/KDE/3.5.9/kdeutils)	(revision 833501)
++++ superkaramba/mimetypes/x-superkaramba.desktop	(.../branches/KDE/3.5/kdeutils)	(revision 833501)
+@@ -21,6 +21,7 @@
+ Comment[is]=Súperkaramba þemuskrá
+ Comment[it]=File di tema Superkaramba
+ Comment[ja]=Superkaramba テーマファイル
++Comment[ka]=Superkaramba-ს თემის ფაილი
+ Comment[kk]=Superkaramba нақыш файлы
+ Comment[km]=ឯកសារ​ស្បែក Superkaramba
+ Comment[lt]=Superkaramba temos byla

@@ -1,0 +1,4 @@
+kcalc: package-name-doesnt-match-sonames libkdeinit-kcalc
+kcalc: no-shlibs-control-file usr/lib/libkdeinit_kcalc.so
+kcalc: postinst-must-call-ldconfig usr/lib/libkdeinit_kcalc.so
+kcalc: postrm-should-call-ldconfig usr/lib/libkdeinit_kcalc.so

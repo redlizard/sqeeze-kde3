@@ -1,0 +1,11 @@
+Document: kdeutils-doc-html-irkick
+Title: IRKick: The KDE LIRC Server Handbook
+Author: Gav Wood
+Abstract: KDE LIRC is the infrastructure for the KDE's Infrared Remote
+ Control functionality; IRKick is the server component of that infrastructure.
+Section: Network/Communication
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/irkick/index.html
+Files: /usr/share/doc/kde/HTML/en/irkick/*.html
+

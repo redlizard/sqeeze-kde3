@@ -1,0 +1,8 @@
+?package(kedit):\
+	needs="X11"\
+	section="Applications/Editors"\
+	hints="KDE,Text"\
+	title="KEdit"\
+	icon32x32="/opt/kde3/share/pixmaps/kedit.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kedit-16.xpm"\
+	command="/opt/kde3/bin/kedit"

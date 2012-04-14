@@ -1,0 +1,10 @@
+Document: kdeutils-doc-html-kjots
+Title: KJots Handbook
+Author: Matt Johnston
+Abstract: KJots is a small program which is handy for keeping miscellaneous notes.
+Section: Editors
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kjots/index.html
+Files: /usr/share/doc/kde/HTML/en/kjots/*.html
+

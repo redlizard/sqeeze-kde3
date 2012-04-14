@@ -1,0 +1,9 @@
+?package(superkaramba):\
+	needs="X11"\
+	section="Games/Toys"\
+	hints="KDE"\
+	title="Superkaramba"\
+	icon32x32="/opt/kde3/share/pixmaps/superkaramba.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/superkaramba-16.xpm"\
+	command="/opt/kde3/bin/superkaramba"
+

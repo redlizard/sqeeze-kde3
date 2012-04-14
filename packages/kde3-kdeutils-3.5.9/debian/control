@@ -1,0 +1,331 @@
+Source: kde3-kdeutils
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Fathi Boudra <fabo@debian.org>, Modestas Vainius <modestas@vainius.eu>, Pino Toscano <pino@kde.org>, Sune Vuorela <debian@pusling.com>
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 6), autotools-dev, gawk, gettext, kde3-kdelibs4-dev (>= 4:3.5.8), kde3-kdebase-dev (>= 4:3.5.8), kde3-libkonq4-dev (>= 4:3.5.8), libgmp3-dev, libsnmp-dev, libxpm-dev, python-dev, libxtst-dev, xutils-dev, pbbuttonsd-dev [powerpc], sharutils
+Build-Depends-Indep: doxygen, qt3-doc, graphviz, gsfonts-x11, kde3-kdelibs4-doc
+Standards-Version: 3.7.3
+Homepage: http://www.kde.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdeutils
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeutils
+
+Package: kde3-kdeutils
+Section: kde
+Architecture: all
+Depends: kde3-ark (>= ${source:Version}), kde3-kcalc (>= ${source:Version}), kde3-kcharselect (>= ${source:Version}), kde3-kdelirc (>= ${source:Version}), kde3-kdessh (>= ${source:Version}), kde3-kdf (>= ${source:Version}), kde3-kedit (>= ${source:Version}), kde3-kfloppy (>= ${source:Version}), kde3-kgpg (>= ${source:Version}), kde3-khexedit (>= ${source:Version}), kde3-kjots (>= ${source:Version}), kde3-kmilo (>= ${source:Version}), kde3-kregexpeditor (>= ${source:Version}), kde3-ksim (>= ${source:Version}), kde3-ktimer (>= ${source:Version}), kde3-kwalletmanager (>= ${source:Version}), kde3-superkaramba (>= ${source:Version})
+Recommends: kde3-kpowersave
+Suggests: kde3-kdeutils-doc-html (>= ${source:Version})
+Description: general purpose utilities from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of general purpose utilities 
+ provided with the official release of KDE.
+
+Package: kde3-kdeutils-doc
+Section: doc
+Architecture: all
+Description: developer documentation for the KDE utilities module
+ This package contains documentation for the KDE utilities module, of
+ use more for developers creating applications than regular users.
+ .
+ This package is part of KDE, and a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kdeutils-doc-html
+Architecture: all
+Section: doc
+Suggests: kde3-konqueror | www-browser, kde3-kdebase
+Description: KDE utilities documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE utilities documentation
+ converted to HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/ark/. Documentation is provided for most
+ KDE utilities packages.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kdeutils-dev
+Section: utils
+Architecture: any
+Depends: kde3-ark (= ${binary:Version}), kde3-kcalc (= ${binary:Version}), kde3-kdelirc (= ${binary:Version}), kde3-kedit (= ${binary:Version}), kde3-khexedit (= ${binary:Version}), kde3-kmilo (= ${binary:Version}), kde3-kregexpeditor (= ${binary:Version}), kde3-ksim (= ${binary:Version}), kde3-kdelibs4-dev (>= ${source:Upstream-Version})
+Description: development files for the KDE utilities module
+ This package contains development files needed to compile kdeutils
+ applications.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-ark
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: ncompress, unzip, zip, zoo, bzip2, p7zip-full
+Suggests: kde3-khelpcenter, rar, unrar | unrar-free
+Description: graphical archiving tool for KDE
+ Ark is a graphical program for managing various archive formats within the
+ KDE environment. Archives can be viewed, extracted, created and modified
+ from within Ark.
+ .
+ The program can handle various formats such as tar, gzip, bzip2, zip, rar and
+ lha (if appropriate command-line programs are installed).
+ .
+ Ark can work closely with Konqueror in the KDE environment to handle archives,
+ if you install the Konqueror Integration plugin available in the konq-plugins
+ package.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kcalc
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: calculator for KDE
+ KCalc is KDE's scientific calculator.
+ .
+ It provides:
+  * trigonometric functions, logic operations, and statistical calculations
+  * easy cut and paste of numbers from/into its display
+  * a results-stack which lets you conveniently recall previous results
+  * configurable precision, and number of digits after the period
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kcharselect
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: character selector for KDE
+ A character set selector for KDE.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kdelirc
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: infrared control for KDE
+ This is a frontend for the LIRC suite to use infrared devices with KDE.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kdessh
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, openssh-client | ssh-client
+Description: ssh frontend for KDE
+ This package contains KDE's frontend for ssh.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kdf
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: disk space utility for KDE
+ KDiskFree displays the available file devices (hard drive partitions, floppy
+ and CD drives, etc.) along with information on their capacity, free space, type
+ and mount point. It also allows you to mount and unmount drives and view them
+ in a file manager.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kedit
+Section: editors
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: basic text editor for KDE
+ A simple text editor for KDE.
+ .
+ It can be used with Konqueror for text and configuration file browsing.
+ KEdit also serves well for creating small plain text documents. KEdit's
+ functionality will intentionally remain rather limited to ensure a
+ reasonably fast start.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kfloppy
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}, dosfstools
+Suggests: kde3-khelpcenter
+Description: floppy formatter for KDE
+ Kfloppy is a utility that provides a straightforward graphical means
+ to format 3.5" and 5.25" floppy disks.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kgpg
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, gnupg
+Suggests: kde3-khelpcenter
+Description: GnuPG frontend for KDE
+ Kgpg is a frontend for GNU Privacy Guard (GnuPG). It provides file
+ encryption, file decryption and key management.
+ .
+ Features:
+   * an editor mode for easily and quickly encrypting or decrypting a file
+     or message which is typed, copied, pasted or dragged into the editor,
+     or which is double-clicked in the file manager
+   * Konqueror integration for encrypting or decrypting files
+   * a panel applet for encrypting / decrypting files or the clipboard
+     contents, etc.
+   * key management functions (generation, import, export, deletion and
+     signing)
+   * decrypting clipboard contents, including integration with Klipper
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-khexedit
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: KDE hex editor
+ KHexEdit is an editor for the raw data of binary files.  It includes
+ find/replace functions, bookmarks, many configuration options, drag and drop
+ support and other powerful features.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kjots
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: note taking utility for KDE
+ Kjots is a small note taker program. Name and idea are taken from the jots
+ program included in the tkgoodstuff package.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-klaptopdaemon
+Architecture: all
+Depends: kde3-kpowersave
+Description: battery monitoring for laptops using KDE - transitional package
+ kpowersave is a replacement for klaptopdaemon that works with kernels 2.6.25 or newer.
+ .
+ This package can be purged at anytime once the kpowersave package has been installed.
+
+Package: kde3-kmilo
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: laptop special keys support for KDE
+ KMilo lets you use the special keys on some keyboards and laptops.
+ .
+ Usually this includes volume keys and other features. Currently, KMilo
+ comes with plugins for Powerbooks, Thinkpads, Vaios and generic keyboards
+ with special keys.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kregexpeditor
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: graphical regular expression editor plugin for KDE
+ This package contains a graphical regular expression editor plugin for use
+ with KDE. It let you draw your regular expression in an unambiguous way.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-ksim
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: system information monitor for KDE
+ KSim is a system monitor app which has its own plugin system with support
+ for GKrellm skins. It allows users to follow uptime, memory usage, network
+ connections, power, etc.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-ktimer
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: timer utility for KDE
+ This is a timer application for KDE. It allows you to execute commands after
+ a certain amount of time. It supports looping commands as well as delayed
+ command execution.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kwalletmanager
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: wallet manager for KDE
+ This program keeps various wallets for any kind of data that the user can
+ store encrypted with passwords and can also serve as a password manager that
+ keeps a master password to all wallets.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-superkaramba
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Conflicts: karamba
+Description: a program based on karamba improving the eyecandy of KDE
+ SuperKaramba is a tool based on karamba that allows anyone to easily create
+ and run little interactive widgets on a KDE desktop. Widgets are defined in a
+ simple text file and can be augmented with Python code to make them
+ interactive.
+ .
+ Here are just some examples of the things that can be done:
+ .
+  * Display system information such as CPU Usage, MP3 playing, etc.
+  * Create cool custom toolbars that work any way imaginable.
+  * Create little games or virtual pets that live on your desktop.
+  * Display information from the internet, such as weather and headlines.
+ .
+ This package is part of KDE, as a component of the KDE utilities module.
+ See the 'kde' and 'kdeutils' packages for more information.
+
+Package: kde3-kdeutils-dbg
+Section: libdevel
+Architecture: any
+Depends: kde3-kdelibs-dbg
+Priority: extra
+Description: debugging symbols for kdeutils
+ This package contains the debugging symbols associated with kdeutils.
+ They will automatically be used by gdb for debugging kdeutils-related
+ issues.
+

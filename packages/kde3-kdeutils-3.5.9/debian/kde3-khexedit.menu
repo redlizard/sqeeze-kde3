@@ -1,0 +1,8 @@
+?package(khexedit):\
+	needs="X11"\
+	section="Applications/Editors"\
+	hints="KDE"\
+	title="KHexEdit"\
+	icon32x32="/opt/kde3/share/pixmaps/khexedit.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/khexedit-16.xpm"\
+	command="/opt/kde3/bin/khexedit"

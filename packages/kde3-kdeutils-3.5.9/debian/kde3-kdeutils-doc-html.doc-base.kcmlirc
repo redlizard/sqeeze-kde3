@@ -1,0 +1,10 @@
+Document: kdeutils-doc-html-kcmlirc
+Title: KDE Infrared Remote Control Configuration
+Author: Gav Wood
+Abstract: The infrastructure for the KDE's Infrared Remote Control functionality.
+Section: Network/Communication
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kcmlirc/index.html
+Files: /usr/share/doc/kde/HTML/en/kcmlirc/*.html
+

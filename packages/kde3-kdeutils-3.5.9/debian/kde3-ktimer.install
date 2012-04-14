@@ -1,0 +1,12 @@
+debian/tmp/opt/kde3/bin/ktimer
+debian/tmp/opt/kde3/share/applications/kde/ktimer.desktop
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ktimer/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ktimer/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ktimer/index.docbook
+debian/tmp/opt/kde3/share/icons/hicolor/128x128/apps/ktimer.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/ktimer.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/ktimer.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/ktimer.png
+
+debian/icons/ktimer.xpm		/opt/kde3/share/pixmaps
+debian/icons/ktimer-16.xpm	/opt/kde3/share/pixmaps

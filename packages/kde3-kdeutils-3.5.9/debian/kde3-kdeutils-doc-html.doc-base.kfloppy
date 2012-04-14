@@ -1,0 +1,12 @@
+Document: kdeutils-doc-html-kfloppy
+Title: KFloppy Formatter Handbook
+Author: Thad McGinnis
+Abstract: KFloppy Formatter is a utility that provides a straightforward
+ graphical means to format 3.5" and 5.25" floppy disks.
+Section: System/Hardware
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kfloppy/index.html
+Files: /usr/share/doc/kde/HTML/en/kfloppy/*.html
+
+

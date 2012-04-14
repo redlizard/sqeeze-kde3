@@ -1,0 +1,384 @@
+--- kdeutils-3.5.9/ark/Makefile.am	2006-01-19 18:49:29.000000000 +0200
++++ kdeutils-3.5.9/ark/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ ark_la_SOURCES = main.cpp arkapp.cpp mainwindow.cpp
+ ark_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-ark_la_LIBADD = libark_common.la $(LIB_KPARTS)
++ark_la_LIBADD = libark_common.la $(LIB_KPARTS) $(LIB_QT) $(LIB_KDEUI) -lDCOP $(LIB_KIO) $(LIB_KDECORE)
+ ark_la_COMPILE_FIRST = settings.h
+ 
+ noinst_LTLIBRARIES = libark_common.la
+@@ -21,7 +21,7 @@
+ 
+ kde_module_LTLIBRARIES = libarkpart.la
+ libarkpart_la_LDFLAGS = $(KDE_PLUGIN) $(all_libraries)
+-libarkpart_la_LIBADD = libark_common.la $(LIB_KPARTS)
++libarkpart_la_LIBADD = libark_common.la $(LIB_KPARTS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KIO) $(LIB_KDECORE)
+ libarkpart_la_COMPILE_FIRST = settings.h
+ 
+ libarkpart_la_SOURCES = ark_part.cpp arkfactory.cpp zip.cpp tar.cpp \
+--- kdeutils-3.5.9/charselectapplet/Makefile.am	2005-09-10 11:21:27.000000000 +0300
++++ kdeutils-3.5.9/charselectapplet/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -13,7 +13,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ kcharselect_panelapplet_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kcharselect_panelapplet_la_LIBADD = $(LIB_KDEUI)
++kcharselect_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ messages:
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/kcharselectapplet.pot
+--- kdeutils-3.5.9/kcalc/Makefile.am	2005-11-19 12:03:01.000000000 +0200
++++ kdeutils-3.5.9/kcalc/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -19,7 +19,7 @@
+ 			kcalctype.h dlabel.h stats.h
+ 
+ kcalc_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kcalc_la_LIBADD = $(LIB_KDEUI) knumber/libknumber.la
++kcalc_la_LIBADD = $(LIB_KDEUI) knumber/libknumber.la $(LIBGMP) $(LIB_QT) $(LIB_KDECORE)
+ 
+ KDE_ICON = kcalc
+ 
+--- kdeutils-3.5.9/kcharselect/Makefile.am	2005-09-10 11:21:27.000000000 +0300
++++ kdeutils-3.5.9/kcharselect/Makefile.am	2008-02-20 17:03:15.000000000 +0200
+@@ -1,5 +1,5 @@
+ INCLUDES = $(all_includes)
+-LDADD	= $(LIB_KFILE)
++LDADD	= $(LIB_KDEUI)
+ bin_PROGRAMS = kcharselect
+ 
+ kcharselect_SOURCES = kcharselectdia.cc main.cc
+--- kdeutils-3.5.9/kdelirc/irkick/Makefile.am	2005-09-10 11:21:34.000000000 +0300
++++ kdeutils-3.5.9/kdelirc/irkick/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -12,7 +12,7 @@
+ 
+ libirkick_common_la_LDFLAGS = $(all_libraries)
+ 
+-irkick_la_LIBADD = libirkick_common.la
++irkick_la_LIBADD = libirkick_common.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP
+ irkick_la_SOURCES = dummy.cpp
+ irkick_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+--- kdeutils-3.5.9/kdelirc/kcmlirc/Makefile.am	2005-09-10 11:21:34.000000000 +0300
++++ kdeutils-3.5.9/kdelirc/kcmlirc/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ noinst_HEADERS = kcmlirc.h addaction.h addactionbase.h
+ kcm_kcmlirc_la_SOURCES = selectprofile.ui newmode.ui kcmlircbase.ui kcmlirc.cpp addactionbase.ui addaction.cpp kcmlirc.skel editactionbase.ui editmodebase.ui editmode.cpp editaction.cpp modeslist.cpp
+-kcm_kcmlirc_la_LIBADD = $(LIB_KDEUI) $(LIB_KFILE) ../kdelirc/libkdelirc.la
++kcm_kcmlirc_la_LIBADD = $(LIB_KDEUI) $(LIB_KFILE) ../kdelirc/libkdelirc.la $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ kcm_kcmlirc_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+ 
+ xdg_apps_DATA = kcmlirc.desktop
+--- kdeutils-3.5.9/kdf/Makefile.am	2005-09-10 11:21:30.000000000 +0300
++++ kdeutils-3.5.9/kdf/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -20,7 +20,7 @@
+ 
+ kcm_kdf_la_SOURCES = kcmdf.cpp
+ kcm_kdf_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_kdf_la_LIBADD = libkdf_common.la $(LIB_KFILE)
++kcm_kdf_la_LIBADD = libkdf_common.la $(LIB_KFILE) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noinst_HEADERS = kdfwidget.h kcmdf.h kdfconfig.h mntconfig.h \
+ disks.h kdf.h disklist.h kwikdisk.h listview.h optiondialog.h stdoption.h
+--- kdeutils-3.5.9/kedit/Makefile.am	2005-09-10 11:21:28.000000000 +0300
++++ kdeutils-3.5.9/kedit/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -12,7 +12,7 @@
+ kdeinit_LTLIBRARIES = kedit.la
+ 
+ kedit_la_SOURCES = kedit.cpp ktextfiledlg.cpp misc.ui color.ui prefs.kcfgc
+-kedit_la_LIBADD = -lkdeprint $(LIB_KFILE)
++kedit_la_LIBADD = -lkdeprint $(LIB_KFILE) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ kedit_la_LDFLAGS = -module -avoid-version $(KDE_PLUGIN) $(all_libraries)
+ 
+ noinst_HEADERS = kedit.h ktextfiledlg.h\
+--- kdeutils-3.5.9/khexedit/lib/Makefile.am	2005-09-10 11:21:32.000000000 +0300
++++ kdeutils-3.5.9/khexedit/lib/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -7,7 +7,7 @@
+ # this library is used by the kbytesedit part and the khepart part
+ lib_LTLIBRARIES =  libkhexeditcommon.la
+ libkhexeditcommon_la_LDFLAGS = $(all_libraries) -no-undefined
+-libkhexeditcommon_la_LIBADD =  controller/libkcontroller.la codecs/libkhecodecs.la $(LIB_KDECORE)
++libkhexeditcommon_la_LIBADD =  controller/libkcontroller.la codecs/libkhecodecs.la $(LIB_KDECORE) $(LIB_QT)
+ libkhexeditcommon_la_SOURCES = kcolumn.cpp kbordercolumn.cpp koffsetcolumn.cpp \
+                                kbuffercolumn.cpp kvaluecolumn.cpp kcharcolumn.cpp \
+                                kcolumnsview.cpp khexedit.cpp kbytesedit.cpp \
+--- kdeutils-3.5.9/khexedit/parts/kbytesedit/Makefile.am	2005-09-10 11:21:31.000000000 +0300
++++ kdeutils-3.5.9/khexedit/parts/kbytesedit/Makefile.am	2008-02-20 17:04:42.000000000 +0200
+@@ -9,7 +9,7 @@
+ libkbyteseditwidget_la_SOURCES = kbyteseditwidget.cpp
+ 
+ libkbyteseditwidget_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module -avoid-version -no-undefined
+-libkbyteseditwidget_la_LIBADD = ../../lib/libkhexeditcommon.la $(LIB_KPARTS)
++libkbyteseditwidget_la_LIBADD = ../../lib/libkhexeditcommon.la $(LIB_QT) $(LIB_KDECORE)
+ 
+ service_DATA = kbyteseditwidget.desktop
+ servicedir = $(kde_servicesdir)
+--- kdeutils-3.5.9/khexedit/parts/kpart/Makefile.am	2005-09-10 11:21:31.000000000 +0300
++++ kdeutils-3.5.9/khexedit/parts/kpart/Makefile.am	2008-02-20 17:04:21.000000000 +0200
+@@ -9,7 +9,7 @@
+ libkhexedit2part_la_SOURCES = khepart.cpp khebrowserextension.cpp khepartfactory.cpp
+ 
+ libkhexedit2part_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module -no-undefined
+-libkhexedit2part_la_LIBADD = ../../lib/libkhexeditcommon.la $(LIB_KPARTS) $(LIB_KIO)
++libkhexedit2part_la_LIBADD = ../../lib/libkhexeditcommon.la $(LIB_KPARTS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ partdesktop_DATA = khexedit2part.desktop
+ partdesktopdir   = $(kde_servicesdir)
+--- kdeutils-3.5.9/klaptopdaemon/Makefile.am	2007-10-08 12:49:45.000000000 +0300
++++ kdeutils-3.5.9/klaptopdaemon/Makefile.am	2008-02-20 17:05:09.000000000 +0200
+@@ -5,23 +5,23 @@
+ 
+ libkcmlaptop_la_SOURCES = portable.cpp smapidev.c daemon_state.cpp wake_laptop.cpp krichtextlabel.cpp
+ libkcmlaptop_la_LDFLAGS = $(all_libraries) 
+-libkcmlaptop_la_LIBADD  = $(LIB_KDEUI) 
++libkcmlaptop_la_LIBADD  = $(LIB_KDEUI)  $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ MESSAGE_SOURCES = laptop_daemon.cpp kpcmcia.cpp xautolock.cc kpcmciainfo.cpp daemondock.cpp xautolock_diy.c xautolock_engine.c
+ kded_klaptopdaemon_la_SOURCES = $(MESSAGE_SOURCES) laptop_daemon.skel  
+ kded_klaptopdaemon_la_LDFLAGS = $(all_libraries) -module -avoid-version  -lXtst
+-kded_klaptopdaemon_la_LIBADD   = $(LIB_KDEUI) $(LIB_XSS) libkcmlaptop.la
++kded_klaptopdaemon_la_LIBADD   = $(LIB_KDEUI) $(LIB_XSS) libkcmlaptop.la $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_X11) -lkdeinit_kded
+ 
+ klaptop_acpi_helper_SOURCES = acpi_helper.cpp
+ 
+ klaptop_check_SOURCES = laptop_check.cpp 
+ klaptop_check_LDFLAGS = $(all_libraries) 
+-klaptop_check_LDADD = $(LIB_KFILE) $(LIB_KDEUI) libkcmlaptop.la
++klaptop_check_LDADD = libkcmlaptop.la
+ 
+ kcm_laptop_la_SOURCES = battery.cpp main.cpp pcmcia.cpp power.cpp warning.cpp \
+ 	acpi.cpp sony.cpp profile.cpp buttons.cpp apm.cpp  
+ kcm_laptop_la_LDFLAGS  = $(all_libraries) $(KDE_PLUGIN) -module
+-kcm_laptop_la_LIBADD = $(LIB_KFILE) $(LIB_KDEUI) libkcmlaptop.la
++kcm_laptop_la_LIBADD = $(LIB_KFILE) $(LIB_KDEUI) libkcmlaptop.la $(LIB_QT) $(LIBZ) $(LIB_KDECORE)
+ kcm_laptop_la_COMPILE_FIRST = crcresult.h
+ 
+ AM_CPPFLAGS = $(all_includes)
+--- kdeutils-3.5.9/kmilo/asus/Makefile.am	2006-01-19 18:49:13.000000000 +0200
++++ kdeutils-3.5.9/kmilo/asus/Makefile.am	2008-02-20 17:05:54.000000000 +0200
+@@ -24,7 +24,7 @@
+ kde_module_LTLIBRARIES = kmilo_asus.la
+ 
+ kmilo_asus_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kmilo_asus_la_LIBADD = ../kmilod/libkmilo.la $(LIB_KIO)
++kmilo_asus_la_LIBADD = ../kmilod/libkmilo.la $(LIB_QT) $(LIB_KDECORE)
+ kmilo_asus_la_SOURCES = asus.cpp
+ METASOURCES = AUTO
+ 
+--- kdeutils-3.5.9/kmilo/delli8k/Makefile.am	2006-01-19 18:49:13.000000000 +0200
++++ kdeutils-3.5.9/kmilo/delli8k/Makefile.am	2008-02-20 17:07:05.000000000 +0200
+@@ -22,7 +22,7 @@
+ kde_module_LTLIBRARIES = kmilo_delli8k.la
+ 
+ kmilo_delli8k_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kmilo_delli8k_la_LIBADD = ../kmilod/libkmilo.la $(LIB_KIO)
++kmilo_delli8k_la_LIBADD = ../kmilod/libkmilo.la $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kmilo_delli8k_la_SOURCES = delli8k.cpp
+ METASOURCES = AUTO
+ 
+--- kdeutils-3.5.9/kmilo/generic/Makefile.am	2006-01-19 18:49:13.000000000 +0200
++++ kdeutils-3.5.9/kmilo/generic/Makefile.am	2008-02-20 17:05:40.000000000 +0200
+@@ -21,7 +21,7 @@
+ kde_module_LTLIBRARIES = kmilo_generic.la
+ 
+ kmilo_generic_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kmilo_generic_la_LIBADD = ../kmilod/libkmilo.la $(LIB_KIO)
++kmilo_generic_la_LIBADD = ../kmilod/libkmilo.la $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kmilo_generic_la_SOURCES = generic_monitor.cpp
+ METASOURCES = AUTO
+ 
+--- kdeutils-3.5.9/kmilo/kmilod/Makefile.am	2006-01-19 18:49:10.000000000 +0200
++++ kdeutils-3.5.9/kmilo/kmilod/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -20,7 +20,7 @@
+ 
+ kde_module_LTLIBRARIES = kded_kmilod.la
+ kded_kmilod_la_LDFLAGS = -module -avoid-version $(all_libraries)
+-kded_kmilod_la_LIBADD = $(LIB_KIO) libkmilo.la
++kded_kmilod_la_LIBADD = $(LIB_KIO) libkmilo.la $(LIB_QT) -lDCOP $(LIB_KDECORE) -lkdeinit_kded
+ kded_kmilod_la_SOURCES = kmilod.cpp kmilod.skel defaultskin.cpp \
+ 			defaultwidget.ui kmilointerface.cpp
+ 
+--- kdeutils-3.5.9/kmilo/kmilo_kvaio/kcmkvaio/Makefile.am	2005-09-10 11:21:33.000000000 +0300
++++ kdeutils-3.5.9/kmilo/kmilo_kvaio/kcmkvaio/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_kvaio_la_SOURCES = kcmkvaio_general.ui main.cpp
+ 
+ kcm_kvaio_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kcm_kvaio_la_LIBADD = ../kvaiodriverinterface.lo $(LIB_KDEUI)
++kcm_kvaio_la_LIBADD = ../kvaiodriverinterface.lo $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ INCLUDES= $(all_includes)
+  
+--- kdeutils-3.5.9/kmilo/kmilo_kvaio/Makefile.am	2006-01-19 18:49:12.000000000 +0200
++++ kdeutils-3.5.9/kmilo/kmilo_kvaio/Makefile.am	2008-02-20 17:06:35.000000000 +0200
+@@ -23,7 +23,7 @@
+ kde_module_LTLIBRARIES = kmilo_kvaio.la
+ 
+ kmilo_kvaio_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kmilo_kvaio_la_LIBADD = ../kmilod/libkmilo.la $(LIB_KIO)  -lXext -lXtst
++kmilo_kvaio_la_LIBADD = ../kmilod/libkmilo.la $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_X11)
+ kmilo_kvaio_la_SOURCES = kmilo_kvaio.cpp kvaiodriverinterface.cpp kvaio.cpp
+ 
+ METASOURCES = AUTO
+--- kdeutils-3.5.9/kmilo/thinkpad/kcmthinkpad/Makefile.am	2007-05-14 10:40:45.000000000 +0300
++++ kdeutils-3.5.9/kmilo/thinkpad/kcmthinkpad/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_thinkpad_la_SOURCES = kcmthinkpad_general.ui main.cpp
+ 
+ kcm_thinkpad_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kcm_thinkpad_la_LIBADD = $(LIB_KIO)
++kcm_thinkpad_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_KDEUI)
+ 
+ INCLUDES= $(all_includes) -DKDE_BINDIR="\"$(bindir)\""
+  
+--- kdeutils-3.5.9/kmilo/thinkpad/Makefile.am	2006-01-19 18:49:10.000000000 +0200
++++ kdeutils-3.5.9/kmilo/thinkpad/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -23,7 +23,7 @@
+ kde_module_LTLIBRARIES = kmilo_thinkpad.la
+ 
+ kmilo_thinkpad_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-kmilo_thinkpad_la_LIBADD = ../kmilod/libkmilo.la $(LIB_KIO)
++kmilo_thinkpad_la_LIBADD = ../kmilod/libkmilo.la $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kmilo_thinkpad_la_SOURCES = thinkpad.cpp
+ METASOURCES = AUTO
+ 
+--- kdeutils-3.5.9/kregexpeditor/Makefile.am	2005-09-10 11:21:34.000000000 +0300
++++ kdeutils-3.5.9/kregexpeditor/Makefile.am	2008-02-20 17:07:38.000000000 +0200
+@@ -29,7 +29,7 @@
+ 
+ libkregexpeditorcommon_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined
+ libkregexpeditorcommon_la_LIBADD = KMultiFormListBox/libkmultiformlistbox.la \
+-	KWidgetStreamer/libkwidgetstreamer.la $(LIB_KIO)
++	KWidgetStreamer/libkwidgetstreamer.la $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ 
+@@ -40,14 +40,14 @@
+ kde_module_LTLIBRARIES = libkregexpeditorgui.la
+ libkregexpeditorgui_la_SOURCES = kregexpeditorfactory.cpp
+ libkregexpeditorgui_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-libkregexpeditorgui_la_LIBADD = libkregexpeditorcommon.la
++libkregexpeditorgui_la_LIBADD = libkregexpeditorcommon.la $(LIB_QT) $(LIB_KDECORE)
+ 
+ #### Binary
+ 
+ bin_PROGRAMS = kregexpeditor
+ kregexpeditor_SOURCES = main.cpp
+ kregexpeditor_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+-kregexpeditor_LDADD =  libkregexpeditorcommon.la $(LIB_KIO)
++kregexpeditor_LDADD =  libkregexpeditorcommon.la
+ kregexpeditor_INCLUDES =  $(all_includes)
+ 
+ xdg_apps_DATA = kregexpeditor.desktop
+--- kdeutils-3.5.9/ksim/library/Makefile.am	2005-09-10 11:21:29.000000000 +0300
++++ kdeutils-3.5.9/ksim/library/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -7,7 +7,7 @@
+                                         pluginmodule.cpp ksimconfig.cpp
+ 
+ libksimcore_la_LDFLAGS = $(all_libraries) -version-info 1:0 -no-undefined
+-libksimcore_la_LIBADD = $(LIB_KDEUI)
++libksimcore_la_LIBADD = $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) -lkdefx
+ 
+ ksiminclude_HEADERS = common.h themeloader.h \
+                                         chart.h label.h \
+--- kdeutils-3.5.9/ksim/Makefile.am	2007-01-15 13:25:34.000000000 +0200
++++ kdeutils-3.5.9/ksim/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -10,7 +10,7 @@
+                              themeprefs.cpp
+ 
+ ksim_panelextension_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-ksim_panelextension_la_LIBADD = ./library/libksimcore.la libsysteminfo.la $(LIB_KIO) $(LIB_KDEUI)
++ksim_panelextension_la_LIBADD = ./library/libksimcore.la libsysteminfo.la $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ 
+ SUBDIRS = themes library monitors pics
+ EXTRA_DIST = ksim.desktop
+--- kdeutils-3.5.9/ksim/monitors/cpu/Makefile.am	2005-10-10 17:59:12.000000000 +0300
++++ kdeutils-3.5.9/ksim/monitors/cpu/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -1,7 +1,7 @@
+ kde_module_LTLIBRARIES = ksim_cpu.la
+ ksim_cpu_la_SOURCES = ksimcpu.cpp
+ 
+-ksim_cpu_la_LIBADD  = ../../library/libksimcore.la
++ksim_cpu_la_LIBADD  = ../../library/libksimcore.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ ksim_cpu_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ EXTRA_DIST = cpu.desktop
+--- kdeutils-3.5.9/ksim/monitors/disk/Makefile.am	2005-10-10 17:59:12.000000000 +0300
++++ kdeutils-3.5.9/ksim/monitors/disk/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -2,7 +2,7 @@
+ ksim_disk_la_SOURCES = ksimdisk.cpp
+ 
+ ksim_disk_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-ksim_disk_la_LIBADD = $(LIB_DEVSTAT) ../../library/libksimcore.la
++ksim_disk_la_LIBADD = $(LIB_DEVSTAT) ../../library/libksimcore.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ EXTRA_DIST = disk.desktop
+ 
+--- kdeutils-3.5.9/ksim/monitors/filesystem/Makefile.am	2005-10-10 17:59:12.000000000 +0300
++++ kdeutils-3.5.9/ksim/monitors/filesystem/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -3,7 +3,7 @@
+                             fsystemiface.skel filesystemwidget.cpp filesystemstats.cpp
+ 
+ ksim_filesystem_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-ksim_filesystem_la_LIBADD = ../../library/libksimcore.la
++ksim_filesystem_la_LIBADD = ../../library/libksimcore.la $(LIB_QT) -lDCOP $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ EXTRA_DIST = DFree.desktop
+ 
+--- kdeutils-3.5.9/ksim/monitors/lm_sensors/Makefile.am	2005-10-10 17:59:12.000000000 +0300
++++ kdeutils-3.5.9/ksim/monitors/lm_sensors/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -12,7 +12,7 @@
+                           sensorbase.cpp ksimsensorsiface.skel
+ 
+ ksim_sensors_la_LDFLAGS = $(all_libraries) -module -avoid-version 
+-ksim_sensors_la_LIBADD = ../../library/libksimcore.la $(NVCTRL_LIB)
++ksim_sensors_la_LIBADD = ../../library/libksimcore.la $(NVCTRL_LIB) $(LIB_QT) -lDCOP $(LIB_XEXT) $(LIB_KDEUI) $(LIB_X11) $(LIB_KDECORE)
+ 
+ EXTRA_DIST = Lm_sensors.desktop
+ 
+--- kdeutils-3.5.9/ksim/monitors/net/Makefile.am	2005-10-10 17:59:12.000000000 +0300
++++ kdeutils-3.5.9/ksim/monitors/net/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -2,7 +2,7 @@
+ ksim_net_la_SOURCES = ksimnet.cpp netdialog.cpp netconfig.cpp
+ 
+ ksim_net_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-ksim_net_la_LIBADD = ../../library/libksimcore.la $(LIB_KIO)
++ksim_net_la_LIBADD = ../../library/libksimcore.la $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ EXTRA_DIST = Net.desktop
+ 
+--- kdeutils-3.5.9/ksim/monitors/snmp/Makefile.am	2005-10-10 17:59:12.000000000 +0300
++++ kdeutils-3.5.9/ksim/monitors/snmp/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -6,7 +6,7 @@
+ 		       walker.cpp
+ 
+ ksim_snmp_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-ksim_snmp_la_LIBADD = ../../library/libksimcore.la $(LIB_KIO) $(LIBSNMP)
++ksim_snmp_la_LIBADD = ../../library/libksimcore.la $(LIB_KIO) $(LIBSNMP) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ INCLUDES= -I$(top_srcdir)/ksim/library $(all_includes)
+ 
+--- kdeutils-3.5.9/kwallet/konfigurator/Makefile.am	2005-09-10 11:21:30.000000000 +0300
++++ kdeutils-3.5.9/kwallet/konfigurator/Makefile.am	2008-02-20 17:02:15.000000000 +0200
+@@ -4,7 +4,7 @@
+ kde_module_LTLIBRARIES = kcm_kwallet.la
+ kcm_kwallet_la_SOURCES = walletconfigwidget.ui konfigurator.cpp
+ kcm_kwallet_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_kwallet_la_LIBADD = $(LIB_KDEUI) -lkwalletclient
++kcm_kwallet_la_LIBADD = $(LIB_KDEUI) -lkwalletclient $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp -o $(podir)/kcmkwallet.pot
+--- kdeutils-3.5.9/superkaramba/src/Makefile.am	2008-02-20 16:27:15.000000000 +0200
++++ kdeutils-3.5.9/superkaramba/src/Makefile.am	2008-02-20 17:08:21.000000000 +0200
+@@ -42,7 +42,7 @@
+ 
+ superkaramba_LDFLAGS = -Wl,-export-dynamic  $(KDE_RPATH) $(all_libraries) $(PYTHONLIB)
+ #superkaramba_LDADD = -lkio $(LIB_KDEUI) $(LIBPYTHON) $(LIBKVM) $(MY_LIBKNEWSTUFF)
+-superkaramba_LDADD = -lkio $(LIB_KDEUI) $(LIBPYTHON) $(LIBKVM) $(MY_LIBKNEWSTUFF)
++superkaramba_LDADD = $(LIB_KIO) $(LIB_KDEUI) $(LIBPYTHON) $(LIBKVM) $(MY_LIBKNEWSTUFF)
+ 
+ # this is where the desktop file will go
+ shelldesktopdir = $(kde_appsdir)/Utilities

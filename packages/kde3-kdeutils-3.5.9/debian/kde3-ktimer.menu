@@ -1,0 +1,8 @@
+?package(ktimer):\
+	needs="X11"\
+	section="Applications/Project Management"\
+	hints="KDE"\
+	title="KTimer"\
+	icon32x32="/opt/kde3/share/pixmaps/ktimer.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ktimer-16.xpm"\
+	command="/opt/kde3/bin/ktimer"

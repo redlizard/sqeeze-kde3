@@ -1,0 +1,38 @@
+debian/tmp/opt/kde3/bin/kdf
+debian/tmp/opt/kde3/bin/kwikdisk
+debian/tmp/opt/kde3/lib/kde3/kcm_kdf.la
+debian/tmp/opt/kde3/lib/kde3/kcm_kdf.so
+debian/tmp/opt/kde3/share/applications/kde/kcmdf.desktop
+debian/tmp/opt/kde3/share/applications/kde/kdf.desktop
+debian/tmp/opt/kde3/share/applications/kde/kwikdisk.desktop
+debian/tmp/opt/kde3/share/apps/kdf/kdfui.rc
+debian/tmp/opt/kde3/share/apps/kdf/pics/delete.png
+debian/tmp/opt/kde3/share/apps/kdf/pics/tick.png
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kdf/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kdf/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kdf/index.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kdf/kdf.png
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kdf/kdf_config.png
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kinfocenter/blockdevices/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kinfocenter/blockdevices/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kinfocenter/blockdevices/index.docbook
+debian/tmp/opt/kde3/share/icons/crystalsvg/16x16/apps/kcmdf.png
+debian/tmp/opt/kde3/share/icons/crystalsvg/22x22/apps/kcmdf.png
+debian/tmp/opt/kde3/share/icons/crystalsvg/32x32/apps/kcmdf.png
+debian/tmp/opt/kde3/share/icons/hicolor/128x128/apps/kdf.png
+debian/tmp/opt/kde3/share/icons/hicolor/128x128/apps/kwikdisk.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kdf.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kwikdisk.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/kdf.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/kwikdisk.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kdf.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kwikdisk.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kdf.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kwikdisk.png
+debian/tmp/opt/kde3/share/icons/hicolor/64x64/apps/kdf.png
+debian/tmp/opt/kde3/share/icons/hicolor/64x64/apps/kwikdisk.png
+
+debian/icons/kdf.xpm		/opt/kde3/share/pixmaps
+debian/icons/kdf-16.xpm		/opt/kde3/share/pixmaps
+debian/icons/kwikdisk.xpm	/opt/kde3/share/pixmaps
+debian/icons/kwikdisk-16.xpm	/opt/kde3/share/pixmaps

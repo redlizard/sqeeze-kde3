@@ -1,0 +1,10 @@
+Document: kdeutils-doc-html-kedit
+Title: KEdit Handbook
+Author: Thad McGinnis
+Abstract: KEdit is a simple text editor for KDE
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kedit/index.html
+Files: /usr/share/doc/kde/HTML/en/kedit/*.html
+

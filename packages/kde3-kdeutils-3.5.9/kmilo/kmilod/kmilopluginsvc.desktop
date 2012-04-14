@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=ServiceType
+X-KDE-ServiceType=KMilo Plugin
+
+[PropertyDef::X-KMilo-Plugin-Author]
+Type=QString
+[PropertyDef::X-KMilo-Default-Enabled]
+Type=bool
+

@@ -1,0 +1,9 @@
+?package(kgpg):\
+	needs="X11"\
+	section="Applications/Data Management"\
+	hints="KDE"\
+	title="Kgpg"\
+	icon32x32="/opt/kde3/share/pixmaps/kgpg.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kgpg-16.xpm"\
+	command="/opt/kde3/bin/kgpg"
+
