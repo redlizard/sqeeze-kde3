@@ -1,0 +1,27 @@
+--- kdeaddons-3.5.9.orig/atlantikdesigner/atlantikdesigner.desktop
++++ kdeaddons-3.5.9/atlantikdesigner/atlantikdesigner.desktop
+@@ -3,7 +3,6 @@
+ Exec=atlantikdesigner -caption "%c" %i %m
+ Icon=atlantikdesigner
+ Terminal=false
+-MapNotify=true
+ Name=Atlantik Designer
+ Name[af]=Atlantik Ontwerper
+ Name[ar]=المصمم Atlantik
+@@ -116,7 +115,6 @@
+ Comment[zh_CN]=Atlantik 的游戏盘设计器
+ Comment[zh_TW]=Atlantik 遊戲板設計師
+ Categories=Qt;KDE;Game;BoardGame;
+-Encoding=UTF-8
+ GenericName=Monopoly®-like Board Designer
+ GenericName[bg]=Дизайнер на Atlantik
+ GenericName[ca]=Dissenyador de taulells de tipus Monopoly®
+--- kdeaddons-3.5.9.orig/ksig/ksig.desktop
++++ kdeaddons-3.5.9/ksig/ksig.desktop
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=ksig -caption "%c" %i %m
+ Icon=ksig

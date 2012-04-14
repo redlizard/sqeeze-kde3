@@ -1,0 +1,326 @@
+This package was debianised by Ben Burton <bab@debian.org> on
+Mon, 18 Jun 2001 02:52:26 -0500.
+
+It was downloaded from: http://www.kde.org/download
+
+The patch for xine support was downloaded from
+http://rambo.its.tudelft.nl/~ewald/xine/.
+
+Upstream authors:
+
+  Many and varied; this package is simply a collection of add-ons and
+  plugins.  See http://www.kde.org/ for further details.
+
+Copyright:
+
+  All components of this package are released under the GPL (GNU General
+  Public License), with the following exceptions:
+
+  DocBook Documentation:
+
+    Permission is granted to copy, distribute and/or modify this
+    document under the terms of the GNU Free Documentation License,
+    Version 1.1 or any later version published by the Free Software
+    Foundation; with no Invariant Sections, with no Front-Cover Texts,
+    and with no Back-Cover Texts.
+
+    A copy of the GNU Free Documentation License (Version 1.2) can be
+    found on Debian systems in  `/usr/share/common-licenses/GFDL-1.2'
+
+  Kate Plugins:
+
+    KJS Wrapper:
+      LGPL (GNU Library General Public License)
+
+  Kicker Applets:
+
+    KBinaryClock:
+      Mixture of LGPL (GNU Lesser General Public License) and the following:
+
+      Copyright (c) 1996-2002 the kicker authors. See file AUTHORS.
+
+      Permission is hereby granted, free of charge, to any person
+      obtaining a copy of this software and associated documentation
+      files (the "Software"), to deal in the Software without
+      restriction, including without limitation the rights to use, copy,
+      modify, merge, publish, distribute, sublicense, and/or sell copies
+      of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY
+      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+      CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+    Math Expression Evaluator:
+      Mixture of GPL and the following:
+
+      Based on code 'Run' applet code, copyright (c) 2000 Matthias Elter
+      <elter@kde.org>
+
+      Modifications made by Andrew Coles, 2004 <andrew_coles@yahoo.co.uk>
+
+      Permission is hereby granted, free of charge, to any person
+      obtaining a copy of this software and associated documentation
+      files (the "Software"), to deal in the Software without
+      restriction, including without limitation the rights to use, copy,
+      modify, merge, publish, distribute, sublicense, and/or sell copies
+      of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY
+      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+      CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+  KNewsTicker Scripts:
+
+    All scripts surrendered to the knewsticker scripts section which are
+    distributed WITH KDE are subject to the licensing restrictions of the
+    KDE project.  Should you use any of those scripts in conjuction with
+    any KDE product you are also subject to their licensing.  If the
+    script is used without a KDE affiliation, if not otherwise stated
+    within the script, or if no co-author is present, those scripts are
+    believed to be in the public domain.
+
+    bbc.pl:
+      Copyright (c) 2001 Malte Starostik <malte@kde.org>
+
+      Unlimited use, modification and distribution granted as long as the
+      above copyright statement and this sentence remain intact.
+
+    newsrss.pl:
+      This file is not released under any specific License.  All Licenses,
+      which might be requirered by knewsticker are explicitly accepted by
+      the author whenver this file comes with knewsticker.
+      Commonly this file simply underlies the regulations of
+      international copyright.  This file is copyrighted by anonymous
+      coder <bio@gmx.net>.  A lot of help has been offered to me by
+      malte, so thank him as well.
+
+  Konqueror Plugins:
+
+    Babelfish, crash monitor, directory filter, image gallery,
+    minitools bookmarklets, sidebar news ticker, user agent changer,
+    HTML/CSS validators:
+      LGPL (GNU Lesser General Public License)
+
+    DOM tree viewer, kuick copy and move, web archiver:
+      Mixture of GPL and LGPL
+
+    Image rotation:
+      Mixture of GPL and the following:
+
+      Copyright 2002 Gene Cash All rights reserved.
+
+      Redistribution and use in source and binary forms, with or without
+      modification, are permitted provided that the following conditions
+      are met:
+
+         1. Redistributions of source code must retain the above copyright
+            notice, this list of conditions and the following disclaimer.
+         2. Redistributions in binary form must reproduce the above copyright
+            notice, this list of conditions and the following disclaimer in
+            the documentation and/or other materials provided with the
+            distribution.
+
+      THIS SOFTWARE IS PROVIDED BY GENE CASH ``AS IS'' AND ANY EXPRESS
+      OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+      ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE
+      LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
+      OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+      OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+      BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+      OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+      EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+      This means you may do anything you want with this code, except
+      claim you wrote it. Also, if it breaks you get to keep both pieces.
+
+    Sidebar media player:
+      Mixture of GPL, LGPL and the following:
+
+      Copyright (c) 2000-2001 the noatun authors. See file AUTHORS.
+
+      Permission is hereby granted, free of charge, to any person obtaining
+      a copy of this software and associated documentation files (the
+      "Software"), to deal in the Software without restriction, including
+      without limitation the rights to use, copy, modify, merge, publish,
+      distribute, sublicense, and/or sell copies of the Software, and to
+      permit persons to whom the Software is furnished to do so, subject
+      to the following conditions:
+
+      The above copyright notice and this permission notice shall be included
+      in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+      IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIAB\ILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+      FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+      DEALINGS IN THE SOFTWARE.
+
+  Noatun Plugins:
+
+    Alarm:
+      Mixture of GPL and the following:
+
+      Copyright (C) 2001 Neil Stevens <multivac@fcmail.com>
+
+      Permission is hereby granted, free of charge, to any person
+      obtaining a copy of this software and associated documentation
+      files (the "Software"), to deal in the Software without
+      restriction, including without limitation the rights to use, copy,
+      modify, merge, publish, distribute, sublicense, and/or sell copies
+      of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT.  IN NO EVENT SHALL THE THE AUTHOR(S) BE LIABLE
+      FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+      CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+      Except as contained in this notice, the name(s) of the author(s)
+      shall not be used in advertising or otherwise to promote the sale,
+      use or other dealings in this Software without prior written
+      authorization from the author(s).
+
+    AlsaPlayer, Blurscope, Dead Man's Interface, Lucky Tag Reader:
+      Permission is hereby granted, free of charge, to any person obtaining
+      a copy of this software and associated documentation files (the
+      "Software"), to deal in the Software without restriction, including
+      without limitation the rights to use, copy, modify, merge, publish,
+      distribute, sublicense, and/or sell copies of the Software, and to
+      permit persons to whom the Software is furnished to do so, subject
+      to the following conditions:
+
+      The above copyright notice and this permission notice shall be included
+      in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+      IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+      FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+      DEALINGS IN THE SOFTWARE.
+
+    French Foreign Region:
+      Permission is hereby granted, free of charge, to any person obtaining
+      a copy of this software and associated documentation files (the
+      "Software"), to deal in the Software without restriction, including
+      without limitation the rights to use, copy, modify, merge, publish,
+      distribute, sublicense, and/or sell copies of the Software, and to
+      permit persons to whom the Software is furnished to do so, subject
+      to the following conditions:
+
+      The above copyright notice and this permission notice shall be included
+      in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+      IN NO EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+      FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+      DEALINGS IN THE SOFTWARE.
+
+      Except as contained in this notice, the name(s) of the author(s) shall
+      not be used in advertising or otherwise to promote the sale, use or
+      other dealings in this Software without prior written authorization
+      from the author(s).
+
+    Lyrics:
+      BSD License
+
+    NexScope:
+      Mixture of GPL and LGPL (GNU Lesser General Public License)
+
+    Oblique:
+      Mixture of LGPL and the following:
+
+      This file is hereby licensed under the GNU General Public License
+      version 2 or later at your option.
+
+      This file is licensed under the Qt Public License version 1 with
+      the condition that the licensed will be governed under the Laws of
+      California (USA) instead of Norway.  Disputes will be settled in
+      Santa Clara county courts.
+
+      This file is licensed under the following additional license.  Be
+      aware that it is identical to the BSD license, except for the
+      added clause 3:
+
+        Redistribution and use in source and binary forms, with or
+        without modification, are permitted provided that the following
+        conditions are met:
+
+        1. Redistributions of source code must retain the above copyright
+           notice, this list of conditions and the following disclaimer.
+        2. Redistributions in binary form must reproduce the above copyright
+           notice, this list of conditions and the following disclaimer in the
+           documentation and/or other materials provided with the distribution.
+        3. By integrating this software into any other software codebase, you
+           waive all rights to any patents associated with the stated codebase.
+
+        THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY
+        EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+        THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+        PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR
+        BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+        EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+        TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+        ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+        LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+        IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+        THE POSSIBILITY OF SUCH DAMAGE.
+
+    Synaescope:
+      Mixture of GPL and the following:
+
+      Copyright (c) 2001 Neil Stevens <multivac@fcmail.com>
+
+      Permission is hereby granted, free of charge, to any person
+      obtaining a copy of this software and associated documentation
+      files (the "Software"), to deal in the Software without
+      restriction, including without limitation the rights to use, copy,
+      modify, merge, publish, distribute, sublicense, and/or sell copies
+      of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY
+      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+      CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+  On Debian GNU/Linux systems, the complete texts of the GPL, the LGPL and
+  the BSD license can be found in the files `/usr/share/common-licenses/GPL',
+  `/usr/share/common-licenses/LGPL' and `/usr/share/common-licenses/BSD'.

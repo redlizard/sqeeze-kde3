@@ -1,0 +1,68 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH JPEGORIENT 1 "October 13, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+jpegorient \- change the orientations of JPEG images
+.SH SYNOPSIS
+.B jpegorient
+{ \fB\-90\fP | \fB\-180\fP | \fB\-270\fP | \fB\-v\fP | \fB\-h\fP }
+\fIimage-file\fP ...
+.SH DESCRIPTION
+This is a simple utility for changing the orientations of one or more
+JPEG images.
+It is provided as part of the image conversion and transformation
+plugins for Konqueror.
+.PP
+A single option must be passed before any filenames to specify how the
+orientations of the images are to be changed.  Each new image will be
+saved over the old one.
+.PP
+This utility makes use of
+.BR orient.py (1),
+which is designed to work with certain types of digital camera image
+files.  Instead of modifying the image data, it alters the EXIF
+tags stored with the image to reflect the new orientation.  For this
+reason only images with the correct types of EXIF tags can be changed
+using this tool.
+.PP
+This utility is part of the official KDE add-ons module.
+.SH OPTIONS
+.TP
+\fB\-90\fP
+Rotate each image by 90 degrees clockwise.
+.TP
+\fB\-180\fP
+Rotate each image by a half turn (i.e., 180 degrees).
+.TP
+\fB\-270\fP
+Rotate each image by 270 degrees clockwise (i.e., 90 degrees counter-clockwise).
+.TP
+\fB\-v\fP
+Flip each image vertically.
+.TP
+\fB\-h\fP
+Flip each image horizontally.
+.SH SEE ALSO
+.BR exif.py (1),
+.BR konqueror (1),
+.BR orient.py (1).
+.SH AUTHOR
+The image transformation plugins were written by
+Leif Jensen <jensen@math.columbia.edu>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

@@ -1,0 +1,223 @@
+Source: kde3-kdeaddons
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Fathi Boudra <fabo@debian.org>
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 6), autotools-dev, gawk, gettext, kde3-kdelibs4-dev (>= 4:3.5.9), kde3-atlantik-dev (>= 4:3.5.9), kde3-kdebase-dev (>= 4:3.5.9), kde3-kdemultimedia-dev (>= 4:3.5.9), kde3-libkdegames-dev (>= 4:3.5.9), kde3-libkonq4-dev (>= 4:3.5.9), kde3-kdepim-dev (>= 4:3.5.9), libsdl1.2-dev (>= 1.2.2-3.3), libssl-dev (>= 0.9.6), libxine-dev, libdb4.8++-dev
+Standards-Version: 3.7.3
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdeaddons
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeaddons
+
+Package: kde3-kdeaddons
+Architecture: all
+Section: kde
+Depends: kde3-atlantikdesigner (>= ${source:Version}), kde3-kaddressbook-plugins (>= ${source:Version}), kde3-kate-plugins (>= ${source:Version}), kde3-kdeaddons-kfile-plugins (>= ${source:Version}), kde3-kicker-applets (>= ${source:Version}), kde3-knewsticker-scripts (>= ${source:Version}), kde3-konq-plugins (>= ${source:Version}), kde3-ksig (>= ${source:Version}), kde3-noatun-plugins (>= ${source:Version})
+Suggests: kde3-kdeaddons-doc-html (>= ${source:Version})
+Description: add-on plugins and applets provided with KDE
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of add-on plugins and applets
+ provided with the official release of KDE.
+
+Package: kde3-kdeaddons-doc-html
+Architecture: all
+Section: doc
+Suggests: kde3-konqueror | www-browser, kde3-kdeaddons
+Description: KDE add-ons documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE addons documentation
+ converted to HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/kicker-applets/. Documentation is provided for
+ most KDE addons packages.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-atlantikdesigner
+Architecture: any
+Section: games
+Depends: ${shlibs:Depends}
+Enhances: kde3-atlantik
+Description: game board designer for Atlantik
+ Atlantik Designer is a game board designer for the game Atlantik.
+ .
+ Atlantik is a KDE client for playing Monopoly-like board games on the
+ monopd network.  It can play any board supported by the network
+ server, including the classic Monopoly game as well as the Atlantik
+ game in which the properties include several major cities in North
+ America and Europe.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-kaddressbook-plugins
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Suggests: kde3-kworldclock, kde3-khelpcenter, kde3-kdeaddons-doc-html
+Enhances: kde3-kaddressbook
+Description: plugins for KAddressBook, the KDE address book
+ This package contains a variety of useful plugins for the KDE address
+ book.  These plugins can be loaded through the KDE address book settings.
+ .
+ Highlights include exporting postal addresses as flags in KWorldClock,
+ as well as importing and exporting contacts in the native format used
+ by the German freemail provider GMX.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-kate-plugins
+Architecture: any
+Section: editors
+Depends: ${shlibs:Depends}, tidy
+Suggests: kde3-khelpcenter, kde3-kdeaddons-doc-html, kde3-kaddressbook
+Enhances: kde3-kate
+Description: plugins for Kate, the KDE Advanced Text Editor
+ This package contains a variety of useful plugins for Kate, the KDE
+ Advanced Text Editor.  These plugins can be loaded through the plugin
+ manager in Kate settings.
+ .
+ Highlights include spell checking, text filtering, HTML/XML construction
+ and validation, vim/emacs modeline handling, templates for new files
+ and text snippets, opening of C/C++ headers, extraction of C/C++ symbols,
+ a tab bar, a Python browser and even more.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-kdeaddons-kfile-plugins
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Provides: renamedlg-plugins
+Description: KDE file dialog plugins for text files and folders
+ This is a collection of plugins for the KDE file dialog.  These plugins
+ extend the file dialog to offer advanced meta-information for text,
+ HTML and desktop files, as well as for folders, Windows .lnk files,
+ MIME archives and X.509 certificates.
+ .
+ This package also includes plugins for the KDE file rename dialog,
+ allowing a user to more easily decide what to do when faced with a
+ decision regarding conflicting filenames.  Rename dialog plugins are
+ provided for audio and image files.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-kicker-applets
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, kde3-kicker
+Suggests: kde3-khelpcenter, kde3-kdeaddons-doc-html
+Provides: ktimemon
+Enhances: kde3-kicker
+Description: applets for Kicker, the KDE panel
+ This package contains a variety of applets for Kicker, the KDE for panel.
+ These applets will appear in the panel's Add--Applet menu.
+ .
+ Included are a system monitor, a colour picker, a media player controller,
+ a mathematical evaluator and a binary clock.
+ .
+ The media control applet does not support XMMS.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-knewsticker-scripts
+Architecture: all
+Section: kde
+Depends: ${perl:Depends}, python, libfinance-quote-perl, libmime-tools-perl, libnews-nntpclient-perl, libwww-perl
+Recommends: kde3-knewsticker
+Enhances: kde3-knewsticker
+Description: scripts for KNewsTicker, the KDE news ticker
+ This package contains a variety of scripts that provide additional news
+ sources for KNewsTicker, the news ticker applet for the KDE panel.  See
+ /usr/share/doc/knewsticker-scripts/README.Debian for usage details.
+ .
+ Highlights include newsgroup handling, stock data retrieval, sports scores
+ and various local news sources.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-konq-plugins
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, libjpeg-progs, python
+Recommends: kde3-akregator, kde3-ark, imagemagick
+Suggests: kde3-khelpcenter, kde3-kdeaddons-doc-html
+Enhances: kde3-konqueror, kde3-akregator
+Provides: akregator-konq-plugin
+Description: plugins for Konqueror, the KDE file/web/doc browser
+ This package contains a variety of useful plugins for Konqueror, the
+ file manager, web browser and document viewer for KDE.  Many of these
+ plugins will appear in Konqueror's Tools menu.
+ .
+ Highlights for web browsing include web page translation, web page archiving,
+ auto-refreshing, HTML and CSS structural analysis, a search toolbar, a
+ sidebar news ticker, fast access to common options, bookmarklets, a crash
+ monitor, a microformat availability indicator, a del.icio.us bookmarks
+ sidebar, and integration with the aKregator RSS feed reader.
+ .
+ Highlights for directory browsing include directory filters, image gallery
+ creation, archive compression and extraction, quick copy/move, a sidebar
+ media player, a file information metabar/sidebar, a media folder helper, a
+ graphical disk usage viewer and image conversions and transformations.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-ksig
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Suggests: kde3-kmail
+Enhances: kde3-kmail
+Description: graphical tool for managing multiple email signatures
+ KSig is a graphical tool for keeping track of many different email
+ signatures.  The signatures themselves can be edited through KSig's
+ graphical user interface.  A command-line interface is then available
+ for generating random or daily signatures from this list.
+ .
+ The command-line interface makes a suitable plugin for generating
+ signatures in external mail clients such as KMail.  See
+ /usr/share/doc/ksig/README.Debian for details on how this can be done.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-noatun-plugins
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}
+Enhances: kde3-noatun
+Description: plugins for Noatun, the KDE media player
+ This package contains a variety of useful plugins for Noatun, the audio and
+ video media player for KDE.  These plugins can be loaded through the plugin
+ manager in Noatun settings.
+ .
+ Highlights include an alarm clock, guessing tags from filenames, adjustable
+ playback speed, capture to wave file and displaying lyrics, plus a variety
+ of user interfaces, playlists and visualisation plugins.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kde3-kdeaddons-dbg
+Section: libdevel
+Architecture: any
+Depends: kde3-kdelibs-dbg
+Priority: extra
+Description: debugging symbols for kdeaddons
+ This package contains the debugging symbols associated with kdeaddons.
+ They will automatically be used by gdb for debugging kdeaddons-related
+ issues.
+

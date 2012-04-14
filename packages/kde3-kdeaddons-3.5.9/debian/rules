@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS := --without-xmms
+
+DEB_DH_STRIP_ARGS := --dbg-package=kde3-kdeaddons-dbg
+
+DOC_HTML_PRUNE := kde3-konq-plugins/smbmounter
+
+binary-install/kde3-konq-plugins::
+	mv -f debian/kde3-konq-plugins/usr/share/man/py/man1/exif.1 \
+		debian/konq-plugins/usr/share/man/man1/exif.py.1; \
+	mv -f debian/kde3-konq-plugins/usr/share/man/py/man1/orient.1 \
+		debian/konq-plugins/usr/share/man/man1/orient.py.1; \
+	rm -rf debian/kde3-konq-plugins/usr/share/man/py;
+
+binary-install/kde3-kdeaddons-kfile-plugins::
+	install -p -D -m644 renamedlgplugins/README \
+		debian/kde3-kdeaddons-kfile-plugins/usr/share/doc/kde3-kdeaddons-kfile-plugins/README.renamedlgplugins
+
+binary-install/kde3-knewsticker-scripts::
+	chmod 755 debian/kde3-knewsticker-scripts/opt/kde3/share/apps/knewsticker/scripts/*.pl
+	chmod 755 debian/kde3-knewsticker-scripts/opt/kde3/share/apps/knewsticker/scripts/*.py
+
+binary-install/kde3-kate-plugins::
+	chmod 755 debian/kde3-kate-plugins/opt/kde3/share/apps/kate/scripts/html-tidy.sh
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+
+

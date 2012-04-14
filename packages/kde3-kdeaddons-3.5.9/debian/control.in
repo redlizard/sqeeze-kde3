@@ -1,0 +1,228 @@
+Source: kdeaddons
+Section: kde
+Priority: optional
+Maintainer: @@@MAINTAINER@@@
+Uploaders: @@@UPLOADERS@@@
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 6), autotools-dev, gawk, gettext, kdelibs4-dev (>= 4:3.5.9), atlantik-dev (>= 4:3.5.9), kdebase-dev (>= 4:3.5.9), kdemultimedia-dev (>= 4:3.5.9), libkdegames-dev (>= 4:3.5.9), libkonq4-dev (>= 4:3.5.9), kdepim-dev (>= 4:3.5.9), libsdl1.2-dev (>= 1.2.2-3.3), libssl-dev (>= 0.9.6), libxine-dev, libdb4.6++-dev
+Standards-Version: 3.7.3
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdeaddons
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeaddons
+
+Package: kdeaddons
+Architecture: all
+Section: kde
+Depends: atlantikdesigner (>= ${source:Version}), kaddressbook-plugins (>= ${source:Version}), kate-plugins (>= ${source:Version}), kdeaddons-kfile-plugins (>= ${source:Version}), kicker-applets (>= ${source:Version}), knewsticker-scripts (>= ${source:Version}), konq-plugins (>= ${source:Version}), ksig (>= ${source:Version}), noatun-plugins (>= ${source:Version})
+Suggests: kdeaddons-doc-html (>= ${source:Version})
+Description: add-on plugins and applets provided with KDE
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of add-on plugins and applets
+ provided with the official release of KDE.
+
+Package: kdeaddons-doc-html
+Architecture: all
+Section: doc
+Suggests: konqueror | www-browser, kdeaddons
+Description: KDE add-ons documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE addons documentation
+ converted to HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/kicker-applets/. Documentation is provided for
+ most KDE addons packages.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: atlantikdesigner
+Architecture: any
+Section: games
+Depends: ${shlibs:Depends}
+Enhances: atlantik
+Description: game board designer for Atlantik
+ Atlantik Designer is a game board designer for the game Atlantik.
+ .
+ Atlantik is a KDE client for playing Monopoly-like board games on the
+ monopd network.  It can play any board supported by the network
+ server, including the classic Monopoly game as well as the Atlantik
+ game in which the properties include several major cities in North
+ America and Europe.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kaddressbook-plugins
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Suggests: kworldclock, khelpcenter, kdeaddons-doc-html
+Enhances: kaddressbook
+Description: plugins for KAddressBook, the KDE address book
+ This package contains a variety of useful plugins for the KDE address
+ book.  These plugins can be loaded through the KDE address book settings.
+ .
+ Highlights include exporting postal addresses as flags in KWorldClock,
+ as well as importing and exporting contacts in the native format used
+ by the German freemail provider GMX.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kate-plugins
+Architecture: any
+Section: editors
+Depends: ${shlibs:Depends}, tidy
+Suggests: khelpcenter, kdeaddons-doc-html, kaddressbook
+Enhances: kate
+Description: plugins for Kate, the KDE Advanced Text Editor
+ This package contains a variety of useful plugins for Kate, the KDE
+ Advanced Text Editor.  These plugins can be loaded through the plugin
+ manager in Kate settings.
+ .
+ Highlights include spell checking, text filtering, HTML/XML construction
+ and validation, vim/emacs modeline handling, templates for new files
+ and text snippets, opening of C/C++ headers, extraction of C/C++ symbols,
+ a tab bar, a Python browser and even more.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kdeaddons-kfile-plugins
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Conflicts: renamedlg-plugins (<= 4:3.2.0-1)
+Replaces: renamedlg-plugins (<= 4:3.2.0-1)
+Provides: renamedlg-plugins
+Description: KDE file dialog plugins for text files and folders
+ This is a collection of plugins for the KDE file dialog.  These plugins
+ extend the file dialog to offer advanced meta-information for text,
+ HTML and desktop files, as well as for folders, Windows .lnk files,
+ MIME archives and X.509 certificates.
+ .
+ This package also includes plugins for the KDE file rename dialog,
+ allowing a user to more easily decide what to do when faced with a
+ decision regarding conflicting filenames.  Rename dialog plugins are
+ provided for audio and image files.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kicker-applets
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, kicker
+Suggests: khelpcenter, kdeaddons-doc-html
+Conflicts: ktimemon (<< 4:2.2-alpha1-0)
+Replaces: ktimemon (<< 4:2.2-alpha1-0)
+Provides: ktimemon
+Enhances: kicker
+Description: applets for Kicker, the KDE panel
+ This package contains a variety of applets for Kicker, the KDE for panel.
+ These applets will appear in the panel's Add--Applet menu.
+ .
+ Included are a system monitor, a colour picker, a media player controller,
+ a mathematical evaluator and a binary clock.
+ .
+ The media control applet does not support XMMS.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: knewsticker-scripts
+Architecture: all
+Section: kde
+Depends: ${perl:Depends}, python, libfinance-quote-perl, libmime-tools-perl, libnews-nntpclient-perl, libwww-perl
+Recommends: knewsticker
+Enhances: knewsticker
+Description: scripts for KNewsTicker, the KDE news ticker
+ This package contains a variety of scripts that provide additional news
+ sources for KNewsTicker, the news ticker applet for the KDE panel.  See
+ /usr/share/doc/knewsticker-scripts/README.Debian for usage details.
+ .
+ Highlights include newsgroup handling, stock data retrieval, sports scores
+ and various local news sources.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: konq-plugins
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, libjpeg-progs, python
+Recommends: akregator, ark, imagemagick
+Suggests: khelpcenter, kdeaddons-doc-html
+Enhances: konqueror, akregator
+Replaces: akregator (<< 1.1), akregator-konq-plugin (<< 1.1)
+Conflicts: akregator-konq-plugin (<< 1.1)
+Provides: akregator-konq-plugin
+Description: plugins for Konqueror, the KDE file/web/doc browser
+ This package contains a variety of useful plugins for Konqueror, the
+ file manager, web browser and document viewer for KDE.  Many of these
+ plugins will appear in Konqueror's Tools menu.
+ .
+ Highlights for web browsing include web page translation, web page archiving,
+ auto-refreshing, HTML and CSS structural analysis, a search toolbar, a
+ sidebar news ticker, fast access to common options, bookmarklets, a crash
+ monitor, a microformat availability indicator, a del.icio.us bookmarks
+ sidebar, and integration with the aKregator RSS feed reader.
+ .
+ Highlights for directory browsing include directory filters, image gallery
+ creation, archive compression and extraction, quick copy/move, a sidebar
+ media player, a file information metabar/sidebar, a media folder helper, a
+ graphical disk usage viewer and image conversions and transformations.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: ksig
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Suggests: kmail
+Enhances: kmail
+Description: graphical tool for managing multiple email signatures
+ KSig is a graphical tool for keeping track of many different email
+ signatures.  The signatures themselves can be edited through KSig's
+ graphical user interface.  A command-line interface is then available
+ for generating random or daily signatures from this list.
+ .
+ The command-line interface makes a suitable plugin for generating
+ signatures in external mail clients such as KMail.  See
+ /usr/share/doc/ksig/README.Debian for details on how this can be done.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: noatun-plugins
+Architecture: any
+Section: sound
+Depends: ${shlibs:Depends}
+Enhances: noatun
+Description: plugins for Noatun, the KDE media player
+ This package contains a variety of useful plugins for Noatun, the audio and
+ video media player for KDE.  These plugins can be loaded through the plugin
+ manager in Noatun settings.
+ .
+ Highlights include an alarm clock, guessing tags from filenames, adjustable
+ playback speed, capture to wave file and displaying lyrics, plus a variety
+ of user interfaces, playlists and visualisation plugins.
+ .
+ This package is part of KDE, as a component of the KDE addons module.
+ See the 'kde' and 'kdeaddons' packages for more information.
+
+Package: kdeaddons-dbg
+Section: libdevel
+Architecture: any
+Depends: kdelibs-dbg
+Priority: extra
+Description: debugging symbols for kdeaddons
+ This package contains the debugging symbols associated with kdeaddons.
+ They will automatically be used by gdb for debugging kdeaddons-related
+ issues.

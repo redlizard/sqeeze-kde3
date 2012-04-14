@@ -1,0 +1,2349 @@
+#DPATCHLEVEL=0
+--- noatun-plugins/noatunmadness/madness.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/noatunmadness/madness.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -23,6 +23,7 @@
+ Name[gl]=Loucura
+ Name[hi]=मेडनेस
+ Name[hr]=Ludilo
++Name[ka]=სიგიჟე
+ Name[km]=ភាពឆ្កួត
+ Name[lt]=Beprotybė
+ Name[mk]=Беснило
+@@ -74,6 +75,7 @@
+ Comment[is]=Undarlegur og pirrandi mælir sem færir gluggana þína
+ Comment[it]=Uno strano e scocciante "scope" che muove le tue finestre
+ Comment[ja]=奇妙で鬱しくあなたのウィンドウを動かすスコープ
++Comment[ka]=უცნაური გამოსახულებები, რომლებიც თქვენს ფანჯრებს გადააადგილებს
+ Comment[kk]=Терезлеріңізді жылжытатын біртүрлі көрініс
+ Comment[km]= វិសាល​ដែល​រំខាន ​និង​ចំឡែក​ដែល​ផ្លាស់ទី​បង្អួច​របស់​អ្នក​
+ Comment[lt]=Keista ir erzinantis vaizdas, judinantis Jūsų langus
+--- noatun-plugins/luckytag/luckytag.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/luckytag/luckytag.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ Name[is]=Heppni merkingalesarinn
+ Name[it]=Lettore Tag Lucky
+ Name[ja]=Lucky タグリーダー
++Name[ka]=ბედნიერი ჭდის მკითხველი
+ Name[kk]=Мультимедиа файлының сипаттамаларын табу
+ Name[km]=កម្មវិធី​អាន​ស្លាក Lucky
+ Name[lt]=Sėkminga etikečių skaityklė
+@@ -53,7 +54,8 @@
+ Name[tg]=Тег аз файли мултимедиа
+ Name[tr]=Luck Etiket Okuyucu
+ Name[uk]=Читач міток Lucky
+-Name[uz]=Лаки тэг ўқувчи
++Name[uz]=Laki teg oʻquvchi
++Name[uz@cyrillic]=Лаки тэг ўқувчи
+ Name[vi]=Bộ đọc thẻ may
+ Name[xh]=Umfundi onentlahla weTag
+ Name[zh_CN]=幸运标签读取器
+@@ -86,6 +88,7 @@
+ Comment[is]=Giskar á lagamerkingar útfrá skráarheitum
+ Comment[it]=Indovina le informazioni dei tag dal nome del file
+ Comment[ja]=ファイル名からタグ情報を推測
++Comment[ka]=ჭდის ინფორმაციას ფაილის სახელიდან ხვდება
+ Comment[kk]=Мультимедиа файлының атауына жүгініп сипаттамаларын табу
+ Comment[km]=ព័ត៌មាន​ស្លាក Guesses ពី​ឈ្មោះ​ឯកសារ
+ Comment[lt]=Atspėja etiketės informaciją tiesiog iš bylos pavadinimo
+@@ -110,7 +113,8 @@
+ Comment[tg]=Гирифтани тегҳои аз файл
+ Comment[tr]=Dosya isminden etiketi bilgisini tahmin etmeye çalışır
+ Comment[uk]=Вгадує інформацію про мітку з назви файла
+-Comment[uz]=Тэг маълумотини файлнинг номидан тахмин қилиш
++Comment[uz]=Teg maʼlumotini faylning nomidan taxmin qilish
++Comment[uz@cyrillic]=Тэг маълумотини файлнинг номидан тахмин қилиш
+ Comment[vi]=Đoán thông tin thẻ từ tên tập tin
+ Comment[xh]=Iqikelela ulwazi lwe tag ukusuka kwi gama lefayile
+ Comment[zh_CN]=从文件名中猜测标签信息
+--- noatun-plugins/nexscope/nexscope.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/nexscope/nexscope.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -41,6 +41,7 @@
+ Comment[is]=Sjónræm myndbrella sem er mjög stillanleg
+ Comment[it]=Un visualizzatore ultra personalizzabile
+ Comment[ja]=超カスタマイズ可能な視覚効果
++Comment[ka]=ულტრა მორგებადი ვიზუალიზაცია
+ Comment[kk]=Баптауы бай көрінісі
+ Comment[km]=រូបភាព​មើល​ឃើញ​​ដែល​អាច​ប្ដូរ​តាម​បំណងបាន​​ច្រើន​ហួស​​ពេក
+ Comment[lt]=Ypač derinama vizualizacija
+--- noatun-plugins/wavecapture/wavecapture.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/wavecapture/wavecapture.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -28,6 +28,7 @@
+ Name[hu]=Hangfelvétel
+ Name[it]=Cattura in wav
+ Name[ja]=Wave キャプチャ
++Name[ka]=ტალღათა ჩამწერი
+ Name[km]=ចាប់​យក wave
+ Name[lt]=Wave įrašymas
+ Name[mk]=Снимање звук
+@@ -80,6 +81,7 @@
+ Comment[is]=Vista hljóð í wave skrár
+ Comment[it]=Cattura su di file wave
+ Comment[ja]=wave ファイルに保存
++Comment[ka]=ტალღის ფაილში ჩაწერა
+ Comment[kk]=Дыбысты қағып алып сақтау
+ Comment[km]=ចាប់​យក​​​​​ឯកសារ wave​
+ Comment[lt]=Užfiksuoti wave byloje
+--- noatun-plugins/alarm/wakeup.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/alarm/wakeup.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -24,6 +24,7 @@
+ Name[hi]=वेक-अप
+ Name[hr]=Buđenje
+ Name[it]=Sveglia
++Name[ka]=გაღვიძება
+ Name[kk]=Ояту
+ Name[km]=ភ្ញាក់ឡើង
+ Name[lt]=Žadintuvas
+@@ -44,7 +45,8 @@
+ Name[tg]=Бедоршавӣ
+ Name[tr]=Uyan
+ Name[uk]=Пробудження
+-Name[uz]=Уйғотиш
++Name[uz]=Uygʻotish
++Name[uz@cyrillic]=Уйғотиш
+ Name[vi]=Dậy đi
+ Name[xh]=Vuka
+ Name[zh_CN]=醒来
+@@ -78,6 +80,7 @@
+ Comment[is]=Einfaldur og stillanlegur vekjari
+ Comment[it]=Un allarme semplice e personalizzabile
+ Comment[ja]=シンプルでカスタマイズ可能なアラーム
++Comment[ka]=მარტივი მორგებადი მაღვიძარა
+ Comment[kk]=Қарапайым, бапталатын оятқыш
+ Comment[km]=សំឡេង​រោទ៍​ដែល​អាច​ប្ដូរ​តាម​បំណង​ធម្មតា​មួយ
+ Comment[lt]=Paprastas, derinamas, žadintuvas
+@@ -104,7 +107,8 @@
+ Comment[tg]=Огоҳкунаки оддӣ бо танзимотҳои гуногун
+ Comment[tr]=Basit, ayarlanabilir bir alarm
+ Comment[uk]=Простий будильник з різноманітними параметрами
+-Comment[uz]=Оддий огоҳлантиргич
++Comment[uz]=Oddiy ogohlantirgich
++Comment[uz@cyrillic]=Оддий огоҳлантиргич
+ Comment[vi]=Đồng hồ báo thức đơn giản có thể tùy chỉnh
+ Comment[xh]=I alamu elula, yokwenza into ngokwemfuneko
+ Comment[zh_CN]=一个简单的可定制的闹钟
+--- noatun-plugins/charlatan/charlatanui.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/charlatan/charlatanui.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -46,6 +46,7 @@
+ Comment[is]=Viðmót dauða mannsins
+ Comment[it]=L'interfaccia per l'uomo duro
+ Comment[ja]=dead man のインターフェース
++Comment[ka]=მკვდრის ინტერფეისი
+ Comment[kk]=Charlatan интерфейсі
+ Comment[km]=ចំណុច​ប្រទាក់​របស់ man ស្លាប់
+ Comment[lt]=Mirusio žmogaus sąsaja
+--- noatun-plugins/alsaplayer/alsaplayerui.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/alsaplayer/alsaplayerui.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -20,7 +20,8 @@
+ Name[sv]=Alsaplayer
+ Name[ta]=Alsa இயக்கி
+ Name[tr]=Alsa Çalıcı
+-Name[uz]=Alsa плейер
++Name[uz]=Alsa pleyer
++Name[uz@cyrillic]=Alsa плейер
+ Name[xh]=Umdlali weAlsa
+ Name[zh_CN]=Alsa 播放器
+ Comment=AlsaPlayer UI clone
+@@ -50,6 +51,7 @@
+ Comment[is]=AlsaPlayer eftirlíking
+ Comment[it]=Clone UI di AlsaPlayer
+ Comment[ja]=AlsaPlayer UI クローン
++Comment[ka]=AlsaPlayer UI კლონი
+ Comment[kk]=AlsaPlayer интерфейсі
+ Comment[km]=AlsaPlayer ក្លូន UI
+ Comment[lt]=AlsaPlayer naudotojo sąsajos klonas
+@@ -74,7 +76,8 @@
+ Comment[tg]=Интерфейси дигар ба AlsaPlayer
+ Comment[tr]=AlsaPlayer arayüzü
+ Comment[uk]=Дублікат зовнішнього інтерфейсу AlsaPlayer
+-Comment[uz]=Alsa плейер учун график интерфейс
++Comment[uz]=Alsa pleyer uchun grafik interfeys
++Comment[uz@cyrillic]=Alsa плейер учун график интерфейс
+ Comment[vi]=Bộ nhái giao diện AlsaPlayer
+ Comment[xh]=Umdlali weAlsa Indlela yokwenza into efana nenye ye UI
+ Comment[zh_CN]=Alsa 播放器的界面复制品
+--- noatun-plugins/blurscope/blurscope.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/blurscope/blurscope.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -44,6 +44,7 @@
+ Comment[hu]=Elhalványuló monoszkóp
+ Comment[is]=Falleg monoscope myndbrella
+ Comment[ja]=感じの良いフェードするモノスコープ
++Comment[ka]=სიმპატიური ჩამოშლადი monoscope
+ Comment[kk]=Көркем эффект моноскопы
+ Comment[km]=ម៉ូណូស្កូប​លិច​បន្តិច​ម្ដងៗ​ដ៏ស្អាតអាត​
+ Comment[lt]=Gražus, lėtai išnykstantis monoskopas
+--- noatun-plugins/tyler/tyler.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/tyler/tyler.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -39,6 +39,7 @@
+ Comment[is]=Flutt úr Infinity frá XMMS
+ Comment[it]=Preso da Infinity di XMMS
+ Comment[ja]=XMMS の Infinity から移植
++Comment[ka]=XMMS-იდან გადმოტანილი უსასრულობის გამოსახულება
+ Comment[kk]=XMMS Infinity-ден көшірілген көрініс
+ Comment[km]=បាន​ការពារ​ពី​អនន្តរភាព​ពី XMMS
+ Comment[lt]=Perkeltas iš Infinity iš XMMS
+--- noatun-plugins/oblique/oblique.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/oblique/oblique.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -44,6 +44,7 @@
+ Comment[is]=Sjálfvirkur lagalisti
+ Comment[it]=Raccoglie automaticamente la lista di selezione
+ Comment[ja]=プレイリストの自動照合
++Comment[ka]=სიმღერათა სიის ავტო შეკუნშვა
+ Comment[kk]=Автосұрыпталатың орындау тізімі
+ Comment[km]=តម្រៀប​បញ្ជី​ចាក់​ដោយ​ស្វ័យ​ប្រវត្តិ​
+ Comment[lt]=Automatiškai besikaupiantis gaidaraštis
+--- noatun-plugins/ffrs/ffrs.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/ffrs/ffrs.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[hr]=Francuska Legija stranaca
+ Name[is]=Franska útlendingasveitin
+ Name[it]=Legione Straniera Francese
++Name[ka]=ფრანგული საზღვარგარეთ რეგიონი
+ Name[kk]=Францияның шетел өлкесі
+ Name[km]=តំបន់​​ខាង​ក្រៅ​​ ភាសាបារាំង
+ Name[lt]=Prancūzų užsieniečių regionas
+@@ -79,6 +80,7 @@
+ Comment[hu]=Lebegő monoszkópok
+ Comment[is]=Fljótandi mælar
+ Comment[it]=Floating Scopes
++Comment[ka]=მოტივტივე მრუდები
+ Comment[kk]=Қалқымалы көрінісі
+ Comment[km]=វិសាល​ភាព​​​អណ្ដែត
+ Comment[lt]=Plaukiojančios kreivės
+--- noatun-plugins/lyrics/lyrics.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/lyrics/lyrics.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[hi]=लिरिक्स
+ Name[hr]=Tekstovi pjesama
+ Name[it]=Testi
++Name[ka]=სიმღერის ტექსტები
+ Name[km]=អត្ថបទ​ចម្រៀង
+ Name[lt]=Lyrika
+ Name[mk]=Стихови
+@@ -49,7 +50,8 @@
+ Name[tg]=Матни сурудҳо
+ Name[tr]=Şarkı Sözleri
+ Name[uk]=Текст пісні
+-Name[uz]=Қўшиқнинг сўзлари
++Name[uz]=Qoʻshiqning soʻzlari
++Name[uz@cyrillic]=Қўшиқнинг сўзлари
+ Name[vi]=Lời nhạc
+ Name[xh]=Amazwi
+ Name[zh_CN]=歌词
+@@ -82,6 +84,7 @@
+ Comment[is]=Sýnir texta lagsins
+ Comment[it]=Mostra il testo della canzone corrente
+ Comment[ja]=現在の曲の歌詞を表示
++Comment[ka]=მიმდინარე სიმღერის ტექსტს აჩვენებს
+ Comment[kk]=Орындалып жатқан әннің сөздерін көрсету
+ Comment[km]=បង្ហាញ​អត្ថបទ​ចម្រៀង​សម្រាប់​​បទចម្រៀង​បច្ចុប្បន្ន
+ Comment[lt]=Rodo esamos dainos lyriką
+@@ -106,7 +109,8 @@
+ Comment[tg]=Нишон додани матни суруд дар вақти ба кор андохтани ӯ
+ Comment[tr]=Geçerli şarkı için sözleri gösterir
+ Comment[uk]=Відображення тексту поточної пісні
+-Comment[uz]=Жорий қўшиқнинг сўзларини кўрсатиш
++Comment[uz]=Joriy qoʻshiqning soʻzlarini koʻrsatish
++Comment[uz@cyrillic]=Жорий қўшиқнинг сўзларини кўрсатиш
+ Comment[vi]=Hiển thị lời bài hát hiện thời
+ Comment[xh]=Bonisa amazwi engoma ekhoyo
+ Comment[zh_CN]=显示当前歌曲的歌词
+--- noatun-plugins/synaescope/synaescope.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/synaescope/synaescope.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -48,6 +48,7 @@
+ Comment[is]=Sjónræn brella fyrir Noatun
+ Comment[it]=Visualizzazione di Noatun
+ Comment[ja]=Noatun の視覚効果
++Comment[ka]=Noatun ვიზუალიზაცია
+ Comment[kk]=Noatun визуализациясы
+ Comment[km]= រូបភាព​មើល​ឃើញ​របស់ Noatun
+ Comment[lt]=Noatun vizualizacija
+--- noatun-plugins/tippercanoe/tippecanoe.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/tippercanoe/tippecanoe.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -42,6 +42,7 @@
+ Comment[is]=Sjónræn brella sem hægt er að leika sér með lengi.
+ Comment[it]=Una visualizzazione con cui puoi giocare per ore
+ Comment[ja]=何時間でも遊べる視覚効果
++Comment[ka]=ვიზუალიზაცია, რომლითაც საათობით შეგიძლიათ თამაში
+ Comment[kk]=Арбайтың көрініс.
+ Comment[km]= រូបភាព​មើល​ឃើញ​មួយ ដែល​​អ្នក​អាច​ចាក់​​បាន​ច្រើន​ម៉ោង ។
+ Comment[lt]=Vizualizacija, su kuria Jūs galite žaisti ištisas valandas.
+--- noatun-plugins/dub/dub/dub.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/dub/dub/dub.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -37,6 +37,7 @@
+ Comment[is]=Tól til að spila Dub lagalista
+ Comment[it]=Plugin per le Playlist di Dub
+ Comment[ja]=Dub プレイリスト プラグイン
++Comment[ka]=Dub სიმღერათა სიის მოდული
+ Comment[kk]=Dub орындау тізімінің плагин модулі
+ Comment[km]=ដាក់​ឈ្មោះ​កម្មវិធី​ជំនួយ​បញ្ជី​ចាក់
+ Comment[lt]=Dub gaidaraščio priedas
+@@ -60,7 +61,8 @@
+ Comment[tg]=Модули рӯйхати баровардҳои Dub
+ Comment[tr]=Dub çalma listesi eklentisi
+ Comment[uk]=Втулок списку композицій Dub
+-Comment[uz]=Dub ўйнаш рўйхати плагини
++Comment[uz]=Dub oʻynash roʻyxati plagini
++Comment[uz@cyrillic]=Dub ўйнаш рўйхати плагини
+ Comment[vi]=Bổ sung danh mục nhạc Dub
+ Comment[zh_CN]=Dub 播放列表插件
+ Comment[zh_TW]=Dub 播放清單外掛程式
+--- noatun-plugins/pitchablespeed/pitchablespeed.plugin	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ noatun-plugins/pitchablespeed/pitchablespeed.plugin	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -28,6 +28,7 @@
+ Name[hu]=Változtatható lejátszási sebesség
+ Name[is]=Stillanlegur afspilunarhraði
+ Name[it]=Modificatore di velocità di riproduzione
++Name[ka]=რეგულირებადი დაკვრის სიჩქარე
+ Name[kk]=Орындау жылдамдығын басқару
+ Name[km]=ល្បឿន​ចាក់​ដែល​អាច​កំណត់​កម្ពស់​​សំឡេង​​បាន
+ Name[lt]=Keičiamo tono grojimo greitis
+@@ -81,6 +82,7 @@
+ Comment[is]=Gerir afspilunarhraðan stillanlegan með rennislá
+ Comment[it]=Permette di modificare la velocità di riproduzione tramite una barra
+ Comment[ja]=再生スピードをスライダーで調節させる
++Comment[ka]=საშუალებას იძლევა დაკვრის სიჩქარე სოსიით შეცვალოთ
+ Comment[kk]=Орындау жылдамдығын жүгірткі арқылы басқару
+ Comment[km]=ធ្វើ​ឲ្យ​ល្បឿន​ការ​ចាក់អាច​លៃតម្រូវ​​បាន​ដោយ​ប្រើ​​គ្រាប់​រំកិល
+ Comment[lt]=Leidžia keisti grojimo greitį su šliaužikliu
+--- kate/xmltools/katexmltools.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/xmltools/katexmltools.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -30,6 +30,7 @@
+ Name[is]=Kate XML taga-lokun
+ Name[it]=Completamento di XML di Kate
+ Name[ja]=Kate XML 補完
++Name[ka]=XML დასრულება
+ Name[kk]=Kate XML толтыру
+ Name[km]=ការ​បំពេញ​របស់ Kate XML
+ Name[lt]=Kate XML pabaigimas
+@@ -57,7 +58,8 @@
+ Name[th]=ปลั๊กอินทำ XML ให้สมบูรณ์ของ Kate
+ Name[tr]=Kate XML Tamamlama
+ Name[uk]=Доповнення XML для Kate
+-Name[uz]=Kate учун XML тўлдириш
++Name[uz]=Kate uchun XML toʻldirish
++Name[uz@cyrillic]=Kate учун XML тўлдириш
+ Name[vi]=Gõ xong XML Kate
+ Name[xh]=Ugqityo lwe Kate XML
+ Name[zh_CN]=Kate XML 补齐
+@@ -91,6 +93,7 @@
+ Comment[is]=Sýnir XML stök, eiginleika,  gildi og einindi sem leyfð eru af DTD
+ Comment[it]=Elenca gli elementi XML, gli attributi, i valori degli attributi e le entità permesse dal DTD
+ Comment[ja]=DTD で許可されている XML のエレメント、アトリビュートおよびその値やエンティティを表示します
++Comment[ka]=ჩამოთვლის XML ელემენტებს, ატრიბუტებს, ატრიბუტთა მნიშვნელობებს და DTD-ს მიერ ნებადართულ ელემენტებს
+ Comment[kk]=DTD анықтаған XML элементтер, атрибуттер, атрибуттің мәндерін, жазуларын тізімдеу
+ Comment[km]=រាយ​ធាតុ XML គុណលក្ខណៈ តម្លៃ​គុណលក្ខណៈ និង​ធាតុ​​​បាន​អនុញ្ញាត​ដោយ DTD
+ Comment[lt]=Pateikia XML elementus, atributus, atributų reikšmes ir esybes (entities), leistas DTD
+--- kate/htmltools/katehtmltools.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/htmltools/katehtmltools.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -33,6 +33,7 @@
+ Name[is]=Kate HTML tól
+ Name[it]=Strumenti HTML di Kate
+ Name[ja]=Kate HTML ツール
++Name[ka]=Kate HTML ხელსაწყოები
+ Name[kk]=Kate HTML құралдары
+ Name[km]=ឧបករណ៍ Kate HTML
+ Name[lt]=Kate HTML įrankiai
+@@ -61,7 +62,8 @@
+ Name[th]=เครื่องมือ HTML ของ Kate
+ Name[tr]=Kate HTML Araçları
+ Name[uk]=Засоби HTML для Kate
+-Name[uz]=Kate HTML воситалари
++Name[uz]=Kate HTML vositalari
++Name[uz@cyrillic]=Kate HTML воситалари
+ Name[ven]=Kate HTML Zwishumiswa
+ Name[vi]=Công cụ HTML Kate
+ Name[xh]=Izixhobo ze Kate HTML 
+@@ -98,6 +100,7 @@
+ Comment[is]=Hjálpar til við að setja HTML merki i texta
+ Comment[it]=Inserimento facilitato dei tag HTML
+ Comment[ja]=HTML タグ挿入を簡単にします
++Comment[ka]=HTML ჭდეების გამიზნული ჩადგმა
+ Comment[kk]=HTML тегтерін енгізуін жеңілдету
+ Comment[km]=ការ​បញ្ចូល​ដែល​បាន​​​សម្រួល​របស់​​ស្លាក HTML
+ Comment[lt]=Palengvintas HTML tagų įdėjimas
+--- kate/scripts/html-tidy.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/scripts/html-tidy.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -8,6 +8,7 @@
+ Name[fa]=Tidy زنگام
+ Name[hi]=एचटीएमएल टाइडी
+ Name[hr]=HTML preuređivanje
++Name[ka]=HTML გაწმენდა
+ Name[nds]=HTML-Tidy
+ Name[ne]=एचटीएमएल स्पष्टता
+ Name[pl]=Sprawdzenie poprawności HTML
+@@ -43,6 +44,7 @@
+ Comment[is]=Staðfestir núverandi skjal með HTML Tidy
+ Comment[it]=Convalida il documento attuale tramite HTML Tidy
+ Comment[ja]=HTML Tidy で現在のドキュメントを検証します
++Comment[ka]=მიმდინარე დოკუმენტს HTML-ს გაწმენდით ამოწმებს
+ Comment[kk]=Назардағы құжатты HTML Tidy дегенге сәйкестігін тексереді
+ Comment[km]=ធ្វើ​ឯកសារ​បច្ចុប្បន្ន​​មាន​សុពល​ភាព​តាមរយៈ HTML Tidy
+ Comment[lt]=Patikrina dabartinį dokumentą panaudojant HTML Tidy
+@@ -67,7 +69,8 @@
+ Comment[tg]=Саҳифаҳои HTML -ро бо мувофиқати ҷараён дар стандарти мувофиқат, тафтиш мекунад
+ Comment[tr]=HTML Tidy yardımıyla 
+ Comment[uk]=Перевіряє відповідність даного документа стандартам за допомогою HTML Tidy
+-Comment[uz]=Ушбу ҳужжатни HTML-андозасига мослигини текшириш
++Comment[uz]=Ushbu hujjatni HTML-andozasiga mosligini tekshirish
++Comment[uz@cyrillic]=Ушбу ҳужжатни HTML-андозасига мослигини текшириш
+ Comment[vi]=Thẩm tra tài liệu hiện thời bằng Làm sạch HTML
+ Comment[zh_CN]=通过 HTML Tidy 校验当前文档
+ Comment[zh_TW]=透過 HTML Tidy 驗證目前的文件
+--- kate/tabbarextension/plugin_katetabbarextension.h	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/tabbarextension/plugin_katetabbarextension.h	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -41,7 +41,7 @@
+ 
+ #include <qwidget.h>
+ #include <qpushbutton.h>
+-#include <qptrlist.h> 
++#include <qptrlist.h>
+ 
+ class QBoxLayout;
+ class QCheckBox;
+@@ -55,7 +55,7 @@
+   public:
+   MyPtrList() { QPtrList<KateTabBarButton>::QPtrList(); }
+ 
+-  virtual int compareItems ( QPtrCollection::Item item1_, QPtrCollection::Item item2_ ); 
++  virtual int compareItems ( QPtrCollection::Item item1_, QPtrCollection::Item item2_ );
+ };
+ 
+ class KatePluginFactory : public KLibFactory
+@@ -80,7 +80,7 @@
+ class KateTabBarButton: public QPushButton
+ {
+   Q_OBJECT
+-  
++
+   public:
+     /**
+      * constructor
+@@ -91,7 +91,7 @@
+      */
+     KateTabBarButton(Kate::ViewManager* pViewManager, Kate::Document *pDoc,
+         QWidget* parent = 0, const char * name = 0);
+-    
++
+     /**
+      * standard destructor (emtpy)
+      */
+@@ -113,7 +113,7 @@
+      * (usually red or black)
+      */
+     void triggerModified();
+-    
++
+     /**
+      * dirty flag indicates whether the file was modified on disk
+      * @param d if true, a small warning icon appears
+@@ -153,7 +153,7 @@
+ class KateTabBarExtension : public QWidget
+ {
+   Q_OBJECT
+-  
++
+   public:
+     /**
+      * constructor
+@@ -231,7 +231,7 @@
+      * @param doc the document
+      */
+     void slotNameChanged (Kate::Document *doc);
+-    
++
+     /**
+      * called when the active view changes
+      */
+@@ -316,10 +316,7 @@
+ 
+   private:
+     QPtrList<class PluginView> m_views;
+-    
+-    /** the tabbar shown in the tool bar */
+-    KateTabBarExtension* m_tabbar;
+     KConfig* pConfig;
+ };
+-  
++
+ #endif // _PLUGIN_TABBAREXTENSION_H_
+--- kate/tabbarextension/katetabbarextension.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/tabbarextension/katetabbarextension.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -26,6 +26,7 @@
+ Name[is]=Kate flipaviðbót
+ Name[it]=Estensione di Kate per la barra delle linguette
+ Name[ja]=Kate タブバーエクステンション
++Name[ka]=Kate ჩანართთა ზოლის გაფართოება
+ Name[kk]=Kate койындылар панелі
+ Name[km]=ផ្នែក​បន្ថែម​របារ​ថេប​របស់ Kate
+ Name[lt]=Kate kortelių juostos plėtinys
+@@ -77,6 +78,7 @@
+ Comment[is]=Bætir við flipaslá í aðalglugga Kate
+ Comment[it]=Aggiunge una barra delle linguette alla finestra principale di Kate
+ Comment[ja]=Kate のメインウインドウにタブバーを追加します
++Comment[ka]=Kateის მთავარ ფანჯარას ამატებს ჩანართთა ზოლს
+ Comment[kk]=Kate негізгі терезесіне қойындылар панелін қосады
+ Comment[km]=បន្ថែម​របារ​ថេប​ទៅ​បង្អួច​មេ​របស់ Kate
+ Comment[lt]=Įdeda kortelių juostą į Kate langą
+--- kate/tabbarextension/plugin_katetabbarextension.cpp	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/tabbarextension/plugin_katetabbarextension.cpp	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -50,6 +50,7 @@
+ 
+   public:
+     Kate::MainWindow *win;
++    KateTabBarExtension* tabbar;
+ };
+ 
+ extern "C"
+@@ -83,7 +84,6 @@
+ KatePluginTabBarExtension::KatePluginTabBarExtension(
+     QObject* parent, const char* name )
+   : Kate::Plugin ( (Kate::Application*)parent, name ),
+-    m_tabbar (0),
+     pConfig(new KConfig("katetabbarextensionpluginrc"))
+ {
+   pConfig->setGroup("global");
+@@ -91,18 +91,12 @@
+ 
+ KatePluginTabBarExtension::~KatePluginTabBarExtension()
+ {
+-  if (m_tabbar)
++  while (m_views.count() > 0)
+   {
+-    pConfig->writeEntry("horizontal orientation",
+-        m_tabbar->orientation()==Qt::Horizontal?true:false);
+-    pConfig->writeEntry("sort", m_tabbar->sortByName());
+-    pConfig->sync();
++      removeView(m_views.at(0)->win);
+   }
+ 
+   delete pConfig;
+-  
+-// very important: delete tabbar! The tabbar itself deletes all tabbarButtons
+-  delete m_tabbar;
+ }
+ 
+ void KatePluginTabBarExtension::addView(Kate::MainWindow *win)
+@@ -112,10 +106,10 @@
+   bool bHoriz = pConfig->readBoolEntry("horizontal orientation", true);
+   bool sort   = pConfig->readBoolEntry("sort", true);
+ 
+-  m_tabbar = new KateTabBarExtension( application()->documentManager(),
++  view->tabbar = new KateTabBarExtension( application()->documentManager(),
+       win, bHoriz, sort, 0, "tabs_hbox");
+ 
+-  new KWidgetAction(m_tabbar, "tab_bar_widget",
++  new KWidgetAction(view->tabbar, "tab_bar_widget",
+       KShortcut::null(), 0, 0, view->actionCollection(), "tabbar_widget");
+ 
+   view->setInstance (new KInstance("kate"));
+@@ -129,7 +123,7 @@
+       (win->guiFactory()->container("tabbarExtensionToolBar", view));
+   if (toolbar) {
+     connect(toolbar, SIGNAL( orientationChanged(Orientation) ),
+-        m_tabbar, SLOT( slotMoved(Orientation) ));
++        view->tabbar, SLOT( slotMoved(Orientation) ));
+   }
+ }
+ 
+@@ -139,8 +133,19 @@
+     if (m_views.at(z)->win == win)
+     {
+       PluginView *view = m_views.at(z);
++
++      // the last tabbar, save options
++      if (m_views.count() == 1)
++      {
++        pConfig->writeEntry("horizontal orientation",
++            view->tabbar->orientation()==Qt::Horizontal?true:false);
++        pConfig->writeEntry("sort", view->tabbar->sortByName());
++        pConfig->sync();
++      }
++
+       m_views.remove (view);
+       win->guiFactory()->removeClient (view);
++      delete view->tabbar;
+       delete view;
+     }
+   }
+@@ -158,12 +163,12 @@
+ 
+ void KatePluginTabBarExtension::initConfigPage( KateTabBarExtensionConfigPage* p )
+ {
+-  p->pSortAlpha->setChecked(m_tabbar->sortByName());
++  p->pSortAlpha->setChecked(m_views.at(0)->tabbar->sortByName());
+ }
+ 
+ void KatePluginTabBarExtension::applyConfig( KateTabBarExtensionConfigPage* p )
+ {
+-  m_tabbar->setSortByName(p->pSortAlpha->isChecked());
++  m_views.at(0)->tabbar->setSortByName(p->pSortAlpha->isChecked());
+   // sync m_config in destructor
+ }
+ // END KatePluginTabBarExtension
+--- kate/kjswrapper/samples/katekjsconsolewindow.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/kjswrapper/samples/katekjsconsolewindow.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -28,6 +28,7 @@
+ Name[is]=Kate Javascript skjáhermir
+ Name[it]=Finestra console JavaScript di Kate
+ Name[ja]=Kate Javascript コンソールウィンドウ
++Name[ka]=Kate Javascript კონსოლის ფანჯარა
+ Name[kk]=Kate Javascript консоль терезесі
+ Name[km]=បង្អួច​កុងសូល​របស់ Kate Javascript
+ Name[mk]=прозорец со Javascript-конзола за Кате
+--- kate/kjswrapper/samples/katekjsselect.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/kjswrapper/samples/katekjsselect.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -25,6 +25,7 @@
+ Name[is]=Velja minnstu umluktu blokkina
+ Name[it]=Seleziona il più piccolo blocco
+ Name[ja]=囲っている最も内側のブロックを選択します
++Name[ka]=უმცირესი დახურვის ბლოკის ამორჩევა
+ Name[kk]=Ең шағын блокты таңдау
+ Name[km]=ជ្រើស​ប្លុក​ដែល​បាន​ព័ទ្ធ​ជុំវិញ​​​តូច​បំផុត
+ Name[lt]=Žymėti mažiausią bloką
+--- kate/kjswrapper/samples/katekjstest1.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/kjswrapper/samples/katekjstest1.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -62,6 +62,7 @@
+ Comment[is]=Prufa fyrir KJS eininguna
+ Comment[it]=Test per il wrapper KJS
+ Comment[ja]=KJS ラッパーのテスト
++Comment[ka]=KJS Wrapper-ის შემოწმება
+ Comment[kk]=KJS Wrapper сынағы
+ Comment[km]=សាកល្បង​សម្រាប់​​កម្មវិធី​រុំ​ KJS
+ Comment[lt]=Bandymas KJS įdėklui
+--- kate/textfilter/katetextfilter.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/textfilter/katetextfilter.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -85,6 +85,7 @@
+ Comment[is]=Einföld textasíun
+ Comment[it]=Per un facile filtraggio dei testi
+ Comment[ja]=簡単にテキストにフィルタをかけます
++Comment[ka]=ადვილი ტექსტის მფილტრავი
+ Comment[kk]=Ыңғайлы мәтінді сүзгілеуі
+ Comment[km]=ការ​ត្រង​អត្ថបទ​ដ៏​ងាយ​ស្រួល
+ Comment[lt]=Paprastas teksto filtravimas
+--- kate/cppsymbolviewer/katecppsymbolviewer.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/cppsymbolviewer/katecppsymbolviewer.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ Name[is]=Kate C/C++ táknabirtir
+ Name[it]=Visualizzatore Kate per simboli C/C++
+ Name[ja]=Kate C/C++ シンボルビューア
++Name[ka]=Kate C/C++სიმბოლოთა მხილველი
+ Name[kk]=Kate C/C++ карап-шығушысы
+ Name[km]=កម្មវិធី​មើល​និមិត្ត​សញ្ញា Kate C/C++
+ Name[lt]=Kate C/C++ simbolių žiūryklė
+@@ -84,6 +85,7 @@
+ Comment[is]=Þetta íforrit sækir og birtir C/C++ tákn úr frumkóða
+ Comment[it]=Questo plugin estrae e mostra simboli C/C++ dal sorgente
+ Comment[ja]=ソースから C/C++ のシンボルを抽出して表示します
++Comment[ka]=ეს მოდული წყაროდან იღებს და აჩვენებს C/C++ სიმბოლოებს
+ Comment[kk]=C/C++ идентификаторларды мәтінде бөліп көрсететін плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​នេះស្រង់ចេញ ​និង​បង្ហាញ​និមិត្ត​សញ្ញា C/C++ ពី​ប្រភព
+ Comment[lt]=Šis priedas iš šaltinių ištraukia ir parodo C/C++ simbolius
+--- kate/modeline/katemodeline.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/modeline/katemodeline.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ Name[is]=Kate 'Modeline' viðbót
+ Name[it]=Plugin Modeline di Kate
+ Name[ja]=Kate Modeline プラグイン
++Name[ka]=Kate Modeline მოდული
+ Name[kk]=Kate Modeline плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ​​របៀប​បន្ទាត់ Kate
+ Name[lt]=Kate Modeline priedas
+@@ -87,6 +88,7 @@
+ Comment[is]=Setur stillingar skjals byggt á vim eða emacs 'modeline'
+ Comment[it]=Seleziona le impostazioni dei documenti basandosi sui "modeline" di emacs o vim
+ Comment[ja]=vim や emacs のモード行によるドキュメント設定
++Comment[ka]=vim-ზე ან emacs-ის modeline-ზე დაფუძნებულ პარამეტრებს ანიჭებს დოკუმენტს
+ Comment[kk]=vim не emacs modeline негіздеп, құжаттың параметрлерін орнатады
+ Comment[km]=កំណត់​ការ​កំណត់​​ឯកសារ​ដោយ​​ផ្អែក​លើ​របៀប​បន្ទាត់របស់ vim ឬemacs
+ Comment[lt]=Sukuria dokumento nustatymus pagal vim ar emacs dokumento komandas
+--- kate/filetemplates/plugin/katefiletemplates.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/filetemplates/plugin/katefiletemplates.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[is]=Kate skráasniðmát
+ Name[it]=File template di Kate
+ Name[ja]=Kate ファイルテンプレート
++Name[ka]=Kate ფაილის შაბლონები
+ Name[kk]=Kate файл үлгілері
+ Name[km]=ពុម្ព​ឯកសារ Kate​
+ Name[lt]=Kate bylų šablonai
+@@ -51,7 +52,8 @@
+ Name[tg]=Нусхаҳои Kate
+ Name[tr]=Kate Dosya Şablonları
+ Name[uk]=Шаблони файлів для Kate
+-Name[uz]=Kate файл намуналари
++Name[uz]=Kate fayl namunalari
++Name[uz@cyrillic]=Kate файл намуналари
+ Name[vi]=Mẫu tập tin Kate
+ Name[zh_CN]=Kate 文件模板
+ Name[zh_TW]=Kate 檔案樣本
+@@ -79,6 +81,7 @@
+ Comment[is]=Búa til nýjar skrár úr sniðmátum í kate ritlinum
+ Comment[it]=Crea nuovi file dai template nell'editor di testi di Kate
+ Comment[ja]=テンプレートから新しいファイルを作成します
++Comment[ka]=ახალი ფაილების შექმნა Kate ტექსტური რედაქტორიდან
+ Comment[kk]=Kate мәтін редакторында үлгілер бойынша жаңа файлдарды құру
+ Comment[km]=បង្កើត​ឯកសារ​ថ្មី​ចេញ​ពី​ពុម្ព​នៅ​ក្នុង​កម្មវិធី​​និពន្ធ​​អត្ថបទ​របស់ Kate
+ Comment[lt]=Kurkite naujas bylas iš Kate teksto rengyklės šablonų
+@@ -102,7 +105,8 @@
+ Comment[tg]=Эҷод кардани файлҳои нав аз нусхаҳо ба Kate 
+ Comment[tr]=Kate metin düzenleyicide hazır şablonlardan dosya oluşturma
+ Comment[uk]=Створення нових файлів з шаблонів в текстовому редакторі Kate
+-Comment[uz]=Намуналардан Kate таҳрирчида файл яратиш
++Comment[uz]=Namunalardan Kate tahrirchida fayl yaratish
++Comment[uz@cyrillic]=Намуналардан Kate таҳрирчида файл яратиш
+ Comment[vi]=Tạo tập tin mới từ mẫu trong trình soạn thảo văn bản Kate
+ Comment[zh_CN]=在 Kate 文本编辑器中根据模板创建新文件
+ Comment[zh_TW]=在 Kate 文字編輯器中從樣本建立新檔案
+--- kate/xmlcheck/katexmlcheck.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/xmlcheck/katexmlcheck.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -28,6 +28,7 @@
+ Name[is]=Kate XML villuleit
+ Name[it]=Validazione XML di Kate
+ Name[ja]=Kate XML 検証
++Name[ka]=Kate XML დამმოწმებელი
+ Name[kk]=Kate XML тексеруі
+ Name[km]=សុពល​កម្ម​របស់ Kate XML
+ Name[lt]=Kate XML tikrinimas
+@@ -54,7 +55,8 @@
+ Name[tg]=Тафтиши XML дар Kate
+ Name[tr]=Kate XML Denetleme
+ Name[uk]=Перевірка XML для Kate
+-Name[uz]=Kate XML текшириш
++Name[uz]=Kate XML tekshirish
++Name[uz@cyrillic]=Kate XML текшириш
+ Name[vi]=Thẩm tra XML Kate
+ Name[xh]=Uvavanyo lwesiqiniseko se Kate XML
+ Name[zh_CN]=Kate XML 校验
+@@ -87,6 +89,7 @@
+ Comment[is]=Villuleitar XML skrár með xmllint
+ Comment[it]=Valida i file XML usando xmllint
+ Comment[ja]=xmllint で XML ファイルを検証します
++Comment[ka]=XML ფაილებს xmllint-ით ამოწმებს
+ Comment[kk]=XML файлдарды xmllint көмегімен тексеру
+ Comment[km]=ធ្វើឲ្យ​​ឯកសារ XML មាន​សុពល​ភាព​ដោយ​ប្រើ xmllint
+ Comment[lt]=Tikrina XML bylas naudojant xmllint
+@@ -111,7 +114,8 @@
+ Comment[tg]=Тафтиши дурустии XML бо истифодабарии xmllint
+ Comment[tr]=xmllint kullanarak XML dosyalarını denetler
+ Comment[uk]=Перевіряє файли XML за допомогою xmlinit
+-Comment[uz]=Xmllint ёрдамида XML-файлларни текшириш
++Comment[uz]=Xmllint yordamida XML-fayllarni tekshirish
++Comment[uz@cyrillic]=Xmllint ёрдамида XML-файлларни текшириш
+ Comment[vi]=Thẩm tra tập tin XML bằng xmllint
+ Comment[xh]=Ivavanya isiqiniseko sefayile se XML isebenzisa ixmllint
+ Comment[zh_CN]=使用 XMLLINT 来校验 XML 文件
+--- kate/filelistloader/katefll_plugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/filelistloader/katefll_plugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -30,6 +30,7 @@
+ Name[is]=Kate skráarlistar
+ Name[it]=Caricatore di Liste di File (FLL) di Kate
+ Name[ja]=Kate ファイルリストローダ
++Name[ka]=Kate ფაილთა სიის ჩამტვირთავი
+ Name[kk]=Kate файл тізімін жүктеуіші
+ Name[km]=កម្មវិធី​ផ្ទុក​បញ្ជី​ឯកសារ​របស់ Kate
+ Name[lt]=Kate bylų sąrašo pakrovėjas
+@@ -56,7 +57,8 @@
+ Name[tg]=Пурборкунандаи рӯйхати файлҳои Kate 
+ Name[tr]=Kate Dosya Listesi Yükleyici
+ Name[uk]=Завантажувач списку файлів Kate
+-Name[uz]=Kate файллар рўйхатини юкловчиси
++Name[uz]=Kate fayllar roʻyxatini yuklovchisi
++Name[uz@cyrillic]=Kate файллар рўйхатини юкловчиси
+ Name[vi]=Bộ nạp danh sách tập tin Kate
+ Name[xh]=Umlayishi Woluhlu Lwefayile ye Kate
+ Name[zh_CN]=Kate 文件列表载入器
+@@ -89,6 +91,7 @@
+ Comment[is]=Geyma skráarlista Kate á diski
+ Comment[it]=Salva la lista di file di Kate su disco
+ Comment[ja]=Kate のファイルリストをディスクに保存します
++Comment[ka]=ინახავს დისკზე Kate-ის ფაილთა სიას
+ Comment[kk]=Kate файлдар тізімін дискіде сақтау
+ Comment[km]=​ទុក​បញ្ជី​ឯកសារ​របស់ Kate នៅ​ក្នុង​​ថាស
+ Comment[lt]=Išsaugoja Kate bylų sąrašą diske
+@@ -114,7 +117,8 @@
+ Comment[tg]=Захира кардани рӯйхати файлҳои Kate ба диск
+ Comment[tr]=Kate'in dosya listesini diske kaydeder
+ Comment[uk]=Запис списку файлів Kate на диск
+-Comment[uz]=Kate файллар рўйхатини дискда сақлаш
++Comment[uz]=Kate fayllar roʻyxatini diskda saqlash
++Comment[uz@cyrillic]=Kate файллар рўйхатини дискда сақлаш
+ Comment[vi]=Cất giữ danh sách tập tin của Kate trên đĩa
+ Comment[xh]=Gcina uluhlu lodweliso lwefayile ye Kate kwi disc
+ Comment[zh_CN]=在磁盘上存储 Kate 的文件列表
+--- kate/filelistloader/katefll.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/filelistloader/katefll.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ GenericName[is]=Textaritill /FLL
+ GenericName[it]=Editor di testi /FLL
+ GenericName[ja]=テキストエディタ/FLL
++GenericName[ka]=ტექსტის რედაქტორი /FLL
+ GenericName[kk]=Мәтін редакторы/FLL
+ GenericName[km]=កម្មវិធី​និពន្ធ /FLL
+ GenericName[lt]=Teksto redaktorius /FLL
+--- kate/filelistloader/katefll_initplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/filelistloader/katefll_initplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -26,6 +26,7 @@
+ Name[is]=Kate FLL ræsiviðbætur
+ Name[it]=Plugin di inizializzazione di Kate FLL
+ Name[ja]=Kate FLL 初期化プラグイン
++Name[ka]=Kate FLL Init მოდული
+ Name[kk]=Kate FLL инициализациялау плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ Kate FLL Init
+ Name[lt]=Kate FLL Init priedas
+@@ -80,6 +81,7 @@
+ Comment[is]=Frumstillir opnar skrár Kate með lista af þeim slóðum sem eru geymdar í "init script"
+ Comment[it]=Inizializza la lista dei file aperti da Kate con gli URL salvati in uno script di inizializzazione
+ Comment[ja]=Kate のファイルリストを「初期化スクリプト」に保存されている URL で初期化します
++Comment[ka]=Kate-ს ღია ფაილთა სიის ინიციალიზაციას აკეთებს იმ URLებით რომლებიც "init script"-ში ინახება
+ Comment[kk]=Kate-те ашылған файлдар тізімін "инициализациялау скриптінде" сақталғаны бойынша инициализациялайды
+ Comment[km]=ចាប់​ផ្ដើម​បញ្ជី​ឯកសារដែល​បាន​បើក​របស់ Kate ជា​មួយ​នឹង URLs ទាំង​នោះ​​ដែល​បាន​ទុក​ក្នុង "ស្គ្រីប init​"
+ Comment[lt]=Sužadina Kate atvertų bylų sąrašą su tais URL, kurie išsaugoti „sužadinimo scenarijuje“
+--- kate/insertcommand/kateinsertcommand.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/insertcommand/kateinsertcommand.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -24,6 +24,7 @@
+ Name[hu]=Kate parancsbeszúró
+ Name[it]=InserisciComando di Kate
+ Name[ja]=Kate コマンド挿入
++Name[ka]=Kate ბრძანების ჩამატება
+ Name[kk]=Kate-те команда шығарлымын енгізу
+ Name[km]=ពាក្យ​បញ្ជា​បញ្ចូល​របស់​ Kate
+ Name[lt]=Kate įdėti komandą
+@@ -81,6 +82,7 @@
+ Comment[is]=Setja úttak skeljarskipunar inn í skjal
+ Comment[it]=Inserisce l'output di un comando della shell in un documento
+ Comment[ja]=文書にシェルコマンドの出力を挿入します
++Comment[ka]=გარსის ბრძანების გამოტანის დოკუმენტში ჩამატება
+ Comment[kk]=Қоршау-орта командасының шығысын құжатқа енгізу
+ Comment[km]=បញ្ចូល​លទ្ធផល​ពាក្យ​បញ្ជា​របស់​សែល​​ទៅ​ក្នុង​ឯកសារ​មួយ
+ Comment[lt]=Įdėti apvalkalo komandos išvestį į dokumentą
+--- kate/snippets/katesnippets.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/snippets/katesnippets.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -25,6 +25,7 @@
+ Name[is]=Kate úrklippur
+ Name[it]=Frammenti di testo di Kate
+ Name[ja]=Kate 定型表現
++Name[ka]=Kate ფრაგმენტები
+ Name[km]=អត្ថបទ​ខ្លីៗ​របស់ Kate
+ Name[lt]=Kate teksto fragmentai
+ Name[mk]=Парчиња за Кате
+@@ -72,6 +73,7 @@
+ Comment[is]=Stillanlegar texta úrklippur fyrir Kate
+ Comment[it]=Frammenti di testo configurabili per Kate
+ Comment[ja]=よく使う表現を登録しておきます
++Comment[ka]=კონფიგურირებადი ტექსტის ფრაგმენტები Kate-სთვის
+ Comment[kk]=Бапталатын Kate мәтін-фрагменттері
+ Comment[km]=អត្ថបទ​ខ្លីៗ​​ដែល​អាច​កំណត់​រចនា​សម្ព័ន្ធ​បាន​សម្រាប់ Kate
+ Comment[lt]=Konfigūruoti Kate teksto fragmentų priedą
+--- kate/kpybrowser/katepybrowse.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/kpybrowser/katepybrowse.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -31,6 +31,7 @@
+ Name[is]=Kate Python flakk viðbætur
+ Name[it]=Plugin visualizzatore Python di Kate
+ Name[ja]=Kate Python ブラウザプラグイン
++Name[ka]=Kate-ის პითონის ბროუზერის მოდული
+ Name[kk]=Kate Python шолғышының плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ​​របស់​កម្មវិធី​រុករក Kate Python
+ Name[lt]=Kate Python naršyklės priedas
+@@ -56,7 +57,8 @@
+ Name[th]=ปลั๊กอินบราวเซอร์ไพธอนของ Kate
+ Name[tr]=Kate Python Tarayıcı Eklentisi
+ Name[uk]=Втулок навігації Python для Kate
+-Name[uz]=Kate Python браузер плагини
++Name[uz]=Kate Python brauzer plagini
++Name[uz@cyrillic]=Kate Python браузер плагини
+ Name[vi]=Bổ sung duyệt Python Kate
+ Name[xh]=IPython ye Kate yokukhangela iplagi yangaphakathi
+ Name[zh_CN]=Kate Python 浏览器插件
+@@ -91,6 +93,7 @@
+ Comment[is]=Python flakk viðbætur fyrir Kate
+ Comment[it]=Un plugin di visualizzazione di Python per Kate
+ Comment[ja]=Kate の Python ブラウザプラグイン
++Comment[ka]=პითონის ბრაუზერის მოდული Kate-სთვის
+ Comment[kk]=Python бағдарламаларды көрсету Kate-тің плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​​របស់​កម្មវិធី​រុករក Python សម្រាប់ Kate
+ Comment[lt]=Python naršyklės priedas, skirtas Kate
+@@ -117,7 +120,8 @@
+ Comment[th]=ปลั๊กอินบราวเซอร์ไพธอนสำหรับ Kate
+ Comment[tr]=Kate için Python tarayıcı programı
+ Comment[uk]=Втулок навігації Python для Kate
+-Comment[uz]=Kate учун Python браузер воситаси
++Comment[uz]=Kate uchun Python brauzer vositasi
++Comment[uz@cyrillic]=Kate учун Python браузер воситаси
+ Comment[vi]=Bổ sung duyệt Python cho Kate
+ Comment[xh]=Isijongi se Python yeplagi yangaphakathi se Kate
+ Comment[zh_CN]=为 Kate 提供的 Python 浏览器插件
+--- kate/openheader/kateopenheader.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/openheader/kateopenheader.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -73,6 +73,7 @@
+ Comment[is]=Opnar viðkomandi .h/[.cpp|.c] skrá
+ Comment[it]=Apre il file .h/[.cpp|.c] corrispondente
+ Comment[ja]=対応する .h/[.cpp|.c] ファイルを開きます
++Comment[ka]=ხსნის შესაბამის .h/[.cpp|.c] ფაილს
+ Comment[kk]=Керек .h/[.cpp|.c] айдар файлын ашады
+ Comment[km]=បើក​ការ​ទាក់ទង​ឯកសារ .h/[.cpp|.c]
+ Comment[lt]=Atveria atitinkamą .h/[.cpp|.c] bylą
+@@ -101,7 +102,8 @@
+ Comment[th]=เปิดแฟ้มที่มีรูปแบบ .h/[.cpp|.c]
+ Comment[tr]=.h/[.cpp|.c] dosyasını açar
+ Comment[uk]=Відкриває відповідний файл .h/[.cpp|.c]
+-Comment[uz]=Тегишли .h/[.cpp|.c] файлини очиш
++Comment[uz]=Tegishli .h/[.cpp|.c] faylini ochish
++Comment[uz@cyrillic]=Тегишли .h/[.cpp|.c] файлини очиш
+ Comment[ven]=Tshi vula faele dzino yelana .h/[.cpp|.c] 
+ Comment[vi]=Mở tập tin .h/[.cpp|.c] tương ứng
+ Comment[xh]=Ivula ungqamano .h/[.cpp|.c] file
+--- kate/helloworld/katehelloworld.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/helloworld/katehelloworld.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[is]=Fyrsta Kate viðbótin mín
+ Name[it]=Il mio primo plugin di Kate
+ Name[ja]=はじめての Kate プラグイン
++Name[ka]=ჩემი პირველი Kate მოდული
+ Name[kk]=Менің алғашқы Kate плагин модулім
+ Name[km]=កម្មវិធី​ជំនួយ​របស់ Kate ដំបូង​របស់​ខ្ញុំ
+ Name[lt]=Mano pirmas Kate priedas
+@@ -83,6 +84,7 @@
+ Comment[is]=Hér ætti að vera smá lýsing á viðbótinni
+ Comment[it]=Inserisci qui la descrizione del tuo plugin
+ Comment[ja]=プラグインの簡単な説明をここに書きます
++Comment[ka]=მოდულის მოკლე აღწერა იქნება აქ
+ Comment[kk]=Бұл плагин модульдің қысқаша сипаттамасының орны
+ Comment[km]=សេចក្ដី​អធិប្បាយ​ដ៏​​​ខ្លី​របស់​អ្នក​អំពី​កម្មវិធី​ជំនួយ​ទៅ​ទីនេះ
+ Comment[lt]=Čia turėtų būti trumpas priedo aprašymas
+@@ -109,7 +111,8 @@
+ Comment[th]=นี่เป็นรายละเอียดสั้น ๆ เกี่ยวกับปลั๊กอินที่ควรมี
+ Comment[tr]=Eklentinizin küçük bir açıklamasını buraya yazın
+ Comment[uk]=Тут повинен бути ваш короткий опис втулку
+-Comment[uz]=Плагин ҳақида қисқача маълумот
++Comment[uz]=Plagin haqida qisqacha maʼlumot
++Comment[uz@cyrillic]=Плагин ҳақида қисқача маълумот
+ Comment[vi]=Mô tả ngắn về bổ sung nằm ở đây
+ Comment[xh]=Inkcazelo yakho emfutshane malunga ne plagi yangaphakathi ihamba apha
+ Comment[zh_CN]=这里应该提供插件的简短描述
+--- kate/make/katemake.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kate/make/katemake.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -30,6 +30,7 @@
+ Name[is]=Make íforrit fyrir Kate
+ Name[it]=Plugin di Kate per la compilazione
+ Name[ja]=Kate Make プラグイン
++Name[ka]=Kate Make მოდული
+ Name[kk]=Kate Make плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ​របស់ Kate Make
+ Name[lt]=Kate Make priedas
+@@ -55,7 +56,8 @@
+ Name[tg]=Модули пайвандҳо барои Kate
+ Name[tr]=Kate Yapılandırma Eklentisi
+ Name[uk]=Втулок Make для Kate
+-Name[uz]=Kate Make плагини
++Name[uz]=Kate Make plagini
++Name[uz@cyrillic]=Kate Make плагини
+ Name[vi]=Bổ sung Make Kate
+ Name[zh_CN]=Kate Make 插件
+ Name[zh_TW]=Kate Make 外掛程式
+@@ -86,6 +88,7 @@
+ Comment[is]=Þýða kóða og þátta villumeldingar
+ Comment[it]=Compila e controlla i messaggi di errore
+ Comment[ja]=コンパイルしてエラーメッセージを解析します
++Comment[ka]=კომპილაცია და შეცდომის შეტყობინებების ანალიზი
+ Comment[kk]=Компиляциялау және қате хабарларын талдау
+ Comment[km]=ចង​ក្រង ​និង​ញែក​សារ​កំហុស
+ Comment[lt]=Kompiliuoti ir išvesti klaidų pranešimus
+--- konq-plugins/mediarealfolder/media_realfolder.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/mediarealfolder/media_realfolder.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[is]=Opin miðils kerfismappa
+ Name[it]=Cartella di sistema per l'apertura di supporti
+ Name[ja]=メディアシステムフォルダを開く
++Name[ka]=მედიუმის სისტემური საქაღალდის გახსნა
+ Name[kk]=Жүйелік қалтаны ашу
+ Name[km]=បើក​ថត​ប្រព័ន្ធ​ឧបករណ៍​ផ្ទុក
+ Name[mk]=Отвори ја системската папка на медиумот
+--- konq-plugins/kimgalleryplugin/kimgalleryplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/kimgalleryplugin/kimgalleryplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -36,6 +36,7 @@
+ Name[is]=Myndasafn
+ Name[it]=Galleria di immagini
+ Name[ja]=イメージギャラリー
++Name[ka]=გამოსახულებათა გალერეა
+ Name[kk]=Кескіндер галереясы
+ Name[km]=វិចិត្រសាល​រូបភាព
+ Name[lt]=Paveikslėlių galerija
+@@ -60,7 +61,8 @@
+ Name[tg]=Силсилаи тасвирҳо
+ Name[tr]=Resim Galerisi
+ Name[uk]=Галерея зображень
+-Name[uz]=Расмлар галереяси
++Name[uz]=Rasmlar galereyasi
++Name[uz@cyrillic]=Расмлар галереяси
+ Name[vi]=Nơi trưng bày ảnh
+ Name[zh_CN]=图像集
+ Name[zh_TW]=相簿
+@@ -92,6 +94,7 @@
+ Comment[is]=Einföld leið til að búa til HTML myndasöfn
+ Comment[it]=Modo facile per generare una galleria di immagini in HTML
+ Comment[ja]=HTML イメージギャラリーを簡単に作成します
++Comment[ka]=HTML გამოსახულებათა გალერეის გენერაციის მარტივი ხერხი
+ Comment[kk]=HTML кескіндер галереясын құрудың оңай жолы
+ Comment[km]=វិធី​ដ៏​​ងាយ​ស្រួល​ដើម្បី​បង្កើត​វិចិត្រសាល​រូបភាព HTML​​
+ Comment[lt]=Lengvas būdas HTML paveikslėlių galerijai generuoti
+@@ -116,7 +119,8 @@
+ Comment[tg]=Генератор бо веб-саҳифаҳо аз силсилаи тасвирҳо
+ Comment[tr]=HTML resim galerisi oluşturmak için kolay bir yol
+ Comment[uk]=Простий спосіб створити галерею зображень в HTML
+-Comment[uz]=HTML расмлар галереясини яратиш
++Comment[uz]=HTML rasmlar galereyasini yaratish
++Comment[uz@cyrillic]=HTML расмлар галереясини яратиш
+ Comment[vi]=Cách dễ tạo ra nơi trưng bày ảnh HTML
+ Comment[xh]=Indlela elula yokwenza iHTML igumbi lomboniso wemifanekiso
+ Comment[zh_CN]=生成 HTML 图像集的简捷方式
+--- konq-plugins/khtmlsettingsplugin/khtmlsettingsplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/khtmlsettingsplugin/khtmlsettingsplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -40,6 +40,7 @@
+ Name[hu]=KHTML-beállítások
+ Name[it]=Impostazioni KHTML
+ Name[ja]=KHTML 設定
++Name[ka]=KHTML პარამეტრები
+ Name[kk]=KHTML параметрлері
+ Name[km]=ការ​កំណត់​ KHTML
+ Name[lt]=KHTML nustatymai
+@@ -65,7 +66,8 @@
+ Name[tg]=Танзимотҳои KHTML
+ Name[tr]=KHTML Ayarları
+ Name[uk]=Параметри KHTML
+-Name[uz]=KHTML мосламалари
++Name[uz]=KHTML moslamalari
++Name[uz@cyrillic]=KHTML мосламалари
+ Name[vi]=Thiết lập KHTML
+ Name[xh]=Ucwangciso lwe KHTML
+ Name[zh_CN]=KHTML 设置
+@@ -99,6 +101,7 @@
+ Comment[is]=Fljótvirk leið til að stilla KHTML
+ Comment[it]=Modo veloce per cambiare le impostazioni KHTML
+ Comment[ja]=KHTML 設定を素早く変更します
++Comment[ka]=KHTML პარამეტრების შეცვლის სწრაფი გზა
+ Comment[kk]=KHTML параметрлерін шұғыл өзгертудің жолы
+ Comment[km]=​វិធី​ដ៏​​រហ័ស​ដើម្បី​ផ្លាស់ប្ដូរ​ការ​កំណត់ KHTML
+ Comment[lt]=Greitas būdas KHTML parinktims pakeisti
+@@ -123,7 +126,8 @@
+ Comment[tg]=Тағйирёбии тези танзимотҳои KHTML
+ Comment[tr]=KHTML ayarlarını değiştirmek için hızlı bir yol
+ Comment[uk]=Швидкий шлях змінити параметри KHTML
+-Comment[uz]=KHTML мосламаларини тез ўзгартириш йўли
++Comment[uz]=KHTML moslamalarini tez oʻzgartirish yoʻli
++Comment[uz@cyrillic]=KHTML мосламаларини тез ўзгартириш йўли
+ Comment[vi]=Cách thay đổi nhanh thiết lập KHTML
+ Comment[xh]=Indlela ekhawulezayo yokutshintsha ucwangciso lwe KHTML
+ Comment[zh_CN]=改变 KHTML 设置的快速方式
+--- konq-plugins/babelfish/plugin_babelfish.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/babelfish/plugin_babelfish.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -35,6 +35,7 @@
+ Name[is]=Babel íforrit
+ Name[it]=Plugin per Babel
+ Name[ja]=Babel プラグイン
++Name[ka]=Babel მოდული
+ Name[kk]=Babel плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ​របស់​ Babel
+ Name[lt]=Babel priedas
+@@ -91,6 +92,7 @@
+ Comment[is]=Babelfish íforrit
+ Comment[it]=Plugin per Babelfish
+ Comment[ja]=Babelfish プラグイン
++Comment[ka]=Babelfish მოდული
+ Comment[kk]=Babelfish плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​របស់ Babelfish
+ Comment[lt]=Babelfish priedas
+--- konq-plugins/babelfish/plugin_babelfish.cpp	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/babelfish/plugin_babelfish.cpp	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -238,8 +238,8 @@
+   {
+     if( engine == "reverso" || engine == "tsail" )
+     {
+-      KMessageBox::sorry( 0L, i18n( "Translation Error" ),
+-              i18n( "Only full webpages can be translated for this language pair." ) );
++      KMessageBox::sorry( 0L, 
++              i18n( "Only full webpages can be translated for this language pair." ),i18n( "Translation Error" ) );
+       return;
+     }
+     totrans = KURL::encode_string( part->selectedText() );
+--- konq-plugins/akregator/akregator_konqfeedicon.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/akregator/akregator_konqfeedicon.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -22,6 +22,7 @@
+ Name[is]=Konq íforrit fyrir flæðismámyndir
+ Name[it]=Plugin di visualizzazione icone per fonti
+ Name[ja]=Konq フィードアイコン プラグイン
++Name[ka]=Konq არხის ხატულის მოდული
+ Name[kk]=Konq ақпар таңбашасының плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ​រូប​តំណាង​មតិព័ត៌មាន​របស់ Konq
+ Name[lt]=Konq kanalų ženkliuko priedas
+@@ -45,7 +46,8 @@
+ Name[ta]=Konq பீட் சின்னச் சொருகுப்பொருள்
+ Name[tr]=Konq Besleme Simge Eklentisi
+ Name[uk]=Втулок піктограми подачі для Konqueoror
+-Name[uz]=Konqueror янгиликлар тасмаси нишончаси плагини
++Name[uz]=Konqueror yangiliklar tasmasi nishonchasi plagini
++Name[uz@cyrillic]=Konqueror янгиликлар тасмаси нишончаси плагини
+ Name[vi]=Bổ sung biểu tượng nguồn tin Konq
+ Name[zh_CN]=Konq 种子图标插件
+ Name[zh_TW]=Konq Feed 圖示外掛程式
+@@ -72,6 +74,7 @@
+ Comment[is]=Sýna straumtáknmynd í stöðuslá þegar síða inniheldur RSS straum
+ Comment[it]=Mostra l'icona nella barra di stato quando la pagina ha una fonte RSS
+ Comment[ja]=RSS フィードを提供しているページでステータスバーにフィードアイコンを表示します
++Comment[ka]=სტატუსის ზოლზე აჩვენებს არხის ხატულას როდესაც გვერდს RSS არხი აქვს
+ Comment[kk]=Бетте RSS ақпары бар болса күй-жай жолағында оның таңбашасын көрсету
+ Comment[km]=បង្ហាញ​រូប​តំណាង​មតិ​ព័ត៌មាន​នៅ​ក្នុង​របារ​ស្ថានភាព ​នៅ​ពេល​ទំព័រ​មាន​មតិព័ត៌មាន RSS
+ Comment[lt]=Rodo kanalo ikoną būsenos juostoje kai puslapis  turi RSS kanalą
+@@ -94,7 +97,8 @@
+ Comment[ta]=RSS ஃபீட் இருக்கும்போது நிலைப்பட்டியலில் ஃபீட் சின்னத்தை காட்டுகிறது
+ Comment[tr]=Eğer sayfa RSS kaynaklı ise kaynak simgesini durum çubuğunda göster
+ Comment[uk]=Показує піктограму подачі в рядку стану, коли сторінка має подачу RSS
+-Comment[uz]=Саҳифада RSS тасмаси мавжуд бўлса, ҳолат панелида RSS нишончасини кўрсатиш
++Comment[uz]=Sahifada RSS tasmasi mavjud boʻlsa, holat panelida RSS nishonchasini koʻrsatish
++Comment[uz@cyrillic]=Саҳифада RSS тасмаси мавжуд бўлса, ҳолат панелида RSS нишончасини кўрсатиш
+ Comment[vi]=Hiển thị biểu tương nguồn tin trên thanh trạng thái khi trang Mạng có nguồn tin RSS
+ Comment[zh_CN]=当页面有 RSS 种子的时候在状态栏显示种子图标
+ Comment[zh_TW]=當網頁有 RSS feed 時，於狀態列顯示 feed 圖示
+--- konq-plugins/akregator/akregator_konqplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/akregator/akregator_konqplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -23,6 +23,7 @@
+ Name[is]=Bæta straum við Akregator
+ Name[it]=Aggiunge fonti ad aKregator
+ Name[ja]=AKregator にフィードを追加
++Name[ka]=არხის Akregator-ისთვის დამატება
+ Name[kk]=Ақпарды Akregator-ға қосу
+ Name[km]=បន្ថែម​មតិព័ត៌មាន​ទៅ Akregator
+ Name[lt]=Įdėti kanalą į Akregator
+@@ -45,7 +46,8 @@
+ Name[ta]=aKregatorக்கு உள்ளீட்டை சேர்
+ Name[tr]=Akregator'a Besleme Ekle
+ Name[uk]=Додати подачу в Akregator
+-Name[uz]=Akregator дастурига янгиликлар тасмасини қўшиш
++Name[uz]=Akregator dasturiga yangiliklar tasmasini qoʻshish
++Name[uz@cyrillic]=Akregator дастурига янгиликлар тасмасини қўшиш
+ Name[vi]=Thêm nguồn tin vào Akregator
+ Name[zh_CN]=在 Akregator 中添加种子
+ Name[zh_TW]=將 Feed 加入 Akregator
+--- konq-plugins/domtreeviewer/plugin_domtreeviewer.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/domtreeviewer/plugin_domtreeviewer.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -36,6 +36,7 @@
+ Name[is]=DOM Trjáasýn
+ Name[it]=Visualizzatore DOM tree
+ Name[ja]=DOM ツリービューア
++Name[ka]=DOM ხის მხილველი
+ Name[kk]=DOM бұтақтары
+ Name[km]=កម្មវិធី​មើល​មែកធាង DOM
+ Name[lt]=DOM medžio žiūryklė
+@@ -93,6 +94,7 @@
+ Comment[is]=DOM Trjáasýn
+ Comment[it]=Visualizzatore DOM tree
+ Comment[ja]=DOM ツリービューア
++Comment[ka]=DOM ხის მხილველი
+ Comment[kk]=DOM бұтақтарын қарау құралы
+ Comment[km]=កម្មវិធី​មើល​មែកធាង DOM
+ Comment[lt]=DOM medžio žiūriklis
+--- konq-plugins/microformat/mf_konqmficon.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/microformat/mf_konqmficon.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -23,6 +23,7 @@
+ Name[is]=Konqueror Microformat íforrit
+ Name[it]=Plugin per il formato microformat di Konqueror
+ Name[ja]=Konqueror マイクロフォーマット プラグイン
++Name[ka]=Konqueror მიკროფორმატის მოდული
+ Name[kk]=Konqueror Microformat плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ​ទ្រង់ទ្រាយ​មីក្រូ​របស់​ Konqueror
+ Name[lt]=Konqueror mikroformatų priedai
+@@ -70,6 +71,7 @@
+ Comment[is]=Sýnir táknmynd í stöðuslá þegar síða inniheldur microformat
+ Comment[it]=Mostra l'icona nella barra di stato quando la pagina ha un microformat
+ Comment[ja]=ページにマイクロフォーマットがある場合、ステータスバーにアイコンを表示します
++Comment[ka]=სტატუსის ველში ასახავს ხატულას როდესაც გვერდს გააჩნია მიკროფორმატი
+ Comment[kk]=Бетте микроформат болса, күй-жай жолағында таңбашасын көрсету
+ Comment[km]=បង្ហាញ​រូប​តំណាង​នៅ​ក្នុង​របារ​ស្ថានភាព ​នៅ​ពេល​ដែល​ទំព័រ​មាន​ទ្រង់ទ្រាយ​មីក្រូ
+ Comment[lt]=Rodo ženkliuką būsenos juostoje kai puslapis  turi mikroformatą
+@@ -90,7 +92,8 @@
+ Comment[sv]=Visar en ikon i statusraden när sidan har ett mikroformat
+ Comment[tr]=Sayfaya özgü bir biçim olduğunda simgeyi durum çubuğunda göster
+ Comment[uk]=Показує піктограму в рядку стану, коли сторінка має мікроформат
+-Comment[uz]=Саҳифада микроформат бўлса, ҳолат панелида нишончани кўрсатиш
++Comment[uz]=Sahifada mikroformat boʻlsa, holat panelida nishonchani koʻrsatish
++Comment[uz@cyrillic]=Саҳифада микроформат бўлса, ҳолат панелида нишончани кўрсатиш
+ Comment[vi]=Hiển thị biểu tượng trên thanh trạng thái khi trang có định dạng vi
+ Comment[zh_CN]=当页面有微格式时在状态栏显示图标
+ Comment[zh_TW]=當網頁有 microformat 時在狀態列顯示圖示
+--- konq-plugins/rellinks/plugin_rellinks.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/rellinks/plugin_rellinks.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -35,6 +35,7 @@
+ Name[is]=Skjalatengsla íforrit
+ Name[it]=Relazioni tra documenti
+ Name[ja]=ドキュメント関係プラグイン
++Name[ka]=დოკუმენტის კავშირთა მოდული
+ Name[kk]=Құжаттың қатынастар плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ​ទំនាក់ទំនង​ឯកសារ
+ Name[lt]=Dokumentų sąsajų priedas
+@@ -59,7 +60,8 @@
+ Name[tg]=Модули санади робитаҳо
+ Name[tr]=Dosya İlişkileri Eklentisi
+ Name[uk]=Втулок зв'язку між документами
+-Name[uz]=Ҳужжатлар орасидаги боғлиқлик плагини
++Name[uz]=Hujjatlar orasidagi bogʻliqlik plagini
++Name[uz@cyrillic]=Ҳужжатлар орасидаги боғлиқлик плагини
+ Name[vi]=Bổ sung quan hệ tài liệu
+ Name[zh_CN]=文档关系插件
+ Name[zh_TW]=文件關係外掛程式
+@@ -86,6 +88,7 @@
+ Comment[is]=Skjalatengsla íforrit
+ Comment[it]=Plugin per gestire le relazioni tra documenti
+ Comment[ja]=ドキュメント関係プラグイン
++Comment[ka]=დოკუმენტის კავშირთა მოდული
+ Comment[kk]=Құжаттың қатынастар плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​ទំនាក់ទំនង​ឯកសារ
+ Comment[lt]=Dokumentų sąsajų priedas
+@@ -110,7 +113,8 @@
+ Comment[tg]=Модули санади робитаҳо
+ Comment[tr]=Dosya İlişkileri Eklentisi
+ Comment[uk]=Втулок зв'язку між документами
+-Comment[uz]=Ҳужжатлар орасидаги боғлиқлик плагини
++Comment[uz]=Hujjatlar orasidagi bogʻliqlik plagini
++Comment[uz@cyrillic]=Ҳужжатлар орасидаги боғлиқлик плагини
+ Comment[vi]=Bổ sung quan hệ tài liệu
+ Comment[zh_CN]=文档关系插件
+ Comment[zh_TW]=文件關係外掛程式
+--- konq-plugins/dirfilter/dirfilterplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/dirfilter/dirfilterplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -35,6 +35,7 @@
+ Name[is]=Íforrit sem síar möppur
+ Name[it]=Plugin per il filtro delle directory
+ Name[ja]=ディレクトリ フィルタ プラグイン
++Name[ka]=დირექტორიის ფილტრის მოდული
+ Name[kk]=Каталог сүзгісі
+ Name[km]=កម្មវិធី​ជំនួយ​តម្រង​ថត
+ Name[lt]=Aplanko filtro priedas
+@@ -91,6 +92,7 @@
+ Comment[is]=Íforrit sem síar möppur
+ Comment[it]=Plugin per il filtro delle directory
+ Comment[ja]=ディレクトリフィルタプラグイン
++Comment[ka]=დირექტორიის ფილტრის მოდული
+ Comment[kk]=Каталог сүзгі плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​តម្រង​ថត
+ Comment[lt]=Aplanko filtro priedas
+--- konq-plugins/autorefresh/autorefresh.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/autorefresh/autorefresh.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -33,6 +33,7 @@
+ Name[is]=Sjálfvirkt uppfærsluíforrit
+ Name[it]=Aggiornamento automatico
+ Name[ja]=自動更新プラグイン
++Name[ka]=ავტო განახლების მოდული
+ Name[kk]=Авто жаңарту плагин модулі
+ Name[km]=ធ្វើ​ឲ្យ​កម្មវិធី​ជំនួយ​ស្រស់​ដោយ​ស្វ័យ​ប្រវត្តិ
+ Name[lt]=Automatinio atnaujinimo priedas
+@@ -57,7 +58,8 @@
+ Name[tg]=Худкорона аз нав кардани модул
+ Name[tr]=Otomatik Tazeleme Eklentisi
+ Name[uk]=Втулок автоматичного перезавантаження
+-Name[uz]=Авто-янгилаш плагини
++Name[uz]=Avto-yangilash plagini
++Name[uz@cyrillic]=Авто-янгилаш плагини
+ Name[vi]=Bổ sung tự động làm tươi
+ Name[zh_CN]=自动刷新插件
+ Name[zh_TW]=自動刷新外掛程式
+@@ -84,6 +86,7 @@
+ Comment[is]=Sjálfvirkt uppfærsluíforrit
+ Comment[it]=Plugin per l'aggiornamento automatico
+ Comment[ja]=自動更新プラグイン
++Comment[ka]=ავტო განახლების მოდული
+ Comment[kk]=Авто жаңарту плагин модулі
+ Comment[km]=ធ្វើ​កម្មវិធី​ជំនួយ​ឲ្យ​ស្រស់​ដោយ​ស្វ័យប្រវត្តិ
+ Comment[lt]=Automatinio atnaujinimo priedas
+@@ -108,7 +111,8 @@
+ Comment[tg]=Худкорона аз нав кардани модул
+ Comment[tr]=Otomatik Tazeleme Eklentisi
+ Comment[uk]=Втулок автоматичного перезавантаження
+-Comment[uz]=Веб-саҳифани авто-янгилаш воситаси
++Comment[uz]=Veb-sahifani avto-yangilash vositasi
++Comment[uz@cyrillic]=Веб-саҳифани авто-янгилаш воситаси
+ Comment[vi]=Bổ sung tự động làm tươi
+ Comment[zh_CN]=自动刷新插件
+ Comment[zh_TW]=自動刷新外掛程式
+--- konq-plugins/crashes/crashesplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/crashes/crashesplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -34,6 +34,7 @@
+ Name[is]=Hruns-eftirlit
+ Name[it]=Monitor dei crash
+ Name[ja]=クラッシュモニタ
++Name[ka]=ავარიების მონიტორი
+ Name[kk]=Жаңылыстарды қадағалау
+ Name[km]=កម្មវិធី​ត្រួត​ពិនិត្យ​ការ​គាំង
+ Name[lt]=Lūžimų stebėjimo priemonė
+@@ -89,6 +90,7 @@
+ Comment[is]=Hruns-eftirlit
+ Comment[it]=Monitorizza i crash
+ Comment[ja]=クラッシュモニタ
++Comment[ka]=ავარიების მონიტორი
+ Comment[kk]=Жаңылыстарды қадағалау
+ Comment[km]=កម្មវិធី​ត្រួត​ពិនិត្យ​ការ​គាំង
+ Comment[lt]=Lūžimų stebėtojas
+--- konq-plugins/searchbar/searchbar.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/searchbar/searchbar.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -38,6 +38,7 @@
+ Name[is]=Leitarslár-íforrit
+ Name[it]=Plugin per la barra di ricerca
+ Name[ja]=検索バープラグイン
++Name[ka]=ძიების ველის მოდული
+ Name[kk]=Іздеу панелінің плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ​​របារ​ស្វែងរក
+ Name[lt]=Paieškos juostos priedas
+@@ -62,7 +63,8 @@
+ Name[tg]=Модули панели ҷустуҷӯ
+ Name[tr]=Arama Çubuğu Eklentisi
+ Name[uk]=Втулок смужки пошуку
+-Name[uz]=Қидириш панели плагини
++Name[uz]=Qidirish paneli plagini
++Name[uz@cyrillic]=Қидириш панели плагини
+ Name[vi]=Bổ sung thanh tìm
+ Name[zh_CN]=搜索栏插件
+ Name[zh_TW]=搜尋列外掛程式
+@@ -90,6 +92,7 @@
+ Comment[is]=Birtir textabox sem er beintengt leitarvélum eins og Google.
+ Comment[it]=Ti presenta una casella di testo per l'accesso diretto a dei motori di ricerca quali Google.
+ Comment[ja]=Google のような検索エンジンへの直接アクセスのテキストボックスを提供します。
++Comment[ka]=წარმოგიდგენთ ტექსტურ ველს რომელის საძიებო სისტემასთანაა კავსირში, მაგ. Google.
+ Comment[kk]=Google секілді іздеу тетіктеріне тікелей қатынау панелі.
+ Comment[km]=បង្ហាញ​អ្នក​ដោយ​​​​ប្រអប់​អត្ថបទ​មួយ ​ដើម្បី​ចូល​ដំណើរ​​ការ​​ម៉ាស៊ីន​ស្វែង​រក ​ដូចជា Google ។​
+ Comment[lt]=Pateikia teksto lauką tiesioginei prieigai prie paieškos sistemų, tokių, kaip Google.
+--- konq-plugins/arkplugin/ark_plugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/arkplugin/ark_plugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -26,6 +26,7 @@
+ Name[is]=Þjappa/taka út skrár
+ Name[it]=Comprimi/estrai file
+ Name[ja]=ファイルを圧縮/展開
++Name[ka]=ფაილების შეკუნშვა/ამოღება
+ Name[kk]=Файлдарды сығу/тарқату
+ Name[km]=បង្ហាប់/ស្រង់ចេញ​ឯកសារ
+ Name[lt]=Suspausti/išspausti bylas
+@@ -50,7 +51,8 @@
+ Name[tg]=Фишурдан/кушодани файлҳо
+ Name[tr]=Dosyaları Sıkıştır/Ayıkla
+ Name[uk]=Стиснення/розпакування файлів
+-Name[uz]=Файлларни қисиш/ажратиш
++Name[uz]=Fayllarni qisish/ajratish
++Name[uz@cyrillic]=Файлларни қисиш/ажратиш
+ Name[vi]=Nén/Giải nén tập tin
+ Name[zh_CN]=压缩/解压文件
+ Name[zh_TW]=壓縮/解壓縮檔案
+--- konq-plugins/arkplugin/arkplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/arkplugin/arkplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -25,6 +25,7 @@
+ Name[is]=Þjappa/taka út skrár með Ark
+ Name[it]=Comprimi/estrai file con Ark
+ Name[ja]=Ark でファイルを圧縮/展開
++Name[ka]=ფაილების Ark-ით შეკუნშვა/ამოღება
+ Name[kk]=Ark көмегімен файлдарды сығу/тарқату
+ Name[km]=បង្ហាប់/ស្រង់ចេញ​ឯកសារ​ដោយ​ប្រើ Ark
+ Name[lt]=Suspausti/išspausti bylas naudojant Ark
+@@ -49,7 +50,8 @@
+ Name[tg]=Фишурдан/кушодани файлҳо дар Ark
+ Name[tr]=Dosyaları Ark ile Sıkıştır/Ayıkla
+ Name[uk]=Стиснення/розпакування файлів в Ark
+-Name[uz]=Файлларни Ark дастурида қисиш/ажратиш
++Name[uz]=Fayllarni Ark dasturida qisish/ajratish
++Name[uz@cyrillic]=Файлларни Ark дастурида қисиш/ажратиш
+ Name[vi]=Nén/Giải nén tập tin bằng Ark
+ Name[zh_CN]=用 Ark 压缩/解压文件
+ Name[zh_TW]=以 Ark 壓縮/解壓縮檔案
+--- konq-plugins/uachanger/uachangerplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/uachanger/uachangerplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -34,6 +34,7 @@
+ Name[is]=Auðkenni vafra
+ Name[it]=Modificatore di User Agent
+ Name[ja]=ユーザエージェント チェンジャー
++Name[ka]=UserAgent შემცვლელი
+ Name[kk]=UserAgent ауыстырғышы
+ Name[km]=កម្មវិធី​ផ្លាស់ប្ដូរ​ភ្នាក់ងារ​អ្នកប្រើ
+ Name[lt]=Naudotojo agento keitiklis
+@@ -87,6 +88,7 @@
+ Comment[is]=Íforrit til að breyta auðkenni vafra
+ Comment[it]=Plugin per modificare lo user agent
+ Comment[ja]=ユーザエージェント変更用プラグイン
++Comment[ka]=მომხმარებლის აგენტის შეცვლის მოდული
+ Comment[kk]=Пайдаланушы агентін ауыстыру плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​សម្រាប់​ផ្លាស់ប្ដូរ​ភ្នាក់ងារ​អ្នក​ប្រើ​​
+ Comment[lt]=Priedas naudotojo agentui keisti
+--- konq-plugins/webarchiver/plugin_webarchiver.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/webarchiver/plugin_webarchiver.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -37,6 +37,7 @@
+ Name[is]=Safnvistuð vefgögn
+ Name[it]=Immagazzinatore Web
+ Name[ja]=ウェブアーカイバ
++Name[ka]=ვებ არქივატორი
+ Name[kk]=Веб архивтеуіші
+ Name[km]=កម្មវិធី​ទុកបណ្ដាញ​ជា​ប័ណ្ណសារ
+ Name[lt]=Žiniatinklių puslapių archyvavimo priemonė
+@@ -61,7 +62,8 @@
+ Name[tg]=Веб-архивчӣ
+ Name[tr]=Web Arşivleyici
+ Name[uk]=Архіватор Тенет
+-Name[uz]=Веб-архивлагич
++Name[uz]=Veb-arxivlagich
++Name[uz@cyrillic]=Веб-архивлагич
+ Name[vi]=Bộ lưu trữ Mạng
+ Name[zh_CN]=Web 存档器
+ Name[zh_TW]=Web 檔案館
+@@ -93,6 +95,7 @@
+ Comment[is]=Býr til safnskrár af vefsetrum
+ Comment[it]=Crea archivi dei siti web
+ Comment[ja]=ウェブサイトのアーカイブを作成
++Comment[ka]=ვებ გვერდების არქივებს ქმნის
+ Comment[kk]=Вебсайттың архивін құру
+ Comment[km]=បង្កើត​ប័ណ្ណ​សារ​របស់​តំបន់​បណ្ដាញ
+ Comment[lt]=Sukuria archyvus iš žiniatinklio puslapių
+@@ -117,7 +120,8 @@
+ Comment[tg]=Эҷод кардани архивҳои веб-сайтҳо
+ Comment[tr]=Web sayfalarının arşivini oluşturur
+ Comment[uk]=Створює архіви сайтів Тенет
+-Comment[uz]=Веб-сайтларнинг архивини яратиш
++Comment[uz]=Veb-saytlarning arxivini yaratish
++Comment[uz@cyrillic]=Веб-сайтларнинг архивини яратиш
+ Comment[vi]=Tạo kho lưu chỗ Mạng
+ Comment[xh]=Yenza iindawo zokugcina ze websites
+ Comment[zh_CN]=创建网站存档
+--- konq-plugins/webarchiver/webarchivethumbnail.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/webarchiver/webarchivethumbnail.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -32,6 +32,7 @@
+ Name[is]=Safnvistuð vefgögn
+ Name[it]=Archivi Web
+ Name[ja]=ウェブアーカイブ
++Name[ka]=ვებ არქივატორები
+ Name[kk]=Веб ахивтеуіші
+ Name[km]=ប័ណ្ណសារ​បណ្ដាញ
+ Name[ko]=웹 저장고
+@@ -62,7 +63,8 @@
+ Name[th]=แฟ้มบีบอัดของเว็บ
+ Name[tr]=Web Arşivleri
+ Name[uk]=Архіви Тенет
+-Name[uz]=Веб-архивлар
++Name[uz]=Veb-arxivlar
++Name[uz@cyrillic]=Веб-архивлар
+ Name[ven]=Dziwebu dzau vhulunga zwa kale
+ Name[vi]=Kho lưu Mạng
+ Name[xh]=Iindawo zokugcina ze web
+--- konq-plugins/imagerotation/imageconverter.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/imagerotation/imageconverter.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ X-KDE-Submenu[is]=Umbreyta í
+ X-KDE-Submenu[it]=Converti in
+ X-KDE-Submenu[ja]=変換
++X-KDE-Submenu[ka]=კონვერტაცია
+ X-KDE-Submenu[kk]=Мынаған айналдыру
+ X-KDE-Submenu[km]=បម្លែង​ទៅ​ជា
+ X-KDE-Submenu[lt]=Konvertuoti į
+--- konq-plugins/imagerotation/jpegorient.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/imagerotation/jpegorient.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -23,6 +23,7 @@
+ X-KDE-Submenu[is]=Ummynda
+ X-KDE-Submenu[it]=Trasforma immagine
+ X-KDE-Submenu[ja]=画像を変換
++X-KDE-Submenu[ka]=გამოსახულებათა ტრანსფორმაცია
+ X-KDE-Submenu[kk]=Кескінді түрлендіру
+ X-KDE-Submenu[km]=ប្លែង​រូបភាព
+ X-KDE-Submenu[lt]=Transformuoti paveikslėlį
+@@ -77,6 +78,7 @@
+ Name[is]=Snúa réttsælis
+ Name[it]=Ruota in senso orario
+ Name[ja]=右回転
++Name[ka]=საათის ისრის მიმართულებით მოტრიალება
+ Name[kk]=Сағаттың тіліне сәйкес айналдыру
+ Name[km]=បង្វិល​ស្រប​ទ្រនិច​នាឡិកា
+ Name[lt]=Sukti pagal laikrodžio rodyklę
+@@ -102,7 +104,8 @@
+ Name[tg]=Чархиш бо ақрабаки соат
+ Name[tr]=Saat Yönünde Döndür
+ Name[uk]=Обернути за годинниковою стрілкою
+-Name[uz]=Соат кўрсатгичи бўйича буриш
++Name[uz]=Soat koʻrsatgichi boʻyicha burish
++Name[uz@cyrillic]=Соат кўрсатгичи бўйича буриш
+ Name[vi]=Xoay xuôi chiều
+ Name[zh_CN]=顺时针旋转
+ Name[zh_TW]=順時針旋轉
+@@ -139,6 +142,7 @@
+ Name[is]=Snúa rangsælis
+ Name[it]=Ruota in senso anti-orario
+ Name[ja]=左回転
++Name[ka]=საათის ისრის მიმართულებით მოტრიალება
+ Name[kk]=Сағаттың тіліне қарсы айналдыру
+ Name[km]=បង្វិល​ច្រាស​ទ្រនិច​នាឡិកា
+ Name[lt]=Sukti prieš laikrodžio rodyklę
+@@ -164,7 +168,8 @@
+ Name[tg]=Чархиш ба муқобили ақрабаки соат
+ Name[tr]=Saat Yönünün Tesine Döndür
+ Name[uk]=Обернути проти годинникової стрілки
+-Name[uz]=Соат кўрсатгичига қарши буриш
++Name[uz]=Soat koʻrsatgichiga qarshi burish
++Name[uz@cyrillic]=Соат кўрсатгичига қарши буриш
+ Name[vi]=Xoay ngược chiều
+ Name[zh_CN]=逆时针旋转
+ Name[zh_TW]=逆時針旋轉
+@@ -205,6 +210,7 @@
+ Name[is]=Snúa við um miðju lóðrétt
+ Name[it]=Fletti verticalmente
+ Name[ja]=上下反転
++Name[ka]=ვერტიკალურად შეტრიალება
+ Name[kk]=Тігінен терістеу
+ Name[km]=ត្រឡប់​​​បញ្ឈរ
+ Name[lt]=Versti vertikaliai
+@@ -229,7 +235,8 @@
+ Name[tg]=Баргардондан ба амудӣ
+ Name[tr]=Dik Olarak Dağıt
+ Name[uk]=Перекинути вертикально
+-Name[uz]=Эни бўйича буриш
++Name[uz]=Eni boʻyicha burish
++Name[uz@cyrillic]=Эни бўйича буриш
+ Name[vi]=Lật dọc
+ Name[zh_CN]=上下翻转
+ Name[zh_TW]=垂直翻轉
+@@ -265,6 +272,7 @@
+ Name[is]=Snúa við um miðju lárétt
+ Name[it]=Fletti orizzontalmente
+ Name[ja]=左右反転
++Name[ka]=ჰორიზონტალურად შეტრიალება
+ Name[kk]=Төңкеру
+ Name[km]=ត្រឡប់​​ផ្ដេក
+ Name[lt]=Versti horizontaliai
+@@ -290,7 +298,8 @@
+ Name[tg]=Баргардондан ба уфуқӣ
+ Name[tr]=Yatay Olarak Dağıt
+ Name[uk]=Перекинути горизонтально
+-Name[uz]=Бўйи бўйича буриш
++Name[uz]=Boʻyi boʻyicha burish
++Name[uz@cyrillic]=Бўйи бўйича буриш
+ Name[vi]=Lật ngang
+ Name[zh_CN]=左右翻转
+ Name[zh_TW]=水平翻轉
+--- konq-plugins/fsview/fsview_part.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/fsview/fsview_part.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -22,6 +22,7 @@
+ Name[is]=Skoða skráarstærð
+ Name[it]=Visualizza dimensione file
+ Name[ja]=ファイルサイズ表示
++Name[ka]=ფაილის ზომის ხილვა
+ Name[kk]=Файл көлемдердің қарау
+ Name[km]=មើល​ទំហំ​ឯកសារ​
+ Name[lt]=Bylų dydžio vaizdas
+@@ -45,7 +46,8 @@
+ Name[tg]=Андозаи файл
+ Name[tr]=Dosya Boyut Görüntüleme
+ Name[uk]=Перегляд розміру файлів
+-Name[uz]=Файл ҳажмини кўриш
++Name[uz]=Fayl hajmini koʻrish
++Name[uz@cyrillic]=Файл ҳажмини кўриш
+ Name[vi]=Xem cỡ tập tin
+ Name[zh_CN]=文件大小查看
+ Name[zh_TW]=檔案大小檢視器
+--- konq-plugins/fsview/fsview.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/fsview/fsview.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -31,6 +31,7 @@
+ Name[is]=Skoða stærð skráa
+ Name[it]=Visualizzatore della dimensione dei file
+ Name[ja]=ファイルサイズビューア
++Name[ka]=ფაილის ზომის მხილველი
+ Name[kk]=Файл көлемін қарау
+ Name[km]=កម្មវិធី​មើល​ទំហំ​ឯកសារ
+ Name[lt]=Bylų dydžio stebėjimo priemonė
+@@ -55,7 +56,8 @@
+ Name[tg]=Андозаи файл
+ Name[tr]=Dosya Boyut Göstericisi
+ Name[uk]=Переглядач розміру файлів
+-Name[uz]=Файл ҳажмини кўрувчи
++Name[uz]=Fayl hajmini koʻruvchi
++Name[uz@cyrillic]=Файл ҳажмини кўрувчи
+ Name[vi]=Bộ xem kích cỡ tập tin
+ Name[zh_CN]=文件大小查看器
+ Name[zh_TW]=檔案大小檢視器
+@@ -85,6 +87,7 @@
+ Comment[is]=Flakka um skráarkerfið í tráarham
+ Comment[it]=Visualizza il tuo filesystem come una mappa ad albero
+ Comment[ja]=ツリーマップでファイルシステムを表示
++Comment[ka]=ფაილური სისტემის ხის სახით ხილვა
+ Comment[kk]=Файлдар жүйесінің бұтақтарын қарау
+ Comment[km]=មើល​ប្រព័ន្ធ​ឯកសារ​របស់​អ្នក​​ជា​ផែនទី​មែកធាង
+ Comment[lt]=Peržiūrėti bylų sistemą kaip medžio tipo žemėlapį
+--- konq-plugins/kuick/kcmkuick/kcmkuick.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/kuick/kcmkuick/kcmkuick.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -34,6 +34,7 @@
+ Name[is]=Quick Copy & Move Íforrit
+ Name[it]=Plugin copia/spostamento rapidi
+ Name[ja]=高速コピー & 移動プラグイン
++Name[ka]=სწრაფი ასლის და გადატანის მოდული
+ Name[kk]=Шұғыл көшірмелеу және жылжыту плагин модулі
+ Name[km]=ចម្លង និង​ផ្លាស់ទី​កម្មវិធី​ជំនួយ​ដ៏រហ័ស
+ Name[lt]=Greito kopijavimo ir perkėlimo priedas
+@@ -63,7 +64,8 @@
+ Name[th]=ปลั๊กอินคัดลอกและย้ายอย่างรวดเร็ว
+ Name[tr]=Hızlı Kopyalama ve Taşıma Eklentisi
+ Name[uk]=Втулок швидкого копіювання та пересування
+-Name[uz]=Тез нусха олиш ва кўчириш плагини
++Name[uz]=Tez nusxa olish va koʻchirish plagini
++Name[uz@cyrillic]=Тез нусха олиш ва кўчириш плагини
+ Name[ven]=Khophi ya tavhanya & tshimbidza Plugin
+ Name[vi]=Bổ sung sao chép và di chuyển nhanh
+ Name[xh]=Khawuleza Khuphela & Susa iplagi yangaphakathi
+@@ -100,6 +102,7 @@
+ Comment[is]=Stillingatól Kuick
+ Comment[it]=Modulo di configurazione per Kuick
+ Comment[ja]=Kuick の設定モジュール
++Comment[ka]=Kuick კონფიგურაციის მოდული
+ Comment[kk]=Kuick баптау модулі
+ Comment[km]=ម៉ូឌុល​​កំណត់​រចនា​សម្ព័ន្ធ​ Kuick
+ Comment[lt]=Kuick konfigūravimo modulis
+@@ -127,7 +130,8 @@
+ Comment[th]=โมดูลปรับแต่ง Kuick
+ Comment[tr]=Hızlı yapılandırma modülü
+ Comment[uk]=Модуль конфігурації Kuick
+-Comment[uz]=Kuick мосламаси модули
++Comment[uz]=Kuick moslamasi moduli
++Comment[uz@cyrillic]=Kuick мосламаси модули
+ Comment[ven]=Modulu wa nzudzanyo wa Kuick
+ Comment[vi]=Mô-đun cấu hình Kuick
+ Comment[xh]=Uqwalaselo lomqongo womlinganiselo we Kuick
+@@ -160,6 +164,7 @@
+ Keywords[is]=fljót,afrita,færa
+ Keywords[it]=kuick,copia,spostamento
+ Keywords[ja]=kuick,コピー,移動
++Keywords[ka]=kuick,ასლი,გადატანა
+ Keywords[km]=kuick ចម្លង ផ្លាស់ទី
+ Keywords[lt]=kuick,copy,move,kopijuoti, perkelti
+ Keywords[lv]=kuick,kopēt,pārvietot
+@@ -187,7 +192,8 @@
+ Keywords[th]=รวดเร็ว,คัดลอก,ย้าย
+ Keywords[tr]=kuick,hızlı,kopyala,taşı
+ Keywords[uk]=kuick,копіювання,пересування
+-Keywords[uz]=kuick,нусха олиш,кўчириш
++Keywords[uz]=kuick,nusxa olish,koʻchirish
++Keywords[uz@cyrillic]=kuick,нусха олиш,кўчириш
+ Keywords[ven]=kuick,khophi,tshimbila
+ Keywords[vi]=kuick,sao chép,chép,di chuyển,chuyển
+ Keywords[xh]=kuick,khuphela,hambisa
+--- konq-plugins/kuick/kuick_plugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/kuick/kuick_plugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[hu]=Kuick - másolás és mozgatás
+ Name[it]=Copia e spostamento rapidi
+ Name[ja]=高速コピー & 移動
++Name[ka]=Kuick ასლი და გადატანა
+ Name[kk]=Kuick көшірмелеу мен жылжыту
+ Name[km]=Kuick ចម្លង ​និង​ផ្លាស់ទី
+ Name[lt]=Kuick kopijavimas ir perkėlimas
+@@ -54,7 +55,8 @@
+ Name[th]=คัดลอกและย้ายอย่างรวดเร็ว
+ Name[tr]=Hızlı Kopyalama ve Taşıma
+ Name[uk]=Kuick копіювання та пересування
+-Name[uz]=Тез нусха олиш ва кўчириш
++Name[uz]=Tez nusxa olish va koʻchirish
++Name[uz@cyrillic]=Тез нусха олиш ва кўчириш
+ Name[ven]=Kuick khophi na u tshimbila
+ Name[vi]=Sao chép và di chuyển Kuick
+ Name[xh]=Ukhuphelo noHambiso lweKuick
+--- konq-plugins/kuick/kuickplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/kuick/kuickplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -26,6 +26,7 @@
+ Name[hu]=Kuick - másolás és mozgatás
+ Name[it]=Copia e spostamento rapidi
+ Name[ja]=高速コピー & 移動
++Name[ka]=Kuick ასლი და გადატანა
+ Name[kk]=Kuick көшірмелеу мен жылжыту
+ Name[km]=Kuick ចម្លង ​និង​ផ្លាស់ទី
+ Name[lt]=Kuick kopijavimas ir perkėlimas
+@@ -53,7 +54,8 @@
+ Name[th]=คัดลอกและย้ายอย่างรวดเร็ว
+ Name[tr]=Hızlı Kopyalama ve Taşıma
+ Name[uk]=Kuick копіювання та пересування
+-Name[uz]=Тез нусха олиш ва кўчириш
++Name[uz]=Tez nusxa olish va koʻchirish
++Name[uz@cyrillic]=Тез нусха олиш ва кўчириш
+ Name[ven]=Kuick khophi na u tshimbila
+ Name[vi]=Sao chép và di chuyển Kuick
+ Name[xh]=Ukhuphelo noHambiso lweKuick
+--- konq-plugins/validators/plugin_validators.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/validators/plugin_validators.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -35,6 +35,7 @@
+ Name[is]=Villuleitun vefa
+ Name[it]=Validatore di Siti Web
+ Name[ja]=ウェブサイト検証
++Name[ka]=ვებგვერდის დამმოწმებელი
+ Name[kk]=Вебсайт тексергіші
+ Name[km]=កម្មវិធី​ធ្វើ​ឲ្យ​តំបន់​បណ្ដាញ​មាន​សុពលភាព
+ Name[lt]=Web sričių tikrinimo priemonės
+@@ -58,7 +59,8 @@
+ Name[tg]=Тафтиши дурустии сайтҳо
+ Name[tr]=İnternet Sitesi Denetleyicisi
+ Name[uk]=Служби перевірки сайтів
+-Name[uz]=Веб-саҳифа тўғрилигини текшириш
++Name[uz]=Veb-sahifa toʻgʻriligini tekshirish
++Name[uz@cyrillic]=Веб-саҳифа тўғрилигини текшириш
+ Name[vi]=Bộ thẩm tra chỗ Mạng
+ Name[zh_CN]=网站校验器
+ Name[zh_TW]=網站驗證器
+@@ -91,6 +93,7 @@
+ Comment[is]=CSS og HTML gildir
+ Comment[it]=Plugin per validare CSS e HTML
+ Comment[ja]=CSS と HTML を検証するプラグイン
++Comment[ka]=CSS და HTML დამოწმების მოდული
+ Comment[kk]=CSS және HTML тексергіш плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​​របស់​កម្មវិធី​​ធ្វើ​ឲ្យ​ CSS និង​ HTML មាន​សុពលភាព
+ Comment[lt]=CSS ir HTML tikrinimo priedai
+@@ -115,7 +118,8 @@
+ Comment[tg]=Модули тафтиши дурустии HTML ва CSS
+ Comment[tr]=CSS ve HTML denetleme eklentileri
+ Comment[uk]=Втулки перевірки CSS і HTML
+-Comment[uz]=HTML ва CSS тўғрилигини текшириш воситалари
++Comment[uz]=HTML va CSS toʻgʻriligini tekshirish vositalari
++Comment[uz@cyrillic]=HTML ва CSS тўғрилигини текшириш воситалари
+ Comment[vi]=Bổ sung thẩm tra HTML và CSS
+ Comment[xh]=Iiplagi zangaphakathi zomqinisekisi we CSS ne HTML
+ Comment[zh_CN]=CSS 和 HTML 校验插件
+--- konq-plugins/sidebar/delicious/delicious_add.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/sidebar/delicious/delicious_add.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[is]=del.icio.us bókamerki
+ Name[it]=Segnalibri di del.icio.us
+ Name[ja]=del.icio.us ブックマーク
++Name[ka]=del.icio.us სანიშნეები
+ Name[kk]=del.icio.us бетбелгілері
+ Name[km]=​ចំណាំ del.icio.us
+ Name[lt]=del.icio.us žymelės
+@@ -48,7 +49,8 @@
+ Name[sv]=del.icio.us bokmärken
+ Name[tr]=del.icio.us Yer İmleri
+ Name[uk]=Закладки del.icio.us
+-Name[uz]=del.icio.us хатчўплари
++Name[uz]=del.icio.us xatchoʻplari
++Name[uz@cyrillic]=del.icio.us хатчўплари
+ Name[vi]=Dấu nhớ del.icio.us
+ Name[zh_CN]=del.icio.us 书签
+ Open=false
+--- konq-plugins/sidebar/metabar/src/metabar.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/sidebar/metabar/src/metabar.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -26,6 +26,7 @@
+ Comment[is]=Konqueror leiðarstýrispjald íforrit sem kallast Metabar
+ Comment[it]=Plugin di navigazione di Konqueror chiamato Metabar
+ Comment[ja]=Konqueror メタバー ナビゲーションパネルプラグイン
++Comment[ka]=konqueror ნავიგაციის მოდული სახელად Metabar
+ Comment[kk]=Metabar деген Konqueror панелінің плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​បន្ទះ​​រុករក​​របស់ konqueror  ​បាន​ហៅ​​របារ​មេតា
+ Comment[lt]=Metabar - Konqueror navigacijos pulto priedas
+--- konq-plugins/sidebar/metabar/src/metabar_add.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/sidebar/metabar/src/metabar_add.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -22,6 +22,7 @@
+ Comment[is]=Konqueror leiðarstýrispjald íforrit sem kallast Metabar
+ Comment[it]=Plugin di navigazione di Konqueror chiamato Metabar
+ Comment[ja]=Konqueror メタバー ナビゲーションパネルプラグイン
++Comment[ka]=konqueror ნავიგაციის მოდული სახელად Metabar
+ Comment[kk]=Metabar деген Konqueror панелінің плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​បន្ទះ​​រុករក​របស់ konqueror បាន​​ហៅ​របារ​មេតា
+ Comment[lt]=Metabar - Konqueror navigacijos pulto priedas
+--- konq-plugins/sidebar/mediaplayer/mediaplayerplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/sidebar/mediaplayer/mediaplayerplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -45,7 +45,8 @@
+ Name[ta]=ஊடக இயக்கி
+ Name[tg]=Медиаплеер
+ Name[tr]=Çokluortam oynatıcı
+-Name[uz]=Медиа-плейер
++Name[uz]=Media-pleyer
++Name[uz@cyrillic]=Медиа-плейер
+ Name[vi]=Bộ phát nhạc/ảnh
+ Name[xh]=Umdlali wosasazo lwendaba
+ Name[zh_CN]=媒体播放器
+@@ -78,6 +79,7 @@
+ Comment[is]=Margmiðlunareining fyrir spjaldið í Konqueror
+ Comment[it]=Plugin multimediale nella barra di navigazione di Konqueror
+ Comment[ja]=Konqueror のナビゲーションパネル内のメディアプレーヤプラグイン
++Comment[ka]=Mediaplayer მოდული Konqueror-ის ნავიგაციის პანელზე
+ Comment[kk]=Konqueror панеліндегі медиа ойнатқыш плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​របស់​​កម្មវិធី​ចាក់​មេឌៀ​​នៅ​ក្នុង​បន្ទះ​​រុក​រក​របស់​ Konqueror
+ Comment[lt]=Mediaplayer priedas Konqueror navigacijos pulte
+@@ -102,7 +104,8 @@
+ Comment[tg]=Модули Konqueror барои бозӣ кардани мултимедиа
+ Comment[tr]=Konqueror çokluortam oynatıcısı
+ Comment[uk]=Втулок програвача в панелі навігації Konqueror
+-Comment[uz]=Konqueror ён панели учун мультимедия файлларини ўйнаш воситаси
++Comment[uz]=Konqueror yon paneli uchun multimediya fayllarini oʻynash vositasi
++Comment[uz@cyrillic]=Konqueror ён панели учун мультимедия файлларини ўйнаш воситаси
+ Comment[vi]=Bổ sung phát nhạc/ảnh trên bảng duyệt qua Konqueror
+ Comment[xh]=Umdlali wosasazo lwendaba zeplagi yangaphakathi seqela lenjongo ethile lolawulo lwe Konqueror 
+ Comment[zh_CN]=Konqueror 的导航面板中的媒体播放器插件
+--- konq-plugins/sidebar/mediaplayer/mplayer_add.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/sidebar/mediaplayer/mplayer_add.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ Name[is]=Margmiðlunarspilari
+ Name[it]=Lettore multimediale
+ Name[ja]=メディアプレーヤ
++Name[ka]=მედია დამკვრელი
+ Name[kk]=Медиа ойнатқышы
+ Name[km]=កម្មវិធី​ចាក់​មេឌៀ
+ Name[lt]=Media grotuvas
+@@ -50,7 +51,8 @@
+ Name[tg]=Медиаплеер
+ Name[tr]=Çokluortam Oynatıcı
+ Name[uk]=Медіа-програвач
+-Name[uz]=Медиа-плейер
++Name[uz]=Media-pleyer
++Name[uz@cyrillic]=Медиа-плейер
+ Name[vi]=Bộ phát nhạc và ảnh
+ Name[zh_CN]=媒体播放器
+ Name[zh_TW]=媒體播放器
+--- konq-plugins/sidebar/newsticker/news_add.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/sidebar/newsticker/news_add.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -20,6 +20,7 @@
+ Name[is]=Fréttastrimill
+ Name[it]=NewsTicker
+ Name[ja]=ニュースティッカー
++Name[ka]=სიახლეთა მიმღები
+ Name[lt]=Naujienų pranešiklis
+ Name[nb]=Nyhetstelegraf
+ Name[nds]=Narichtentelegraaf
+--- konq-plugins/minitools/minitoolsplugin.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ konq-plugins/minitools/minitoolsplugin.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -36,6 +36,7 @@
+ Name[is]=Lítil tól
+ Name[it]=Strumenti miniaturizzati
+ Name[ja]=ミニツール
++Name[ka]=მინი-ხელსაწყოები
+ Name[kk]=Шағын құралдар
+ Name[km]=ឧបករណ៍​ខ្នាត​តូច
+ Name[lt]=Mini įrankiai
+@@ -89,6 +90,7 @@
+ Comment[is]=Lítil tól
+ Comment[it]=Strumenti miniaturizzati
+ Comment[ja]=ミニツール
++Comment[ka]=მინი-ხელსაწყოები
+ Comment[kk]=Шағын құралдар
+ Comment[km]=ឧបករណ៍​ខ្នាត​តូច
+ Comment[lt]=Mini įrankiai
+--- atlantikdesigner/atlantikdesigner.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ atlantikdesigner/atlantikdesigner.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[hi]=अटलांटिक डिज़ाइनर
+ Name[hr]=Atlantik Dizajner
+ Name[ja]=Atlantik デザイナー
++Name[ka]=Atlantik დიზაინერი
+ Name[kk]=Atlantik конструкторы
+ Name[km]=កម្មវិធី​រចនា Atlantik​
+ Name[lv]=Atlantijas Konstruktors
+@@ -48,7 +49,8 @@
+ Name[th]=ออกแบบเกมแอตแลนติก
+ Name[tr]=Atlantik Tasarımcısı
+ Name[uk]=Редактор Atlantik
+-Name[uz]=Atlantik дизайнери
++Name[uz]=Atlantik dizayneri
++Name[uz@cyrillic]=Atlantik дизайнери
+ Name[vi]=Bộ thiết kế Atlantik
+ Name[xh]=Umzobi we Atlantik
+ Name[zh_CN]=Atlantik 设计器
+@@ -83,6 +85,7 @@
+ Comment[is]=Hönnun borða fyrir Atlantik
+ Comment[it]=Per progettare tabelloni per Atlantik
+ Comment[ja]=Atlantik 用のゲームボードデザイナー
++Comment[ka]=Atlantik-სთვის სათამაშო დაფის დიზაინერი
+ Comment[kk]=Atlantik ойын тақта конструкторы
+ Comment[km]=កម្មវិធី​រចនា​ក្ដារ​ល្បែង​សម្រាប់ Atlantik
+ Comment[lt]=Žaidimo stalo dizaineris, skirtas Atlantik
+@@ -110,7 +113,8 @@
+ Comment[th]=เครื่องมือออกแบบกระดานเกมแอตแลนติก
+ Comment[tr]=Atlantik için oyun tahtası düzenleyici
+ Comment[uk]=Редактор гри Atlantik
+-Comment[uz]=Atlantik учун ўйин майдони таҳрирчиси
++Comment[uz]=Atlantik uchun oʻyin maydoni tahrirchisi
++Comment[uz@cyrillic]=Atlantik учун ўйин майдони таҳрирчиси
+ Comment[vi]=Bộ thiết kế bảng trò chơi cho Atlantik
+ Comment[xh]=Umzobi womdlalo webhodi we Atlantik
+ Comment[zh_CN]=Atlantik 的游戏盘设计器
+@@ -139,6 +143,7 @@
+ GenericName[is]=Matador (Monopoly) borðhönnuður
+ GenericName[it]=Gioco da tavolo simile a Monopoly®
+ GenericName[ja]=Monopoly® 風ボードゲームのデザイナー
++GenericName[ka]=Monopoly®-ს მაგვარი სამაგიდო თამაში
+ GenericName[kk]=Monopoly® секілді тақта конструкторы
+ GenericName[km]=កម្មវិធី​រចនា​ក្ដារ Monopoly®-like
+ GenericName[lt]=Monopoly® primenančių lentų kūrimo priemonė
+@@ -160,7 +165,8 @@
+ GenericName[sv]=Konstruktion av Monopol®-liknande spelplaner
+ GenericName[tr]=Monopoly®-like Tahta Düzenleyici
+ GenericName[uk]=Monopoly®-подібний дизайнер дошки
+-GenericName[uz]=Monopoly® ўйинга ўхшаган ўйин майдони таҳрирчиси
++GenericName[uz]=Monopoly® oʻyinga oʻxshagan oʻyin maydoni tahrirchisi
++GenericName[uz@cyrillic]=Monopoly® ўйинга ўхшаган ўйин майдони таҳрирчиси
+ GenericName[vi]=Bộ thiết kế bảng kiểu Monopoly®
+ GenericName[zh_CN]=类似 Monopoly(R) 的棋盘设计器
+ GenericName[zh_TW]=類似 Monopoly® 棋盤設計師
+--- kaddressbook-plugins/xxports/gmx/gmx_xxport.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kaddressbook-plugins/xxports/gmx/gmx_xxport.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -24,6 +24,7 @@
+ Name[is]=KAB GMX XXPort íforrit
+ Name[it]=Plugin per KAB GMX XXPort
+ Name[ja]=KAB KWorldClock XXPort プラグイン
++Name[ka]=KAB GMX XXPort მოდული
+ Name[kk]=KAB GMX XXPort плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ KAB GMX XXPort
+ Name[lt]=KAB GMX XXPort priedas
+@@ -46,7 +47,8 @@
+ Name[ta]=KAB GMX XXமுனைய சொருகுப்பொருள்
+ Name[tr]=KAB GMX XXPort Eklentisi
+ Name[uk]=Втулок KAB GMX XXPort
+-Name[uz]=KAB GMX XXPort плагини
++Name[uz]=KAB GMX XXPort plagini
++Name[uz@cyrillic]=KAB GMX XXPort плагини
+ Name[vi]=Bổ sung XXPort GMX KAB
+ Name[zh_CN]=KAB GMX XXPort 插件
+ Name[zh_TW]=KAB GMX XXPort 外掛程式
+@@ -74,6 +76,7 @@
+ Comment[is]=Íforrit sem flytur inn og út tengiliði í GMX vistfangasniði
+ Comment[it]=Plugin per importare ed esportare contatti in formato GXM
+ Comment[ja]=KWorldClock の旗を GMX 形式の地図データでインポート、エクスポートするプラグイン
++Comment[ka]=GMX's მისამართთა წიგნის ფორმატში კონტაქტების იმპორტის და ექსპორტის მოდული
+ Comment[kk]=GMX адрестік кітапша пішіміне контакттарды импорт және экспорттау
+ Comment[km]=កម្មវិធី​ជំនួយ​ដើម្បី​នាំ​ចូល​ និង​នាំ​ចេញ​ទំនាក់ទំនង​នៅ​ក្នុង​ទ្រង់ទ្រាយ​សៀវភៅ​អាសយដ្ឋាន​របស់ GMX
+ Comment[lt]=Priedas GMX formato adresų knygutės eksportavimui ir importavimui
+@@ -96,7 +99,8 @@
+ Comment[ta]=GMX's முகவரிப்புத்தக வடிவத்தில் உள்ள தொடர்புகளை ஏற்ற, இறக்க சொருகுப்பொருள்
+ Comment[tr]=GMX'in adresdefteri biçimindeki bağlantıları ekleme ve oluşturma eklentisi
+ Comment[uk]=Втулок для імпортування та експортування контактів у форматі адресної книги GMX
+-Comment[uz]=Алоқаларни GMX манзиллар дафтари форматида экспорт-импорт қилиш воситаси
++Comment[uz]=Aloqalarni GMX manzillar daftari formatida eksport-import qilish vositasi
++Comment[uz@cyrillic]=Алоқаларни GMX манзиллар дафтари форматида экспорт-импорт қилиш воситаси
+ Comment[vi]=Bổ sung nhập/xuất khẩu liên lạc định dạng sổ địa chỉ của GMX
+ Comment[zh_CN]=以 GMX 的地址簿格式导入和导出联系人
+ Comment[zh_TW]=匯入/匯出 GMX 通訊錄格式的外掛程式
+--- kaddressbook-plugins/xxports/kworldclock/geo_xxport.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kaddressbook-plugins/xxports/kworldclock/geo_xxport.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -26,6 +26,7 @@
+ Name[is]=KAB KWorldClock XXPort íforrit
+ Name[it]=Plugin per KAB KWorldClock XXPort
+ Name[ja]=KAB KWorldClock XXPort プラグイン
++Name[ka]=KAB KWorldClock XXPort მოდული
+ Name[kk]=KAB KWorldClock XXPort плагин модулі
+ Name[km]=កម្មវិធី​ជំនួយ KAB KWorldClock XXPort
+ Name[lt]=KAB KWorldClock XXPort priedas
+@@ -49,7 +50,8 @@
+ Name[tg]=Модули KAB KWorldClock XXPort
+ Name[tr]=KAB Dünya Saati XXPort Plugin'i
+ Name[uk]=Втулок KAB KWorldClock XXPort
+-Name[uz]=KAB KWorldClock XXPort плагини
++Name[uz]=KAB KWorldClock XXPort plagini
++Name[uz@cyrillic]=KAB KWorldClock XXPort плагини
+ Name[vi]=Bổ sung XXPort KWorldClock KAB
+ Name[zh_CN]=KAB KWorldClock XXPort 插件
+ Name[zh_TW]=KAB KWorldClock XXPort 外掛程式
+@@ -77,6 +79,7 @@
+ Comment[is]=Íforrit sem flytur út landupplýsingar um staðsetningar fyrir KWorldClock
+ Comment[it]=Plugin per esportare geo data dei contatti come bandiere in KWorldClock
+ Comment[ja]=KWorldClock の旗を地図データの接点にエクスポートするプラグイン
++Comment[ka]=geo მონაცემების დასაექსპორტებელი მოდული, როგორიცაა KWorldClock-ში დროშები
+ Comment[kk]=Контакттардың географикалық мәліметтерін KWorldClock-тың жалауша түрінде экспорттайтын плагин модулі
+ Comment[km]=កម្មវិធី​ជំនួយ​ដើម្បី​នាំ​ចេញ​ទិន្ន័យ​​ភូមិសាស្ត្រ​​នៃ​ទំនាក់ទំនង​ជា​ទង់​នៅ​ក្នុង KWorldClock
+ Comment[lt]=Priedas kontaktų geografinių duomenų eksportavimui KWorldClock
+--- ksig/ksig.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ ksig/ksig.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -38,6 +38,7 @@
+ GenericName[is]=Ritill fyrir undirritanir
+ GenericName[it]=Editor della firma
+ GenericName[ja]=署名エディタ
++GenericName[ka]=ხელმოწერის რედაქტორი
+ GenericName[kk]=Қолтаңба редакторы
+ GenericName[km]=កម្មវិធី​និពន្ធ​ហត្ថលេខា
+ GenericName[lt]=Parašų rengyklė
+@@ -63,7 +64,8 @@
+ GenericName[tg]=Муҳаррири имзоҳо
+ GenericName[tr]=İmza Düzenleyici
+ GenericName[uk]=Редактор підписів
+-GenericName[uz]=Имзо таҳрирчиси
++GenericName[uz]=Imzo tahrirchisi
++GenericName[uz@cyrillic]=Имзо таҳрирчиси
+ GenericName[vi]=Bộ soạn thảo chữ ký
+ GenericName[zh_CN]=签名编辑器
+ GenericName[zh_TW]=簽名編輯器
+--- renamedlgplugins/audio/renaudiodlg.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ renamedlgplugins/audio/renaudiodlg.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ Name[is]=Hljóðforsýn
+ Name[it]=Anteprima audio
+ Name[ja]=オーディオプレビュー
++Name[ka]=აუდიო წინასწარ ნახვა
+ Name[kk]=Аудио файлымен алдын ала таңыстыру
+ Name[km]= មើល​ជា​មុន​ដោយ​ស្វ័យប្រវត្តិ
+ Name[lt]=Audio perklausaa
+@@ -53,7 +54,8 @@
+ Name[tg]=Аудиошиносоӣ
+ Name[tr]=Audio Önizleme
+ Name[uk]=Перегляд аудіо
+-Name[uz]=Аудио кўриб чиқиш
++Name[uz]=Audio koʻrib chiqish
++Name[uz@cyrillic]=Аудио кўриб чиқиш
+ Name[vi]=Xem thử âm thanh
+ Name[zh_CN]=音频预览
+ Name[zh_TW]=音效預覽
+--- renamedlgplugins/images/renimagedlg.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ renamedlgplugins/images/renimagedlg.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ Name[is]=Myndsjá
+ Name[it]=Visualizzatore di immagini
+ Name[ja]=イメージ表示ツール
++Name[ka]=გამოსახულებთა ამსახავი
+ Name[kk]=Кескін көрсеткіш
+ Name[km]=កម្មវិធី​បង្ហាញ​រូបភាព
+ Name[lt]=Paveikslėlių rodytojas
+--- kfile-plugins/txt/kfile_txt.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/txt/kfile_txt.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -31,6 +31,7 @@
+ Name[is]=Upplýsingar um textaskrá
+ Name[it]=Informazioni File di testo
+ Name[ja]=テキストファイル情報
++Name[ka]=ტექსტური ფაილის ინფორმაცია
+ Name[kk]=Мәтін файлдың мәліметі
+ Name[km]=ព័ត៌មាន​ឯកសារ​អត្ថបទ
+ Name[lt]=Teksto bylos informacija
+@@ -57,7 +58,8 @@
+ Name[th]=ข้อมูลแฟ้มข้อความ
+ Name[tr]=Metin Dosyası Bilgisi
+ Name[uk]=Інформація про текстовий файл
+-Name[uz]=Матн файли ҳақида маълумот
++Name[uz]=Matn fayli haqida maʼlumot
++Name[uz@cyrillic]=Матн файли ҳақида маълумот
+ Name[vi]=Thông tin tập tin văn bản
+ Name[xh]=Ulwazi Lombhalo Wefayile
+ Name[zh_CN]=文本文件信息
+--- kfile-plugins/mhtml/kfile_mhtml.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/mhtml/kfile_mhtml.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -25,6 +25,7 @@
+ Name[is]=Upplýsingar um mhtml
+ Name[it]=Informazioni su mhtml
+ Name[ja]=mhtml 情報
++Name[ka]=mhtml ინფორმაცია
+ Name[kk]=mhtml мәліметі
+ Name[km]=ព័ត៌មាន mhtml
+ Name[lt]=mhtml info
+@@ -48,7 +49,8 @@
+ Name[ta]=mhtml தகவல்
+ Name[tr]=mhtml Bilgisi
+ Name[uk]=Інформація про mhtml
+-Name[uz]=mhtml файллари ҳақида маълумот
++Name[uz]=mhtml fayllari haqida maʼlumot
++Name[uz@cyrillic]=mhtml файллари ҳақида маълумот
+ Name[vi]=Thông tin mhtml
+ Name[zh_CN]=mhtml 信息
+ Name[zh_TW]=mhtml 資訊
+--- kfile-plugins/html/kfile_html.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/html/kfile_html.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ Name[is]=Upplýsingar um HTML lagalista
+ Name[it]=Informazioni playlist HTML
+ Name[ja]=HTML プレイリスト情報
++Name[ka]=HTML სიმღერათა სიის ინფორმაცია
+ Name[kk]=HTML орындау тізім мәліметі
+ Name[km]=ព័ត៌មាន​បញ្ជី​ចាក់ HTML
+ Name[lt]=HTML grojaraščio informacija
+--- kfile-plugins/lnk/lnkforward.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/lnk/lnkforward.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -25,6 +25,7 @@
+ Comment[is]=Ræsa tengil í Windows lnk skrá
+ Comment[it]=Collegamento iniziale dato nel file .lnk di Windows
+ Comment[ja]=Windows の .lnk ファイルのリンクを開始
++Comment[ka]=Windows .lnk ფაილში მოცემული ბმულის გაშვება
+ Comment[kk]=Windows .lnk файл сілтегенің жегу
+ Comment[km]=ចាប់ផ្ដើម​តំណ​ដែល​បានផ្ដល់​​ក្នុង​បង្អួច​ឯកសារ .lnk
+ Comment[lt]=Atverti nuorodą, nurodytą Windows .lnk byloje
+@@ -48,7 +49,8 @@
+ Comment[tg]=Гузаштан бо истинод аз ярлиқи Windows (.lnk)
+ Comment[tr]=Windows .lnk dosyasında verilen başlangıç kısayolu
+ Comment[uk]=Перейти по посиланню з файла .lnk для Windows
+-Comment[uz]=Windows .lnk файлида кўрсатилган боғга ўтиш
++Comment[uz]=Windows .lnk faylida koʻrsatilgan bogʻga oʻtish
++Comment[uz@cyrillic]=Windows .lnk файлида кўрсатилган боғга ўтиш
+ Comment[vi]=Liên kết bắt đầu được ghi trong tập tin .Ink của Windows
+ Comment[zh_CN]=启动 Windows .lnk 文件中给出的链接
+ Comment[zh_TW]=連結 Windows .lnk 檔中指定的網址
+@@ -78,6 +80,7 @@
+ Name[is]=Windows lnk skráarframsendir
+ Name[it]=File lnk di windows con funzione forwarder
+ Name[ja]=Windows lnk ファイルフォワーダ
++Name[ka]=Windows lnk ფაილის გადამცემი
+ Name[kk]=Windows жарлығының сілтемесіне өту
+ Name[km]=កម្មវិធី​បញ្ជូន​បន្ត​បង្អួច​​ឯកសារ lnk​
+ Name[lt]=Windows lnk bylų nuorodos
+--- kfile-plugins/lnk/kfile_lnk.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/lnk/kfile_lnk.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[is]=Upplýsingar um Windows lnk-skrá
+ Name[it]=File di informazioni Windows lnk
+ Name[ja]=Windows lnk ファイル情報
++Name[ka]=Windows lnk ფაილის ინფორმაცია
+ Name[kk]=Windows жарлық файлдың мәліметі
+ Name[km]=ព័ត៌មាន​ឯកសារ​​បង្អួច​ឯកសារ lnk​
+ Name[lt]=Windows lnk bylos informacija
+@@ -51,7 +52,8 @@
+ Name[tg]=Маълумотҳо дар бораи ярлиқи Windows
+ Name[tr]=Windows lnk Dosya Bilgisi
+ Name[uk]=Інформація про файл lnk для Windows
+-Name[uz]=Windows lnk файли ҳақида маълумот
++Name[uz]=Windows lnk fayli haqida maʼlumot
++Name[uz@cyrillic]=Windows lnk файли ҳақида маълумот
+ Name[vi]=Thông tin tập tin Ink Windows
+ Name[zh_CN]=Windows lnk 文件信息
+ Name[zh_TW]=Windows lnk 檔資訊
+--- kfile-plugins/lnk/x-win-lnk.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/lnk/x-win-lnk.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -26,6 +26,7 @@
+ Comment[is]=Windows tengiskrá
+ Comment[it]=Windows file di link
+ Comment[ja]=Windows リンクファイル
++Comment[ka]=Windows-ის ბმულის ფაილი
+ Comment[kk]=Windows сілтеме файлы
+ Comment[km]=បង្អួច​ឯកសារ​​តំណ​
+ Comment[lt]=Windows bylų nuorodos
+@@ -50,7 +51,8 @@
+ Comment[tg]=Ярлиқи Windows
+ Comment[tr]=Windows Kısayol Dosyası
+ Comment[uk]=файл посилання для Windows
+-Comment[uz]=Windows боғ файли
++Comment[uz]=Windows bogʻ fayli
++Comment[uz@cyrillic]=Windows боғ файли
+ Comment[vi]=Tập tin liên kết Windows
+ Comment[zh_CN]=Windows 快捷方式文件
+ Comment[zh_TW]=Windows Link 檔
+--- kfile-plugins/desktop/kfile_desktop.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/desktop/kfile_desktop.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -31,6 +31,7 @@
+ Name[is]=Upplýsingar un skjáborðsfærslu
+ Name[it]=Informazioni sulle voci Desktop
+ Name[ja]=デスクトップエントリ情報
++Name[ka]=სამუშაო მაგიდის ჩანაწერის ინფორმაცია
+ Name[kk]=.desktop жазуының мәліметі
+ Name[km]=ព័ត៌មាន​ធាតុ​ផ្ទៃ​តុ
+ Name[lt]=Darbastalio įrašo informacija
+--- kfile-plugins/folder/kfile_folder.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/folder/kfile_folder.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -31,6 +31,7 @@
+ Name[is]=Möppuupplýsingar
+ Name[it]=Informazioni su directory
+ Name[ja]=フォルダ情報
++Name[ka]=საქაღალდის ინფორმაცია
+ Name[kk]=Қапшық мәліметі
+ Name[km]=ព័ត៌មាន​ថត
+ Name[lt]=Aplanko informacija
+@@ -57,7 +58,8 @@
+ Name[th]=ข้อมูลโฟลเดอร์
+ Name[tr]=Dizin Bilgisi
+ Name[uk]=Інформація про теку
+-Name[uz]=Жилд ҳақида маълумот
++Name[uz]=Jild haqida maʼlumot
++Name[uz@cyrillic]=Жилд ҳақида маълумот
+ Name[vi]=Thông tin thư mục
+ Name[xh]=Ulwazi lwencwadi enencukhacha
+ Name[zh_CN]=文件夹信息
+--- kfile-plugins/cert/kfile_cert.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kfile-plugins/cert/kfile_cert.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -25,6 +25,7 @@
+ Name[is]=Upplýsingar um skírteini
+ Name[it]=Informazioni del certificato
+ Name[ja]=認証情報
++Name[ka]=სერტიფიკატის ინფორმაცია
+ Name[kk]=Куәлік мәліметтері
+ Name[km]=ព័ត៌មាន​វិញ្ញាបនបត្រ
+ Name[lt]=Sertifikato informacija
+@@ -48,7 +49,8 @@
+ Name[ta]=சான்றிதழ் தகவல்
+ Name[tr]=Sertifika Bilgisi
+ Name[uk]=Інформація про сертифікат
+-Name[uz]=Сертификат ҳақида маълумот
++Name[uz]=Sertifikat haqida maʼlumot
++Name[uz@cyrillic]=Сертификат ҳақида маълумот
+ Name[vi]=Thông tin chứng nhận
+ Name[zh_CN]=证书信息
+ Name[zh_TW]=憑證資訊
+--- kicker-applets/mediacontrol/mediacontrol.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kicker-applets/mediacontrol/mediacontrol.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -23,6 +23,7 @@
+ Name[is]=Margmiðlunarstjórn
+ Name[it]=Controllo multimediale
+ Name[ja]=メディアコントロール
++Name[ka]=მედიის მმართველი
+ Name[kk]=Ойнатқышты басқару
+ Name[km]=វត្ថុ​បញ្ជា​មេឌៀ​
+ Name[lt]=Media valdymas
+@@ -43,7 +44,8 @@
+ Name[sv]=Mediakontroll
+ Name[tr]=Medya Kontrolü
+ Name[uk]=Керування медіа
+-Name[uz]=Медиа-плейер бошқаруви
++Name[uz]=Media-pleyer boshqaruvi
++Name[uz@cyrillic]=Медиа-плейер бошқаруви
+ Name[vi]=Điều khiển nhạc/ảnh
+ Name[zh_CN]=媒体控制
+ Name[zh_TW]=媒體控制
+@@ -77,6 +79,7 @@
+ Comment[is]=Íforrit til að stjórna margmiðlunarspilurum
+ Comment[it]=Applet per controllare i lettori multimediali
+ Comment[ja]=メディアプレーヤを操作するアプレット
++Comment[ka]=მედია დამკვრელის მართვის აპლეტი
+ Comment[kk]=Мультимедиа ойнатқыштарды басқару апплеті
+ Comment[km]=អាប់ភ្លេត​ដើម្បី​ត្រួតពិនិត្យ​​កម្មវិធី​ចាក់​មេឌៀ
+ Comment[lt]=Media grotuvų valdymo įskiepis
+@@ -105,7 +108,8 @@
+ Comment[th]=แอพเพล็ตควบคุมโปรแกรมเล่นสื่อ
+ Comment[tr]=Ortam yürütücülerini kontrol etmek için bir programcık
+ Comment[uk]=Аплет для керування програвачами мультимедіа
+-Comment[uz]=Медиа-плейерларни бошқариш учун апплет
++Comment[uz]=Media-pleyerlarni boshqarish uchun applet
++Comment[uz@cyrillic]=Медиа-плейерларни бошқариш учун апплет
+ Comment[ven]=Apulete yau langula tshitambi tsha media
+ Comment[vi]=Tiểu dụng điều khiển bộ phát nhạc/ảnh
+ Comment[xh]=Applet ukulawula usasazo lwabadlali
+--- kicker-applets/ktimemon/ktimemon.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kicker-applets/ktimemon/ktimemon.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -29,6 +29,7 @@
+ Comment[is]=Einfalt kerfiseftirlit
+ Comment[it]=Un semplice monitor di sistema
+ Comment[ja]=シンプルなシステムモニタ
++Comment[ka]=მარტივი სისტემური მონიტორი
+ Comment[kk]=Қарапайым жүйе қадағалауышы
+ Comment[km]=កម្មវិធី​ត្រួត​ពិនិត្យ​ប្រព័ន្ធ​​ធម្មតា​មួយ
+ Comment[lt]=Sistemos stebėjimo priemonė
+@@ -50,7 +51,8 @@
+ Comment[sv]=En enkel systemövervakare
+ Comment[tr]=Basit bir sistem izleyici
+ Comment[uk]=Простий системний монітор
+-Comment[uz]=Тизимни назорат қилиш учун оддий восита
++Comment[uz]=Tizimni nazorat qilish uchun oddiy vosita
++Comment[uz@cyrillic]=Тизимни назорат қилиш учун оддий восита
+ Comment[vi]=Bộ theo dõi hệ thống đơn giản
+ Comment[zh_CN]=简单的系统监视器
+ Comment[zh_TW]=簡單的系統監視器
+@@ -85,6 +87,7 @@
+ Name[is]=Kerfiseftirlit
+ Name[it]=Monitor di sistema
+ Name[ja]=システムモニタ
++Name[ka]=სისტემური მონიტორი
+ Name[kk]=Жүйе қадағалауышы
+ Name[km]=កម្មវិធី​ត្រួត​ពិនិត្យ​ប្រព័ន្ធ
+ Name[ko]=시스템 지켜보기
+@@ -114,7 +117,8 @@
+ Name[th]=สอดส่องระบบ
+ Name[tr]=Sistem İzleyici
+ Name[uk]=Системний монітор
+-Name[uz]=Оддий тизим назоратчиси
++Name[uz]=Oddiy tizim nazoratchisi
++Name[uz@cyrillic]=Оддий тизим назоратчиси
+ Name[ven]=Monitha wa Sistemu
+ Name[vi]=Bộ theo dõi hệ thống
+ Name[xh]=Indlela yokwenza yeCebo lokubonisa
+--- kicker-applets/kolourpicker/kolourpicker.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kicker-applets/kolourpicker/kolourpicker.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -32,6 +32,7 @@
+ Name[is]=Litaval
+ Name[it]=Scelta colore
+ Name[ja]=色の抽出
++Name[ka]=ფერთა ამღები
+ Name[kk]=Түсті шұқып алу
+ Name[km]=កម្មវិធី​រើស​ពណ៌
+ Name[ko]=색 고르기
+@@ -61,7 +62,8 @@
+ Name[th]=เครื่องมือเลือกสี
+ Name[tr]=Renk Seçici
+ Name[uk]=Селектор кольорів
+-Name[uz]=Ранг танлагич
++Name[uz]=Rang tanlagich
++Name[uz@cyrillic]=Ранг танлагич
+ Name[ven]=Tshidobamuvhala
+ Name[vi]=Bộ kén màu
+ Name[xh]=Umkhethi Wombala
+@@ -100,6 +102,7 @@
+ Comment[is]=Velja liti hvaðan sem er af skjánum og fá tölugildi þeirra
+ Comment[it]=Scegli un colore da un posto qualsiasi e scopri il suo valore
+ Comment[ja]=色を抽出してそれの値を読み込みます
++Comment[ka]=ნებისმიერი ადგილიდან იღებს ფერს, მათი მნიშვნელობის მისაღებად
+ Comment[kk]=Кез келген жерден түсті шұқып, параметрлерін алу
+ Comment[km]=រើស​ពណ៌​ពី​​កន្លែង​ណាមួយ ​និង​យក​តម្លៃ​របស់​ពួក​វា
+ Comment[ko]=어디에 있는 색이든 고를 수 있는 도구
+@@ -129,7 +132,8 @@
+ Comment[th]=เลือกสีจากที่ใด ๆ และรับค่าของมัน
+ Comment[tr]=Herhangi bir yerden renk seçer ve değerlerini alır
+ Comment[uk]=Вибирає кольори будь-звідки та отримує їхні значення
+-Comment[uz]=Экраннинг исталган жойидан ранг ва унинг қийматини олиш
++Comment[uz]=Ekranning istalgan joyidan rang va uning qiymatini olish
++Comment[uz@cyrillic]=Экраннинг исталган жойидан ранг ва унинг қийматини олиш
+ Comment[ven]=Zwi doba mivhala hothe na hothe zwa wana kuitele kwazwo
+ Comment[vi]=Kén màu từ bất cứ nơi nào và lấy giá trị của nó
+ Comment[xh]=Khetha imibala esuka naphi na ze ufumane amaxabiso awo
+--- kicker-applets/math/mathapplet.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kicker-applets/math/mathapplet.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[is]=Algebrureiknivél
+ Name[it]=Disegnatore di funzioni matematiche
+ Name[ja]=数学的表現の評価者
++Name[ka]=მათემატიკური გამოსახულებების გამომთვლელი
+ Name[kk]=Математикалық өрнегін есептеу
+ Name[km]=កម្មវិធី​វាយ​តម្លៃ​កន្សោម​ពិជគណិត
+ Name[lt]=Matematinių išraiškų vertinimo priemonė
+@@ -50,7 +51,8 @@
+ Name[tg]=Тафтиши ифодаҳои математикӣ
+ Name[tr]=Matematiksel İşlem Değerlendiricisi
+ Name[uk]=Перевірка математичних виразів
+-Name[uz]=Математик ифодаларни ҳисоблагич
++Name[uz]=Matematik ifodalarni hisoblagich
++Name[uz@cyrillic]=Математик ифодаларни ҳисоблагич
+ Name[vi]=Bộ định giá biểu thức toán học
+ Name[zh_CN]=数学表达式计算器
+ Name[zh_TW]=數學運算模擬器
+@@ -79,6 +81,7 @@
+ Comment[is]=Algebrureiknivél
+ Comment[it]=Uno strumento per disegnare funzioni matematiche
+ Comment[ja]=数学的表現の評価者
++Comment[ka]=მათემატიკური გამოსახულებების გამომთვლელი
+ Comment[kk]=Математикалық өрнекті есептеп шығару
+ Comment[km]=កម្មវិធី​វាយ​តម្លៃ​កន្សោម​ពិជ​គណិត
+ Comment[lt]=Matematinių išraiškų vertinimo priemonė
+@@ -102,7 +105,8 @@
+ Comment[tg]=Тафтиши ифодаҳои математикӣ
+ Comment[tr]=Matematiksel işlem değerlendirici
+ Comment[uk]=Перевірка математичних виразів
+-Comment[uz]=Математик ифодаларни ҳисоблагич
++Comment[uz]=Matematik ifodalarni hisoblagich
++Comment[uz@cyrillic]=Математик ифодаларни ҳисоблагич
+ Comment[vi]=Bộ định giá biểu thức toán học
+ Comment[zh_CN]=数学表达式计算器
+ Comment[zh_TW]=數學運算模擬器
+--- kicker-applets/kbinaryclock/kbinaryclock.desktop	(.../tags/KDE/3.5.9/kdeaddons)	(revision 824075)
++++ kicker-applets/kbinaryclock/kbinaryclock.desktop	(.../branches/KDE/3.5/kdeaddons)	(revision 824075)
+@@ -27,6 +27,7 @@
+ Name[is]=Tvíundarklukka
+ Name[it]=Orologio binario
+ Name[ja]=バイナリ時計
++Name[ka]=ორობითი საათი
+ Name[kk]=Бинарлы сағат
+ Name[km]=នាឡិកា​គោលពីរ
+ Name[lt]=Skaitmeninis laikrodis
+@@ -50,7 +51,8 @@
+ Name[ta]=இருநிலை கடிகாரம்
+ Name[tr]=İkili Saat
+ Name[uk]=KBinaryClock
+-Name[uz]=Бинар соат
++Name[uz]=Binar soat
++Name[uz@cyrillic]=Бинар соат
+ Name[vi]=Đồng hồ nhị phân
+ Name[zh_CN]=二进制时钟
+ Name[zh_TW]=二位元鐘
+@@ -76,6 +78,7 @@
+ Comment[is]=Sýnir tímann í tvíunarsniði
+ Comment[it]=Mostra il tempo in formato binario
+ Comment[ja]=時刻をバイナリ形式で表示します
++Comment[ka]=დროს ორობით ფორმატში აჩვენებს
+ Comment[kk]=Уақытты бинарлы пішімінде көрсету
+ Comment[km]=បង្ហាញ​ម៉ោង​ជា​​ទ្រង់ទ្រាយ​គោលពីរ
+ Comment[lt]=Rodo laiką skaitmeniniu formatu
+@@ -96,7 +99,8 @@
+ Comment[sv]=Visar tiden med binärformat
+ Comment[tr]=Zamanı ikili biçemde gösterir
+ Comment[uk]=Показує час в двійковому форматі
+-Comment[uz]=Вақтни иккили саноқ тизимида кўрсатиш
++Comment[uz]=Vaqtni ikkili sanoq tizimida koʻrsatish
++Comment[uz@cyrillic]=Вақтни иккили саноқ тизимида кўрсатиш
+ Comment[vi]=Hiển thị giờ định dạng nhị phân
+ Comment[zh_CN]=以二进制格式显示时间
+ Comment[zh_TW]=以二進位格式顯示時間

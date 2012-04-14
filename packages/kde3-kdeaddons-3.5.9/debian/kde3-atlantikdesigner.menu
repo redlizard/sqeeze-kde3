@@ -1,0 +1,7 @@
+?package(atlantikdesigner):needs="X11"\
+  section="Games/Tools"\
+  hints="KDE,Monopoly"\
+  title="Atlantik Designer"\
+  longtitle="Atlantik Designer (Monopoly(R)-like Board Designer)"\
+  command="/opt/kde3/bin/atlantikdesigner"\
+  icon="/opt/kde3/share/pixmaps/atlantikdesigner.xpm"

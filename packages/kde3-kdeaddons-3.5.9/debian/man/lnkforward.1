@@ -1,0 +1,60 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH LNKFORWARD 1 "October 23, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+lnkforward \- open an URL in a Windows .lnk file under KDE
+.SH SYNOPSIS
+.B lnkforward
+[ \fIgeneric-options\fP ]
+[ \fB\-\-map\fP \fIdrive\fP=\fIpath\fP ... ]
+\fIURL\fP
+.SH DESCRIPTION
+\fBlnkforward\fP examines a Windows .lnk file, determines its target and
+then opens this target file.  In deciding how to open the target file,
+the usual KDE file associations will be used.
+.PP
+The given URL must include a protocol.  Specifically, if it is simply a
+file on the local filesystem, it must be given in the form
+\fIfile:/path/to/file.lnk\fP.
+.PP
+Drive mappings must be supplied (via \-\-map) for any Windows drive
+referred to in the .lnk file.  See the OPTIONS section below for details.
+.PP
+This utility is used by the .lnk kfile plugin, and is
+part of the official KDE add-ons module.
+.SH OPTIONS
+Below are the lnkforward-specific options.
+For a full summary of options, run \fIlnkforward \-\-help\fP.
+.TP
+\fB\-\-map\fP \fIdrive\fP=\fIpath\fP
+Map the given Windows drive to the given path on the local filesystem
+(generally its mount point).
+This option may be passed multiple times.
+.SH EXAMPLE
+Suppose that the Windows file \fIc:\\readme.txt.lnk\fP is a link to
+\fId:\\foo\\bar.txt\fP.  Then the following command will open the file
+\fI/mnt/data/foo/bar.txt\fP in the usual KDE text editor:
+.PP
+.RS
+\fIprompt$\fP
+lnkforward \-\-map c=/mnt/windows \-\-map d=/mnt/data /mnt/windows/readme.lnk
+.RE
+.SH AUTHOR
+This utility was written by Martin Koller <m.koller@surfeu.at>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

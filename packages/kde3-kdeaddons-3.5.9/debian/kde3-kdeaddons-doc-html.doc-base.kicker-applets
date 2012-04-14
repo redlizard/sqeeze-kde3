@@ -1,0 +1,10 @@
+Document: kdeaddons-doc-html_kicker-applets
+Title: Kicker Applets Handbook
+Author: Various
+Abstract: This is the handbook for the addon applets for Kicker, KDE's panel.
+Section: System/Administration
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kicker-applets/index.html
+Files: /usr/share/doc/kde/HTML/en/kicker-applets/*.html
+

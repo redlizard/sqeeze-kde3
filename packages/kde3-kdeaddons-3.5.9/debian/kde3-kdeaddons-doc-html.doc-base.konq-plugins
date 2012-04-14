@@ -1,0 +1,11 @@
+Document: kdeaddons-doc-html_konq-plugins
+Title: Konqueror Plugins Handbook
+Author: Lauri Watts <lauri@kde.org> and others
+Abstract: This is the handbook for the additional plugins for Konqueror, the
+ KDE file manager and web browser.
+Section: System/Monitoring
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/konq-plugins/index.html
+Files: /usr/share/doc/kde/HTML/en/konq-plugins/*.html
+

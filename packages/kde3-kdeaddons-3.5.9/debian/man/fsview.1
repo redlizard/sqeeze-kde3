@@ -1,0 +1,52 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH FSVIEW 1 "February 4, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+fsview \- a filesystem viewer that graphically shows disk usage
+.SH SYNOPSIS
+.B fsview
+.RI "[ " generic-options " ]"
+[ \fIfolder\fP ]
+.SH DESCRIPTION
+\fBFSView\fP is a tool for showing disc utilization in a graphical form, much
+like the UNIX command 'du'.  The visualisation type chosen is a
+treemap.  Each directory is represented by a rectangle whose area is
+proportional to its size.  Each directory rectangle contains smaller
+rectangles for its contents, and so on down.
+.PP
+FSView is provided both as a Konqueror plugin for viewing directories,
+and as a standalone executable.
+.PP
+This application is part of the official KDE add-ons module.
+.SH OPTIONS
+Below are the fsview-specific options.
+For a full summary of options, run \fIfsview \-\-help\fP.
+.TP
+\fIfolder\fP
+View the filesystem starting from this folder.
+.SH SEE ALSO
+.BR du (1),
+.BR kdirstat (1),
+.BR konqueror (1).
+.PP
+For a full featured graphical 'du', see KDirStat.  It's quite similar
+to FSView, but allows for lot of cleanup actions.
+.SH AUTHOR
+FSView was written by Josef Weidendorfer <Josef.Weidendorfer@gmx.de>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

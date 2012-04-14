@@ -1,0 +1,10 @@
+debian/tmp/opt/kde3/bin/ksig
+debian/tmp/opt/kde3/share/applications/kde/ksig.desktop
+debian/tmp/opt/kde3/share/apps/ksig/ksigui.rc
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/ksig.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/ksig.png
+debian/icons/ksig.xpm /opt/kde3/share/pixmaps
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ksig/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ksig/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ksig/index.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/ksig/screenshot.png

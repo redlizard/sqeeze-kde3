@@ -1,0 +1,11 @@
+Document: kdeaddons-doc-html_kate-plugins
+Title: Kate Plugins Handbook
+Author: Various
+Abstract: This is the handbook for the plugins for Kate, KDE's Advanced Text
+ Editor.
+Section: Apps/Editors
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kate-plugins/index.html
+Files: /usr/share/doc/kde/HTML/en/kate-plugins/*.html
+

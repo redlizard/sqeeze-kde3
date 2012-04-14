@@ -1,0 +1,88 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH ORIENT.PY 1 "October 13, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+orient.py \- change the orientation of a digital camera image file
+.SH SYNOPSIS
+.B orient.py
+.I image-file
+.br
+.B orient.py
+[1-8]
+.I image-file
+.SH DESCRIPTION
+This is a small script for changing the orientation of certain types
+of digital camera image files.  The image data is not modified, but
+rather the EXIF tags stored with the image are altered to reflect the
+new orientation.  For this reason only images with the correct types of
+EXIF tags can be changed using this script.
+.PP
+When called with with a numeric argument from 1 to 8, the orientation
+will be changed as described in the options section below.  When called
+with only a filename, the current orientation will be written to the
+console (also as a number from 1 to 8).
+.PP
+If the image contains no EXIF information or if the EXIF information is not
+of the correct type, an error will be displayed and this script will
+exit immediately.
+.PP
+This script is provided with the image conversion and transformation
+plugins for Konqueror.  For a more general-purpose JPEG rotation/reflection
+tool, see
+.BR jpegorient (1)
+which is also a part of this same set of plugins.
+.PP
+This utility is part of the official KDE add-ons module.
+.SH OPTIONS
+The possible orientations are represented by the numbers 1 to 8 as
+follows.
+.TP
+.B 1
+No change of orientation.
+.TP
+.B 2
+Flip horizontally.
+.TP
+.B 3
+Rotate by a half turn (i.e., 180 degrees).
+.TP
+.B 4
+Flip vertically.
+.TP
+.B 5
+Transpose image (i.e., reflect across the upper-left to lower-right
+diagonal axis).
+.TP
+.B 6
+Rotate by 90 degrees clockwise.
+.TP
+.B 7
+Transverse transpose image (i.e., reflect across the upper-right to
+lower-left diagonal axis).
+.TP
+.B 8
+Rotate by 270 degrees clockwise (i.e., 90 degrees counter-clockwise).
+.SH SEE ALSO
+.BR exif.py (1),
+.BR jpegorient (1),
+.BR konqueror (1).
+.SH AUTHOR
+The image transformation plugins were written by
+Leif Jensen <jensen@math.columbia.edu>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

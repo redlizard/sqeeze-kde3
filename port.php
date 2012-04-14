@@ -187,9 +187,13 @@ $extrarules = <<<RULES
 
 DEB_CONFIGURE_PREFIX := /opt/kde3
 
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
 $(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
 	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
-	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+
 
 
 RULES;

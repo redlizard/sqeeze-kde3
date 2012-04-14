@@ -1,0 +1,26 @@
+debian/tmp/opt/kde3/lib/kde3/kolourpicker_panelapplet.la
+debian/tmp/opt/kde3/lib/kde3/kolourpicker_panelapplet.so
+debian/tmp/opt/kde3/lib/kde3/ktimemon_panelapplet.la
+debian/tmp/opt/kde3/lib/kde3/ktimemon_panelapplet.so
+debian/tmp/opt/kde3/lib/kde3/math_panelapplet.la
+debian/tmp/opt/kde3/lib/kde3/math_panelapplet.so
+debian/tmp/opt/kde3/lib/kde3/mediacontrol_panelapplet.la
+debian/tmp/opt/kde3/lib/kde3/mediacontrol_panelapplet.so
+debian/tmp/opt/kde3/lib/kde3/kbinaryclock_panelapplet.la
+debian/tmp/opt/kde3/lib/kde3/kbinaryclock_panelapplet.so
+debian/tmp/opt/kde3/share/apps/kicker/applets
+debian/tmp/opt/kde3/share/apps/mediacontrol
+debian/tmp/opt/kde3/share/config.kcfg/kbinaryclock.kcfg
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kicker-applets/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kicker-applets/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kicker-applets/*.docbook
+debian/tmp/opt/kde3/share/icons/locolor/16x16/apps/ktimemon.png
+debian/tmp/opt/kde3/share/icons/locolor/32x32/apps/ktimemon.png
+debian/tmp/opt/kde3/share/icons/crystalsvg/16x16/apps/ktimemon.png
+debian/tmp/opt/kde3/share/icons/crystalsvg/32x32/apps/ktimemon.png
+kicker-applets/kolourpicker/TODO /opt/kde3/share/doc/kicker-applets/kolourpicker
+kicker-applets/mediacontrol/AUTHORS /opt/kde3/share/doc/kicker-applets/mediacontrol
+kicker-applets/mediacontrol/README /opt/kde3/share/doc/kicker-applets/mediacontrol
+kicker-applets/mediacontrol/TODO /opt/kde3/share/doc/kicker-applets/mediacontrol
+kicker-applets/ktimemon/README /opt/kde3/share/doc/kicker-applets/ktimemon
+kicker-applets/ktimemon/TODO /opt/kde3/share/doc/kicker-applets/ktimemon

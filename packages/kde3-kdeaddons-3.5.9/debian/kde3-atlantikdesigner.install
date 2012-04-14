@@ -1,0 +1,6 @@
+debian/tmp/opt/kde3/bin/atlantikdesigner
+debian/tmp/opt/kde3/share/apps/atlantikdesigner
+debian/tmp/opt/kde3/share/applications/kde/atlantikdesigner.desktop
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/atlantikdesigner.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/atlantikdesigner.png
+debian/icons/atlantikdesigner.xpm /opt/kde3/share/pixmaps

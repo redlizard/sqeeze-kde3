@@ -1,0 +1,6 @@
+debian/tmp/opt/kde3/lib/kde3/libkaddrbk_geo_xxport.la
+debian/tmp/opt/kde3/lib/kde3/libkaddrbk_geo_xxport.so
+debian/tmp/opt/kde3/lib/kde3/libkaddrbk_gmx_xxport.la
+debian/tmp/opt/kde3/lib/kde3/libkaddrbk_gmx_xxport.so
+debian/tmp/opt/kde3/share/apps/kaddressbook
+debian/tmp/opt/kde3/share/services/kaddressbook

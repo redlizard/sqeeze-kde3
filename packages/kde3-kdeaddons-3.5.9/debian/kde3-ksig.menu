@@ -1,0 +1,7 @@
+?package(ksig):needs="X11"\
+  section="Applications/Network/Communication"\
+  hints="KDE"\
+  title="KSig"\
+  longtitle="KSig (Signature Editor)"\
+  command="/opt/kde3/bin/ksig"\
+  icon="/opt/kde3/share/pixmaps/ksig.xpm"
