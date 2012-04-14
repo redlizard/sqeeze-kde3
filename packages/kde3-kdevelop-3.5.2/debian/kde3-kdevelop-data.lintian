@@ -1,0 +1,11 @@
+# These files are provided to create new applications.
+kdevelop-data: extra-license-file usr/share/apps/kdevappwizard/template-common/COPYING
+kdevelop-data: extra-license-file usr/share/apps/kdevappwizard/template-common/COPYING.LIB
+kdevelop-data: extra-license-file usr/share/apps/kdevappwizard/template-common/LICENSE.QPL
+kdevelop-data: extra-license-file usr/share/apps/kdevappwizard/template-common/LICENSE.BSD
+# This file is a template, not a script.
+kdevelop-data: script-not-executable ./usr/share/apps/kdevfilecreate/file-templates/pl
+# This file is used internally by kio_pydoc.la and invoked explicitly with python.
+kdevelop-data: script-not-executable ./usr/share/apps/kio_pydoc/kde_pydoc.py
+# This file is used internally by libkdevcvsservice.la and invoked explicitly with sh.
+kdevelop-data: script-not-executable ./usr/share/apps/kdevcvsservice/buildcvs.sh

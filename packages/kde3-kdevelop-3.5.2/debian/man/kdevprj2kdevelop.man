@@ -1,0 +1,14 @@
+.TH KDEVPRJ2KDEVELOP 1
+.SH NAME
+kdevprj2kdevelop \- KDevelop 2.x project converter
+.SH SYNOPSIS
+.B kdevprj2kdevelop
+.I file
+.SH DESCRIPTION
+.B kdevprj2kdevelop
+is a tool for converting KDevelop 2.x projects (*.kdevprj) to the
+format used by KDevelop 3.x (*.kdevelop).
+.SH PROGRAM OPTIONS
+.TP
+.B file
+KDevelop 2.x project to convert.

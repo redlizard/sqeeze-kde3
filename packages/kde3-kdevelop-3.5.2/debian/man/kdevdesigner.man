@@ -1,0 +1,14 @@
+.TH KDEVDESIGNER 1
+.SH NAME
+kdevdesigner \- KDE GUI Designer
+.SH SYNOPSIS
+.B kdevdesigner
+.I [Qt-options] [KDE-options] [URL]
+.SH DESCRIPTION
+.B KDevDesigner
+is a customised version of Qt Designer for KDE.
+.SH PROGRAM OPTIONS
+.TP
+.B URL
+Document to open.
+.so kdeopt.part

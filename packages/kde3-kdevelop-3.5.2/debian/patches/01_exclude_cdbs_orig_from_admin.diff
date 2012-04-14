@@ -1,0 +1,12 @@
+diff -urN kdevelop-3.4.0.orig/parts/appwizard/common/Makefile.am kdevelop-3.4.0/parts/appwizard/common/Makefile.am
+--- kdevelop-3.4.0.orig/parts/appwizard/common/Makefile.am	2007-01-25 16:41:53.000000000 +0100
++++ kdevelop-3.4.0/parts/appwizard/common/Makefile.am	2007-01-29 09:17:45.000000000 +0100
+@@ -1,7 +1,7 @@
+ CLEANFILES = *.tar.gz
+ 
+ admin.tar.gz:
+-	$(TAR) -cf admin.tar --exclude=.svn -C $(srcdir) admin
++	$(TAR) -cf admin.tar --exclude=.svn --exclude=*.cdbs-orig -C $(srcdir) admin
+ 	gzip admin.tar
+ 
+ gnome.tar.gz:

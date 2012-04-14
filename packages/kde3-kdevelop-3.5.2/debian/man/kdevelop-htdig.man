@@ -1,0 +1,18 @@
+.TH KDEVELOP-HTDIG 1
+.SH NAME
+kdevelop-htdig \- KDevelop index generator for documentation files
+.SH SYNOPSIS
+.B kdevelop-htdig
+.I [Qt-options] [KDE-options] [options]
+.SH DESCRIPTION
+.B kdevelop-htdig
+is an index generator for documentation files which is used by the 
+KDevelop integrated development environment.
+.SH PROGRAM OPTIONS
+.TP
+.B -c
+Update user's htdig configuration file only.
+.TP
+.B -i
+-c and generate index.
+.so kdeopt.part

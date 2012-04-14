@@ -1,0 +1,13 @@
+debian/tmp/etc/kde3/kdevassistantrc
+debian/tmp/etc/kde3/kdeveloprc
+debian/tmp/opt/kde3/bin/kdevelop-htdig
+debian/tmp/opt/kde3/bin/kdevdesigner
+debian/tmp/opt/kde3/bin/kdevprofileeditor
+debian/tmp/opt/kde3/bin/kdevassistant
+debian/tmp/opt/kde3/bin/kdevprj2kdevelop
+debian/tmp/opt/kde3/bin/kdevelop
+debian/tmp/opt/kde3/lib/kconf_update_bin/kdev-gen-settings-kconf_update
+debian/tmp/opt/kde3/share/services
+debian/tmp/opt/kde3/share/servicetypes
+debian/tmp/opt/kde3/lib/kde3
+debian/tmp/opt/kde3/lib/lib*.so.*

@@ -1,0 +1,84 @@
+#!/usr/bin/make -f
+
+# work around debian/cdbs/uploaders.mk
+makebuilddir::
+	[ -f debian/control.tmp ] || cp debian/control debian/control.tmp
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+PACKAGES_WITH_LIBS := kde3-kdevelop
+
+DEB_KDE_ENABLE_FINAL :=
+DEB_INSTALL_DOCS_kde3-kdevelop = AUTHORS
+DEB_MAKE_INSTALL_TARGET := install DESTDIR=$(CURDIR)/debian/tmp
+DEB_CONFIGURE_EXTRA_FLAGS := \
+				--disable-debug \
+				--enable-docbase \
+				--enable-scripting \
+				--enable-ada \
+				--enable-bash \
+				--enable-cpp \
+				--enable-fortran \
+				--enable-haskell \
+				--enable-java \
+				--enable-pascal \
+				--enable-perl \
+				--enable-php \
+				--enable-python \
+				--enable-ruby \
+				--enable-sql \
+				--enable-antproject \
+				--enable-autoproject \
+				--enable-customproject \
+				--enable-genericproject \
+				--enable-scriptproject \
+				--enable-trollproject \
+				--enable-cvs \
+				--enable-vba \
+				--enable-subversion \
+				--with-pic \
+				--with-kdelibsdoxy-dir=/usr/share/doc/kde3-kde/HTML/en/kdelibs-apidocs \
+				--with-pythondir=/usr \
+				--with-qtdoc-dir=/usr/share/qt3/doc/html
+
+# Use admin/ltmain.sh for application templates, as it is updated by
+# debian/patches/common/03_libtool_update.diff
+ltmain_sh := $(shell find $(DEB_SRCDIR)/parts/appwizard -type f -name ltmain.sh)
+
+update-config::
+ifneq (,$(ltmain_sh))
+	for i in $(ltmain_sh) ; do \
+		if ! test -e $$i.cdbs-orig ; then \
+			mv $$i $$i.cdbs-orig ; \
+			cp --remove-destination $(DEB_SRCDIR)/admin/ltmain.sh $$i ; \
+		fi ; \
+	done
+endif
+
+reverse-config::
+ifneq (,$(ltmain_sh))
+	for i in $(ltmain_sh) ; do \
+		if test -e $$i.cdbs-orig ; then \
+			mv $$i.cdbs-orig $$i ; \
+		fi ; \
+	done
+endif
+
+binary-install/kde3-kdevelop::
+	mkdir -p debian/kde3-kdevelop/opt/kde3/share/pixmaps
+	cp debian/kde3-kdevelop.xpm debian/kde3-kdevelop/opt/kde3/share/pixmaps
+
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+
+
