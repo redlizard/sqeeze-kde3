@@ -14,13 +14,13 @@ _Description: Default display manager:
  accordingly, edit each of their init scripts in /etc/init.d, and disable the
  check for a default display manager.
 
-Template: kdm/daemon_name
+Template: kde3-kdm/daemon_name
 Type: string
-Default: /usr/bin/kdm
+Default: /opt/kde3/bin/kdm
 Description: internal use only
  This template is never shown to the user and does not require translation.
 
-Template: kdm/stop_running_server_with_children
+Template: kde3-kdm/stop_running_server_with_children
 Type: boolean
 Default: false
 _Description: Stop the kdm daemon?

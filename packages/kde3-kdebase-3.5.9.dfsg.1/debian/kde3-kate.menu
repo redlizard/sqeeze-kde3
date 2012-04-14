@@ -3,18 +3,18 @@
 	section="Applications/Editors"\
 	hints="KDE,Text"\
 	title="Kate"\
-	icon32x32="/usr/share/pixmaps/kate.xpm"\
-	icon16x16="/usr/share/pixmaps/kate-16.xpm"\
-	command="/usr/bin/kate"
+	icon32x32="/opt/kde3/share/pixmaps/kate.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kate-16.xpm"\
+	command="/opt/kde3/bin/kate"
 
 ?package(kate):\
 	needs="X11"\
 	section="Applications/Editors"\
 	hints="KDE,Text"\
 	title="KWrite"\
-	icon32x32="/usr/share/pixmaps/kwrite.xpm"\
-	icon16x16="/usr/share/pixmaps/kwrite-16.xpm"\
-	command="/usr/bin/kwrite"
+	icon32x32="/opt/kde3/share/pixmaps/kwrite.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kwrite-16.xpm"\
+	command="/opt/kde3/bin/kwrite"
 
 # Icon 32x32 kate/pics/cr32-app-kate.png kate.xpm
 # Icon 16x16 kate/pics/cr16-app-kate.png kate-16.xpm

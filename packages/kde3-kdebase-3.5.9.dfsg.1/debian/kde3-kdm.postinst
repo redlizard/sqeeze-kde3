@@ -49,7 +49,7 @@ db_stop
 
 # don't start kdm if we are upgrading without stopping it
 NOSTART=
-if [ -e /var/run/kdm.upgrade ]; then
+if [ -e /var/run/kde3-kdm.upgrade ]; then
   NOSTART=yes
 fi
 # or if we're currently in X on the display it attempts to manage by default
@@ -63,7 +63,7 @@ for HOST in "" \
   fi
 done
 # or if it's already running
-if start-stop-daemon --stop --quiet --signal 0 --pid /var/run/kdm.pid --name kdm; then
+if start-stop-daemon --stop --quiet --signal 0 --pid /var/run/kde3-kdm.pid --name kdm; then
   NOSTART=yes
 fi
 # or if the options file says not to
@@ -120,17 +120,17 @@ case "$1" in
 esac
 
 
-if [ -x "/etc/init.d/kdm" ]; then
-  update-rc.d kdm defaults 99 01 >/dev/null
+if [ -x "/etc/init.d/kde3-kdm" ]; then
+  update-rc.d kde3-kdm defaults 99 01 >/dev/null
 fi
 
 if [ -n "$NOSTART" ]; then
   exit 0
 else
   if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
-    invoke-rc.d kdm start || true
+    invoke-rc.d kde3-kdm start || true
   else
-    /etc/init.d/kdm start || true
+    /etc/init.d/kde3-kdm start || true
   fi
 fi
 

@@ -2,7 +2,7 @@
 
 case "$1" in
     remove)
-        /usr/sbin/update-alternatives --remove x-www-browser /usr/bin/konqueror
+        /usr/sbin/update-alternatives --remove x-www-browser /opt/kde3/bin/konqueror
     ;;
 
     upgrade|deconfigure)

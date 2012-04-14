@@ -3,27 +3,27 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KEditBookmarks"\
-	icon32x32="/usr/share/pixmaps/keditbookmarks.xpm"\
-	icon16x16="/usr/share/pixmaps/keditbookmarks-16.xpm"\
-	command="/usr/bin/keditbookmarks"
+	icon32x32="/opt/kde3/share/pixmaps/keditbookmarks.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/keditbookmarks-16.xpm"\
+	command="/opt/kde3/bin/keditbookmarks"
 
 ?package(konqueror):\
 	needs="X11"\
 	section="Applications/Network/Web Browsing"\
 	hints="KDE,Web browsers"\
 	title="Konqueror"\
-	icon32x32="/usr/share/pixmaps/konqueror.xpm"\
-	icon16x16="/usr/share/pixmaps/konqueror-16.xpm"\
-	command="/usr/bin/konqueror --profile webbrowsing"
+	icon32x32="/opt/kde3/share/pixmaps/konqueror.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/konqueror-16.xpm"\
+	command="/opt/kde3/bin/konqueror --profile webbrowsing"
 
 ?package(konqueror):\
 	needs="X11"\
 	section="Applications/File Management"\
 	hints="KDE,File managers"\
 	title="Konqueror"\
-	icon32x32="/usr/share/pixmaps/kfm.xpm"\
-	icon16x16="/usr/share/pixmaps/kfm-16.xpm"\
-	command="/usr/bin/konqueror --profile filemanagement"
+	icon32x32="/opt/kde3/share/pixmaps/kfm.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kfm-16.xpm"\
+	command="/opt/kde3/bin/konqueror --profile filemanagement"
 
 # Icon 32x32 konqueror/keditbookmarks/cr32-app-keditbookmarks.png keditbookmarks.xpm
 # Icon 16x16 konqueror/keditbookmarks/cr16-app-keditbookmarks.png keditbookmarks-16.xpm

@@ -45,9 +45,9 @@ STOP=
 if grep -qs ^restart-on-upgrade /etc/kde3/kdm/kdm.options ||
    [ -n "$REMOVING" ]; then
   # is there an kdm process running?
-  if start-stop-daemon --stop --quiet --signal 0 --name kdm; then
+  if start-stop-daemon --stop --quiet --signal 0 --name kde3-kdm; then
     # any children?
-    PARENTS=$(pidof /usr/bin/kdm || true)
+    PARENTS=$(pidof /opt/kde3/bin/kdm || true)
     CHILDREN=
     if [ -n "$PARENTS" ]; then    
       for PROCESS in $PARENTS; do
@@ -64,11 +64,11 @@ if grep -qs ^restart-on-upgrade /etc/kde3/kdm/kdm.options ||
       if [ -n "$CHILDREN" ]; then
         if [ -n "$HAVE_DEBCONF" ]; then
           # ask the question
-          db_input high kdm/stop_running_server_with_children || true
+          db_input high kde3-kdm/stop_running_server_with_children || true
           db_go
           # what did the user say?
           ANSWER=
-          if db_get kdm/stop_running_server_with_children; then
+          if db_get kde3-kdm/stop_running_server_with_children; then
             ANSWER="$RET"
           fi
           if [ "$ANSWER" = "true" ]; then
@@ -76,7 +76,7 @@ if grep -qs ^restart-on-upgrade /etc/kde3/kdm/kdm.options ||
           fi
           # forget that we have seen the question; this is the sort of
           # non-configuration question that should be asked every time
-          db_fset kdm/stop_running_server_with_children seen false
+          db_fset kde3-kdm/stop_running_server_with_children seen false
         fi
       else
         STOP=yes
@@ -87,13 +87,13 @@ fi
 
 if [ -n "$STOP" ]; then
   if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
-    invoke-rc.d kdm stop || true
+    invoke-rc.d kde3-kdm stop || true
   else
-    /etc/init.d/kdm stop || true
+    /etc/init.d/kde3-kdm stop || true
   fi
 else
   if [ "$1" = "upgrade" -o "$1" = "failed-upgrade" ]; then
-    touch /var/run/kdm.upgrade
+    touch /var/run/kde3-kdm.upgrade
   fi
 fi
 
@@ -116,7 +116,7 @@ if [ "$1" = "remove" -o "$1" = "deconfigure" ]; then
       fi
       # are we removing the currently selected display manager?
       if [ -n "$DEFAULT_DISPLAY_MANAGER" ]; then
-        if [ "kdm" = "$DEFAULT_DISPLAY_MANAGER" ]; then
+        if [ "kde3-kdm" = "$DEFAULT_DISPLAY_MANAGER" ]; then
           if [ -e "$DEFAULT_DISPLAY_MANAGER_FILE" ]; then
             if db_get "$DEFAULT_DISPLAY_MANAGER/daemon_name"; then
               # does the display manager file reference the current default?  if

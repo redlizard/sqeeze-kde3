@@ -3,16 +3,16 @@
 	section="Applications/System/Monitoring"\
 	hints="KDE"\
 	title="KDE System Guard"\
-	icon32x32="/usr/share/pixmaps/ksysguard.xpm"\
-	icon16x16="/usr/share/pixmaps/ksysguard-16.xpm"\
-	command="/usr/bin/ksysguard"
+	icon32x32="/opt/kde3/share/pixmaps/ksysguard.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ksysguard-16.xpm"\
+	command="/opt/kde3/bin/ksysguard"
 
 ?package(ksysguard):\
 	needs="X11"\
 	section="Applications/System/Monitoring"\
 	hints="KDE"\
 	title="KDE System Guard - Process Table"\
-	command="/usr/bin/kpm"
+	command="/opt/kde3/bin/kpm"
 
 # Icon 32x32 ksysguard/cr32-app-ksysguard.png ksysguard.xpm
 # Icon 16x16 ksysguard/cr16-app-ksysguard.png ksysguard-16.xpm

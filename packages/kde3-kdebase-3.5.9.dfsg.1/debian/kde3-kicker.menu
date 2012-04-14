@@ -3,7 +3,7 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="Kicker"\
-	icon="/usr/share/pixmaps/kicker.xpm"\
-	command="/usr/bin/kicker"
+	icon="/opt/kde3/share/pixmaps/kicker.xpm"\
+	command="/opt/kde3/bin/kicker"
 
 # Icon 16x16 kicker/data/icons/cr16-app-kicker.png kicker.xpm

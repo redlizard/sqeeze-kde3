@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     remove)
-        /usr/sbin/update-alternatives --remove x-session-manager /usr/bin/startkde
+        /usr/sbin/update-alternatives --remove x-session-manager /opt/kde3/bin/startkde
     ;;
 
     upgrade|deconfigure)

@@ -3,4 +3,4 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="kdepasswd"\
-	command="/usr/bin/kdepasswd"
+	command="/opt/kde3/bin/kdepasswd"

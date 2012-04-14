@@ -3,9 +3,9 @@
 	section="Help"\
 	hints="KDE"\
 	title="KTip"\
-	icon32x32="/usr/share/pixmaps/ktip.xpm"\
-	icon16x16="/usr/share/pixmaps/ktip-16.xpm"\
-	command="/usr/bin/ktip"
+	icon32x32="/opt/kde3/share/pixmaps/ktip.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ktip-16.xpm"\
+	command="/opt/kde3/bin/ktip"
 
 # Icon 32x32 ktip/cr32-app-ktip.png ktip.xpm
 # Icon 16x16 ktip/cr16-app-ktip.png ktip-16.xpm

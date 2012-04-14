@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     remove)
-        /usr/sbin/update-alternatives --remove x-terminal-emulator /usr/bin/konsole
+        /usr/sbin/update-alternatives --remove x-terminal-emulator /opt/kde3/bin/konsole
     ;;
 
     upgrade|deconfigure)

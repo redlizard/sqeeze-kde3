@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     configure)
-	update-alternatives --install /usr/bin/x-window-manager x-window-manager /usr/bin/kwin 50
+	update-alternatives --install /usr/bin/x-window-manager x-window-manager /opt/kde3/bin/kwin 50
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

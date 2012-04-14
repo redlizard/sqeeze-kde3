@@ -3,11 +3,11 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KDebugDialog"\
-	command="/usr/bin/kdebugdialog"
+	command="/opt/kde3/bin/kdebugdialog"
 
 ?package(kdebase-bin):\
 	needs="X11"\
 	section="Applications/System/Monitoring"\
 	hints="KDE"\
 	title="KDCOP"\
-	command="/usr/bin/kdcop"
+	command="/opt/kde3/bin/kdcop"

@@ -2,8 +2,8 @@
 
 case "$1" in
     configure)
-	update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/konqueror 100 \
-	--slave /usr/share/man/man1/x-www-browser.1.gz x-www-browser.1.gz "/usr/share/man/man1/konqueror.1.gz"
+	update-alternatives --install /usr/bin/x-www-browser x-www-browser /opt/kde3/bin/konqueror 100 \
+	--slave /usr/share/man/man1/x-www-browser.1.gz x-www-browser.1.gz "/opt/kde3/share/man/man1/konqueror.1.gz"
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

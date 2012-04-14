@@ -20,9 +20,9 @@ set -e
 case "$1" in
     configure)
         update-alternatives --install /usr/bin/x-session-manager \
-	x-session-manager /usr/bin/startkde 40 \
+	x-session-manager /opt/kde3/bin/startkde 40 \
 	--slave /usr/share/man/man1/x-session-manager.1.gz \
-	x-session-manager.1.gz "/usr/share/man/man1/startkde.1.gz"
+	x-session-manager.1.gz "/opt/kde3/share/man/man1/startkde.1.gz"
     
     ;;
 

@@ -12,8 +12,8 @@ DEB_KDE_APIDOX := yes
 
 CXXFLAGS := -DSMB_CTX_FLAG_USE_KERBEROS -DSMB_CTX_FLAG_FALLBACK_AFTER_KERBEROS -g -Wall $(DEB_OPT_FLAG)
 
-DEB_CONFIGURE_EXTRA_FLAGS := --with-shadow --without-java --with-pam=kde \
-	--with-kcp-pam=kcheckpass --with-kdm-pam=kdm --with-kss-pam=kscreensaver \
+DEB_CONFIGURE_EXTRA_FLAGS := --with-shadow --without-java --with-pam=kde3-kde \
+	--with-kcp-pam=kde3-kcheckpass --with-kdm-pam=kde3-kdm --with-kss-pam=kde3-kscreensaver \
 	--with-extra-includes=/usr/include/sasl --with-usbids=/usr/share/misc/usb.ids
 
 DEB_FIXPERMS_EXCLUDE := opt/kde3/bin/kdesud

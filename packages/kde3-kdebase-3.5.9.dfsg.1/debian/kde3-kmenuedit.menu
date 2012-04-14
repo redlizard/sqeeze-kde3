@@ -3,9 +3,9 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KMenuEdit"\
-	icon32x32="/usr/share/pixmaps/kmenuedit.xpm"\
-	icon16x16="/usr/share/pixmaps/kmenuedit-16.xpm"\
-	command="/usr/bin/kmenuedit"
+	icon32x32="/opt/kde3/share/pixmaps/kmenuedit.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kmenuedit-16.xpm"\
+	command="/opt/kde3/bin/kmenuedit"
 
 # Icon 32x32 kmenuedit/cr32-app-kmenuedit.png kmenuedit.xpm
 # Icon 16x16 kmenuedit/cr16-app-kmenuedit.png kmenuedit-16.xpm

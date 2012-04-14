@@ -3,9 +3,9 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KPersonalizer"\
-	icon32x32="/usr/share/pixmaps/kpersonalizer.xpm"\
-	icon16x16="/usr/share/pixmaps/kpersonalizer-16.xpm"\
-	command="/usr/bin/kpersonalizer"
+	icon32x32="/opt/kde3/share/pixmaps/kpersonalizer.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kpersonalizer-16.xpm"\
+	command="/opt/kde3/bin/kpersonalizer"
 
 # Icon 32x32 kpersonalizer/cr32-app-kpersonalizer.png kpersonalizer.xpm
 # Icon 16x16 kpersonalizer/cr16-app-kpersonalizer.png kpersonalizer-16.xpm

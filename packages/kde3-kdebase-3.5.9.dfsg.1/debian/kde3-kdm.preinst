@@ -8,7 +8,7 @@ case "$1" in
 	rm -f /etc/kde3/kdm/pixmaps/XFree86bw.xpm
 	rm -f /etc/kde3/kdm/pixmaps/XFree86.xpm
 	rm -f /etc/kde3/kdm/Xresources
-	rm -f /etc/menu-methods/kdm
+	rm -f /etc/menu-methods/kde3-kdm
     ;;
 
     install)

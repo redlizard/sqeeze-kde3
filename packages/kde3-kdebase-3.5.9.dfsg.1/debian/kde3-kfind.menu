@@ -3,9 +3,9 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KFind"\
-	icon32x32="/usr/share/pixmaps/kfind.xpm"\
-	icon16x16="/usr/share/pixmaps/kfind-16.xpm"\
-	command="/usr/bin/kfind"
+	icon32x32="/opt/kde3/share/pixmaps/kfind.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kfind-16.xpm"\
+	command="/opt/kde3/bin/kfind"
 
 # Icon 32x32 kfind/cr32-app-kfind.png kfind.xpm
 # Icon 16x16 kfind/cr16-app-kfind.png kfind-16.xpm

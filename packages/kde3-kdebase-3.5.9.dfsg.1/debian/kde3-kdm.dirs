@@ -1,2 +1,2 @@
-etc/default/kdm.d
-var/lib/kdm
+etc/default/kde3-kdm.d
+var/lib/kde3-kdm

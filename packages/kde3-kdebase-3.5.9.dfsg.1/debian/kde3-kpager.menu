@@ -3,9 +3,9 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KPager"\
-	icon32x32="/usr/share/pixmaps/kpager.xpm"\
-	icon16x16="/usr/share/pixmaps/kpager-16.xpm"\
-	command="/usr/bin/kpager"
+	icon32x32="/opt/kde3/share/pixmaps/kpager.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kpager-16.xpm"\
+	command="/opt/kde3/bin/kpager"
 
 # Icon 32x32 kpager/cr32-app-kpager.png kpager.xpm
 # Icon 16x16 kpager/cr16-app-kpager.png kpager-16.xpm

@@ -3,27 +3,27 @@
 	section="Applications/System/Monitoring"\
 	hints="KDE"\
 	title="KJobViewer"\
-	icon32x32="/usr/share/pixmaps/kjobviewer.xpm"\
-	icon16x16="/usr/share/pixmaps/kjobviewer-16.xpm"\
-	command="/usr/bin/kjobviewer --show --all"
+	icon32x32="/opt/kde3/share/pixmaps/kjobviewer.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kjobviewer-16.xpm"\
+	command="/opt/kde3/bin/kjobviewer --show --all"
 
 ?package(kdeprint):\
 	needs="X11"\
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KPrinter"\
-	icon32x32="/usr/share/pixmaps/kdeprint.xpm"\
-	icon16x16="/usr/share/pixmaps/kdeprint-16.xpm"\
-	command="/usr/bin/kprinter"
+	icon32x32="/opt/kde3/share/pixmaps/kdeprint.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kdeprint-16.xpm"\
+	command="/opt/kde3/bin/kprinter"
 
 ?package(kdeprint):\
 	needs="X11"\
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KDEPrintFax"\
-	icon32x32="/usr/share/pixmaps/kdeprintfax.xpm"\
-	icon16x16="/usr/share/pixmaps/kdeprintfax-16.xpm"\
-	command="/usr/bin/kdeprintfax"
+	icon32x32="/opt/kde3/share/pixmaps/kdeprintfax.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kdeprintfax-16.xpm"\
+	command="/opt/kde3/bin/kdeprintfax"
 
 # Icon 32x32 kdeprint/kjobviewer/cr32-app-kjobviewer.png kjobviewer.xpm
 # Icon 16x16 kdeprint/kjobviewer/cr16-app-kjobviewer.png kjobviewer-16.xpm

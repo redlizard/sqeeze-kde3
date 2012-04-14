@@ -3,18 +3,18 @@
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KControl"\
-	icon32x32="/usr/share/pixmaps/kcontrol.xpm"\
-	icon16x16="/usr/share/pixmaps/kcontrol-16.xpm"\
-	command="/usr/bin/kcontrol"
+	icon32x32="/opt/kde3/share/pixmaps/kcontrol.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kcontrol-16.xpm"\
+	command="/opt/kde3/bin/kcontrol"
 
 ?package(kcontrol):\
 	needs="X11"\
 	section="Applications/System/Administration"\
 	hints="KDE"\
 	title="KInfoCenter"\
-	icon32x32="/usr/share/pixmaps/kinfocenter.xpm"\
-	icon16x16="/usr/share/pixmaps/kinfocenter-16.xpm"\
-	command="/usr/bin/kinfocenter"
+	icon32x32="/opt/kde3/share/pixmaps/kinfocenter.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kinfocenter-16.xpm"\
+	command="/opt/kde3/bin/kinfocenter"
 
 # Icon 32x32 kcontrol/kcontrol/cr32-app-kcontrol.png kcontrol.xpm
 # Icon 16x16 kcontrol/kcontrol/cr16-app-kcontrol.png kcontrol-16.xpm
