@@ -1,0 +1,13 @@
+/opt/kde3/share/apps/kspaceduel/*
+/opt/kde3/share/icons/hicolor/128x128/apps/kspaceduel.png
+/opt/kde3/share/icons/hicolor/64x64/apps/kspaceduel.png
+/opt/kde3/share/icons/hicolor/48x48/apps/kspaceduel.png
+/opt/kde3/share/icons/hicolor/32x32/apps/kspaceduel.png
+/opt/kde3/share/icons/hicolor/22x22/apps/kspaceduel.png
+/opt/kde3/share/icons/hicolor/16x16/apps/kspaceduel.png
+/opt/kde3/share/applications/kde/kspaceduel.desktop
+/opt/kde3/games/kspaceduel
+/opt/kde3/share/config.kcfg/kspaceduel.kcfg
+/opt/kde3/share/doc/kde/HTML/en/kspaceduel/*
+../icons/kspaceduel.xpm /opt/kde3/share/pixmaps
+../icons/kspaceduel-16.xpm /opt/kde3/share/pixmaps

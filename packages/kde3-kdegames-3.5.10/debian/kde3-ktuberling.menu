@@ -1,0 +1,9 @@
+?package(ktuberling):\
+	needs="x11"\
+	section="Games/Toys"\
+	hints="KDE"\
+	title="KDE Potato Guy"\
+	icon32x32="/opt/kde3/share/pixmaps/ktuberling.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ktuberling-16.xpm"\
+	command="/opt/kde3/games/ktuberling"
+

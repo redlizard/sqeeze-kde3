@@ -149,20 +149,35 @@ while(($file = readdir($dir)) !== false) {
 	}
 	$prefix = substr($file, 0, $pos);
 	if(isset($binaries[$prefix])) {
-		$newname = $binaries[$prefix] . substr($file, $pos);
-		rename("$targetDirectory/debian/$file", "$targetDirectory/debian/$newname");
+		$newname = $targetDirectory . "/debian/" . $binaries[$prefix] . substr($file, $pos);
+		rename("$targetDirectory/debian/$file", $newname);
 		
-		if(substr($file, strrpos($file, ".") + 1) == "install" || substr($file, strrpos($file, ".") + 1) == "manpages") {
+		$extension = substr($file, strpos($file, ".") + 1);
+		if($extension == "install" || $extension == "manpages") {
 			$install = array();
-			foreach(explode("\n", file_get_contents("$targetDirectory/debian/$newname")) as $line) {
-				$old = "debian/tmp/usr/";
-				$new = "debian/tmp/opt/kde3/";
-				if(substr($line, 0, strlen($old)) == $old) {
-					$line = $new . substr($line, strlen($old));
-				}
-				$install[] = $line;
+			foreach(explode("\n", file_get_contents($newname)) as $line) {
+				$install[] = str_replace("usr/", "opt/kde3/", $line);
 			}
-			file_put_contents("$targetDirectory/debian/$newname", implode("\n", $install));
+			file_put_contents($newname, implode("\n", $install));
+		} else if($extension == "menu") {
+			file_put_contents($newname, str_replace('"/usr/', '"/opt/kde3/', file_get_contents($newname)));
+		} else if($extension == "links") {
+			$links = array();
+			$found = false;
+			foreach(explode("\n", file_get_contents($newname)) as $line) {
+				if((trim($line) != "") && (substr($line, 0, 5) != "/usr/")) {
+					$found = true;
+				}
+				$links[] = str_replace("usr/", "opt/kde3/", $line);
+			}
+			file_put_contents($newname, implode("\n", $links));
+			if($found) {
+				echo "Notice: $newname\n";
+			}
+		} else if(in_array($extension, array("docs", "lintian", "mime", "pam", "presubj", "README.Debian")) || (substr($extension, 0, 8) == "doc-base")) {
+			// Safe, skip
+		} else {
+			echo "Notice: $newname\n";
 		}
 	}
 }

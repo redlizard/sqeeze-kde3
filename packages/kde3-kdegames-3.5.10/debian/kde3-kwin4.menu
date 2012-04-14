@@ -1,0 +1,9 @@
+?package(kwin4):\
+	needs="x11"\
+	section="Games/Board"\
+	hints="KDE"\
+	title="KWin4"\
+	icon32x32="/opt/kde3/share/pixmaps/kwin4.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kwin4-16.xpm"\
+	command="/opt/kde3/games/kwin4"
+

@@ -1,0 +1,9 @@
+?package(kolf):\
+	needs="x11"\
+	section="Games/Simulation"\
+	hints="KDE"\
+	title="KDE Miniature Golf"\
+	icon32x32="/opt/kde3/share/pixmaps/kolf.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kolf-16.xpm"\
+	command="/opt/kde3/games/kolf"
+

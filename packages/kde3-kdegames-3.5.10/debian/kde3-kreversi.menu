@@ -1,0 +1,9 @@
+?package(kreversi):\
+	needs="x11"\
+	section="Games/Board"\
+	hints="KDE"\
+	title="KDE Reversi"\
+	icon32x32="/opt/kde3/share/pixmaps/kreversi.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kreversi-16.xpm"\
+	command="/opt/kde3/games/kreversi"
+

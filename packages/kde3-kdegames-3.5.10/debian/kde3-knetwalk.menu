@@ -1,0 +1,9 @@
+?package(knetwalk):\
+	needs="x11"\
+	section="Games/Puzzles"\
+	hints="KDE,Mines"\
+	title="KNetwalk"\
+	icon32x32="/opt/kde3/share/pixmaps/knetwalk.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/knetwalk-16.xpm"\
+	command="/opt/kde3/games/knetwalk"
+

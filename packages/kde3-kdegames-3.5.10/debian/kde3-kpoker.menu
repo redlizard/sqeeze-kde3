@@ -1,0 +1,9 @@
+?package(kpoker):\
+	needs="x11"\
+	section="Games/Card"\
+	hints="KDE"\
+	title="KDE Poker"\
+	icon32x32="/opt/kde3/share/pixmaps/kpoker.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kpoker-16.xpm"\
+	command="/opt/kde3/games/kpoker"
+

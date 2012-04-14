@@ -1,0 +1,13 @@
+/opt/kde3/share/applications/kde/kfouleggs.desktop
+/opt/kde3/share/apps/kfouleggs/*
+/opt/kde3/share/config.kcfg/kfouleggs.kcfg
+/opt/kde3/games/kfouleggs
+/opt/kde3/share/doc/kde/HTML/en/kfouleggs/*
+/opt/kde3/share/icons/hicolor/16x16/apps/kfouleggs.png
+/opt/kde3/share/icons/hicolor/22x22/apps/kfouleggs.png
+/opt/kde3/share/icons/hicolor/32x32/apps/kfouleggs.png
+/opt/kde3/share/icons/hicolor/48x48/apps/kfouleggs.png
+/opt/kde3/share/icons/hicolor/64x64/apps/kfouleggs.png
+/opt/kde3/share/icons/hicolor/128x128/apps/kfouleggs.png
+../icons/kfouleggs.xpm /opt/kde3/share/pixmaps
+../icons/kfouleggs-16.xpm /opt/kde3/share/pixmaps

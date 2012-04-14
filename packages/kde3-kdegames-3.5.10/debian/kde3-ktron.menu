@@ -1,0 +1,9 @@
+?package(ktron):\
+	needs="x11"\
+	section="Games/Action"\
+	hints="KDE"\
+	title="KDE Tron"\
+	icon32x32="/opt/kde3/share/pixmaps/ktron.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ktron-16.xpm"\
+	command="/opt/kde3/games/ktron"
+

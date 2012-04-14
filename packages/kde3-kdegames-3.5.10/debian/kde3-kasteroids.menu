@@ -1,0 +1,9 @@
+?package(kasteroids):\
+	needs="x11"\
+	section="Games/Action"\
+	hints="KDE"\
+	title="KAsteroids"\
+	icon32x32="/opt/kde3/share/pixmaps/kasteroids.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kasteroids-16.xpm"\
+	command="/opt/kde3/games/kasteroids"
+

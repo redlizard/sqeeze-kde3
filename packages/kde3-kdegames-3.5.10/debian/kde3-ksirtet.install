@@ -1,0 +1,13 @@
+/opt/kde3/share/applications/kde/ksirtet.desktop
+/opt/kde3/share/icons/hicolor/128x128/apps/ksirtet.png
+/opt/kde3/share/icons/hicolor/64x64/apps/ksirtet.png
+/opt/kde3/share/icons/hicolor/48x48/apps/ksirtet.png
+/opt/kde3/share/icons/hicolor/32x32/apps/ksirtet.png
+/opt/kde3/share/icons/hicolor/22x22/apps/ksirtet.png
+/opt/kde3/share/icons/hicolor/16x16/apps/ksirtet.png
+/opt/kde3/share/apps/ksirtet/*
+/opt/kde3/games/ksirtet
+/opt/kde3/share/config.kcfg/ksirtet.kcfg
+/opt/kde3/share/doc/kde/HTML/en/ksirtet/*
+../icons/ksirtet.xpm /opt/kde3/share/pixmaps
+../icons/ksirtet-16.xpm /opt/kde3/share/pixmaps

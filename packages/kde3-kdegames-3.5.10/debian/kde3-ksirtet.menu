@@ -1,0 +1,9 @@
+?package(ksirtet):\
+	needs="x11"\
+	section="Games/Blocks"\
+	hints="KDE"\
+	title="KDE Sirtet"\
+	icon32x32="/opt/kde3/share/pixmaps/ksirtet.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ksirtet-16.xpm"\
+	command="/opt/kde3/games/ksirtet"
+

@@ -1,0 +1,23 @@
+/opt/kde3/games/kreversi
+/opt/kde3/share/doc/kde/HTML/en/kreversi/*
+/opt/kde3/share/applications/kde/kreversi.desktop
+/opt/kde3/share/apps/kreversi/*
+/opt/kde3/share/config.kcfg/kreversi.kcfg
+/opt/kde3/share/icons/crystalsvg/48x48/actions/lastmoves.png
+/opt/kde3/share/icons/crystalsvg/48x48/actions/legalmoves.png
+/opt/kde3/share/icons/crystalsvg/32x32/actions/lastmoves.png
+/opt/kde3/share/icons/crystalsvg/32x32/actions/legalmoves.png
+/opt/kde3/share/icons/crystalsvg/22x22/actions/lastmoves.png
+/opt/kde3/share/icons/crystalsvg/22x22/actions/legalmoves.png
+/opt/kde3/share/icons/crystalsvg/16x16/actions/lastmoves.png
+/opt/kde3/share/icons/crystalsvg/16x16/actions/legalmoves.png
+/opt/kde3/share/icons/crystalsvg/scalable/actions/lastmoves.svgz
+/opt/kde3/share/icons/crystalsvg/scalable/actions/legalmoves.svgz
+/opt/kde3/share/icons/hicolor/128x128/apps/kreversi.png
+/opt/kde3/share/icons/hicolor/64x64/apps/kreversi.png
+/opt/kde3/share/icons/hicolor/48x48/apps/kreversi.png
+/opt/kde3/share/icons/hicolor/32x32/apps/kreversi.png
+/opt/kde3/share/icons/hicolor/22x22/apps/kreversi.png
+/opt/kde3/share/icons/hicolor/16x16/apps/kreversi.png
+../icons/kreversi.xpm /opt/kde3/share/pixmaps
+../icons/kreversi-16.xpm /opt/kde3/share/pixmaps

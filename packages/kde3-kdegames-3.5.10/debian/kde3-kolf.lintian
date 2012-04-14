@@ -1,0 +1,3 @@
+kolf: shlib-missing-in-control-file libkdeinit_kolf.so for usr/lib/libkdeinit_kolf.so
+kolf: package-name-doesnt-match-sonames libkdeinit-kolf libkolf1
+

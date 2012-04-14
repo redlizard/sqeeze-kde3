@@ -1,0 +1,9 @@
+/opt/kde3/games/knetwalk
+/opt/kde3/share/apps/knetwalk
+/opt/kde3/share/icons/hicolor/22x22/apps/knetwalk.png
+/opt/kde3/share/icons/hicolor/32x32/apps/knetwalk.png
+/opt/kde3/share/icons/hicolor/64x64/apps/knetwalk.png
+/opt/kde3/share/icons/hicolor/128x128/apps/knetwalk.png
+../icons/knetwalk.xpm /opt/kde3/share/pixmaps
+../icons/knetwalk-16.xpm /opt/kde3/share/pixmaps
+opt/kde3/share/applications/kde/knetwalk.desktop

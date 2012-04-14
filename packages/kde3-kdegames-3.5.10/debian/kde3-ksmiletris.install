@@ -1,0 +1,12 @@
+/opt/kde3/share/apps/ksmiletris/*
+/opt/kde3/share/icons/hicolor/128x128/apps/ksmiletris.png
+/opt/kde3/share/icons/hicolor/64x64/apps/ksmiletris.png
+/opt/kde3/share/icons/hicolor/48x48/apps/ksmiletris.png
+/opt/kde3/share/icons/hicolor/32x32/apps/ksmiletris.png
+/opt/kde3/share/icons/hicolor/22x22/apps/ksmiletris.png
+/opt/kde3/share/icons/hicolor/16x16/apps/ksmiletris.png
+/opt/kde3/share/applications/kde/ksmiletris.desktop
+/opt/kde3/games/ksmiletris
+/opt/kde3/share/doc/kde/HTML/en/ksmiletris/*
+../icons/ksmiletris.xpm /opt/kde3/share/pixmaps
+../icons/ksmiletris-16.xpm /opt/kde3/share/pixmaps

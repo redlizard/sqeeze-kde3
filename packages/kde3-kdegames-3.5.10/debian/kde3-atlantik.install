@@ -1,0 +1,18 @@
+/opt/kde3/games/atlantik
+/opt/kde3/lib/libatlantic.la
+/opt/kde3/lib/libatlantic.so.*
+/opt/kde3/lib/libatlantikclient.la
+/opt/kde3/lib/libatlantikclient.so.*
+/opt/kde3/lib/libatlantikui.la
+/opt/kde3/lib/libatlantikui.so.*
+/opt/kde3/lib/kde3/kio_atlantik.la
+/opt/kde3/lib/kde3/kio_atlantik.so
+/opt/kde3/share/services/atlantik.protocol
+/opt/kde3/share/doc/kde/HTML/en/atlantik/*
+/opt/kde3/share/applications/kde/atlantik.desktop
+/opt/kde3/share/icons/hicolor/48x48/apps/atlantik.png
+/opt/kde3/share/icons/hicolor/32x32/apps/atlantik.png
+/opt/kde3/share/icons/hicolor/16x16/apps/atlantik.png
+/opt/kde3/share/apps/atlantik/*
+../icons/atlantik.xpm /opt/kde3/share/pixmaps
+../icons/atlantik-16.xpm /opt/kde3/share/pixmaps

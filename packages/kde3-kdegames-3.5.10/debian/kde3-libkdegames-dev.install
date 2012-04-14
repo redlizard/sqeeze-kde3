@@ -1,0 +1,4 @@
+/opt/kde3/include/kde/*.h
+/opt/kde3/include/kde/kgame
+/opt/kde3/lib/libkdegames.so
+/opt/kde3/lib/libkdegames.la

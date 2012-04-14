@@ -1,0 +1,9 @@
+?package(ksmiletris):\
+	needs="x11"\
+	section="Games/Blocks"\
+	hints="KDE"\
+	title="KDE Smiletris"\
+	icon32x32="/opt/kde3/share/pixmaps/ksmiletris.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ksmiletris-16.xpm"\
+	command="/opt/kde3/games/ksmiletris"
+

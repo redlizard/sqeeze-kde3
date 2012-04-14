@@ -1,0 +1,33 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+export kde_bindir = /opt/kde3/games
+
+#DEB_KDE_CVS_MAKE := yes
+DEB_KDE_APIDOX := yes
+
+DEB_DH_INSTALL_SOURCEDIR := $(DEB_DESTDIR)
+
+
+DEB_INSTALL_DOCS_ALL :=
+
+DEB_INSTALL_CHANGELOGS_ALL = $(shell for f in ChangeLog CHANGELOG CHANGES; do if test -s $(DEB_SRCDIR)/$(cdbs_curpkg)/$$f; then echo $(DEB_SRCDIR)/$(cdbs_curpkg)/$$f; break; fi; done)
+
+DEB_INSTALL_CHANGELOGS_kde3-kdegames := $(DEB_SRCDIR)/ChangeLog
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkdegames1 := -V'kde3-libkdegames1 (>= 4:3.5.8)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-atlantik := -V
+DEB_DH_MAKESHLIBS_ARGS_kde3-kolf := -V
+
+PACKAGES_WITH_LIBS := kde3-libkdegames1 kde3-atlantik kde3-kolf
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+

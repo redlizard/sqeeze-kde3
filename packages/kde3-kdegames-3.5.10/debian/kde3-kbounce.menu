@@ -1,0 +1,9 @@
+?package(kbounce):\
+	needs="x11"\
+	section="Games/Action"\
+	hints="KDE"\
+	title="KDE Bounce Ball Game"\
+	icon32x32="/opt/kde3/share/pixmaps/kbounce.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kbounce-16.xpm"\
+	command="/opt/kde3/games/kbounce"
+

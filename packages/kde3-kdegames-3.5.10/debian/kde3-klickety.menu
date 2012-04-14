@@ -1,0 +1,9 @@
+?package(klickety):\
+	needs="x11"\
+	section="Games/Puzzles"\
+	hints="KDE"\
+	title="Klickety"\
+	icon32x32="/opt/kde3/share/pixmaps/klickety.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/klickety-16.xpm"\
+	command="/opt/kde3/games/klickety"
+

@@ -1,0 +1,9 @@
+?package(kgoldrunner):\
+	needs="x11"\
+	section="Games/Action"\
+	hints="KDE"\
+	title="KGoldrunner"\
+	icon32x32="/opt/kde3/share/pixmaps/kgoldrunner.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kgoldrunner-16.xpm"\
+	command="/opt/kde3/games/kgoldrunner"
+

@@ -1,0 +1,53 @@
+--- a/katomic/gamewidget.cpp	2005-10-10 10:56:03.000000000 -0400
++++ b/katomic/gamewidget.cpp	2006-11-07 17:37:34.000000000 -0500
+@@ -115,6 +115,25 @@
+     ys->setText(current);
+ }
+ 
++void GameWidget::mergeHighScores(int l)
++{
++    KConfigGroup oldConfig(kapp->config(), QString("High Scores Level %1").arg(l).utf8());
++    KConfigGroup newConfig(kapp->config(), QString("Highscores Level %1").arg(l).utf8());
++
++    newConfig.writeEntry("LastPlayer", oldConfig.readEntry("LastPlayer"));
++
++    QString num;
++    for (int i = 1; i <= 10; ++i)
++    {
++	num.setNum(i);
++	QString key = "Pos" + num + "Name";
++        newConfig.writeEntry(key, oldConfig.readEntry(key, "-"));
++	key = "Pos" + num + "Score";
++	newConfig.writeEntry(key, oldConfig.readEntry(key, "-"));
++    }
++    kapp->config()->sync();
++}
++
+ void GameWidget::updateLevel (int l)
+ {
+     level=l;
+@@ -127,7 +146,11 @@
+     cfg.setGroup("Level");
+     feld->load(cfg);
+ 
+-    highScore->setConfigGroup(QString("High Scores Level %1").arg(level));
++    if (!kapp->config()->hasGroup(QString("Highscores Level %1").arg(level)) &&
++            kapp->config()->hasGroup(QString("High Scores Level %1").arg(level)))
++	mergeHighScores(level);
++
++    highScore->setConfigGroup(QString("Highscores Level %1").arg(level));
+     highest.setNum(highScore->highScore());
+ 
+     if (highest != "0" ) hs->setText(highest);
+--- a/katomic/gamewidget.h	2005-09-10 04:18:09.000000000 -0400
++++ b/katomic/gamewidget.h	2006-11-07 17:40:57.000000000 -0500
+@@ -28,6 +28,9 @@
+     // bringt level auf neuesten stand
+     void updateLevel (int);
+ 
++    // copy highscores from "High Scores" key to "Highscores" key
++    void mergeHighScores(int l);
++
+     // restart current level
+     void restartLevel();
+ 

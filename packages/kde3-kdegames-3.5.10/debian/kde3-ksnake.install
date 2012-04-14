@@ -1,0 +1,13 @@
+/opt/kde3/share/apps/ksnake/*
+/opt/kde3/share/config.kcfg/ksnake.kcfg
+/opt/kde3/share/icons/hicolor/128x128/apps/ksnake.png
+/opt/kde3/share/icons/hicolor/64x64/apps/ksnake.png
+/opt/kde3/share/icons/hicolor/48x48/apps/ksnake.png
+/opt/kde3/share/icons/hicolor/32x32/apps/ksnake.png
+/opt/kde3/share/icons/hicolor/22x22/apps/ksnake.png
+/opt/kde3/share/icons/hicolor/16x16/apps/ksnake.png
+/opt/kde3/share/applications/kde/ksnake.desktop
+/opt/kde3/games/ksnake
+/opt/kde3/share/doc/kde/HTML/en/ksnake/*
+../icons/ksnake.xpm /opt/kde3/share/pixmaps
+../icons/ksnake-16.xpm /opt/kde3/share/pixmaps

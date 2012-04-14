@@ -1,0 +1,14 @@
+/opt/kde3/games/kwin4
+/opt/kde3/games/kwin4proc
+/opt/kde3/share/apps/kwin4/*
+/opt/kde3/share/config.kcfg/kwin4.kcfg
+/opt/kde3/share/icons/hicolor/128x128/apps/kwin4.png
+/opt/kde3/share/icons/hicolor/64x64/apps/kwin4.png
+/opt/kde3/share/icons/hicolor/48x48/apps/kwin4.png
+/opt/kde3/share/icons/hicolor/32x32/apps/kwin4.png
+/opt/kde3/share/icons/hicolor/22x22/apps/kwin4.png
+/opt/kde3/share/icons/hicolor/16x16/apps/kwin4.png
+/opt/kde3/share/applications/kde/kwin4.desktop
+/opt/kde3/share/doc/kde/HTML/en/kwin4/*
+../icons/kwin4.xpm /opt/kde3/share/pixmaps
+../icons/kwin4-16.xpm /opt/kde3/share/pixmaps

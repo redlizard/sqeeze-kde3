@@ -1,0 +1,13 @@
+/opt/kde3/share/apps/kbattleship/*
+/opt/kde3/share/apps/zeroconf/_kbattleship._tcp
+/opt/kde3/share/icons/hicolor/128x128/apps/kbattleship.png
+/opt/kde3/share/icons/hicolor/64x64/apps/kbattleship.png
+/opt/kde3/share/icons/hicolor/48x48/apps/kbattleship.png
+/opt/kde3/share/icons/hicolor/32x32/apps/kbattleship.png
+/opt/kde3/share/icons/hicolor/22x22/apps/kbattleship.png
+/opt/kde3/share/icons/hicolor/16x16/apps/kbattleship.png
+/opt/kde3/share/applications/kde/kbattleship.desktop
+/opt/kde3/games/kbattleship
+/opt/kde3/share/doc/kde/HTML/en/kbattleship/*
+../icons/kbattleship.xpm /opt/kde3/share/pixmaps
+../icons/kbattleship-16.xpm /opt/kde3/share/pixmaps
