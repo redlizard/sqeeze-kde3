@@ -1,0 +1,34 @@
+debian/tmp/opt/kde3/bin/kwifimanager
+debian/tmp/opt/kde3/lib/kde3/kcm_wifi.la
+debian/tmp/opt/kde3/lib/kde3/kcm_wifi.so
+debian/tmp/opt/kde3/lib/libkwireless.la
+debian/tmp/opt/kde3/lib/libkwireless.so
+debian/tmp/opt/kde3/share/applications/kde/kcmwifi.desktop
+debian/tmp/opt/kde3/share/applications/kde/kwifimanager.desktop
+debian/tmp/opt/kde3/share/apps/kicker/applets/kwireless.desktop
+debian/tmp/opt/kde3/share/apps/kwifimanager/kwifimanagerui.rc
+debian/tmp/opt/kde3/share/apps/kwifimanager/locations/DE_BW_Karlsruhe_University.loc
+debian/tmp/opt/kde3/share/apps/kwifimanager/locations/NOWHERE.loc
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/ad_hoc.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/all_alone.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/ap_connect.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/excellent.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/good.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/marginal.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/no_card.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/offline.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/oor_down.png
+debian/tmp/opt/kde3/share/apps/kwifimanager/pics/oor_minimum.png
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kwifimanager/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kwifimanager/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kwifimanager/index.docbook
+debian/tmp/opt/kde3/share/icons/hicolor/128x128/apps/kwifimanager.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kwifimanager.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/kwifimanager.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kwifimanager.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kwifimanager.png
+debian/tmp/opt/kde3/share/icons/hicolor/64x64/apps/kwifimanager.png
+debian/tmp/opt/kde3/share/icons/hicolor/scalable/apps/kwifimanager.svgz
+
+debian/icons/kwifimanager-16.xpm	/opt/kde3/share/pixmaps
+debian/icons/kwifimanager.xpm		/opt/kde3/share/pixmaps

@@ -1,0 +1,8 @@
+?package(krfb):\
+	needs="X11"\
+	section="Applications/Network/Communication"\
+	hints="KDE"\
+	title="Krfb"\
+	icon32x32="/opt/kde3/share/pixmaps/krfb.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/krfb-16.xpm"\
+	command="/opt/kde3/bin/krfb"

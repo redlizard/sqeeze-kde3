@@ -1,0 +1,4 @@
+debian/tmp/opt/kde3/bin/feedbrowser
+debian/tmp/opt/kde3/bin/rssclient
+debian/tmp/opt/kde3/bin/rssservice
+debian/tmp/opt/kde3/share/services/rssservice.desktop

@@ -1,0 +1,4 @@
+ksirc: package-name-doesnt-match-sonames libkdeinit-ksirc
+ksirc: no-shlibs-control-file usr/lib/libkdeinit_ksirc.so
+ksirc: postinst-must-call-ldconfig usr/lib/libkdeinit_ksirc.so
+ksirc: postrm-should-call-ldconfig usr/lib/libkdeinit_ksirc.so

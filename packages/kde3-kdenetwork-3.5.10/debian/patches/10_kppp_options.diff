@@ -1,0 +1,10 @@
+--- kdenetwork-orig/kppp/connect.cpp
++++ kdenetwork-patched/kppp/connect.cpp
+@@ -1253,6 +1253,7 @@
+   command += " " + gpppdata.speed();
+
+   command += " -detach";
++  command += " call kppp-options";
+
+   if(gpppdata.ipaddr() != "0.0.0.0" ||
+      gpppdata.gateway() != "0.0.0.0") {

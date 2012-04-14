@@ -1,0 +1,15 @@
+?package(kppp):\
+	needs="X11"\
+	section="Applications/Network/Communication"\
+	hints="KDE"\
+	title="KPPP"\
+	icon32x32="/opt/kde3/share/pixmaps/kppp.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kppp-16.xpm"\
+	command="/opt/kde3/bin/kppp"
+
+?package(kppp):\
+	needs="X11"\
+	section="Applications/Network/Communication"\
+	hints="KDE"\
+	title="KPPP - Logview"\
+	command="/opt/kde3/bin/kppplogview"

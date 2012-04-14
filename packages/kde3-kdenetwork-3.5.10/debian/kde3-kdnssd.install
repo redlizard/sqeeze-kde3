@@ -1,0 +1,15 @@
+debian/tmp/opt/kde3/share/services/zeroconf.protocol
+debian/tmp/opt/kde3/share/services/invitation.protocol
+debian/tmp/opt/kde3/share/services/kded/dnssdwatcher.desktop
+debian/tmp/opt/kde3/share/apps/remoteview/zeroconf.desktop
+debian/tmp/opt/kde3/share/apps/zeroconf/_http._tcp
+debian/tmp/opt/kde3/share/apps/zeroconf/_ftp._tcp
+debian/tmp/opt/kde3/share/apps/zeroconf/_ldap._tcp
+debian/tmp/opt/kde3/share/apps/zeroconf/_webdav._tcp
+debian/tmp/opt/kde3/share/apps/zeroconf/_nfs._tcp
+debian/tmp/opt/kde3/share/apps/zeroconf/_ssh._tcp
+debian/tmp/opt/kde3/share/apps/zeroconf/_rfb._tcp
+debian/tmp/opt/kde3/lib/kde3/kio_zeroconf.so
+debian/tmp/opt/kde3/lib/kde3/kio_zeroconf.la
+debian/tmp/opt/kde3/lib/kde3/kded_dnssdwatcher.so
+debian/tmp/opt/kde3/lib/kde3/kded_dnssdwatcher.la

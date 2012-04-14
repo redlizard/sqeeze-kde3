@@ -1,0 +1,13 @@
+--- kde.orig/kppp/ppplog.cpp
++++ kde.patched/kppp/ppplog.cpp
+@@ -188,7 +188,10 @@
+   }
+ 
+   if (result.isEmpty())
++  {
+     result.append(i18n("Unable to provide help."));
++    result.append("Please refer to /usr/share/doc/kppp/README.Debian for more information.");
++  }
+ }
+ 
+ 

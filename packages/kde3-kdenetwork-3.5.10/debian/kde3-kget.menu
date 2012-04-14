@@ -1,0 +1,8 @@
+?package(kget):\
+	needs="X11"\
+	section="Applications/Network/File Transfer"\
+	hints="KDE"\
+	title="KGet"\
+	icon32x32="/opt/kde3/share/pixmaps/kget.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kget-16.xpm"\
+	command="/opt/kde3/bin/kget"

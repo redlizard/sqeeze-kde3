@@ -1,0 +1,23 @@
+debian/tmp/opt/kde3/lib/kde3/kcm_lanbrowser.la
+debian/tmp/opt/kde3/lib/kde3/kcm_lanbrowser.so
+debian/tmp/opt/kde3/lib/kde3/kio_lan.la
+debian/tmp/opt/kde3/lib/kde3/kio_lan.so
+debian/tmp/opt/kde3/share/applnk/.hidden/kcmkiolan.desktop
+debian/tmp/opt/kde3/share/applnk/.hidden/kcmlisa.desktop
+debian/tmp/opt/kde3/share/applnk/.hidden/kcmreslisa.desktop
+debian/tmp/opt/kde3/share/apps/konqsidebartng/virtual_folders/services/lisa.desktop
+debian/tmp/opt/kde3/share/apps/konqueror/dirtree/remote/lan.desktop
+debian/tmp/opt/kde3/share/apps/lisa/README
+debian/tmp/opt/kde3/share/apps/remoteview/lan.desktop
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcontrol/lanbrowser/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcontrol/lanbrowser/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcontrol/lanbrowser/index.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/lisa/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/lisa/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/lisa/index.docbook
+debian/tmp/opt/kde3/share/services/lan.protocol
+debian/tmp/opt/kde3/share/services/rlan.protocol
+
+debian/lisarc		etc/
+debian/tmp/opt/kde3/bin/lisa		opt/kde3/sbin/
+debian/tmp/opt/kde3/bin/reslisa	opt/kde3/sbin/

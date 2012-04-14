@@ -1,0 +1,806 @@
+--- kdenetwork-3.5.9/kopete/kopete/addaccountwizard/Makefile.am	2008-02-19 14:06:26.000000000 +0200
++++ kdenetwork-3.5.9/kopete/kopete/addaccountwizard/Makefile.am	2008-02-19 14:46:51.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ libkopeteaddaccountwizard_la_SOURCES = addaccountwizardpage1.ui addaccountwizardpage2.ui addaccountwizardpage3.ui addaccountwizard.cpp
+ libkopeteaddaccountwizard_la_LDFLAGS = $(all_libraries) -no-undefined
+-libkopeteaddaccountwizard_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_KDEUI) 
++libkopeteaddaccountwizard_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_KDEUI) $(LIB_KUTILS)
+ 
+ # vim: set noet:
+ 
+--- kdenetwork-3.5.9/kopete/kopete/Makefile.am	2008-02-19 14:49:09.000000000 +0200
++++ kdenetwork-3.5.9/kopete/kopete/Makefile.am	2008-02-19 21:05:54.000000000 +0200
+@@ -33,14 +33,14 @@
+ 
+ kimiface_DIR = $(kde_includes)
+ 
+-kopete_LDFLAGS = -no-undefined $(all_libraries) $(KDE_RPATH) -lktexteditor
++kopete_LDFLAGS = -no-undefined $(all_libraries) $(KDE_RPATH)
+ kopete_LDADD = \
+ 	addcontactwizard/libkopeteaddcontactwizard.la \
+ 	addaccountwizard/libkopeteaddaccountwizard.la \
+ 	contactlist/libkopetecontactlist.la \
+ 	config/plugins/libkopetepluginconfig.la \
+ 	../libkopete/libkopete.la \
+-	../libkopete/ui/libkopeteui.la
++	../libkopete/ui/libkopeteui.la $(LIB_KUTILS)
+ 
+ mydatadir    = $(kde_datadir)/kopete
+ mydata_DATA  = kopeteui.rc eventsrc
+--- kdenetwork-3.5.9/kopete/libkopete/Makefile.am	2008-02-19 14:44:29.000000000 +0200
++++ kdenetwork-3.5.9/kopete/libkopete/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -35,7 +35,7 @@
+ 	kopeteprefs.cpp kopetepicture.cpp webcamwidget.cpp
+ 
+ libkopete_la_LDFLAGS = -no-undefined -version-info 1:0:0 $(all_libraries)
+-libkopete_la_LIBADD = -lkabc ui/libkopeteui.la $(COMPAT_LIBS) $(LIB_KIO) $(LIB_XSS) $(LIB_XRENDER)
++libkopete_la_LIBADD = -lkabc ui/libkopeteui.la $(COMPAT_LIBS) $(LIB_KIO) $(LIB_XSS) $(LIB_XRENDER) $(LIB_KUTILS) $(LIB_KHTML) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) -lkwalletclient -lDCOP $(LIB_X11)
+ 
+ kde_kcfg_DATA = kopete.kcfg
+ 
+--- kdenetwork-3.5.9/kopete/plugins/nowlistening/Makefile.am	2008-02-19 14:16:11.000000000 +0200
++++ kdenetwork-3.5.9/kopete/plugins/nowlistening/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -5,12 +5,12 @@
+ kde_module_LTLIBRARIES = kopete_nowlistening.la kcm_kopete_nowlistening.la
+ 
+ kopete_nowlistening_la_SOURCES = nowlisteningconfig.kcfgc nowlisteningplugin.cpp nlkscd.cpp nlnoatun.cpp nlxmms.cpp nowlisteningguiclient.cpp nljuk.cpp nlamarok.cpp nlkaffeine.cpp
+-kopete_nowlistening_la_LDFLAGS     = -module $(KDE_PLUGIN) $(all_libraries)
+-kopete_nowlistening_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_nowlistening_la_LDFLAGS     = -module $(KDE_PLUGIN) $(all_libraries)
++kopete_nowlistening_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) -lDCOP $(LIB_KDEUI)
+ 
+ kcm_kopete_nowlistening_la_SOURCES = nowlisteningprefs.ui nowlisteningpreferences.cpp nowlisteningconfig.kcfgc
+ kcm_kopete_nowlistening_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_nowlistening_la_LIBADD  = $(LIB_KOPETECOMPAT) $(LIB_KUTILS)
++kcm_kopete_nowlistening_la_LIBADD  = $(LIB_KOPETECOMPAT) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_nowlistening.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/krfb/krfb/Makefile.am	2008-02-19 14:06:25.000000000 +0200
++++ kdenetwork-3.5.9/krfb/krfb/Makefile.am	2008-02-19 15:45:07.000000000 +0200
+@@ -12,7 +12,7 @@
+ krfb_SOURCES = rfbcontroller.cc xupdatescanner.cc main.cpp \
+                connectionwidget.ui krfbifaceimpl.cc krfbiface.skel \
+                trayicon.cpp connectiondialog.cc
+-krfb_LDADD   = libkrfbconfig.la ../libvncserver/libvncserver.la ../srvloc/libsrvloc.la -lXtst $(LIB_KDEUI) $(LIBJPEG) -lkio 
++krfb_LDADD   = libkrfbconfig.la ../libvncserver/libvncserver.la ../srvloc/libsrvloc.la -lXtst $(LIB_KDEUI) $(LIBJPEG) $(LIB_KIO) $(LIB_SLP)
+ krfb_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ 
+ appdatadir = $(kde_datadir)/krfb/pics
+--- kdenetwork-3.5.9/filesharing/advanced/kcm_sambaconf/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/filesharing/advanced/kcm_sambaconf/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -16,7 +16,7 @@
+ 
+ kcm_kcmsambaconf_la_LIBADD = \
+       -lkdeprint \
+-      libfilesharesamba.la
++      libfilesharesamba.la $(LIB_QT) $(LIB_KIO) $(LIB_KDECORE) $(LIB_KDEUI)
+       
+ kcm_kcmsambaconf_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+--- kdenetwork-3.5.9/filesharing/advanced/propsdlgplugin/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/filesharing/advanced/propsdlgplugin/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -12,7 +12,7 @@
+     libpropsdlgplugin_common.la \
+     ../nfs/libfilesharenfs.la \
+     ../kcm_sambaconf/libfilesharesamba.la \
+-	$(LIB_KIO)
++	$(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ fileshare_propsdlgplugin_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+--- kdenetwork-3.5.9/filesharing/simple/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/filesharing/simple/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -12,7 +12,7 @@
+ kcm_fileshare_la_LIBADD = ../advanced/propsdlgplugin/libpropsdlgplugin_common.la \
+     ../advanced/nfs/libfilesharenfs.la \
+     ../advanced/kcm_sambaconf/libfilesharesamba.la \
+-    $(LIB_KIO)
++    $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ AM_CPPFLAGS = -I$(srcdir)/../advanced/propsdlgplugin -I../advanced/propsdlgplugin $(all_includes)
+ 
+--- kdenetwork-3.5.9/kdict/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kdict/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -12,7 +12,7 @@
+ AM_CPPFLAGS         = $(all_includes)
+ 
+ kdict_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -module $(KDE_PLUGIN)
+-kdict_la_LIBADD  = $(LIB_KFILE) $(LIB_KHTML) $(LIBPTHREAD) $(LIBRESOLV)
++kdict_la_LIBADD  = $(LIB_KFILE) $(LIB_KHTML) $(LIBPTHREAD) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP $(LIB_QT) $(LIB_KPARTS)
+ kdict_la_SOURCES = dcopinterface.skel main.cpp actions.cpp dict.cpp options.cpp \
+                    queryview.cpp toplevel.cpp sets.cpp matchview.cpp application.cpp
+ 
+--- kdenetwork-3.5.9/kdict/applet/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kdict/applet/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -13,7 +13,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ kdict_panelapplet_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kdict_panelapplet_la_LIBADD = $(LIB_KSYCOCA) $(LIB_KDEUI)
++kdict_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/kdictapplet.pot
+--- kdenetwork-3.5.9/kdnssd/ioslave/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kdnssd/ioslave/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -3,7 +3,7 @@
+ kde_module_LTLIBRARIES = kio_zeroconf.la
+ 
+ kio_zeroconf_la_SOURCES = dnssd.cpp
+-kio_zeroconf_la_LIBADD = $(LIB_KDNSSD) $(LIB_KIO)
++kio_zeroconf_la_LIBADD = $(LIB_KDNSSD) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ kio_zeroconf_la_LDFLAGS = -avoid-version -module $(all_libraries) $(KDE_PLUGIN)
+ 
+ protocol_DATA = zeroconf.protocol invitation.protocol
+--- kdenetwork-3.5.9/kdnssd/kdedmodule/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kdnssd/kdedmodule/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -5,7 +5,7 @@
+ 
+ kded_dnssdwatcher_la_SOURCES = dnssdwatcher.cpp dnssdwatcher.skel watcher.cpp
+ kded_dnssdwatcher_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kded_dnssdwatcher_la_LIBADD =  $(LIB_KDNSSD) $(LIB_KIO)
++kded_dnssdwatcher_la_LIBADD =  $(LIB_KDNSSD) $(LIB_KIO) $(LIB_QT) -lDCOP -lkdeinit_kded $(LIB_KDECORE)
+ 
+ 
+ servicesdir = $(kde_servicesdir)/kded
+--- kdenetwork-3.5.9/kfile-plugins/torrent/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kfile-plugins/torrent/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -10,7 +10,7 @@
+ 
+ kfile_torrent_la_SOURCES = bytetape.cpp bint.cpp bstring.cpp blist.cpp bdict.cpp kfile_torrent.cpp
+ kfile_torrent_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_torrent_la_LIBADD = $(LIB_KIO)
++kfile_torrent_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdenetwork-3.5.9/kget/kget_plug_in/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kget/kget_plug_in/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -4,7 +4,7 @@
+ 
+ khtml_kget_la_METASOURCES = AUTO
+ khtml_kget_la_SOURCES = kget_plug_in.cpp kget_linkview.cpp links.cpp
+-khtml_kget_la_LIBADD =  $(LIB_KHTML)
++khtml_kget_la_LIBADD =  $(LIB_KHTML) $(LIB_QT) $(LIB_KDEUI) -lDCOP $(LIB_KPARTS) $(LIB_KDECORE) $(LIB_KIO)
+ khtml_kget_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ 
+ KDE_ICON = AUTO
+--- kdenetwork-3.5.9/knewsticker/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/knewsticker/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -13,7 +13,7 @@
+ 	newssourcedlgimpl.cpp newssourcedlg.ui
+ knewsticker_panelapplet_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ knewsticker_panelapplet_la_LIBADD = common/libknewstickercommon.la \
+-	$(LIB_KIO) $(LIB_KDEUI)
++	$(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ 
+ appdatadir = $(kde_datadir)/knewsticker
+ appdata_DATA = eventsrc
+--- kdenetwork-3.5.9/knewsticker/kntsrcfilepropsdlg/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/knewsticker/kntsrcfilepropsdlg/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -5,7 +5,7 @@
+ libkntsrcfilepropsdlg_la_SOURCES = kntsrcfilepropsdlg.cpp \
+ 	kntsrcfilepropsdlgwidget.ui
+ libkntsrcfilepropsdlg_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-libkntsrcfilepropsdlg_la_LIBADD = $(LIB_KIO) ../common/libknewstickercommon.la ../../librss/librss.la
++libkntsrcfilepropsdlg_la_LIBADD = $(LIB_KIO) ../common/libknewstickercommon.la ../../librss/librss.la $(LIB_QT) -lDCOP $(LIB_KDEUI) $(LIB_KDECORE)
+ libkntsrcfilepropsdlg_la_METASOURCES = AUTO
+ 
+ service_DATA = kntsrcfilepropsdlg.desktop
+--- kdenetwork-3.5.9/kopete/kopete/chatwindow/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/kopete/chatwindow/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -6,15 +6,15 @@
+ 
+ kopete_chatwindow_la_SOURCES = chatview.cpp kopetechatwindow.cpp chatmemberslistwidget.cpp
+ kopete_chatwindow_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+-kopete_chatwindow_la_LIBADD = ../../libkopete/libkopete.la ./libkopetechatwindow.la $(LIB_KOPETECOMPAT) $(LIB_KDEUI)
++kopete_chatwindow_la_LIBADD = ../../libkopete/libkopete.la ./libkopetechatwindow.la $(LIB_KOPETECOMPAT) $(LIB_KDEUI) $(LIB_QT) $(LIB_KIO) $(LIB_KHTML) $(LIB_KPARTS) $(LIB_KDECORE) $(LIB_KABC)
+ 
+ kopete_emailwindow_la_SOURCES = kopeteemailwindow.cpp
+ kopete_emailwindow_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+-kopete_emailwindow_la_LIBADD = ../../libkopete/libkopete.la ./libkopetechatwindow.la $(LIB_KOPETECOMPAT) $(LIB_KDEUI)
++kopete_emailwindow_la_LIBADD = ../../libkopete/libkopete.la ./libkopetechatwindow.la $(LIB_KOPETECOMPAT) $(LIB_KDEUI) $(LIB_QT) $(LIB_KHTML) $(LIB_KPARTS) $(LIB_KIO) $(LIB_KDECORE)
+ 
+ libkrichtexteditpart_la_SOURCES = krichtexteditpart.cpp
+ libkrichtexteditpart_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries) $(KDE_RPATH)
+-libkrichtexteditpart_la_LIBADD = ../../libkopete/libkopete.la $(LIB_KPARTS) $(LIB_KSPELL) $(LIB_KDEPRINT)
++libkrichtexteditpart_la_LIBADD = ../../libkopete/libkopete.la $(LIB_KPARTS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ libkopetechatwindow_la_SOURCES = chatmessagepart.cpp emoticonselector.cpp kopeteemoticonaction.cpp \
+ 	chattexteditpart.cpp krichtexteditpart.cpp kopetechatwindowstylemanager.cpp \
+--- kdenetwork-3.5.9/kopete/kopete/config/accounts/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/kopete/config/accounts/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -9,7 +9,7 @@
+ 
+ kcm_kopete_accountconfig_la_SOURCES = kopeteaccountconfigbase.ui kopeteaccountconfig.cpp
+ kcm_kopete_accountconfig_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_accountconfig_la_LIBADD  = ../../../libkopete/libkopete.la ../../addaccountwizard/libkopeteaddaccountwizard.la $(LIB_KOPETECOMPAT) $(LIB_KUTILS)
++kcm_kopete_accountconfig_la_LIBADD  = ../../../libkopete/libkopete.la ../../addaccountwizard/libkopeteaddaccountwizard.la $(LIB_KOPETECOMPAT) $(LIB_KUTILS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_accountconfig.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/kopete/config/appearance/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/kopete/config/appearance/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -12,7 +12,7 @@
+ 	$(all_libraries)
+ kcm_kopete_appearanceconfig_la_LIBADD = ../../../libkopete/libkopete.la  \
+ 	../../../kopete/chatwindow/libkopetechatwindow.la \
+-	-lktexteditor $(LIB_KOPETECOMPAT) $(LIB_KUTILS) $(LIB_KNEWSTUFF)
++	$(LIB_KOPETECOMPAT) $(LIB_KNEWSTUFF) $(LIB_QT) $(LIB_KDEUI) $(LIB_KHTML) $(LIB_KIO) $(LIB_KPARTS) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_appearanceconfig.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/kopete/config/avdevice/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/kopete/config/avdevice/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -10,9 +10,9 @@
+ 
+ kcm_kopete_avdeviceconfig_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+ 
+-kcm_kopete_avdeviceconfig_la_LIBADD  = ../../../libkopete/libkopete.la \
++kcm_kopete_avdeviceconfig_la_LIBADD  = \
+ 	../../../libkopete/avdevice/libkopete_videodevice.la \
+-	$(LIB_KOPETECOMPAT) $(LIB_KUTILS)
++	$(LIB_KOPETECOMPAT) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_avdeviceconfig.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/kopete/config/behavior/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/kopete/config/behavior/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -10,7 +10,7 @@
+ kcm_kopete_behaviorconfig_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+ 
+ kcm_kopete_behaviorconfig_la_LIBADD  = ../../../libkopete/libkopete.la \
+-	$(LIB_KOPETECOMPAT) $(LIB_KUTILS)
++	$(LIB_KOPETECOMPAT) $(LIB_KUTILS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_behaviorconfig.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/kopete/config/identity/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/kopete/config/identity/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -6,7 +6,7 @@
+ kcm_kopete_identityconfig_la_SOURCES = kopeteidentityconfigbase.ui \
+ 		kopeteidentityconfig.cpp globalidentitiesmanager.cpp kopeteidentityconfigpreferences.kcfgc
+ kcm_kopete_identityconfig_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_identityconfig_la_LIBADD  = -lkabc ../../../libkopete/libkopete.la $(LIB_KOPETECOMPAT) $(LIB_KUTILS)
++kcm_kopete_identityconfig_la_LIBADD  = -lkabc ../../../libkopete/libkopete.la $(LIB_KOPETECOMPAT) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ 
+ service_DATA = kopete_identityconfig.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/libkopete/avdevice/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/libkopete/avdevice/Makefile.am	2008-02-19 17:36:45.000000000 +0000
+@@ -6,6 +6,7 @@
+ lib_LTLIBRARIES = libkopete_videodevice.la
+ noinst_LTLIBRARIES = libkvideoio.la
+ libkopete_videodevice_la_LDFLAGS = $(KDE_RPATH) $(all_libraries)
++libkopete_videodevice_la_LIBADD = $(LIB_QT) $(LIB_KDECORE)
+ 
+ noinst_HEADERS = kxv.h qvideo.h qvideostream.h videocontrol.h videodevice.h \
+ 	videodevicemodelpool.h videodevicepool.h videoinput.h \
+--- kdenetwork-3.5.9/kopete/plugins/addbookmarks/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/addbookmarks/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -7,11 +7,11 @@
+ kde_module_LTLIBRARIES = kopete_addbookmarks.la kcm_kopete_addbookmarks.la
+ 
+ kopete_addbookmarks_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_addbookmarks_la_LIBADD = ../../libkopete/libkopete.la
++kopete_addbookmarks_la_LIBADD = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KIO) $(LIB_KDEUI)
+ kopete_addbookmarks_la_SOURCES = addbookmarksplugin.cpp addbookmarksprefssettings.cpp
+ 
+ kcm_kopete_addbookmarks_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_addbookmarks_la_LIBADD = ../../libkopete/libkopete.la $(LIB_KUTILS)
++kcm_kopete_addbookmarks_la_LIBADD = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ kcm_kopete_addbookmarks_la_SOURCES = addbookmarkspreferences.cpp addbookmarksprefsui.ui \
+                                      addbookmarksprefssettings.cpp
+ 
+--- kdenetwork-3.5.9/kopete/plugins/alias/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/alias/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -5,11 +5,11 @@
+ 
+ kopete_alias_la_SOURCES     = aliasplugin.cpp
+ kopete_alias_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_alias_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_alias_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ kcm_kopete_alias_la_SOURCES     = aliaspreferences.cpp aliasdialogbase.ui aliasdialog.ui editaliasdialog.cpp
+ kcm_kopete_alias_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_alias_la_LIBADD      = $(LIB_KOPETECOMPAT) $(LIB_KUTILS) ../../libkopete/libkopete.la
++kcm_kopete_alias_la_LIBADD      = $(LIB_KOPETECOMPAT) $(LIB_KUTILS) ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_alias.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/autoreplace/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/autoreplace/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -7,11 +7,11 @@
+ 
+ kopete_autoreplace_la_SOURCES     = autoreplaceplugin.cpp autoreplaceconfig.cpp
+ kopete_autoreplace_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_autoreplace_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_autoreplace_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ kcm_kopete_autoreplace_la_SOURCES     = autoreplacepreferences.cpp autoreplaceconfig.cpp autoreplaceprefs.ui
+ kcm_kopete_autoreplace_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_autoreplace_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_KUTILS)
++kcm_kopete_autoreplace_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_autoreplace.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/connectionstatus/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/connectionstatus/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -6,7 +6,7 @@
+ 
+ kopete_connectionstatus_la_SOURCES     = connectionstatusplugin.cpp
+ kopete_connectionstatus_la_LDFLAGS     = -module $(KDE_PLUGIN) $(all_libraries)
+-kopete_connectionstatus_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_connectionstatus_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_connectionstatus.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/contactnotes/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/contactnotes/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -6,7 +6,7 @@
+ 
+ kopete_contactnotes_la_SOURCES     = contactnotesplugin.cpp contactnotesedit.cpp
+ kopete_contactnotes_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_contactnotes_la_LIBADD      = ../../libkopete/libkopete.la -lkio
++kopete_contactnotes_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_contactnotes.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/cryptography/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/cryptography/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -8,11 +8,11 @@
+ 
+ kopete_cryptography_la_SOURCES     = cryptographyplugin.cpp kgpginterface.cpp cryptographyguiclient.cpp cryptographyselectuserkey.cpp cryptographyuserkey_ui.ui popuppublic.cpp kgpgselkey.cpp
+ kopete_cryptography_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_cryptography_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_cryptography_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ kcm_kopete_cryptography_la_SOURCES = cryptographypreferences.cpp cryptographyprefsbase.ui  kgpgselkey.cpp
+ kcm_kopete_cryptography_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_cryptography_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_KUTILS)
++kcm_kopete_cryptography_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_cryptography.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/highlight/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/highlight/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -8,11 +8,11 @@
+ 
+ kopete_highlight_la_SOURCES = highlightplugin.cpp highlightconfig.cpp filter.cpp
+ kopete_highlight_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_highlight_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_highlight_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ kcm_kopete_highlight_la_SOURCES = highlightprefsbase.ui highlightpreferences.cpp filter.cpp highlightconfig.cpp
+ kcm_kopete_highlight_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_highlight_la_LIBADD  = $(LIB_KOPETECOMPAT) $(LIB_KUTILS)
++kcm_kopete_highlight_la_LIBADD  = $(LIB_KOPETECOMPAT) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ 
+ service_DATA = kopete_highlight.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/history/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/history/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -8,11 +8,11 @@
+ 	historylogger.cpp converter.cpp historyguiclient.cpp historyconfig.kcfgc
+ 
+ kopete_history_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_history_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_history_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KHTML) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KUTILS) $(LIB_KIO)
+ 
+ kcm_kopete_history_la_SOURCES = historyprefsui.ui historypreferences.cpp  historyconfig.kcfgc
+ kcm_kopete_history_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_history_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_KUTILS)
++kcm_kopete_history_la_LIBADD  = $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_history.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/latex/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/latex/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -8,11 +8,11 @@
+ 
+ kopete_latex_la_SOURCES = latexplugin.cpp latexconfig.kcfgc latexguiclient.cpp
+ kopete_latex_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_latex_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_latex_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ kcm_kopete_latex_la_SOURCES = latexprefsbase.ui latexpreferences.cpp latexconfig.kcfgc
+ kcm_kopete_latex_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_latex_la_LIBADD  = $(LIB_KOPETECOMPAT) $(LIB_KUTILS)
++kcm_kopete_latex_la_LIBADD  = $(LIB_KOPETECOMPAT) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_latex.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/netmeeting/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/netmeeting/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -6,7 +6,7 @@
+ 
+ kopete_netmeeting_la_SOURCES     = netmeetingplugin.cpp netmeetinginvitation.cpp netmeetingguiclient.cpp
+ kopete_netmeeting_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_netmeeting_la_LIBADD      = $(top_builddir)/kopete/libkopete/libkopete.la $(top_builddir)/kopete/protocols/msn/libkopete_msn_shared.la
++kopete_netmeeting_la_LIBADD      = $(top_builddir)/kopete/libkopete/libkopete.la $(top_builddir)/kopete/protocols/msn/libkopete_msn_shared.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_netmeeting.desktop
+ servicedir = $(kde_servicesdir)
+@@ -16,7 +16,7 @@
+ 
+ kcm_kopete_netmeeting_la_SOURCES = netmeetingprefs_ui.ui netmeetingpreferences.cpp
+ kcm_kopete_netmeeting_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_netmeeting_la_LIBADD  = $(LIB_KOPETECOMPAT) $(LIB_KUTILS)
++kcm_kopete_netmeeting_la_LIBADD  = $(LIB_KOPETECOMPAT) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ 
+ kcm_DATA = kopete_netmeeting_config.desktop
+--- kdenetwork-3.5.9/kopete/plugins/statistics/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/statistics/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -9,7 +9,7 @@
+ kopete_statistics_la_SOURCES = statisticsplugin.cpp statisticsdb.cpp statisticsdialog.cpp statisticswidget.ui statisticscontact.cpp statisticsdcopiface.skel
+ 
+ kopete_statistics_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_statistics_la_LIBADD      = ../../libkopete/libkopete.la sqlite/libsqlite.la
++kopete_statistics_la_LIBADD      = ../../libkopete/libkopete.la sqlite/libsqlite.la -lDCOP $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KHTML)
+ 
+ service_DATA = kopete_statistics.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/texteffect/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/texteffect/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -7,11 +7,11 @@
+ 
+ kopete_texteffect_la_SOURCES     = texteffectplugin.cpp texteffectconfig.cpp
+ kopete_texteffect_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_texteffect_la_LIBADD      = ../../libkopete/libkopete.la
++kopete_texteffect_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ kcm_kopete_texteffect_la_SOURCES = texteffectconfig.cpp texteffectprefs.ui texteffectpreferences.cpp
+ kcm_kopete_texteffect_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_texteffect_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_KUTILS)
++kcm_kopete_texteffect_la_LIBADD  = $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_texteffect.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/translator/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/translator/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -7,11 +7,11 @@
+ kopete_translator_la_SOURCES     = translatorplugin.cpp  \
+     translatordialog.cpp translatorguiclient.cpp translatorlanguages.cpp
+ kopete_translator_la_LDFLAGS     = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_translator_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_KIO)
++kopete_translator_la_LIBADD      = ../../libkopete/libkopete.la $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ kcm_kopete_translator_la_SOURCES = translatorprefsbase.ui translatorprefs.cpp translatorlanguages.cpp
+ kcm_kopete_translator_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_translator_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_KUTILS)
++kcm_kopete_translator_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_translator.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/plugins/webpresence/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/plugins/webpresence/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -7,11 +7,11 @@
+ kopete_webpresence_la_SOURCES     = webpresenceplugin.cpp
+ 
+ kopete_webpresence_la_LDFLAGS     = -module  -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kopete_webpresence_la_LIBADD      = ../../libkopete/libkopete.la $(LIBXML_LIBS) $(LIBXSLT_LIBS)
++kopete_webpresence_la_LIBADD      = ../../libkopete/libkopete.la $(LIBXML_LIBS) $(LIBXSLT_LIBS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ 
+ kcm_kopete_webpresence_la_SOURCES = webpresencepreferences.cpp webpresenceprefs.ui
+ kcm_kopete_webpresence_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_webpresence_la_LIBADD  = ../../libkopete/libkopete.la  $(LIB_KUTILS)
++kcm_kopete_webpresence_la_LIBADD  = ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KIO) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_webpresence.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/gadu/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/gadu/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -32,7 +32,7 @@
+ kopete_gadu_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+ kopete_gadu_la_LIBADD  = ./ui/libgaduui.la \
+ 		       $(top_builddir)/kopete/libkopete/libkopete.la \
+-		       $(GG_LIBS)
++		       $(GG_LIBS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KIO)
+ 
+ service_DATA = kopete_gadu.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/groupwise/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/groupwise/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -14,7 +14,7 @@
+ kopete_groupwise_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) \
+ 	$(all_libraries)
+ kopete_groupwise_la_LIBADD = ui/libkopetegroupwiseui.la \
+-	libgroupwise/libgroupwise.la ../../libkopete/libkopete.la $(LIB_KIO)
++	libgroupwise/libgroupwise.la ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_groupwise.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/irc/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/irc/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -26,7 +26,7 @@
+ kopete_irc_la_LIBADD      = ../../libkopete/libkopete.la \
+ 		./ui/libkopeteircui.la \
+ 		./libkirc/libkirc.la \
+-		$(LIB_KIO)
++		$(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KHTML) -lDCOP
+ 
+ service_DATA = kopete_irc.desktop irc.protocol
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/jabber/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/jabber/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -55,7 +55,7 @@
+ 	libiris/cutestuff/network/libcutestuff_network.la \
+ 	libiris/cutestuff/util/libcutestuff_util.la \
+ 	libjabberclient.la \
+-	$(JINGLE_LIBS)
++	$(JINGLE_LIBS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) $(IDN_LIBS) $(LIB_KIO)
+ 
+ service_DATA = kopete_jabber.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/jabber/kioslave/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/jabber/kioslave/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -13,7 +13,7 @@
+ kde_module_LTLIBRARIES = kio_jabberdisco.la
+ 
+ kio_jabberdisco_la_SOURCES = jabberdisco.cpp
+-kio_jabberdisco_la_LIBADD = ../libjabberclient.la ../libiris/qca/src/libqca.la ../libiris/iris/include/libiris.la ../libiris/iris/xmpp-im/libiris_xmpp_im.la ../libiris/iris/xmpp-core/libiris_xmpp_core.la ../libiris/iris/jabber/libiris_jabber.la ../libiris/cutestuff/util/libcutestuff_util.la ../libiris/cutestuff/network/libcutestuff_network.la $(LIB_KIO)
++kio_jabberdisco_la_LIBADD = ../libjabberclient.la ../libiris/qca/src/libqca.la ../libiris/iris/include/libiris.la ../libiris/iris/xmpp-im/libiris_xmpp_im.la ../libiris/iris/xmpp-core/libiris_xmpp_core.la ../libiris/iris/jabber/libiris_jabber.la ../libiris/cutestuff/util/libcutestuff_util.la ../libiris/cutestuff/network/libcutestuff_network.la $(LIB_KIO) $(LIB_KDECORE) $(LIB_QT) $(IDN_LIBS)
+ kio_jabberdisco_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+ 
+ noinst_HEADERS = jabberdisco.h
+--- kdenetwork-3.5.9/kopete/protocols/meanwhile/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/meanwhile/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -31,7 +31,7 @@
+ 	$(KDE_PLUGIN) $(all_libraries) 
+ 
+ kopete_meanwhile_la_LIBADD = $(top_builddir)/kopete/libkopete/libkopete.la \
+-	ui/libkopetemeanwhileui.la $(MEANWHILE_LIBS)
++	ui/libkopetemeanwhileui.la $(MEANWHILE_LIBS) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_meanwhile.desktop
+ servicedir= $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/msn/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/msn/Makefile.am	2008-02-19 21:08:40.000000000 +0200
+@@ -24,11 +24,11 @@
+ 	p2p.cpp messageformatter.cpp incomingtransfer.cpp outgoingtransfer.cpp \
+ 	webcam.cpp
+ 
+-libkopete_msn_shared_la_LIBADD  = ./ui/libkopetemsnui.la ../../libkopete/libkopete.la $(WEBCAM_LIBMINICWRAPPER) ../../libkopete/avdevice/libkopete_videodevice.la   $(LIB_KIO)
++libkopete_msn_shared_la_LIBADD  = ./ui/libkopetemsnui.la ../../libkopete/libkopete.la $(WEBCAM_LIBMINICWRAPPER) ../../libkopete/avdevice/libkopete_videodevice.la   $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) -lglib-2.0
+ libkopete_msn_shared_la_LDFLAGS = -version-info 0:0:0 -no-undefined $(all_libraries)
+ 
+ kopete_msn_la_SOURCES = dummy.cpp webcam.cpp
+-kopete_msn_la_LIBADD = libkopete_msn_shared.la
++kopete_msn_la_LIBADD = libkopete_msn_shared.la ../../libkopete/avdevice/libkopete_videodevice.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ kopete_msn_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+ 
+--- kdenetwork-3.5.9/kopete/protocols/msn/config/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/msn/config/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -5,7 +5,7 @@
+ 
+ kcm_kopete_msn_la_SOURCES = msnprefs.ui msnpreferences.cpp
+ kcm_kopete_msn_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+-kcm_kopete_msn_la_LIBADD  = ../../../libkopete/libkopete.la $(LIB_KUTILS)
++kcm_kopete_msn_la_LIBADD  = ../../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_msn_config.desktop
+ servicedir = $(kde_servicesdir)/kconfiguredialog
+--- kdenetwork-3.5.9/kopete/protocols/oscar/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/oscar/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -12,4 +12,4 @@
+ 	oscarvisibilitybase.ui oscarvisibilitydialog.cpp \
+ 	oscarversionupdater.cpp
+ libkopete_oscar_la_LDFLAGS = -no-undefined -version-info 2:0:0 $(all_libraries)
+-libkopete_oscar_la_LIBADD  = $(LIB_KIO) $(top_builddir)/kopete/libkopete/libkopete.la ./liboscar/liboscar.la
++libkopete_oscar_la_LIBADD  = $(LIB_KIO) $(top_builddir)/kopete/libkopete/libkopete.la ./liboscar/liboscar.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+--- kdenetwork-3.5.9/kopete/protocols/oscar/aim/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/oscar/aim/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -12,7 +12,7 @@
+ 
+ kopete_aim_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+ kopete_aim_la_LIBADD  = ../libkopete_oscar.la ui/libkopeteaimui.la \
+-	$(top_builddir)/kopete/libkopete/libkopete.la
++	$(top_builddir)/kopete/libkopete/libkopete.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KIO) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_aim.desktop aim.protocol
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/oscar/icq/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/oscar/icq/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -13,7 +13,7 @@
+ 
+ kopete_icq_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+ kopete_icq_la_LIBADD  = ../libkopete_oscar.la \
+-	$(top_builddir)/kopete/libkopete/libkopete.la ui/libkopeteicqui.la
++	$(top_builddir)/kopete/libkopete/libkopete.la ui/libkopeteicqui.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ 
+ service_DATA = kopete_icq.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/sms/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/sms/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -15,7 +15,7 @@
+ kopete_sms_la_LDFLAGS = -no-undefined -module $(KDE_PLUGIN) $(all_libraries)
+ kopete_sms_la_LIBADD  = ./ui/libkopetesmsui.la \
+ 	./services/libkopetesmsservices.la \
+-	../../libkopete/libkopete.la  $(LIB_KIO)
++	../../libkopete/libkopete.la  $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) -lgsmme $(LIB_KDECORE)
+ 
+ service_DATA = kopete_sms.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/testbed/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/testbed/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -9,7 +9,7 @@
+ kopete_testbed_la_SOURCES = testbedprotocol.cpp testbedcontact.cpp testbedaccount.cpp testbedaddcontactpage.cpp testbedaddui.ui testbededitaccountwidget.cpp testbedaccountpreferences.ui testbedfakeserver.cpp testbedincomingmessage.cpp
+ kopete_testbed_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ kopete_testbed_la_LIBADD = ../../libkopete/avdevice/libkopete_videodevice.la \
+-	ui/libkopetetestbedui.la ../../libkopete/libkopete.la $(LIB_KIO)
++	ui/libkopetetestbedui.la ../../libkopete/libkopete.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ service_DATA = kopete_testbed.desktop
+ servicedir= $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/winpopup/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/winpopup/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -13,7 +13,7 @@
+ kopete_wp_la_SOURCES = wpprotocol.cpp wpcontact.cpp  wpaddcontact.cpp wpeditaccount.cpp  wpaccount.cpp wpuserinfo.cpp
+ kopete_wp_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)
+ kopete_wp_la_LIBADD = ../../libkopete/libkopete.la ./ui/libkopetewpui.la \
+-	./libwinpopup/libwinpopup.la $(LIB_KIO)
++	./libwinpopup/libwinpopup.la $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ service_DATA = kopete_wp.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kopete/protocols/yahoo/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kopete/protocols/yahoo/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -14,7 +14,7 @@
+ 	yahoochatsession.cpp yahooverifyaccount.cpp yahoowebcam.cpp
+ kopete_yahoo_la_LDFLAGS     = -module $(KDE_PLUGIN)
+ kopete_yahoo_la_LIBADD = ../../libkopete/avdevice/libkopete_videodevice.la \
+-	$(top_builddir)/kopete/libkopete/libkopete.la ui/libkopeteyahooui.la libkyahoo/libkyahoo.la
++	$(top_builddir)/kopete/libkopete/libkopete.la ui/libkopeteyahooui.la libkyahoo/libkyahoo.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_KIO)
+ 
+ service_DATA = kopete_yahoo.desktop
+ servicedir = $(kde_servicesdir)
+--- kdenetwork-3.5.9/kpf/src/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/kpf/src/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -39,7 +39,7 @@
+ 
+ kpf_panelapplet_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ 
+-kpf_panelapplet_la_LIBADD = $(LIB_KIO) -lkdnssd
++kpf_panelapplet_la_LIBADD = $(LIB_KIO) -lkdnssd $(LIB_QT) $(LIB_KDEUI) -lDCOP $(LIB_KDECORE)
+ 
+ kpfpropertiesdialog_la_SOURCES = \
+   PropertiesDialogPlugin.cpp \
+@@ -49,7 +49,7 @@
+   Defaults.cpp \
+   Help.cpp
+ 
+-kpfpropertiesdialog_la_LIBADD = $(LIB_KIO) -lkdnssd
++kpfpropertiesdialog_la_LIBADD = $(LIB_KIO) -lkdnssd $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) -lDCOP
+ 
+ kpfpropertiesdialog_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ 
+--- kdenetwork-3.5.9/krfb/kcm_krfb/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/krfb/kcm_krfb/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -5,7 +5,7 @@
+ 
+ kcm_krfb_la_SOURCES = configurationwidget.ui kcm_krfb.cpp
+ kcm_krfb_la_LDFLAGS  = $(all_libraries) $(KDE_PLUGIN) -module
+-kcm_krfb_la_LIBADD   = ../krfb/libkrfbconfig.la $(LIB_KDEUI) -lkio
++kcm_krfb_la_LIBADD   = ../krfb/libkrfbconfig.la $(LIB_KDEUI) -lkio $(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_SLP)
+ 
+ # Services
+ xdg_apps_DATA = kcmkrfb.desktop
+--- kdenetwork-3.5.9/krfb/kinetd/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/krfb/kinetd/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -5,7 +5,7 @@
+ 
+ kded_kinetd_la_SOURCES = kinetd.cpp kinetd.skel
+ kded_kinetd_la_LDFLAGS  = $(all_libraries) -module -avoid-version
+-kded_kinetd_la_LIBADD   = ../srvloc/libsrvloc.la $(LIB_KIO) $(LIB_KDNSSD)
++kded_kinetd_la_LIBADD   = ../srvloc/libsrvloc.la $(LIB_KIO) $(LIB_KDNSSD) $(LIB_QT) -lDCOP $(LIB_KDECORE) -lkdeinit_kded $(LIB_SLP)
+ 
+ # Services
+ kde_servicetypes_DATA = kinetdmodule.desktop
+--- kdenetwork-3.5.9/ksirc/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/ksirc/Makefile.am	2008-02-19 21:04:57.000000000 +0200
+@@ -77,11 +77,11 @@
+ 	./KSProgress/libksprogress.la  \
+ 	./KSOpenkSirc/libksopenksirc.la \
+         ./KSTicker/libksticker.la \
+-	$(LIB_KIO) $(LIBDL) 
++	$(LIB_KIO)
+ 
+ # the libraries to link against. Be aware of the order. First the libraries,
+ # that depend on the following ones.
+-ksirc_la_LIBADD   = $(all_ksirc_libraries)
++ksirc_la_LIBADD   = $(all_ksirc_libraries) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_QT)
+ 
+ kdoc:
+ 	kdoc -ddoc ksirc *.h
+--- kdenetwork-3.5.9/ktalkd/kcmktalkd/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/ktalkd/kcmktalkd/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -9,7 +9,7 @@
+ kcm_ktalkd_la_SOURCES = main.cpp soundpage.cpp answmachpage.cpp \
+ 	forwmachpage.cpp
+ kcm_ktalkd_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kcm_ktalkd_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO)
++kcm_ktalkd_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ #for extra warnings during compilation :
+ # AMDEFS		=	-ansi -pedantic -D_POSIX_SOURCE -D_BSD_SOURCE
+--- kdenetwork-3.5.9/lanbrowsing/kcmlisa/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/lanbrowsing/kcmlisa/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -3,7 +3,7 @@
+ kcm_lanbrowser_la_SOURCES = main.cpp setupwizard.cpp kcmlisa.cpp kcmreslisa.cpp kcmkiolan.cpp portsettingsbar.cpp findnic.cpp
+ 
+ kcm_lanbrowser_la_LDFLAGS  = $(all_libraries) $(KDE_PLUGIN) -module
+-kcm_lanbrowser_la_LIBADD = -lkdeui
++kcm_lanbrowser_la_LIBADD = -lkdeui $(LIB_QT) $(LIB_KDECORE)
+ 
+ INCLUDES= $(all_includes)
+ 
+--- kdenetwork-3.5.9/lanbrowsing/kio_lan/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/lanbrowsing/kio_lan/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -7,7 +7,7 @@
+ kde_module_LTLIBRARIES = kio_lan.la
+ 
+ kio_lan_la_SOURCES = kio_lan.cpp
+-kio_lan_la_LIBADD = $(LIB_KIO)
++kio_lan_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ kio_lan_la_LDFLAGS = -module -avoid-version -no-undefined $(all_libraries) $(KDE_RPATH)
+ 
+ noinst_HEADERS = kio_lan.h
+--- kdenetwork-3.5.9/librss/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/librss/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -5,7 +5,7 @@
+ librss_la_SOURCES = article.cpp document.cpp image.cpp textinput.cpp \
+   tools_p.cpp loader.cpp
+ librss_la_LDFLAGS = -no-undefined -version-info 1:0 $(all_libraries)
+-librss_la_LIBADD = $(LIB_KIO)
++librss_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ librssincludedir = $(includedir)/rss
+ librssinclude_HEADERS = article.h document.h global.h image.h textinput.h \
+--- kdenetwork-3.5.9/wifi/kcmwifi/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/wifi/kcmwifi/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -7,7 +7,7 @@
+                       ifconfigpagebase.ui configpower.ui mainconfigbase.ui \
+                       mainconfig.cpp ifconfigpage.cpp vendorconfig.cpp
+ kcm_wifi_la_LDFLAGS = -module -avoid-version $(all_libraries) -no-undefined
+-kcm_wifi_la_LIBADD = $(LIB_KIO)
++kcm_wifi_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ METASOURCES = AUTO
+ 
+--- kdenetwork-3.5.9/wifi/kwireless/Makefile.am	2008-02-19 17:36:30.000000000 +0000
++++ kdenetwork-3.5.9/wifi/kwireless/Makefile.am	2008-02-19 17:36:30.000000000 +0000
+@@ -8,7 +8,7 @@
+ 	linuxwirelesswidget.cpp  \
+ 	propertytablebase.ui propertytable.cpp 
+ libkwireless_la_LDFLAGS = -module -avoid-version $(all_libraries)
+-libkwireless_la_LIBADD =  -liw $(LIB_KDEUI)
++libkwireless_la_LIBADD =  -liw $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kwireless_DATA = kwireless.desktop
+ kwirelessdir = $(kde_datadir)/kicker/applets
+--- kdenetwork-3.5.9.o/ktalkd/ktalkdlg/Makefile.am	2008-02-19 21:00:02.000000000 +0200
++++ kdenetwork-3.5.9/ktalkd/ktalkdlg/Makefile.am	2008-02-19 21:01:06.000000000 +0200
+@@ -8,7 +8,7 @@
+ 
+ INCLUDES	=	$(all_includes)
+ ktalkdlg_LDFLAGS=	$(all_libraries) $(KDE_RPATH)
+-ktalkdlg_LDADD	=	$(LIB_KDEUI)
++ktalkdlg_LDADD	=	$(LIB_QT) $(LIB_KDECORE)
+ 
+ #for extra warnings during compilation :
+ #AM_CXXFLAGS = -ansi -pedantic -D_POSIX_SOURCE -D_BSD_SOURCE
+--- kdenetwork-3.5.9.o/wifi/Makefile.am	2008-02-19 21:00:06.000000000 +0200
++++ kdenetwork-3.5.9/wifi/Makefile.am	2008-02-19 21:03:57.000000000 +0200
+@@ -26,7 +26,7 @@
+ kwifimanager_LDFLAGS = $(all_libraries)
+ 
+ if include_ARTS
+-ARTS_LIBS = -lartsflow -lmcop
++ARTS_LIBS = -lartsflow
+ endif
+ 
+ kwifimanager_LDADD = $(ARTS_LIBS) -liw $(LIB_KDEUI)

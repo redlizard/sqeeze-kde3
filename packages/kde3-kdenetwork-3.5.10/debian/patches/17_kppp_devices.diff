@@ -1,0 +1,90 @@
+--- kde.orig/kppp/devices.h
++++ kde.patched/kppp/devices.h
+@@ -37,41 +37,52 @@
+   "/dev/dtyU3",
+ #elif defined (__linux__)
+   "/dev/modem",
++  "/dev/modem0",
++  "/dev/modem1",
++  "/dev/modem2",
++  "/dev/modem3",
+   "/dev/ttyS0",
+   "/dev/ttyS1",
+   "/dev/ttyS2",
+   "/dev/ttyS3",
+   "/dev/ttyS4",
+-#ifdef ISDNSUPPORT
+-  "/dev/ttyI0",
+-  "/dev/ttyI1",
+-  "/dev/ttyI2",
+-  "/dev/ttyI3",
+-#endif
++  "/dev/ttyS5",
++  "/dev/ttyS6",
++  "/dev/ttyS7",
++  "/dev/ttyS8",
++  "/dev/ttyS9",
++  "/dev/ttyS10",
++  "/dev/ttyS11",
++  "/dev/ttyS12",
++  "/dev/ttyS13",
++  "/dev/ttyS14",
++  "/dev/ttyS15",
++  "/dev/ttyS16",
++  "/dev/ttyS17",
++  "/dev/ttyACM0",
++  "/dev/ttyACM1",
++  "/dev/ttyACM2",
++  "/dev/ttyACM3",
+   "/dev/usb/ttyACM0",          /* USB stuff modems */
+   "/dev/usb/ttyACM1",
+   "/dev/usb/ttyACM2",
+   "/dev/usb/ttyACM3",
++  "/dev/ttyUSB0",
++  "/dev/ttyUSB1",
++  "/dev/ttyUSB2",
++  "/dev/ttyUSB3",
+   "/dev/usb/ttyUSB0",          /* USB stuff modems */
+   "/dev/usb/ttyUSB1",
+   "/dev/usb/ttyUSB2",
+   "/dev/usb/ttyUSB3",
+-  "/dev/ttyACM0",          /* USB stuff modems  with udev */
+-  "/dev/ttyACM1",
+-  "/dev/ttyACM2",
+-  "/dev/ttyACM3",
+-  "/dev/ttyUSB0",
+-  "/dev/ttyUSB1",
+-  "/dev/ttyUSB2",
+-  "/dev/ttyUSB3",  
+-  "/dev/usb/tts/0",          /* USB stuff modems with devfs*/
+-  "/dev/usb/tts/1",
+-  "/dev/usb/tts/2",
+-  "/dev/usb/tts/3",
+   "/dev/rfcomm0",	       /* BlueTooth */
+   "/dev/rfcomm1",
+   "/dev/rfcomm2",
+   "/dev/rfcomm3",
++  "/dev/bluetooth/rfcomm/0",
++  "/dev/bluetooth/rfcomm/1",
++  "/dev/bluetooth/rfcomm/2",
++  "/dev/bluetooth/rfcomm/3",
+   "/dev/ircomm0",	       /* IrDA */
+   "/dev/ircomm1",
+   "/dev/ircomm2",
+@@ -84,6 +95,16 @@
+   "/dev/ttySHSF1",
+   "/dev/ttySHSF2",
+   "/dev/ttySHSF3",  /* necessary for conexant modem which use hsfserial commercial module */
++  "/dev/ttySLT0",   /* Lucent winmodem devices */
++  "/dev/ttySLT1",
++  "/dev/ttySLT2",
++  "/dev/ttySLT3",
++#ifdef ISDNSUPPORT
++  "/dev/ttyI0",
++  "/dev/ttyI1",
++  "/dev/ttyI2",
++  "/dev/ttyI3",
++#endif
+ #elif defined(__svr4__)
+   "/dev/cua/a",
+   "/dev/cua/b",

@@ -1,0 +1,8 @@
+?package(kdict):\
+	needs="X11"\
+	section="Applications/Network/Communication"\
+	hints="KDE"\
+	title="KDict"\
+	icon32x32="/opt/kde3/share/pixmaps/kdict.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kdict-16.xpm"\
+	command="/opt/kde3/bin/kdict"

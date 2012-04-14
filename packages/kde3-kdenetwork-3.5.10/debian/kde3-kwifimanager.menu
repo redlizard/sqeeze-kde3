@@ -1,0 +1,8 @@
+?package(kwifimanager):\
+	needs="X11"\
+	section="Applications/Network/Monitoring"\
+	hints="KDE"\
+	title="KWifiManager"\
+	icon32x32="/opt/kde3/share/pixmaps/kwifimanager.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kwifimanager-16.xpm"\
+	command="/opt/kde3/bin/kwifimanager"

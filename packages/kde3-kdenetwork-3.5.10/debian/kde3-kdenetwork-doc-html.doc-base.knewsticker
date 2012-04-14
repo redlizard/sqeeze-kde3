@@ -1,0 +1,10 @@
+Document: kdenetwork-doc-html-knewsticker
+Title: KNewsTicker Handbook
+Author: Frerich Raabe, Jonathan Singer
+Abstract: KNewsTicker is a news ticker applet for the KDE panel.
+Section: Network/Web News
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/knewsticker/index.html
+Files: /usr/share/doc/kde/HTML/en/knewsticker/*.html
+

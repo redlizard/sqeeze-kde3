@@ -1,0 +1,121 @@
+.TH KWIFIMANAGER "1" "October 2006" "kwifimanager" "User Commands"
+.SH NAME
+kwifimanager \- manual page for kwifimanager
+.SH SYNOPSIS
+.B kwifimanager
+[\fIOPTIONS\fR]
+.SH DESCRIPTION
+\fBkwifimanager\fR is a KDE wireless management program.
+.SH GENERIC OPTIONS:
+.TP
+\fB\-\-help\fR
+Show help about options
+.TP
+\fB\-\-help\-qt\fR
+Show QT specific options
+.TP
+\fB\-\-help\-kde\fR
+Show KDE specific options
+.TP
+\fB\-\-help\-all\fR
+Show all options
+.TP
+\fB\-\-author\fR
+Show author information
+.TP
+\fB\-v\fR,  \fB\-\-version\fR
+Show version information
+.TP
+\fB\-\-license\fR
+Show license information
+.SH QT OPTIONS:
+.TP
+\fB\-\-display <displayname>\fR
+Use the X-server display 'displayname'
+.TP
+\fB\-\-session <sessionId>\fR
+Restore the application for the given 'sessionId'
+.TP
+\fB\-\-cmap\fR
+Causes the application to install a private color map on an 8-bit display
+.TP
+\fB\-\-ncols <count>\fR
+Limits the number of colors allocated in the color cube on an 8-bit display, if the application is using the QApplication::ManyColor color specification
+.TP
+\fB\-\-nograb\fR
+Tells Qt to never grab the mouse or the keyboard
+.TP
+\fB\-\-dograb\fR
+Running under a debugger can cause an implicit -nograb, use -dograb to override
+.TP
+\fB\-\-sync\fR
+Switches to synchronous mode for debugging
+.TP
+\fB\-\-fn, \-\-font <fontname>\fR
+Defines the application font
+.TP
+\fB\-\-bg, \-\-background <color>\fR
+Sets the default background color and an application palette (light and dark shades are calculated)
+.TP
+\fB\-\-fg, \-\-foreground <color>\fR
+Sets the default foreground color
+.TP
+\fB\-\-btn, \-\-button <color>\fR
+Sets the default button color
+.TP
+\fB\-\-name <name>\fR
+Sets the application name
+.TP
+\fB\-\-title <title>\fR
+Sets the application title (caption)
+.TP
+\fB\-\-visual TrueColor\fR
+Forces the application to use a TrueColor visual on an 8-bit display
+.TP
+\fB\-\-inputstyle <inputstyle>\fR
+Sets XIM (X Input Method) input style. Possible values are onthespot, overthespot, offthespot and root
+.TP
+\fB\-\-im <XIM server>\fR
+Set XIM server
+.TP
+\fB\-\-noxim\fR
+Disable XIM
+.TP
+\fB\-\-reverse\fR
+Mirrors the whole layout of widgets
+.SH KDE OPTIONS:
+.TP
+\fB\-\-caption <caption>\fR
+Use 'caption' as name in the titlebar
+.TP
+\fB\-\-icon <icon>\fR
+Use 'icon' as the application icon
+.TP
+\fB\-\-miniicon <icon>\fR
+Use 'icon' as the icon in the titlebar
+.TP
+\fB\-\-config <filename>\fR
+Use alternative configuration file
+.TP
+\fB\-\-dcopserver <server>\fR
+Use the DCOP Server specified by 'server'
+.TP
+\fB\-\-nocrashhandler\fR
+Disable crash handler, to get core dumps
+.TP
+\fB\-\-waitforwm\fR
+Waits for a WM_NET compatible windowmanager
+.TP
+\fB\-\-style <style>\fR
+Sets the application GUI style
+.TP
+\fB\-\-geometry <geometry>\fR
+Sets the client geometry of the main widget - see man X for the argument format
+.SH AUTHOR
+This manual page was written for the Debian GNU/Linux distribution
+because the original program does not have a manual page.
+.PP
+This manual page was written by Chris Bier <chris.bier@cymor.com>.
+Based on the xchat man page written by Davide Puricelli <evo@debian.org>,
+and the kwifimanager help options.  It was written for the Debian GNU/Linux
+system (but may be used by others).

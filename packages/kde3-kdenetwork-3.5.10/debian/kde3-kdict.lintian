@@ -1,0 +1,4 @@
+kdict: postinst-must-call-ldconfig usr/lib/libkdeinit_kdict.so
+kdict: postrm-should-call-ldconfig usr/lib/libkdeinit_kdict.so
+kdict: package-name-doesnt-match-sonames libkdeinit-kdict
+kdict: no-shlibs-control-file usr/lib/libkdeinit_kdict.so

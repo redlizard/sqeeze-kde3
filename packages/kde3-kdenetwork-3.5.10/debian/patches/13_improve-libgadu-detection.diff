@@ -1,0 +1,46 @@
+Patch by Martin Meredith <mez@ubuntu.com>
+
+libgadu was changed to have it's own package (split from ekg) 
+it started using proper version numbers (see #310276) - As before,
+it had been using a date as a version number, it had worked, however,
+this split caused the new package to be built with the correct version
+information, therefore, as it was a higher version than kdenetwork was
+expecting, this would fall over.
+diff -Nur kdenetwork-3.5.9/kopete/protocols/configure.in.in kdenetwork-3.5.9.new/kopete/protocols/configure.in.in
+--- kdenetwork-3.5.9/kopete/protocols/configure.in.in	2006-10-01 18:27:00.000000000 +0100
++++ kdenetwork-3.5.9.new/kopete/protocols/configure.in.in	2008-05-24 03:42:40.000000000 +0100
+@@ -39,9 +39,21 @@
+ 		
+ 	int main()
+ 	{
+-#if defined __GG_LIBGADU_HAVE_PTHREAD && defined GG_LOGIN60
+-		int maj, min, date;
+-		sscanf( gg_libgadu_version(), "%u.%u.%u", &maj,&min,&date );
++#if defined GG_CONFIG_HAVE_PTHREAD && defined GG_LOGIN60
++		int maj, min, date, items;
++		const char *libgadu_version = gg_libgadu_version();
++
++		items = sscanf( libgadu_version, "%u.%u.%u", &maj,&min,&date );
++
++		if ( items != 3 ) { /* version in YYYYDDMM format only */
++			sscanf( libgadu_version, "%u", &date );
++
++			if ( date < 20040520 )
++				return 1;
++			else
++				return 0;
++		}
++
+ 		if ( maj != 1 ) {
+ 			return 1;
+ 		}
+@@ -49,7 +61,7 @@
+ 			return 1;
+ 		}
+ 
+-		if ( min == 5 || min == 6 ){
++		if ( min >= 5 && min <= 8){
+ 			return 0;
+ 		}
+ 			     
+

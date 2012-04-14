@@ -1,0 +1,8 @@
+?package(ksirc):\
+	needs="X11"\
+	section="Applications/Network/Communication"\
+	hints="KDE,IRC"\
+	title="KSirc"\
+	icon32x32="/opt/kde3/share/pixmaps/ksirc.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ksirc-16.xpm"\
+	command="/opt/kde3/bin/ksirc"

@@ -1,0 +1,14 @@
+diff -Nur kdenetwork-3.5.6/kppp/devices.h kdenetwork-3.5.6.new/kppp/devices.h
+--- kdenetwork-3.5.6/kppp/devices.h	2007-01-26 19:48:23.605731343 +0100
++++ kdenetwork-3.5.6.new/kppp/devices.h	2007-01-26 19:49:52.530798893 +0100
+@@ -59,6 +59,10 @@
+   "/dev/ttyS15",
+   "/dev/ttyS16",
+   "/dev/ttyS17",
++  "/dev/noz0",
++  "/dev/noz1",
++  "/dev/noz2",
++  "/dev/noz3",
+   "/dev/ttyACM0",
+   "/dev/ttyACM1",
+   "/dev/ttyACM2",

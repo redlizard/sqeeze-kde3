@@ -1,0 +1,13 @@
+Index: kdenetwork/ksirc/KSPrefs/page_generalbase.ui
+===================================================================
+--- kdenetwork/ksirc/KSPrefs/page_generalbase.ui	(revision 684552)
++++ kdenetwork/ksirc/KSPrefs/page_generalbase.ui	(working copy)
+@@ -101,7 +101,7 @@
+                                 <string>unlimited</string>
+                             </property>
+                             <property name="maxValue">
+-                                <number>1000</number>
++                                <number>10000</number>
+                             </property>
+                             <property name="toolTip" stdset="0">
+                                 <string>Stores up to this many lines of chat from each window as history</string>

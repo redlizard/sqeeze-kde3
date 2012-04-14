@@ -1,0 +1,10 @@
+debian/tmp/opt/kde3/lib/kde3/fileshare_propsdlgplugin.la
+debian/tmp/opt/kde3/lib/kde3/fileshare_propsdlgplugin.so
+debian/tmp/opt/kde3/lib/kde3/kcm_fileshare.la
+debian/tmp/opt/kde3/lib/kde3/kcm_fileshare.so
+debian/tmp/opt/kde3/lib/kde3/kcm_kcmsambaconf.la
+debian/tmp/opt/kde3/lib/kde3/kcm_kcmsambaconf.so
+debian/tmp/opt/kde3/share/applications/kde/fileshare.desktop
+debian/tmp/opt/kde3/share/applications/kde/kcmsambaconf.desktop
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kcmsambaconf.png
+debian/tmp/opt/kde3/share/services/fileshare_propsdlgplugin.desktop

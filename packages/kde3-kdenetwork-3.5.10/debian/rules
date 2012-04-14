@@ -1,0 +1,49 @@
+#!/usr/bin/make -f
+
+DEB_HOST_ARCH_OS=$(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+DEB_HOST_ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+ifeq ($(DEB_HOST_ARCH),s390)
+DONT_BUILD+= kde3-kwifimanager
+endif
+ifneq ($(DEB_HOST_ARCH_OS),linux)
+DONT_BUILD+= kde3-kwifimanager kdnssd
+endif
+export DH_OPTIONS
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+
+DEB_CONFIGURE_EXTRA_FLAGS := --with-external-libgadu --with-xmms=no
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-kdenetwork-dbg
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-librss1	:= -V'kde3-librss1 (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kopete	:= -V'kde3-kopete (>= 4:3.5.9)'
+
+#shlibs_ver = 4:3.5.0-1
+#$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
+
+DEB_FIXPERMS_EXCLUDE := opt/kde3/bin/kppp opt/kde3/bin/kppplogview \
+	etc/ppp/peers/kde3-kppp-options
+
+DOC_HTML_PRUNE := kde3-kcontrol
+
+binary-install/kde3-kppp::
+	chown root:dip debian/kde3-kppp/opt/kde3/bin/kppp*
+	chown root:dip debian/kde3-kppp/etc/ppp/peers/kde3-kppp-options
+	chmod 4754 debian/kde3-kppp/opt/kde3/bin/kppp
+	chmod 0754 debian/kde3-kppp/opt/kde3/bin/kppplogview
+	chmod 0640 debian/kde3-kppp/etc/ppp/peers/kde3-kppp-options
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE += /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+

@@ -1,0 +1,8 @@
+?package(knewsticker):\
+	needs="X11"\
+	section="Applications/Network/Web News"\
+	hints="KDE"\
+	title="KNewsTicker"\
+	icon32x32="/opt/kde3/share/pixmaps/knewsticker.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/knewsticker-16.xpm"\
+	command="/opt/kde3/bin/appletproxy knewsticker.desktop"

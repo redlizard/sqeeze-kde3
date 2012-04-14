@@ -1,0 +1,12 @@
+diff -Nru kdenetwork-3.5.8/kopete/plugins/latex/kopete_latexconvert.sh kdenetwork-3.5.8.new/kopete/plugins/latex/kopete_latexconvert.sh
+--- kdenetwork-3.5.8/kopete/plugins/latex/kopete_latexconvert.sh	2005-09-10 10:20:16.000000000 +0200
++++ kdenetwork-3.5.8.new/kopete/plugins/latex/kopete_latexconvert.sh	2007-12-18 14:02:58.000000000 +0100
+@@ -222,7 +222,7 @@
+ 	mv $tmpdir/out.$format.0 $outfile
+ fi
+ 
+-let OPTIND=$OPTIND+1
++OPTIND=$(($OPTIND+1))
+ outfile=""
+ done
+ 

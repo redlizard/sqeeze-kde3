@@ -1,0 +1,72 @@
+.TH "reslisa" "8" "December 2005" 
+
+.SH "NAME" 
+reslisa \-  Restricted LAN Information Server
+
+.SH "SYNOPSIS"
+.PP 
+.B reslisa 
+[options]
+
+.SH "DESCRIPTION" 
+.PP 
+This manual page documents briefly the 
+.B reslisa
+command. 
+.PP
+If you have very strict security rules in your network or you don't want to
+have another port open or whatever, you can use 
+.B resLISa
+instead of
+.BR lisa (1).
+
+.SH "OPTIONS" 
+.TP
+.B \-c, \-\-config=\fIFILE\fR
+Read
+.I FILE
+instead of $(HOME)/.reslisarc and /etc/reslisarc. 
+.TP
+.B \-q, \-\-quiet
+Start quiet without the greeting message.
+.TP
+.B \-u, \-\-unix
+Deprecated.
+.TP
+.B \-k, \-\-kde1
+Deprecated.
+.TP
+.B \-K, \-\-kde2
+Deprecated.
+.TP
+.B \-h, \-\-help
+Show usage.
+.TP
+.B \-v, \-\-version
+Print out a short version info.
+
+.SH SIGNALS
+.PP
+If you send the Hangup-Signal to \fBreslisa\fR, it will reread its
+configuration file (killall -HUP reslisa).
+.PP
+If you send the User1-Signal to \fBreslisa\fR, it will print some status
+information to the standard output (killall -USR1 reslisa). You won't see 
+anything if the console from which \fBreslisa\fR was started has terminated.
+
+.SH "SEE ALSO"
+.TP
+.BR lisa (8)
+.TP
+.I /usr/share/doc/lisa/README.gz
+
+.SH "AUTHOR" 
+.PP
+.B LISa
+is Copyright (c) 2000-2003 by Alexander Neundorf <neundorf@kde.org>.
+.PP 
+This manual page was written by Francois Wendling <frwendling@free.fr>. You can
+redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version. 
+

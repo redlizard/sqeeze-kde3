@@ -1,0 +1,4 @@
+kwifimanager: package-name-doesnt-match-sonames libkwireless
+kwifimanager: no-shlibs-control-file usr/lib/libkwireless.so
+kwifimanager: postinst-must-call-ldconfig usr/lib/libkwireless.so
+kwifimanager: postrm-should-call-ldconfig usr/lib/libkwireless.so

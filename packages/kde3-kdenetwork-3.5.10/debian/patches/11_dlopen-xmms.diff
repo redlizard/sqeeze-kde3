@@ -1,0 +1,60 @@
+--- kdenetwork.orig/kopete/plugins/nowlistening/nlxmms.h
++++ kdenetwork.patched/kopete/plugins/nowlistening/nlxmms.h
+@@ -31,7 +31,11 @@
+ {
+ 	public:
+ 		NLXmms();
++		~NLXmms();
+ 		virtual void update();
++
++	private:
++		void *xmmslib;
+ };
+ 
+ #endif
+--- kdenetwork.orig/kopete/plugins/nowlistening/nlxmms.cpp
++++ kdenetwork.patched/kopete/plugins/nowlistening/nlxmms.cpp
+@@ -24,6 +24,7 @@
+ 
+ #ifdef HAVE_XMMS
+ 
++#include <dlfcn.h>
+ #include <kdebug.h>
+ #include <xmmsctrl.h> // need to fix Makefile.am for this?
+ #include "nlmediaplayer.h"
+@@ -32,13 +33,21 @@
+ NLXmms::NLXmms() : NLMediaPlayer()
+ {
+ 	m_name = "Xmms";
++
++	xmmslib = dlopen("libxmms.so.1", RTLD_LAZY | RTLD_GLOBAL);
+ }
+ 
++NLXmms::~NLXmms()
++{
++	if (xmmslib)
++		dlclose(xmmslib);
++}
+ 
+ void NLXmms::update()
+ {
+ 	//look for running xmms
+-	if ( xmms_remote_get_version( 0 ) )
++	if ( xmmslib &&
++		 xmms_remote_get_version( 0 ) )
+ 	{
+ 		QString newTrack;
+ 		// see if it's playing
+--- kdenetwork.orig/kopete/plugins/nowlistening/Makefile.am
++++ kdenetwork.patched/kopete/plugins/nowlistening/Makefile.am
+@@ -5,8 +5,8 @@
+ kde_module_LTLIBRARIES = kopete_nowlistening.la kcm_kopete_nowlistening.la
+ 
+ kopete_nowlistening_la_SOURCES = nowlisteningconfig.kcfgc nowlisteningplugin.cpp nlkscd.cpp nlnoatun.cpp nlxmms.cpp nowlisteningguiclient.cpp nljuk.cpp nlamarok.cpp nlkaffeine.cpp
+-kopete_nowlistening_la_LDFLAGS     = -module $(KDE_PLUGIN) $(XMMS_LDFLAGS) $(all_libraries)
+-kopete_nowlistening_la_LIBADD =  ../../libkopete/libkopete.la $(XMMS_LIBS)
++kopete_nowlistening_la_LDFLAGS     = -module $(KDE_PLUGIN) $(all_libraries)
++kopete_nowlistening_la_LIBADD      = ../../libkopete/libkopete.la
+ 
+ kcm_kopete_nowlistening_la_SOURCES = nowlisteningprefs.ui nowlisteningpreferences.cpp nowlisteningconfig.kcfgc
+ kcm_kopete_nowlistening_la_LDFLAGS = -module -no-undefined $(KDE_PLUGIN) $(all_libraries)

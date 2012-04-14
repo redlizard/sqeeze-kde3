@@ -1,0 +1,11 @@
+Document: kdenetwork-doc-html-kdict
+Title: KDict Handbook
+Author: Christian Gebauer
+Abstract: KDict is a graphical client for the DICT protocol. It enables you
+ to search through dictionary databases for a word or phrase.
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kdict/index.html
+Files: /usr/share/doc/kde/HTML/en/kdict/*.html
+

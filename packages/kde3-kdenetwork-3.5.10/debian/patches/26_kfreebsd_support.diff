@@ -1,0 +1,40 @@
+--- kdenetwork-3.5.9.orig/kopete/libkopete/avdevice/videocontrol.h
++++ kdenetwork-3.5.9/kopete/libkopete/avdevice/videocontrol.h
+@@ -20,15 +20,7 @@
+ #ifndef KOPETE_AVVIDEOCONTROL_H
+ #define KOPETE_AVVIDEOCONTROL_H
+ 
+-#include <asm/types.h>
+-#undef __STRICT_ANSI__
+-#ifndef __u64 //required by videodev.h
+-#define __u64 unsigned long long
+-#endif // __u64
+-
+-#ifndef __s64 //required by videodev.h
+-#define __s64 long long
+-#endif // __s64
++#include <stdint.h>
+ 
+ #include <qstring.h>
+ #include <kdebug.h>
+@@ -65,14 +57,14 @@
+ 	~VideoControl();
+ 
+ protected:
+-	__u32 m_id;
++	uint32_t m_id;
+ 	control_type m_type;
+ 	QString m_name;
+-	__s32 m_minimum;
+-	__s32 m_maximum;
+-	__s32 m_step;
+-	__s32 m_default;
+-	__u32 m_flags;
++	int32_t m_minimum;
++	int32_t m_maximum;
++	int32_t m_step;
++	int32_t m_default;
++	uint32_t m_flags;
+ };
+ 
+ }
