@@ -1,0 +1,11 @@
+KDE Screensavers for Debian
+===========================
+
+This package (kscreensaver) no longer contains the hooks for the standard
+xscreensavers.  It only contains the additional screensavers that are
+specifically shipped with KDE.
+
+To select and/or configure the standard xscreensavers through the KDE Control
+Centre, install the separate package kscreensaver-xsavers.
+
+ -- Ben Burton <bab@debian.org>, Thu, 14 Oct 2004 08:30:34 +1000

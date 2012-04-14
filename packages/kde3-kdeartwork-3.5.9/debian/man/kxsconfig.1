@@ -1,0 +1,50 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KXSCONFIG 1 "October 13, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+kxsconfig \- KDE X screen saver configuration tool
+.SH SYNOPSIS
+.B kxsconfig
+.RI "[ " generic-options " ]"
+\fIscreensaver\fP
+[ \fIsavername\fP ]
+.SH DESCRIPTION
+\fBkxsconfig\fP is a screen saver configuration tool
+for the K Desktop Environment (KDE).  It is used to configure generic
+X screen savers, i.e., screen savers that have not been written explicitly
+for KDE.
+.PP
+This program is part of the official KDE artwork module.
+.SH OPTIONS
+Below are the kxsconfig-specific options.
+For a full summary of options, run \fIkxsconfig \-\-help\fP.
+.TP
+\fIscreensaver\fP
+The filename of the screen saver to configure.
+.TP
+\fIsavername\fP
+An optional human-readable screen saver name to use in messages.
+.SH EXAMPLES
+\fIexample$\fP kxsconfig /usr/lib/xscreensaver/bouboule Bouboule
+.SH SEE ALSO
+.BR kxsrun (1).
+.SH AUTHOR
+This tool was written by Martin R. Jones <mjones@kde.org>.  It also
+makes use of xscreensaver code written by Jamie Zawinski <jwz@jwz.org>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

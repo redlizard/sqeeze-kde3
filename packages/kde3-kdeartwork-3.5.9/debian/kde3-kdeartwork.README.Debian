@@ -1,0 +1,8 @@
+KDE Artwork for Debian
+----------------------
+
+Package kdeartwork is a metapackage that depends on the full set of
+themes, widget styles, screen savers and other artistic goodies provided
+with the official release of KDE.
+
+ -- Ben Burton <bab@debian.org>, Thu,  4 Jul 2002 19:36:49 +1000

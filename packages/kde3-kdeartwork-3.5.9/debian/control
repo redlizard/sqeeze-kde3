@@ -1,0 +1,169 @@
+Source: kde3-kdeartwork
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 6), autotools-dev, kde3-kdelibs4-dev (>= 4:3.5.9), gawk, gettext, sharutils, kde3-kdebase-dev (>= 4:3.5.9), kde3-kwin, libgl1-mesa-dev | libgl-dev, libglu1-mesa-dev | libglu-dev, xscreensaver, xscreensaver-data, xscreensaver-data-extra, xscreensaver-gl, xscreensaver-gl-extra, xscreensaver-screensaver-bsod, xscreensaver-screensaver-webcollage
+Build-Conflicts: autoconf2.13, nvidia-glx
+Standards-Version: 3.7.3
+Homepage: http://www.kde.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdeartwork
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeartwork
+
+Package: kde3-kdeartwork
+Architecture: all
+Section: kde
+Depends: kde3-kdeartwork-misc (>= ${source:Version}), kde3-kdeartwork-emoticons (>= ${source:Version}), kde3-kdeartwork-style (>= ${source:Version}), kde3-kdeartwork-theme-icon (>= ${source:Version}), kde3-kdeartwork-theme-window (>= ${source:Version}), kde3-kdewallpapers (>= ${source:Version}), kde3-kscreensaver (>= ${source:Version})
+Recommends: kde3-kscreensaver-xsavers
+Description: themes, styles and more from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of artistic extras (themes, widget
+ styles, screen savers, wallpaper, icons, emoticons and so on) provided
+ with the official release of KDE.
+
+Package: kde3-kdeartwork-emoticons
+Architecture: all
+Section: kde
+Enhances: kde3-kopete
+Description: emoticon collections for KDE chat clients
+ This package contains several collections of emoticons used by official
+ and unofficial KDE chat clients, such as Kopete and Konversation.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kdeartwork-misc
+Architecture: all
+Section: kde
+Suggests: kde3-kworldclock
+Description: various multimedia goodies released with KDE
+ This package contains miscellaneous multimedia goodies for KDE.
+ Included are additional KDE sounds and kworldclock themes.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kdeartwork-style
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Description: widget styles released with KDE
+ This package contains additional widget styles for KDE. Widget styles
+ can be used to customise the look and feel of interface components such
+ as buttons, scrollbars and so on.  They can be applied using the style
+ manager in the KDE Control Centre.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kdeartwork-theme-icon
+Architecture: all
+Section: kde
+Recommends: kde3-kdesktop, kde3-kicker
+Description: icon themes released with KDE
+ This package contains additional icon themes for KDE. Icon themes can be
+ used to customise the appearance of standard icons throughout KDE. They
+ can be applied using the icon manager in the KDE Control Centre.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kdeartwork-theme-window
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Description: window decoration themes released with KDE
+ This package contains additional window decoration themes for KDE. Window
+ decoration themes can be used to customise the look of window borders and
+ buttons, and can be applied using the window decoration manager in the KDE
+ Control Center.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kdewallpapers
+Architecture: all
+Section: kde
+Suggests: kde3-kwin | x-window-manager
+Description: wallpapers released with KDE
+ This package contains additional wallpapers for KDE. Wallpapers can be
+ applied using the background manager in the KDE Control Centre.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kscreensaver
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, kde3-kdebase-bin
+Recommends: kde3-kwin, kde3-kscreensaver-xsavers (= ${binary:Version})
+Description: additional screen savers released with KDE
+ This package contains the screen savers for KDE. They can be tested and
+ selected within the Appearance and Themes section of the KDE Control
+ Center.
+ .
+ The hooks for the standard xscreensavers are no longer part of this
+ package. To select and/or configure the standard xscreensavers through
+ the KDE Control Center, install the separate package kscreensaver-xsavers.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kscreensaver-xsavers
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, kde3-kdebase-bin, xscreensaver-data, xscreensaver-data-extra
+Recommends: kde3-kwin, kde3-kscreensaver (= ${binary:Version}), xscreensaver-gl, xscreensaver-gl-extra
+Suggests: kde3-kscreensaver-xsavers-webcollage
+Description: KDE hooks for standard xscreensavers
+ This package allows a smooth integration of the standard xscreensavers
+ into KDE. With this package installed you can select and/or configure
+ the standard xscreensavers through the Appearances and Themes section of
+ the KDE Control Centre.
+ .
+ Note that this package does not actually contain any screensavers itself.
+ For the additional screensavers shipped with KDE, see the separate package
+ kscreensaver. This package does depend on the xscreensaver package, and
+ recommend the xscreensaver-gl package, as well as contain the necessary
+ files to integrate these packages into KDE.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kscreensaver-xsavers-webcollage
+Architecture: all
+Section: kde
+Depends: kde3-kscreensaver-xsavers, miscfiles | wordlist, netpbm
+Description: webcollage screensaver KDE hook
+ This package give access to the webcollage screensaver through the KDE
+ screensaver configuration.
+ .
+ This screensaver downloads random pictures from the internet and creates
+ a collage as screensaver.
+ .
+ IMPORTANT NOTICE: The internet contains all kinds of pictures, some of which
+ you might find inappropriate and offensive.
+ You are specially discouraged to install this package if you are using 
+ your computer in a working environment or in an environment with children.
+ .
+ If you still want to install this package, please read the file
+ /usr/share/doc/kscreensaver-xsavers-webcollage/README.Debian after the 
+ installation.
+ .
+ This package is part of KDE, and a component of the KDE artwork module.
+ See the 'kde' and 'kdeartwork' packages for more information.
+
+Package: kde3-kdeartwork-dbg
+Section: libdevel
+Architecture: any
+Depends: kde3-kdelibs-dbg
+Priority: extra
+Description: debugging symbols for kdeartwork
+ This package contains the debugging symbols associated with kdeartwork.
+ They will automatically be used by gdb for debugging kdeartwork-related
+ issues.
+

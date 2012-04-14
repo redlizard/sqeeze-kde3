@@ -1,0 +1,4 @@
+debian/tmp/opt/kde3/lib/kde3/plugins/styles
+debian/tmp/opt/kde3/lib/kde3/kstyle_phase_config.la
+debian/tmp/opt/kde3/lib/kde3/kstyle_phase_config.so
+debian/tmp/opt/kde3/share/apps/kstyle
