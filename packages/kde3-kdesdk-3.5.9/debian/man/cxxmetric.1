@@ -1,0 +1,34 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH CXXMETRIC 1 "January 31, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+cxxmetric \- simple source metrics for C and C++
+.SH SYNOPSIS
+.B cxxmetric
+.RI "[ " file " ... ]"
+.SH DESCRIPTION
+\fBcxxmetric\fP counts lines of code, comment and blank space and
+calculates various other statistics for each given source file.
+Source files must be in C or C++.
+.PP
+If no source files are specified then all C/C++ files in or beneath the
+current directory will be used.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH AUTHOR
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

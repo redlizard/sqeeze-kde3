@@ -1,0 +1,5 @@
+debian/tmp/opt/kde3/bin/po2xml
+debian/tmp/opt/kde3/bin/split2po
+debian/tmp/opt/kde3/bin/swappo
+debian/tmp/opt/kde3/bin/transxx
+debian/tmp/opt/kde3/bin/xml2pot

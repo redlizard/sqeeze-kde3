@@ -1,0 +1,9 @@
+?package(cervisia):\
+  needs="x11"\
+  section="Applications/Programming"\
+  hints="KDE,Version control"\
+  title="Cervisia"\
+  longtitle="Cervisia (CVS Frontend)"\
+  icon="/opt/kde3/share/pixmaps/cervisia.xpm"\
+  command="/opt/kde3/bin/cervisia"
+

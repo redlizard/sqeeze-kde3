@@ -1,0 +1,5 @@
+# This is from kdeinit black magic.
+cervisia: no-shlibs-control-file usr/lib/libkdeinit_cervisia.so
+cervisia: postinst-must-call-ldconfig usr/lib/libkdeinit_cervisia.so
+cervisia: postrm-should-call-ldconfig usr/lib/libkdeinit_cervisia.so
+cervisia: package-name-doesnt-match-sonames libkdeinit-cervisia

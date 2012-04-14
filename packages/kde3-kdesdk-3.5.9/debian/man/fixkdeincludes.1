@@ -1,0 +1,73 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH FIXKDEINCLUDES 1 "January 31, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+fixkdeincludes \- reduce the number of #includes in KDE source files
+.SH SYNOPSIS
+.B fixkdeincludes
+[ \fB\-v, \-\-verbose\fP ]
+[ \fB\-e, \-\-experimental\fP ]
+[ \fB\-m, \-\-modify\fP ]
+[ \fIfile\fP ... ]
+.br
+.B fixkdeincludes \-\-help
+.SH DESCRIPTION
+\fBfixkdeincludes\fP tries to reduce the number of #includes in C++ source
+files.  Much of its processing is specific to KDE sources and so it
+might not work so well with sources for non-KDE applications.
+.PP
+The following problems are identified by fixkdeincludes:
+.PP
+.RS
+Including headers that are no longer supported but which exist for
+compatibility with older Qt/KDE versions;
+.PP
+Including the same file multiple times;
+.PP
+Using #include <...> instead of #include "...".
+.RE
+.PP
+There is also an experimental mode which tries removing each #include
+one at a time (with a few exceptions) to see whether the source still
+compiles.  Note that this experimental mode will modify the original sources.
+.PP
+By default the sources will not be modified; the identified problems
+will simply be written to standard output.
+.PP
+The list of C++ sources to examine should be given on the command-line.
+If no files are given, all C++ sources in or beneath the current
+directory will be examined (with the exception of directories whose
+\fIMakefile.am\fP contains \-UQT_NO_COMPAT or \-UKDE_NO_COMPAT).
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH OPTIONS
+.TP
+\fB\-v, \-\-verbose\fP
+Verbose mode.  Additional debugging information is written to standard output.
+.TP
+\fB\-e, \-\-experimental\fP
+Experimental mode, as described above in detail.  Note that this option
+implies \fB\-\-modify\fP.
+.TP
+\fB\-m, \-\-modify\fP
+As well as writing messages to standard output, actually modify the
+original sources to fix any problems that were found.
+.SH AUTHOR
+fixkdeincludes was written by Dirk Mueller <mueller@kde.org>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

@@ -1,0 +1,74 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KBABEL 1 "March 19, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+kbabel \- a PO-file editor for KDE
+.SH SYNOPSIS
+.B kbabel
+.RI "[ " generic-options " ]"
+[ \fB\-\-gotomsgid\fP \fImsgid\fP ] [ \fB\-\-nosplash\fP ]
+[ \fB\-\-project\fP \fIconfig-file\fP ]
+.RI "[ " file " ]"
+.SH DESCRIPTION
+\fBKBabel\fP is part of a suite of programs for editing gettext message
+files (PO-files).  It is designed to help you translate fast and
+consistently.
+.PP
+This suite includes KBabel, CatalogManager and KBabelDict.  KBabel (this
+program) is an advanced and easy to use PO-file editor with full navigational
+and editing capabilities, syntax checking and statistics.  CatalogManager is
+a multi functional catalog manager which allows you to keep track of many
+PO-files at once.  KBabelDict is a dictionary to assist with searching
+for common translations.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH OPTIONS
+Below are the kbabel-specific options.
+For a full summary of options, run \fIkbabel \-\-help\fP.
+.TP
+\fB\-\-gotomsgid\fP \fImsgid\fP
+Go to the entry with the given message ID.
+.TP
+.B \-\-nosplash
+Disable splashscreen at startup.
+.TP
+\fB\-\-project\fP \fIconfig-file\fP
+Load the configuration from the given file.
+.SH SEE ALSO
+.BR catalogmanager (1),
+.BR kbabeldict (1).
+.PP
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/kbabel/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/kbabel/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdesdk-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/kbabel/\fP.
+.SH AUTHOR
+KBabel was written by Matthias Kiefer <kiefer@kde.org>,
+Wolfram Diestel <wolfram@steloj.de>, Andrea Rizzi <rizzi@kde.org>,
+Stanislav Visnovsky <visnovsky@kde.org>, Marco Wegner <dubbleu@web.de>,
+Asgeir Frimannsson <asgeirf@redhat.com>,
+Dwayne Bailey <dwayne@translate.org.za>,
+Bram Schoenmakers <bramschoenmakers@kde.nl> and others.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

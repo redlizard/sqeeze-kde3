@@ -1,0 +1,12 @@
+--- kde.orig/scripts/kde-build
++++ kde.patched/scripts/kde-build
+@@ -881,6 +881,9 @@ The following error codes are returned b
+ 
+         cd ~/scripts/; vi ./kde-buildrc; ./kde-build
+ 
++On Debian systems, an example F<kde-buildrc> can be found in
++the directory /usr/share/doc/kdesdk-scripts/.
++
+ =head1 BUGS
+ 
+ Probably.

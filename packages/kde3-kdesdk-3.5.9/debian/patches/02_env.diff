@@ -1,0 +1,40 @@
+--- kde.orig/scripts/create_makefile
++++ kde.patched/scripts/create_makefile
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ # Create Makefile.in and Makefile in a directory (containing a Makefile.am !)
+ # Saves time compared to re-running configure completely
+--- kde.orig/scripts/kdelnk2desktop.py
++++ kde.patched/scripts/kdelnk2desktop.py
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env python
++#!/usr/bin/python
+ 
+ import os, sys, string
+ 
+--- kde.orig/scripts/zonetab2pot.py
++++ kde.patched/scripts/zonetab2pot.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python
+ '''This script reads timezone list as its first argument
+ or from /usr/share/zoneinfo/zone.tab, and converts it
+ to a PO file template.
+--- kde.orig/kcachegrind/converters/hotshot2calltree
++++ kde.patched/kcachegrind/converters/hotshot2calltree
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/python
+ # _*_ coding: latin1 _*_
+ 
+ #
+--- kde.orig/kcachegrind/converters/pprof2calltree
++++ kde.patched/kcachegrind/converters/pprof2calltree
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env php
++#!/usr/bin/php
+ # Redistribution and use in source and binary forms, with or without
+ # modification, are permitted provided that the following conditions are met:
+ #

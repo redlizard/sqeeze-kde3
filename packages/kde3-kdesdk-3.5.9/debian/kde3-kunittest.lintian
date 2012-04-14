@@ -1,0 +1,2 @@
+kunittest: non-dev-pkg-with-shlib-symlink usr/lib/libkunittestgui.so.0.0.0 usr/lib/libkunittestgui.so
+kunittest: package-name-doesnt-match-sonames libkunittestgui0

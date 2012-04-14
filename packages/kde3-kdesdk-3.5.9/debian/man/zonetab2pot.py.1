@@ -1,0 +1,39 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH ZONETAB2POT.PY 1 "November 14, 2002"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+zonetab2pot.py \- converts a timezone list to a PO-file template
+.SH SYNOPSIS
+.B zonetab2pot.py
+[ \fItimezone-list\fP ]
+.SH DESCRIPTION
+\fBzonetab2pot.py\fP reads the timezone list given on the command-line
+and converts it to a gettext message file (PO-file) template containing
+the names of the individual timezones.
+.PP
+The given timezone list should be in the same format as the system
+\fIzone.tab\fP.  If no timezone list is specified on the command-line,
+\fI/usr/share/zoneinfo/zone.tab\fP will be used.
+.PP
+The new PO-file template will be written to standard output.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH AUTHOR
+zonetab2pot.py was written by Lukas Tinkl <lukas@kde.org>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

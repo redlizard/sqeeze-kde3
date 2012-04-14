@@ -1,0 +1,27 @@
+?package(kbabel):\
+        needs="x11"\
+        section="Applications/Text"\
+        hints="KDE,l10n"\
+        title="KBabel"\
+        longtitle="KBabel (Translation Tool)"\
+        icon="/opt/kde3/share/pixmaps/kbabel.xpm"\
+        command="/opt/kde3/bin/kbabel"
+
+?package(kbabel):\
+        needs="x11"\
+        section="Applications/Text"\
+        hints="KDE,l10n"\
+        title="KBabel Dictionary"\
+        longtitle="KBabel Dictionary (Translation Tool Dictionary)"\
+        icon="/opt/kde3/share/pixmaps/kbabeldict.xpm"\
+        command="/opt/kde3/bin/kbabeldict"
+
+?package(kbabel):\
+        needs="x11"\
+        section="Applications/Text"\
+        hints="KDE,l10n"\
+        title="KBabel Catalog Manager"\
+        longtitle="KBabel Catalog Manager (Translation Tool Catalog Manager)"\
+        icon="/opt/kde3/share/pixmaps/catalogmanager.xpm"\
+        command="/opt/kde3/bin/catalogmanager"
+

@@ -1,0 +1,9 @@
+?package(kcachegrind):\
+  needs="x11"\
+  section="Applications/Programming"\
+  hints="KDE"\
+  title="KCachegrind"\
+  longtitle="KCachegrind (Profiler Frontend)"\
+  icon="/opt/kde3/share/pixmaps/kcachegrind.xpm"\
+  command="/opt/kde3/bin/kcachegrind"
+

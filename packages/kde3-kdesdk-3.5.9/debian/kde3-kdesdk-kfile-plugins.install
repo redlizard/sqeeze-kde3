@@ -1,0 +1,10 @@
+debian/tmp/opt/kde3/lib/kde3/kfile_cpp.so
+debian/tmp/opt/kde3/lib/kde3/kfile_cpp.la
+debian/tmp/opt/kde3/lib/kde3/kfile_diff.so
+debian/tmp/opt/kde3/lib/kde3/kfile_diff.la
+debian/tmp/opt/kde3/lib/kde3/kfile_ts.so
+debian/tmp/opt/kde3/lib/kde3/kfile_ts.la
+debian/tmp/opt/kde3/share/services/kfile_cpp.desktop
+debian/tmp/opt/kde3/share/services/kfile_diff.desktop
+debian/tmp/opt/kde3/share/services/kfile_h.desktop
+debian/tmp/opt/kde3/share/services/kfile_ts.desktop

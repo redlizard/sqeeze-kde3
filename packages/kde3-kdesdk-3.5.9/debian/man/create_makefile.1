@@ -1,0 +1,69 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH CREATE_MAKEFILE 1 "September 26, 2002"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+create_makefile \- creates Makefile.in and Makefile from a Makefile.am
+.SH SYNOPSIS
+.B create_makefile
+.I relativepath/Makefile
+.br
+.B create_makefile
+.I relativepath
+.SH DESCRIPTION
+\fBcreate_makefile\fP creates the \fIMakefile.in\fP and \fIMakefile\fP
+in a subdirectory containing a \fIMakefile.am\fP.
+This script saves time compared to re-running configure completely.
+.PP
+Note that you must supply the path to the desired \fIMakefile\fP, not the
+existing \fIMakefile.am\fP (though the final \fI/Makefile\fP may be omitted).
+.PP
+This script may be run from the toplevel directory (the
+one containing \fIconfigure\fP) or from one of its subdirectories.
+Note that \fIrelativepath\fP must be a relative path, not an absolute path.
+.PP
+If the source directory is different from the build directory (see the
+environment variables below), it will be assumed that the \fIMakefile.am\fP
+and \fIMakefile.in\fP belong beneath the source directory and that the
+\fIMakefile\fP belongs beneath the build directory.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH ENVIRONMENT VARIABLES
+One of the following variables (but not both) should be set if the
+source
+directory is different from the build directory.
+If the build directory is simply a subdirectory of the source directory,
+the simpler variable OBJ_SUBDIR should be used.
+.TP
+OBJ_SUBDIR
+Indicates that the build directory is in the given subdirectory of the
+source directory.  For instance, if the source directory is \fIkdesdk\fP
+and the build directory is \fIkdesdk/obj-i386-linux\fP, then OBJ_SUBDIR
+should be set to \fIobj-i386-linux\fP.
+.TP
+OBJ_REPLACEMENT
+A \fBsed\fP expression that is used to transform the source directory
+into the build directory.
+For instance, if the source directory is \fI~/src/kdesdk\fP and the
+build directory is \fI~/src/kdesdk-obj\fP, then OBJ_REPLACEMENT could
+be set to \fIs#kdesdk#kdesdk-obj#\fP.
+.SH SEE ALSO
+.BR create_makefiles (1).
+.SH AUTHOR
+create_makefile was written by David Faure <faure@kde.org> and others.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

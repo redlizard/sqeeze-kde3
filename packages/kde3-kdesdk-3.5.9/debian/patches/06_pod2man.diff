@@ -1,0 +1,29 @@
+--- kde.orig/scripts/Makefile.am
++++ kde.patched/scripts/Makefile.am
+@@ -41,17 +41,19 @@
+ #%.1: %
+ #	pod2man $< $@
+ 
++pod2man_options = "--center=K Desktop Environment (SDK)" "--release=KDE 3.5"
++
+ kde-build.1: kde-build
+-	pod2man $(srcdir)/kde-build > $@
++	pod2man $(pod2man_options) $< > $@
+ kdesvn-build.1: kdesvn-build
+-	pod2man $(srcdir)/kdesvn-build > $@
++	pod2man $(pod2man_options) $< > $@
+ cvsversion.1: cvsversion
+-	pod2man $(srcdir)/cvsversion > $@
++	pod2man $(pod2man_options) $< > $@
+ cvscheck.1: cvscheck
+-	pod2man $(srcdir)/cvscheck > $@
++	pod2man $(pod2man_options) $< > $@
+ noncvslist.1: noncvslist
+-	pod2man $(srcdir)/noncvslist > $@
++	pod2man $(pod2man_options) $< > $@
+ cvsblame.1: cvsblame
+-	pod2man $(srcdir)/cvsblame > $@
++	pod2man $(pod2man_options) $< > $@
+ includemocs.1: includemocs
+-	pod2man $(srcdir)/includemocs > $@
++	pod2man $(pod2man_options) $< > $@

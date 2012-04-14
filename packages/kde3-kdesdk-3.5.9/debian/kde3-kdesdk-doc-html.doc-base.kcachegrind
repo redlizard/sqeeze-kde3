@@ -1,0 +1,11 @@
+Document: kdesdk-doc-html-kcachegrind
+Title: KCachegrind Handbook
+Author: Josef Weidendorfer <Josef.Weidendorfer@gmx.de>
+Abstract: KCachegrind is a profile data visualization tool, written
+ using the KDE environment.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kcachegrind/index.html
+Files: /usr/share/doc/kde/HTML/en/kcachegrind/*.html
+

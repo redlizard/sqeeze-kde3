@@ -1,0 +1,8 @@
+?package(kbugbuster):\
+        needs="x11"\
+        section="Applications/Project Management"\
+        hints="KDE"\
+        title="KBugBuster"\
+        longtitle="KBugBuster (KDE Bug Management)"\
+        icon="/opt/kde3/share/pixmaps/kbugbuster.xpm"\
+        command="/opt/kde3/bin/kbugbuster"

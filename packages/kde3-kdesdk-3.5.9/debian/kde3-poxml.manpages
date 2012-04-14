@@ -1,0 +1,5 @@
+debian/man/po2xml.1
+debian/man/split2po.1
+debian/man/swappo.1
+debian/man/transxx.1
+debian/man/xml2pot.1

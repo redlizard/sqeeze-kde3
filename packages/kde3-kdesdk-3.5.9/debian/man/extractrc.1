@@ -1,0 +1,60 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH EXTRACTRC 1 "March 20, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+extractrc \- extract message strings from UI and XML GUI files
+.SH SYNOPSIS
+.B extractrc
+[ \fB\-\-tag\-group=\fP\fIgroup\fP ]
+[ \fB\-\-tag=\fP\fIname\fP ... ]
+[ \fB\-\-context=\fP\fIname\fP ]
+\fIfile\fP ...
+.PP
+.B extractrc \-\-help
+.SH DESCRIPTION
+\fBextractrc\fP finds all text tags and other message strings within the
+given files.  It then writes the corresponding \fIi18n()\fP calls to
+standard output (usually redirected to rc.cpp) so that xgettext can parse
+them.
+.PP
+It understands both Qt designer (.ui) files and XML GUI (.rc) files.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH OPTIONS
+Note that the old \fB\-\-lines\fP option is deprecated; source line
+numbers are now always included in comments.
+.TP
+\fB\-\-tag\-group=\fP\fIgroup\fP
+Use a predefined group of tags that we are interested in.
+Valid groups are default, koffice and none.
+The default group will be used if this option is omitted.
+.TP
+\fB\-\-tag=\fP\fIname\fP
+Extract also the contents of the tag \fIname\fP.
+This option may be used multiple times
+(e.g., \-\-tag=tag_one \-\-tag=tag_two).
+.TP
+\fB\-\-context=\fP\fIname\fP
+Give all i18n() calls the given context: i18n("\fIname\fP", ...).
+.TP
+\fB\-\-help\fP
+Display a summary of options.
+.SH AUTHOR
+This utility was written by Richard Evans <rich@ridas.com> and others.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

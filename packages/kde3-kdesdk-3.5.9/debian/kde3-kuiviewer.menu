@@ -1,0 +1,9 @@
+?package(kuiviewer):\
+  needs="x11"\
+  section="Applications/Programming"\
+  hints="KDE"\
+  title="KUIViewer"\
+  longtitle="KUIViewer (Qt Designer UI File Viewer)"\
+  icon="/opt/kde3/share/pixmaps/kuiviewer.xpm"\
+  command="/opt/kde3/bin/kuiviewer"
+

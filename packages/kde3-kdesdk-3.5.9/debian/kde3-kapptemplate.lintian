@@ -1,0 +1,11 @@
+# These are files to provide for new applications.
+kapptemplate: extra-license-file usr/share/apps/kapptemplate/appframework/no-exe/COPYING
+kapptemplate: extra-license-file usr/share/apps/kapptemplate/appframework/COPYING
+kapptemplate: executable-not-elf-or-script ./usr/share/apps/kapptemplate/admin/Doxyfile.global
+kapptemplate: script-not-executable ./usr/share/apps/kapptemplate/admin/config.pl
+kapptemplate: script-not-executable ./usr/share/apps/kapptemplate/admin/cvs.sh
+kapptemplate: script-not-executable ./usr/share/apps/kapptemplate/admin/doxygen.sh
+kapptemplate: script-not-executable ./usr/share/apps/kapptemplate/admin/bcheck.pl
+kapptemplate: script-not-executable ./usr/share/apps/kapptemplate/admin/conf.change.pl
+kapptemplate: script-not-executable ./usr/share/apps/kapptemplate/admin/am_edit
+kapptemplate: script-not-executable ./usr/share/apps/kapptemplate/include/kapptemplate.common

@@ -1,0 +1,44 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH SWAPPO 1 "March 19, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+swappo \- swap msgid and msgstr fields in a PO-file
+.SH SYNOPSIS
+.B swappo
+.I PO-file
+.SH DESCRIPTION
+\fBswappo\fP reads the given PO-file and swaps the \fImsgid\fP and
+\fImsgstr\fP fields for every message.  The result is a new PO-file that
+translates in the opposite direction.  For example, if \fIPO-file\fP
+translates from English to French, the new PO-file will translate from
+French to English.
+.PP
+The new PO-file will be written to standard output.  The old PO-file
+will remain untouched.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH SEE ALSO
+.BR po2xml (1),
+.BR split2po (1),
+.BR transxx (1),
+.BR xml2pot (1).
+.SH AUTHOR
+The PO-XML tools were written by Stephan Kulow <coolo@kde.org> and
+Peter Wells <pete@yamuna.demon.co.uk>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

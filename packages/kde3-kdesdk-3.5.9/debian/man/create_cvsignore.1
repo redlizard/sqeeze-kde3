@@ -1,0 +1,42 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH CREATE_CVSIGNORE 1 "March 20, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+create_cvsignore \- creates preliminary .cvsignore in current directory
+.SH SYNOPSIS
+.B create_cvsignore
+[ \fB\-r\fP ]
+.SH DESCRIPTION
+\fBcreate_cvsignore\fP is used to create a preliminary \fI.cvsignore\fP
+file in the current directory.  It does this by adding some standard
+stuff according to what it finds in \fIMakefile.am\fP.
+.PP
+No lines will be removed from any existing \fI.cvsignore\fP.
+If there is not already a \fI.cvsignore\fP, it will be added to the CVS
+repository.
+.PP
+Note that you must have a \fIMakefile.am\fP in the current directory for
+this tool to work.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH OPTIONS
+.TP
+\fB-r\fP
+Recursively process this directory and all directories beneath it.
+.SH AUTHOR
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

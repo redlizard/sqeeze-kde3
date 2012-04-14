@@ -1,0 +1,7 @@
+# The syntax error is just perlpod docs appearing after the script exits.
+kdesdk-scripts: shell-script-fails-syntax-check ./usr/bin/cvsversion
+kdesdk-scripts: script-with-language-extension usr/bin/build-progress.sh
+kdesdk-scripts: script-with-language-extension usr/bin/kdelnk2desktop.py
+kdesdk-scripts: script-with-language-extension usr/bin/kdemangen.pl
+kdesdk-scripts: script-with-language-extension usr/bin/png2mng.pl
+kdesdk-scripts: script-with-language-extension usr/bin/zonetab2pot.py

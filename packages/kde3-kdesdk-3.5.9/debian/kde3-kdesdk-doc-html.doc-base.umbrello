@@ -1,0 +1,12 @@
+Document: kdesdk-doc-html-umbrello
+Title: Umbrello UML Modeller Handbook
+Author: Paul Hensgen and the Umbrello UML Modeller Authors
+Abstract: Umbrello UML Modeller helps the software development process
+ by using the industry standard Unified Modelling Language (UML) to enable
+ you to create diagrams for designing and documenting your systems.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/umbrello/index.html
+Files: /usr/share/doc/kde/HTML/en/umbrello/*.html
+

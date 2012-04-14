@@ -1,0 +1,10 @@
+Document: kdesdk-doc-html-cervisia
+Title: Cervisia Manual
+Author: Bernd Gehrmann <bernd@mail.berlios.de> and Carlos Woelz <carloswoelz@imap-mail.com>
+Abstract: Cervisia provides a graphical view of CVS.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/cervisia/index.html
+Files: /usr/share/doc/kde/HTML/en/cervisia/*.html
+

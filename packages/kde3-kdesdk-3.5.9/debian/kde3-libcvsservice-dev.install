@@ -1,0 +1,7 @@
+debian/tmp/opt/kde3/include/kde/cvsjob_stub.h
+debian/tmp/opt/kde3/include/kde/cvsservice_stub.h
+debian/tmp/opt/kde3/include/kde/repository_stub.h
+debian/tmp/opt/kde3/lib/libcvsservice.la
+debian/tmp/opt/kde3/lib/libcvsservice.so
+debian/tmp/opt/kde3/lib/libkdeinit_cvsaskpass.la
+debian/tmp/opt/kde3/lib/libkdeinit_cvsservice.la

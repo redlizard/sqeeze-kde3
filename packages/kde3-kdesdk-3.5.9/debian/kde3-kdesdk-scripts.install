@@ -1,0 +1,66 @@
+debian/tmp/opt/kde3/bin/adddebug
+debian/tmp/opt/kde3/bin/build-progress.sh
+debian/tmp/opt/kde3/bin/cheatmake
+debian/tmp/opt/kde3/bin/create_cvsignore
+debian/tmp/opt/kde3/bin/create_makefile
+debian/tmp/opt/kde3/bin/create_makefiles
+debian/tmp/opt/kde3/bin/cvs-clean
+debian/tmp/opt/kde3/bin/cvs2dist
+debian/tmp/opt/kde3/bin/cvsbackport
+debian/tmp/opt/kde3/bin/cvsblame
+debian/tmp/opt/kde3/bin/cvscheck
+debian/tmp/opt/kde3/bin/cvsforwardport
+debian/tmp/opt/kde3/bin/cvslastchange
+debian/tmp/opt/kde3/bin/cvslastlog
+debian/tmp/opt/kde3/bin/cvsrevertlast
+debian/tmp/opt/kde3/bin/cvsversion
+debian/tmp/opt/kde3/bin/cxxmetric
+debian/tmp/opt/kde3/bin/extend_dmalloc
+debian/tmp/opt/kde3/bin/extractattr
+debian/tmp/opt/kde3/bin/extractrc
+debian/tmp/opt/kde3/bin/findmissingcrystal
+debian/tmp/opt/kde3/bin/fixkdeincludes
+debian/tmp/opt/kde3/bin/fixuifiles
+debian/tmp/opt/kde3/bin/includemocs
+debian/tmp/opt/kde3/bin/kde-build
+debian/tmp/opt/kde3/bin/kdedoc
+debian/tmp/opt/kde3/bin/kdekillall
+debian/tmp/opt/kde3/bin/kdelnk2desktop.py
+debian/tmp/opt/kde3/bin/kdemangen.pl
+debian/tmp/opt/kde3/bin/makeobj
+debian/tmp/opt/kde3/bin/noncvslist
+debian/tmp/opt/kde3/bin/package_crystalsvg
+debian/tmp/opt/kde3/bin/png2mng.pl
+debian/tmp/opt/kde3/bin/pruneemptydirs
+debian/tmp/opt/kde3/bin/qtdoc
+debian/tmp/opt/kde3/bin/zonetab2pot.py
+debian/tmp/opt/kde3/bin/svn2dist
+debian/tmp/opt/kde3/bin/svnrevertlast
+debian/tmp/opt/kde3/bin/svnforwardport
+debian/tmp/opt/kde3/bin/nonsvnlist
+debian/tmp/opt/kde3/bin/kdesvn-build
+debian/tmp/opt/kde3/bin/svnlastlog
+debian/tmp/opt/kde3/bin/svnversions
+debian/tmp/opt/kde3/bin/create_svnignore
+debian/tmp/opt/kde3/bin/svnlastchange
+debian/tmp/opt/kde3/bin/colorsvn
+debian/tmp/opt/kde3/bin/svnaddcurrentdir
+debian/tmp/opt/kde3/bin/svnbackport
+debian/tmp/opt/kde3/bin/svngettags
+debian/tmp/opt/kde3/bin/svnchangesince
+debian/tmp/opt/kde3/bin/svn-clean
+debian/tmp/opt/kde3/share/apps/katepart/syntax/kdesvn-buildrc.xml
+debian/tmp/opt/kde3/share/man/man1/cvsblame.1
+debian/tmp/opt/kde3/share/man/man1/cvsversion.1
+debian/tmp/opt/kde3/share/man/man1/kde-build.1
+debian/tmp/opt/kde3/share/man/man1/includemocs.1
+debian/tmp/opt/kde3/share/man/man1/noncvslist.1
+debian/tmp/opt/kde3/share/man/man1/kdesvn-build.1
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kdesvn-build/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kdesvn-build/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kdesvn-build/index.docbook
+scripts/kde-devel-gdb /opt/kde3/share/kdesdk-scripts
+scripts/kde-devel-vim.vim /opt/kde3/share/kdesdk-scripts
+scripts/kde-emacs/*.el /opt/kde3/share/emacs/site-lisp/kdesdk-scripts
+scripts/kde.supp /opt/kde3/lib/valgrind
+scripts/completions /opt/kde3/share/kdesdk-scripts

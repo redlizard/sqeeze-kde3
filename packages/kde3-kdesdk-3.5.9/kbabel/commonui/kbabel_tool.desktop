@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=ServiceType
+X-KDE-ServiceType=KBabelTool
+
+[PropertyDef::Shortcuts]
+Type=QStringList
+
+[PropertyDef::ValidationString]
+Type=QString

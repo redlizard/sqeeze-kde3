@@ -1,0 +1,9 @@
+debian/tmp/opt/kde3/bin/demangle
+debian/tmp/opt/kde3/bin/kminspector
+debian/tmp/opt/kde3/bin/kmmatch
+debian/tmp/opt/kde3/bin/kmtrace
+debian/tmp/opt/kde3/include/kde/ktrace.h
+debian/tmp/opt/kde3/lib/kmtrace/libktrace.la
+debian/tmp/opt/kde3/lib/kmtrace/libktrace.so
+debian/tmp/opt/kde3/lib/kmtrace/libktrace_s.a
+debian/tmp/opt/kde3/share/apps/kmtrace/kde.excludes

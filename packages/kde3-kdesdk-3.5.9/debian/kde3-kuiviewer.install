@@ -1,0 +1,16 @@
+debian/tmp/opt/kde3/bin/kuiviewer
+debian/tmp/opt/kde3/lib/kde3/libkuiviewerpart.so
+debian/tmp/opt/kde3/lib/kde3/libkuiviewerpart.la
+debian/tmp/opt/kde3/lib/kde3/quithumbnail.so
+debian/tmp/opt/kde3/lib/kde3/quithumbnail.la
+debian/tmp/opt/kde3/share/applications/kde/kuiviewer.desktop
+debian/tmp/opt/kde3/share/apps/kuiviewer/kuiviewerui.rc
+debian/tmp/opt/kde3/share/apps/kuiviewerpart/kuiviewer_part.rc
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kuiviewer.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kuiviewer.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kuiviewer.png
+debian/tmp/opt/kde3/share/icons/locolor/16x16/apps/kuiviewer.png
+debian/tmp/opt/kde3/share/icons/locolor/32x32/apps/kuiviewer.png
+debian/tmp/opt/kde3/share/services/designerthumbnail.desktop
+debian/tmp/opt/kde3/share/services/kuiviewer_part.desktop
+debian/icons/kuiviewer.xpm /opt/kde3/share/pixmaps

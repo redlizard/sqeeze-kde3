@@ -1,0 +1,5 @@
+debian/tmp/opt/kde3/bin/dprof2calltree
+debian/tmp/opt/kde3/bin/hotshot2calltree
+debian/tmp/opt/kde3/bin/memprof2calltree
+debian/tmp/opt/kde3/bin/op2calltree
+debian/tmp/opt/kde3/bin/pprof2calltree

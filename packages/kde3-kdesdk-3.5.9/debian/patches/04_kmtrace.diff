@@ -1,0 +1,51 @@
+--- kde.orig/kmtrace/Makefile.am
++++ kde.patched/kmtrace/Makefile.am
+@@ -33,13 +33,15 @@ kmmatch_LDFLAGS = $(all_libraries)
+ 
+ bin_SCRIPTS = kminspector
+ 
+-lib_LIBRARIES = libktrace_s.a
++kmtracelibdir = $(libdir)/kmtrace
++
++kmtracelib_LIBRARIES = libktrace_s.a
+ libktrace_s_a_SOURCES = ktrace_s.c
+ 
+ ktrace_s.c: $(srcdir)/ktrace.c
+ 	$(LN_S) $(srcdir)/ktrace.c $@
+ 
+-lib_LTLIBRARIES = libktrace.la
++kmtracelib_LTLIBRARIES = libktrace.la
+ libktrace_la_LDFLAGS = -avoid-version
+ libktrace_la_SOURCES = ksotrace.cpp ktrace.c
+ libktrace_la_LIBADD = $(LIBDL)
+--- kde.orig/kmtrace/README
++++ kde.patched/kmtrace/README
+@@ -23,7 +23,7 @@ friends.
+ 
+ You can activate malloc logging by starting yourApplication as:
+ 
+-	MALLOC_TRACE=/tmp/ktrace.out LD_PRELOAD=$KDEDIR/lib/libktrace.so yourApplication
++	MALLOC_TRACE=/tmp/ktrace.out LD_PRELOAD=/usr/lib/kmtrace/libktrace.so yourApplication
+ 
+ 2) The manual way
+ 
+@@ -37,7 +37,7 @@ Add as first statement in main():
+ 
+ Add ktrace_s.a to the LDADD line in your Makefile.am like:
+ 
+-	kicker_LDADD = kicker.la /opt/kde/lib/libktrace_s.a
++	kicker_LDADD = kicker.la /usr/lib/kmtrace/libktrace_s.a
+ 
+ Note that the static library is used.
+ You can now activate malloc logging by starting yourApplication as:
+--- kde.orig/kmtrace/kminspector.in
++++ kde.patched/kmtrace/kminspector.in
+@@ -2,7 +2,7 @@
+ 
+ export MALLOC_TREE=kminspector.tree
+ export MALLOC_THRESHOLD=2000
+-export LD_PRELOAD=@kde_libraries@/libktrace.so
++export LD_PRELOAD=@kde_libraries@/kmtrace/libktrace.so
+ 
+ $*
+ 

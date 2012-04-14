@@ -1,0 +1,47 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH TRANSXX 1 "March 19, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+transxx \- create a basic fleshed-out PO-file from a PO-template file
+.SH SYNOPSIS
+.B transxx
+[ \fB\-\-text\fP \fItranslation\fP ]
+.I template
+.SH DESCRIPTION
+\fBtransxx\fP is a command-line tool that produces a basic fleshed-out
+PO-file from a PO-template file.  Some of the formatting and
+structure of the \fImsgid\fP strings will be copied to the \fImsgstr\fP
+strings, but otherwise text will be translated to "xx".
+.PP
+The fleshed-out PO-file is sent to standard output.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH OPTIONS
+.TP
+\fB\-\-text\fP \fItranslation\fP
+Use the given translation everywhere instead of "xx".
+.SH SEE ALSO
+.BR po2xml (1),
+.BR split2po (1),
+.BR swappo (1),
+.BR xml2pot (1).
+.SH AUTHOR
+The PO-XML tools were written by Stephan Kulow <coolo@kde.org> and
+Peter Wells <pete@yamuna.demon.co.uk>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

@@ -1,0 +1,4 @@
+debian/man/demangle.1
+debian/man/kmtrace.1
+debian/man/kminspector.1
+debian/man/kmmatch.1

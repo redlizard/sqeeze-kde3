@@ -1,0 +1,33 @@
+tag 486038 patch
+thanks
+
+On Thu, Jun 12, 2008 at 10:59:22PM -0500, Raphael Geissert wrote:
+
+||  While performing an archive wide checkbashisms (from the 'devscripts' package)
+||  check I've found your package containing one or more /bin/sh scripts making
+||  use of bashisms.
+||
+||  checkbashisms' output:
+||  > possible bashism in ./usr/bin/build-progress.sh line 8 (echo -e):
+||  >   echo -ne "\033]0;$1\007"
+
+The following patch should fix this problem:
+
+Only in kdesdk-3.5.5: debian
+diff -rud kdesdk-3.5.5.orig/scripts/build-progress.sh kdesdk-3.5.5/scripts/build-progress.sh
+--- kdesdk-3.5.5.orig/scripts/build-progress.sh	2005-09-10 10:21:03.000000000 +0200
++++ kdesdk-3.5.5/scripts/build-progress.sh	2008-06-15 13:29:28.000000000 +0200
+@@ -5,7 +5,7 @@
+ # <malte@kde.org> for the code :-)
+ set_title() {
+ if ([ "$TERM" = "xterm" ] || [ "$TERM" = "xterm-color" ] || [ "$TERM" = "screen" ]) && tty -s; then
+-  echo -ne "\033]0;$1\007"
++  printf '\033]0;%s\007' "$1"
+ fi
+ }
+ . ./kde-buildrc
+
+Ciao. Vincent.
+
+
+

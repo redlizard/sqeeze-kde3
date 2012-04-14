@@ -1,0 +1,72 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH CHEATMAKE 1 "September 27, 2002"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+cheatmake \- fool make into not rebuilding certain files
+.SH SYNOPSIS
+.B cheatmake hidechange
+.I file
+.br
+.B cheatmake show
+.br
+.B cheatmake why
+.I file
+.SH DESCRIPTION
+\fBcheatmake\fP is used to save time when recompiling.  It can fool \fBmake\fP
+into skipping files that haven't changed in a meaningful way.  This can be
+used for instance when you change a comment in a file but none of the actual
+code.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH OPTIONS
+The different modes of operation are as follows.
+.TP
+\fBhidechange\fP \fIfile\fP
+Hides the fact that the given file has changed by moving its timestamp
+back into the past.  Use this option with care!
+.TP
+\fBshow\fP
+Lists which files make currently needs to rebuild.
+.TP
+\fBwhy\fP \fIfile\fP
+Explains why make must rebuild the given file.
+.SH ENVIRONMENT VARIABLES
+One of the following variables (but not both) should be set if the
+source
+directory is different from the build directory.
+If the build directory is simply a subdirectory of the source directory,
+the simpler variable OBJ_SUBDIR should be used.
+.TP
+OBJ_SUBDIR
+Indicates that the build directory is in the given subdirectory of the
+source directory.  For instance, if the source directory is \fIkdesdk\fP
+and the build directory is \fIkdesdk/obj-i386-linux\fP, then OBJ_SUBDIR
+should be set to \fIobj-i386-linux\fP.
+.TP
+OBJ_REPLACEMENT
+A \fBsed\fP expression that is used to transform the source directory
+into the build directory.
+For instance, if the source directory is \fI~/src/kdesdk\fP and the
+build directory is \fI~/src/kdesdk-obj\fP, then OBJ_REPLACEMENT could
+be set to \fIs#kdesdk#kdesdk-obj#\fP.
+.SH SEE ALSO
+.BR make (1).
+.SH AUTHOR
+cheatmake was written by David Faure <faure@kde.org>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

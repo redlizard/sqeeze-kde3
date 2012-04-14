@@ -1,0 +1,53 @@
+--- kde.orig/scripts/kde-devel-gdb
++++ kde.patched/scripts/kde-devel-gdb
+@@ -1,6 +1,6 @@
+ # This file defines handy gdb macros for printing out Qt types
+ # To use it, add this line to your ~/.gdbinit :
+-# source /path/to/kde/sources/kdesdk/scripts/kde-devel-gdb
++# source /usr/share/kdesdk-scripts/kde-devel-gdb
+ 
+ # Please don't use tabs in this file. When pasting a
+ # macro definition to gdb, tabs are interpreted as completion.
+--- kde.orig/scripts/kde-devel-vim.vim
++++ kde.patched/scripts/kde-devel-vim.vim
+@@ -1,5 +1,5 @@
+ " To use this file, add this line to your ~/.vimrc:, w/o the dquote
+-" source /path/to/kde/sources/kdesdk/scripts/kde-devel-vim.vim
++" source /usr/share/kdesdk-scripts/kde-devel-vim.vim
+ "
+ " For CreateChangeLogEntry() : If you don't want to re-enter your
+ " Name/Email in each vim session then make sure to have the viminfo
+--- kde.orig/scripts/kde-emacs/kde-emacs.el
++++ kde.patched/scripts/kde-emacs/kde-emacs.el
+@@ -21,7 +21,7 @@
+ ;;; Installation:
+ ;;
+ ;; Put the following lines in your ".emacs":
+-;; (add-to-list 'load-path "~/path-to-kde-emacs")
++;; (add-to-list 'load-path "/usr/share/emacs/site-lisp/kdesdk-scripts")
+ ;; (require 'kde-emacs)
+ ;; 
+ ;; I also strongly recommend to add the following two lines to 
+--- kde.orig/scripts/qtdoc
++++ kde.patched/scripts/qtdoc
+@@ -1,4 +1,9 @@
+ #!/bin/sh
++
++if [ -z "$QTDIR" ]; then
++  QTDIR=/usr/share/qt3
++fi
++
+ # Run from command line, to open a qt help page in kfm/konqueror
+ # No argument => main page
+ # Classname (case insensitive) => page for this class
+--- kde.orig/scripts/kdedoc
++++ kde.patched/scripts/kdedoc
+@@ -6,7 +6,7 @@
+ # You can edit this line to set the directory holding your KDE docs, or you
+ # can use the environment variable KDEDOCS to avoid future conflicts with this
+ # file if the default changes.
+-KDEDOCS=${KDEDOCS:-"$KDEDIR/share/doc/HTML/en/kdelibs-apidocs"}
++KDEDOCS=${KDEDOCS:-"/usr/share/doc/kde/HTML/en/kdelibs-apidocs"}
+ 
+ if [ $# = 1 ]; then
+   if [ -e "$KDEDOCS/doxygen.css" ]; then

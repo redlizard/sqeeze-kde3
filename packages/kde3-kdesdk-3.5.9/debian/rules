@@ -1,0 +1,73 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_DH_STRIP_ARGS := --dbg-package=kde3-kdesdk-dbg
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-kbabel			:= -V'kde3-kbabel (>= 4:3.5.9-1)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kompare			:= -V'kde3-kompare (>= 4:3.5.9-1)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kspy			:= -V'kde3-kspy (>= 4:3.5.9-1)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kunittest		:= -V'kde3-kunittest (>= 4:3.5.9-1)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libcvsservice0		:= -V'kde3-libcvsservice0 (>= 4:3.5.9-1)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-umbrello			:= -V'kde3-umbrello (>= 4:3.5.9-1)'
+
+#shlibs_ver = 4:3.5.0-1
+#$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
+
+DEB_INSTALL_CHANGELOGS_kde3-cervisia := cervisia/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-kapptemplate := kapptemplate/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-kbabel := kbabel/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-kcachegrind := kcachegrind/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-kompare := kompare/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-umbrello := umbrello/ChangeLog
+
+binary-install/kde3-kdesdk-scripts::
+	mv -f debian/kde3-kdesdk-scripts/usr/share/man/pl/man1/kdemangen.1 \
+		debian/kde3-kdesdk-scripts/usr/share/man/man1/kdemangen.pl.1
+	mv -f debian/kde3-kdesdk-scripts/usr/share/man/pl/man1/png2mng.1 \
+		debian/kde3-kdesdk-scripts/usr/share/man/man1/png2mng.pl.1
+	mv -f debian/kde3-kdesdk-scripts/usr/share/man/py/man1/kdelnk2desktop.1 \
+		debian/kde3-kdesdk-scripts/usr/share/man/man1/kdelnk2desktop.py.1
+	mv -f debian/kde3-kdesdk-scripts/usr/share/man/py/man1/zonetab2pot.1 \
+		debian/kde3-kdesdk-scripts/usr/share/man/man1/zonetab2pot.py.1
+	mv -f debian/kde3-kdesdk-scripts/usr/share/man/sh/man1/build-progress.1 \
+		debian/kde3-kdesdk-scripts/usr/share/man/man1/build-progress.sh.1
+	mv -f debian/kde3-kdesdk-scripts/opt/kde3/bin/svn-clean \
+		debian/kde3-kdesdk-scripts/opt/kde3/bin/svn-clean-kde
+	mv -f debian/kde3-kdesdk-scripts/opt/kde3/bin/svnversions \
+		debian/kde3-kdesdk-scripts/opt/kde3/bin/svnversion-kde
+	rm -rf debian/kde3-kdesdk-scripts/opt/kde3/share/man/pl
+	rm -rf debian/kde3-kdesdk-scripts/opt/kde3/share/man/py
+	rm -rf debian/kde3-kdesdk-scripts/opt/kde3/share/man/sh
+	install -p -D -m644 scripts/kde-buildrc \
+		debian/kde3-kdesdk-scripts/opt/kde3/share/doc/kdesdk-scripts/kde-buildrc.example
+
+binary-install/kde3-kdesdk-misc::
+	install -p -D -m644 kdeaccounts-plugin/README \
+		debian/kde3-kdesdk-misc/usr/share/doc/kde3-kdesdk-misc/README.kdeaccounts-plugin
+	install -p -D -m644 kioslave/svn/AUTHORS \
+		debian/kde3-kdesdk-misc/usr/share/doc/kde3-kdesdk-misc/AUTHORS.kioslave-svn
+	install -p -D -m644 kioslave/svn/README \
+		debian/kde3-kdesdk-misc/usr/share/doc/kde3-kdesdk-misc/README.kioslave-svn
+	install -p -D -m644 kprofilemethod/README \
+		debian/kde3-kdesdk-misc/usr/share/doc/kde3-kdesdk-misc/README.kprofilemethod
+	install -p -D -m644 scheck/README \
+		debian/kde3-kdesdk-misc/usr/share/doc/kde3-kdesdk-misc/README.scheck
+
+binary-install/kde3-kapptemplate::
+	rm -f debian/kde3-kapptemplate/opt/kde3/share/apps/kapptemplate/admin/*.cdbs-orig
+	for admindirfile in compile config.guess config.sub debianrules depcomp detect-autoconf.pl \
+			Doxyfile.global install-sh missing mkinstalldirs nmcheck ylwrap; do \
+		chmod 755 debian/kde3-kapptemplate/opt/kde3/share/apps/kapptemplate/admin/$$admindirfile; \
+	done
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+

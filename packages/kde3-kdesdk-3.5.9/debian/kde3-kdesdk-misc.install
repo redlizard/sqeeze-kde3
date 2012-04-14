@@ -1,0 +1,10 @@
+debian/tmp/opt/kde3/include/kde/kprofilemethod.h
+debian/tmp/opt/kde3/lib/kde3/kabcformat_kdeaccounts.la
+debian/tmp/opt/kde3/lib/kde3/kabcformat_kdeaccounts.so
+debian/tmp/opt/kde3/lib/kde3/plugins/styles/scheck.so
+debian/tmp/opt/kde3/lib/kde3/plugins/styles/scheck.la
+debian/tmp/opt/kde3/share/apps/kabc/formats/kdeaccountsplugin.desktop
+debian/tmp/opt/kde3/share/apps/kstyle/themes/scheck.themerc
+kdepalettes/kde_xpaintrc /opt/kde3/share/kdepalettes
+kdepalettes/KDE_Gimp /opt/kde3/share/kdepalettes
+kdepalettes/README /opt/kde3/share/kdepalettes

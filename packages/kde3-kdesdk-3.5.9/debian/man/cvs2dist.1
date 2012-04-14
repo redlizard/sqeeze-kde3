@@ -1,0 +1,201 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH CVS2DIST 1 "March 19, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+cvs2dist \- convert subdirectories within KDE CVS into standalone
+source packages
+.SH SYNOPSIS
+.B cvsdist
+.I path-to-module
+.I directory-in-module
+[ \fB\-n, \-\-name\fP \fIname\fP ]
+[ \fB\-v, \-\-version\fP \fIversion\fP ]
+[ \fB\-\-admin-dir\fP \fIdir\fP ]
+[ \fB\-\-cvs-root\fP \fIroot\fP ]
+[ \fB\-B, \-\-branch\fP \fIbranch\fP ]
+[ \fB\-\-no-i18n\fP ]
+[ \fB\-\-no-i18n-lang\fP \fIlanguages\fP ]
+[ \fB\-\-log=\fP\fIlogfile\fP | \fB\-l\fP ]
+[ \fB\-m, \-\-make-unpackaged\fP ]
+[ \fB\-g, \-\-no-gzip\fP ]
+[ \fB\-b, \-\-no-bz2, \-\-no-bzip2\fP ]
+[ \fB\-o, \-\-only-directory\fP ]
+[ \fB\-r, \-\-required-header\fP \fIheader\fP ]
+[ \fB\-e, \-\-required-header-error-message\fP \fImessage\fP ]
+[ \fB\-d, \-\-remove-hidden\fP ]
+[ \fB\-\-replace-files\fP \fIpairs\fP ]
+[[--] \fIaddfile\fP ... ]
+.PP
+.B cvsdist
+\fB\-h, \-\-help\fP
+.SH DESCRIPTION
+Each module in the KDE CVS tree contains a large number of applications
+all bundled together.
+\fBcvs2dist\fP is used to extract a single application or component from
+one of these large CVS modules and bundle it into a standalone package.
+The application or component will be bundled into a standard
+distribution tarball (with a configure script and so on) that users can
+download, build and install.
+.PP
+By default, cvs2dist automatically tries to check out all translations
+of strings and documentation from the corresponding parts of the
+\fIkde-i18n\fP CVS module and include them in the final packages.
+This can be suppressed or modified using the options \-\-no-i18n or
+\-\-no-i18n-lang.
+.PP
+The initial argument \fIpath-to-module\fP should specify where the CVS
+module has been checked out on your system, and the second argument
+\fIdirectory-in-module\fP should specify which directory within this
+module is to be packaged (all subdirectories beneath it will be included
+and so on).  See the EXAMPLE section below for details.
+.PP
+Both gzip and bzip2 compressed tarballs will be created by default and
+will be called \fIname[-version].tar.gz\fP and \fIname[-version].tar.bz2\fP.
+The \fIname\fP component will be the last directory component of
+\fIdirectory-in-module\fP unless otherwise specified by \-\-name, and
+the \fIversion\fP component will not be included unless it is specified by
+\-\-version.
+.PP
+Additional files from outside the CVS tree can be included in the final
+packages by passing them after all other options (these are the
+\fIaddfile\fP arguments displayed above).  These additional files will
+be placed in the top level directory of the final packages.
+The \-\- that precedes them is optional.
+.PP
+Many options are available for customising these procedures, as seen below.
+Note that cvs2dist will remove any temporary files that it creates.
+.PP
+This utility is part of the KDE Software Development Kit.
+.SH OPTIONS
+.TP
+\fB\-n, \-\-name\fP \fIname\fP
+The name of the package (to be used in the names of the final tarballs
+and directories).  Specifically, the compressed tarballs will be called
+\fIname-version.tar.gz\fP and \fIname-version.tar.bz2\fP (see the
+\-\-version option below for further information).
+This package name defaults to the last directory component of
+\fIdirectory-in-module\fP.
+.TP
+\fB\-v, \-\-version\fP \fIversion\fP
+The version of the package (to be used in the names of the final
+tarballs and directories).  If this is not supplied, no version is used
+at all (i.e., the compressed tarballs will just be called \fIname.tar.gz\fP
+and \fIname.tar.bz2\fP).
+.TP
+\fB\-\-admin-dir\fP \fIdir\fP
+The location of \fIadmin/\fP on the filesystem.  Symbolic links may
+be used.  Defaults to \fIpath-to-module/admin\fP.
+.TP
+\fB\-\-cvs-root\fP \fIroot\fP
+The value to use as CVSROOT when checking out translations from CVS.
+Defaults to the CVSROOT environment variable.
+If \-\-no-i18n is passed then this option has no effect.
+.TP
+\fB\-B, \-\-branch\fP \fIbranch\fP
+Use the given CVS branch for checking out translations from CVS.
+If \-\-no-i18n is passed then this option has no effect.
+.TP
+\fB\-\-no-i18n\fP
+Do not check out any translations from CVS.
+.TP
+\fB\-\-no-i18n-lang\fP \fIlanguages\fP
+Exclude the given language(s) when checking out translations from CVS.
+The list of languages should be comma-separated,
+such as \fI\-\-no-i18n-lang uk,de,en_GB\fP .
+.TP
+\fB\-\-log=\fP\fIlogfile\fP
+Log all proceedings to the given logfile.  Note that the = is essential,
+and may not be omitted.
+.TP
+\fB\-l\fP
+Log all proceedings to the default logfile in the current directory.
+.TP
+\fB\-m, \-\-make-unpackaged\fP
+In addition to the compressed tarballs, an unpacked distribution will be
+created in the current directory.
+.TP
+\fB\-g, \-\-no-gzip\fP
+Do not create a gzip package (\fIname-version.tar.gz\fP).
+.TP
+\fB\-b, \-\-no-bz2, \-\-no-bzip2\fP
+Do not create a bzip2 package (\fIname-version.tar.bz2\fP).
+.TP
+\fB\-o, \-\-only-directory\fP
+Alias for \-mgb.  No packages will be created, only an unpacked directory.
+.TP
+\fB\-r, \-\-required-header\fP \fIheader\fP
+When the user runs configure, an error will be generated if
+\fIheader\fP is not found on the user's system.
+.TP
+\fB\-e, \-\-required-header-error-message\fP \fImessage\fP
+The error to display to a user when the header passed with
+\-\-required-header is not found on the user's system.  Defaults to a
+sensible message.
+.TP
+\fB\-d, \-\-remove-hidden\fP
+Remove hidden files and directories (e.g., dotfiles) from the packages.
+.TP
+\fB\-h, \-\-help\fP
+Display instructions on how to use cvs2dist.
+.TP
+\fB\-\-replace-files\fP \fIpairs\fP
+Move one or more files around in the final distribution packages.
+The \fIpairs\fP argument should be a comma-separated list of
+replacements to make.  Each replacement specifies a single file to move, and
+should be of the form \fIsource\fP@\fIdest\fP.
+.br
+For each replacement, the source file will be moved to the
+destination file (in particular, the source file will be deleted).
+All filenames are relative to the top-level directory
+of the package.  Spaces in filenames are not allowed.
+.br
+Please be careful when using this option!  Try to avoid the use of ..
+in the filenames, since it may cause unexpected problems.
+.br
+An example of this option might be
+\fI\-\-replace-files take_this_file@move_it_here,configure.in.bot.dist@configure.in.bot\fP .
+.SH EXAMPLE
+The following example creates packages of the kolf picture plugin from
+the CVS source tree currently checked out in \fI/sources\fP.
+.PP
+.RS
+\fIexample$\fP cvs2dist /sources/kdegames kolf/objects/picture
+\-n kolf-picture \-v 0.9 \-r "kolf/game.h" \-\-log ~/tmp/extra-file
+.RE
+.PP
+The packages will be named \fIkolf-picture-0.9\fP and
+the process will be logged.  For configure to succeed when a user builds
+these packages, the header \fIkolf/game.h\fP must be installed or an
+error will occur.  The additional file \fI~/tmp/extra-file\fP will be
+included in the packages even though it is not part of the CVS source tree.
+.SH FILES
+.TP
+\fI~/.cvs2distrc\fP
+Any options found in this file will be
+added to the beginning of the command-line arguments.
+.SH SEE ALSO
+.BR cvs (1).
+.PP
+For the latest updates to this script, see the cvs2dist website
+\fIhttp://www.katzbrown.com/shiritsu/programming/cvs2dist/\fP.
+.SH AUTHOR
+cvs2dist was written by Jason Katz-Brown <jason@katzbrown.com>,
+Sebastian Stein <seb.stein@hpfsc.de>, Dominique Devriese <devriese@kde.org>
+and Michael Buesch <mbuesch@freenet.de>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

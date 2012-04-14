@@ -1,0 +1,9 @@
+?package(umbrello):\
+  needs="x11"\
+  section="Applications/Programming"\
+  hints="KDE"\
+  title="Umbrello"\
+  longtitle="Umbrello (UML Modeller)"\
+  icon="/opt/kde3/share/pixmaps/umbrello.xpm"\
+  command="/opt/kde3/bin/umbrello"
+

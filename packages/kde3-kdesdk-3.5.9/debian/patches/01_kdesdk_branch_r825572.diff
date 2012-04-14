@@ -1,0 +1,895 @@
+#DPATCHLEVEL=0
+--- kbabel/kbabel/kbabel.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/kbabel/kbabel.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -44,6 +44,7 @@
+ GenericName[is]=Þýðingaforrit
+ GenericName[it]=Strumento di traduzione
+ GenericName[ja]=翻訳ツール
++GenericName[ka]=თარგმნის ხელსაწყო
+ GenericName[kk]=Аудару құралы
+ GenericName[lt]=Vertimo įrankis
+ GenericName[lv]=Tulkošanas Rīks
+--- kbabel/kbabeldict/kbabeldict.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/kbabeldict/kbabeldict.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=KBabel orðabók
+ Name[it]=Dizionario di KBabel
+ Name[ja]=KBabel 辞書
++Name[ka]=KBabel ლექსიკონი
+ Name[kk]=KBabel сөздігі
+ Name[lt]=KBabel žodynas
+ Name[nb]=KBabel-ordbok
+@@ -65,6 +66,7 @@
+ GenericName[is]=Þýðingaforrit orðabók
+ GenericName[it]=Dizionario di uno strumento di traduzione
+ GenericName[ja]=翻訳ツール辞書
++GenericName[ka]=თარგმნის ხელსაწყოს ლექსიკონი
+ GenericName[kk]=Аудару құралының сөздігі
+ GenericName[lt]=Vertimo įrankio žodynas
+ GenericName[nb]=Ordbok for oversettingsverktøy
+--- kbabel/kbabeldict/kbabeldict_module.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/kbabeldict/kbabeldict_module.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -25,6 +25,7 @@
+ Comment[is]=Orðabókareining fyrir KBabel
+ Comment[it]=Modulo dizionario per KBabelDict
+ Comment[ja]=KBabelDict 辞書モジュール
++Comment[ka]=ლექსიკონის მოდული KBabelDict-სთვის
+ Comment[kk]=KBabelDict-тің сөздік модулі
+ Comment[lt]=KBabelDict žodyno modulis
+ Comment[ms]=Modul kamus untuk KBabelDict
+--- kbabel/kbabeldict/modules/pocompendium/pocompendium.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/kbabeldict/modules/pocompendium/pocompendium.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=PO ágrips eining fyrir KBabel orðabókina
+ Name[it]=Modulo PO Compendium per KBabelDict
+ Name[ja]=KBabelDict PO 要約モジュール
++Name[ka]=PO კონსპექტის მოდული KBabelDict-სთვის
+ Name[kk]=KBabelDict-тың PO аудармалар жиынтық модулі
+ Name[lt]=KBabelDict PO tekstyno modulis
+ Name[ms]=Modul Kompendium PO untuk KBabelDict
+--- kbabel/kbabeldict/modules/dbsearchengine/dbsearchengine.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/kbabeldict/modules/dbsearchengine/dbsearchengine.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Name[is]=Þýðingagagnagrunnur fyrir KBabel orðabókina
+ Name[it]=Banca dati di traduzioni per KBabelDict
+ Name[ja]=KBabelDict トランザクションデータベース
++Name[ka]=თარგმნის მონაცემთა ბაზა KBabelDict-სთვის
+ Name[kk]=KBabelDict-тың аударма деректер қоры
+ Name[lt]=KBabelDict vertimų duomenų bazė
+ Name[ms]=Pangkalan Data Penterjemahan KBabelDict
+--- kbabel/kbabeldict/modules/dbsearchengine2/dbsearchengine2.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/kbabeldict/modules/dbsearchengine2/dbsearchengine2.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Name[is]=Þýðingagagnagrunnur v2 fyrir KBabel orðabókina
+ Name[it]=Banca dati delle traduzioni v2 per KBabelDict
+ Name[ja]=KBabelDict トランザクションデータベース v2
++Name[ka]=თარგმნის მონაცემთა ბაზა ვ2 KBabelDict-სთვის
+ Name[kk]=KBabelDict-тың аударма деректер қорының 2-нұсқасы
+ Name[lt]=KBabelDict vertimų duomenų bazės 2 versija
+ Name[ms]=Pangkalan Data Penterjemahan v2 KBabelDict
+--- kbabel/kbabeldict/modules/poauxiliary/poauxiliary.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/kbabeldict/modules/poauxiliary/poauxiliary.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=Viðbótar PO eining fyrir KBabel orðabókina
+ Name[it]=Modulo ausiliario PO per KBabelDict
+ Name[ja]=KBabelDict 補助 PO モジュール
++Name[ka]=დამხმარე PO მოდული KBabelDict-სთვის
+ Name[kk]=KBabelDict-тың қосымша PO модулі
+ Name[lt]=KBabelDict papildomo PO žodyno modulis
+ Name[ms]=Modul Auksillari PO untuk KBabelDict
+--- kbabel/kbabeldict/modules/tmx/tmxcompendium.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/kbabeldict/modules/tmx/tmxcompendium.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=TMX ágrips eining fyrir KBabel orðabókina
+ Name[it]=Modulo TMX Compendium per KBabelDict
+ Name[ja]=KBabelDict TMX 要約モジュール
++Name[ka]=TMX კონსპექტის მოდული KBabelDict-სთვის
+ Name[kk]=KBabelDict-тың TMX аудармалар жиынтық модулі
+ Name[lt]=KBabelDict TMX tekstyno modulis
+ Name[ms]=Modul Kompendium TMX untuk KBabelDict
+--- kbabel/commonui/kbabel_validator.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/commonui/kbabel_validator.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Comment[is]=KDE gagnatól fyrir KBabel
+ Comment[it]=Strumento KDE per la gestione dati con KBabel
+ Comment[ja]=KBabel のための KDE データツール
++Comment[ka]=KBabel-ის KDE მონაცემთა ხელსაწყო
+ Comment[kk]=KDE-нің KBabel-дің деректер құралы
+ Comment[lt]=KDE duomenų įrankis, skirtas KBabel
+ Comment[ms]=Alatan Data KDE untuk KBabel
+--- kbabel/common/kbabelfilter.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/common/kbabelfilter.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -25,6 +25,7 @@
+ Comment[is]=KBabel sía
+ Comment[it]=Filtro KBabel
+ Comment[ja]=KBabel フィルタ
++Comment[ka]=KBabel ფილტრი
+ Comment[kk]=KBabel сүзгісі
+ Comment[lt]=KBabel filtras
+ Comment[ms]=Penapis KBabel
+--- kbabel/datatools/not-translated/kbabel_nottranslatedtool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/not-translated/kbabel_nottranslatedtool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -20,6 +20,7 @@
+ Name[is]=Leita að þýddum strengjum sem innihalda ensku fyrir KBabel
+ Name[it]=Controllo di stringhe tradotte contenenti inglese per KBabel
+ Name[ja]=KBabel 翻訳文字列内の英語を検索
++Name[ka]=ინგლისურის შემცველი ნათარგმნი სტრიქონების შემოწმება KBabel-სთვის
+ Name[kk]=KBabel аударылғанда ағылшын жазуы қалғанын тексеруі
+ Name[lt]=KBabel išverstų pranešimų, kuriuose yra anglų kalbos žodžių, patikra
+ Name[nb]=Sjekk for oversatte strenger som inneholder engelsk i KBabel
+@@ -68,6 +69,7 @@
+ Comment[is]=Þýðingar sem innihalda ensku
+ Comment[it]=Traduzioni contenenti inglese
+ Comment[ja]=翻訳文字列内の英語を検索
++Comment[ka]=ინგლისურის შემცველი ნათარგმნი
+ Comment[kk]=Аударылғанда ағылшын жазуы қалғанын тексеру
+ Comment[lt]=Vertimai, kuriuose yra anglų kalbos žodžių
+ Comment[nb]=Oversettelser som inneholder engelsk
+--- kbabel/datatools/xml/kbabel_xmltool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/xml/kbabel_xmltool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=XML staðfesting fyrir KBabel
+ Name[it]=Convalidatore di XML per KBabel
+ Name[ja]=KBabel XML 検証
++Name[ka]=XML დამოწმება KBabel-თვის
+ Name[kk]=KBabel-дың XML-ды тексеруі
+ Name[lt]=KBabel XML patikros įrankis
+ Name[ms]=Pengesah XML untuk KBabel
+@@ -74,6 +75,7 @@
+ Comment[is]=Athuga tög
+ Comment[it]=Controlla i tag
+ Comment[ja]=タグを検証
++Comment[ka]=ჭდეების შემოწმება
+ Comment[kk]=Тегтерді тексеру
+ Comment[lt]=Tikrinti gaires
+ Comment[ms]=Periksa Tag
+--- kbabel/datatools/length/kbabel_lengthtool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/length/kbabel_lengthtool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -21,6 +21,7 @@
+ Name[is]=Staðfestir á lengd þýddra skeyta fyrir KBabel
+ Name[it]=Convalidatore di KBabel per la lunghezza dei messaggi tradotti
+ Name[ja]=KBabel 翻訳メッセージの長さを検証
++Name[ka]=ნათარგმნი შეტყობინებების სიგრძის დამოწმება KBabel-სთვის
+ Name[kk]=KBabel-дың аударылған жазулардың ұзындығын тексеруі
+ Name[lt]=KBabel išverstų pranešimų ilgio patikros įrankis
+ Name[nb]=Sjekk av lengden på oversatte strenger i KBabel
+@@ -69,6 +70,7 @@
+ Comment[is]=Athuga lengd þýddra skeyta
+ Comment[it]=Controlla la lunghezza dei messaggi tradotti
+ Comment[ja]=翻訳メッセージの長さを検証
++Comment[ka]=ნათარგმნი შეტყობინებების სიგრძის შემოწმება
+ Comment[kk]=Аударылған жазулардың ұзындығын тексеру
+ Comment[lt]=Tikrinti išverstų pranešimų ilgį
+ Comment[nb]=Sjekk lengden på oversatte strenger
+--- kbabel/datatools/setfuzzy/kbabel_setfuzzytool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/setfuzzy/kbabel_setfuzzytool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -19,6 +19,7 @@
+ Name[is]=Víxla loðnu tól fyrir KBabel
+ Name[it]=Strumento di KBabel per commutare le voci fuzzy
+ Name[ja]=KBabel あいまい状態切り替えツール
++Name[ka]=დაუზუსტებელის გადართვის ხელსაწყო KBabel-სთვის
+ Name[kk]=KBabel-дың жазу дүмбілездік күйін терістеу құралы
+ Name[lt]=KBabel įrankis, visus pranešimus pažymintis „neaiškiais“
+ Name[ms]=Alat Togol Kabur untuk KBabel
+@@ -67,6 +68,7 @@
+ Comment[is]=Setja öll loðin
+ Comment[it]=Imposta tutte le voci come fuzzy
+ Comment[ja]=すべてあいまいとしてマーク
++Comment[ka]=ყველასთვის დაუზუსტებელის დაყენება
+ Comment[kk]=Барлығын дүмбілез деп кою
+ Comment[lt]=Žymėti visus neaiškiais
+ Comment[ms]=Tetapkan Semua Kabur
+--- kbabel/datatools/context/kbabel_contexttool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/context/kbabel_contexttool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -21,6 +21,7 @@
+ Name[is]=Staðfesting þýddra samhengisupplýsinga fyrir KBabel
+ Name[it]=Convalida delle informazioni di contesto tradotte per KBabel
+ Name[ja]=KBabel 翻訳された文脈情報を検索
++Name[ka]=თარგმნის კონტექსტის ინფორმაცია KBabel-სთვის
+ Name[kk]=KBabel-дың аударылған контекстік мәліметін тексеру
+ Name[lt]=KBabel išverstos kontekstinės informacijos patikros įrankis
+ Name[ms]=Pengesahan Info Konteks Telah Diterjemah untuk KBabel
+@@ -69,6 +70,7 @@
+ Comment[is]=Leita að þýddum samhengisupplýsingum
+ Comment[it]=Cerca informazioni di contesto tradotte
+ Comment[ja]=翻訳された文脈情報を検索
++Comment[ka]=თარგმნის კონტექსტის ინფორმაციის ძიება
+ Comment[kk]=Аударылған контекстік мәліметін қарау
+ Comment[lt]=Ieškoti išverstos kontekstinės informacijos
+ Comment[ms]=Cari Info Konteks Telah Diterjemah
+--- kbabel/datatools/arguments/kbabel_argstool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/arguments/kbabel_argstool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=Viðfangastaðfestir fyrir KBabel
+ Name[it]=Convalida argomenti per KBabel
+ Name[ja]=KBabel 引数検証
++Name[ka]=KBabel-ის არგუმენტთა დამმოწმებელი
+ Name[kk]=KBabel-дың аргументтерін тексеруі
+ Name[lt]=Kbabel argumentų patikros įrankis
+ Name[ms]=Pengesahan Argumen untuk KBabel
+@@ -73,6 +74,7 @@
+ Comment[is]=Athuga viðföng
+ Comment[it]=Controlla argomenti
+ Comment[ja]=引数を検証
++Comment[ka]=არგუმენტების შემოწმება
+ Comment[kk]=Аргументтерді тексеру
+ Comment[lt]=Patikrinti argumentus
+ Comment[ms]=Periksa Argumen
+--- kbabel/datatools/pluralforms/kbabel_pluralformstool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/pluralforms/kbabel_pluralformstool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -21,6 +21,7 @@
+ Name[is]=Staðfesting fleirtöluforma fyrir KBabel
+ Name[it]=Convalida delle forme plurali per KBabel
+ Name[ja]=KBabel 複数形検証
++Name[ka]=მრავლობითი ფორმების დამმოწმებელი KBabel-სთვის
+ Name[kk]=KBabel-дың көптік жалғауын тексеруі
+ Name[lt]=KBabel daugiskaitos formų patikros įrankis
+ Name[ms]=Pengesahan Bentuk Jama' untuk KBabel
+@@ -70,6 +71,7 @@
+ Comment[is]=Athuga fleirtöluform
+ Comment[it]=Controlla forme plurali
+ Comment[ja]=複数形を検証
++Comment[ka]=მრავლობითი ფორმების შემოწმება
+ Comment[kk]=Көптік жалғауын тексеру
+ Comment[lt]=Tikrinti daugiskaitos formas
+ Comment[ms]=Periksa Bentuk Jama'
+--- kbabel/datatools/accelerators/kbabel_accelstool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/accelerators/kbabel_accelstool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=Flýtilyklastaðfestir fyrir KBabel
+ Name[it]=Convalida dei tasti acceleratori per KBabel
+ Name[ja]=KBabel アクセラレータ検証
++Name[ka]=KBabel-ის აქსელერატორი დამმოწმებელი
+ Name[kk]=KBabel-дің акселераторларды тексеруі
+ Name[lt]= KBabel prieigos klavišų žymių patikros įrankis
+ Name[ms]=Pengesahan Kekunci Pintas untuk KBabel
+@@ -73,6 +74,7 @@
+ Comment[is]=Athuga flýtilykla
+ Comment[it]=Controlla tasti acceleratori
+ Comment[ja]=アクセラレータを検証
++Comment[ka]=აქსელერაციის შემოწმება
+ Comment[kk]=Акселераторларды тексеру
+ Comment[lt]=Patikrinti prieigos klavišų žymes
+ Comment[ms]=Periksa Kekunci Pintas
+--- kbabel/datatools/equations/kbabel_equationstool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/equations/kbabel_equationstool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=Jöfnustaðfesting fyrir KBabel
+ Name[it]=Convalida delle equazioni per KBabel
+ Name[ja]=KBabel 等式検証
++Name[ka]=KBabel-ს ფორმულათა დამოწმება
+ Name[kk]=KBabel-дың баламаларын тексеруі
+ Name[lt]=KBabel lygybių patikros įrankis
+ Name[ms]=Pengesahan Persamaan untuk KBabel
+@@ -71,6 +72,7 @@
+ Comment[is]=Athuga jöfnur
+ Comment[it]=Controlla equazioni
+ Comment[ja]= 等式を検証
++Comment[ka]=ფორმულათა შემოწმება
+ Comment[kk]=Баламаларды тексеру
+ Comment[lt]=Tikrinti lygybes
+ Comment[ms]=Periksa Persamaan
+--- kbabel/datatools/punctuation/kbabel_punctuationtool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/punctuation/kbabel_punctuationtool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=Staðfesting greinamerkja fyrir KBabel
+ Name[it]=Convalida della punteggiatura per KBabel
+ Name[ja]=KBabel 句読点検証
++Name[ka]=პუნქტუაციის დამმოწმებელი KBabel-სთვის
+ Name[kk]=KBabel-дың тыныс белгілерін тексеруі
+ Name[lt]=KBabel skyrybos patikros įrankis
+ Name[nb]=Sjekk tegnsetting i KBabel
+@@ -71,6 +72,7 @@
+ Comment[is]=Athuga greinamerki
+ Comment[it]=Controlla punteggiatura
+ Comment[ja]=句読点を検証
++Comment[ka]=პუნქტუაციის შემოწმება
+ Comment[kk]=Тыныс белгілерін тексеру
+ Comment[lt]=Tikrinti skyrybą
+ Comment[nb]=Sjekk tegnsetting
+--- kbabel/datatools/regexp/kbabel_regexptool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/regexp/kbabel_regexptool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -21,6 +21,7 @@
+ Name[is]=Katalónsk málfræði
+ Name[it]=Grammatica catalana
+ Name[ja]=カタロニア文節
++Name[ka]=კატალანური გრამატიკა
+ Name[kk]=Каталон грамматикасы
+ Name[lt]=Katalonų gramatika
+ Name[nb]=Katalansk grammatikk
+@@ -65,6 +66,7 @@
+ Comment[is]=Athuga þýdd skilaboð með reglulegum segðum
+ Comment[it]=Controlla i messaggi tradotti con un insieme di espressioni regolari
+ Comment[ja]=正規表現を用いて翻訳メッセージを検証
++Comment[ka]=რეგულარული გამოსახულებების შეცველი ნათარგმნი შეტყობინებების შემოწმება
+ Comment[kk]=Аударылған жазуларды үлгі өрнегімен тексеру
+ Comment[lt]=Tikrinti išverstus pranešimus panaudojant įprastųjų išraiškų rinkinį
+ Comment[nb]=Sjekk oversatte strenger med et sett regulære uttrykk
+--- kbabel/datatools/whitespace/kbabel_whitespacetool.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/datatools/whitespace/kbabel_whitespacetool.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -20,6 +20,7 @@
+ Name[is]=Staðfestir fyrir KBabel fyrir strengi þýdda sem bil
+ Name[it]=Convalidatore delle stringhe tradotte con spazi bianchi per KBabel
+ Name[ja]=KBabel 空白として翻訳された文字列を検索
++Name[ka]=სტრიქონი ნათარგმნია როგორც Whitespace დამმოწმებელი KBabel-სთვის
+ Name[kk]=KBabel-дың бос орын аудармаларын тексеруі
+ Name[lt]=KBabel eilučių, išverstų tuščiais tarpais, patikros įrankis
+ Name[nb]=Se etter tomme strenger i KBabel
+@@ -68,6 +69,7 @@
+ Comment[is]=Þýðingar bila
+ Comment[it]=Traduzioni con spazi bianchi
+ Comment[ja]=空白翻訳文字列を検索
++Comment[ka]=Whitespace მთარგმნელები
+ Comment[kk]=Бос орын аудармалары
+ Comment[lt]=Tuščių eilučių patikra
+ Comment[ms]=Terjemahan Ruang Kosong
+--- kbabel/catalogmanager/catalogmanager.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/catalogmanager/catalogmanager.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -23,6 +23,7 @@
+ Name[is]=KBabel Þýðingarstjóri
+ Name[it]=Gestore dei cataloghi di KBabel
+ Name[ja]=KBabel カタログマネージャ
++Name[ka]=KBabel-ის კატალოგის მმართველი
+ Name[kk]=KBabel каталог менеджері
+ Name[lt]=KBabel katalogo tvarkytuvė
+ Name[nb]=KBabel-katalogbehandler
+@@ -66,6 +67,7 @@
+ GenericName[is]=Þýðingarforrit - Þýðingarstjóri
+ GenericName[it]=Gestore dei cataloghi di uno strumento di traduzione
+ GenericName[ja]=翻訳ツール カタログマネージャ
++GenericName[ka]=კატალოგის მმართველის სათარგმნი ხელსაწყო
+ GenericName[kk]=Аудару құралының Каталог менеджері
+ GenericName[lt]=Vertimo įrankio katalogo tvarkytuvė
+ GenericName[nb]=Verktøy for håndtering av oversettelseskataloger
+--- kbabel/filters/gettext/kbabel_gettext_import.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/filters/gettext/kbabel_gettext_import.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Name[is]=KBabel GNU Gettext innflutningssía
+ Name[it]=Filtro di importazione di GNU Gettext per KBabel
+ Name[ja]=KBabel GNU Gettext インポートフィルタ
++Name[ka]=KBabel GNU Gettext იმპორის ფილტრი
+ Name[kk]=KBabel GNU Gettext импорттау сүзгісі
+ Name[lt]=KBabel GNU Gettext importavimo filtras
+ Name[ms]=Penapis Import KBabel GNU Gettext
+--- kbabel/filters/gettext/kbabel_gettext_export.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/filters/gettext/kbabel_gettext_export.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Name[is]=KBabel GNU Gettext útflutningssía
+ Name[it]=Filtro di esportazione di GNU Gettext per KBabel
+ Name[ja]=KBabel GNU Gettext エクスポートフィルタ
++Name[ka]=KBabel GNU Gettext ექსპორტის ფილტრი
+ Name[kk]=KBabel GNU Gettext экспорттау сүзгісі
+ Name[lt]=KBabel GNU Gettext eksportavimo filtras
+ Name[ms]=Penapis Eksport KBabel GNU Gettext 
+--- kbabel/filters/xliff/kbabel_xliff_export.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/filters/xliff/kbabel_xliff_export.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -21,6 +21,7 @@
+ Name[is]=KBabel XLIFF útfluttningssía
+ Name[it]=Filtro di esportazione XLIFF per KBabel
+ Name[ja]=KBabel XLIFF エクスポートフィルタ
++Name[ka]=KBabel XLIFF ექსპორტის ფილტრი
+ Name[kk]=KBabel XLIFF экспорттау сүзгісі
+ Name[lt]=KBabel XLIFF eksportavimo filtras
+ Name[nb]=XLIFF-eksportfilter for KBabel
+--- kbabel/filters/xliff/kbabel_xliff_import.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/filters/xliff/kbabel_xliff_import.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -21,6 +21,7 @@
+ Name[is]=KBabel XLIFF innfluttningssía
+ Name[it]=Filtro di importazione di XLIFF per KBabel
+ Name[ja]=KBabel XLIFF インポートフィルタ
++Name[ka]=KBabel XLIFF იმპორის ფილტრი
+ Name[kk]=KBabel XLIFF импорттау сүзгісі
+ Name[lt]=KBabel XLIFF importavimo filtras
+ Name[nb]=XLIFF-importfilter for KBabel
+--- kbabel/filters/linguist/kbabel_linguist_import.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/filters/linguist/kbabel_linguist_import.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Name[is]=KBabel Linguist innflutningssía
+ Name[it]=Filtro di importazione di Linguist per KBabel
+ Name[ja]=KBabel Linguist インポートフィルタ
++Name[ka]=KBabel Linguist იმპორის ფილტრი
+ Name[kk]=KBabel лингвистік импорттау сүзгісі
+ Name[lt]=KBabel Linguist importavimo filtras
+ Name[ms]=Penapis Import KBabel Linguist
+--- kbabel/filters/linguist/kbabel_linguist_export.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/filters/linguist/kbabel_linguist_export.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Name[is]=KBabel Linguist útflutningssía
+ Name[it]=Filtro di esportazione di Linguist per KBabel
+ Name[ja]=KBabel Linguist エクスポートフィルタ
++Name[ka]=KBabel Linguist ექსპორტის ფილტრი
+ Name[kk]=KBabel лингвистік экспорттау сүзгісі
+ Name[lt]=KBabel Linguist eksportavimo filtras
+ Name[ms]=Penapis Eksport KBabel Linguist
+--- kbabel/addons/preview/pothumbnail.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/addons/preview/pothumbnail.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -30,6 +30,7 @@
+ Name[is]=Þýðingaskrár
+ Name[it]=Cataloghi di messaggi
+ Name[ja]=メッセージカタログ
++Name[ka]=შეტყობინებათა კატალოგი
+ Name[kk]=Gettext жазулар каталогы
+ Name[lt]=Pranešimų katalogai
+ Name[lv]=Ziņojumu Katalogs
+--- kbabel/addons/kfile-plugins/kfile_po.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbabel/addons/kfile-plugins/kfile_po.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -29,6 +29,7 @@
+ Name[is]=Upplýsingar um þýðingaskrár
+ Name[it]=Informazioni sul catalogo
+ Name[ja]=カタログ情報
++Name[ka]=კატალოგის ინფორმაცია
+ Name[kk]=Каталог мәліметі
+ Name[lt]=Katalogo informacija
+ Name[ms]=Maklumat Katalog
+--- umbrello/umbrello/umbrello.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ umbrello/umbrello/umbrello.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -32,6 +32,7 @@
+ GenericName[hu]=UML-modellező
+ GenericName[it]=Modellatore UML
+ GenericName[ja]=UML モデラー
++GenericName[ka]=UML მოდელერი
+ GenericName[kk]=UML үлгілегіші
+ GenericName[ms]=Pemodel UML
+ GenericName[nb]=UML-modelleringsprogram
+--- umbrello/umbrello/x-umbrello.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ umbrello/umbrello/x-umbrello.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -28,6 +28,7 @@
+ Comment[is]=Umbrello UML Modeller Skrá
+ Comment[it]=File del modellatore UML Umbrello
+ Comment[ja]=Umbrello UML モデラーファイル
++Comment[ka]=Umbrello UML მოდელერის ფაილი
+ Comment[kk]=Umbrello UML үлгілегішінің файлы
+ Comment[lt]=Umbrello UML Modeller byla
+ Comment[ms]=Fail Pemodel Umbrello UML
+--- kdeaccounts-plugin/kdeaccountsplugin.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kdeaccounts-plugin/kdeaccountsplugin.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -18,6 +18,7 @@
+ Name[is]=KDE geymslu aðgangur
+ Name[it]=Account del deposito di KDE
+ Name[ja]=KDE リポジトリアカウント
++Name[ka]=KDE რეპოზიტორიის ანგარიში
+ Name[kk]=KDE қоймасының тіркелгілері
+ Name[lt]=KDE saugyklos paskyros
+ Name[nb]=KDE-lagerkontoer
+--- scheck/scheck.themerc	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ scheck/scheck.themerc	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -25,6 +25,7 @@
+ Comment[is]=Þróunarstíll til að leita að árekstrum milli flýtilykla og stílaleiðarvísa
+ Comment[it]=Stile di sviluppo per cercare conflitti nei tasti acceleratori e negli stili
+ Comment[ja]=アクセラレータやスタイルガイドの衝突を探すための開発スタイル
++Comment[ka]=განვითარების სტილი ძიების აქსელერატორისთვის და სტილთა გიდის კონფლიქტები
+ Comment[kk]=Акселератор мен жазу стилінің қайшылықтарын іздейтін жобалау стилі
+ Comment[ms]=Gaya pembangunan untuk cari pintasan dan gaya pengurusan konflik
+ Comment[nb]=Utviklingsstil for å finne konflikter med retningslinjene og mellom snarveistaster
+--- kcachegrind/kcachegrind/kcachegrind.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kcachegrind/kcachegrind/kcachegrind.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -33,6 +33,7 @@
+ GenericName[is]=Myndrænt viðmót á afkastakönnuð
+ GenericName[it]=Interfaccia a profiler
+ GenericName[ja]=プロファイラフロントエンド
++GenericName[ka]=პროფილერის Frontend
+ GenericName[kk]=Профильдеткіштің интерфейсі
+ GenericName[lt]=Profiliuoklio naudotojo sąsaja
+ GenericName[nb]=Grensesnitt for profilvisning
+@@ -77,6 +78,7 @@
+ Comment[is]=Sjónræn framsetning gagna úr afkastakönnun
+ Comment[it]=Visualizzazione dei dati di profiling delle prestazioni
+ Comment[ja]=パフォーマンスプロファイルデータを視覚化
++Comment[ka]=წარმადობის მაპროფფილებელი მონაცემების ვიზუალიზაცია
+ Comment[kk]=Деректерді профильдеудің визуализациясы
+ Comment[lt]=Veikimo profiliavimo duomenų vizualizacija
+ Comment[nb]=Vis informasjon om ytelse.
+--- kcachegrind/kcachegrind/x-kcachegrind.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kcachegrind/kcachegrind/x-kcachegrind.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -19,6 +19,7 @@
+ Comment[is]=Niðurstaða afkastakönnunar á Cachegrind/Callgrind
+ Comment[it]=Dump del profilo di Cachegrind/Callgrind
+ Comment[ja]=Callgrind/Callgrind プロファイルダンプ
++Comment[ka]=Cachegrind/Callgrind პროფილის დამპი
+ Comment[kk]=Cachegrind/Callgrind профилінің дампы
+ Comment[nds]=Cachegrind/Callgrind-Profilutgaav
+ Comment[ne]=Cachegrind/Callgrind प्रोफाइल डम्प
+--- cervisia/updateview.h	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ cervisia/updateview.h	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -69,6 +69,8 @@
+      */
+     bool isUnfoldingTree() const;
+ 
++    void replaceItem(QListViewItem*, QListViewItem*);
++
+ signals:
+     void fileOpened(QString filename);
+     
+--- cervisia/ChangeLog	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ cervisia/ChangeLog	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -1,3 +1,8 @@
++2008-06-18  André Wöbbeking  <Woebbeking@kde.org>
++
++	* Fix BR #164216:
++	  Fixed crash when updating the status after adding a directory to a repository.
++
+ 2007-09-11  André Wöbbeking  <Woebbeking@kde.org>
+ 
+ 	* Fix BR #148162:
+--- cervisia/updateview.cpp	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ cervisia/updateview.cpp	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -187,6 +187,16 @@
+ }
+ 
+ 
++// updates internal data
++void UpdateView::replaceItem(QListViewItem* oldItem,
++                             QListViewItem* newItem)
++{
++    const int index(relevantSelection.find(oldItem));
++    if (index >= 0)
++        relevantSelection.replace(index, newItem);
++}
++
++
+ void UpdateView::unfoldSelectedFolders()
+ {
+     QApplication::setOverrideCursor(waitCursor);
+--- cervisia/version.h	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ cervisia/version.h	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -1,2 +1,2 @@
+-#define CERVISIA_VERSION "2.4.9"
++#define CERVISIA_VERSION "2.4.10"
+ 
+--- cervisia/eventsrc	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ cervisia/eventsrc	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -22,6 +22,7 @@
+ Name[is]=CVS innsetningu lokið
+ Name[it]=Processo di consegna a CVS eseguito
+ Name[ja]=CVS コミットは終了しました。
++Name[ka]=CVS შესრულებული დავალება შესრულდა
+ Name[kk]=CVS тапсыру жұмысын аяқтады
+ Name[lt]=CVS įkėlimo veiksmas atliktas
+ Name[nb]=CVS-innmeldingsjobb er gjort
+@@ -62,6 +63,7 @@
+ Comment[is]=CVS innsetningu lokið
+ Comment[it]=Un processo di deposito su CVS è stato eseguito
+ Comment[ja]=CVS コミットは終了しました。
++Comment[ka]=CVS შესრულებული დავალება შესრულდა
+ Comment[kk]=CVS тапсыру жұмысы аяқталды
+ Comment[lt]=CVS įkėlimo veiksmas atliktas
+ Comment[nb]=En CVS-innmeldingsjobb er utført
+--- cervisia/updateview_items.cpp	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ cervisia/updateview_items.cpp	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -231,6 +231,9 @@
+         }
+         else
+         {
++            // avoid dangling pointers in the view
++            updateView()->replaceItem(existingItem, item);
++
+             delete existingItem;
+             *result.first = item;
+         }
+@@ -792,8 +795,15 @@
+             UpdateItem* item = dirItem->findItem(dirName);
+             if (isFileItem(item))
+             {
++                // this happens if you
++                // - add a directory outside of Cervisia
++                // - update status (a file item is created for the directory)
++                // - add new directory in Cervisia
++                // - update status
+                 kdDebug(8050) << "findOrCreateDirItem(): file changed to dir " << dirName << endl;
+-                delete item;
++
++                // just create a new dir item, createDirItem() will delete the
++                // file item and update the m_itemsByName map
+                 item = 0;
+             }
+ 
+--- cervisia/Makefile.am	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ cervisia/Makefile.am	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -1,4 +1,4 @@
+-CERVISIA_VERSION = 2.4.9
++CERVISIA_VERSION = 2.4.10
+ INCLUDES = -I./cvsservice -D_BSD_SOURCE $(all_includes)
+ 
+ SUBDIRS = cvsservice . pics
+--- cervisia/cvsservice/cvsservice.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ cervisia/cvsservice/cvsservice.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -49,6 +49,7 @@
+ Comment[is]=DCOP þjónusta sem veitir viðmót á cvs
+ Comment[it]=Un servizio DCOP che fornisce un'interfaccia a cvs
+ Comment[ja]=CVS インターフェースを提供する DCOP サービス
++Comment[ka]=DCOP სერვისი, რომელიც cvs-ს ინტერფეისს შეიცავს
+ Comment[kk]=CVS интерфейсін қамтамасыз ететін DCOP қызметі
+ Comment[lt]=DCOP tarnyba, pateikianti cvs sąsają
+ Comment[nb]=En DCOP-tjeneste som tilbyr et grensesnitt mot cvs
+--- kfile-plugins/ts/kfile_ts.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kfile-plugins/ts/kfile_ts.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Name[is]=Qt Linguist skráarupplýsingar
+ Name[it]=Informazioni file per Qt Linguist
+ Name[ja]=Qt Linguist ファイル情報
++Name[ka]=Qt Linguist ფაილის ინფორმაცია
+ Name[kk]=Qt Linguist файл мәліметі
+ Name[lt]=Qt Linguist bylos informacija
+ Name[nb]=Informasjon om Qt Linguist-fil
+--- kfile-plugins/c++/kfile_cpp.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kfile-plugins/c++/kfile_cpp.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -28,6 +28,7 @@
+ Name[is]=C++ upplýsingar
+ Name[it]=Informazioni C++
+ Name[ja]=C++ 情報
++Name[ka]=C++ ინფორმაცია
+ Name[kk]=C++ мәліметі
+ Name[lt]=C++ Informacija
+ Name[ms]=Info C++
+--- kfile-plugins/c++/kfile_h.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kfile-plugins/c++/kfile_h.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -25,6 +25,7 @@
+ Name[is]=C/C++ haus upplýsingar
+ Name[it]=Informazioni intestazioni C/C++
+ Name[ja]=C/C++ ヘッダ情報
++Name[ka]=C/C++ ზედა კოლონტიტულის ინფორმაცია
+ Name[kk]=C/C++ айдар мәліметі
+ Name[lt]=C/C++ antraščių informacija
+ Name[ms]=Info Pengepala C/C++
+--- kuiviewer/kuiviewer.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kuiviewer/kuiviewer.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -29,6 +29,7 @@
+ GenericName[is]=Qt Designer UI skráaskoðari
+ GenericName[it]=Visualizzatore per file UI di Qt Designer
+ GenericName[ja]=Qt デザイナー UI ファイルビューア
++GenericName[ka]=Qt დიზაინერის UI ფაილთა მხილველი
+ GenericName[kk]=Qt Designer пайдаланушы интерфейсінің файлдарын қарау құралы
+ GenericName[lt]=Qt Designer naudotojo sąsajos bylų žiūryklė
+ GenericName[nb]=Qt Designer UI-filviser
+--- kuiviewer/designerthumbnail.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kuiviewer/designerthumbnail.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -24,6 +24,7 @@
+ Name[is]=Qt Designer skrár
+ Name[it]=File di Qt Designer
+ Name[ja]=Qt デザイナーファイル
++Name[ka]=Qt დიზაინერის ფაილები
+ Name[kk]=Qt Designer файлы
+ Name[lt]=Qt Designer bylos
+ Name[nb]=Qt Designer-filer
+--- kbugbuster/kbugbuster.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbugbuster/kbugbuster.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -32,6 +32,7 @@
+ GenericName[is]=KDE villustjórnun
+ GenericName[it]=Gestione bug di KDE
+ GenericName[ja]=KDE バグマネージメント
++GenericName[ka]=KDE ბზიკთა მართვა
+ GenericName[kk]=KDE қателерді басқару
+ GenericName[lt]=KDE ydų tvarkymas
+ GenericName[lv]=KDE Kļūdu Pārvalde
+--- kbugbuster/kresources/bugzilla.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kbugbuster/kresources/bugzilla.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -20,6 +20,7 @@
+ Name[is]=Bugzilla verklisti
+ Name[it]=Lista delle cosa da fare di Bugzilla
+ Name[ja]=BugzillaToDo リスト
++Name[ka]=Bugzilla-ს დავალებათა სია
+ Name[kk]=Bugzilla To-do тізімі
+ Name[lt]=Bugzilla darbų sąrašas
+ Name[nb]=Bugzilla-huskeliste
+--- kioslave/svn/ksvnd/ksvnd.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kioslave/svn/ksvnd/ksvnd.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -21,6 +21,7 @@
+ Name[is]=KDED Subversion eining
+ Name[it]=Modulo Subversion di KDED
+ Name[ja]=KDED Subversion モジュール
++Name[ka]=KDED Subversion მოდული
+ Name[kk]=KDED Subversion қызмет модулі
+ Name[lt]=KDED Subversion modulis
+ Name[nb]=KDED Subversion-modul
+--- kioslave/svn/svnhelper/subversion_toplevel.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kioslave/svn/svnhelper/subversion_toplevel.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -25,8 +25,10 @@
+ Name[is]=Uppfæra SVN
+ Name[it]=Aggiornamento SVN
+ Name[ja]=SVN アップデート
++Name[ka]=SVN განახლება
+ Name[kk]=SVN жаңарту
+ Name[lt]=SVN atnaujinti
++Name[ms]=Kemaskini SVN
+ Name[nb]=SVN oppdater
+ Name[nds]=SVN-Archiv opfrischen
+ Name[ne]=एसभीएन अद्यावधिक
+@@ -69,6 +71,7 @@
+ Name[is]=Setja inn í SVN
+ Name[it]=Deposito SVN
+ Name[ja]=SVN コミット
++Name[ka]=SVN შესრულება
+ Name[kk]=SVN тапсыру
+ Name[lt]=SVN išsiųsti
+ Name[nb]=SVN meld inn
+--- kioslave/svn/svnhelper/subversion.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kioslave/svn/svnhelper/subversion.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -33,6 +33,7 @@
+ Name[is]=Bæta við geymslu
+ Name[it]=Aggiungi al deposito
+ Name[ja]=リポジトリへ追加
++Name[ka]=რეპოზიტორიისთვის დმატება
+ Name[kk]=Қоймасына қосу
+ Name[lt]=Įdėti į saugyklą
+ Name[nb]=Legg til lager
+@@ -79,6 +80,7 @@
+ Name[is]=Eyða frá geymslu
+ Name[it]=Elimina dal deposito
+ Name[ja]=リポジトリから削除
++Name[ka]=რეპოზირტორიიდან წაშლა
+ Name[kk]=Қоймасынан өшіру
+ Name[lt]=Pašalinti iš saugyklos
+ Name[nb]=Slett fra lager
+@@ -123,6 +125,7 @@
+ Name[is]=Afturkalla staðbundnar breytingar
+ Name[it]=Annulla i cambiamenti locali
+ Name[ja]=ローカルでの変更を元に戻す
++Name[ka]=ლოკალური ცვლილებების შებრუნება
+ Name[kk]=Жергілікті өзгерістерінен қайту
+ Name[lt]=Atšaukti vietinius pakeitimus
+ Name[nb]=Tilbakestill lokale endringer
+@@ -164,6 +167,7 @@
+ Comment[is]=Fjarlægja allar breytingar sem voru gerðar hér. Athugið - það er ekki hægt að afturkalla þetta.
+ Comment[it]=Rimuovi ogni cambiamento fatto localmente. Attenzione: non si può tornare indietro.
+ Comment[ja]=ローカルで行われた変更を削除します。注意: この操作は元に戻せません。
++Comment[ka]=ნებისმიერი ლოკალურად გაკეთებული ცვლილებების წაშლა. გაფრთხილება - ამის უკუქცევა შეუძლებელია.
+ Comment[kk]=Жергілікті (яғни тапсырылмаған) өзгерістерден айну. Абайлаңыз - бұл амалдан қайта алмайсыз.
+ Comment[lt]=Panaikinti visus vietoje atliktus pakeitimus. Perspėjimas: to nebebus galima atšaukti.
+ Comment[nb]=Fjern alle endringer som er gjort lokalt. MERK – dette kan ikke angres.
+@@ -209,6 +213,7 @@
+ Name[is]=Endurnefna...
+ Name[it]=Rinomina...
+ Name[ja]=名前変更...
++Name[ka]=სახელის გადარქმევა...
+ Name[kk]=Қайта атау...
+ Name[lt]=Pervadinti...
+ Name[nb]=Endre navn …
+@@ -250,6 +255,7 @@
+ Comment[is]=Endurnefna skrá hér og í geymslunni. Notist heldur við þetta í stað þess að bæta við og eyða til að endurnefna skrá.
+ Comment[it]=Rinomina un file localmente e nel deposito. Usa questo invece di aggiungere e rimuovere un file per rinominarlo.
+ Comment[ja]=ローカルとリポジトリのファイルを改名します。名前の変更の際に追加と削除をしないで、この方法を使用してください。
++Comment[ka]=ფაილის სახელის გადარქმევა ლოკალურად და რეპოზიტორიასი.  დამატების და წაშლის ნაცვლად ეს გამოიყენეთ.
+ Comment[kk]=Файлдың жергілікті де, қоймасындағы да атауын өзгерту. Өшіріп қайта қосудан гөрі осыны қолданған дұрыс.
+ Comment[lt]=Pervadinti bylą vietoje ir saugykloje. Naudokite šią parinktį užuot ištrindami ir įrašydami nauju vardu norimą pervadinti bylą.
+ Comment[nb]=Gi en fil nytt navn lokalt og i arkivet. Bruk dette heller enn å slette og legge inn på nytt for å endre navn på en fil.
+@@ -292,6 +298,7 @@
+ Name[is]=Flytja inn geymslu
+ Name[it]=Importa deposito
+ Name[ja]=リポジトリのインポート
++Name[ka]=რეპოზიტორიის იმპორტი
+ Name[kk]=Қоймасына импорттау
+ Name[lt]=Importuoti saugyklą
+ Name[nb]=Importer lager
+@@ -333,6 +340,7 @@
+ Comment[is]=Setja möppu í geymslu sem finnst fyrir til að setja hana undir breytingarstjórn.
+ Comment[it]=Metti una cartella in un deposito esistente per metterla sotto controllo di revisione.
+ Comment[ja]=既存のリポジトリにフォルダを置き、リビジョン管理の対象とします。
++Comment[ka]=რევიზიის კონტროლისთვის ჩადეთ საქაღალდე არსებულ რეპოზიტორიაში.
+ Comment[kk]=Қапшықты қоймасына, нұсқалар есебін қадағалап, көшіру.
+ Comment[lt]=Įdėti aplanką į egzistuojančią saugyklą ir įjungti jį į keitimų sekimo sistemą.
+ Comment[nb]=Legg mappe inn i et eksisterende arkiv slik at det får revisjonskontroll.
+@@ -374,6 +382,7 @@
+ Name[is]=Ná í frá geymslu...
+ Name[it]=Ritira dal deposito...
+ Name[ja]=リポジトリからチェックアウト...
++Name[ka]=რეპოზიტორიიდან ამონიშვნა...
+ Name[kk]=Қоймасынан көшіріп алу...
+ Name[lt]=Atsisiųsti iš saugyklos...
+ Name[nb]=Sjekk ut fra lager …
+@@ -415,6 +424,7 @@
+ Comment[is]=Ná í skrár frá geymslu og setja í þessa möppu.
+ Comment[it]=Ritira i file da un deposito esistente in questa cartella.
+ Comment[ja]=既存のリポジトリから、このディレクトリへファイルをチェックアウトします。
++Comment[ka]=არსებული რეპოზიტორიიდან ფაილები ამ საქაღალდეში ამონიშნეთ.
+ Comment[kk]=Файлдарды қоймасынан көрсетілген қапшыққа көшіріп алу.
+ Comment[lt]=Atsisiųsti bylas iš egzistuojančios saugyklos į šį aplanką.
+ Comment[nb]=Sjekk ut filer fra et arkiv inn i denne mappa
+@@ -457,6 +467,7 @@
+ Name[is]=Skipta...
+ Name[it]=Passa...
+ Name[ja]=スイッチ...
++Name[ka]=გადრთვა...
+ Name[kk]=Ауысу...
+ Name[lt]=Perjungti...
+ Name[nb]=Bytt …
+@@ -497,6 +508,7 @@
+ Comment[is]=Skipta núverandi vinnuafriti yfir í aðra grein
+ Comment[it]=Passa la copia di lavoro a un altro ramo
+ Comment[ja]=作業中のコピーを他のブランチへ切り換えます。
++Comment[ka]=მიმდინარე სამუშაო ასლის სხვა ტოტზე გაკეთება
+ Comment[kk]=Жұмыс көшірмені жобаның басқа саласына (яғни қоймасына) ауыстыру
+ Comment[lt]=Perjungti esamą vietinį saugyklos aplanką į kitą atšaką
+ Comment[nb]=Byt arbeidskopien til en annen gren
+@@ -542,6 +554,7 @@
+ Name[is]=Bræða saman...
+ Name[it]=Fondi...
+ Name[ja]=マージ...
++Name[ka]=შერწყმა...
+ Name[kk]=Біріктіру...
+ Name[lt]=Sulieti...
+ Name[nb]=Flett …
+@@ -582,6 +595,7 @@
+ Comment[is]=Bræða saman breytingar milli þessarar og annarar greinar
+ Comment[it]=Fondi i cambiamenti tra questo e un altro ramo
+ Comment[ja]=このブランチと他のブランチの間で、変更をマージします。
++Comment[ka]=ამ და სხვა ტოტების ცვლილებების შერწყმა
+ Comment[kk]=Осы және өзге салалардағы өзгерістерін біріктіру
+ Comment[lt]=Sulieti pakeitimus tarp šios ir kitos atšakos
+ Comment[nb]=Flett sammen endringer mellom denne og en annen gren
+@@ -623,6 +637,7 @@
+ Name[is]=Kenna um...
+ Name[it]=Traccia...
+ Name[ja]=ブレイム...
++Name[ka]=ბრალი...
+ Name[kk]=Кім екен...
+ Name[lt]=Nustatyti...
+ Name[nb]=Skyld på …
+@@ -662,6 +677,7 @@
+ Comment[is]=Sjá hver skrifaði hvaða línu og í hvaða útgáfu
+ Comment[it]=Vedi chi ha scritto ogni riga del file e in quale revisione
+ Comment[ja]=誰がどのリビジョンの、どのファイルの、どの行を書いたのかを見ます。
++Comment[ka]=ნახეთ თუ ვინ ჩაწერა ფაილის ყოველი ხაზი და რომელ რევიზიაში
+ Comment[kk]=Файлдағы жолды кім және қай нұсқасында жазғанын білу
+ Comment[lt]=Patikrinti, kas parašė kiekvieną eilutę ir kurio keitimo metu tai buvo atlikta
+ Comment[nb]=Se hvem som skrev hver linje i fila og i hvilken revisjon
+@@ -705,6 +721,7 @@
+ Name[is]=Búa til plástur...
+ Name[it]=Crea correzione...
+ Name[ja]=パッチの作成...
++Name[ka]=ბებკის შექმნა...
+ Name[kk]=Жамауды құру...
+ Name[lt]=Kurti pataisymą...
+ Name[nb]=Lag lapp …
+@@ -752,6 +769,7 @@
+ Name[is]=Flytja út...
+ Name[it]=Esporta...
+ Name[ja]=エクスポート...
++Name[ka]=ექსპორტი...
+ Name[kk]=Экспорттау...
+ Name[lt]=Eksportuoti...
+ Name[nb]=Eksporter …
+@@ -793,6 +811,7 @@
+ Comment[is]=Ná í afrit af tré án útgáfunúmers frá geymslu
+ Comment[it]=Ritira una copia senza versione di un albero da un deposito
+ Comment[ja]=リポジトリから非バージョン管理ツリーとしてチェックアウトします。
++Comment[ka]=რეპოზიტტორიიდან ხის უვერსიო ასლის შემოწმება
+ Comment[kk]=Жоба бұтағын қоймасынан, нұсқалар есебін қадағалауынан тыс көшіріп алу
+ Comment[lt]=Atsisiųsti bylas iš egzistuojančios saugyklos be keitimų sekimo.
+ Comment[nb]=Sjekk ut en kopi av et tre uten versjon fra et lager
+@@ -834,8 +853,10 @@
+ Name[is]=Bera saman (staðbundið)
+ Name[it]=Differenza (locale)
+ Name[ja]=Diff (ローカル)
++Name[ka]=Diff (ლოკალური)
+ Name[kk]=Жергілікті өзгерістер
+ Name[lt]=Diff (vietinis)
++Name[ms]=Diff (tempatan)
+ Name[nb]=Diff (lokal)
+ Name[nds]=Verscheel (lokaal)
+ Name[ne]=Diff (स्थानीय)
+@@ -875,6 +896,7 @@
+ Comment[is]=Sýna staðbundnar breytingar frá seinustu uppfærslu
+ Comment[it]=Mostra i cambiamenti locali dall'ultimo aggiornamento
+ Comment[ja]=最終アップデートからローカルにどのような変更があったのかを表示します。
++Comment[ka]=უკანასკნელი განახლების შემდეგ ლოკალური ცვლილებების ჩვენება
+ Comment[kk]=Қоймасына әлі тапсырылмаған жергілікті өзгерістерді көрсету
+ Comment[lt]=Rodyti vietinius pakeitimus nuo paskutinio atnaujinimo
+ Comment[nb]=Vis lokale endringer siden siste oppdatering
+--- kioslave/svn/svnhelper/apply_patch.desktop	(.../tags/KDE/3.5.9/kdesdk)	(revision 825572)
++++ kioslave/svn/svnhelper/apply_patch.desktop	(.../branches/KDE/3.5/kdesdk)	(revision 825572)
+@@ -26,6 +26,7 @@
+ Name[is]=Virkja plástur...
+ Name[it]=Applica correzione...
+ Name[ja]=パッチを適用...
++Name[ka]=ბებკის გააქტიურება...
+ Name[kk]=Жамауды қолдану...
+ Name[lt]=Pritaikyti pataisymą...
+ Name[nb]=Bruk lapp …
+@@ -68,6 +69,7 @@
+ Comment[is]=Virkja plásturinn á aðra möppu/skrá
+ Comment[it]=Applica la correzione a un'altra cartella o file
+ Comment[ja]=他のフォルダやファイルへパッチを適用します。
++Comment[ka]=ბებკის სხვა საქაღალდეზე/ფაილზე გააქტიურება
+ Comment[kk]=Басқа қапшық/файлға жамауды қолдану
+ Comment[lt]=Pritaikyti pataisymą kitam aplankui/bylai
+ Comment[nb]=Bruk lappen på en annen mappe/fil

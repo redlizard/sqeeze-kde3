@@ -1,0 +1,3 @@
+# This is from kdeinit black magic.
+libcvsservice0: shlib-missing-in-control-file libkdeinit_cvsaskpass.so for usr/lib/libkdeinit_cvsaskpass.so
+libcvsservice0: shlib-missing-in-control-file libkdeinit_cvsservice.so for usr/lib/libkdeinit_cvsservice.so

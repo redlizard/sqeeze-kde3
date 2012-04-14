@@ -1,0 +1,455 @@
+#DPATCHLEVEL=0
+--- kbabel/kbabel/kbabel.desktop	(revision 825572)
++++ kbabel/kbabel/kbabel.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KBabel
+ Name[af]=Kbabel
+ Name[eo]=Babelo-tradukilo
+--- kbabel/kbabeldict/kbabeldict.desktop	(revision 825572)
++++ kbabel/kbabeldict/kbabeldict.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KBabel Dictionary
+ Name[bg]=Речник - KBabel
+ Name[br]=Geriadur KBabel
+--- kbabel/kbabeldict/kbabeldict_module.desktop	(revision 825572)
++++ kbabel/kbabeldict/kbabeldict_module.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KBabelDictModule
+ Comment=Dictionary module for KBabelDict
+--- kbabel/kbabeldict/modules/pocompendium/pocompendium.desktop	(revision 825572)
++++ kbabel/kbabeldict/modules/pocompendium/pocompendium.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=PO Compendium Module for KBabelDict
+ Name[bg]=PO компендиум за KBabelDict
+--- kbabel/kbabeldict/modules/dbsearchengine/dbsearchengine.desktop	(revision 825572)
++++ kbabel/kbabeldict/modules/dbsearchengine/dbsearchengine.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Translation Database for KBabelDict
+ Name[bg]=БД с преводи за KBabelDict
+--- kbabel/kbabeldict/modules/dbsearchengine2/dbsearchengine2.desktop	(revision 825572)
++++ kbabel/kbabeldict/modules/dbsearchengine2/dbsearchengine2.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Translation Database v2 for KBabelDict
+ Name[bg]=БД с преводи v2 за KBabelDict
+--- kbabel/kbabeldict/modules/poauxiliary/poauxiliary.desktop	(revision 825572)
++++ kbabel/kbabeldict/modules/poauxiliary/poauxiliary.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Auxiliary PO Module for KBabelDict
+ Name[bg]=Помощен PO модул за KBabelDict
+--- kbabel/kbabeldict/modules/tmx/tmxcompendium.desktop	(revision 825572)
++++ kbabel/kbabeldict/modules/tmx/tmxcompendium.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=TMX Compendium Module for KBabelDict
+ Name[bg]=TMX компендиум за KBabelDict
+--- kbabel/commonui/kbabel_tool.desktop	(revision 825572)
++++ kbabel/commonui/kbabel_tool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KBabelTool
+ 
+--- kbabel/commonui/kbabel_validator.desktop	(revision 825572)
++++ kbabel/commonui/kbabel_validator.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KBabelValidator
+ Comment=KDE Data Tool for KBabel
+--- kbabel/common/kbabelfilter.desktop	(revision 825572)
++++ kbabel/common/kbabelfilter.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KBabelFilter
+ Comment=KBabel filter
+--- kbabel/datatools/not-translated/kbabel_nottranslatedtool.desktop	(revision 825572)
++++ kbabel/datatools/not-translated/kbabel_nottranslatedtool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Check for Translated Strings Containing English for KBabel
+ Name[bg]=Проверка за преведени низове, съдържащи английски - KBabel
+ Name[bs]=Provjera prevedenih stringova koji sadrže engleski za KBabel
+--- kbabel/datatools/xml/kbabel_xmltool.desktop	(revision 825572)
++++ kbabel/datatools/xml/kbabel_xmltool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=XML Validation for KBabel
+ Name[bg]=XML валидност - KBabel
+ Name[bs]=XML provjera za KBabel
+--- kbabel/datatools/length/kbabel_lengthtool.desktop	(revision 825572)
++++ kbabel/datatools/length/kbabel_lengthtool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Translated Message Length Validator for KBabel
+ Name[bg]=Валидност на дължината на преведените съобщения - KBabel
+ Name[bs]=Provjera dužine prevedenih poruka za KBabel
+--- kbabel/datatools/setfuzzy/kbabel_setfuzzytool.desktop	(revision 825572)
++++ kbabel/datatools/setfuzzy/kbabel_setfuzzytool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Toggle Fuzzy Tool for KBabel
+ Name[bs]=Fuzzy prekidač - alat za KBabel
+ Name[ca]=Eina per a KBabel que des/marca entrades inexactes
+--- kbabel/datatools/context/kbabel_contexttool.desktop	(revision 825572)
++++ kbabel/datatools/context/kbabel_contexttool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Translated Context Info Validation for KBabel
+ Name[bg]=Валидност на контекстната информация - KBabel
+ Name[bs]=Provjera prevedenih kontekst informacija za KBabel
+--- kbabel/datatools/arguments/kbabel_argstool.desktop	(revision 825572)
++++ kbabel/datatools/arguments/kbabel_argstool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Argument Validation for KBabel
+ Name[bg]=Валидност на аргументите - KBabel
+ Name[bs]=Provjera argumenata za KBabel
+--- kbabel/datatools/pluralforms/kbabel_pluralformstool.desktop	(revision 825572)
++++ kbabel/datatools/pluralforms/kbabel_pluralformstool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Plural Form Validation for KBabel
+ Name[bg]=Валидност на мн. форми - KBabel
+ Name[bs]=Provjera formi množine za KBabel
+--- kbabel/datatools/accelerators/kbabel_accelstool.desktop	(revision 825572)
++++ kbabel/datatools/accelerators/kbabel_accelstool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Accelerator Validation for KBabel
+ Name[bg]=Валидност на ускорител - KBabel
+ Name[bs]=Provjera akceleratora za KBabel
+--- kbabel/datatools/equations/kbabel_equationstool.desktop	(revision 825572)
++++ kbabel/datatools/equations/kbabel_equationstool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Equation Validation for KBabel
+ Name[bg]=Валидност на изравняването - KBabel
+ Name[bs]=Provjera jednakosti za KBabel
+--- kbabel/datatools/punctuation/kbabel_punctuationtool.desktop	(revision 825572)
++++ kbabel/datatools/punctuation/kbabel_punctuationtool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Punctuation Validation for KBabel
+ Name[bg]=Валидност на препинателните знаци - KBabel
+ Name[bs]=Provjera znakova interpunkcije za KBabel
+--- kbabel/datatools/regexp/kbabel_regexptool.desktop	(revision 825572)
++++ kbabel/datatools/regexp/kbabel_regexptool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Catalan Grammar
+ Name[br]=Yezhadur gatalaneg
+ Name[ca]=Gramàtica catalana
+--- kbabel/datatools/whitespace/kbabel_whitespacetool.desktop	(revision 825572)
++++ kbabel/datatools/whitespace/kbabel_whitespacetool.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=String Translated as Whitespace Validator for KBabel
+ Name[bg]=Валидност на низовете, преведени като интервали - KBabel
+ Name[bs]=Provjera stringova prevedenih kao blanko znaci za KBabel
+--- kbabel/catalogmanager/catalogmanager.desktop	(revision 825572)
++++ kbabel/catalogmanager/catalogmanager.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KBabel Catalog Manager
+ Name[bg]=Управление на каталога - KBabel
+ Name[br]=Merour katalogoù KBabel
+--- kbabel/filters/gettext/kbabel_gettext_import.desktop	(revision 825572)
++++ kbabel/filters/gettext/kbabel_gettext_import.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KBabel GNU Gettext Import Filter
+ Name[bg]=Филтър за импортиране на GNU Gettext - KBabel
+--- kbabel/filters/gettext/kbabel_gettext_export.desktop	(revision 825572)
++++ kbabel/filters/gettext/kbabel_gettext_export.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KBabel GNU Gettext Export Filter
+ Name[bg]=Филтър за експортиране на GNU Gettext - KBabel
+--- kbabel/filters/xliff/kbabel_xliff_export.desktop	(revision 825572)
++++ kbabel/filters/xliff/kbabel_xliff_export.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KBabel XLIFF Export Filter
+ Name[bg]=XLIFF филтър за експортиране - KBabel
+--- kbabel/filters/xliff/kbabel_xliff_import.desktop	(revision 825572)
++++ kbabel/filters/xliff/kbabel_xliff_import.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KBabel XLIFF Import Filter
+ Name[bg]=XLIFF филтър за импортиране - KBabel
+--- kbabel/filters/linguist/kbabel_linguist_import.desktop	(revision 825572)
++++ kbabel/filters/linguist/kbabel_linguist_import.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KBabel Linguist Import Filter
+ Name[bg]=Лингвистичен филтър за импортиране - KBabel
+--- kbabel/filters/linguist/kbabel_linguist_export.desktop	(revision 825572)
++++ kbabel/filters/linguist/kbabel_linguist_export.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KBabel Linguist Export Filter
+ Name[bg]=Лингвистичен филтър за експортиране - KBabel
+--- kbabel/addons/preview/pothumbnail.desktop	(revision 825572)
++++ kbabel/addons/preview/pothumbnail.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Message Catalogs
+ Name[af]=Boodskap Katalogusse
+--- kbabel/addons/kfile-plugins/kfile_po.desktop	(revision 825572)
++++ kbabel/addons/kfile-plugins/kfile_po.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Catalog Information
+ Name[af]=Katalogus Informasie
+--- umbrello/umbrello/umbrello.desktop	(revision 825572)
++++ umbrello/umbrello/umbrello.desktop	(revision 828771)
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=umbrello -caption "%c" %i %m
+ Icon=umbrello
+--- umbrello/umbrello/x-umbrello.desktop	(revision 825572)
++++ umbrello/umbrello/x-umbrello.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=MimeType
+ MimeType=application/x-uml
+ Icon=umbrellofile
+--- kompare/komparepart/komparepart.desktop	(revision 825572)
++++ kompare/komparepart/komparepart.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericComment=A part to graphically show the difference between 2 files
+ Name=KomparePart
+ Name[af]=K-vergelyk-deel
+--- kompare/kompareviewpart.desktop	(revision 825572)
++++ kompare/kompareviewpart.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=Kompare/ViewPart
+ X-KDE-Derived=KParts/ReadOnlyPart
+--- kompare/kompare.desktop	(revision 825572)
++++ kompare/kompare.desktop	(revision 828771)
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Name=Kompare
+ Name[af]=K-vergelyk
+--- kompare/komparenavtreepart/komparenavtreepart.desktop	(revision 825572)
++++ kompare/komparenavtreepart/komparenavtreepart.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KompareNavTreePart
+ Name[pl]=Komponent drzewa nawigacyjnego Kompare
+ Name[pt_BR]=Componente da árvore do Kompare
+--- kompare/komparenavigationpart.desktop	(revision 825572)
++++ kompare/komparenavigationpart.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=Kompare/NavigationPart
+ X-KDE-Derived=KParts/ReadOnlyPart
+--- kdeaccounts-plugin/kdeaccountsplugin.desktop	(revision 825572)
++++ kdeaccounts-plugin/kdeaccountsplugin.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Misc]
+-Encoding=UTF-8
+ Name=KDE Repository Accounts
+ Name[bg]=Сметки в хранилището на KDE
+ Name[ca]=Comptes del repositori de KDE
+--- kcachegrind/kcachegrind/kcachegrind.desktop	(revision 825572)
++++ kcachegrind/kcachegrind/kcachegrind.desktop	(revision 828771)
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kcachegrind -caption "%c" %i %m %u
+ MimeType=application/x-kcachegrind;
+--- kcachegrind/kcachegrind/x-kcachegrind.desktop	(revision 825572)
++++ kcachegrind/kcachegrind/x-kcachegrind.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Comment=Cachegrind/Callgrind Profile Dump
+ Comment[ca]=Resultat del anàlisis de Cachegrind/Callgring
+ Comment[cs]=Data profilace Cachegrind/Callgrind
+--- cervisia/cervisia.desktop	(revision 825572)
++++ cervisia/cervisia.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=CVS Frontend
+ GenericName[af]=Cvs Voorprogram
+ GenericName[az]=CVS Ara Üzü
+--- cervisia/cvsservice/cvsservice.desktop	(revision 825572)
++++ cervisia/cvsservice/cvsservice.desktop	(revision 828771)
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Type=Service
+-Encoding=UTF-8
+ Name=CvsService
+ Name[br]=Servij Cvs
+ Name[bs]=CvsServis
+--- kfile-plugins/ts/kfile_ts.desktop	(revision 825572)
++++ kfile-plugins/ts/kfile_ts.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Qt Linguist File Info
+ Name[bg]=Информация за файла Qt Linguist
+--- kfile-plugins/c++/kfile_cpp.desktop	(revision 825572)
++++ kfile-plugins/c++/kfile_cpp.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=C++ Info
+ Name[af]=C++ Inligting
+--- kfile-plugins/c++/kfile_h.desktop	(revision 825572)
++++ kfile-plugins/c++/kfile_h.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=C/C++ Header Info
+ Name[af]=C/C++ Opskrif Inligting
+--- kfile-plugins/diff/kfile_diff.desktop	(revision 825572)
++++ kfile-plugins/diff/kfile_diff.desktop	(revision 828771)
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Type=Service
+-Encoding=UTF-8
+ Name=Diff Stats
+ Name[af]=Diff Statistiek
+ Name[bg]=Статистика за разлики
+--- kuiviewer/kuiviewer.desktop	(revision 825572)
++++ kuiviewer/kuiviewer.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KUIViewer
+ Name[cy]=KUIGwelydd
+ Name[hi]=के-यूआई-व्यूअर
+--- kuiviewer/kuiviewer_part.desktop	(revision 825572)
++++ kuiviewer/kuiviewer_part.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KUIViewerPart
+ Name[hi]=के-यूआई-व्यूअर-पार्ट
+ Name[sv]=KUIviewer-del
+--- kuiviewer/designerthumbnail.desktop	(revision 825572)
++++ kuiviewer/designerthumbnail.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Qt Designer Files
+ Name[bg]=Файлове на дизайнера Qt
+--- kbugbuster/kbugbuster.desktop	(revision 825572)
++++ kbugbuster/kbugbuster.desktop	(revision 828771)
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kbugbuster -caption "%c" %i %m
+ Icon=kbugbuster
+--- kbugbuster/kresources/bugzilla.desktop	(revision 825572)
++++ kbugbuster/kresources/bugzilla.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Bugzilla To-do List
+ Name[bg]=Задачи (Bugzilla)
+ Name[ca]=Llista de pendents de Bugzilla
+--- kioslave/svn/ksvnd/ksvnd.desktop	(revision 825572)
++++ kioslave/svn/ksvnd/ksvnd.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KDED Subversion Module
+ Name[bg]=Модул KDED Subversion
+--- kioslave/svn/svnhelper/subversion_toplevel.desktop	(revision 825572)
++++ kioslave/svn/svnhelper/subversion_toplevel.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ ServiceTypes=inode/directory,all/all
+ X-KDE-Priority=TopLevel
+ 
+--- kioslave/svn/svnhelper/subversion.desktop	(revision 825572)
++++ kioslave/svn/svnhelper/subversion.desktop	(revision 828771)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ ServiceTypes=inode/directory,all/all
+ X-KDE-Submenu=Subversion
+ X-KDE-Submenu[fa]=زیرنسخه

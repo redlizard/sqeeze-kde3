@@ -1,0 +1,38 @@
+diff -Nru --exclude .svn /tmp/N672PlWfpN/kdesdk-3.5.9/scripts/adddebug /tmp/yr5pFI1Stg/kdesdk-3.5.9/scripts/adddebug
+--- kdesdk-3.5.9/scripts/adddebug	2005-09-10 10:21:02.000000000 +0200
++++ kdesdk-3.5.9/scripts/adddebug	2008-04-04 16:36:01.000000000 +0200
+@@ -10,7 +10,12 @@
+     -k) keep=1;;
+     -r) mxdp=;;
+     -n) ndebug=1;;
+-    *) echo -e "Usage: adddebug [-k] [-r] [-n]\n  -k: keep optimizations (removed by default)\n  -r: recursive (process all subdirectories)\n  -n: compile without NDEBUG and NO_DEBUG being defined (makes kdDebug calls work)"; exit 1;;
++    *) echo "\
++Usage: adddebug [-k] [-r] [-n]
++  -k: keep optimizations (removed by default)
++  -r: recursive (process all subdirectories)
++  -n: compile without NDEBUG and NO_DEBUG being defined (makes kdDebug calls work)"
++       exit 1;;
+   esac
+ done
+ 
+diff -Nru --exclude .svn /tmp/N672PlWfpN/kdesdk-3.5.9/scripts/create_svnignore /tmp/yr5pFI1Stg/kdesdk-3.5.9/scripts/create_svnignore
+--- kdesdk-3.5.9/scripts/create_svnignore	2006-05-22 20:08:05.000000000 +0200
++++ kdesdk-3.5.9/scripts/create_svnignore	2008-04-04 16:36:01.000000000 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#! /usr/bin/env bash
+ # This script makes a preliminary svn:ignore in the current dir by
+ # adding some standard stuff according to Makefile.am.
+ # License: GPL
+diff -Nru --exclude .svn /tmp/N672PlWfpN/kdesdk-3.5.9/scripts/svnaddcurrentdir /tmp/yr5pFI1Stg/kdesdk-3.5.9/scripts/svnaddcurrentdir
+--- kdesdk-3.5.9/scripts/svnaddcurrentdir	2005-09-10 10:21:02.000000000 +0200
++++ kdesdk-3.5.9/scripts/svnaddcurrentdir	2008-04-04 16:36:01.000000000 +0200
+@@ -17,7 +17,7 @@
+ echo
+ read -p "Add file $file to SVN ? (y/n) " answer rest
+ #if [ "$answer" != "y" ]; then echo $file; fi
+-if [ "$answer" == "y" ]; then svn add $file; fi
++if [ "$answer" = "y" ]; then svn add $file; fi
+ }
+ 
+ 

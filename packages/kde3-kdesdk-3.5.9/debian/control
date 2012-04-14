@@ -1,0 +1,372 @@
+Source: kde3-kdesdk
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Fathi Boudra <fabo@debian.org>, Josh Metzler <joshdeb@metzlers.org>, Sune Vuorela <debian@pusling.com>
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5), autotools-dev, gawk, gettext, pkg-config, kde3-kdelibs4-dev (>= 4:3.5.9), binutils-dev, bison, flex, kde3-kdepim-dev (>= 4:3.5.9), libapr1-dev, kde3-libkcal2-dev (>= 4:3.5.9), kde3-libktnef1-dev (>= 4:3.5.9), libsvn-dev
+Standards-Version: 3.7.3
+Homepage: http://www.kde.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdesdk
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdesdk
+
+Package: kde3-kdesdk
+Architecture: all
+Section: kde
+Depends: kde3-cervisia (>= ${source:Version}), kde3-kapptemplate (>= ${source:Version}), kde3-kbabel (>= ${source:Version}), kde3-kbugbuster (>= ${source:Version}), kde3-kcachegrind (>= ${source:Version}), kde3-kdesdk-kfile-plugins (>= ${source:Version}), kde3-kdesdk-kio-plugins (>= ${source:Version}) | kde3-kdesvn-kio-plugins, kde3-kdesdk-misc (>= ${source:Version}), kde3-kdesdk-scripts (>= ${source:Version}), kde3-kmtrace (>= ${source:Version}), kde3-kompare (>= ${source:Version}), kde3-kspy (>= ${source:Version}), kde3-kuiviewer (>= ${source:Version}), kde3-kunittest (>= ${source:Version}), kde3-poxml (>= ${source:Version}), kde3-umbrello (>= ${source:Version})
+Suggests: kde3-kcachegrind-converters, kde3-kbabel-dev, kde3-kdesdk-doc-html
+Description: software development kit from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes the KDE Software Development Kit, a collection
+ of applications and tools useful for developing KDE applications.
+
+Package: kde3-kdesdk-doc-html
+Architecture: all
+Section: doc
+Suggests: kde3-konqueror | www-browser, kde3-kdesdk
+Description: KDE Software Development Kit documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE SDK documentation converted to
+ HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/umbrello/. Documentation is provided for most
+ KDE SDK packages.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-cervisia
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter, kde3-kdesdk-doc-html
+Description: a graphical CVS front end for KDE
+ Cervisia is a KDE-based graphical front end for the CVS client.
+ .
+ As well as providing both common and advanced CVS operations, it offers
+ a variety of methods for graphically viewing information about the CVS
+ repository, your own sandbox and the relationships between different
+ versions of files.  A Changelog editor is also included and is coupled
+ with the commit dialog.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kapptemplate
+Architecture: all
+Section: devel
+Recommends: automake, kde3-kdelibs4-dev (>= 4:3.5.9)
+Description: creates a framework to develop a KDE application
+ KAppTemplate is a shell script that will create the necessary
+ framework to develop various KDE applications.  It takes care of the
+ autoconf/automake code as well as providing a skeleton and example of
+ what the code typically looks like.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kbabel
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Recommends: gettext
+Suggests: kde3-khelpcenter, kde3-kdesdk-doc-html
+Description: PO-file editing suite for KDE
+ This is a suite of programs for editing gettext message files (PO-files).
+ It is designed to help you translate fast and consistently.
+ .
+ This suite includes KBabel, CatalogManager and KBabelDict.  KBabel is an
+ advanced and easy to use PO-file editor with full navigational and editing
+ capabilities, syntax checking and statistics.  CatalogManager is a multi
+ functional catalog manager which allows you to keep track of many
+ PO-files at once.  KBabelDict is a dictionary to assist with searching
+ for common translations.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kbabel-dev
+Architecture: any
+Section: libdevel
+Depends: kde3-kbabel (= ${binary:Version}), kde3-kdelibs4-dev (>= 4:3.5.9)
+Description: PO-file editing suite for KDE (development files)
+ This is a suite of programs for editing gettext message files (PO-files).
+ It is designed to help you translate fast and consistently.
+ .
+ This suite includes KBabel, CatalogManager and KBabelDict.  KBabel is an
+ advanced and easy to use PO-file editor with full navigational and editing
+ capabilities, syntax checking and statistics.  CatalogManager is a multi
+ functional catalog manager which allows you to keep track of many
+ PO-files at once.  KBabelDict is a dictionary to assist with searching
+ for common translations.
+ .
+ This package contains the KBabel development files.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kbugbuster
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: a front end for the KDE bug tracking system
+ KBugBuster is a GUI front end for the KDE bug tracking system.
+ It allows the user to view and manipulate bug reports and provides a
+ variety of options for searching through reports.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kcachegrind
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Recommends: valgrind-callgrind | valgrind-calltree, graphviz
+Suggests: kde3-kcachegrind-converters, kde3-khelpcenter, kde3-kdesdk-doc-html
+Description: visualisation tool for valgrind profiling output
+ KCachegrind is a visualisation tool for the profiling data generated
+ by calltree, a profiling skin for valgrind.  Applications can be
+ profiled using calltree without being recompiled, and shared libraries
+ and plugin architectures are supported.
+ .
+ For visualising the output from other profiling tools, several converters
+ can be found in the kcachegrind-converters package.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kcachegrind-converters
+Architecture: all
+Section: devel
+Depends: ${perl:Depends}, php5-cli, python
+Recommends: kde3-kcachegrind
+Description: format converters for KCachegrind profiling visualisation tool
+ This is a collection of scripts for converting the output from
+ different profiling tools into a format that KCachegrind can use.
+ .
+ KCachegrind is a visualisation tool for the profiling data generated
+ by calltree, a profiling skin for valgrind.  Applications can be
+ profiled using calltree without being recompiled, and shared libraries
+ and plugin architectures are supported.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kdesdk-kfile-plugins
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Description: KDE file dialog plugins for software development files
+ This is a collection of plugins for the KDE file dialog.  These plugins
+ extend the file dialog to offer advanced meta-information for source files,
+ patch files and Qt Linguist data.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kdesdk-misc
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Recommends: libqt3-mt-dev | libqt3-dev
+Suggests: gimp | xpaint
+Description: various goodies from the KDE Software Development Kit
+ This package contains miscellaneous goodies provided with the official
+ KDE release to assist with KDE software development.
+ .
+ Included are:
+  - headers to assist with profiling KDE code;
+  - a widget style for checking conformity with the KDE/Qt style guide;
+  - palettes that match the KDE standard colour palette;
+  - a KDE address book plugin that reads the list of KDE CVS accounts.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kdesdk-scripts
+Architecture: all
+Section: devel
+Depends: ${perl:Depends}, python
+Recommends: automake, cvs, gawk
+Suggests: kde3-khelpcenter, kde3-kdesdk-doc-html, dmalloc, gdb, kde3-kdelibs4-doc, qt3-doc, valgrind, devscripts
+Enhances: kde3-kate
+Description: a set of useful development scripts for KDE
+ This package contains a number of scripts which can be used to help in
+ developing KDE-based applications.  Many of these scripts however are
+ not specific to KDE, and in particular there are several general-use
+ scripts to help users in working with SVN and CVS repositories.
+ .
+ In addition to these scripts, this package provides:
+  - gdb macros for Qt/KDE programming;
+  - vim and emacs helper files for Qt/KDE programming;
+  - bash and zsh completion controls for KDE apps;
+  - valgrind error suppressions for KDE apps.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kmtrace
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}, less
+Description: a KDE memory leak tracer
+ KMtrace is a KDE tool to assist with malloc debugging using glibc's
+ "mtrace" functionality.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kompare
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: a KDE GUI for viewing differences between files
+ Kompare is a graphical user interface for viewing the differences between
+ files.  It can compare two documents, create a diff file, display a diff
+ file and/or blend a diff file back into the original documents.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kspy
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}, kde3-kdelibs4-dev (>= 4:3.5.9)
+Description: examines the internal state of a Qt/KDE app
+ KSpy is a tiny library which can be used to graphically display
+ the QObjects in use by a Qt/KDE app.  In addition to the object tree,
+ you can also view the properties, signals and slots of any QObject.
+ .
+ Basically it provides much the same info as QObject::dumpObjectTree() and
+ QObject::dumpObjectInfo(), but in a much more convenient form.  KSpy has
+ minimal overhead for the application, because the kspy library is
+ loaded dynamically using KLibLoader.
+ .
+ See /usr/share/doc/kspy/README for usage instructions.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kuiviewer
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Suggests: qt3-designer
+Description: viewer for Qt Designer user interface files
+ KUIViewer is a utility to display and test the user interface (.ui) files
+ generated by Qt Designer.  The interfaces can be displayed in a variety of
+ different widget styles.
+ .
+ The Qt Designer itself is in the package qt3-designer.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-libcvsservice0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, cvs
+Description: DCOP service for accessing CVS repositories
+ This library provides a DCOP service for accessing and working with
+ remote CVS repositories.  Applications may link with this library to
+ access the DCOP service directly from C++.  Alternatively, scripts may
+ access the service using the standard "dcop" command-line tool.
+ .
+ DCOP is the Desktop Communication Protocol used throughout KDE.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-libcvsservice-dev
+Architecture: any
+Section: libdevel
+Depends: kde3-libcvsservice0 (= ${binary:Version}), kde3-kdelibs4-dev (>= 4:3.5.9)
+Description: development files for CVS DCOP service
+ The library libcvsservice provides a DCOP service for accessing and
+ working with remote CVS repositories.  Applications may link with this
+ library to access the DCOP service directly from C++.  Alternatively,
+ scripts may access the service using the standard "dcop" command-line
+ tool.
+ .
+ Development files for libcvsservice are included in this package.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-poxml
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Description: tools for using PO-files to translate DocBook XML files
+ This is a collection of tools that facilitate translating DocBook XML
+ files using gettext message files (PO-files).
+ .
+ Also included are some miscellaneous command-line utilities for
+ manipulating DocBook XML files, PO-files and PO-template files.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-umbrello
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter, kde3-kdesdk-doc-html
+Description: UML modelling tool and code generator
+ Umbrello UML Modeller is a Unified Modelling Language editor for KDE.
+ With UML you can create diagrams of software and other systems in an
+ industry standard format.  Umbrello can also generate code from your
+ UML diagrams in a number of programming languages.
+ .
+ The program supports class diagrams, sequence diagrams, collaboration
+ diagrams, use case diagrams, state diagrams, activity diagrams, component
+ diagrams and deployment diagrams.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kdesdk-kio-plugins
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}, subversion
+Description: subversion ioslave for KDE
+ This package provides easy access to remote SVN repositories from within
+ Konqueror, and KDE generally, by browsing them as if they were a
+ filesystem, using URLs like svn://hostname/path, or svn+ssh://, etc.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kunittest
+Architecture: any
+Section: devel
+Depends: ${shlibs:Depends}
+Suggests: kde3-kdelibs4-doc
+Description: unit testing library for KDE
+ KUnitTest is a small library that facilitates the writing of tests for
+ KDE developers. There are two ways to use the KUnitTest library. One is
+ to create dynamically loadable modules and use the kunittestmodrunner or
+ kunittestguimodrunner programs to run the tests. The other is to use the
+ libraries to create your own testing application.
+ .
+ This package is part of KDE, and a component of the KDE SDK module.
+ See the 'kde' and 'kdesdk' packages for more information.
+
+Package: kde3-kdesdk-dbg
+Section: libdevel
+Architecture: any
+Priority: extra
+Depends: kde3-kdelibs-dbg, kde3-libcvsservice-dev (= ${binary:Version}), kde3-kbabel-dev (= ${binary:Version})
+Description: debugging symbols for kdesdk
+ This package contains the debugging symbols associated with kdesdk.
+ They will automatically be used by gdb for debugging kdesdk-related
+ issues.
+

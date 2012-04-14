@@ -1,0 +1,12 @@
+diff -Nur kdesdk-3.5.7/kmtrace/configure.in.in kdesdk-3.5.7.new/kmtrace/configure.in.in
+--- kdesdk-3.5.7/kmtrace/configure.in.in	2005-09-10 10:20:58.000000000 +0200
++++ kdesdk-3.5.7.new/kmtrace/configure.in.in	2007-07-27 01:04:28.000000000 +0200
+@@ -1,7 +1,7 @@
+ dnl AC_OUTPUT( kmtrace/kminspector )
+ 
+ case "$host" in
+-   *-gnu)
++   *-gnu*)
+       saved_LIBS="$LIBS"
+       LIBS="$LIBS -Wl,-Bstatic -liberty -Wl,-Bdynamic"
+       AC_TRY_LINK([], [], [kde_compile_kmtrace=$GCC], [kde_compile_kmtrace=no])
