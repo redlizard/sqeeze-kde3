@@ -1,0 +1,9 @@
+?package(kteatime):\
+	needs="x11"\
+	section="Games/Toys"\
+	hints="KDE"\
+	title="KTeaTime"\
+	longtitle="KTeaTime (Tea Cooker)"\
+	icon="/opt/kde3/share/pixmaps/kteatime.xpm"\
+	command="/opt/kde3/bin/kteatime"
+

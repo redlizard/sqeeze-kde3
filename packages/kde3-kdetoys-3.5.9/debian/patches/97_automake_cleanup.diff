@@ -1,0 +1,85 @@
+diff -ur kdetoys-3.5.9_src/eyesapplet/Makefile.am kdetoys-3.5.9_dst/eyesapplet/Makefile.am
+--- kdetoys-3.5.9_src/eyesapplet/Makefile.am	2008-02-20 13:35:13.000000000 +0000
++++ kdetoys-3.5.9_dst/eyesapplet/Makefile.am	2008-02-20 13:35:14.000000000 +0000
+@@ -13,7 +13,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ eyes_panelapplet_la_LDFLAGS = $(KDE_PLUGIN) -module $(all_libraries)
+-eyes_panelapplet_la_LIBADD = $(LIB_KDEUI)
++eyes_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ messages:
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/keyesapplet.pot
+diff -ur kdetoys-3.5.9_src/fifteenapplet/Makefile.am kdetoys-3.5.9_dst/fifteenapplet/Makefile.am
+--- kdetoys-3.5.9_src/fifteenapplet/Makefile.am	2008-02-20 13:35:14.000000000 +0000
++++ kdetoys-3.5.9_dst/fifteenapplet/Makefile.am	2008-02-20 13:35:14.000000000 +0000
+@@ -13,7 +13,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ fifteen_panelapplet_la_LDFLAGS = $(KDE_PLUGIN) -module $(all_libraries)
+-fifteen_panelapplet_la_LIBADD = $(LIB_KDEUI)
++fifteen_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ messages:
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/kfifteenapplet.pot
+diff -ur kdetoys-3.5.9_src/kmoon/Makefile.am kdetoys-3.5.9_dst/kmoon/Makefile.am
+--- kdetoys-3.5.9_src/kmoon/Makefile.am	2008-02-20 13:35:14.000000000 +0000
++++ kdetoys-3.5.9_dst/kmoon/Makefile.am	2008-02-20 13:35:14.000000000 +0000
+@@ -3,7 +3,7 @@
+ 
+ kmoon_panelapplet_la_SOURCES = kmoonapplet.cpp phases.cpp kmoondlg.cpp kmoonwidget.cpp
+ kmoon_panelapplet_la_LDFLAGS = $(KDE_PLUGIN) -module $(all_libraries)
+-kmoon_panelapplet_la_LIBADD = $(LIB_KSYCOCA)
++kmoon_panelapplet_la_LIBADD = $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ lnkdir = $(kde_datadir)/kicker/applets
+ lnk_DATA = kmoonapplet.desktop
+diff -ur kdetoys-3.5.9_src/kweather/Makefile.am kdetoys-3.5.9_dst/kweather/Makefile.am
+--- kdetoys-3.5.9_src/kweather/Makefile.am	2008-02-20 13:35:13.000000000 +0000
++++ kdetoys-3.5.9_dst/kweather/Makefile.am	2008-02-20 13:35:14.000000000 +0000
+@@ -26,7 +26,7 @@
+                                  weatherIface.skel weatherservice.stub \
+                                  weatherbutton.cpp
+ weather_panelapplet_la_LDFLAGS = $(KDE_PLUGIN) -module $(all_libraries)
+-weather_panelapplet_la_LIBADD = $(LIB_KHTML)
++weather_panelapplet_la_LIBADD = $(LIB_KHTML) $(LIB_KDECORE) $(LIB_QT) -lDCOP $(LIB_KDEUI) $(LIB_KUTILS)
+ 
+ appletdir = $(kde_datadir)/kicker/applets
+ applet_DATA = kweather.desktop
+@@ -37,13 +37,13 @@
+ kcm_weather_la_SOURCES = kcmweather.cpp prefdialogdata.ui weatherservice.stub
+ kcm_weather_la_LDFLAGS = -module $(KDE_PLUGIN) $(KDE_RPATH) $(all_libraries) \
+                          -avoid-version -no-undefined
+-kcm_weather_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO)
++kcm_weather_la_LIBADD = $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ 
+ kcm_weatherservice_la_SOURCES = kcmweatherservice.cpp serviceconfigwidget.cpp \
+                                 serviceconfigdata.ui weatherservice.stub
+ kcm_weatherservice_la_LDFLAGS = -module $(KDE_PLUGIN) $(KDE_RPATH) $(all_libraries) \
+                                 -avoid-version -no-undefined
+-kcm_weatherservice_la_LIBADD = $(LIB_KDEUI)
++kcm_weatherservice_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ #weather_sidebar_la_SOURCES = sidebarwidgetbase.ui sidebarwidget.cpp dockwidget.cpp weatherbar.cpp weatherbar.skel
+ #weather_sidebar_la_LDFLAGS = $(all_libraries) -module -no-undefined
+@@ -67,7 +67,7 @@
+ kde_services_DATA = kcmweather.desktop kcmweatherservice.desktop
+ 
+ kweatherreport_la_LDFLAGS = $(all_libraries) $(KDE_RPATH) -module -avoid-version
+-kweatherreport_la_LIBADD = $(LIB_KHTML) reportview.lo
++kweatherreport_la_LIBADD = $(LIB_KHTML) reportview.lo $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP
+ kweatherreport_la_SOURCES = reportmain.cpp weatherservice.stub
+ 
+ KDE_ICON = kweather
+diff -ur kdetoys-3.5.9_src/kworldwatch/Makefile.am kdetoys-3.5.9_dst/kworldwatch/Makefile.am
+--- kdetoys-3.5.9_src/kworldwatch/Makefile.am	2008-02-20 13:35:14.000000000 +0000
++++ kdetoys-3.5.9_dst/kworldwatch/Makefile.am	2008-02-20 13:35:14.000000000 +0000
+@@ -35,7 +35,7 @@
+ EXTRA_DIST = $(lnk_DATA)
+ 
+ ww_panelapplet_la_LDFLAGS = $(KDE_PLUGIN) -module $(all_libraries)
+-ww_panelapplet_la_LIBADD = libww.la $(LIB_KSYCOCA) 
++ww_panelapplet_la_LIBADD = libww.la $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lkdefx
+ 
+ messages: rc.cpp
+ 	$(XGETTEXT) rc.cpp $(kworldclock_SOURCES) $(libww_la_SOURCES) -o $(podir)/kworldclock.pot

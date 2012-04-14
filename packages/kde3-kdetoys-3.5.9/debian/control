@@ -1,0 +1,184 @@
+Source: kde3-kdetoys
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Modestas Vainius <modestas@vainius.eu>
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5), autotools-dev, kde3-kdelibs4-dev (>= 4:3.5.7), gawk, gettext, sharutils
+Standards-Version: 3.7.3
+Homepage: http://www.kde.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdetoys
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdetoys
+
+Package: kde3-kdetoys
+Architecture: all
+Section: kde
+Depends: kde3-amor (>= ${source:Version}), kde3-eyesapplet (>= ${source:Version}), kde3-fifteenapplet (>= ${source:Version}), kde3-kmoon (>= ${source:Version}), kde3-kodo (>= ${source:Version}), kde3-kteatime (>= ${source:Version}), kde3-ktux (>= ${source:Version}), kde3-kweather (>= ${source:Version}), kde3-kworldclock (>= ${source:Version})
+Suggests: kde3-kdetoys-doc-html (>= ${source:Version})
+Description: toys from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of toys and fun extras provided
+ with the official release of KDE.
+
+Package: kde3-kdetoys-doc-html
+Architecture: all
+Section: doc
+Suggests: kde3-konqueror | www-browser, kde3-kdetoys
+Description: KDE toys documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE toys documentation converted to
+ HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/amor/. Documentation is provided for most
+ KDE toys packages.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-amor
+Architecture: any
+Section: games
+Depends: ${shlibs:Depends}
+Recommends: kde3-kwin
+Suggests: kde3-khelpcenter
+Description: a KDE creature for your desktop
+ AMOR stands for Amusing Misuse Of Resources. It provides several different
+ characters who prance around your X screen doing tricks and giving you tips.
+ .
+ Note that AMOR will only work with some window managers. Both KWin (the
+ KDE window manager) and Metacity (a GTK2 window manager) are supported.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-eyesapplet
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Recommends: kde3-kicker
+Description: eyes applet for KDE
+ An applet for the KDE panel containing a pair of eyes that follow your mouse
+ around the screen.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-fifteenapplet
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Recommends: kde3-kicker
+Description: fifteen pieces puzzle for KDE
+ An applet for the KDE panel that lets you play the Fifteen Pieces
+ sliding block puzzle. You have to order 15 pieces in a 4x4 square by
+ moving them around.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-kmoon
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Recommends: kde3-kicker
+Suggests: kde3-khelpcenter
+Description: moon phase indicator for KDE
+ An applet for the KDE panel that displays the current phase of the moon.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-kodo
+Architecture: any
+Section: games
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: mouse odometer for KDE
+ KOdometer measures your desktop mileage. It tracks the movement of your mouse
+ pointer across your desktop and renders it in inches/feet/miles! It can
+ do cm/metres/km too. Its most exciting feature is the tripometer.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-kteatime
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, kde3-kicker
+Suggests: kde3-khelpcenter
+Description: KDE utility for making a fine cup of tea
+ KTeaTime is a handy timer for steeping tea. No longer will you have to
+ guess at how long it takes for your tea to be ready. Simply select the
+ type of tea you have, and it will alert you when the tea is ready to
+ drink.
+ .
+ KTeaTime sits in the KDE system tray.
+ .
+ Please note that KTeaTime is written explicitly for KDE. If you are
+ using a non-KDE window manager or desktop environment then it is quite
+ possible that KTeaTime will not work on your system.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-ktux
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Suggests: kde3-kwin
+Description: Tux screensaver for KDE
+ A neat Tux-in-a-spaceship screensaver for the K Desktop Environment (KDE).
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-kweather
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Recommends: kde3-kicker
+Suggests: kde3-khelpcenter
+Description: weather display applet for KDE
+ An applet for the KDE panel that displays your area's current weather.
+ Information shown includes the temperature, wind speed, air pressure
+ and more. By pressing a button a full weather report can be obtained.
+ .
+ KWeather also provides a weather service that can track multiple weather
+ stations and provide this information to other applications, including
+ Konqueror's sidebar and Kontact's summary page.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-kworldclock
+Architecture: any
+Section: games
+Depends: ${shlibs:Depends}
+Suggests: kde3-kdeartwork-misc, kde3-kicker, kde3-kdesktop, kde3-khelpcenter
+Description: earth watcher for KDE
+ Displays where in the world it is light and dark depending on time, as
+ well as offering the time in all of the major cities of the world.
+ This can be run standalone, as an applet in the KDE panel or as a
+ desktop background.
+ .
+ Additional kworldclock themes are available in the kdeartwork-misc package.
+ .
+ This package is part of KDE, and a component of the KDE toys module.
+ See the 'kde' and 'kdetoys' packages for more information.
+
+Package: kde3-kdetoys-dbg
+Section: libdevel
+Architecture: any
+Depends: kde3-kdelibs-dbg
+Priority: extra
+Description: debugging symbols for kdetoys
+ This package contains the debugging symbols associated with kdetoys.
+ They will automatically be used by gdb for debugging kdetoys-related
+ issues.
+

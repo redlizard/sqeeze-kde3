@@ -1,0 +1,11 @@
+debian/tmp/opt/kde3/lib/kde3/kmoon_panelapplet.la
+debian/tmp/opt/kde3/lib/kde3/kmoon_panelapplet.so
+debian/tmp/opt/kde3/share/apps/kicker/applets/kmoonapplet.desktop
+debian/tmp/opt/kde3/share/apps/kmoon
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kmoon/*.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kmoon/*.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kmoon/carlosmail
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kmoon/common
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kmoon.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kmoon.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kmoon.png

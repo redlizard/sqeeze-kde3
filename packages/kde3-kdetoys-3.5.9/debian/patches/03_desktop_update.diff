@@ -1,0 +1,64 @@
+Index: kdetoys-3.5.9/amor/amor.desktop
+===================================================================
+--- kdetoys-3.5.9.orig/amor/amor.desktop	2008-02-13 10:38:05.000000000 +0100
++++ kdetoys-3.5.9/amor/amor.desktop	2008-06-28 16:13:34.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=AMOR
+ Name[af]=Amor
+ Name[ar]=برنامج AMOR
+@@ -72,4 +71,4 @@
+ GenericName[zh_TW]=畫面擷取程式
+ Terminal=false
+ X-DCOP-ServiceType=Unique
+-Categories=Qt;KDE;Amusement;
++Categories=Qt;KDE;Utility;Amusement;
+Index: kdetoys-3.5.9/kodo/kodo.desktop
+===================================================================
+--- kdetoys-3.5.9.orig/kodo/kodo.desktop	2008-02-13 10:38:05.000000000 +0100
++++ kdetoys-3.5.9/kodo/kodo.desktop	2008-06-28 16:12:17.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kodo
+ Icon=kodo
+@@ -67,4 +66,4 @@
+ Name[tg]=Кодо
+ X-KDE-StartupNotify=true
+ X-DCOP-ServiceType=Unique
+-Categories=Qt;KDE;Amusement;
++Categories=Qt;KDE;Utility;Amusement;
+Index: kdetoys-3.5.9/kteatime/kteatime.desktop
+===================================================================
+--- kdetoys-3.5.9.orig/kteatime/kteatime.desktop	2008-02-13 10:38:05.000000000 +0100
++++ kdetoys-3.5.9/kteatime/kteatime.desktop	2008-06-28 16:12:17.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KTeaTime
+ Name[ar]=برنامج تحضير الشاي KTeaTime
+ Name[bn]=কে-টী-টাইম
+@@ -70,4 +69,4 @@
+ DocPath=kteatime/index.html
+ X-KDE-StartupNotify=true
+ X-DCOP-ServiceType=Multi
+-Categories=Qt;KDE;Amusement;
++Categories=Qt;KDE;Utility;Amusement;
+Index: kdetoys-3.5.9/kworldwatch/kworldclock.desktop
+===================================================================
+--- kdetoys-3.5.9.orig/kworldwatch/kworldclock.desktop	2008-02-13 10:38:05.000000000 +0100
++++ kdetoys-3.5.9/kworldwatch/kworldclock.desktop	2008-06-28 16:12:17.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KWorldClock
+ Name[bn]=কে-ওয়ার্ল্ড-ক্লক
+ Name[de]=Weltzeituhr
+@@ -78,4 +77,4 @@
+ Type=Application
+ X-KDE-StartupNotify=true
+ X-DCOP-ServiceType=Unique
+-Categories=Qt;KDE;Amusement;
++Categories=Qt;KDE;Utility;Amusement;

@@ -1,0 +1,8 @@
+?package(kworldclock):\
+	needs="x11"\
+	section="Games/Toys"\
+	hints="KDE"\
+	title="KWorldClock"\
+	icon="/opt/kde3/share/pixmaps/kworldclock.xpm"\
+	command="/opt/kde3/bin/kworldclock"
+

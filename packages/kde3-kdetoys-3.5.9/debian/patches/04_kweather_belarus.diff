@@ -1,0 +1,27 @@
+--- kweather/weather_stations.desktop.sav	2007-05-14 10:40:37.000000000 +0300
++++ kweather/weather_stations.desktop	2008-04-23 11:06:22.834392509 +0300
+@@ -1654,7 +1654,7 @@
+ 
+ [EU]
+ name=Europe
+-states=AB OS BE BA BG CZ HR CY DK EE FI FR MK DE GI GR HU IE IS IT LV LT LU MT MD NL NO PL PT RO RU SK SI SP SE CH TR UA UK YU
++states=AB OS BE BA BY BG CZ HR CY DK EE FI FR MK DE GI GR HU IE IS IT LV LT LU MT MD NL NO PL PT RO RU SK SI SP SE CH TR UA UK YU
+ 
+ [EU_AB]
+ name=Albania
+@@ -1711,6 +1711,15 @@
+ loc2=Sofia LBSF ------ ---
+ loc3=Varna LBWN ------ ---
+ 
++[EU_BY]
++name=Belarus
++loc0=Brest UMBB ------ ---
++loc1=Gomel UMGG ------ ---
++loc2=Grodno UMMG ------ ---
++loc3=Minsk UMMS ------ ---
++loc4=Minsk-International/Loszica UMMM ------ ---
++loc5=Vitebsk UMII ------ ---
++
+ [EU_CZ]
+ name=Czech Republic
+ loc0=Brno LKTB ------ ---

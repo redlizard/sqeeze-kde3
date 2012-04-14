@@ -1,0 +1,9 @@
+?package(kodo):\
+	needs="x11"\
+	section="Games/Toys"\
+	hints="KDE"\
+	title="KOdometer"\
+	longtitle="KOdometer (Measure Your Desktop Mileage)"\
+	icon="/opt/kde3/share/pixmaps/kodo.xpm"\
+	command="/opt/kde3/bin/kodo"
+

@@ -1,0 +1,8 @@
+?package(ktux):\
+	needs="x11"\
+	section="Screen/Saving"\
+	hints="KDE"\
+	title="KTux"\
+	icon="/opt/kde3/share/pixmaps/ktux.xpm"\
+	command="/opt/kde3/bin/ktux -root"
+

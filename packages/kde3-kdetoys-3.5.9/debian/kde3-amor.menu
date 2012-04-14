@@ -1,0 +1,9 @@
+?package(amor):\
+	needs="x11"\
+	section="Games/Toys"\
+	hints="KDE"\
+	title="AMOR"\
+	longtitle="AMOR (Amusing Misuse Of Resources)"\
+	icon="/opt/kde3/share/pixmaps/amor.xpm"\
+	command="/opt/kde3/bin/amor"
+

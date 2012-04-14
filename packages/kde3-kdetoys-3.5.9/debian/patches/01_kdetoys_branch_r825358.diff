@@ -1,0 +1,328 @@
+#DPATCHLEVEL=0
+--- fifteenapplet/kfifteenapplet.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ fifteenapplet/kfifteenapplet.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -55,7 +55,8 @@
+ Name[th]=เกมสิบห้าชิ้น
+ Name[tr]=Onbeş Parça
+ Name[uk]=П'ятнашки
+-Name[uz]=Ўн бешта тош
++Name[uz]=Oʻn beshta tosh
++Name[uz@cyrillic]=Ўн бешта тош
+ Name[ven]=Zwipida zwa fumi na zwitanu
+ Name[wa]=Djeu des cwénze pîces
+ Name[xh]=Amaceba alishumi elinesihlanu
+--- kworldwatch/kdeworld.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ kworldwatch/kdeworld.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -55,7 +55,8 @@
+ Comment[th]=นาฬิกาทั่วโลกของ KDE โดย Matthias Hoelzer-Kluepfel
+ Comment[tr]=Matthias Hoelzer-Kluepfel'den KDE Dünya Saati
+ Comment[uk]=Всесвітній годинник KDE від Matthias Hoelzer-Kluepfel
+-Comment[uz]=Матиас Ҳўлцер-Клюпфел (Matthias Hoelzer-Kluepfel) яратган KDE дунё соати
++Comment[uz]=Matias Hoʻlser-Klyupfel (Matthias Hoelzer-Kluepfel) yaratgan KDE dunyo soati
++Comment[uz@cyrillic]=Матиас Ҳўлцер-Клюпфел (Matthias Hoelzer-Kluepfel) яратган KDE дунё соати
+ Comment[ven]=Tshifhinga tsha lifhasi nga Matthias Hoelzer-Kluepfel
+ Comment[wa]=Ôrlodje daegnrece po KDE, sicrît pa Matthias Hoelzer-Kluepfel
+ Comment[xh]=Ukhangelo lwehlabathi lwe KDE ngu Matthias Hoelzer-Kluepfel
+--- ktux/ktux.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ ktux/ktux.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -79,7 +79,8 @@
+ Name[th]=ติดตั้ง...
+ Name[tr]=Kurulum...
+ Name[uk]=Встановити...
+-Name[uz]=Ўрнатиш
++Name[uz]=Oʻrnatish
++Name[uz@cyrillic]=Ўрнатиш
+ Name[ven]=Vhekanya...
+ Name[wa]=Apontyî...
+ Name[xh]=Iyacwangciswa...
+--- amor/data/billyrc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/billyrc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -57,7 +57,8 @@
+ Description[th]=บิลลี่ตัวจ้อย
+ Description[tr]=Küçük Billy
+ Description[uk]=Маленький Біллі
+-Description[uz]=Кичик Билли
++Description[uz]=Kichik Billi
++Description[uz@cyrillic]=Кичик Билли
+ Description[ven]=Billy Mutuku
+ Description[zh_CN]=小小比利
+ Description[zh_TW]=小比利
+--- amor/data/nekorc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/nekorc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -16,7 +16,7 @@
+ Description[tg]=Пишак
+ Description[th]=เน็คโก้
+ Description[tr]=Mırnav
+-Description[uz]=Неко
++Description[uz@cyrillic]=Неко
+ Description[zh_CN]=Neko小猫咪
+ About=Artwork from oneko by Masayuki Koba\nAMOR'd by Chris Spiegel
+ About[af]=Kunswerk van oneko deur Masayuki Koba\Namor'd deur Chris Spiegel
+--- amor/data/tuxrc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/tuxrc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -55,7 +55,8 @@
+ Description[th]=ตุ๊กซ์ที่เคลื่อนไหวไม่ได้
+ Description[tr]=Haraketsiz Penguen
+ Description[uk]=Неоживлений Tux
+-Description[uz]=Анимациясиз Такс
++Description[uz]=Animatsiyasiz Taks
++Description[uz@cyrillic]=Анимациясиз Такс
+ Description[ven]=Tux i songo itwaho zwazwipuka
+ Description[xh]=Okungaphiliswanga Tux
+ Description[zh_CN]=没有动画的 Tux 小企鹅
+--- amor/data/pingurc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/pingurc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -16,7 +16,8 @@
+ Description[tg]=Тукс
+ Description[th]=ตุ๊กซ์
+ Description[tr]=Penguen (Hareketli)
+-Description[uz]=Такс
++Description[uz]=Taks
++Description[uz@cyrillic]=Такс
+ Description[zh_CN]=Tux小企鹅
+ About=By Frank Pieczynski\nBased on graphics of the game "pingus".
+ About[af]=Deur Frank Pieczynski\nBased op grafieka van die speletjie "pingus".
+@@ -74,7 +75,8 @@
+ About[th]=โดย Frank Pieczynski\nโดยใช้พื้นฐานกราฟิกจากเกม "pingus"
+ About[tr]=Frank Pieczynski\nPingus oyunundan esinlenilmiştir.
+ About[uk]=Автор: Frank Pieczynski\nПобудовано з графіки для гри "pingus".
+-About[uz]=Франк Писцински (Frank Pieczynski) яратган\nPingus ўйинининг графикасида асосланган.
++About[uz]=Frank Pissinski (Frank Pieczynski) yaratgan\nPingus oʻyinining grafikasida asoslangan.
++About[uz@cyrillic]=Франк Писцински (Frank Pieczynski) яратган\nPingus ўйинининг графикасида асосланган.
+ About[ven]=Nga Frank Pieczynski\nZwo di sendeka nga girafu ya mutambo "pingus".
+ About[xh]=Ngu Frank Pieczynski\nyamelene nemizobo yomdlalo "pingus".
+ About[zh_CN]=作者：Frank Pieczynski\n基于“pingus”游戏中的图形。
+--- amor/data/taorc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/taorc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -13,7 +13,7 @@
+ Description[sr]=Тао
+ Description[ta]= Tao
+ Description[th]=เต๋า
+-Description[uz]=Тао
++Description[uz@cyrillic]=Тао
+ Description[zh_CN]=道
+ About=By Daniel Pfeiffer <occitan@esperanto.org>\nYin Yang symbol inspired by my Tai Chi practice.
+ About[af]=Deur Daniel Pfeiffer <occitan@esperanto.org>\nYin Yang simbool geïnspireer Deur my Tai Chi oefening.
+--- amor/data/bonhommerc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/bonhommerc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -81,7 +81,8 @@
+ About[th]=โดย Jean-Claude Dumas
+ About[tr]=Jean-Claude Dumas
+ About[uk]=Автор: Jean-Claude Dumas
+-About[uz]=Жеан-Клауде Думас (Jean-Claude Dumas) яратган
++About[uz]=Jean-Klaude Dumas (Jean-Claude Dumas) yaratgan
++About[uz@cyrillic]=Жеан-Клауде Думас (Jean-Claude Dumas) яратган
+ About[ven]=Nga Jean-Claude Dumas
+ About[wa]=Sicrît pa Jean-Claude Dumas
+ About[xh]=Ngu Jean-Claude Dumas
+--- amor/data/ghostrc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/ghostrc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -54,7 +54,8 @@
+ Description[th]=ผีน้อยสปุ๊คกี้
+ Description[tr]=Şirin Hayalet
+ Description[uk]=Невловимий привид
+-Description[uz]=Арвоҳ Спуки
++Description[uz]=Arvoh Spuki
++Description[uz@cyrillic]=Арвоҳ Спуки
+ Description[ven]=Tshipuku
+ Description[zh_CN]=蒙面幽灵
+ About=By Martin R. Jones\nBased on an icon by the KDE artist team.
+@@ -113,7 +114,8 @@
+ About[th]=โดย Martin R. Jones\nโดยใช้พื้นฐานจากไอคอนของกลุ่มศิลปิน KDE
+ About[tr]=Martin R. Jones\nKDE sanatçı ekibinin bir simgesine dayanır.
+ About[uk]=Автор: Martin R. Jones\nЗроблено з піктограми від команди мистецтв KDE.
+-About[uz]=Мартин Р. Жоунс (Martin R. Jones) яратган\nKDE тасвирчилар жамоаси яратган нишончада асосланган.
++About[uz]=Martin R. Jouns (Martin R. Jones) yaratgan\nKDE tasvirchilar jamoasi yaratgan nishonchada asoslangan.
++About[uz@cyrillic]=Мартин Р. Жоунс (Martin R. Jones) яратган\nKDE тасвирчилар жамоаси яратган нишончада асосланган.
+ About[ven]=Nga Martin R. Jones\nZwo di sendeka nga aikhonu nga tshigwada tsha vhamvumvusi vha KDE.
+ About[xh]= Martin R. Jones\nYamelene kwiqhosa leqela labazobi be KDE.
+ About[zh_CN]=作者：Martin R. Jones\n基于 KDE 艺术组制作的一个图标。
+--- amor/data/wormrc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/wormrc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -56,7 +56,8 @@
+ Description[th]=หนอนตัวจิ๋ว
+ Description[tr]=Küçük Kurtçuk
+ Description[uk]=Хробачок
+-Description[uz]=Кичкина чувалчанг
++Description[uz]=Kichkina chuvalchang
++Description[uz@cyrillic]=Кичкина чувалчанг
+ Description[xh]=Umbungu Omncinci
+ Description[zh_CN]=小虫虫
+ Description[zh_TW]=小蟲
+@@ -115,7 +116,8 @@
+ About[th]=โดย Bartosz Trudnowski\nสร้างจากภรรยาผมเอง
+ About[tr]=Bartosz Trudnowski\nEşim için yaptım
+ About[uk]=Автор: Bartosz Trudnowski\nЗроблено моєю жінкою
+-About[uz]=Бартосз Трудновски (Bartosz Trudnowski) яратган\nТурмуш ўртоғим учун яратилган.
++About[uz]=Bartosz Trudnovski (Bartosz Trudnowski) yaratgan\nTurmush oʻrtogʻim uchun yaratilgan.
++About[uz@cyrillic]=Бартосз Трудновски (Bartosz Trudnowski) яратган\nТурмуш ўртоғим учун яратилган.
+ About[ven]=Nga Bartosz Trudnowski\nZwo itelwa musadzi wanga
+ About[xh]=Ngu Bartosz Trudnowski\nYenzelwe inkosikazi yam
+ About[zh_CN]=作者：Bartosz Trudnowski\n为我妻子而作
+--- amor/data/eyesrc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/eyesrc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -58,7 +58,8 @@
+ Description[th]=ดวงตาแสนโง่
+ Description[tr]=Çılgın Gözler
+ Description[uk]=Шалені очі
+-Description[uz]=Жиннинамо кўзлар
++Description[uz]=Jinninamo koʻzlar
++Description[uz@cyrillic]=Жиннинамо кўзлар
+ Description[ven]=Mato a tshipengo
+ Description[zh_CN]=疯狂双眼
+ Description[zh_TW]=瘋狂的眼睛
+@@ -117,7 +118,8 @@
+ About[th]=โดย Jean-Claude Dumas
+ About[tr]=Jean-Claude Dumas
+ About[uk]=Автор: Jean-Claude Dumas
+-About[uz]=Жеан-Клауде Думас (Jean-Claude Dumas) яратган
++About[uz]=Jean-Klaude Dumas (Jean-Claude Dumas) yaratgan
++About[uz@cyrillic]=Жеан-Клауде Думас (Jean-Claude Dumas) яратган
+ About[ven]=Nga Jean-Claude Dumas
+ About[wa]=Sicrît pa Jean-Claude Dumas
+ About[xh]=Ngu Jean-Claude Dumas
+--- amor/data/bsdrc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ amor/data/bsdrc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -57,7 +57,8 @@
+ Description[th]=สัญลักษณ์ของ FreeBSD
+ Description[tr]=FreeBSD Maskotu
+ Description[uk]=Талісман FreeBSD
+-Description[uz]=FreeBSD тумори
++Description[uz]=FreeBSD tumori
++Description[uz@cyrillic]=FreeBSD тумори
+ Description[ven]=Mascot ya BSD dza mahala
+ Description[wa]=Mascote FreeBSD
+ Description[zh_CN]=FreeBSD 吉祥物
+--- kteatime/eventsrc	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ kteatime/eventsrc	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -54,7 +54,8 @@
+ Comment[tg]=Пухтани Чойи KDE
+ Comment[tr]=Çay Pişirici
+ Comment[uk]=Приготування чаю KDE
+-Comment[uz]=KDE чой дамловчи
++Comment[uz]=KDE choy damlovchi
++Comment[uz@cyrillic]=KDE чой дамловчи
+ Comment[wa]=Li fjheu di té di KDE
+ Comment[zh_CN]=KDE 煮茶器
+ Comment[zh_TW]=KDE 煮茶器
+@@ -113,7 +114,8 @@
+ Name[tg]=Чой тайёр шуд
+ Name[tr]=Çay hazır
+ Name[uk]=Чай готовий
+-Name[uz]=Чой тайёр
++Name[uz]=Choy tayyor
++Name[uz@cyrillic]=Чой тайёр
+ Name[wa]=Li té est presse
+ Name[zh_CN]=茶沏好了
+ Name[zh_TW]=茶煮好了
+@@ -171,7 +173,8 @@
+ Comment[tg]=Чой тайёр шуд
+ Comment[tr]=Çay hazır
+ Comment[uk]=Чай готовий
+-Comment[uz]=Чой тайёр
++Comment[uz]=Choy tayyor
++Comment[uz@cyrillic]=Чой тайёр
+ Comment[wa]=Li té est presse
+ Comment[zh_CN]=茶沏好了
+ Comment[zh_TW]=茶煮好了
+--- kweather/kweather.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ kweather/kweather.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -48,7 +48,8 @@
+ Comment[tg]=Дар бораи ҳаво огоҳ шавед
+ Comment[tr]=Hava durumundan haberdar olun
+ Comment[uk]=Інформація про погодні умови надворі
+-Comment[uz]=Ернинг турли жойидаги об-ҳаво ҳақида маълумот
++Comment[uz]=Yerning turli joyidagi ob-havo haqida maʼlumot
++Comment[uz@cyrillic]=Ернинг турли жойидаги об-ҳаво ҳақида маълумот
+ Comment[zh_CN]=知晓户外天气
+ Comment[zh_TW]=留住外面的天氣報告
+ Name=Weather Report
+@@ -102,7 +103,8 @@
+ Name[tg]=Ахборот дар бораи ҳаво
+ Name[tr]=Hava Durumu
+ Name[uk]=Інформація про погоду
+-Name[uz]=Об-ҳаво ҳақида ҳисобот
++Name[uz]=Ob-havo haqida hisobot
++Name[uz@cyrillic]=Об-ҳаво ҳақида ҳисобот
+ Name[wa]=Rapoirt meteyo
+ Name[zh_CN]=气象报告
+ Name[zh_TW]=氣象報告
+--- kweather/kcmweatherservice.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ kweather/kcmweatherservice.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -65,7 +65,8 @@
+ Name[tg]=Хизмати Ҳаво
+ Name[tr]=Hava Servisi
+ Name[uk]=Служба погоди
+-Name[uz]=Об-ҳаво хизмати
++Name[uz]=Ob-havo xizmati
++Name[uz@cyrillic]=Об-ҳаво хизмати
+ Name[wa]=Siervice meteyo
+ Name[zh_CN]=气象服务
+ Name[zh_TW]=氣象服務
+@@ -121,7 +122,8 @@
+ Comment[tg]=Соз Кардани Хизмати Ҳаво
+ Comment[tr]=Hava Servis Ayarı
+ Comment[uk]=Налаштування служби погоди
+-Comment[uz]=Об-ҳаво хизматини ўрнатиш
++Comment[uz]=Ob-havo xizmatini oʻrnatish
++Comment[uz@cyrillic]=Об-ҳаво хизматини ўрнатиш
+ Comment[wa]=Apontiaedje do siervice meteyo
+ Comment[zh_CN]=气象服务设置
+ Comment[zh_TW]=氣象服務設定
+@@ -173,7 +175,8 @@
+ Keywords[tg]=kҳаво, хизмати ҳаво, дигаргуниҳо, танзимотҳо
+ Keywords[tr]=kweather, hava servisi, ayar, seçenek
+ Keywords[uk]=kweather, служба погоди, налаштування, параметри
+-Keywords[uz]=kweather, об-ҳаво хизмати, мослаш, мосламалар
++Keywords[uz]=kweather, ob-havo xizmati, moslash, moslamalar
++Keywords[uz@cyrillic]=kweather, об-ҳаво хизмати, мослаш, мосламалар
+ Keywords[wa]=kweather, meteyo, tins, siervice meteyo, apontyî, apontiaedjes
+ Keywords[zh_CN]=kweather, weather service, configure, settings, 气象服务, 配置, 设置
+ DocPath=kweather?anchor=weather-service
+--- kweather/kweatherservice.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ kweather/kweatherservice.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -25,7 +25,8 @@
+ Name[ta]=  K வானிலை சேவை
+ Name[tg]=KХизматиҲаво
+ Name[th]=รายงานอากาศ K
+-Name[uz]=Об-ҳаво хизмати
++Name[uz]=Ob-havo xizmati
++Name[uz@cyrillic]=Об-ҳаво хизмати
+ Name[wa]=Siervice meteyo
+ Name[xh]=Inkonzo ye KWeather
+ Name[zh_CN]=K 气象服务
+--- kweather/weather_stations.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ kweather/weather_stations.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -2113,7 +2113,7 @@
+ loc38=Mont-de-Marsan LFBM ------ ---
+ loc39=Nancy-Essey LFSN ------ ---
+ loc40=Nancy-Ochey LFSO ------ ---
+-loc41=Nantes\\ Adlantique LFRS ------ ---
++loc41=Nantes\\ Atlantique LFRS ------ ---
+ loc42=Nice-Côte\\ d'Azur LFMN ------ ---
+ loc43=Nimes-Garons LFTW ------ ---
+ loc44=Paris/Charles\\ De\\ Gaulle LFPG ------ ---
+--- kweather/kcmweather.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ kweather/kcmweather.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -64,7 +64,8 @@
+ Name[tg]=Нишон диҳед
+ Name[tr]=Görünüm
+ Name[uk]=Дисплей
+-Name[uz]=Кўрсатиш
++Name[uz]=Koʻrsatish
++Name[uz@cyrillic]=Кўрсатиш
+ Name[wa]=Håynaedje
+ Name[zh_CN]=显示
+ Name[zh_TW]=顯示
+--- eyesapplet/eyesapplet.desktop	(.../tags/KDE/3.5.9/kdetoys)	(revision 825358)
++++ eyesapplet/eyesapplet.desktop	(.../branches/KDE/3.5/kdetoys)	(revision 825358)
+@@ -58,7 +58,8 @@
+ Name[th]=ดวงตา
+ Name[tr]=Gözler
+ Name[uk]=Очі
+-Name[uz]=Кўзлар
++Name[uz]=Koʻzlar
++Name[uz@cyrillic]=Кўзлар
+ Name[ven]=Mato
+ Name[wa]=Ouys
+ Name[xh]=Amehlo

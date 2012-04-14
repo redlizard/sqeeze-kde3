@@ -1,0 +1,7 @@
+debian/tmp/opt/kde3/bin/ktux
+debian/tmp/opt/kde3/share/apps/ktux
+debian/tmp/opt/kde3/share/applnk/System/ScreenSavers/ktux.desktop
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/ktux.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/ktux.png
+
+debian/icons/ktux.xpm	opt/kde3/share/pixmaps

@@ -1,0 +1,128 @@
+This package was debianized by Andreas Jellinghaus <aj@dungeon.inka.de> on
+Sun,  7 Feb 1999 12:12:58 +0100.
+It was brought up to date by Ivan E. Moore II <rkrusty@debian.org> on
+Mon, 24 May 1999 07:22:51 -0400.
+It was brought up to date by Ben Burton <bab@debian.org> on
+Sat, 23 Jun 2001 12:32:11 -0500.
+
+It was downloaded from: http://www.kde.org/download
+
+Upstream Authors:
+
+  AMOR: Martin R. Jones <mjones@kde.org> and
+      Gerardo Puga <gpuga@gioia.ing.unlp.edu.ar>
+  Eyes Applet: Matthias Elter <elter@kde.org> and
+      Jerome Tollet <tollet@magic.fr>
+  Fifteen Pieces Applet: Matthias Elter <elter@kde.org>
+  KMoon: Stephan Kulow <coolo@kde.org>,
+      M G berberich <berberic@fmi.uni-passau.de>,
+      Christopher Osburn <chris@speakeasy.org>
+      and Tim Beauchamp <timb@googol.com>
+  KOdometer: Armen Nakashian <armen@tourismo.com> and
+      Mark H. Granoff/mhg <granoff@keptin.lkg.dec.com>
+  KTeaTime: Matthias Hoelzer-Kluepfel <hoelzer@kde.org> and
+      Martin Willers <willers@xm-arts.de>
+  KTux: Martin R. Jones <mjones@kde.org> and Carlos Rego
+  KWeather: Ian Reinhart Geiser <geiseri@kde.org>,
+      Nadeem Hasan <nhasan@kde.org> and Tobias Koenig <tokoe@kde.org>
+  KWorldClock: Matthias Hoelzer-Kluepfel <hoelzer@kde.org> and others
+
+Copyright:
+
+  All components of this package are released under the GNU General
+  Public License, with the exceptions shown below.
+
+  On Debian GNU/Linux systems, the complete texts of the GNU General
+  Public License (GPL) and the GNU Library General Public License (LGPL)
+  can be found in the files `/usr/share/common-licenses/GPL' and
+  `/usr/share/common-licenses/LGPL'.
+
+  --------------------
+
+  Fifteen Pieces Applet:
+
+  Copyright (c) 2001 Matthias Elter <elter@kde.org>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+  AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+  AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+  --------------------
+
+  KOdometer:
+
+  Released under the GNU General Public License, with the following
+  addition note:
+
+    Mouspedometa
+         Based on the original Xodometer VMS/Motif sources.
+
+    Written by Armen Nakashian
+               Compaq Computer Corporation
+               Houston TX
+               22 May 1998
+
+    If you make improvements or enhancements to Mouspedometa, please send
+    them back to the author at any of the following addresses:    
+
+                 armen@nakashian.com
+
+    Thanks to Mark Granoff for writing the original Xodometer, and
+    the whole KDE team for making such a nice environment to write
+    programs in.
+
+    This software is provided as is with no warranty of any kind,
+    expressed or implied. Neither Digital Equipment Corporation nor
+    Armen Nakashian will be held accountable for your use of this
+    software.
+
+  --------------------
+
+  KWeather:
+
+  Primarily under the GPL (GNU General Public License), but some sources
+  are under the LGPL (GNU Library General Public License).
+
+  --------------------
+
+  KWorldClock:
+
+  GPL (GNU General Public License) with the following exception:
+
+  Sun clock.  X11 version by John Mackin.
+
+  This program was derived from, and is still in part identical with, the
+  Suntools Sun clock program whose author's comment appears immediately
+  below.  Please preserve both notices.
+
+  The X11R3/4 version of this program was written by John Mackin, at the
+  Basser Department of Computer Science, University of Sydney, Sydney,
+  New South Wales, Australia; <john@cs.su.oz.AU>.  This program, like
+  the one it was derived from, is in the public domain: `Love is the
+  law, love under will.'
+
+  --------------------
+
+  DocBook Documentation:
+
+      Permission is granted to copy, distribute and/or modify this
+    document under the terms of the GNU Free Documentation License,
+    Version 1.1 or any later version published by the Free Software
+    Foundation; with no Invariant Sections, with no Front-Cover Texts,
+    and with no Back-Cover Texts.
+
+    A copy of the GNU Free Documentation License (Version 1.2) can be
+    found on Debian systems in  `/usr/share/common-licenses/GFDL-1.2'
