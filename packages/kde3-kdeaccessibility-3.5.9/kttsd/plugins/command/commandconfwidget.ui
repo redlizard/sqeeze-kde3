@@ -1,0 +1,227 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>CommandConfWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>CommandConfWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>582</width>
+            <height>322</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QGroupBox" row="0" column="0">
+            <property name="name">
+                <cstring>confiurationBox</cstring>
+            </property>
+            <property name="title">
+                <string>Co&amp;mmand Configuration</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>11</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="Line" row="1" column="0">
+                    <property name="name">
+                        <cstring>line</cstring>
+                    </property>
+                    <property name="frameShape">
+                        <enum>HLine</enum>
+                    </property>
+                    <property name="frameShadow">
+                        <enum>Sunken</enum>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>urlLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Command &amp;for speaking texts:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>urlReq</cstring>
+                    </property>
+                </widget>
+                <widget class="KURLRequester" row="3" column="0">
+                    <property name="name">
+                        <cstring>urlReq</cstring>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>This field specifies both the command used for speaking texts and its parameters. If you want to pass the text as a parameter, write %t at the place where the text should be inserted.  To pass a file of the text, write %f.  To synthesize only and let KTTSD play the synthesized text, write %w for the generated audio file.</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="5" column="0">
+                    <property name="name">
+                        <cstring>layout1</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QCheckBox">
+                            <property name="name">
+                                <cstring>stdInButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Send the data as standard input</string>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>This check box specifies whether the text is sent as standard input (stdin) to the speech synthesizer.</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer1</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>201</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>commandTestButton</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Test</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget" row="4" column="0">
+                    <property name="name">
+                        <cstring>layout5</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>characterCodingLabel</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>5</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>Character &amp;encoding:</string>
+                            </property>
+                            <property name="buddy" stdset="0">
+                                <cstring>characterCodingBox</cstring>
+                            </property>
+                        </widget>
+                        <widget class="KComboBox">
+                            <property name="name">
+                                <cstring>characterCodingBox</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="whatsThis" stdset="0">
+                                <string>This combo box specifies which character encoding is used for passing the text.</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>explanationLabel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Parameters:
+  %t: Text to be spoken
+  %f: Filename of a temporary file containing the text
+  %l: Language (two letter code)
+  %w: Filename of a temporary file for generated audio</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <spacer row="1" column="0">
+            <property name="name">
+                <cstring>spacer2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>30</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<customwidgets>
+</customwidgets>
+<tabstops>
+    <tabstop>urlReq</tabstop>
+    <tabstop>characterCodingBox</tabstop>
+    <tabstop>stdInButton</tabstop>
+    <tabstop>commandTestButton</tabstop>
+</tabstops>
+<includes>
+    <include location="global" impldecl="in declaration">kurlrequester.h</include>
+    <include location="global" impldecl="in declaration">klineedit.h</include>
+    <include location="global" impldecl="in declaration">kpushbutton.h</include>
+    <include location="global" impldecl="in declaration">kcombobox.h</include>
+    <include location="global" impldecl="in implementation">kurlrequester.h</include>
+    <include location="global" impldecl="in implementation">klineedit.h</include>
+    <include location="global" impldecl="in implementation">kpushbutton.h</include>
+    <include location="global" impldecl="in implementation">kcombobox.h</include>
+</includes>
+<signals>
+    <signal>configurationChanged()</signal>
+</signals>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>kurlrequester.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kcombobox.h</includehint>
+</includehints>
+</UI>

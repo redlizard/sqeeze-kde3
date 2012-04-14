@@ -1,0 +1,8 @@
+?package(kmouth):\
+	needs="x11"\
+	section="Applications/Accessibility"\
+	hints="KDE"\
+	title="KMouth"\
+	icon32x32="/opt/kde3/share/pixmaps/kmouth.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kmouth-16.xpm"\
+	command="/opt/kde3/bin/kmouth"

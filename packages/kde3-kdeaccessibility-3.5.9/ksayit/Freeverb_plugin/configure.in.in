@@ -1,0 +1,17 @@
+dnl ==========================
+dnl checks for Hadifix plug in
+dnl ==========================
+
+AC_ARG_ENABLE(ksayit-audio-plugins,
+              AC_HELP_STRING([--enable-ksayit-audio-plugins],
+                             [build audio plugins for KSayIt [default=no]]),
+              ksayit_audio_plugins=$enableval,
+              ksayit_audio_plugins=no)
+
+compile_ksayit_audio_plugins="no"
+
+if test "x$ksayit_audio_plugins" = "xyes"; then
+  compile_ksayit_audio_plugins="yes"
+fi
+
+AM_CONDITIONAL(include_ksayit_audio_plugins, test "x$compile_ksayit_audio_plugins" = "xyes")

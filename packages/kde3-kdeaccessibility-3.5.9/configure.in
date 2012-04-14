@@ -1,0 +1,931 @@
+dnl =======================================================
+dnl FILE: ./admin/configure.in.min
+dnl =======================================================
+
+dnl    This file is part of the KDE libraries/packages
+dnl    Copyright (C) 2001 Stephan Kulow (coolo@kde.org)
+ 
+dnl    This file is free software; you can redistribute it and/or
+dnl    modify it under the terms of the GNU Library General Public
+dnl    License as published by the Free Software Foundation; either
+dnl    version 2 of the License, or (at your option) any later version.
+ 
+dnl    This library is distributed in the hope that it will be useful,
+dnl    but WITHOUT ANY WARRANTY; without even the implied warranty of
+dnl    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+dnl    Library General Public License for more details.
+ 
+dnl    You should have received a copy of the GNU Library General Public License
+dnl    along with this library; see the file COPYING.LIB.  If not, write to
+dnl    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+dnl    Boston, MA 02110-1301, USA.
+
+# Original Author was Kalle@kde.org
+# I lifted it in some mater. (Stephan Kulow)
+# I used much code from Janos Farkas
+
+dnl Process this file with autoconf to produce a configure script.
+
+AC_INIT(acinclude.m4) dnl a source file from your sub dir
+
+dnl This is so we can use kde-common
+AC_CONFIG_AUX_DIR(admin)
+
+dnl This ksh/zsh feature conflicts with `cd blah ; pwd`
+unset CDPATH
+
+dnl Checking host/target/build systems, for make, install etc.
+AC_CANONICAL_SYSTEM 
+dnl Perform program name transformation
+AC_ARG_PROGRAM
+
+dnl Automake doc recommends to do this only here. (Janos)
+AM_INIT_AUTOMAKE(kdeaccessibility, 1.0.0) dnl searches for some needed programs
+
+KDE_SET_PREFIX
+
+dnl generate the config header
+AM_CONFIG_HEADER(config.h) dnl at the distribution this done
+
+dnl Checks for programs.
+AC_CHECK_COMPILERS
+AC_ENABLE_SHARED(yes)
+AC_ENABLE_STATIC(no)
+KDE_PROG_LIBTOOL
+
+dnl for NLS support. Call them in this order!
+dnl WITH_NLS is for the po files
+AM_KDE_WITH_NLS
+
+KDE_USE_QT(3.2)
+AC_PATH_KDE
+dnl =======================================================
+dnl FILE: configure.in.in
+dnl =======================================================
+
+#MIN_CONFIG(3.2)
+
+dnl PACKAGE set before
+KDE_ENABLE_HIDDEN_VISIBILITY
+AC_CHECK_SETENV
+AC_CHECK_UNSETENV
+
+CXXFLAGS="$CXXFLAGS $KDE_DEFAULT_CXXFLAGS"
+
+#AC_CHECK_HEADERS(sys/stropts.h stropts.h)
+
+dnl ================================================================================
+
+dnl See if the latest kspeech.h is installed and if not, compile against
+dnl kttsd/compat directory.
+
+if test "$KTTS_KSPEECH_DIR" = ""; then
+    KDE_CHECK_HEADER(kspeech.h, ktts_have_kspeech_h=yes, ktts_have_kspeech_h=no)
+    have_latest_kspeech=no
+    if test "x$ktts_have_kspeech_h" = xyes; then
+        AC_MSG_CHECKING([whether installed kspeech.h is latest version])
+        ktts_save_cppflags=$CPPFLAGS
+        AC_LANG_SAVE
+        CPPFLAGS="$all_includes $CPPFLAGS"
+        AC_LANG_CPLUSPLUS
+        AC_TRY_COMPILE(
+            [#include <kspeech.h>],
+            [
+            if (4 == KSpeech::mtHtml);
+            ],
+            have_latest_kspeech=yes,
+            have_latest_kspeech=no)
+        AC_MSG_RESULT($have_latest_kspeech)
+        CPPFLAGS=$ktts_save_cppflags
+        AC_LANG_RESTORE
+    fi
+    if test "x$have_latest_kspeech" = xyes; then
+        KTTS_KSPEECH_DIR='$(kde_includes)'
+        KTTS_KSPEECH_INCLUDE=""
+        KTTS_INTERFACES_DIR=""
+    else
+        KTTS_KSPEECH_DIR='$(top_srcdir)/kttsd/compat/interfaces/kspeech'
+        KTTS_KSPEECH_INCLUDE='-I$(top_srcdir)/kttsd/compat/interfaces/kspeech'
+        KTTS_INTERFACES_DIR="interfaces"
+        AC_MSG_WARN([Latest kspeech.h not installed. Compiling using kttsd/compat directory.])
+    fi
+
+    AC_SUBST(KTTS_KSPEECH_DIR)
+    AC_SUBST(KTTS_KSPEECH_INCLUDE)
+    AC_SUBST(KTTS_INTERFACES_DIR)
+fi
+dnl =======================================================
+dnl FILE: ./kbstateapplet/configure.in.in
+dnl =======================================================
+
+# add this here so the test programs below compile
+KDE_CHECK_HEADER(X11/Xlib.h)
+KDE_CHECK_HEADER(X11/extensions/XKBstr.h, ,
+  DO_NOT_COMPILE="$DO_NOT_COMPILE kbstateapplet",
+[
+#include <X11/Xlib.h>
+])
+
+dnl Solaris lacks this file, so we should skip kbstateapplet here
+KDE_CHECK_HEADER(X11/XKBlib.h, ,
+  DO_NOT_COMPILE="$DO_NOT_COMPILE kbstateapplet",
+[
+#include <X11/Xlib.h>
+])
+
+dnl Solaris lacks this file, so we should skip kbstateapplet here
+KDE_CHECK_HEADER(X11/extensions/XKB.h, ,
+  DO_NOT_COMPILE="$DO_NOT_COMPILE kbstateapplet",
+[
+#include <stdio.h>
+#include <X11/Xlib.h>
+#include <X11/XKBlib.h>
+])
+dnl =======================================================
+dnl FILE: ./ksayit/Freeverb_plugin/configure.in.in
+dnl =======================================================
+
+dnl ==========================
+dnl checks for Hadifix plug in
+dnl ==========================
+
+AC_ARG_ENABLE(ksayit-audio-plugins,
+              AC_HELP_STRING([--enable-ksayit-audio-plugins],
+                             [build audio plugins for KSayIt [default=no]]),
+              ksayit_audio_plugins=$enableval,
+              ksayit_audio_plugins=no)
+
+compile_ksayit_audio_plugins="no"
+
+if test "x$ksayit_audio_plugins" = "xyes"; then
+  compile_ksayit_audio_plugins="yes"
+fi
+
+AM_CONDITIONAL(include_ksayit_audio_plugins, test "x$compile_ksayit_audio_plugins" = "xyes")dnl =======================================================
+dnl FILE: ./ksayit/configure.in.in
+dnl =======================================================
+
+#MIN_CONFIG(3.0.0)
+
+if test "x$build_arts" = "xno"; then
+  DO_NOT_COMPILE="$DO_NOT_COMPILE ksayit"
+fi
+
+dnl PACKAGE set before
+AC_C_BIGENDIAN
+AC_CHECK_KDEMAXPATHLEN
+
+CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"
+CXXFLAGS="$CXXFLAGS $USE_RTTI" dnl (if you also want rtti)
+
+if test "x$build_arts" = "xno"; then
+·       DO_NOT_COMPILE="$DO_NOT_COMPILE ksayit"
+fi
+dnl =======================================================
+dnl FILE: ./kttsd/configure.in.in
+dnl =======================================================
+
+#MIN_CONFIG(3.2)
+
+### dnl PACKAGE set before
+
+dnl ================================================================================
+
+dnl Check for GStreamer >= 0.8.7
+
+AC_ARG_WITH(gstreamer,
+  [AC_HELP_STRING(--with-gstreamer,
+    [enable support for GStreamer @<:@default=no@:>@])],
+  [], with_gstreamer=no)
+
+have_gst=no
+if test "x$with_gstreamer" != xno; then
+  # pkg-config seems to have a bug where it masks needed -L entries when it
+  # shouldn't, so disable that.
+
+  PKG_CONFIG_ALLOW_SYSTEM_LIBS=1
+  export PKG_CONFIG_ALLOW_SYSTEM_LIBS
+
+  dnl start with 0.8
+  GST_MAJORMINOR=0.8
+  dnl Actually need 0.8.7, but plugins were version 0.8.5.  argh!
+  GST_REQ=0.8.5
+
+  PKG_CHECK_MODULES(GST, \
+    gstreamer-$GST_MAJORMINOR >= $GST_REQ \
+    gstreamer-control-$GST_MAJORMINOR >= $GST_REQ \
+    gstreamer-libs-$GST_MAJORMINOR >= $GST_REQ,
+    have_gst=yes, have_gst=no)
+
+  if test "x$with_gstreamer" != xcheck && test "x$have_gst" != xyes; then
+    AC_MSG_ERROR([--with-gstreamer was given, but test for GStreamer >= 0.8.5 failed])
+  fi
+fi
+
+if test "x$have_gst" = "xno"; then
+  GST_CFLAGS=""
+  LDADD_GST=""
+  LDFLAGS_GST=""
+  AC_DEFINE(HAVE_GSTREAMER, 0, [have GStreamer])
+else
+  LDADD_GST=`$PKG_CONFIG --libs-only-l gstreamer-$GST_MAJORMINOR`
+  LDFLAGS_GST=`$PKG_CONFIG --libs-only-other gstreamer-$GST_MAJORMINOR`
+
+  # Append -L entries, since they are masked by --libs-only-l and
+  # --libs-only-other
+  LIBDIRS_GST=`$PKG_CONFIG --libs-only-L gstreamer-$GST_MAJORMINOR`
+  LDADD_GST="$LDADD_GST $LIBDIRS_GST"
+
+  AC_MSG_NOTICE([GStreamer version >= $GST_REQ found.])
+  AC_DEFINE(HAVE_GSTREAMER, 1, [have GStreamer])
+
+  if test "x$with_gstreamer" != xcheck && test "x$have_gst" != xyes; then
+    AC_MSG_ERROR([--with-gstreamer was given, but test for GStreamer >= 0.8.7 failed])
+  fi
+fi
+
+AC_SUBST(GST_CFLAGS)
+AC_SUBST(LDADD_GST)
+AC_SUBST(LDFLAGS_GST)
+
+AM_CONDITIONAL(include_kttsd_gstplayer, [test "x$have_gst" = "xyes"])
+
+dnl ================================================================================
+
+dnl Do not compile artsplayer plugin if user specifies --without-arts
+
+AM_CONDITIONAL(include_kttsd_artsplayer, [test "x$build_arts" = "xyes"])
+
+dnl ================================================================================
+
+dnl Check for ALSA.
+dnl TODO: Don't know if 0.5 works or not.
+
+AC_DEFUN([KDE_CHECK_ALSA],
+[
+  have_alsa=no
+
+  KDE_CHECK_HEADERS([sys/asoundlib.h alsa/asoundlib.h],
+    [have_alsa=yes])
+
+  KDE_CHECK_LIB(asound, snd_seq_create_simple_port,
+    [:], [have_alsa=no])
+
+  AC_LANG_SAVE
+  AC_LANG_C
+  if test "x$have_alsa" = xyes; then
+    AC_TRY_COMPILE([
+      #include "confdefs.h"
+      #ifdef HAVE_SYS_ASOUNDLIB_H
+      #include <sys/asoundlib.h>
+      #endif
+      #ifdef HAVE_ALSA_ASOUNDLIB_H
+      #include <alsa/asoundlib.h>
+      #endif
+    ],[
+      #if (SND_LIB_MAJOR == 0) && (SND_LIB_MINOR == 5)
+        /* we have ALSA 0.5.x */
+      #else
+        #error not ALSA 0.5.x
+      #endif
+    ],
+    have_alsa_0_5=yes)
+
+    AC_TRY_COMPILE([
+      #include "confdefs.h"
+      #ifdef HAVE_SYS_ASOUNDLIB_H
+      #include <sys/asoundlib.h>
+      #endif
+      #ifdef HAVE_ALSA_ASOUNDLIB_H
+      #include <alsa/asoundlib.h>
+      #endif
+    ],[
+      #if (SND_LIB_MAJOR == 0) && (SND_LIB_MINOR == 9)
+        /* we have ALSA 0.9.x */
+      #else
+        #error not ALSA 0.9.x
+      #endif
+    ],
+    have_alsa_0_9=yes)
+
+    AC_TRY_COMPILE([
+      #include "confdefs.h"
+      #ifdef HAVE_SYS_ASOUNDLIB_H
+      #include <sys/asoundlib.h>
+      #endif
+      #ifdef HAVE_ALSA_ASOUNDLIB_H
+      #include <alsa/asoundlib.h>
+      #endif
+    ],[
+      #if (SND_LIB_MAJOR == 1)
+        /* we have ALSA 1.x */
+      #else
+        #error not ALSA 1.x
+      #endif
+    ],
+    have_alsa_1=yes)
+  fi
+  AC_LANG_RESTORE
+
+  if test "x$have_alsa_0_9" = xyes || test "x$have_alsa_1" = xyes; then
+    # for kmix/ and akode/
+    LIBASOUND="-lasound"
+    AC_DEFINE(HAVE_LIBASOUND2, 1, [Define if you have libasound.so.2 (required for ALSA 0.9.x/1.x support)])
+
+    # for arts/
+    ARTS_LIBASOUND="-lasound"
+    AC_DEFINE(HAVE_ARTS_LIBASOUND2, 1, [Define if you have libasound.so.2 (required for ALSA 0.9.x/1.x support)])
+  fi
+
+  if test "x$have_alsa_0_5" = xyes; then
+    # for arts/
+    ARTS_LIBASOUND="-lasound"
+    AC_DEFINE(HAVE_ARTS_LIBASOUND, 1, [Define if you have libasound.so.1 (required for ALSA 0.5.x support)])
+  fi
+
+  AC_SUBST(LIBASOUND)
+  AC_SUBST(ARTS_LIBASOUND)
+])
+
+AC_ARG_WITH(alsa,
+  [AC_HELP_STRING(--with-alsa,
+    [enable support for ALSA @<:@default=check@:>@])],
+  [], with_alsa=check)
+
+have_alsa=no
+if test "x$with_alsa" != xno; then
+  KDE_CHECK_ALSA
+
+  if test "x$with_alsa" != xcheck && test "x$have_alsa" != xyes; then
+    AC_MSG_ERROR([--with-alsa was given, but test for ALSA failed])
+  fi
+fi
+
+AM_CONDITIONAL(include_kttsd_alsaplayer, [test "x$have_alsa" = "xyes"])
+
+dnl ================================================================================
+
+dnl Check for aKode library.  Note: As of about 16 Jul 2005, it got moved
+dnl from kdemultimedia to kdesupport.
+
+AC_DEFUN([KDE_CHECK_AKODE],
+[
+  AC_PATH_PROG(AKODE_CONFIG, akode-config, [no], [$PATH:$prefix/bin])
+
+  if test "x$AKODE_CONFIG" != xno; then
+    AC_DEFINE(HAVE_AKODE, 1, [define if you have aKodelib installed])
+    akode_includes=`$AKODE_CONFIG --cflags`
+    akode_libs=`$AKODE_CONFIG --libs`
+    have_akode=yes
+  else
+    akode_includes=""
+    akode_libs=""
+    have_akode=no
+  fi
+
+  AC_SUBST(akode_includes)
+  AC_SUBST(akode_libs)
+])
+
+AC_ARG_WITH(akode,
+    [AC_HELP_STRING([--with-akode],
+        [enable the aKode decoder @<:@default=no@:>@])],
+    [], with_akode=no)
+
+have_akode=no
+if test "x$with_akode" != xno; then
+  KDE_CHECK_AKODE
+
+  if test "x$with_akode" != xcheck && test "x$have_akode" != xyes; then
+    AC_MSG_ERROR([--with-akode was given, but test for aKode failed])
+  fi
+fi
+
+AM_CONDITIONAL(include_kttsd_akodeplayer, [test "x$have_akode" = "xyes"])
+
+dnl ================================================================================
+
+dnl Check whether to include sys/time.h and time.h, or just sys/time.h.
+dnl Defines TIME_WITH_SYS_TIME and HAVE_SYS_TIME_H, which are used in
+dnl alsaplayer.cpp.
+
+AC_HEADER_TIME
+AC_CHECK_HEADERS(sys/time.h)
+
+dnl ================================================================================
+
+dnl See if the latest kspeech.h is installed and if not, compile against
+dnl kttsd/compat directory.
+
+if test "$KTTS_KSPEECH_DIR" = ""; then
+    KDE_CHECK_HEADER(kspeech.h, ktts_have_kspeech_h=yes, ktts_have_kspeech_h=no)
+    have_latest_kspeech=no
+    if test "x$ktts_have_kspeech_h" = xyes; then
+        AC_MSG_CHECKING([whether installed kspeech.h is latest version])
+        ktts_save_cppflags=$CPPFLAGS
+        AC_LANG_SAVE
+        CPPFLAGS="$all_includes $CPPFLAGS"
+        AC_LANG_CPLUSPLUS
+        AC_TRY_COMPILE(
+            [#include <kspeech.h>],
+            [
+            if (4 == KSpeech::mtHtml);
+            ],
+            have_latest_kspeech=yes,
+            have_latest_kspeech=no)
+        AC_MSG_RESULT($have_latest_kspeech)
+        CPPFLAGS=$ktts_save_cppflags
+        AC_LANG_RESTORE
+    fi
+    if test "x$have_latest_kspeech" = xyes; then
+        KTTS_KSPEECH_DIR='$(kde_includes)'
+        KTTS_KSPEECH_INCLUDE=""
+        KTTS_INTERFACES_DIR=""
+    else
+        KTTS_KSPEECH_DIR='$(top_srcdir)/kttsd/compat/interfaces/kspeech'
+        KTTS_KSPEECH_INCLUDE='-I$(top_srcdir)/kttsd/compat/interfaces/kspeech'
+        KTTS_INTERFACES_DIR="interfaces"
+        AC_MSG_WARN([Latest kspeech.h not installed. Compiling using kttsd/compat directory.])
+    fi
+
+    AC_SUBST(KTTS_KSPEECH_DIR)
+    AC_SUBST(KTTS_KSPEECH_INCLUDE)
+    AC_SUBST(KTTS_INTERFACES_DIR)
+fi
+
+dnl ================================================================================
+
+# --- Check for KDE < 3.5 ---
+# If so, install icons.
+
+AC_MSG_CHECKING([for KDE version])
+
+AC_LANG_SAVE
+AC_LANG_CPLUSPLUS
+kdeversion_save_CXXFLAGS="$CXXFLAGS"
+kdeversion_save_LIBS="$LIBS"
+LIBS="$LIBS $X_EXTRA_LIBS"
+CXXFLAGS="$CXXFLAGS $all_includes"
+
+AC_COMPILE_IFELSE([
+#include <kdeversion.h>
+#if ! ( KDE_IS_VERSION( 3, 4, 90 ) )
+#error KDE 3.4
+#endif
+],
+    KTTS_ICONS_DIR=""
+,
+    KTTS_ICONS_DIR="icons"
+)
+
+CXXFLAGS="$kdeversion_save_CXXFLAGS"
+LIBS="$kdeversion_save_LIBS"
+AC_LANG_RESTORE
+
+if test "$KTTS_ICONS_DIR" = ""; then
+    AC_MSG_RESULT([KDE 3.4.x or less])
+else
+    AC_MSG_RESULT([KDE 3.5 or later])
+fi
+
+AC_SUBST(KTTS_ICONS_DIR)
+dnl =======================================================
+dnl FILE: ./kttsd/plugins/command/configure.in.in
+dnl =======================================================
+
+dnl ==========================
+dnl checks for Command plug in
+dnl ==========================
+
+AC_ARG_ENABLE(kttsd-command,
+              AC_HELP_STRING([--enable-kttsd-command],
+                             [build KTTSD Command Plugin [default=yes]]),
+              command_plugin=$enableval,
+              command_plugin=yes)
+
+compile_command_plugin="no"
+
+if test "x$command_plugin" = "xyes"; then
+  compile_command_plugin="yes"
+fi
+
+AM_CONDITIONAL(include_kttsd_command, test "x$compile_command_plugin" = "xyes")
+dnl =======================================================
+dnl FILE: ./kttsd/plugins/epos/configure.in.in
+dnl =======================================================
+
+dnl =========================================
+dnl checks for Festival Lite (epos)  Plug In
+dnl =========================================
+
+AC_ARG_ENABLE(kttsd-epos,
+              AC_HELP_STRING([--enable-kttsd-epos],
+                             [build KTTSD Epos plugin [default=yes]]),
+              epos_plugin=$enableval,
+              epos_plugin=yes)
+
+compile_epos_plugin="yes"
+
+if test "x$epos_plugin" = "xno"; then
+  compile_epos_plugin="no"
+fi
+
+dnl Check for epos executable.
+dnl Note that epos plugin is always built, unless
+dnl user overrides on configure command line.
+AC_PATH_PROG(epos_bindir, "epos", "no")
+
+AM_CONDITIONAL(include_kttsd_epos, test "x$compile_epos_plugin" != "xno")
+dnl =======================================================
+dnl FILE: ./kttsd/plugins/festivalint/configure.in.in
+dnl =======================================================
+
+dnl ==============================
+dnl checks for FestivalInt Plug In
+dnl ==============================
+
+AC_ARG_ENABLE(kttsd-festivalint,
+              AC_HELP_STRING([--enable-kttsd-festivalint],
+                             [build KTTSD Festival Interactive plugin [default=yes]]),
+              festivalint_plugin=$enableval,
+              festivalint_plugin=yes)
+
+compile_festivalint_plugin="yes"
+
+if test "x$festivalint_plugin" = "xno"; then
+  compile_festivalint_plugin="no"
+fi
+
+dnl Check for festival executable.
+dnl Note that Festival Interactive plugin is always built
+dnl whether binary is found or not, unless user overrides with -disable-festivalint.
+AC_PATH_PROG(festival_bindir, "festival", "no")
+
+AM_CONDITIONAL(include_kttsd_festivalint, test "x$compile_festivalint_plugin" = "xyes")
+dnl =======================================================
+dnl FILE: ./kttsd/plugins/flite/configure.in.in
+dnl =======================================================
+
+dnl =========================================
+dnl checks for Festival Lite (Flite)  Plug In
+dnl =========================================
+
+AC_ARG_ENABLE(kttsd-flite,
+              AC_HELP_STRING([--enable-kttsd-flite],
+                             [build KTTSD Festival Lite (flite) [default=yes]]),
+              flite_plugin=$enableval,
+              flite_plugin=yes)
+
+compile_flite_plugin="yes"
+
+if test "x$flite_plugin" = "xno"; then
+  compile_flite_plugin="no"
+fi
+
+dnl Check for flite executable.
+dnl Note that flite plugin is always built, unless
+dnl user overrides on configure command line.
+AC_PATH_PROG(flite_bindir, "flite", "no")
+
+AM_CONDITIONAL(include_kttsd_flite, test "x$compile_flite_plugin" != "xno")
+dnl =======================================================
+dnl FILE: ./kttsd/plugins/freetts/configure.in.in
+dnl =======================================================
+
+dnl ================
+dnl checks for FreeTTS
+dnl ================
+
+AC_ARG_ENABLE(kttsd-freetts,
+              AC_HELP_STRING([--enable-kttsd-freetts],
+                             [build KTTSD FreeTTS Plugin [default=yes]]),
+              freetts_plugin=$enableval,
+              freetts_plugin=yes)
+
+compile_freetts_plugin="yes"
+
+if test "x$freetts_plugin" = "xno"; then
+  compile_freetts_plugin="no"
+fi
+
+dnl Check for festival executable.
+dnl Note that Festival Interactive plugin is always built
+dnl whether binary is found or not, unless user overrides with -disable-freetts.
+AC_PATH_PROG(freetts_bindir, "freetts.jar", "no")
+
+AM_CONDITIONAL(include_kttsd_freetts, test "x$compile_freetts_plugin" = "xyes")
+dnl =======================================================
+dnl FILE: ./kttsd/plugins/hadifix/configure.in.in
+dnl =======================================================
+
+dnl ==========================
+dnl checks for Hadifix plug in
+dnl ==========================
+
+AC_ARG_ENABLE(kttsd-hadifix,
+              AC_HELP_STRING([--enable-kttsd-hadifix],
+                             [build KTTSD Hadifix Plugin [default=yes]]),
+              hadifix_plugin=$enableval,
+              hadifix_plugin=yes)
+
+compile_hadifix_plugin="no"
+
+if test "x$hadifix_plugin" = "xyes"; then
+  compile_hadifix_plugin="yes"
+fi
+
+if test "x$compile_hadifix_plugin" = "xyes"; then
+  dnl Check for Hadifix installation.
+  dnl Note that Hadifix plugin is always built,
+  dnl unless user overrides with -disable-kttsd-hadifix.
+  AC_PATH_PROG(hadifix_mbrola_bin,  "mbrola",  "no", [$PATH:])
+  AC_PATH_PROG(hadifix_txt2pho_bin, "txt2pho", "no", [$PATH:])
+
+  hadifix_inst="yes"
+  if test "x$hadifix_mbrola_bin" = "xno"; then
+    hadifix_inst="no"
+  fi
+  if test "x$hadifix_txt2pho_bin" = "xno"; then
+    hadifix_inst="no"
+  fi
+
+  if test "x$hadifix_inst" = "xyes"; then
+    AC_CHECK_FILE(/etc/txt2pho, [hadifix_txt2pho="yes"], [hadifix_txt2pho="no"])
+  fi
+fi
+
+AM_CONDITIONAL(include_kttsd_hadifix, test "x$compile_hadifix_plugin" = "xyes")
+KDE_CREATE_SUBDIRSLIST
+AM_CONDITIONAL(IconThemes_SUBDIR_included, test "x$IconThemes_SUBDIR_included" = xyes)
+AM_CONDITIONAL(doc_SUBDIR_included, test "x$doc_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kbstateapplet_SUBDIR_included, test "x$kbstateapplet_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kmag_SUBDIR_included, test "x$kmag_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kmousetool_SUBDIR_included, test "x$kmousetool_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kmouth_SUBDIR_included, test "x$kmouth_SUBDIR_included" = xyes)
+AM_CONDITIONAL(ksayit_SUBDIR_included, test "x$ksayit_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kttsd_SUBDIR_included, test "x$kttsd_SUBDIR_included" = xyes)
+AC_CONFIG_FILES([ Makefile ])
+AC_CONFIG_FILES([ IconThemes/Makefile ])
+AC_CONFIG_FILES([ doc/Makefile ])
+AC_CONFIG_FILES([ doc/kmag/Makefile ])
+AC_CONFIG_FILES([ doc/kmousetool/Makefile ])
+AC_CONFIG_FILES([ doc/kmouth/Makefile ])
+AC_CONFIG_FILES([ doc/kttsd/Makefile ])
+AC_CONFIG_FILES([ kbstateapplet/Makefile ])
+AC_CONFIG_FILES([ kbstateapplet/images/Makefile ])
+AC_CONFIG_FILES([ kmag/Makefile ])
+AC_CONFIG_FILES([ kmousetool/Makefile ])
+AC_CONFIG_FILES([ kmousetool/kmousetool/Makefile ])
+AC_CONFIG_FILES([ kmousetool/kmousetool/pics/Makefile ])
+AC_CONFIG_FILES([ kmouth/Makefile ])
+AC_CONFIG_FILES([ kmouth/books/Makefile ])
+AC_CONFIG_FILES([ kmouth/icons/Makefile ])
+AC_CONFIG_FILES([ kmouth/icons/app/Makefile ])
+AC_CONFIG_FILES([ kmouth/icons/history/Makefile ])
+AC_CONFIG_FILES([ kmouth/icons/phrase/Makefile ])
+AC_CONFIG_FILES([ kmouth/icons/phrasebook/Makefile ])
+AC_CONFIG_FILES([ kmouth/phrasebook/Makefile ])
+AC_CONFIG_FILES([ kmouth/wordcompletion/Makefile ])
+AC_CONFIG_FILES([ ksayit/Makefile ])
+AC_CONFIG_FILES([ ksayit/Freeverb_plugin/Makefile ])
+AC_CONFIG_FILES([ ksayit/KTTSD_Lib/Makefile ])
+AC_CONFIG_FILES([ ksayit/src/Makefile ])
+AC_CONFIG_FILES([ kttsd/Makefile ])
+AC_CONFIG_FILES([ kttsd/app-plugins/Makefile ])
+AC_CONFIG_FILES([ kttsd/app-plugins/kate/Makefile ])
+AC_CONFIG_FILES([ kttsd/compat/Makefile ])
+AC_CONFIG_FILES([ kttsd/compat/icons/Makefile ])
+AC_CONFIG_FILES([ kttsd/compat/interfaces/Makefile ])
+AC_CONFIG_FILES([ kttsd/compat/interfaces/kspeech/Makefile ])
+AC_CONFIG_FILES([ kttsd/filters/Makefile ])
+AC_CONFIG_FILES([ kttsd/filters/sbd/Makefile ])
+AC_CONFIG_FILES([ kttsd/filters/stringreplacer/Makefile ])
+AC_CONFIG_FILES([ kttsd/filters/talkerchooser/Makefile ])
+AC_CONFIG_FILES([ kttsd/filters/xmltransformer/Makefile ])
+AC_CONFIG_FILES([ kttsd/icons/Makefile ])
+AC_CONFIG_FILES([ kttsd/kcmkttsmgr/Makefile ])
+AC_CONFIG_FILES([ kttsd/kttsd/Makefile ])
+AC_CONFIG_FILES([ kttsd/kttsjobmgr/Makefile ])
+AC_CONFIG_FILES([ kttsd/kttsmgr/Makefile ])
+AC_CONFIG_FILES([ kttsd/libkttsd/Makefile ])
+AC_CONFIG_FILES([ kttsd/players/Makefile ])
+AC_CONFIG_FILES([ kttsd/players/akodeplayer/Makefile ])
+AC_CONFIG_FILES([ kttsd/players/alsaplayer/Makefile ])
+AC_CONFIG_FILES([ kttsd/players/artsplayer/Makefile ])
+AC_CONFIG_FILES([ kttsd/players/gstplayer/Makefile ])
+AC_CONFIG_FILES([ kttsd/plugins/Makefile ])
+AC_CONFIG_FILES([ kttsd/plugins/command/Makefile ])
+AC_CONFIG_FILES([ kttsd/plugins/epos/Makefile ])
+AC_CONFIG_FILES([ kttsd/plugins/festivalint/Makefile ])
+AC_CONFIG_FILES([ kttsd/plugins/flite/Makefile ])
+AC_CONFIG_FILES([ kttsd/plugins/freetts/Makefile ])
+AC_CONFIG_FILES([ kttsd/plugins/hadifix/Makefile ])
+AC_OUTPUT
+if test "x$have_gst" = xno && test "x$with_gstreamer" != xno; then
+    echo "********************************************************"
+    echo "*"
+    echo "* You do not seem to have GStreamer >= 0.8.7 installed."
+    echo "*"
+    echo "* KTTSD supports GStreamer output but will also"
+    echo "* work with aRts, ALSA, and aKode"
+    echo "*"
+    echo "* PACKAGERS: Please do not include the gstreamer plugin"
+    echo "* in binary distributions of kdeaccessibility as it"
+    echo "* creates unwanted dependencies.  Instead, include in a"
+    echo "* separate package, e.g., kdeaccessibility-extras."
+    echo "* The separate package should require gstreamer >= 0.8.7"
+    echo "*"
+    echo "********************************************************"
+fi
+if test "x$have_gst" = xyes && test "x$with_gstreamer" = xno; then
+    echo "********************************************************"
+    echo "*"
+    echo "* You seem to have GStreamer >= 0.8.7 installed."
+    echo "* but you did not choose to build the gstreamer plugin."
+    echo "* To enable GStreamer plugin, configure with"
+    echo "*"
+    echo "*   --with-gstreamer"
+    echo "*"
+    echo "* KTTSD supports GStreamer output but will also"
+    echo "* work with aRts, ALSA, and aKode"
+    echo "*"
+    echo "* PACKAGERS: Please do not include the gstreamer plugin"
+    echo "* in binary distributions of kdeaccessibility as it"
+    echo "* creates unwanted dependencies.  Instead, include in a"
+    echo "* separate package, e.g., kdeaccessibility-extras."
+    echo "* The separate package should require gstreamer >= 0.8.7"
+    echo "*"
+    echo "********************************************************"
+fi
+if test "x$have_gst" = xyes && test "x$with_gstreamer" != xno; then
+    echo "********************************************************"
+    echo "* The build of the GStreamer audio plugin has been enabled."
+    echo "*"
+    echo "* PACKAGERS: Please do not include the gstreamer plugin"
+    echo "* in binary distributions of kdeaccessibility as it"
+    echo "* creates unwanted dependencies.  Instead, include in a"
+    echo "* separate package, e.g., kdeaccessibility-extras."
+    echo "* The separate package should require gstreamer >= 0.8.7"
+    echo "*"
+    echo "********************************************************"
+fi
+if test "x$have_alsa" = xno && test "x$with_alsa" = xcheck; then
+    echo "********************************************************"
+    echo "* The build of the KTTS ALSA audio plugin has been"
+    echo "* disabled because the ALSA sound library headers"
+    echo "* (alsa/asoundlib.h) were not found."
+    echo "*"
+    echo "********************************************************"
+fi
+if test "x$have_akode" = xno && test "x$with_akode" = xcheck; then
+    echo "********************************************************"
+    echo "* The build of the KTTS aKode audio plugin has been"
+    echo "* disabled because the aKode library configuration"
+    echo "* script (akode-config) was not found. The aKode libary"
+    echo "* is part of the kdesupport module."
+    echo "*"
+    echo "********************************************************"
+fi
+if test "x$epos_bindir" = "xno"; then
+  if test "$compile_epos_plugin" = "yes"; then
+    echo ""
+    echo "======================================================="
+    echo "The Epos program does not appear to be"
+    echo "installed on this system.  The epos plugin will"
+    echo "be built, but you need to install epos before you"
+    echo "can use it.  You can get it at"
+    echo "  http://epos.ure.cas.cz/"
+    echo "Debian users: apt-get install epos"
+    echo "======================================================"
+    all_tests=bad
+  fi
+fi
+
+if test "x$festival_bindir" = "xno"; then
+  if test "$compile_festivalint_plugin" = "yes"; then
+    echo ""
+    echo "======================================================"
+    echo "The festival program does not appear to be installed"
+    echo "on this system.  The Festival Interactive plugin will"
+    echo "be built, but you need to install festival before you"
+    echo "can use it.  Festival comes on most Linux distribution"
+    echo "CDs, or you can get it at"
+    echo "  http://www.cstr.ed.ac.uk/projects/festival/"
+    echo "Debian users: apt-get install festival"
+    echo "====================================================="
+    all_tests=bad
+  fi
+fi
+
+if test "x$flite_bindir" = "xno"; then
+  if test "$compile_flite_plugin" = "yes"; then
+    echo ""
+    echo "======================================================="
+    echo "The Festival Lite (flite) program does not appear to be"
+    echo "installed on this system.  The Flite plugin will"
+    echo "be built, but you need to install Flite before you"
+    echo "can use it.  You can get it at"
+    echo "  http://www.speech.cs.cmu.edu/flite/index.html"
+    echo "Debian users: apt-get install flite"
+    echo "======================================================"
+    all_tests=bad
+  fi
+fi
+
+if test "x$freetts_bindir" = "xno"; then
+  if test "$compile_freetts_plugin" = "yes"; then
+    echo ""
+    echo "======================================================"
+    echo "The freetts.jar Java archive has not been found on"
+    echo "this system.  The FreeTTS plugin will be built,  "
+    echo "but you must install FreeTTS it before you can use it,"
+    echo "or if it already installed you must set the path to"
+    echo "it in the KDE Text-to-Speech Manager."
+    echo "FreeTTS is available from freetts.sourceforge.net" 
+    echo "====================================================="
+    all_tests=bad
+  fi
+fi
+
+if test "x$compile_hadifix_plugin" = "xyes"; then
+  if test "x$hadifix_inst" = "xno"; then
+    echo ""
+    echo "======================================================"
+    echo "Some of the tools needed to run Hadifix do not appear"
+    echo "to be installed on this system.  (mbrola and txt2pho"
+    echo "were not found in the PATH or /etc/txt2pho was not"
+    echo "found).  The Hadifix plugin will be built, but you need"
+    echo "to install the required tools before you can use it:"
+    echo ""
+    if test "x$hadifix_mbrola_bin" = "xno"; then
+      echo "- mbrola was not found. You can get it from"
+      echo "  http://tcts.fpms.ac.be/synthesis/mbrola.html"
+    fi
+    if test "x$hadifix_txt2pho_bin" = "xno"; then
+      echo "- txt2pho was not found. You can get it from"
+      echo "  http://www.ikp.uni-bonn.de/dt/forsch/phonetik/"
+      echo "                        hadifix/HADIFIXforMBROLA.html"
+    fi
+    echo ""
+    echo "Please read the KTTS Handbook for further information."
+    echo "====================================================="
+    all_tests=bad
+  fi
+  if test "x$hadifix_inst" = "xyes"; then
+    if test "x$hadifix_txt2pho" = "xno"; then
+      echo ""
+      echo "======================================================"
+      echo "The configuration file /etc/txt2pho was not found on"
+      echo "this system. This is no problem as long as all users"
+      echo "have a valid ~/.txt2phorc in their home directories if"
+      echo "they want to use the Hadifix plugin."
+      echo "======================================================"
+    fi
+  fi
+fi
+
+# Check if KDE_SET_PREFIX was called, and --prefix was passed to configure
+if test -n "$kde_libs_prefix" -a -n "$given_prefix"; then
+  # And if so, warn when they don't match
+  if test "$kde_libs_prefix" != "$given_prefix"; then
+    # And if kde doesn't know about the prefix yet
+    echo ":"`kde-config --path exe`":" | grep ":$given_prefix/bin/:" 2>&1 >/dev/null
+    if test $? -ne 0; then
+      echo ""
+      echo "Warning: you chose to install this package in $given_prefix,"
+      echo "but KDE was found in $kde_libs_prefix."
+      echo "For this to work, you will need to tell KDE about the new prefix, by ensuring"
+      echo "that KDEDIRS contains it, e.g. export KDEDIRS=$given_prefix:$kde_libs_prefix"
+      echo "Then restart KDE."
+      echo ""
+    fi
+  fi
+fi
+
+if test x$GXX = "xyes" -a x$kde_have_gcc_visibility = "xyes" -a x$kde_cv_val_qt_gcc_visibility_patched = "xno"; then
+  echo ""
+  echo "Your GCC supports symbol visibility, but the patch for Qt supporting visibility"
+  echo "was not included. Therefore, GCC symbol visibility support remains disabled."
+  echo ""
+  echo "For better performance, consider including the Qt visibility supporting patch"
+  echo "located at:"
+  echo ""
+  echo "http://bugs.kde.org/show_bug.cgi?id=109386"
+  echo ""
+  echo "and recompile all of Qt and KDE. Note, this is entirely optional and"
+  echo "everything will continue to work just fine without it."
+  echo ""
+fi
+
+if test "$all_tests" = "bad"; then
+  if test ! "$cache_file" = "/dev/null"; then
+    echo ""
+    echo "Please remove the file $cache_file after changing your setup"
+    echo "so that configure will find the changes next time."
+    echo ""
+  fi
+else
+  echo ""
+  echo "Good - your configure finished. Start make now"
+  echo ""
+fi

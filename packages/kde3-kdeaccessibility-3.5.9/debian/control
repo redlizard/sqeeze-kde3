@@ -1,0 +1,158 @@
+Source: kde3-kdeaccessibility
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Josh Metzler <joshdeb@metzlers.org>, Sune Vuorela <debian@pusling.com>
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 6), gawk, gettext, groff-base, kde3-kdelibs4-dev (>= 4:3.5.9), kde3-kdemultimedia-dev (>= 4:3.5.9), kde3-libakode-dev, libxtst-dev, sharutils
+Standards-Version: 3.7.3
+Homepage: http://accessibility.kde.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdeaccessibility
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdeaccessibility
+
+Package: kde3-kdeaccessibility
+Section: kde
+Architecture: all
+Depends: kde3-kmag (>= ${source:Version}), kde3-kmousetool (>= ${source:Version}), kde3-kmouth (>= ${source:Version}), kde3-kbstate (>= ${source:Version}), kde3-ksayit (>= ${source:Version}), kde3-kttsd (>= ${source:Version})
+Recommends: kde3-kde-icons-mono (>= ${source:Version})
+Suggests: kde3-kttsd-contrib-plugins (>= ${source:Version}), kde3-kdeaccessibility-doc-html (>= ${source:Version})
+Description: accessibility packages from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of programs to make KDE more
+ accessible, provided with the official release of KDE.
+
+Package: kde3-kdeaccessibility-doc-html
+Architecture: all
+Section: doc
+Suggests: kde3-konqueror | www-browser, kde3-kdebase
+Description: KDE accessibility documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE accessibility documentation converted
+ to HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/kmag/. Documentation is provided for most
+ KDE accessibility packages.
+ .
+ This package is part of KDE, and a component of the KDE accessibility
+ module. See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-kde-icons-mono
+Section: kde
+Architecture: all
+Description: a monochromatic icons theme for KDE
+ A monochromatic icon theme for KDE, designed for accessibility purposes.
+ .
+ This package is part of KDE, as a component of the KDE accessibility module.
+ See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-kbstate
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: a keyboard status applet for KDE
+ A panel applet that displays the keyboard status.
+ .
+ This package is part of KDE, as a component of the KDE accessibility module.
+ See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-kmag
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: a screen magnifier for KDE
+ KDE's screen magnifier tool.
+ .
+ You can use KMagnifier to magnify a part of the screen just as you would use 
+ a lens to magnify a newspaper fine-print or a photograph.  This application is
+ useful for a variety of people: from researchers to artists to web-designers to
+ people with low vision.
+ .
+ This package is part of KDE, as a component of the KDE accessibility module.
+ See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-kmousetool
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: KDE mouse manipulation tool for the disabled
+ KMouseTool clicks the mouse whenever the mouse cursor pauses briefly. It was
+ designed to help those with repetitive strain injuries, for whom pressing
+ buttons hurts.
+ .
+ This package is part of KDE, as a component of the KDE accessibility module.
+ See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-kmouth
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: a type-and-say KDE frontend for speech synthesizers
+ KDE's type-and-say frontend for speech synthesizers.
+ .
+ It includes a history of spoken sentences from which the user can select
+ sentences to be re-spoken.
+ .
+ This package is part of KDE, as a component of the KDE accessibility module.
+ See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-ksayit
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: a frontend for the KDE Text-to-Speech system
+ Text-to-speech front-end to kttsd.
+ .
+ This package is part of KDE, as a component of the KDE accessibility module.
+ See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-kttsd
+Section: utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: kde3-ksayit (= ${binary:Version}) | kde3-kmouth (= ${binary:Version}), festival | flite | epos
+Suggests: kde3-kttsd-contrib-plugins (= ${binary:Version})
+Description: a Text-to-Speech system for KDE
+ The KDE Text-to-Speech system is a plugin based service that allows any KDE
+ (or non-KDE) application to speak using the DCOP interface.
+ .
+ ksayit and kmouth are useful front-ends for this capability, while one of
+ festival, flite, and epos are essential back-ends.
+ .
+ This package is part of KDE, as a component of the KDE accessibility module.
+ See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-kttsd-contrib-plugins
+Section: contrib/utils
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: the KDE Text-to-Speech system
+ kttsd synthetizer plugins that depends on non-free software :
+  * FreeTTS plugin.
+  * Hadifix (mbrola/txt2pho) plugin.
+ Those plugins will require manual installation of third party,
+ non free software to work.
+ .
+ This package is part of KDE, as a component of the KDE accessibility module.
+ See the 'kde' and 'kdeaccessibility' packages for more information.
+
+Package: kde3-kdeaccessibility-dbg
+Section: libdevel
+Architecture: any
+Depends: kde3-kdelibs-dbg
+Priority: extra
+Description: debugging symbols for kdeaccessibility
+ This package contains the debugging symbols associated with kdeaccessibility.
+ They will automatically be used by gdb for debugging kdeaccessibility-related
+ issues.
+

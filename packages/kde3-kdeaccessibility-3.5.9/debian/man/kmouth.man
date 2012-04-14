@@ -1,0 +1,15 @@
+.TH KMOUTH 1
+.SH NAME
+kmouth \- A type and say KDE front end for speech synthesizers
+.SH SYNOPSIS
+.B kmouth [file]
+.I [Qt-options] [KDE-options]
+.SH DESCRIPTION
+.B kmouth
+Kmouth is a type and say KDE front end for speech synthesizers.
+.so kdeopt.part
+.SH SEE ALSO
+More detailed user documentation is available from
+.BR help:/kmouth
+(either enter this URL into \fBkonqueror\fP, or run `khelpcenter
+help:/kmouth').

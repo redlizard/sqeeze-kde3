@@ -1,0 +1,14 @@
+#DPATCHLEVEL=0
+--- kmag/kmagzoomview.cpp	(.../tags/KDE/3.5.9/kdeaccessibility)	(revision 823407)
++++ kmag/kmagzoomview.cpp	(.../branches/KDE/3.5/kdeaccessibility)	(revision 823407)
+@@ -123,8 +123,8 @@
+ KMagZoomView::KMagZoomView(QWidget *parent, const char *name)
+   : QScrollView(parent, name),
+     m_selRect(0, 0, 128, 128, this),
+-    m_grabTimer(parent),
+-    m_mouseViewTimer(parent),
++    m_grabTimer(0),
++    m_mouseViewTimer(0),
+     m_latestCursorPos(0,0),
+     m_followMouse(false),
+     m_showMouse(1),

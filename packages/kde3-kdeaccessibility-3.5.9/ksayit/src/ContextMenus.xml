@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1'?>
+<KSayItContextActions>
+   <Item editable="no" id="RobDocument">
+      <Submenu name="New">
+        <Action qty="1">BookInfo</Action>
+        <Action qty="n">Chapter</Action>
+      </Submenu>
+   </Item>
+   <Item editable="no" id="BookInfo">
+      <Submenu name="New">
+        <Action qty="1">KeywordSet</Action>
+        <Action qty="1">Abstract</Action>
+        <Action qty="1">AuthorGroup</Action>
+        <Action qty="1">Date</Action>
+        <Action qty="1">ReleaseInfo</Action>
+      </Submenu>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="AuthorGroup">
+      <Submenu name="New">
+        <Action qty="n">Author</Action>
+      </Submenu>
+        <Action qty="n">Rename</Action>
+        <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="KeywordSet">
+      <Submenu name="New">
+        <Action qty="n">Keyword</Action>
+      </Submenu>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="yes" maxlines="1" id="Keyword">
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="yes" maxlines="1" id="Author">
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="yes" maxlines="1" id="Date">
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="yes" maxlines="1" id="ReleaseInfo">
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="Abstract">
+      <Submenu name="New">
+        <Action qty="n">Paragraph</Action>
+      </Submenu>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="Chapter">
+      <Submenu name="New">
+        <Action qty="n">Paragraph</Action>
+        <Action qty="n">Section_1</Action>
+      </Submenu>
+      <Action qty="n">Rename</Action>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="Sect1">
+      <Submenu name="New">
+        <Action qty="n">Paragraph</Action>
+        <Action qty="n">Section_2</Action>
+      </Submenu>
+      <Action qty="n">Rename</Action>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="Sect2">
+      <Submenu name="New">
+        <Action qty="n">Paragraph</Action>
+        <Action qty="n">Section_3</Action>
+      </Submenu>
+      <Action qty="n">Rename</Action>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="Sect3">
+      <Submenu name="New">
+        <Action qty="n">Paragraph</Action>
+        <Action qty="n">Section_4</Action>
+      </Submenu>
+      <Action qty="n">Rename</Action>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="Sect4">
+      <Submenu name="New">
+        <Action qty="n">Paragraph</Action>
+        <Action qty="n">Section_5</Action>
+      </Submenu>
+      <Action qty="n">Rename</Action>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="no" id="Sect5">
+      <Submenu name="New">
+        <Action qty="n">Paragraph</Action>
+      </Submenu>
+      <Action qty="n">Rename</Action>
+      <Action qty="n">Delete</Action>
+   </Item>
+   <Item editable="yes" maxlines="-1" id="Para">
+      <Action qty="n">Delete</Action>
+   </Item>
+</KSayItContextActions>

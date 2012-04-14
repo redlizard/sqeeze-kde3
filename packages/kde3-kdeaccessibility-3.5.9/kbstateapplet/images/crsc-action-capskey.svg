@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="64" height="64">
+  <path style="fill:none;stroke:#808080;stroke-width:2;"
+     d="M 32 50 L 14 32 L 24 32 L 24 14 L 40 14 L 40 32 L 50 32 L 32 50 z " />
+</svg>

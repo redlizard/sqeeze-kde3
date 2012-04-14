@@ -1,0 +1,8 @@
+?package(ksayit):\
+	needs="x11"\
+	section="Applications/Accessibility"\
+	hints="KDE"\
+	title="KSayIt"\
+	icon32x32="/opt/kde3/share/pixmaps/ksayit.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ksayit-16.xpm"\
+	command="/opt/kde3/bin/ksayit"

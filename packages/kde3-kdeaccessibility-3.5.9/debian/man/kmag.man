@@ -1,0 +1,15 @@
+.TH KMAG 1
+.SH NAME
+kmag \- A screen magnifier for KDE
+.SH SYNOPSIS
+.B kmag [file]
+.I [Qt-options] [KDE-options]
+.SH DESCRIPTION
+.B kmag
+Kmag is a KDE screen magnifier for the visually impaired.
+.so kdeopt.part
+.SH SEE ALSO
+More detailed user documentation is available from
+.BR help:/kmag
+(either enter this URL into \fBkonqueror\fP, or run `khelpcenter
+help:/kmag').

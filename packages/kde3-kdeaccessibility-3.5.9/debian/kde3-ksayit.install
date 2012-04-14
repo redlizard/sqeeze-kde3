@@ -1,0 +1,20 @@
+debian/tmp/opt/kde3/bin/ksayit
+debian/tmp/opt/kde3/include/kde/ksayit_fxplugin.h
+debian/tmp/opt/kde3/lib/kde3/libFreeverb_plugin.la
+debian/tmp/opt/kde3/lib/kde3/libFreeverb_plugin.so
+debian/tmp/opt/kde3/lib/libKTTSD_Lib.la
+debian/tmp/opt/kde3/lib/libKTTSD_Lib.so
+debian/tmp/opt/kde3/lib/libKTTSD_Lib.so.0
+debian/tmp/opt/kde3/lib/libKTTSD_Lib.so.0.0.1
+debian/tmp/opt/kde3/share/applications/kde/ksayit.desktop
+debian/tmp/opt/kde3/share/apps/ksayit/ContextMenus.xml
+debian/tmp/opt/kde3/share/apps/ksayit/ksayitui.rc
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/ksayit.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/ksayit.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/ksayit_clipempty.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/ksayit_talking.png
+debian/tmp/opt/kde3/share/services/ksayit_libFreeverb.desktop
+debian/tmp/opt/kde3/share/servicetypes/ksayit_libFreeverb_service.desktop
+
+debian/icons/ksayit.xpm		/opt/kde3/share/pixmaps
+debian/icons/ksayit-16.xpm	/opt/kde3/share/pixmaps

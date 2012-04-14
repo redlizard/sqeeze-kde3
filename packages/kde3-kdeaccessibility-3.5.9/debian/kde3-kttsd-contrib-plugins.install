@@ -1,0 +1,7 @@
+debian/tmp/opt/kde3/lib/kde3/libkttsd_freettsplugin.la
+debian/tmp/opt/kde3/lib/kde3/libkttsd_freettsplugin.so
+debian/tmp/opt/kde3/lib/kde3/libkttsd_hadifixplugin.la
+debian/tmp/opt/kde3/lib/kde3/libkttsd_hadifixplugin.so
+debian/tmp/opt/kde3/share/apps/kttsd/hadifix/xslt/SSMLtoTxt2pho.xsl
+debian/tmp/opt/kde3/share/services/kttsd_freettsplugin.desktop
+debian/tmp/opt/kde3/share/services/kttsd_hadifixplugin.desktop

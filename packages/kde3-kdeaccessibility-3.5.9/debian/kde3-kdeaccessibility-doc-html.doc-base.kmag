@@ -1,0 +1,10 @@
+Document: kdeaccessibility-doc-html-kmag
+Title: KMag Handbook
+Author: Sarang Lakare 
+Abstract: KMag is a screen magnifier.
+Section: Accessibility
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kmag/index.html
+Files: /usr/share/doc/kde/HTML/en/kmag/*.html
+

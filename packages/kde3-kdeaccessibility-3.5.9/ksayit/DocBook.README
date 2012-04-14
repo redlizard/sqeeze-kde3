@@ -1,0 +1,76 @@
+KSayIt supports the following subset of DocBook elements:
+
+Book ::=
+ (BookInfo, Chapter+)
+
+BookInfo ::=
+ ((KeywordSet|Abstract|AuthorGroup|Date|ReleaseInfo|Title)+)
+ 
+KeywordSet ::=
+ (Keyword+)
+
+Keyword ::=
+ (#PCDATA+)
+ 
+Abstract ::=
+ (Para+)
+
+Authorgroup ::=
+ (Author+)
+
+Author ::=
+ ((Firstname|Surname)+)
+ 
+Firstname ::=
+ (#PCDATA+)
+
+Surname ::=
+ (#PCDATA+)
+ 
+Date ::=
+ (#PCDATA+)
+
+ReleaseInfo ::=
+ (#PCDATA+)
+
+Title ::=
+ (#PCDATA+)
+ 
+Chapter ::=
+ (Title,(Para|Sect1)+)
+
+Sect1 ::=
+ (Title,(Para|Sect2)+)
+
+Sect2 ::=
+ (Title,(Para|Sect3)+)
+
+Sect3 ::=
+ (Title,(Para|Sect4)+)
+
+Sect4 ::=
+ (Title,(Para|Sect5)+)
+
+Sect5 ::=
+ (Title, Para+)
+
+Para ::=
+ ((#PCDATA|Citation|Emphasis|ForeignPhrase|Phrase|Action|Application|
+   Command|Email|Filename|Function|GUIButton|GUIIcon|GUILabel|GUIMenu|
+   GUIMenuItem|GUISubmenu|ItemizedList|KeyCap|KeyCode|KeyCombo|KeySym|Literal|
+   MenuChoice|MouseButton|Option|UserInput|Author|CorpAuthor|Comment|
+   Subscript|Superscript|Note|Tip|Warning)+)
+   
+ItemizedList ::=
+ (ListItem+)
+ 
+ListItem ::=
+ (#PCDATA+)
+ 
+All entities must be defined in an internal DTD within the document. External entities are NOT supported.
+
+-- 
+Robert Vogl
+
+
+

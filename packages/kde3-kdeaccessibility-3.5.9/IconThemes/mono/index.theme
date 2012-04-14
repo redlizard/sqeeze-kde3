@@ -1,0 +1,172 @@
+[Icon Theme]
+Name=Monochrome
+Name[br]=Monokrom
+Name[ca]=Monocrom
+Name[cs]=Černobíle
+Name[cy]=Unlliw
+Name[da]=Monokrom
+Name[de]=Monochrom
+Name[el]=Μονόχρωμο
+Name[es]=Monocromo
+Name[et]=Ühevärviline
+Name[eu]=Monokromoa
+Name[fa]=تک رنگ
+Name[fi]=Yksivärinen
+Name[ga]=Monacrómach
+Name[gl]=Monocromo
+Name[he]=מונוכרום
+Name[hu]=Monokróm
+Name[is]=Svart/hvítt
+Name[it]=Monocromo
+Name[km]=តែ​មួយ​ពណ៌
+Name[lt]=Monochrominis
+Name[mk]=Монохром
+Name[ms]=Monokrom
+Name[nb]=Ensfarget
+Name[nds]=Swattwitt
+Name[ne]=मोनोक्रोम
+Name[nl]=Monochroom
+Name[pl]=Monochromatyczny
+Name[pt]=Monocromático
+Name[pt_BR]=Monocromático
+Name[ru]=Чёрно-белая тема
+Name[sl]=Monokromatsko
+Name[sr]=Монохроматски
+Name[sr@Latn]=Monohromatski
+Name[sv]=Monokrom
+Name[ta]=மோனோக்ரோம்
+Name[tg]=Мавзӯъи сиёҳ-сафед
+Name[tr]=Siyah-beyaz
+Name[uk]=Чорно-біле
+Name[vi]=Đơn sắc
+Name[zh_TW]=單色
+Comment=By Danny Allen (danny@dannyallen.co.uk)
+Comment[bs]=Autor: Danny Allen (danny@dannyallen.co.uk)
+Comment[ca]=Per Danny Allen (danny@dannyallen.co.uk)
+Comment[cs]=Danny Allen (danny@dannyallen.co.uk)
+Comment[da]=Ved Danny Allen (danny@dannyallen.co.uk)
+Comment[de]=Von Danny Allen (danny@dannyallen.co.uk)
+Comment[el]=Από τον Danny Allen (danny@dannyallen.co.uk)
+Comment[es]=Por Danny Allen (danny@dannyallen.co.uk)
+Comment[et]=Autor: Danny Allen (danny@dannyallen.co.uk)
+Comment[eu]=Egilea: Danny Allen (danny@dannyallen.co.uk)
+Comment[fa]=توسط دنی آلن (danny @dannyallen.co.uk)
+Comment[fi]=Danny Allen (danny@dannyallen.co.uk)
+Comment[fr]=De Danny Allen (danny@dannyallen.co.uk)
+Comment[ga]=Le Danny Allen (danny@dannyallen.co.uk)
+Comment[gl]=Por Danny Allen (danny@dannyallen.co.uk)
+Comment[he]=נכתב על ידי Danny Allen (danny@dannyallen.co.uk)
+Comment[hu]=Készítette: Danny Allen <danny@dannyallen.co.uk>
+Comment[is]=Eftir Danny Allen (danny@dannyallen.co.uk)
+Comment[it]=Di Danny Allen (danny@dannyallen.co.uk)
+Comment[km]= ដោយ​លោក​ Danny Allen (danny@dannyallen.co.uk)
+Comment[lt]=Sukūrė Danny Allen (danny@dannyallen.co.uk)
+Comment[mk]=Од Danny Allen (danny@dannyallen.co.uk)
+Comment[ms]=Oleh Danny Allen (danny@dannyallen.co.uk)
+Comment[mt]=Ta' Danny Allen (danny@dannyallen.co.uk)
+Comment[nb]=av Danny Allen (danny@dannyallen.co.uk)
+Comment[nds]=Vun Danny Allen (danny@dannyallen.co.uk)
+Comment[ne]=डेनी एलेनद्वारा (danny@dannyallen.co.uk)
+Comment[nl]=door Danny Allen (danny@dannyallen.co.uk)
+Comment[pa]=Danny Allen (danny@dannyallen.co.uk) ਵਲੋਂ
+Comment[pl]=Autor Danny Allen (danny@dannyallen.co.uk)
+Comment[pt]=Por Danny Allen (danny@dannyallen.co.uk)
+Comment[pt_BR]=Por Danny Allen (danny@dannyallen.co.uk)
+Comment[ru]=Написал Дэнни Аллен (Danny Allen) (danny@dannyallen.co.uk)
+Comment[sk]=Danny Allen (danny@dannyallen.co.uk)
+Comment[sl]=Napisal Danny Allen (danny@dannyallen.co.uk)
+Comment[sr]=Од Денија Алена (Danny Allen, danny@dannyallen.co.uk)
+Comment[sr@Latn]=Od Denija Alena (Danny Allen, danny@dannyallen.co.uk)
+Comment[sv]=Av Danny Allen (danny@dannyallen.co.uk)
+Comment[ta]=டானி ஆலன் (danny@dannyallen.co.uk)
+Comment[tg]=Навишташудааст аз тарафи Аллен (Danny Allen) (danny@dannyallen.co.uk)
+Comment[th]=โดย Danny Allen (danny@dannyallen.co.uk)
+Comment[tr]=Danny Allen (danny@dannyallen.co.uk)
+Comment[uk]=Автор Danny Allen (danny@dannyallen.co.uk)
+Comment[vi]=Bởi Danny Allen (danny@dannyallen.co.uk)
+Comment[zh_CN]=由 Danny Allen (danny@dannyallen.co.uk) 制作
+Inherits=hicolor
+DisplayDepth=32
+Example=exec
+LinkOverlay=link_overlay
+LockOverlay=lock_overlay
+ZipOverlay=zip_overlay
+DesktopDefault=48
+DesktopSizes=22,32,48,64,128,256
+ToolbarDefault=32
+ToolbarSizes=16,22,32,48,64,128,256
+MainToolbarDefault=32
+MainToolbarSizes=16,22,32,48,64,128,256
+SmallDefault=16
+SmallSizes=16
+PanelDefault=48
+PanelSizes=16,22,32,48,64,128,256
+Directories=scalable/actions,png/16x16/actions,png/22x22/actions,png/32x32/actions,png/48x48/actions,png/64x64/actions,png/96x96/actions,png/128x128/actions,png/192x192/actions,png/256x256/actions,scalable/apps,scalable/devices,scalable/filesystems,scalable/mimetypes
+
+[scalable/actions]
+Size=48
+Type=Scalable
+MinSize=8
+MaxSize=256
+Context=Actions
+[scalable/apps]
+Size=48
+Type=Scalable
+MinSize=8
+MaxSize=256
+Context=Applications
+[scalable/devices]
+Size=48
+Type=Scalable
+MinSize=8
+MaxSize=256
+Context=Devices
+[scalable/filesystems]
+Size=48
+Type=Scalable
+MinSize=8
+MaxSize=256
+Context=FileSystems
+[scalable/mimetypes]
+Size=48
+Type=Scalable
+MinSize=8
+MaxSize=256
+Context=MimeTypes
+
+[png/16x16/actions]
+Size=16
+Context=Actions
+Type=Threshold
+[png/22x22/actions]
+Size=22
+Context=Actions
+Type=Threshold
+[png/32x32/actions]
+Size=32
+Context=Actions
+Type=Threshold
+[png/48x48/actions]
+Size=48
+Context=Actions
+Type=Threshold
+[png/64x64/actions]
+Size=64
+Context=Actions
+Type=Threshold
+[png/96x96/actions]
+Size=96
+Context=Actions
+Type=Threshold
+[png/128x128/actions]
+Size=128
+Context=Actions
+Type=Threshold
+[png/192x192/actions]
+Size=192
+Context=Actions
+Type=Threshold
+[png/256x256/actions]
+Size=256
+Context=Actions
+Type=Threshold

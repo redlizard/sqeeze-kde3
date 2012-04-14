@@ -1,0 +1,2 @@
+ksayit: non-dev-pkg-with-shlib-symlink usr/lib/libKTTSD_Lib.so.0.0.1 usr/lib/libKTTSD_Lib.so
+ksayit: package-name-doesnt-match-sonames libKTTSD-Lib0

@@ -1,0 +1,3 @@
+kttsd: package-name-doesnt-match-sonames libkttsd1
+kttsd: non-dev-pkg-with-shlib-symlink usr/lib/libkttsd.so.1.0.0 usr/lib/libkttsd.so
+

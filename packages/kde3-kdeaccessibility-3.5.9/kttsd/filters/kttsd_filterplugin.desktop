@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=ServiceType
+X-KDE-ServiceType=KTTSD/FilterPlugin
+
+[PropertyDef::X-KDE-Languages]
+Type=QStringList

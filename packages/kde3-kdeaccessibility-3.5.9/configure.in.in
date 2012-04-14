@@ -1,0 +1,51 @@
+#MIN_CONFIG(3.2)
+
+AM_INIT_AUTOMAKE(kdeaccessibility,1.0.0)
+KDE_ENABLE_HIDDEN_VISIBILITY
+AC_CHECK_SETENV
+AC_CHECK_UNSETENV
+
+CXXFLAGS="$CXXFLAGS $KDE_DEFAULT_CXXFLAGS"
+
+#AC_CHECK_HEADERS(sys/stropts.h stropts.h)
+
+dnl ================================================================================
+
+dnl See if the latest kspeech.h is installed and if not, compile against
+dnl kttsd/compat directory.
+
+if test "$KTTS_KSPEECH_DIR" = ""; then
+    KDE_CHECK_HEADER(kspeech.h, ktts_have_kspeech_h=yes, ktts_have_kspeech_h=no)
+    have_latest_kspeech=no
+    if test "x$ktts_have_kspeech_h" = xyes; then
+        AC_MSG_CHECKING([whether installed kspeech.h is latest version])
+        ktts_save_cppflags=$CPPFLAGS
+        AC_LANG_SAVE
+        CPPFLAGS="$all_includes $CPPFLAGS"
+        AC_LANG_CPLUSPLUS
+        AC_TRY_COMPILE(
+            [#include <kspeech.h>],
+            [
+            if (4 == KSpeech::mtHtml);
+            ],
+            have_latest_kspeech=yes,
+            have_latest_kspeech=no)
+        AC_MSG_RESULT($have_latest_kspeech)
+        CPPFLAGS=$ktts_save_cppflags
+        AC_LANG_RESTORE
+    fi
+    if test "x$have_latest_kspeech" = xyes; then
+        KTTS_KSPEECH_DIR='$(kde_includes)'
+        KTTS_KSPEECH_INCLUDE=""
+        KTTS_INTERFACES_DIR=""
+    else
+        KTTS_KSPEECH_DIR='$(top_srcdir)/kttsd/compat/interfaces/kspeech'
+        KTTS_KSPEECH_INCLUDE='-I$(top_srcdir)/kttsd/compat/interfaces/kspeech'
+        KTTS_INTERFACES_DIR="interfaces"
+        AC_MSG_WARN([Latest kspeech.h not installed. Compiling using kttsd/compat directory.])
+    fi
+
+    AC_SUBST(KTTS_KSPEECH_DIR)
+    AC_SUBST(KTTS_KSPEECH_INCLUDE)
+    AC_SUBST(KTTS_INTERFACES_DIR)
+fi

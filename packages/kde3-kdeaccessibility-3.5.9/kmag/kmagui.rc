@@ -1,0 +1,109 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="kmag" version="11">
+ <ToolBar noMerge="1" name="mainToolBar">
+  <Action name="new_window"/>
+  <Separator />
+  <Action name="snapshot"/>
+  <Action name="print"/>
+  <Action name="copy"/>
+ </ToolBar>
+
+ <ToolBar noMerge="1" name="viewToolBar">
+  <Action name="start_stop_refresh"/>
+  <Separator />
+  <Action name="zoom_in"/>
+  <Action name="zoom"/>
+  <Action name="zoom_out"/>
+  <Separator />
+  <Action name="fps_selector"/>
+ </ToolBar>
+
+ <ToolBar noMerge="1" name="settingsToolBar">
+  <Action name="mode_followmouse"/>
+  <Action name="mode_selectionwindow"/>
+  <Separator />
+  <Action name="hidecursor"/>
+ </ToolBar>
+
+ <MenuBar>
+  <Menu name="file"><text>&amp;File</text>
+   <Action name="new_window"/>
+   <Action name="snapshot"/>
+   <Action name="print"/>
+   <Separator />
+   <Action name="quit"/>
+  </Menu>
+  <Menu name="edit"><text>&amp;Edit</text>
+   <Action name="copy"/>
+  </Menu>
+  <Menu name="view"><text>&amp;View</text>
+   <Action name="start_stop_refresh"/>
+   <Separator />
+   <Action name="zoom"/>
+   <Action name="zoom_out"/>
+   <Action name="zoom_in"/>
+   <Separator />
+   <Action name="invert"/>
+   <Action name="rotation"/>
+   <Action name="fps_selector"/>
+  </Menu>
+  <Menu name="settings"><text>&amp;Settings</text>
+   <Action name="show_menu"/>
+   <Action name="show_mainToolBar"/>
+   <Action name="show_viewToolBar"/>
+   <Action name="show_settingsToolBar"/>
+   <Separator />
+   <Action name="mode_followmouse"/>
+   <Action name="mode_selectionwindow"/>
+   <Action name="mode_edgetop"/>
+   <Action name="mode_edgeleft"/>
+   <Action name="mode_edgeright"/>
+   <Action name="mode_edgebottom"/>
+   <Separator />
+   <Action name="hidecursor"/>
+   <Separator />
+   <Action name="key_conf"/>
+   <Action name="toolbar_conf"/>
+  </Menu>
+ </MenuBar>
+
+ <Menu name="mainPopUp">
+  <Action name="new_window"/>
+  <Separator />
+  <Action name="copy"/>
+  <Separator />
+  <Menu name="view"><text>&amp;View</text>
+   <Action name="start_stop_refresh"/>
+   <Separator />
+   <Action name="zoom"/>
+   <Action name="zoom_out"/>
+   <Action name="zoom_in"/>
+   <Separator />
+   <Action name="invert"/>
+   <Action name="rotation"/>
+   <Action name="fps_selector"/>
+  </Menu>
+  <Menu name="settings"><text>&amp;Settings</text>
+   <Action name="show_menu"/>
+   <Action name="show_mainToolBar"/>
+   <Action name="show_viewToolBar"/>
+   <Action name="show_settingsToolBar"/>
+   <Separator />
+   <Action name="mode_followmouse"/>
+   <Action name="mode_selectionwindow"/>
+   <Action name="mode_edgetop"/>
+   <Action name="mode_edgeleft"/>
+   <Action name="mode_edgeright"/>
+   <Action name="mode_edgebottom"/>
+   <Separator />
+   <Action name="hidecursor"/>
+   <Separator />
+   <Action name="key_conf"/>
+   <Action name="toolbar_conf"/>
+  </Menu>
+  <Separator />
+  <Action name="snapshot"/>
+  <Action name="print"/>
+  <Action name="quit"/>
+ </Menu>
+</kpartgui>

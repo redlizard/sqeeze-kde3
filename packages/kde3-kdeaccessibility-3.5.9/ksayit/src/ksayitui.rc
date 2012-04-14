@@ -1,0 +1,38 @@
+<!DOCTYPE kpartgui>
+<kpartgui version="0.1" name="ksayit" >
+ <ActionProperties>
+  <Action icon="player_play" name="say_it" />
+  <Action icon="player_pause" name="pause" />
+  <Action icon="player_stop" name="shut_up" />
+  <Action icon="2rightarrow" name="next_sentence" />
+  <Action icon="2leftarrow" name="prev_sentence" />
+  <Action icon="editdelete" name="clear" />
+  <Action icon="edit" name="edittext" />
+ </ActionProperties>
+ <MenuBar>
+  <Menu name="action" >
+   <text>&amp;Action</text>
+   <Action name="prev_sentence" />
+   <Action name="say_it" />
+   <Action name="next_sentence" />
+   <Action name="pause" />
+   <Action name="shut_up" />
+   <Separator lineSeparator="true" />
+   <Action name="edittext" />
+   <Action name="clear" />
+  </Menu>
+  <Action name="bookmarks" />
+ </MenuBar>
+ <ToolBar noMerge="1" name="mainToolBar" >
+  <text>Main Toolbar</text>
+  <Action name="bookmarks" />
+  <Separator name="separator_1" />
+  <Action name="prev_sentence" />
+  <Action name="say_it" />
+  <Action name="next_sentence" />
+  <Action name="pause" />
+  <Action name="shut_up" />
+  <Separator name="separator_0" />
+  <Action name="edittext" />
+ </ToolBar>
+</kpartgui>

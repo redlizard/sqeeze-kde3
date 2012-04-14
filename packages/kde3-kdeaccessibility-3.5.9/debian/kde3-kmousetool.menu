@@ -1,0 +1,8 @@
+?package(kmousetool):\
+	needs="x11"\
+	section="Applications/Accessibility"\
+	hints="KDE"\
+	title="KMousetool"\
+	icon32x32="/opt/kde3/share/pixmaps/kmousetool.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kmousetool-16.xpm"\
+	command="/opt/kde3/bin/kmousetool"

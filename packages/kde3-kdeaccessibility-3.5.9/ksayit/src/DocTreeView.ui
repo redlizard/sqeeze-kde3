@@ -1,0 +1,158 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>DocTreeView</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>DocTreeView</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>467</width>
+            <height>331</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>7</hsizetype>
+            <vsizetype>7</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>100</width>
+            <height>200</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Document Contents</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>2</number>
+        </property>
+        <property name="resizeMode">
+            <enum>Minimum</enum>
+        </property>
+        <widget class="KListView" row="0" column="0">
+            <column>
+                <property name="text">
+                    <string>Chapter</string>
+                </property>
+                <property name="clickable">
+                    <bool>false</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Info</string>
+                </property>
+                <property name="clickable">
+                    <bool>false</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Page</string>
+                </property>
+                <property name="clickable">
+                    <bool>false</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Hidden</string>
+                </property>
+                <property name="clickable">
+                    <bool>false</bool>
+                </property>
+                <property name="resizable">
+                    <bool>false</bool>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>listView</cstring>
+            </property>
+            <property name="resizePolicy">
+                <enum>Default</enum>
+            </property>
+            <property name="selectionMode" stdset="0">
+                <enum>NoSelection</enum>
+            </property>
+            <property name="rootIsDecorated">
+                <bool>true</bool>
+            </property>
+            <property name="itemsMovable">
+                <bool>false</bool>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>listView</sender>
+        <signal>clicked(QListViewItem*)</signal>
+        <receiver>DocTreeView</receiver>
+        <slot>slotItemClicked(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>listView</sender>
+        <signal>rightButtonPressed(QListViewItem*,const QPoint&amp;,int)</signal>
+        <receiver>DocTreeView</receiver>
+        <slot>slotRightButtonPressed(QListViewItem*,const QPoint&amp;,int)</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">DocTreeView.ui.h</include>
+</includes>
+<signals>
+    <signal>signalContentChanged(const QString &amp;)</signal>
+    <signal>signalAllNodesProcessed()</signal>
+    <signal>signalSetText(const QString &amp;)</signal>
+    <signal>signalEnableTextedit(bool)</signal>
+    <signal>signalNotifyBookmarkManager(const QString&amp;, const QString &amp;)</signal>
+    <signal>signalSetBookmarkFilename(const QString&amp;)</signal>
+    <signal>signalChangeBookmarkFilename(const QString &amp;)</signal>
+    <signal>signalDeleteBookmark(const QString&amp;, const QString&amp;)</signal>
+</signals>
+<slots>
+    <slot>slotItemClicked( QListViewItem * )</slot>
+    <slot access="protected">slotRenameItem()</slot>
+    <slot access="protected">slotDeleteItem()</slot>
+    <slot access="protected">slotNewBookInfo()</slot>
+    <slot access="protected">slotNewChapter()</slot>
+    <slot access="protected">slotNewKeywordSet()</slot>
+    <slot access="protected">slotNewKeyword()</slot>
+    <slot access="protected">slotNewAbstract()</slot>
+    <slot access="protected">slotNewAuthorGroup()</slot>
+    <slot access="protected">slotNewAuthor()</slot>
+    <slot access="protected">slotNewDate()</slot>
+    <slot access="protected">slotNewReleaseInfo()</slot>
+    <slot access="protected">slotNewTitle()</slot>
+    <slot access="protected">slotNewParagraph()</slot>
+    <slot access="protected">slotNewSection_1()</slot>
+    <slot access="protected">slotNewSection_2()</slot>
+    <slot access="protected">slotNewSection_3()</slot>
+    <slot access="protected">slotNewSection_4()</slot>
+    <slot access="protected">slotNewSection_5()</slot>
+    <slot>slotRightButtonPressed( QListViewItem * i, const QPoint &amp;, int )</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>klistview.h</includehint>
+</includehints>
+</UI>

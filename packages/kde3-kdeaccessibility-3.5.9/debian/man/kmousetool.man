@@ -1,0 +1,18 @@
+.TH KMOUSETOOL 1
+.SH NAME
+kmousetool \- KDE mouse manipulation tool
+.SH SYNOPSIS
+.B kmousetool
+.I [Qt-options] [KDE-options]
+.SH DESCRIPTION
+.B kmousetool
+Kmousetool is a KDE mouse manipulation tool aimed to help aid
+disabled people but useful for many.  It includes features
+and options that provide artificial intelligence on common
+mouse gestures to perform actions.
+.so kdeopt.part
+.SH SEE ALSO
+More detailed user documentation is available from
+.BR help:/kmousetool
+(either enter this URL into \fBkonqueror\fP, or run `khelpcenter
+help:/kmousetool').
