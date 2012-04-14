@@ -1,0 +1,16 @@
+/opt/kde3/bin/kalarm
+/opt/kde3/bin/kalarmd
+/opt/kde3/share/applications/kde/kalarm.desktop
+/opt/kde3/share/applnk/.hidden/kalarmd.desktop
+/opt/kde3/share/applnk/Applications/kalarm.desktop
+/opt/kde3/share/apps/kalarm
+/opt/kde3/share/autostart/kalarm.tray.desktop
+/opt/kde3/share/autostart/kalarmd.autostart.desktop
+/opt/kde3/share/doc/kde/HTML/en/kalarm
+/opt/kde3/share/icons/crystalsvg/16x16/actions/kalarm.png
+/opt/kde3/share/icons/hicolor/16x16/apps/kalarm.png
+/opt/kde3/share/icons/crystalsvg/22x22/actions/kalarm.png
+/opt/kde3/share/icons/hicolor/32x32/apps/kalarm.png
+/opt/kde3/share/icons/hicolor/48x48/apps/kalarm.png
+../icons/kalarm.xpm /opt/kde3/share/pixmaps
+../icons/kalarm-16.xpm /opt/kde3/share/pixmaps

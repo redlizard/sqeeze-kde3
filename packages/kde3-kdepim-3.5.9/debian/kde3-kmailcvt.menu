@@ -1,0 +1,6 @@
+?package(kmailcvt):\
+	needs="X11"\
+	section="Applications/Data Management"\
+	hints="KDE,Mail"\
+	title="KMail/KAB Import Tool"\
+	command="/opt/kde3/bin/kmailcvt"

@@ -1,0 +1,8 @@
+?package(korn):\
+	needs="X11"\
+	section="Applications/Network/Web News"\
+	hints="KDE"\
+	title="KOrn"\
+	icon32x32="/opt/kde3/share/pixmaps/korn.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/korn-16.xpm"\
+	command="/opt/kde3/bin/korn"

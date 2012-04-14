@@ -1,0 +1,17 @@
+?package(kpilot):\
+	needs="X11"\
+	section="Applications/Mobile Devices"\
+	hints="KDE"\
+	title="KPilot"\
+	icon32x32="/opt/kde3/share/pixmaps/kpilot.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kpilot-16.xpm"\
+	command="/opt/kde3/bin/kpilot"
+
+?package(kpilot):\
+	needs="X11"\
+	section="Applications/Mobile Devices"\
+	hints="KDE"\
+	title="KPalmDOC"\
+	icon32x32="/opt/kde3/share/pixmaps/kpalmdoc.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kpalmdoc-16.xpm"\
+	command="/opt/kde3/bin/kpalmdoc"

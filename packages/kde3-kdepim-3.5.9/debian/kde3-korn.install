@@ -1,0 +1,13 @@
+/opt/kde3/bin/korn
+/opt/kde3/lib/kconf_update_bin/korn-3-4-config_change
+/opt/kde3/share/applications/kde/KOrn.desktop
+/opt/kde3/share/apps/kconf_update/korn-3-4-config_change.upd
+/opt/kde3/share/apps/kconf_update/korn-3-5-metadata-update.pl
+/opt/kde3/share/apps/kconf_update/korn-3-5-ssl-update.pl
+/opt/kde3/share/apps/kconf_update/korn-3-5-update.upd
+/opt/kde3/share/doc/kde/HTML/en/korn
+/opt/kde3/share/icons/hicolor/16x16/apps/korn.png
+/opt/kde3/share/icons/hicolor/32x32/apps/korn.png
+/opt/kde3/share/icons/hicolor/48x48/apps/korn.png
+../icons/korn.xpm /opt/kde3/share/pixmaps
+../icons/korn-16.xpm /opt/kde3/share/pixmaps

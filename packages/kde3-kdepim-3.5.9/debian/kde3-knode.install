@@ -1,0 +1,24 @@
+/opt/kde3/bin/knode
+/opt/kde3/lib/kde3/kcm_knode.la
+/opt/kde3/lib/kde3/kcm_knode.so
+/opt/kde3/lib/kde3/libknodepart.la
+/opt/kde3/lib/kde3/libknodepart.so
+/opt/kde3/lib/libknodecommon.so.3
+/opt/kde3/lib/libknodecommon.so.3.0.0
+/opt/kde3/share/applications/kde/KNode.desktop
+/opt/kde3/share/apps/knode
+/opt/kde3/share/doc/kde/HTML/en/knode
+/opt/kde3/share/icons/hicolor/128x128/apps/knode.png
+/opt/kde3/share/icons/hicolor/128x128/apps/knode2.png
+/opt/kde3/share/icons/hicolor/16x16/apps/knode.png
+/opt/kde3/share/icons/hicolor/16x16/apps/knode2.png
+/opt/kde3/share/icons/hicolor/32x32/apps/knode.png
+/opt/kde3/share/icons/hicolor/32x32/apps/knode2.png
+/opt/kde3/share/icons/hicolor/48x48/apps/knode.png
+/opt/kde3/share/icons/hicolor/48x48/apps/knode2.png
+/opt/kde3/share/icons/hicolor/64x64/apps/knode.png
+/opt/kde3/share/icons/hicolor/64x64/apps/knode2.png
+/opt/kde3/share/services/knewsservice.protocol
+/opt/kde3/share/services/knode_config_*.desktop
+../icons/knode.xpm /opt/kde3/share/pixmaps
+../icons/knode-16.xpm /opt/kde3/share/pixmaps

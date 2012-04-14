@@ -1,0 +1,11 @@
+--- kde.orig/kmail/avscripts/kmail_clamav.sh
++++ kde.patched/kmail/avscripts/kmail_clamav.sh
+@@ -35,7 +35,7 @@
+ cat > $TEMPFILE
+ 
+ # check for a running daemon
+-if [ "`ps -eo comm|grep clamd`" = "clamd" ]; then
++if ps -eo comm | grep -q clamd ; then
+     chmod a+r $TEMPFILE
+     CLAMCOMANDO="clamdscan --stdout --no-summary "
+ else

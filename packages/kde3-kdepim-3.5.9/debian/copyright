@@ -1,0 +1,46 @@
+This package was debianized by Christopher L Cheney <ccheney@debian.org> on
+Tue, 16 Apr 2002 22:00:00 -0500.
+
+It was downloaded from: http://www.kde.org/download
+
+
+Copyright:
+Unless something else is mentioned, copyright is
+© 1996-2008, The K Desktop Enviroment project http://www.kde.org
+
+Upstream Authors: Rik Hemsley <rik@kde.org>
+			and many others...
+
+Copyright:
+
+All programs are either under the Artistic, BSD, or GPL licenses, see below
+for details on the respective applications and additions to BSD-derivative
+licenses.
+
+The kdocbook documentation for the applications is under the GFDL
+license.  
+
+On Debian systems, the complete text of these licenses can be found in:
+
+/usr/share/common-licenses/Artistic
+/usr/share/common-licenses/BSD
+/usr/share/common-licenses/GPL-2
+/usr/share/common-licenses/GFDL-1.2
+
+
+
+When in doubt, check the individual file, they should all have license
+headings and other identifying marks.
+
+akregator, kaddressbook, kalarm, kalarmd, kandy, karm, kdgantt,
+kfile-plugins, kgantt, kioslaves, kitchensync, kleopatra, kmail,
+kmailcvt, knode, knotes, konsolekalendar, kontact, korganizer, kpilot,
+ksync, ktnef, libindex, libkdenetwork, libkdepim, libkleopatra,
+libkpimidentities, libksieve, mimelib, wizards
+----------------------------------------------------------------------------
+GPL
+
+
+libical, libkcal, libkpimexchange
+------------------------
+LGPL

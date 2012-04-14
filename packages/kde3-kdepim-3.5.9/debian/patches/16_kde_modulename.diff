@@ -1,0 +1,10 @@
+--- admin/cvs.sh~	2006-10-02 16:56:51.000000000 +0200
++++ admin/cvs.sh	2006-10-30 20:39:43.000000000 +0100
+@@ -323,6 +323,7 @@
+    modulename=`basename $modulename`
+    esc_VERSION=`echo $VERSION | sed -e "s#[^.0-9a-zA-Z]##g"`
+    modulename=`echo $modulename | sed -e "s#-$esc_VERSION##"`   
++   modulename=`echo $modulename | sed -e 's#\.dfsg\.[0-9]\+$##'`
+ 
+ fi
+ if test -n "$kde_use_qt_param"; then

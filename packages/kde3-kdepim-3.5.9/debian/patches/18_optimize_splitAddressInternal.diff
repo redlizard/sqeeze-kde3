@@ -1,0 +1,140 @@
+This works around http://bugs.kde.org/show_bug.cgi?id=137033
+It isn't optimal, but it works, though it does the following
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=405867
+Index: libemailfunctions/email.cpp
+===================================================================
+--- libemailfunctions/email.cpp.orig	2008-02-13 10:39:42.000000000 +0100
++++ libemailfunctions/email.cpp	2008-06-29 20:07:35.000000000 +0200
+@@ -111,7 +111,14 @@
+   displayName = "";
+   addrSpec = "";
+   comment = "";
+-
++  
++  // these strings are later copied to displayName resp. addrSpec resp. comment
++  // we don't operate directly on those variables, since as ByteArray deriverates
++  // they have a miserable performance on operator+
++  QString dName;
++  QString aSpec;
++  QString cmmt;
++  
+   if ( address.isEmpty() )
+     return KPIM::AddressEmpty;
+ 
+@@ -129,26 +136,26 @@
+     case TopLevel : {
+       switch ( *p ) {
+       case '"' : inQuotedString = !inQuotedString;
+-                 displayName += *p;
++                 dName += *p;
+                  break;
+       case '(' : if ( !inQuotedString ) {
+                    context = InComment;
+                    commentLevel = 1;
+                  }
+                  else
+-                   displayName += *p;
++                   dName += *p;
+                  break;
+       case '<' : if ( !inQuotedString ) {
+                    context = InAngleAddress;
+                  }
+                  else
+-                   displayName += *p;
++                   dName += *p;
+                  break;
+       case '\\' : // quoted character
+-                 displayName += *p;
++                 dName += *p;
+                  ++p; // skip the '\'
+                  if ( *p )
+-                   displayName += *p;
++                   dName += *p;
+                  else
+                    return KPIM::UnexpectedEnd;
+                  break;
+@@ -160,57 +167,57 @@
+                      return KPIM::UnexpectedComma;
+                  }
+                  else
+-                   displayName += *p;
++                   dName += *p;
+                  break;
+-      default :  displayName += *p;
++      default :  dName += *p;
+       }
+       break;
+     }
+     case InComment : {
+       switch ( *p ) {
+       case '(' : ++commentLevel;
+-                 comment += *p;
++                 cmmt += *p;
+                  break;
+       case ')' : --commentLevel;
+                  if ( commentLevel == 0 ) {
+                    context = TopLevel;
+-                   comment += ' '; // separate the text of several comments
++                   cmmt += ' '; // separate the text of several comments
+                  }
+                  else
+-                   comment += *p;
++                   cmmt += *p;
+                  break;
+       case '\\' : // quoted character
+-                 comment += *p;
++                 cmmt += *p;
+                  ++p; // skip the '\'
+                  if ( *p )
+-                   comment += *p;
++                   cmmt += *p;
+                  else
+                    return KPIM::UnexpectedEnd;
+                  break;
+-      default :  comment += *p;
++      default :  cmmt += *p;
+       }
+       break;
+     }
+     case InAngleAddress : {
+       switch ( *p ) {
+       case '"' : inQuotedString = !inQuotedString;
+-                 addrSpec += *p;
++                 aSpec += *p;
+                  break;
+       case '>' : if ( !inQuotedString ) {
+                    context = TopLevel;
+                  }
+                  else
+-                   addrSpec += *p;
++                   aSpec += *p;
+                  break;
+       case '\\' : // quoted character
+-                 addrSpec += *p;
++                 aSpec += *p;
+                  ++p; // skip the '\'
+                  if ( *p )
+-                   addrSpec += *p;
++                   aSpec += *p;
+                  else
+                    return KPIM::UnexpectedEnd;
+                  break;
+-      default :  addrSpec += *p;
++      default :  aSpec += *p;
+       }
+       break;
+     }
+@@ -224,9 +231,10 @@
+   if ( context == InAngleAddress )
+     return KPIM::UnclosedAngleAddr;
+ 
+-  displayName = displayName.stripWhiteSpace();
+-  comment = comment.stripWhiteSpace();
+-  addrSpec = addrSpec.stripWhiteSpace();
++	
++  displayName = dName.stripWhiteSpace().latin1();
++  comment = cmmt.stripWhiteSpace().latin1();
++  addrSpec = aSpec.stripWhiteSpace().latin1();
+ 
+   if ( addrSpec.isEmpty() ) {
+     if ( displayName.isEmpty() )

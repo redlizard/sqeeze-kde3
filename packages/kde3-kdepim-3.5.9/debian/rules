@@ -1,0 +1,121 @@
+#! /usr/bin/make -f
+
+# DEB_TAR_SRCDIR := $(shell basename $(wildcard *.tar.bz2) .tar.bz2)
+
+# include /usr/share/cdbs/1/rules/tarball.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+KONTACT_PLUGIN_ABI := $(shell echo $(shell grep KONTACT_PLUGIN_VERSION kontact/interfaces/plugin.h | sed 's/.*KONTACT_PLUGIN_VERSION//' ))
+
+#DEB_KDE_CVS_MAKE := yes
+DEB_KDE_APIDOX := yes
+
+DEB_CONFIGURE_SCRIPT_ENV += KMIX=/opt/kde3/bin/kmix KTTSD=/opt/kde3/bin/kttsd
+
+DEB_DH_INSTALL_SOURCEDIR := $(DEB_DESTDIR)
+
+#override cdbs files, no --enable-final in kdepim
+DEB_KDE_ENABLE_FINAL :=
+
+post-patches:: debian/stamp-libtool-update
+
+debian/stamp-libtool-update:
+#	cp -f /usr/share/libtool/libtool.m4 $(DEB_SRCDIR)/admin/libtool.m4.in
+#	cp -f /usr/share/libtool/ltmain.sh $(DEB_SRCDIR)/admin/ltmain.sh
+#	for f in /usr/share/automake-1.9/*; do \
+#		if test -f $$f && ! test -L $$f; then \
+#			cp -f $$f $(DEB_SRCDIR)/admin/; \
+#		fi; \
+#	done
+	touch debian/stamp-libtool-update
+
+clean::
+#	for f in /usr/share/automake-1.9/*; do \
+#		 if test -f $$f && ! test -L $$f && \
+#			test -f $(DEB_SRCDIR)/admin/`basename $$f`; then \
+#			rm -f $(DEB_SRCDIR)/admin/`basename $$f`; \
+#		fi; \
+#	done
+#	rm -f admin/libtool.m4.in admin/ltmain.sh
+	rm -f debian/stamp-libtool-update
+	rm -f debian/patches/common/02_autotools_update.diff \
+		debian/patches/common/03_libtool_update.diff
+#	rm -f $(DEB_TAR_SRCDIR).tar.bz2.cdbs-config_list
+
+DEB_INSTALL_DOCS_ALL :=
+
+DEB_INSTALL_CHANGELOGS_ALL = $(shell for f in ChangeLog CHANGELOG CHANGES; do if test -s $(DEB_SRCDIR)/$(cdbs_curpkg)/$$f; then echo $(DEB_SRCDIR)/$(cdbs_curpkg)/$$f; break; fi; done)
+
+shlibs_ver=4:3.5.9
+DEB_DH_MAKESHLIBS_ARGS_kde3-libindex0 := -V'kde3-libindex0 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkcal2b := -V'kde3-libkcal2b (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkdenetwork2 := -V'kde3-libkdenetwork2 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkdepim1a := -V'kde3-libkdepim1a (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkgantt0 := -V'kde3-libkgantt0 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkleopatra1 := -V'kde3-libkleopatra1 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkmime2 := -V'kde3-libkmime2 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkpimexchange1 := -V'kde3-libkpimexchange1 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkpimidentities1 := -V'kde3-libkpimidentities1 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libksieve0 := -V'kde3-libksieve0 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libktnef1 := -V'kde3-libktnef1 (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libmimelib1c2a := -V'kde3-libmimelib1c2a (>= $(shlibs_ver))'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kontact := -V'kde3-kontact (>= $(shlibs_ver)), kde3-kontact-plugin-abi-$(KONTACT_PLUGIN_ABI)' 
+
+PACKAGES_WITH_LIBS := kde3-akregator kde3-kaddressbook kde3-kalarm kde3-kdepim-kresources \
+	kde3-kdepim-wizards kde3-kitchensync kde3-kleopatra kde3-kmail kde3-knode kde3-knotes kde3-kode kde3-kontact \
+	kde3-korganizer kde3-kpilot kde3-ksync kde3-ktnef kde3-libindex0 kde3-libkcal2b kde3-libkdenetwork2 \
+	kde3-libkdepim1a kde3-libkgantt0 kde3-libkleopatra1 kde3-libkmime2 kde3-libkpimexchange1 \
+	kde3-libkpimidentities1 kde3-libksieve0 kde3-libktnef1 kde3-libmimelib1c2a
+
+# kontact starts fine without korganizer or kpilot dependencies
+# specialdates is only in recommends to get the kaddressbook dependency there
+kontact_recommends_plugins := kde3-korganizer kde3-specialdates
+kontact_suggests_plugins := kde3-journal kde3-kpilot kde3-todo
+
+DEB_DH_SHLIBDEPS_ARGS_kde3-kontact := \
+	$(foreach p,$(kontact_recommends_plugins) $(kontact_suggests_plugins),-Xopt/opt/kde3/lib/kde3/libkontact_$(p)plugin.so) \
+	-- -dRecommends \
+	$(foreach p,$(kontact_recommends_plugins),debian/kde3-kontact/opt/kde3/lib/kde3/libkontact_$(p)plugin.so) \
+	-dSuggests \
+	$(foreach p,$(kontact_suggests_plugins),debian/kde3-kontact/opt/kde3/lib/kde3/libkontact_$(p)plugin.so) \
+	-dDepends	# Since -u args go first in dpkg-shlibdeps call
+
+# Move kaddressbook dependency (from libkabc_xmlrpc.so) to Recommends
+DEB_DH_SHLIBDEPS_ARGS_kde3-kdepim-kresources := \
+	-Xopt/kde3/lib/libkabc_xmlrpc.so.1 \
+	-- -dRecommends \
+	debian/kde3-kdepim-kresources/opt/kde3/lib/libkabc_xmlrpc.so.1.* \
+	-dDepends
+
+# Move kaddressbook dependency of libkcal2b to Recommends
+DEB_DH_SHLIBDEPS_ARGS_kde3-libkcal2b := \
+	-Xopt/kde3/lib/kde3/kcal_kabc.so \
+	-- -dRecommends \
+	debian/kde3-libkcal2b/opt/kde3/lib/kde3/kcal_kabc.so \
+	-dDepends
+
+binary-predeb/kde3-kontact::
+	@echo "kontact plugin:   " $(KONTACT_PLUGIN_ABI)
+	echo kontact:abi-provides=$(KONTACT_PLUGIN_ABI) >> debian/kde3-kontact.substvars
+
+test-shlibdeps:
+	@echo $(DEB_DH_SHLIBDEPS_ARGS_kde3-kontact)
+
+KDE_UPSTREAM_VERSION := $(shell echo $(DEB_UPSTREAM_VERSION) | sed -e 's/\.dfsg.*//')
+KDE_TARBALL := ../$(DEB_SOURCE_PACKAGE)-$(KDE_UPSTREAM_VERSION).tar.bz2
+KDE_SOURCEDIR := dfsg-tmp/$(DEB_SOURCE_PACKAGE)-$(KDE_UPSTREAM_VERSION)
+NEWDEB_SOURCEDIR := $(DEB_SOURCE_PACKAGE)-$(DEB_UPSTREAM_VERSION)
+
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+

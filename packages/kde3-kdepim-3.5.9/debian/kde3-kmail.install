@@ -1,0 +1,65 @@
+/etc/kde3/kmail.antispamrc
+/etc/kde3/kmail.antivirusrc
+/opt/kde3/bin/kmail
+/opt/kde3/bin/kmail_*.sh
+/opt/kde3/lib/kde3/kcm_kmail.la
+/opt/kde3/lib/kde3/kcm_kmail.so
+/opt/kde3/lib/kde3/libkmail_bodypartformatter_application_octetstream.la
+/opt/kde3/lib/kde3/libkmail_bodypartformatter_application_octetstream.so
+/opt/kde3/lib/kde3/libkmail_bodypartformatter_text_calendar.la
+/opt/kde3/lib/kde3/libkmail_bodypartformatter_text_calendar.so
+/opt/kde3/lib/kde3/libkmail_bodypartformatter_text_vcard.la
+/opt/kde3/lib/kde3/libkmail_bodypartformatter_text_vcard.so
+/opt/kde3/lib/kde3/libkmail_bodypartformatter_text_xdiff.la
+/opt/kde3/lib/kde3/libkmail_bodypartformatter_text_xdiff.so
+/opt/kde3/lib/kde3/libkmailpart.la
+/opt/kde3/lib/kde3/libkmailpart.so
+/opt/kde3/lib/libkmailprivate.la
+/opt/kde3/lib/libkmailprivate.so
+/opt/kde3/share/applications/kde/KMail.desktop
+/opt/kde3/share/applications/kde/kmail_view.desktop
+/opt/kde3/share/apps/kconf_update/kmail-3.1-update-new-mail-notification-settings.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.1-use-UOID-for-identities.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.1.4-dont-use-UOID-0-for-any-identity.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.2-misc.sh
+/opt/kde3/share/apps/kconf_update/kmail-3.2-update-loop-on-goto-unread-settings.sh
+/opt/kde3/share/apps/kconf_update/kmail-3.3-aegypten.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.3-misc.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.3-move-identities.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.3-split-sign-encr-keys.sh
+/opt/kde3/share/apps/kconf_update/kmail-3.3-use-ID-for-accounts.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.3b1-misc.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.4-misc.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.4.1-update-status-filters.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.5-filter-icons.pl
+/opt/kde3/share/apps/kconf_update/kmail-pgpidentity.pl
+/opt/kde3/share/apps/kconf_update/kmail-upd-identities.pl
+/opt/kde3/share/apps/kconf_update/kmail-3.5-trigger-flag-migration.pl
+/opt/kde3/share/apps/kconf_update/kmail.upd
+/opt/kde3/share/apps/kconf_update/upgrade-signature.pl
+/opt/kde3/share/apps/kconf_update/upgrade-transport.pl
+/opt/kde3/share/apps/kmail
+/opt/kde3/share/config.kcfg/custommimeheader.kcfg
+/opt/kde3/share/config.kcfg/kmail.kcfg
+/opt/kde3/share/config.kcfg/customtemplates_kfg.kcfg
+/opt/kde3/share/config.kcfg/replyphrases.kcfg
+/opt/kde3/share/config.kcfg/templatesconfiguration_kfg.kcfg
+/opt/kde3/share/doc/kde/HTML/en/kmail
+/opt/kde3/share/icons/hicolor/128x128/apps/kmail.png
+/opt/kde3/share/icons/hicolor/16x16/apps/kmail.png
+/opt/kde3/share/icons/hicolor/22x22/apps/kmail.png
+/opt/kde3/share/icons/crystalsvg/22x22/apps/kmaillight.png
+/opt/kde3/share/icons/hicolor/32x32/apps/kmail.png
+/opt/kde3/share/icons/crystalsvg/32x32/apps/kmaillight.png
+/opt/kde3/share/icons/hicolor/48x48/apps/kmail.png
+/opt/kde3/share/icons/hicolor/64x64/apps/kmail.png
+/opt/kde3/share/icons/hicolor/scalable/apps/kmail.svgz
+/opt/kde3/share/services/kmail_config_*.desktop
+/opt/kde3/share/servicetypes/dcopimap.desktop
+/opt/kde3/share/servicetypes/dcopmail.desktop
+../icons/kmail.xpm /opt/kde3/share/pixmaps
+../icons/kmail-16.xpm /opt/kde3/share/pixmaps
+../man/out/kmail_antivir.sh.1 /opt/kde3/share/man/man1
+../man/out/kmail_clamav.sh.1 /opt/kde3/share/man/man1
+../man/out/kmail_fprot.sh.1 /opt/kde3/share/man/man1
+../man/out/kmail_sav.sh.1 /opt/kde3/share/man/man1

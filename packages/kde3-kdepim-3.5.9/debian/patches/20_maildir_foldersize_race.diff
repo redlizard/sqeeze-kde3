@@ -1,0 +1,29 @@
+--- kdepim-3.5.9/kmail/kmfoldermaildir.cpp	2008-03-25 15:49:54.000000000 +0200
++++ kdepim-3.5.9/kmail/kmfoldermaildir.cpp	2008-03-25 15:54:15.000000000 +0200
+@@ -1134,7 +1134,6 @@
+ 
+ void KMFolderMaildir::slotDirSizeJobResult( KIO::Job* job )
+ {
+-    mCurrentlyCheckingFolderSize = false;
+     KDirSize * dirsize = dynamic_cast<KDirSize*>( job );
+     if ( dirsize && ! dirsize->error() )
+     {
+@@ -1159,7 +1158,7 @@
+         KDirSize* job = KDirSize::dirSizeJob( entry.second );
+         connect( job, SIGNAL( result( KIO::Job* ) ),
+                  entry.first, SLOT( slotDirSizeJobResult( KIO::Job* ) ) );
+-        break;
++        return;
+       }
+       else
+       {
+@@ -1167,6 +1166,9 @@
+         s_DirSizeJobQueue.pop_front();
+       }
+     }
++
++    // If we are here, folder size calculation is complete
++    mCurrentlyCheckingFolderSize = false;
+ }
+ 
+ #include "kmfoldermaildir.moc"

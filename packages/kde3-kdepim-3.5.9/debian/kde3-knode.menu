@@ -1,0 +1,8 @@
+?package(knode):\
+	needs="X11"\
+	section="Applications/Network/Communication"\
+	hints="KDE,News"\
+	title="KNode"\
+	icon32x32="/opt/kde3/share/pixmaps/knode.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/knode-16.xpm"\
+	command="/opt/kde3/bin/knode"

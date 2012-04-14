@@ -1,0 +1,19 @@
+/opt/kde3/bin/knotes
+/opt/kde3/lib/kde3/knotes_local.la
+/opt/kde3/lib/kde3/knotes_local.so
+/opt/kde3/share/applications/kde/knotes.desktop
+/opt/kde3/share/apps/knotes
+/opt/kde3/share/config.kcfg/knoteconfig.kcfg
+/opt/kde3/share/config.kcfg/knotesglobalconfig.kcfg
+/opt/kde3/share/doc/kde/HTML/en/knotes
+/opt/kde3/share/icons/hicolor/128x128/apps/knotes.png
+/opt/kde3/share/icons/hicolor/16x16/apps/knotes.png
+/opt/kde3/share/icons/hicolor/22x22/apps/knotes.png
+/opt/kde3/share/icons/hicolor/32x32/apps/knotes.png
+/opt/kde3/share/icons/hicolor/48x48/apps/knotes.png
+/opt/kde3/share/icons/hicolor/64x64/apps/knotes.png
+/opt/kde3/share/services/kresources/knotes/imap.desktop
+/opt/kde3/share/services/kresources/knotes/local.desktop
+/opt/kde3/share/services/kresources/knotes_manager.desktop
+../icons/knotes.xpm /opt/kde3/share/pixmaps
+../icons/knotes-16.xpm /opt/kde3/share/pixmaps

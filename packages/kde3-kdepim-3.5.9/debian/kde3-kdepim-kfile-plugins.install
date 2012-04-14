@@ -1,0 +1,9 @@
+/opt/kde3/lib/kde3/kfile_ics.la
+/opt/kde3/lib/kde3/kfile_ics.so
+/opt/kde3/lib/kde3/kfile_palm.la
+/opt/kde3/lib/kde3/kfile_palm.so
+/opt/kde3/lib/kde3/kfile_vcf.la
+/opt/kde3/lib/kde3/kfile_vcf.so
+/opt/kde3/share/services/kfile_ics.desktop
+/opt/kde3/share/services/kfile_palm.desktop
+/opt/kde3/share/services/kfile_vcf.desktop

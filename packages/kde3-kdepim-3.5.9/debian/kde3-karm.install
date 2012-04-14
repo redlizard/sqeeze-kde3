@@ -1,0 +1,17 @@
+/opt/kde3/bin/karm
+/opt/kde3/lib/kde3/libkarmpart.la
+/opt/kde3/lib/kde3/libkarmpart.so
+/opt/kde3/share/applications/kde/karm.desktop
+/opt/kde3/share/applnk/Utilities/karm.desktop
+/opt/kde3/share/apps/karm
+/opt/kde3/share/apps/karmpart
+/opt/kde3/share/doc/kde/HTML/en/karm
+/opt/kde3/share/icons/hicolor/128x128/apps/karm.png
+/opt/kde3/share/icons/hicolor/16x16/apps/karm.png
+/opt/kde3/share/icons/hicolor/22x22/apps/karm.png
+/opt/kde3/share/icons/hicolor/32x32/apps/karm.png
+/opt/kde3/share/icons/hicolor/48x48/apps/karm.png
+/opt/kde3/share/icons/hicolor/64x64/apps/karm.png
+/opt/kde3/share/services/karm_part.desktop
+../icons/karm.xpm /opt/kde3/share/pixmaps
+../icons/karm-16.xpm /opt/kde3/share/pixmaps

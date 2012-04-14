@@ -207,7 +207,7 @@ function parseControl($control)
 		if(substr($line, 0, 1) == "#") {
 			continue;
 		}
-		if(substr($line, 0, 1) != " ") {
+		if((substr($line, 0, 1) != " ") || (trim($line) == "")) {
 			if($currentLine !== null) {
 				$logicalLines[] = trim($currentLine);
 			}

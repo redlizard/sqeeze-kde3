@@ -1,0 +1,10 @@
+/opt/kde3/bin/kleopatra
+/opt/kde3/bin/kwatchgnupg
+/opt/kde3/lib/kde3/kcm_kleopatra.la
+/opt/kde3/lib/kde3/kcm_kleopatra.so
+/opt/kde3/share/applications/kde/kleopatra_import.desktop
+/opt/kde3/share/apps/kleopatra
+/opt/kde3/share/apps/kwatchgnupg
+/opt/kde3/share/doc/kde/HTML/en/kleopatra
+/opt/kde3/share/doc/kde/HTML/en/kwatchgnupg
+/opt/kde3/share/services/kleopatra_config_*.desktop

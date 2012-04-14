@@ -1,0 +1,18 @@
+.TH MULTISYNK 1
+.SH NAME
+multisynk \- KDE synchronization application
+.SH SYNOPSIS
+.B multisynk
+.I [Qt-options] [KDE-options]
+.SH DESCRIPTION
+.B MultiSynk
+is a frontend for KDE's synchronization framework kitchensync.  This
+framework lets you synchronize a lot of mobile devices like handhelds
+and mobile phones with your KDE desktop, but also offers the possibility
+to synchronize two or more KDE desktops directly.
+.so kdeopt.part
+.SH SEE ALSO
+More detailed user documentation is available from
+.BR help:/multisynk
+(either enter this URL into \fBkonqueror\fP, or run `khelpcenter
+help:/multisynk').

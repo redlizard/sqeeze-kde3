@@ -1,0 +1,91 @@
+diff -uNr kde-3.5.9/karm/edittaskdialog.cpp kde-3.5.9/karm/edittaskdialog.cpp
+--- kde-3.5.9/karm/edittaskdialog.cpp	2005-09-10 11:23:53.000000000 +0300
++++ kde-3.5.9/karm/edittaskdialog.cpp	2008-03-12 14:16:58.000000000 +0200
+@@ -298,8 +298,8 @@
+ {
+   _name->setText( name );
+   
+-  _timeTW->setTime( time / 60, time % 60 );
+-  _sessionTW->setTime( session / 60, session % 60 );
++  _timeTW->setTime( time );
++  _sessionTW->setTime( session );
+   origTime = time;
+   origSession = session;
+ }
+diff -uNr kde-3.5.9/karm/karmutility.cpp kde-3.5.9/karm/karmutility.cpp
+--- kde-3.5.9/karm/karmutility.cpp	2008-03-12 13:51:38.000000000 +0200
++++ kde-3.5.9/karm/karmutility.cpp	2008-03-12 13:58:59.000000000 +0200
+@@ -14,7 +14,9 @@
+     time.sprintf("%.2f", minutes / 60.0);
+     time.replace( '.', KGlobal::locale()->decimalSymbol() );
+   }
+-  else time.sprintf("%ld:%02ld", minutes / 60, labs(minutes % 60));
++  else time.sprintf("%s%ld:%02ld",
++    (minutes < 0) ? KGlobal::locale()->negativeSign().utf8().data() : "",
++    labs(minutes / 60), labs(minutes % 60));
+   return time;
+ }
+ 
+diff -uNr kde-3.5.9/karm/ktimewidget.cpp kde-3.5.9/karm/ktimewidget.cpp
+--- kde-3.5.9/karm/ktimewidget.cpp	2007-10-08 12:50:41.000000000 +0300
++++ kde-3.5.9/karm/ktimewidget.cpp	2008-03-12 14:22:40.000000000 +0200
+@@ -8,6 +8,7 @@
+ #include <qwidget.h>
+ 
+ #include <klocale.h>            // i18n
++#include <kglobal.h>
+ #include "ktimewidget.h"
+ 
+ enum ValidatorType { HOUR, MINUTE };
+@@ -97,15 +98,19 @@
+   setFocusProxy( _hourLE );
+ }
+ 
+-void KArmTimeWidget::setTime( int hour, int minute )
++void KArmTimeWidget::setTime( long time )
+ {
+   QString dummy;
++  long hour = labs(time) / 60;
++  long minute = labs(time) % 60;
+ 
+   dummy.setNum( hour );
++  if (time < 0)
++    dummy = KGlobal::locale()->negativeSign() + dummy;
+   _hourLE->setText( dummy );
+ 
+-  dummy.setNum( abs(minute) );
+-  if (abs(minute) < 10 ) {
++  dummy.setNum( minute );
++  if (minute < 10 ) {
+     dummy = QString::fromLatin1( "0" ) + dummy;
+   }
+   _minuteLE->setText( dummy );
+@@ -113,12 +118,12 @@
+ 
+ long KArmTimeWidget::time() const
+ {
+-  bool ok;
++  bool ok, isNegative;
+   int h, m;
+ 
+-  h = _hourLE->text().toInt( &ok );
++  h = abs(_hourLE->text().toInt( &ok ));
+   m = _minuteLE->text().toInt( &ok );
++  isNegative = _hourLE->text().startsWith(KGlobal::locale()->negativeSign());
+ 
+-  // if h is negative, we have to *subtract* m
+-  return h * 60 + ( ( h < 0) ? -1 : 1 ) * m;
++  return (h * 60 + m) * ((isNegative) ? -1 : 1);
+ }
+diff -uNr kde-3.5.9/karm/ktimewidget.h kde-3.5.9/karm/ktimewidget.h
+--- kde-3.5.9/karm/ktimewidget.h	2005-09-10 11:23:53.000000000 +0300
++++ kde-3.5.9/karm/ktimewidget.h	2008-03-12 14:16:14.000000000 +0200
+@@ -14,7 +14,7 @@
+ {
+   public:
+     KArmTimeWidget( QWidget* parent = 0, const char* name = 0 );
+-    void setTime( int hour, int minute );
++    void setTime( long time );
+     long time() const;
+ 
+   private:

@@ -1,0 +1,25 @@
+Index: kdepim/akregator/src/akregator_part.cpp
+===================================================================
+--- kdepim/akregator/src/akregator_part.cpp	(revision 653121)
++++ kdepim/akregator/src/akregator_part.cpp	(working copy)
+@@ -392,6 +392,20 @@
+     look.setAttribute("xmlUrl","http://www.kde.org/kde-look-content.rdf");
+     mainFolder.appendChild(look);
+ 
++    QDomElement debianFolder = doc.createElement( "outline" );
++    debianFolder.setAttribute("text","Debian");
++    body.appendChild(debianFolder);
++
++    QDomElement pland = doc.createElement( "outline" );
++    pland.setAttribute("text",i18n("Planet Debian"));
++    pland.setAttribute("xmlUrl","http://planet.debian.org/rss20.xml");
++    debianFolder.appendChild(pland);
++
++    QDomElement dtimes = doc.createElement( "outline" );
++    dtimes.setAttribute("text",i18n("Debian Times"));
++    dtimes.setAttribute("xmlUrl","http://times.debian.net/?format=rss20.xml");
++    debianFolder.appendChild(dtimes);
++
+     return doc;
+ }
+ 

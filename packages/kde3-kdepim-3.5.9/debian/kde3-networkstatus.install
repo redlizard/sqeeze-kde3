@@ -1,0 +1,4 @@
+/opt/kde3/bin/networkstatustestservice
+/opt/kde3/lib/kde3/kded_networkstatus.la
+/opt/kde3/lib/kde3/kded_networkstatus.so
+/opt/kde3/share/services/kded/networkstatus.desktop

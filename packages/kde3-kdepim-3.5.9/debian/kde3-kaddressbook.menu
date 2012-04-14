@@ -1,0 +1,8 @@
+?package(kaddressbook):\
+	needs="X11"\
+	section="Applications/Data Management"\
+	hints="KDE"\
+	title="KAddressbook"\
+	icon32x32="/opt/kde3/share/pixmaps/kaddressbook.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kaddressbook-16.xpm"\
+	command="/opt/kde3/bin/kaddressbook"

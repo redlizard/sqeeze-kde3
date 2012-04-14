@@ -1,0 +1,1884 @@
+diff -Nrua kdepim-3.5.9.orig/akregator/src/akregator.desktop kdepim-3.5.9/akregator/src/akregator.desktop
+--- kdepim-3.5.9.orig/akregator/src/akregator.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/akregator/src/akregator.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Akregator
+ Name[ne]=एक्रिगेटर
+ Exec=akregator %i %m -caption "%c"
+diff -Nrua kdepim-3.5.9.orig/akregator/src/akregator_part.desktop kdepim-3.5.9/akregator/src/akregator_part.desktop
+--- kdepim-3.5.9.orig/akregator/src/akregator_part.desktop	2006-05-22 20:10:41.000000000 +0200
++++ kdepim-3.5.9/akregator/src/akregator_part.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=aKregatorPart
+ Name[cs]=Komponenta aKregator
+ Name[da]=AkregatorPart
+diff -Nrua kdepim-3.5.9.orig/certmanager/conf/kleopatra_config_appear.desktop kdepim-3.5.9/certmanager/conf/kleopatra_config_appear.desktop
+--- kdepim-3.5.9.orig/certmanager/conf/kleopatra_config_appear.desktop	2008-02-13 10:39:29.000000000 +0100
++++ kdepim-3.5.9/certmanager/conf/kleopatra_config_appear.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=looknfeel
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/certmanager/conf/kleopatra_config_dirserv.desktop kdepim-3.5.9/certmanager/conf/kleopatra_config_dirserv.desktop
+--- kdepim-3.5.9.orig/certmanager/conf/kleopatra_config_dirserv.desktop	2008-02-13 10:39:29.000000000 +0100
++++ kdepim-3.5.9/certmanager/conf/kleopatra_config_dirserv.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=network
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/certmanager/conf/kleopatra_config_dnorder.desktop kdepim-3.5.9/certmanager/conf/kleopatra_config_dnorder.desktop
+--- kdepim-3.5.9.orig/certmanager/conf/kleopatra_config_dnorder.desktop	2008-02-13 10:39:29.000000000 +0100
++++ kdepim-3.5.9/certmanager/conf/kleopatra_config_dnorder.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=looknfeel
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/certmanager/kleopatra_import.desktop kdepim-3.5.9/certmanager/kleopatra_import.desktop
+--- kdepim-3.5.9.orig/certmanager/kleopatra_import.desktop	2007-10-08 11:50:40.000000000 +0200
++++ kdepim-3.5.9/certmanager/kleopatra_import.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Kleopatra
+ Name[is]=Kleópatra
+ Name[mk]=Клеопатра
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/dcopaddressbook.desktop kdepim-3.5.9/kaddressbook/dcopaddressbook.desktop
+--- kdepim-3.5.9.orig/kaddressbook/dcopaddressbook.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/dcopaddressbook.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=DCOP/AddressBook
+ Comment=Address Book with a DCOP interface
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/cryptosettings.desktop kdepim-3.5.9/kaddressbook/editors/cryptosettings.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/cryptosettings.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/editors/cryptosettings.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_cryptosettings
+ Name=Crypto Preferences
+ Name[af]=Kripto Voorkeure
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/imaddresseditor.desktop kdepim-3.5.9/kaddressbook/editors/imaddresseditor.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/imaddresseditor.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/editors/imaddresseditor.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Instant Messaging
+ Name[af]=Kits bootskap
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/aimprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/aimprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/aimprotocol.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/editors/protocols/aimprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=aim_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/gaduprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/gaduprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/gaduprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/gaduprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=gadu_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/groupwiseprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/groupwiseprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/groupwiseprotocol.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/editors/protocols/groupwiseprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=groupwise_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/icqprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/icqprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/icqprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/icqprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=icq_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/ircprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/ircprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/ircprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/ircprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=irc_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/jabberprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/jabberprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/jabberprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/jabberprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=jabber_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/meanwhileprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/meanwhileprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/meanwhileprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/meanwhileprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=meanwhile_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/msnprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/msnprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/msnprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/msnprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=msn_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/skypeprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/skypeprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/skypeprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/skypeprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=skype_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/smsprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/smsprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/smsprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/smsprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=sms_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/editors/protocols/yahooprotocol.desktop kdepim-3.5.9/kaddressbook/editors/protocols/yahooprotocol.desktop
+--- kdepim-3.5.9.orig/kaddressbook/editors/protocols/yahooprotocol.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/editors/protocols/yahooprotocol.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=yahoo_protocol
+ ServiceTypes=KABC/IMProtocol,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/features/distributionlist.desktop kdepim-3.5.9/kaddressbook/features/distributionlist.desktop
+--- kdepim-3.5.9.orig/kaddressbook/features/distributionlist.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/features/distributionlist.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_distributionlist
+ Name=KAB Distribution List Plugin
+ Name[af]=KAB verspreiding lys inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/features/distributionlistng.desktop kdepim-3.5.9/kaddressbook/features/distributionlistng.desktop
+--- kdepim-3.5.9.orig/kaddressbook/features/distributionlistng.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/features/distributionlistng.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_distributionlistng
+ Name=KAB Distribution List Next Generation Plugin
+ Name[bg]=Приставка от следващо поколение за списъка за разпращане на KAB
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/features/resourceselection.desktop kdepim-3.5.9/kaddressbook/features/resourceselection.desktop
+--- kdepim-3.5.9.orig/kaddressbook/features/resourceselection.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/features/resourceselection.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_resourceselection
+ Name=Address Book Management Plugin
+ Name[af]=Adres boek bestuur inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/interfaces/kaddressbook_contacteditorwidget.desktop kdepim-3.5.9/kaddressbook/interfaces/kaddressbook_contacteditorwidget.desktop
+--- kdepim-3.5.9.orig/kaddressbook/interfaces/kaddressbook_contacteditorwidget.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/interfaces/kaddressbook_contacteditorwidget.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KAddressBook/ContactEditorWidget
+ Comment=KAddressBook Contact Editor Widget Plugin
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/interfaces/kaddressbook_extension.desktop kdepim-3.5.9/kaddressbook/interfaces/kaddressbook_extension.desktop
+--- kdepim-3.5.9.orig/kaddressbook/interfaces/kaddressbook_extension.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/interfaces/kaddressbook_extension.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KAddressBook/Extension
+ Comment=KAddressBook Extension Plugin
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/interfaces/kaddressbook_xxport.desktop kdepim-3.5.9/kaddressbook/interfaces/kaddressbook_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/interfaces/kaddressbook_xxport.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/interfaces/kaddressbook_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KAddressBook/XXPort
+ Comment=KAddressBook Import/Export Plugin
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/kaddressbook.desktop kdepim-3.5.9/kaddressbook/kaddressbook.desktop
+--- kdepim-3.5.9.orig/kaddressbook/kaddressbook.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/kaddressbook.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KAddressBook
+ Name[cy]=KAddressBook/LlyfrKyfeiriadau
+ Name[de]=Adressbuch
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/kaddressbook_view.desktop kdepim-3.5.9/kaddressbook/kaddressbook_view.desktop
+--- kdepim-3.5.9.orig/kaddressbook/kaddressbook_view.desktop	2007-10-08 11:50:46.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/kaddressbook_view.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KAddressBook/View
+ Comment=KAddressBook View Plugin
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/kcmconfigs/kabconfig.desktop kdepim-3.5.9/kaddressbook/kcmconfigs/kabconfig.desktop
+--- kdepim-3.5.9.orig/kaddressbook/kcmconfigs/kabconfig.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/kcmconfigs/kabconfig.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kaddressbook
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/kcmconfigs/kabcustomfields.desktop kdepim-3.5.9/kaddressbook/kcmconfigs/kabcustomfields.desktop
+--- kdepim-3.5.9.orig/kaddressbook/kcmconfigs/kabcustomfields.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/kcmconfigs/kabcustomfields.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=dlgedit
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/kcmconfigs/kabldapconfig.desktop kdepim-3.5.9/kaddressbook/kcmconfigs/kabldapconfig.desktop
+--- kdepim-3.5.9.orig/kaddressbook/kcmconfigs/kabldapconfig.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/kcmconfigs/kabldapconfig.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=find
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/thumbnailcreator/ldifvcardthumbnail.desktop kdepim-3.5.9/kaddressbook/thumbnailcreator/ldifvcardthumbnail.desktop
+--- kdepim-3.5.9.orig/kaddressbook/thumbnailcreator/ldifvcardthumbnail.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/thumbnailcreator/ldifvcardthumbnail.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Electronic Business Card Files
+ Name[af]=Elektroniese Besigheid kaartjie lêers
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/views/cardview.desktop kdepim-3.5.9/kaddressbook/views/cardview.desktop
+--- kdepim-3.5.9.orig/kaddressbook/views/cardview.desktop	2008-02-13 10:39:42.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/views/cardview.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_cardview
+ Name=Card View
+ Name[af]=Kaard Aansig
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/views/iconview.desktop kdepim-3.5.9/kaddressbook/views/iconview.desktop
+--- kdepim-3.5.9.orig/kaddressbook/views/iconview.desktop	2007-05-14 09:54:43.000000000 +0200
++++ kdepim-3.5.9/kaddressbook/views/iconview.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_iconview
+ Name=Icon View
+ Name[af]=Ikoon Aansig
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/views/tableview.desktop kdepim-3.5.9/kaddressbook/views/tableview.desktop
+--- kdepim-3.5.9.orig/kaddressbook/views/tableview.desktop	2008-02-13 10:39:42.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/views/tableview.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_tableview
+ Name=Table View
+ Name[af]=Tabel Aansig
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/bookmark_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/bookmark_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/bookmark_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/bookmark_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_bookmark_xxport
+ Name=KAB Bookmark XXPort Plugin
+ Name[af]=KAB boekmerk XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/csv_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/csv_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/csv_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/csv_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_csv_xxport
+ Name=KAB CSV XXPort Plugin
+ Name[af]=KAB CSV XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/eudora_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/eudora_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/eudora_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/eudora_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_eudora_xxport
+ Name=KAB Eudora XXPort Plugin
+ Name[af]=KAB Eudora XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/gnokii_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/gnokii_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/gnokii_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/gnokii_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_gnokii_xxport
+ Name=KAB Mobile Phone XXPort Plugin
+ Name[af]=KAB selfoon XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/kde2_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/kde2_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/kde2_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/kde2_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_kde2_xxport
+ Name=KAB KDE2 XXPort Plugin
+ Name[af]=KAB KDE2 XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/ldif_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/ldif_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/ldif_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/ldif_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_ldif_xxport
+ Name=KAB LDIF XXPort Plugin
+ Name[af]=KAB LDIF XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/opera_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/opera_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/opera_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/opera_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_opera_xxport
+ Name=KAB Opera XXPort Plugin
+ Name[af]=KAB Opera XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/pab_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/pab_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/pab_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/pab_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_pab_xxport
+ Name=KAB MS Exchange Personal Addressbook XXPort Plugin
+ Name[af]=KAB MS Exchange adresboek XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kaddressbook/xxport/vcard_xxport.desktop kdepim-3.5.9/kaddressbook/xxport/vcard_xxport.desktop
+--- kdepim-3.5.9.orig/kaddressbook/xxport/vcard_xxport.desktop	2008-02-13 10:39:43.000000000 +0100
++++ kdepim-3.5.9/kaddressbook/xxport/vcard_xxport.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkaddrbk_vcard_xxport
+ Name=KAB vCard XXPort Plugin
+ Name[af]=KAB vCard XXPort inprop module
+diff -Nrua kdepim-3.5.9.orig/kalarm/kalarmd/kalarmd.autostart.desktop kdepim-3.5.9/kalarm/kalarmd/kalarmd.autostart.desktop
+--- kdepim-3.5.9.orig/kalarm/kalarmd/kalarmd.autostart.desktop	2008-02-13 10:39:41.000000000 +0100
++++ kdepim-3.5.9/kalarm/kalarmd/kalarmd.autostart.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KAlarm Daemon
+ Name[af]=KAlarm Bediener
+ Name[bg]=Демон на KAlarm
+diff -Nrua kdepim-3.5.9.orig/kalarm/kalarmd/kalarmd.desktop kdepim-3.5.9/kalarm/kalarmd/kalarmd.desktop
+--- kdepim-3.5.9.orig/kalarm/kalarmd/kalarmd.desktop	2008-02-13 10:39:41.000000000 +0100
++++ kdepim-3.5.9/kalarm/kalarmd/kalarmd.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KAlarm Daemon
+ Name[af]=KAlarm Bediener
+ Name[bg]=Демон на KAlarm
+diff -Nrua kdepim-3.5.9.orig/kalarm/kalarm.desktop kdepim-3.5.9/kalarm/kalarm.desktop
+--- kdepim-3.5.9.orig/kalarm/kalarm.desktop	2008-02-13 10:39:42.000000000 +0100
++++ kdepim-3.5.9/kalarm/kalarm.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KAlarm
+ Name[af]=K-alarm
+ Name[cy]=KLarwm
+diff -Nrua kdepim-3.5.9.orig/kalarm/kalarm.tray.desktop kdepim-3.5.9/kalarm/kalarm.tray.desktop
+--- kdepim-3.5.9.orig/kalarm/kalarm.tray.desktop	2008-02-13 10:39:42.000000000 +0100
++++ kdepim-3.5.9/kalarm/kalarm.tray.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KAlarm
+ Name[af]=K-alarm
+ Name[cy]=KLarwm
+diff -Nrua kdepim-3.5.9.orig/kalarm/uninstall.desktop kdepim-3.5.9/kalarm/uninstall.desktop
+--- kdepim-3.5.9.orig/kalarm/uninstall.desktop	2005-09-10 10:24:14.000000000 +0200
++++ kdepim-3.5.9/kalarm/uninstall.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/kandy/src/kandy.desktop kdepim-3.5.9/kandy/src/kandy.desktop
+--- kdepim-3.5.9.orig/kandy/src/kandy.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kandy/src/kandy.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Kandy
+ Name[hi]=केंडी
+ Name[ne]=केन्डी
+diff -Nrua kdepim-3.5.9.orig/kandy/src/uninstall.desktop kdepim-3.5.9/kandy/src/uninstall.desktop
+--- kdepim-3.5.9.orig/kandy/src/uninstall.desktop	2005-09-10 10:24:42.000000000 +0200
++++ kdepim-3.5.9/kandy/src/uninstall.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/karm/karm_part.desktop kdepim-3.5.9/karm/karm_part.desktop
+--- kdepim-3.5.9.orig/karm/karm_part.desktop	2007-01-15 12:28:43.000000000 +0100
++++ kdepim-3.5.9/karm/karm_part.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=karmPart
+ Name[cs]=karm komponenta
+ Name[de]=KArm-Komponente
+diff -Nrua kdepim-3.5.9.orig/karm/support/karm.desktop kdepim-3.5.9/karm/support/karm.desktop
+--- kdepim-3.5.9.orig/karm/support/karm.desktop	2008-02-13 10:39:30.000000000 +0100
++++ kdepim-3.5.9/karm/support/karm.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KArm
+ Name[af]=Karm
+ Name[hi]=के-आर्म
+diff -Nrua kdepim-3.5.9.orig/karm/uninstall.desktop kdepim-3.5.9/karm/uninstall.desktop
+--- kdepim-3.5.9.orig/karm/uninstall.desktop	2005-09-10 10:23:53.000000000 +0200
++++ kdepim-3.5.9/karm/uninstall.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/kfile-plugins/ics/kfile_ics.desktop kdepim-3.5.9/kfile-plugins/ics/kfile_ics.desktop
+--- kdepim-3.5.9.orig/kfile-plugins/ics/kfile_ics.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kfile-plugins/ics/kfile_ics.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=ICS information
+ Name[af]=ICS informasie
+diff -Nrua kdepim-3.5.9.orig/kfile-plugins/palm-databases/kfile_palm.desktop kdepim-3.5.9/kfile-plugins/palm-databases/kfile_palm.desktop
+--- kdepim-3.5.9.orig/kfile-plugins/palm-databases/kfile_palm.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kfile-plugins/palm-databases/kfile_palm.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=PalmOS Database Info
+ Name[af]=PalmOS databasis informasie
+diff -Nrua kdepim-3.5.9.orig/kfile-plugins/rfc822/kfile_rfc822.desktop kdepim-3.5.9/kfile-plugins/rfc822/kfile_rfc822.desktop
+--- kdepim-3.5.9.orig/kfile-plugins/rfc822/kfile_rfc822.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kfile-plugins/rfc822/kfile_rfc822.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Email Info
+ Name[af]=E-pos informasie
+diff -Nrua kdepim-3.5.9.orig/kfile-plugins/vcf/kfile_vcf.desktop kdepim-3.5.9/kfile-plugins/vcf/kfile_vcf.desktop
+--- kdepim-3.5.9.orig/kfile-plugins/vcf/kfile_vcf.desktop	2007-05-14 09:54:53.000000000 +0200
++++ kdepim-3.5.9/kfile-plugins/vcf/kfile_vcf.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=vCard Info
+ Name[af]=Vkaart Inligting
+diff -Nrua kdepim-3.5.9.orig/kitchensync/src/kitchensync.desktop kdepim-3.5.9/kitchensync/src/kitchensync.desktop
+--- kdepim-3.5.9.orig/kitchensync/src/kitchensync.desktop	2008-02-13 10:39:44.000000000 +0100
++++ kdepim-3.5.9/kitchensync/src/kitchensync.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KitchenSync
+ Name[pt]=KitchenSyncFilter
+ Name[sv]=Kitchensync
+diff -Nrua kdepim-3.5.9.orig/kmail/application_octetstream.desktop kdepim-3.5.9/kmail/application_octetstream.desktop
+--- kdepim-3.5.9.orig/kmail/application_octetstream.desktop	2008-02-13 10:39:37.000000000 +0100
++++ kdepim-3.5.9/kmail/application_octetstream.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Misc]
+-Encoding=UTF-8
+ Name=Application Octetstream
+ Name[af]=Application/Octet-stream
+ Name[ca]=Aplicació Octetstream
+diff -Nrua kdepim-3.5.9.orig/kmail/dcopimap.desktop kdepim-3.5.9/kmail/dcopimap.desktop
+--- kdepim-3.5.9.orig/kmail/dcopimap.desktop	2008-02-13 10:39:37.000000000 +0100
++++ kdepim-3.5.9/kmail/dcopimap.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=DCOP/ResourceBackend/IMAP
+ Comment=Mail program with a DCOP interface
+diff -Nrua kdepim-3.5.9.orig/kmail/dcopmail.desktop kdepim-3.5.9/kmail/dcopmail.desktop
+--- kdepim-3.5.9.orig/kmail/dcopmail.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/kmail/dcopmail.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=DCOP/Mailer
+ Comment=Mail program with a DCOP interface
+diff -Nrua kdepim-3.5.9.orig/kmail/kmail_config_accounts.desktop kdepim-3.5.9/kmail/kmail_config_accounts.desktop
+--- kdepim-3.5.9.orig/kmail/kmail_config_accounts.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/kmail/kmail_config_accounts.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=network
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kmail/kmail_config_appearance.desktop kdepim-3.5.9/kmail/kmail_config_appearance.desktop
+--- kdepim-3.5.9.orig/kmail/kmail_config_appearance.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/kmail/kmail_config_appearance.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=looknfeel
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kmail/kmail_config_composer.desktop kdepim-3.5.9/kmail/kmail_config_composer.desktop
+--- kdepim-3.5.9.orig/kmail/kmail_config_composer.desktop	2008-02-13 10:39:37.000000000 +0100
++++ kdepim-3.5.9/kmail/kmail_config_composer.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=edit
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kmail/kmail_config_identity.desktop kdepim-3.5.9/kmail/kmail_config_identity.desktop
+--- kdepim-3.5.9.orig/kmail/kmail_config_identity.desktop	2008-02-13 10:39:37.000000000 +0100
++++ kdepim-3.5.9/kmail/kmail_config_identity.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=identity
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kmail/kmail_config_misc.desktop kdepim-3.5.9/kmail/kmail_config_misc.desktop
+--- kdepim-3.5.9.orig/kmail/kmail_config_misc.desktop	2008-02-13 10:39:37.000000000 +0100
++++ kdepim-3.5.9/kmail/kmail_config_misc.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=misc
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kmail/kmail_config_security.desktop kdepim-3.5.9/kmail/kmail_config_security.desktop
+--- kdepim-3.5.9.orig/kmail/kmail_config_security.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/kmail/kmail_config_security.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=encrypted
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kmail/KMail.desktop kdepim-3.5.9/kmail/KMail.desktop
+--- kdepim-3.5.9.orig/kmail/KMail.desktop	2007-10-08 11:50:38.000000000 +0200
++++ kdepim-3.5.9/kmail/KMail.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KMail
+ Name[eo]=Retpoŝto
+ Name[hi]=के-मेल
+diff -Nrua kdepim-3.5.9.orig/kmail/kmail_view.desktop kdepim-3.5.9/kmail/kmail_view.desktop
+--- kdepim-3.5.9.orig/kmail/kmail_view.desktop	2007-10-08 11:50:38.000000000 +0200
++++ kdepim-3.5.9/kmail/kmail_view.desktop	2008-06-29 23:45:25.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KMail
+ Name[eo]=Retpoŝto
+ Name[hi]=के-मेल
+diff -Nrua kdepim-3.5.9.orig/kmailcvt/uninstall.desktop kdepim-3.5.9/kmailcvt/uninstall.desktop
+--- kdepim-3.5.9.orig/kmailcvt/uninstall.desktop	2005-09-10 10:24:16.000000000 +0200
++++ kdepim-3.5.9/kmailcvt/uninstall.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/kmobile/devices/digicam/libkmobile_digicam.desktop kdepim-3.5.9/kmobile/devices/digicam/libkmobile_digicam.desktop
+--- kdepim-3.5.9.orig/kmobile/devices/digicam/libkmobile_digicam.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kmobile/devices/digicam/libkmobile_digicam.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Digital Camera
+ Name[af]=Digitale Kamera
+ Name[ar]=كاميرا رقمية
+diff -Nrua kdepim-3.5.9.orig/kmobile/devices/gammu/libkmobile_gammu.desktop kdepim-3.5.9/kmobile/devices/gammu/libkmobile_gammu.desktop
+--- kdepim-3.5.9.orig/kmobile/devices/gammu/libkmobile_gammu.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kmobile/devices/gammu/libkmobile_gammu.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Mobile Phone or Organizer (gammu)
+ Name[af]=Selfoon of Digitale Dagboek (gammu)
+ Name[ar]=الهاتف النقّال أو المنظم (gammu)
+diff -Nrua kdepim-3.5.9.orig/kmobile/devices/gnokii/libkmobile_gnokii.desktop kdepim-3.5.9/kmobile/devices/gnokii/libkmobile_gnokii.desktop
+--- kdepim-3.5.9.orig/kmobile/devices/gnokii/libkmobile_gnokii.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kmobile/devices/gnokii/libkmobile_gnokii.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Mobile Phone or Organizer (gnokii)
+ Name[af]=Selfoon of Digitale Dagboek (gnokii)
+ Name[ar]=الهاتف النقّال أو المنظم (gnokii)
+diff -Nrua kdepim-3.5.9.orig/kmobile/devices/skeleton/libkmobile_skeleton.desktop kdepim-3.5.9/kmobile/devices/skeleton/libkmobile_skeleton.desktop
+--- kdepim-3.5.9.orig/kmobile/devices/skeleton/libkmobile_skeleton.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kmobile/devices/skeleton/libkmobile_skeleton.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Skeleton Device
+ Name[af]=Raamwerk Toestel
+ Name[bg]=Организатори
+diff -Nrua kdepim-3.5.9.orig/kmobile/kioslave/mimetypes/mobile_addressbook.desktop kdepim-3.5.9/kmobile/kioslave/mimetypes/mobile_addressbook.desktop
+--- kdepim-3.5.9.orig/kmobile/kioslave/mimetypes/mobile_addressbook.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kmobile/kioslave/mimetypes/mobile_addressbook.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Comment=Contacts in Mobile Device
+ Comment[af]=Kontakte op die draagbare toestel
+ Comment[ar]=المراسلون في الجهاز النقّال
+diff -Nrua kdepim-3.5.9.orig/kmobile/kioslave/mimetypes/mobile_calendar.desktop kdepim-3.5.9/kmobile/kioslave/mimetypes/mobile_calendar.desktop
+--- kdepim-3.5.9.orig/kmobile/kioslave/mimetypes/mobile_calendar.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kmobile/kioslave/mimetypes/mobile_calendar.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Comment=Calendar in Mobile Device
+ Comment[af]=Kalender op die draagbare toestel
+ Comment[be]=Каляндар у мабільнай прыладзе
+diff -Nrua kdepim-3.5.9.orig/kmobile/kioslave/mimetypes/mobile_device.desktop kdepim-3.5.9/kmobile/kioslave/mimetypes/mobile_device.desktop
+--- kdepim-3.5.9.orig/kmobile/kioslave/mimetypes/mobile_device.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kmobile/kioslave/mimetypes/mobile_device.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Comment=Mobile Device
+ Comment[af]=Draagbare Toestel
+ Comment[ar]=الجهاز النقّال
+diff -Nrua kdepim-3.5.9.orig/kmobile/kioslave/mimetypes/mobile_notes.desktop kdepim-3.5.9/kmobile/kioslave/mimetypes/mobile_notes.desktop
+--- kdepim-3.5.9.orig/kmobile/kioslave/mimetypes/mobile_notes.desktop	2007-10-08 11:50:39.000000000 +0200
++++ kdepim-3.5.9/kmobile/kioslave/mimetypes/mobile_notes.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Comment=Notes in Mobile Device
+ Comment[af]=Notas op die draagbare toestel
+ Comment[be]=Нататкі ў мабільнай прыладзе
+diff -Nrua kdepim-3.5.9.orig/kmobile/kmobile.desktop kdepim-3.5.9/kmobile/kmobile.desktop
+--- kdepim-3.5.9.orig/kmobile/kmobile.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kmobile/kmobile.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=kmobile
+ Icon=kmobile
+ Type=Application
+diff -Nrua kdepim-3.5.9.orig/kmobile/libkmobile.desktop kdepim-3.5.9/kmobile/libkmobile.desktop
+--- kdepim-3.5.9.orig/kmobile/libkmobile.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kmobile/libkmobile.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=kdedevice/mobiledevice
+ Name=KDE Mobile Device Lowlevel Hardware Driver
+diff -Nrua kdepim-3.5.9.orig/knode/knode_config_accounts.desktop kdepim-3.5.9/knode/knode_config_accounts.desktop
+--- kdepim-3.5.9.orig/knode/knode_config_accounts.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/knode/knode_config_accounts.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=network
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/knode/knode_config_appearance.desktop kdepim-3.5.9/knode/knode_config_appearance.desktop
+--- kdepim-3.5.9.orig/knode/knode_config_appearance.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/knode/knode_config_appearance.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=looknfeel
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/knode/knode_config_cleanup.desktop kdepim-3.5.9/knode/knode_config_cleanup.desktop
+--- kdepim-3.5.9.orig/knode/knode_config_cleanup.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/knode/knode_config_cleanup.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=wizard
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/knode/knode_config_identity.desktop kdepim-3.5.9/knode/knode_config_identity.desktop
+--- kdepim-3.5.9.orig/knode/knode_config_identity.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/knode/knode_config_identity.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=identity
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/knode/knode_config_post_news.desktop kdepim-3.5.9/knode/knode_config_post_news.desktop
+--- kdepim-3.5.9.orig/knode/knode_config_post_news.desktop	2007-05-14 09:54:39.000000000 +0200
++++ kdepim-3.5.9/knode/knode_config_post_news.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=mail_forward
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/knode/knode_config_privacy.desktop kdepim-3.5.9/knode/knode_config_privacy.desktop
+--- kdepim-3.5.9.orig/knode/knode_config_privacy.desktop	2007-05-14 09:54:39.000000000 +0200
++++ kdepim-3.5.9/knode/knode_config_privacy.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=password
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/knode/knode_config_read_news.desktop kdepim-3.5.9/knode/knode_config_read_news.desktop
+--- kdepim-3.5.9.orig/knode/knode_config_read_news.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/knode/knode_config_read_news.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=mail_get
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/knode/KNode.desktop kdepim-3.5.9/knode/KNode.desktop
+--- kdepim-3.5.9.orig/knode/KNode.desktop	2007-10-08 11:50:41.000000000 +0200
++++ kdepim-3.5.9/knode/KNode.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=knode -caption "%c" %i %m
+ Icon=knode
+diff -Nrua kdepim-3.5.9.orig/knotes/knotes.desktop kdepim-3.5.9/knotes/knotes.desktop
+--- kdepim-3.5.9.orig/knotes/knotes.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/knotes/knotes.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ DocPath=knotes/index.html
+ Exec=knotes
+ Icon=knotes
+diff -Nrua kdepim-3.5.9.orig/knotes/knotes_manager.desktop kdepim-3.5.9/knotes/knotes_manager.desktop
+--- kdepim-3.5.9.orig/knotes/knotes_manager.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/knotes/knotes_manager.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Notes
+ Name[af]=Notas
+ Name[ar]=الملاحظات
+diff -Nrua kdepim-3.5.9.orig/knotes/local.desktop kdepim-3.5.9/knotes/local.desktop
+--- kdepim-3.5.9.orig/knotes/local.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/knotes/local.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Notes in Local File
+ Name[af]=Notas in plaaslike lêer
+ Name[ar]=الملاحظات في الملف المحلّي
+diff -Nrua kdepim-3.5.9.orig/konsolekalendar/konsolekalendar.desktop kdepim-3.5.9/konsolekalendar/konsolekalendar.desktop
+--- kdepim-3.5.9.orig/konsolekalendar/konsolekalendar.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/konsolekalendar/konsolekalendar.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KonsoleKalendar
+ Name[af]=Konsole Kalender
+ Name[cs]=Konzolový kalendář
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/akregator/akregatorplugin3.2.desktop kdepim-3.5.9/kontact/plugins/akregator/akregatorplugin3.2.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/akregator/akregatorplugin3.2.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/akregator/akregatorplugin3.2.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=akregator
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/akregator/akregatorplugin.desktop kdepim-3.5.9/kontact/plugins/akregator/akregatorplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/akregator/akregatorplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/akregator/akregatorplugin.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=akregator
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/kaddressbook/kaddressbookplugin.desktop kdepim-3.5.9/kontact/plugins/kaddressbook/kaddressbookplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/kaddressbook/kaddressbookplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/kaddressbook/kaddressbookplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kontact_contacts
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/karm/karmplugin.desktop kdepim-3.5.9/kontact/plugins/karm/karmplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/karm/karmplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/karm/karmplugin.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=karm
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/kitchensync/kitchensync.desktop kdepim-3.5.9/kontact/plugins/kitchensync/kitchensync.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/kitchensync/kitchensync.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/kitchensync/kitchensync.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kitchensync
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/kmail/kcmkmailsummary.desktop kdepim-3.5.9/kontact/plugins/kmail/kcmkmailsummary.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/kmail/kcmkmailsummary.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/kmail/kcmkmailsummary.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kontact_mail
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/kmail/kmailplugin.desktop kdepim-3.5.9/kontact/plugins/kmail/kmailplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/kmail/kmailplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/kmail/kmailplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kontact_mail
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/knode/knodeplugin.desktop kdepim-3.5.9/kontact/plugins/knode/knodeplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/knode/knodeplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/knode/knodeplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kontact_news
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/knotes/knotesplugin.desktop kdepim-3.5.9/kontact/plugins/knotes/knotesplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/knotes/knotesplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/knotes/knotesplugin.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kontact_notes
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/korganizer/journalplugin.desktop kdepim-3.5.9/kontact/plugins/korganizer/journalplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/korganizer/journalplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/korganizer/journalplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kontact_journal
+ ServiceTypes=Kontact/Plugin
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/korganizer/kcmkorgsummary.desktop kdepim-3.5.9/kontact/plugins/korganizer/kcmkorgsummary.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/korganizer/kcmkorgsummary.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/korganizer/kcmkorgsummary.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kontact_date
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/korganizer/korganizerplugin.desktop kdepim-3.5.9/kontact/plugins/korganizer/korganizerplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/korganizer/korganizerplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/korganizer/korganizerplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kontact_date
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/korganizer/todoplugin.desktop kdepim-3.5.9/kontact/plugins/korganizer/todoplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/korganizer/todoplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/korganizer/todoplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kontact_todo
+ ServiceTypes=Kontact/Plugin
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/kpilot/kpilotplugin.desktop kdepim-3.5.9/kontact/plugins/kpilot/kpilotplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/kpilot/kpilotplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/kpilot/kpilotplugin.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kpilot
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/newsticker/kcmkontactknt.desktop kdepim-3.5.9/kontact/plugins/newsticker/kcmkontactknt.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/newsticker/kcmkontactknt.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/newsticker/kcmkontactknt.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=knode
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/newsticker/newstickerplugin.desktop kdepim-3.5.9/kontact/plugins/newsticker/newstickerplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/newsticker/newstickerplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/newsticker/newstickerplugin.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=knewsticker
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/specialdates/kcmsdsummary.desktop kdepim-3.5.9/kontact/plugins/specialdates/kcmsdsummary.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/specialdates/kcmsdsummary.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/specialdates/kcmsdsummary.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=cookie
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/specialdates/specialdatesplugin.desktop kdepim-3.5.9/kontact/plugins/specialdates/specialdatesplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/specialdates/specialdatesplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/specialdates/specialdatesplugin.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=cookie
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/summary/kcmkontactsummary.desktop kdepim-3.5.9/kontact/plugins/summary/kcmkontactsummary.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/summary/kcmkontactsummary.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/summary/kcmkontactsummary.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kontact_summary
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/summary/summaryplugin.desktop kdepim-3.5.9/kontact/plugins/summary/summaryplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/summary/summaryplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/summary/summaryplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kontact_summary
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/test/kptestplugin.desktop kdepim-3.5.9/kontact/plugins/test/kptestplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/test/kptestplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/test/kptestplugin.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=konsole
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/plugins/weather/weatherplugin.desktop kdepim-3.5.9/kontact/plugins/weather/weatherplugin.desktop
+--- kdepim-3.5.9.orig/kontact/plugins/weather/weatherplugin.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/plugins/weather/weatherplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=kweather
+ ServiceTypes=Kontact/Plugin,KPluginInfo
+diff -Nrua kdepim-3.5.9.orig/kontact/src/kontactconfig.desktop kdepim-3.5.9/kontact/src/kontactconfig.desktop
+--- kdepim-3.5.9.orig/kontact/src/kontactconfig.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/src/kontactconfig.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=kcmshell kontactconfig
+ Icon=kontact
+ Type=Service
+diff -Nrua kdepim-3.5.9.orig/kontact/src/kontactdcop.desktop kdepim-3.5.9/kontact/src/kontactdcop.desktop
+--- kdepim-3.5.9.orig/kontact/src/kontactdcop.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/src/kontactdcop.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Kontact
+ Name[be]=Кантакт
+ Name[hi]=कॉन्टेक्ट
+diff -Nrua kdepim-3.5.9.orig/kontact/src/Kontact.desktop kdepim-3.5.9/kontact/src/Kontact.desktop
+--- kdepim-3.5.9.orig/kontact/src/Kontact.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/kontact/src/Kontact.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Kontact
+ Name[be]=Кантакт
+ Name[hi]=कॉन्टेक्ट
+diff -Nrua kdepim-3.5.9.orig/korganizer/dcopcalendar.desktop kdepim-3.5.9/korganizer/dcopcalendar.desktop
+--- kdepim-3.5.9.orig/korganizer/dcopcalendar.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/dcopcalendar.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=DCOP/Organizer
+ Comment=Organizer with a DCOP interface
+diff -Nrua kdepim-3.5.9.orig/korganizer/interfaces/calendar/calendardecoration.desktop kdepim-3.5.9/korganizer/interfaces/calendar/calendardecoration.desktop
+--- kdepim-3.5.9.orig/korganizer/interfaces/calendar/calendardecoration.desktop	2007-10-08 11:50:53.000000000 +0200
++++ kdepim-3.5.9/korganizer/interfaces/calendar/calendardecoration.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=Calendar/Decoration
+ Comment=Calendar Decoration Plugin
+diff -Nrua kdepim-3.5.9.orig/korganizer/interfaces/calendar/calendarplugin.desktop kdepim-3.5.9/korganizer/interfaces/calendar/calendarplugin.desktop
+--- kdepim-3.5.9.orig/korganizer/interfaces/calendar/calendarplugin.desktop	2007-10-08 11:50:53.000000000 +0200
++++ kdepim-3.5.9/korganizer/interfaces/calendar/calendarplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=Calendar/Plugin
+ Comment=Calendar Plugin
+diff -Nrua kdepim-3.5.9.orig/korganizer/interfaces/korganizer/korganizerpart.desktop kdepim-3.5.9/korganizer/interfaces/korganizer/korganizerpart.desktop
+--- kdepim-3.5.9.orig/korganizer/interfaces/korganizer/korganizerpart.desktop	2007-05-14 09:54:30.000000000 +0200
++++ kdepim-3.5.9/korganizer/interfaces/korganizer/korganizerpart.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KOrganizer/Part
+ Comment=KOrganizer Part
+diff -Nrua kdepim-3.5.9.orig/korganizer/interfaces/korganizer/korgprintplugin.desktop kdepim-3.5.9/korganizer/interfaces/korganizer/korgprintplugin.desktop
+--- kdepim-3.5.9.orig/korganizer/interfaces/korganizer/korgprintplugin.desktop	2007-05-14 09:54:30.000000000 +0200
++++ kdepim-3.5.9/korganizer/interfaces/korganizer/korgprintplugin.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KOrganizer/PrintPlugin
+ Comment=KOrganizer Part
+diff -Nrua kdepim-3.5.9.orig/korganizer/korgac/korgac.desktop kdepim-3.5.9/korganizer/korgac/korgac.desktop
+--- kdepim-3.5.9.orig/korganizer/korgac/korgac.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/korgac/korgac.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KOrganizer Reminder Client
+ Name[af]=KOrganizer herhinner kliënt
+ Name[ar]=زبون المنبه لِــ KOrganizer
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configcolors.desktop kdepim-3.5.9/korganizer/korganizer_configcolors.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configcolors.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configcolors.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=colors
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configdesignerfields.desktop kdepim-3.5.9/korganizer/korganizer_configdesignerfields.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configdesignerfields.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configdesignerfields.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=dlgedit
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configfonts.desktop kdepim-3.5.9/korganizer/korganizer_configfonts.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configfonts.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configfonts.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=fonts
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configfreebusy.desktop kdepim-3.5.9/korganizer/korganizer_configfreebusy.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configfreebusy.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configfreebusy.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=personal
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configgroupautomation.desktop kdepim-3.5.9/korganizer/korganizer_configgroupautomation.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configgroupautomation.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configgroupautomation.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=personal
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configgroupscheduling.desktop kdepim-3.5.9/korganizer/korganizer_configgroupscheduling.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configgroupscheduling.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configgroupscheduling.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=personal
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configmain.desktop kdepim-3.5.9/korganizer/korganizer_configmain.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configmain.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configmain.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=identity
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configplugins.desktop kdepim-3.5.9/korganizer/korganizer_configplugins.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configplugins.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configplugins.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=identity
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configtime.desktop kdepim-3.5.9/korganizer/korganizer_configtime.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configtime.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configtime.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=clock
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer_configviews.desktop kdepim-3.5.9/korganizer/korganizer_configviews.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer_configviews.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer_configviews.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=viewmag
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/korganizer/korganizer.desktop kdepim-3.5.9/korganizer/korganizer.desktop
+--- kdepim-3.5.9.orig/korganizer/korganizer.desktop	2008-02-13 10:39:54.000000000 +0100
++++ kdepim-3.5.9/korganizer/korganizer.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ MimeType=text/calendar;text/x-vcalendar;
+ Comment=Calendar and Scheduling Program
+ Comment[af]=Kalender en Skedulering Program
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/datenums/datenums.desktop kdepim-3.5.9/korganizer/plugins/datenums/datenums.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/datenums/datenums.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/datenums/datenums.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_datenums
+ Name=Date Numbers Plugin for Calendars
+ Name[af]=Dag nommer inprop module vir kalenders
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/exchange/exchange.desktop kdepim-3.5.9/korganizer/plugins/exchange/exchange.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/exchange/exchange.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/exchange/exchange.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_exchange
+ Name=Microsoft Exchange 2000 Plugin for KOrganizer
+ Name[af]=Microsoft Exchange 2000 inprop module vir KOrganizer
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/hebrew/hebrew.desktop kdepim-3.5.9/korganizer/plugins/hebrew/hebrew.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/hebrew/hebrew.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/hebrew/hebrew.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_hebrew
+ Name=Jewish Calendar Plugin
+ Name[af]=Joodse kalender inprop module
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/printing/journal/journalprint.desktop kdepim-3.5.9/korganizer/plugins/printing/journal/journalprint.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/printing/journal/journalprint.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/printing/journal/journalprint.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_journalprint
+ Name=Journal Print Style
+ Name[af]=Joernaal druk styl
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/printing/list/listprint.desktop kdepim-3.5.9/korganizer/plugins/printing/list/listprint.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/printing/list/listprint.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/printing/list/listprint.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_listprint
+ Name=List Print Style
+ Name[af]=Lys druk styl
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/printing/whatsnext/whatsnextprint.desktop kdepim-3.5.9/korganizer/plugins/printing/whatsnext/whatsnextprint.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/printing/whatsnext/whatsnextprint.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/printing/whatsnext/whatsnextprint.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_whatsnextprint
+ Name=What's Next Print Style
+ Name[af]=Wat is volgende - druk styl
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/printing/year/yearprint.desktop kdepim-3.5.9/korganizer/plugins/printing/year/yearprint.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/printing/year/yearprint.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/printing/year/yearprint.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_yearlyprint
+ Name=Yearly Print Style
+ Name[af]=Druk styl: Jaarliks
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/projectview/projectview.desktop kdepim-3.5.9/korganizer/plugins/projectview/projectview.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/projectview/projectview.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/projectview/projectview.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_projectview
+ Name=Project View Plugin for KOrganizer
+ Name[af]=Projek Besigtig Inplak vir Korganizer
+diff -Nrua kdepim-3.5.9.orig/korganizer/plugins/timespanview/timespanview.desktop kdepim-3.5.9/korganizer/plugins/timespanview/timespanview.desktop
+--- kdepim-3.5.9.orig/korganizer/plugins/timespanview/timespanview.desktop	2008-02-13 10:39:53.000000000 +0100
++++ kdepim-3.5.9/korganizer/plugins/timespanview/timespanview.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-Library=libkorg_timespanview
+ Name=Timespan View Plugin for KOrganizer
+ Name[af]=Tydlyn aansig inprop module vir KOrganizer
+diff -Nrua kdepim-3.5.9.orig/korganizer/uninstall.desktop kdepim-3.5.9/korganizer/uninstall.desktop
+--- kdepim-3.5.9.orig/korganizer/uninstall.desktop	2005-09-10 10:24:47.000000000 +0200
++++ kdepim-3.5.9/korganizer/uninstall.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/korn/KOrn.desktop kdepim-3.5.9/korn/KOrn.desktop
+--- kdepim-3.5.9.orig/korn/KOrn.desktop	2007-10-08 11:50:45.000000000 +0200
++++ kdepim-3.5.9/korn/KOrn.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Mail Alert
+ GenericName[af]=Pos inkennis stel
+ GenericName[ar]=منبه للبريد الألكتروني
+diff -Nrua kdepim-3.5.9.orig/korn/uninstall.desktop kdepim-3.5.9/korn/uninstall.desktop
+--- kdepim-3.5.9.orig/korn/uninstall.desktop	2005-09-10 10:24:15.000000000 +0200
++++ kdepim-3.5.9/korn/uninstall.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/abbrowserconduit/abbrowser_conduit.desktop kdepim-3.5.9/kpilot/conduits/abbrowserconduit/abbrowser_conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/abbrowserconduit/abbrowser_conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/abbrowserconduit/abbrowser_conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Comment=This conduit syncs the handheld addressbook with KDE's addressbook.
+ Comment[af]=Hierdie pad sinkroniseer die draagbare toestel adresboek met KDE se adresboek.
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/docconduit/doc_conduit.desktop kdepim-3.5.9/kpilot/conduits/docconduit/doc_conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/docconduit/doc_conduit.desktop	2007-05-14 09:54:51.000000000 +0200
++++ kdepim-3.5.9/kpilot/conduits/docconduit/doc_conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Comment=Adds text files to your handheld, suitable for DOC readers.
+ Comment[af]=Voeg teks lêers by jou draagbare toestel in DOC leser formaat.
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/docconduit/kpalmdoc.desktop kdepim-3.5.9/kpilot/conduits/docconduit/kpalmdoc.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/docconduit/kpalmdoc.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/docconduit/kpalmdoc.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KPalmDOC
+ Name[hi]=के-पॉम-डॉक
+ Name[sv]=Kpalm DOC
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/knotes/knotes-conduit.desktop kdepim-3.5.9/kpilot/conduits/knotes/knotes-conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/knotes/knotes-conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/knotes/knotes-conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Comment=This conduit syncs the Memo Pad application with KNotes.
+ Comment[af]=Hierdie pad synkroniseer die Memo Pad program met KNotes.
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/malconduit/mal_conduit.desktop kdepim-3.5.9/kpilot/conduits/malconduit/mal_conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/malconduit/mal_conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/malconduit/mal_conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=MAL (AvantGo) Conduit
+ Name[af]=MAL (AvantGo) pad
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/memofileconduit/memofile-conduit.desktop kdepim-3.5.9/kpilot/conduits/memofileconduit/memofile-conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/memofileconduit/memofile-conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/memofileconduit/memofile-conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Memo File
+ Name[af]=Memo Lêer
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/notepadconduit/notepad-conduit.desktop kdepim-3.5.9/kpilot/conduits/notepadconduit/notepad-conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/notepadconduit/notepad-conduit.desktop	2007-05-14 09:54:51.000000000 +0200
++++ kdepim-3.5.9/kpilot/conduits/notepadconduit/notepad-conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=NotePad
+ Name[cs]=Poznámkový blok
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/null/null-conduit.desktop kdepim-3.5.9/kpilot/conduits/null/null-conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/null/null-conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/null/null-conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=NULL
+ Name[ca]=NUL
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/popmail/popmail-conduit.desktop kdepim-3.5.9/kpilot/conduits/popmail/popmail-conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/popmail/popmail-conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/popmail/popmail-conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Comment=Send mail from your handheld through KMail.
+ Comment[af]=Stuur pos vanaf jou draagbare toestel deur KMail.
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/recordconduit/record-conduit.desktop kdepim-3.5.9/kpilot/conduits/recordconduit/record-conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/recordconduit/record-conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/recordconduit/record-conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Records (Experimental)
+ Name[af]=Rekords (Eksperimenteel)
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/sysinfoconduit/sysinfo_conduit.desktop kdepim-3.5.9/kpilot/conduits/sysinfoconduit/sysinfo_conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/sysinfoconduit/sysinfo_conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/sysinfoconduit/sysinfo_conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Comment=This conduit writes information about your handheld and the sync to a file.
+ Comment[af]=Hierdie pad skryf informasie aangaande die draagbare toestel en sinkronisasie na 'n lêer.
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/timeconduit/time_conduit.desktop kdepim-3.5.9/kpilot/conduits/timeconduit/time_conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/timeconduit/time_conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/timeconduit/time_conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Comment=This conduit sets the time on your handheld from the PC clock.
+ Comment[af]=Hierdie pad stel die tyd op jou draagbare toestel vanaf die PC horlosie.
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/vcalconduit/todo-conduit.desktop kdepim-3.5.9/kpilot/conduits/vcalconduit/todo-conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/vcalconduit/todo-conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/vcalconduit/todo-conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Comment=This conduit syncs the ToDo list from your handheld to KOrganizer.
+ Comment[af]=Hierdie pad sinkroniseer die Te-doen lys vanaf jou draagbare toestel na KOrganizer.
+diff -Nrua kdepim-3.5.9.orig/kpilot/conduits/vcalconduit/vcal-conduit.desktop kdepim-3.5.9/kpilot/conduits/vcalconduit/vcal-conduit.desktop
+--- kdepim-3.5.9.orig/kpilot/conduits/vcalconduit/vcal-conduit.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/conduits/vcalconduit/vcal-conduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Calendar (KOrganizer)
+ Name[af]=Kalender (KOrganizer)
+diff -Nrua kdepim-3.5.9.orig/kpilot/kpilot/kpilotconduit.desktop kdepim-3.5.9/kpilot/kpilot/kpilotconduit.desktop
+--- kdepim-3.5.9.orig/kpilot/kpilot/kpilotconduit.desktop	2007-05-14 09:54:52.000000000 +0200
++++ kdepim-3.5.9/kpilot/kpilot/kpilotconduit.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KPilotConduit
+ Comment=KPilot Conduit
+diff -Nrua kdepim-3.5.9.orig/kpilot/kpilot/kpilot_config.desktop kdepim-3.5.9/kpilot/kpilot/kpilot_config.desktop
+--- kdepim-3.5.9.orig/kpilot/kpilot/kpilot_config.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/kpilot/kpilot/kpilot_config.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kpilot
+ Type=Service
+ ServiceTypes=KCModule
+diff -Nrua kdepim-3.5.9.orig/kpilot/kpilot/kpilotdaemon.desktop kdepim-3.5.9/kpilot/kpilot/kpilotdaemon.desktop
+--- kdepim-3.5.9.orig/kpilot/kpilot/kpilotdaemon.desktop	2007-10-08 11:50:51.000000000 +0200
++++ kdepim-3.5.9/kpilot/kpilot/kpilotdaemon.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KPilotDaemon
+ Name[af]=Kpilotdaemon
+ Name[ar]=مراقب KPilot
+diff -Nrua kdepim-3.5.9.orig/kpilot/kpilot/kpilot.desktop kdepim-3.5.9/kpilot/kpilot/kpilot.desktop
+--- kdepim-3.5.9.orig/kpilot/kpilot/kpilot.desktop	2007-10-08 11:50:51.000000000 +0200
++++ kdepim-3.5.9/kpilot/kpilot/kpilot.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KPilot
+ Name[af]=Kpilot
+ Name[eo]=Palm-Piloto
+diff -Nrua kdepim-3.5.9.orig/kresources/birthdays/kabc.desktop kdepim-3.5.9/kresources/birthdays/kabc.desktop
+--- kdepim-3.5.9.orig/kresources/birthdays/kabc.desktop	2008-02-13 10:39:29.000000000 +0100
++++ kdepim-3.5.9/kresources/birthdays/kabc.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Birthdays From KAddressBook
+ Name[af]=Verjaarsdae uit KAddressBook
+ Name[ar]=تواريخ الميلد من KAddressBook
+diff -Nrua kdepim-3.5.9.orig/kresources/blogging/blogging.desktop kdepim-3.5.9/kresources/blogging/blogging.desktop
+--- kdepim-3.5.9.orig/kresources/blogging/blogging.desktop	2008-02-13 10:39:29.000000000 +0100
++++ kdepim-3.5.9/kresources/blogging/blogging.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Journals as Blogs on a Server
+ Name[af]=Joernale as Blogs op 'n bediener
+ Name[bg]=Дневници и блогове
+diff -Nrua kdepim-3.5.9.orig/kresources/egroupware/kabc_xmlrpc.desktop kdepim-3.5.9/kresources/egroupware/kabc_xmlrpc.desktop
+--- kdepim-3.5.9.orig/kresources/egroupware/kabc_xmlrpc.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/egroupware/kabc_xmlrpc.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=eGroupware Server (via XML-RPC)
+ Name[af]=eGroupware Bediener (via XML-RPC)
+ Name[bg]=Сървър eGroupware (чрез XML-RPC)
+diff -Nrua kdepim-3.5.9.orig/kresources/egroupware/kcal_xmlrpc.desktop kdepim-3.5.9/kresources/egroupware/kcal_xmlrpc.desktop
+--- kdepim-3.5.9.orig/kresources/egroupware/kcal_xmlrpc.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/egroupware/kcal_xmlrpc.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=eGroupware Server (via XML-RPC)
+ Name[af]=eGroupware Bediener (via XML-RPC)
+ Name[bg]=Сървър eGroupware (чрез XML-RPC)
+diff -Nrua kdepim-3.5.9.orig/kresources/egroupware/knotes_xmlrpc.desktop kdepim-3.5.9/kresources/egroupware/knotes_xmlrpc.desktop
+--- kdepim-3.5.9.orig/kresources/egroupware/knotes_xmlrpc.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/egroupware/knotes_xmlrpc.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=eGroupware Server (via XML-RPC)
+ Name[af]=eGroupware Bediener (via XML-RPC)
+ Name[bg]=Сървър eGroupware (чрез XML-RPC)
+diff -Nrua kdepim-3.5.9.orig/kresources/exchange/exchange_deprecated.desktop kdepim-3.5.9/kresources/exchange/exchange_deprecated.desktop
+--- kdepim-3.5.9.orig/kresources/exchange/exchange_deprecated.desktop	2007-10-08 11:50:39.000000000 +0200
++++ kdepim-3.5.9/kresources/exchange/exchange_deprecated.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+ Name=Exchange 2000 Server (deprecated)
+ Name[af]=Exchange 2000 Bediener (nie verder ondersteun)
+diff -Nrua kdepim-3.5.9.orig/kresources/exchange/exchange.desktop kdepim-3.5.9/kresources/exchange/exchange.desktop
+--- kdepim-3.5.9.orig/kresources/exchange/exchange.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/exchange/exchange.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,7 +1,6 @@
+ [Desktop Entry]
+ Type=Service
+ X-KDE-Library=resourcecalendarexchange
+-Encoding=UTF-8
+ X-KDE-ResourceFamily=calendar
+ X-KDE-ResourceType=exchange
+ ServiceTypes=KResources/Plugin
+diff -Nrua kdepim-3.5.9.orig/kresources/featureplan/kcal_resourcefeatureplan.desktop kdepim-3.5.9/kresources/featureplan/kcal_resourcefeatureplan.desktop
+--- kdepim-3.5.9.orig/kresources/featureplan/kcal_resourcefeatureplan.desktop	2008-02-13 10:39:29.000000000 +0100
++++ kdepim-3.5.9/kresources/featureplan/kcal_resourcefeatureplan.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=XML Feature Plan
+ Name[af]=XML eienskappe plan
+ Name[ca]=Pla de característiques XML
+diff -Nrua kdepim-3.5.9.orig/kresources/groupdav/kabc_groupdav.desktop kdepim-3.5.9/kresources/groupdav/kabc_groupdav.desktop
+--- kdepim-3.5.9.orig/kresources/groupdav/kabc_groupdav.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/groupdav/kabc_groupdav.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=GroupDAV Server (e.g. OpenGroupware)
+ Name[af]=GroupDAV bediener (bv. OpenGroupware)
+ Name[bg]=Сървър GroupDAV (e.g. OpenGroupware)
+diff -Nrua kdepim-3.5.9.orig/kresources/groupdav/kcal_groupdav.desktop kdepim-3.5.9/kresources/groupdav/kcal_groupdav.desktop
+--- kdepim-3.5.9.orig/kresources/groupdav/kcal_groupdav.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/groupdav/kcal_groupdav.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=GroupDAV Server (e.g. OpenGroupware)
+ Name[af]=GroupDAV bediener (bv. OpenGroupware)
+ Name[bg]=Сървър GroupDAV (e.g. OpenGroupware)
+diff -Nrua kdepim-3.5.9.orig/kresources/groupdav/uninstall.desktop kdepim-3.5.9/kresources/groupdav/uninstall.desktop
+--- kdepim-3.5.9.orig/kresources/groupdav/uninstall.desktop	2005-09-10 10:23:47.000000000 +0200
++++ kdepim-3.5.9/kresources/groupdav/uninstall.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/kresources/groupware/kabc_groupware.desktop kdepim-3.5.9/kresources/groupware/kabc_groupware.desktop
+--- kdepim-3.5.9.orig/kresources/groupware/kabc_groupware.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/groupware/kabc_groupware.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Groupware Server
+ Name[af]=Groupware bediener
+ Name[ar]=خادم البرمجيات الجماعية
+diff -Nrua kdepim-3.5.9.orig/kresources/groupware/kcal_groupware.desktop kdepim-3.5.9/kresources/groupware/kcal_groupware.desktop
+--- kdepim-3.5.9.orig/kresources/groupware/kcal_groupware.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/groupware/kcal_groupware.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Groupware Server
+ Name[af]=Groupware bediener
+ Name[ar]=خادم البرمجيات الجماعية
+diff -Nrua kdepim-3.5.9.orig/kresources/groupwise/kabc_groupwise.desktop kdepim-3.5.9/kresources/groupwise/kabc_groupwise.desktop
+--- kdepim-3.5.9.orig/kresources/groupwise/kabc_groupwise.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/groupwise/kabc_groupwise.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Novell GroupWise Server
+ Name[af]=Novell GroupWise bediener
+ Name[bg]=Сървър Novell GroupWise
+diff -Nrua kdepim-3.5.9.orig/kresources/groupwise/kcal_groupwise.desktop kdepim-3.5.9/kresources/groupwise/kcal_groupwise.desktop
+--- kdepim-3.5.9.orig/kresources/groupwise/kcal_groupwise.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/groupwise/kcal_groupwise.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Novell GroupWise Server
+ Name[af]=Novell GroupWise bediener
+ Name[bg]=Сървър Novell GroupWise
+diff -Nrua kdepim-3.5.9.orig/kresources/kolab/kabc/kolab.desktop kdepim-3.5.9/kresources/kolab/kabc/kolab.desktop
+--- kdepim-3.5.9.orig/kresources/kolab/kabc/kolab.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/kolab/kabc/kolab.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Addressbook on IMAP Server via KMail
+ Name[af]=Adresboek op IMAP bediener via KMail
+ Name[bg]=Адресник на сървър IMAP през KMail
+diff -Nrua kdepim-3.5.9.orig/kresources/kolab/kcal/kolab.desktop kdepim-3.5.9/kresources/kolab/kcal/kolab.desktop
+--- kdepim-3.5.9.orig/kresources/kolab/kcal/kolab.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/kolab/kcal/kolab.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Calendar on IMAP Server via KMail
+ Name[af]=Kalender op IMAP bediener via KMail
+ Name[bg]=Календар на сървър IMAP през KMail
+diff -Nrua kdepim-3.5.9.orig/kresources/kolab/knotes/kolabresource.desktop kdepim-3.5.9/kresources/kolab/knotes/kolabresource.desktop
+--- kdepim-3.5.9.orig/kresources/kolab/knotes/kolabresource.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/kolab/knotes/kolabresource.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=IMAP Server via KMail
+ Name[af]=IMAP bediener via KMail
+ Name[bg]=Сървър IMAP през KMail
+diff -Nrua kdepim-3.5.9.orig/kresources/kolab/uninstall.desktop kdepim-3.5.9/kresources/kolab/uninstall.desktop
+--- kdepim-3.5.9.orig/kresources/kolab/uninstall.desktop	2005-09-10 10:23:47.000000000 +0200
++++ kdepim-3.5.9/kresources/kolab/uninstall.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/kresources/newexchange/kabc_newexchange.desktop kdepim-3.5.9/kresources/newexchange/kabc_newexchange.desktop
+--- kdepim-3.5.9.orig/kresources/newexchange/kabc_newexchange.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/newexchange/kabc_newexchange.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Addressbook on an Exchange Server (experimental)
+ Name[af]=Adresboek op 'n Exchange bediener (eksperimenteel)
+ Name[bg]=Адресник на сървър Exchange (експериментално)
+diff -Nrua kdepim-3.5.9.orig/kresources/newexchange/kabc_newexchange_final.desktop kdepim-3.5.9/kresources/newexchange/kabc_newexchange_final.desktop
+--- kdepim-3.5.9.orig/kresources/newexchange/kabc_newexchange_final.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/newexchange/kabc_newexchange_final.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Addressbook on an Exchange Server
+ Name[af]=Adresboek op 'n Exchange bediener
+ Name[bg]=Адресник на сървър Exchange
+diff -Nrua kdepim-3.5.9.orig/kresources/newexchange/kcal_newexchange.desktop kdepim-3.5.9/kresources/newexchange/kcal_newexchange.desktop
+--- kdepim-3.5.9.orig/kresources/newexchange/kcal_newexchange.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/newexchange/kcal_newexchange.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Calendar on an Exchange Server (experimental)
+ Name[af]=Kalender op 'n Exchange bediener (eksperimenteel)
+ Name[bg]=Календар на сървър Exchange (експериментално)
+diff -Nrua kdepim-3.5.9.orig/kresources/newexchange/kcal_newexchange_final.desktop kdepim-3.5.9/kresources/newexchange/kcal_newexchange_final.desktop
+--- kdepim-3.5.9.orig/kresources/newexchange/kcal_newexchange_final.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/newexchange/kcal_newexchange_final.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+ Name=Calendar on an Exchange Server
+ Name[af]=Kalender op 'n Exchange bediener
+diff -Nrua kdepim-3.5.9.orig/kresources/remote/remote.desktop kdepim-3.5.9/kresources/remote/remote.desktop
+--- kdepim-3.5.9.orig/kresources/remote/remote.desktop	2007-05-14 09:54:32.000000000 +0200
++++ kdepim-3.5.9/kresources/remote/remote.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Calendar in Remote File
+ Name[af]=Kalender in 'n afgeleë lêer
+ Name[bg]=Календар в отдалечен файл
+diff -Nrua kdepim-3.5.9.orig/kresources/scalix/kabc/scalix.desktop kdepim-3.5.9/kresources/scalix/kabc/scalix.desktop
+--- kdepim-3.5.9.orig/kresources/scalix/kabc/scalix.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/scalix/kabc/scalix.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Addressbook on Scalix Server via KMail
+ Name[bg]=Адресник на сървъра Scalix през KMail
+ Name[ca]=Llibreta d'adreces en un servidor Scalix mitjançant el KMail
+diff -Nrua kdepim-3.5.9.orig/kresources/scalix/kcal/scalix.desktop kdepim-3.5.9/kresources/scalix/kcal/scalix.desktop
+--- kdepim-3.5.9.orig/kresources/scalix/kcal/scalix.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/scalix/kcal/scalix.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Calendar on Scalix Server via KMail
+ Name[bg]=Календар на сървъра Scalix през KMail
+ Name[ca]=Calendari en un servidor Scalix mitjançant el KMail
+diff -Nrua kdepim-3.5.9.orig/kresources/scalix/knotes/scalix.desktop kdepim-3.5.9/kresources/scalix/knotes/scalix.desktop
+--- kdepim-3.5.9.orig/kresources/scalix/knotes/scalix.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/scalix/knotes/scalix.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Notes on Scalix Server via KMail
+ Name[bg]=Бележки на сървъра Scalix през KMail
+ Name[ca]=Notes en un servidor Scalix mitjançant el KMail
+diff -Nrua kdepim-3.5.9.orig/kresources/scalix/uninstall.desktop kdepim-3.5.9/kresources/scalix/uninstall.desktop
+--- kdepim-3.5.9.orig/kresources/scalix/uninstall.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/scalix/uninstall.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+diff -Nrua kdepim-3.5.9.orig/kresources/slox/kabc_ox.desktop kdepim-3.5.9/kresources/slox/kabc_ox.desktop
+--- kdepim-3.5.9.orig/kresources/slox/kabc_ox.desktop	2007-10-08 11:50:39.000000000 +0200
++++ kdepim-3.5.9/kresources/slox/kabc_ox.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=OpenXchange Server
+ Name[af]=OpenXchange bediener
+ Name[bg]=Сървър OpenXchange
+diff -Nrua kdepim-3.5.9.orig/kresources/slox/kabc_slox.desktop kdepim-3.5.9/kresources/slox/kabc_slox.desktop
+--- kdepim-3.5.9.orig/kresources/slox/kabc_slox.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/slox/kabc_slox.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=SUSE LINUX Openexchange Server
+ Name[af]=SuSE Linux OpenExchange bediener
+ Name[bg]=Сървър SUSE LINUX Openexchange
+diff -Nrua kdepim-3.5.9.orig/kresources/slox/kcal_ox.desktop kdepim-3.5.9/kresources/slox/kcal_ox.desktop
+--- kdepim-3.5.9.orig/kresources/slox/kcal_ox.desktop	2007-10-08 11:50:39.000000000 +0200
++++ kdepim-3.5.9/kresources/slox/kcal_ox.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=OpenXchange Server
+ Name[af]=OpenXchange bediener
+ Name[bg]=Сървър OpenXchange
+diff -Nrua kdepim-3.5.9.orig/kresources/slox/kcal_slox.desktop kdepim-3.5.9/kresources/slox/kcal_slox.desktop
+--- kdepim-3.5.9.orig/kresources/slox/kcal_slox.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/slox/kcal_slox.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=SUSE LINUX Openexchange Server
+ Name[af]=SuSE Linux OpenExchange bediener
+ Name[bg]=Сървър SUSE LINUX Openexchange
+diff -Nrua kdepim-3.5.9.orig/kresources/tvanytime/kcal_tvanytime.desktop kdepim-3.5.9/kresources/tvanytime/kcal_tvanytime.desktop
+--- kdepim-3.5.9.orig/kresources/tvanytime/kcal_tvanytime.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/kresources/tvanytime/kcal_tvanytime.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=TV Schedules
+ Name[af]=TV skedules
+ Name[ar]=جداول التلفزة
+diff -Nrua kdepim-3.5.9.orig/ktnef/gui/ktnef.desktop kdepim-3.5.9/ktnef/gui/ktnef.desktop
+--- kdepim-3.5.9.orig/ktnef/gui/ktnef.desktop	2008-02-13 10:39:52.000000000 +0100
++++ kdepim-3.5.9/ktnef/gui/ktnef.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KTnef
+ Name[sv]=Ktnef
+ GenericName=TNEF File Viewer
+diff -Nrua kdepim-3.5.9.orig/libkcal/kcal_manager.desktop kdepim-3.5.9/libkcal/kcal_manager.desktop
+--- kdepim-3.5.9.orig/libkcal/kcal_manager.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/libkcal/kcal_manager.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Calendar
+ Name[af]=Kalender
+ Name[ar]=التقويم
+diff -Nrua kdepim-3.5.9.orig/libkcal/local.desktop kdepim-3.5.9/libkcal/local.desktop
+--- kdepim-3.5.9.orig/libkcal/local.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/libkcal/local.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Calendar in Local File
+ Name[af]=Kalender in plaaslike lêer
+ Name[be]=Каляндар у лякальным файле
+diff -Nrua kdepim-3.5.9.orig/libkcal/localdir.desktop kdepim-3.5.9/libkcal/localdir.desktop
+--- kdepim-3.5.9.orig/libkcal/localdir.desktop	2008-02-13 10:39:51.000000000 +0100
++++ kdepim-3.5.9/libkcal/localdir.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Calendar in Local Directory
+ Name[af]=Kalender in plaaslike gids
+ Name[be]=Каляндар у лякальным каталёгу
+diff -Nrua kdepim-3.5.9.orig/libkdepim/komposer/core/komposerconfig.desktop kdepim-3.5.9/libkdepim/komposer/core/komposerconfig.desktop
+--- kdepim-3.5.9.orig/libkdepim/komposer/core/komposerconfig.desktop	2007-05-14 09:54:47.000000000 +0200
++++ kdepim-3.5.9/libkdepim/komposer/core/komposerconfig.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=kcmshell komposerconfig
+ Icon=komposer
+ Type=Application
+diff -Nrua kdepim-3.5.9.orig/libkdepim/komposer/core/komposereditor.desktop kdepim-3.5.9/libkdepim/komposer/core/komposereditor.desktop
+--- kdepim-3.5.9.orig/libkdepim/komposer/core/komposereditor.desktop	2008-02-13 10:39:45.000000000 +0100
++++ kdepim-3.5.9/libkdepim/komposer/core/komposereditor.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=Komposer/Editor
+ X-KDE-Derived=Komposer/Plugin
+diff -Nrua kdepim-3.5.9.orig/libkdepim/komposer/plugins/default/defaulteditor.desktop kdepim-3.5.9/libkdepim/komposer/plugins/default/defaulteditor.desktop
+--- kdepim-3.5.9.orig/libkdepim/komposer/plugins/default/defaulteditor.desktop	2008-02-13 10:39:44.000000000 +0100
++++ kdepim-3.5.9/libkdepim/komposer/plugins/default/defaulteditor.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Icon=editor
+ ServiceTypes=Komposer/Editor
+diff -Nrua kdepim-3.5.9.orig/networkstatus/networkstatus.desktop kdepim-3.5.9/networkstatus/networkstatus.desktop
+--- kdepim-3.5.9.orig/networkstatus/networkstatus.desktop	2008-02-13 10:39:38.000000000 +0100
++++ kdepim-3.5.9/networkstatus/networkstatus.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Network Status Daemon
+ Name[af]=Netwerk status bediener
+ Name[ar]=مراقب القرص و التنفيذ لحالة الشبكة
+diff -Nrua kdepim-3.5.9.orig/plugins/kmail/bodypartformatter/text_calendar.desktop kdepim-3.5.9/plugins/kmail/bodypartformatter/text_calendar.desktop
+--- kdepim-3.5.9.orig/plugins/kmail/bodypartformatter/text_calendar.desktop	2008-02-13 10:39:44.000000000 +0100
++++ kdepim-3.5.9/plugins/kmail/bodypartformatter/text_calendar.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Misc]
+-Encoding=UTF-8
+ Name=Application Octetstream
+ Name[af]=Application/Octet-stream
+ Name[ca]=Aplicació Octetstream
+diff -Nrua kdepim-3.5.9.orig/plugins/kmail/bodypartformatter/text_vcard.desktop kdepim-3.5.9/plugins/kmail/bodypartformatter/text_vcard.desktop
+--- kdepim-3.5.9.orig/plugins/kmail/bodypartformatter/text_vcard.desktop	2008-02-13 10:39:44.000000000 +0100
++++ kdepim-3.5.9/plugins/kmail/bodypartformatter/text_vcard.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Misc]
+-Encoding=UTF-8
+ Name=Application Octetstream
+ Name[af]=Application/Octet-stream
+ Name[ca]=Aplicació Octetstream
+diff -Nrua kdepim-3.5.9.orig/plugins/kmail/bodypartformatter/text_xdiff.desktop kdepim-3.5.9/plugins/kmail/bodypartformatter/text_xdiff.desktop
+--- kdepim-3.5.9.orig/plugins/kmail/bodypartformatter/text_xdiff.desktop	2008-02-13 10:39:44.000000000 +0100
++++ kdepim-3.5.9/plugins/kmail/bodypartformatter/text_xdiff.desktop	2008-06-29 23:45:24.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Misc]
+-Encoding=UTF-8
+ Name=Application Octetstream
+ Name[af]=Application/Octet-stream
+ Name[ca]=Aplicació Octetstream
+diff -Nrua kdepim-3.5.9.orig/wizards/groupwarewizard.desktop kdepim-3.5.9/wizards/groupwarewizard.desktop
+--- kdepim-3.5.9.orig/wizards/groupwarewizard.desktop	2008-02-13 10:39:28.000000000 +0100
++++ kdepim-3.5.9/wizards/groupwarewizard.desktop	2008-06-29 23:45:23.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KDE Groupware Wizard
+ Name[af]=KDE groupware assistent
+ Name[ar]=مرشد KDE للبرمجيات الجماعية

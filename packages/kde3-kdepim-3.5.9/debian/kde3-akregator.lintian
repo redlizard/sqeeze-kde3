@@ -1,0 +1,5 @@
+akregator: no-shlibs-control-file usr/lib/libakregatorprivate.so
+akregator: postinst-must-call-ldconfig usr/lib/libakregatorprivate.so
+akregator: postrm-should-call-ldconfig usr/lib/libakregatorprivate.so
+akregator: package-name-doesnt-match-sonames libakregatorprivate
+

@@ -1,0 +1,8 @@
+?package(karm):\
+	needs="X11"\
+	section="Applications/Project Management"\
+	hints="KDE"\
+	title="KArm"\
+	icon32x32="/opt/kde3/share/pixmaps/karm.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/karm-16.xpm"\
+	command="/opt/kde3/bin/karm"

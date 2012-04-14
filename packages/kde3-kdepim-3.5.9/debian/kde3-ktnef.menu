@@ -1,0 +1,8 @@
+?package(ktnef):\
+	needs="X11"\
+	section="Applications/Viewers"\
+	hints="KDE"\
+	title="KTnef"\
+	icon32x32="/opt/kde3/share/pixmaps/ktnef.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ktnef-16.xpm"\
+	command="/opt/kde3/bin/ktnef"

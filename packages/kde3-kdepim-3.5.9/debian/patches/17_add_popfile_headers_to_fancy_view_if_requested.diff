@@ -1,0 +1,38 @@
+Index: kdepim-3.5.9/kmail/headerstrategy.cpp
+===================================================================
+--- kdepim-3.5.9.orig/kmail/headerstrategy.cpp	2007-05-14 09:54:39.000000000 +0200
++++ kdepim-3.5.9/kmail/headerstrategy.cpp	2008-06-29 20:07:14.000000000 +0200
+@@ -61,7 +61,7 @@
+   static const char * richHeaders[] = {
+     "subject", "date", "from", "cc", "bcc", "to",
+     "organization", "organisation", "reply-to",
+-    "user-agent", "x-mailer"
++    "user-agent", "x-mailer", "x-text-classification", "x-popfile-link"
+   };
+   static const int numRichHeaders = sizeof richHeaders / sizeof *richHeaders;
+ 
+Index: kdepim-3.5.9/kmail/headerstyle.cpp
+===================================================================
+--- kdepim-3.5.9.orig/kmail/headerstyle.cpp	2008-02-13 10:39:37.000000000 +0100
++++ kdepim-3.5.9/kmail/headerstyle.cpp	2008-06-29 20:07:14.000000000 +0200
+@@ -705,6 +705,20 @@
+         }
+       }
+     }
++    if (configReader.readBoolEntry( "showSpamStatus", true )  ) {
++      if (strategy->showHeader( "x-text-classification" ) && strategy->showHeader( "x-popfile-link" ) )
++      {
++        if ( ! message->headerField( "X-Text-Classification" ).isEmpty() && ! message->headerField( "X-POPFile-Link" ).isEmpty() )
++	{
++          headerStr.append(QString("<tr><th>%1</th>\n"
++                                   "<td>%2&nbsp;&nbsp;(<a href=\"%3\">%4</a>)</td></tr>\n")
++                           .arg("Popfile:")
++                           .arg( strToHtml( message->headerField("X-Text-Classification") ) )
++			                    .arg( message->headerField("X-POPFile-Link") )
++					    .arg(i18n("Reclassify") ) );
++	}
++      }
++    }
+ 
+     // FIXME: Show status in synthetic header style field.  Decide whether this or current in brackets style is best and remove one.
+     /*    if( strategy->showHeader( "status" ) )

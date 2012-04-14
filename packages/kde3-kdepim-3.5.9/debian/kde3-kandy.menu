@@ -1,0 +1,6 @@
+?package(kandy):\
+	needs="X11"\
+	section="Applications/Mobile Devices"\
+	hints="KDE"\
+	title="Kandy"\
+	command="/opt/kde3/bin/kandy"

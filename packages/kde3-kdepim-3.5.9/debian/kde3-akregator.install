@@ -1,0 +1,32 @@
+/opt/kde3/bin/akregator
+/opt/kde3/lib/kde3/libakregatorpart.la
+/opt/kde3/lib/kde3/libakregatorpart.so
+/opt/kde3/lib/kde3/libakregator_mk4storage_plugin.la
+/opt/kde3/lib/kde3/libakregator_mk4storage_plugin.so
+/opt/kde3/lib/libakregatorprivate.la
+/opt/kde3/lib/libakregatorprivate.so
+/opt/kde3/share/applications/kde/akregator.desktop
+/opt/kde3/share/apps/akregator
+/opt/kde3/share/config.kcfg/akregator.kcfg
+/opt/kde3/share/config.kcfg/mk4config.kcfg
+/opt/kde3/share/doc/kde/HTML/en/akregator
+/opt/kde3/share/icons/hicolor/128x128/apps/akregator.png
+/opt/kde3/share/icons/crystalsvg/16x16/actions/rss_tag.png
+/opt/kde3/share/icons/crystalsvg/22x22/actions/rss_tag.png
+/opt/kde3/share/icons/crystalsvg/32x32/actions/rss_tag.png
+/opt/kde3/share/icons/crystalsvg/48x48/actions/rss_tag.png
+/opt/kde3/share/icons/crystalsvg/64x64/actions/rss_tag.png
+/opt/kde3/share/icons/crystalsvg/16x16/apps/akregator_empty.png
+/opt/kde3/share/icons/hicolor/16x16/apps/akregator.png
+/opt/kde3/share/icons/hicolor/22x22/apps/akregator.png
+/opt/kde3/share/icons/hicolor/32x32/apps/akregator.png
+/opt/kde3/share/icons/hicolor/48x48/apps/akregator.png
+/opt/kde3/share/icons/hicolor/64x64/apps/akregator.png
+/opt/kde3/share/icons/hicolor/scalable/apps/akregator.svgz
+/opt/kde3/share/services/akregator_mk4storage_plugin.desktop
+/opt/kde3/share/services/akregator_part.desktop
+/opt/kde3/share/services/feed.protocol
+/opt/kde3/share/servicetypes/akregator_plugin.desktop
+../icons/akregator.xpm /opt/kde3/share/pixmaps
+../icons/akregator-16.xpm /opt/kde3/share/pixmaps
+

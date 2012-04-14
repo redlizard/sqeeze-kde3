@@ -1,0 +1,6 @@
+?package(kitchensync):\
+	needs="X11"\
+	section="Applications/Data Management"\
+	hints="KDE"\
+	title="KitchenSync"\
+	command="/opt/kde3/bin/kitchensync"
