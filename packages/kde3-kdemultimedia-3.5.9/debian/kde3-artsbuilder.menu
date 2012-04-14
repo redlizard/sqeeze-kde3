@@ -1,0 +1,15 @@
+?package(artsbuilder):\
+	needs="X11"\
+	section="Applications/Sound"\
+	hints="KDE"\
+	title="aRts Builder"\
+	icon="/opt/kde3/share/pixmaps/artsbuilder.xpm"\
+	command="/opt/kde3/bin/artsbuilder"
+
+?package(artsbuilder):\
+	needs="X11"\
+	section="Applications/Sound"\
+	hints="KDE"\
+	title="aRts Control"\
+	icon="/opt/kde3/share/pixmaps/artscontrol.xpm"\
+	command="/opt/kde3/bin/artscontrol"

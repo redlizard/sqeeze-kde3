@@ -1,0 +1,39 @@
+.TH "JuK" "1" "April 2006"
+.SH "NAME"
+juk \- music organizer and player for KDE
+.SH "SYNOPSIS"
+\fBjuk\fR
+.SH "DESCRIPTION"
+.LP 
+
+JuK (pronounced "jook") is a jukebox and music manager for the KDE
+desktop similar to jukebox software on other platforms such as
+iTunes or RealOne.
+
+.
+.SH "OPTIONS"
+.l
+\fIjuk\fP does not accept any command-line options.
+.
+
+.SH "DCOP"
+
+\fIjuk\fP has a DCOP (Desktop Communications Protocol) interface
+that may be used to start, stop, skip forward to the next song,
+etc.  This may be done from the command line using \fIdcop\fP
+as follows:
+
+.RS
+$ dcop juk Player forward
+
+$ dcop juk Player back
+
+$ dcop juk Player stop
+
+$ dcop juk Player play
+.RE
+
+.SH "AUTHOR"
+This page was written by David Schleef <ds@schleef.org> for Debian,
+but may be used elsewhere.
+

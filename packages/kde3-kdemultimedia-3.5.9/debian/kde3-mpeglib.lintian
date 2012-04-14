@@ -1,0 +1,4 @@
+mpeglib: shlib-missing-in-control-file libyafxplayer.so for usr/lib/libyafxplayer.so
+mpeglib: shlib-missing-in-control-file libyafcore.so for usr/lib/libyafcore.so
+mpeglib: package-name-doesnt-match-sonames libmpeg-0.3.0 libyafcore libyafxplayer
+

@@ -1,0 +1,147 @@
+/* config.h.in.  Generated from configure.in by autoheader.  */
+
+/* Define if you have one of the broken libspeex 1.1.x < 1.1.5 */
+#undef BROKEN_SPEEX11
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define if your platform has fadvise */
+#undef HAVE_FADVISE
+
+/* Define if you have libavcodec and libavformat from FFMPEG (required for WMA
+   and RealAudio decoding) */
+#undef HAVE_FFMPEG
+
+/* Define to 1 if you have the <getopt.h> header file. */
+#undef HAVE_GETOPT_H
+
+/* Define if your platform has getopt_long from glibc */
+#undef HAVE_GNU_GETOPT
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Define if you have libasound.so.2 (required for ALSA 0.9.x/1.x support) */
+#undef HAVE_LIBASOUND2
+
+/* Define to 1 if you have the `dl' library (-ldl). */
+#undef HAVE_LIBDL
+
+/* Define if you have libFLAC 1.1.1 or 1.1.2 */
+#undef HAVE_LIBFLAC
+
+/* Define if you have libFLAC 1.1.3 */
+#undef HAVE_LIBFLAC113
+
+/* Define if you have libjack (required if you want Jack support) */
+#undef HAVE_LIBJACK
+
+/* defined if you have libltdl library and header */
+#undef HAVE_LIBLTDL
+
+/* Define if you have libOggFLAC (required for loading OggFLAC files) */
+#undef HAVE_LIBOGGFLAC
+
+/* Define if you have polyplib (required if you want Polypaudio server
+   support) */
+#undef HAVE_LIBPOLYP
+
+/* defined if you have libsamplerate library and header */
+#undef HAVE_LIBSAMPLERATE
+
+/* Define to 1 if you have the `speex' library (-lspeex). */
+#undef HAVE_LIBSPEEX
+
+/* Define to 1 if you have the <ltdl.h> header file. */
+#undef HAVE_LTDL_H
+
+/* Define if you have MADlib installed */
+#undef HAVE_MAD
+
+/* Define if your platform has madvise */
+#undef HAVE_MADVISE
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define if you have ogg/vorbis installed */
+#undef HAVE_OGG_VORBIS
+
+/* Define if your platform has posix_fadvise */
+#undef HAVE_POSIX_FADVISE
+
+/* Define if your platform has posix_madvise */
+#undef HAVE_POSIX_MADVISE
+
+/* Define to 1 if you have the <samplerate.h> header file. */
+#undef HAVE_SAMPLERATE_H
+
+/* Define to 1 if you have the <semaphore.h> header file. */
+#undef HAVE_SEMAPHORE_H
+
+/* Define to 1 if you have the <soundcard.h> header file. */
+#undef HAVE_SOUNDCARD_H
+
+/* Define if you have speex installed */
+#undef HAVE_SPEEX
+
+/* Define if you have libspeex 1.1.x installed */
+#undef HAVE_SPEEX11
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define to 1 if you have the <sys/audioio.h> header file. */
+#undef HAVE_SYS_AUDIOIO_H
+
+/* Define to 1 if you have the <sys/soundcard.h> header file. */
+#undef HAVE_SYS_SOUNDCARD_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Suffix for lib directories */
+#undef KDELIBSUFF
+
+/* Define if madvise has no usefull prototype */
+#undef NEED_MADVISE_PROTOTYPE
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Version number of package */
+#undef VERSION

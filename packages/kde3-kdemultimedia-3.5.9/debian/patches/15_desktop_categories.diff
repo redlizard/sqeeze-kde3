@@ -1,0 +1,16 @@
+--- kdemultimedia-3.5.9.orig/kioslave/audiocd/kcmaudiocd/audiocd.desktop
++++ kdemultimedia-3.5.9/kioslave/audiocd/kcmaudiocd/audiocd.desktop
+@@ -179,4 +179,4 @@
+ Keywords[uk]=Аудіо-КД,КД,Ogg,Vorbis,кодування,CDDA,частота вибірки
+ Keywords[zh_CN]=音频 CD,CD,Ogg,Vorbis,编码,CDDA,Bitrate
+ 
+-Categories=Qt;KDE;X-KDE-settings-sound;
++Categories=Qt;KDE;Settings;X-KDE-settings-sound;
+--- kdemultimedia-3.5.9.orig/libkcddb/kcmcddb/libkcddb.desktop
++++ kdemultimedia-3.5.9/libkcddb/kcmcddb/libkcddb.desktop
+@@ -184,4 +184,4 @@
+ Keywords[nds]=CDDB
+ Keywords[ta]=குறுந்தகடு தகவல்தளம்
+ 
+-Categories=Qt;KDE;X-KDE-settings-sound;
++Categories=Qt;KDE;Settings;X-KDE-settings-sound;

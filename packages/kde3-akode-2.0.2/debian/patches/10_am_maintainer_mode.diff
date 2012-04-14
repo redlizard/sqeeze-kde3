@@ -1,0 +1,11 @@
+--- a/configure.in.in
++++ b/configure.in.in
+@@ -40,6 +40,8 @@
+ dnl Automake doc recommends to do this only here. (Janos)
+ AM_INIT_AUTOMAKE(kdesupport,3.3)
+ 
++AM_MAINTAINER_MODE
++
+ dnl almost the same like KDE_SET_PEFIX but the path is /usr/local
+ dnl make /usr/local the default for the installation
+ AC_PREFIX_DEFAULT(/usr/local)

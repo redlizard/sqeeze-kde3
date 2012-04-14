@@ -1,0 +1,10 @@
+Document: kdemultimedia-doc-html-artsbuilder
+Title: Artsbuilder Handbook
+Author: Stefan Westerfeld, Jeff Tranter 
+Abstract: This handbook describes aRts, the Analog Real-time Synthesizer.
+Section: Sound
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/artsbuilder/index.html
+Files: /usr/share/doc/kde/HTML/en/artsbuilder/*.html
+

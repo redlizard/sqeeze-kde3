@@ -1,0 +1,8 @@
+?package(kscd):\
+	needs="X11"\
+	section="Applications/Sound"\
+	hints="KDE"\
+	title="KsCD"\
+	icon32x32="/opt/kde3/share/pixmaps/kscd.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kscd-16.xpm"\
+	command="/opt/kde3/bin/kscd"

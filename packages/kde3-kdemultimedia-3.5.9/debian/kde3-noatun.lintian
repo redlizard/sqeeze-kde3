@@ -1,0 +1,6 @@
+noatun: shlib-missing-in-control-file libwinskinvis.so for usr/lib/libwinskinvis.so
+noatun: shlib-missing-in-control-file libartseffects.so for usr/lib/libartseffects.so
+noatun: shlib-missing-in-control-file libnoatunarts.so for usr/lib/libnoatunarts.so
+noatun: shlib-missing-in-control-file libkdeinit_noatun.so for usr/lib/libkdeinit_noatun.so
+noatun: package-name-doesnt-match-sonames libartseffects libkdeinit-noatun libnoatun1 libnoatunarts libnoatuncontrols1 libnoatuntags1 libwinskinvis
+

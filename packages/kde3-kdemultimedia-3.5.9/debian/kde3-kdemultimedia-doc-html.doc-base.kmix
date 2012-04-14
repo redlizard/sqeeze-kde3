@@ -1,0 +1,12 @@
+Document: kdemultimedia-doc-html-kmix
+Title: KMix Handbook
+Author: Matt Johnson, Christian Esken, Helio Chissini de Castro,
+ Stefan Schimanski, Lauri Watts
+Abstract: KMix is an application to allow you to change the volume of
+ your sound card.
+Section: Sound
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kmix/index.html
+Files: /usr/share/doc/kde/HTML/en/kmix/*.html
+

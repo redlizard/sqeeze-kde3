@@ -1,0 +1,297 @@
+Source: kdemultimedia
+Section: kde
+Priority: optional
+Maintainer: @@@MAINTAINER@@@
+Uploaders: @@@UPLOADERS@@@
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 6), autotools-dev, cdparanoia, gawk, gettext, kdelibs4-dev (>= 4:3.5.8), libcdparanoia0-dev, libesd0-dev, libflac-dev (>= 1.1.4), libgstreamer-plugins-base0.10-dev, libltdl3-dev, libsamplerate0-dev, libspeex-dev (>> 1.1.5), libtag1-dev (>> 1.3.1), libtheora-dev, libxine-dev, sharutils, texinfo, libxxf86dga-dev, libxv-dev, libxxf86vm-dev, libakode-dev
+Standards-Version: 3.7.3
+Homepage: http://multimedia.kde.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdemultimedia
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdemultimedia
+
+Package: kdemultimedia
+Section: kde
+Architecture: all
+Depends: artsbuilder (>= ${source:Version}), juk (>= ${source:Version}), kaudiocreator (>= ${source:Version}), kdemultimedia-kappfinder-data (>= ${source:Version}), kdemultimedia-kfile-plugins (>= ${source:Version}), kdemultimedia-kio-plugins (>= ${source:Version}), kmid (>= ${source:Version}), kmix (>= ${source:Version}), krec (>= ${source:Version}), kscd (>= ${source:Version}), libarts1-akode (>= ${source:Version}), libarts1-audiofile (>= ${source:Version}), libarts1-mpeglib (>= ${source:Version}), libarts1-xine (>= ${source:Version}), mpeglib (>= ${source:Version})
+Recommends: kaffeine
+Suggests: kdemultimedia-doc-html (>= ${source:Version})
+Description: multimedia apps from the official KDE release 
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of multimedia applications
+ (such as sound and movie player, mixers and plugins) provided with
+ the official release of KDE.
+
+
+Package: kdemultimedia-dev
+Section: devel
+Architecture: any
+Depends: kdelibs4-dev (>= ${source:Upstream-Version}), artsbuilder (= ${binary:Version}), kdemultimedia-kio-plugins (= ${binary:Version}), kmid (= ${binary:Version}), kmix (= ${binary:Version}), krec (= ${binary:Version}), kscd (= ${binary:Version}), libarts1-akode (= ${binary:Version}), libarts1-mpeglib (= ${binary:Version}), libkcddb1 (= ${binary:Version}), mpeglib (= ${binary:Version}), noatun (= ${binary:Version})
+Conflicts: libmpeg-dev
+Replaces: artsbuilder (<< 4:3.0.0), mpeglib (<< 4:3.0.0), noatun (<< 4:3.0.0)
+Description: development files for the KDE multimedia module
+ Development files and headers for the KDE multimedia module.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kdemultimedia-doc-html
+Architecture: all
+Section: doc
+Suggests: konqueror | www-browser, kdebase
+Description: KDE multimedia documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE multimedia documentation converted to
+ HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/juk/. Documentation is provided for most
+ KDE multimedia packages.
+ .
+ This package is part of KDE, and a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: artsbuilder
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: khelpcenter
+Replaces: kdebase-data (<< 4:3.3.91), kdemultimedia-dev (<< 4:3.5.0-2)
+Description: synthesizer designer for aRts
+ This is the analog Realtime synthesizer's graphical design tool.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: juk
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: khelpcenter
+Description: music organizer and player for KDE
+ JuK (pronounced "jook") is a jukebox and music manager for the KDE
+ desktop similar to jukebox software on other platforms such as
+ iTunes or RealOne.
+ .
+ Some of JuK's features include:
+  * Support for Ogg Vorbis and MP3 formats
+  * Tag editing support for both formats, including ID3v2 for MP3 files.
+    Multitagging or editing a selection of multiple files at once is also
+    supported
+  * Output to either the aRts, default KDE sound system, or GStreamer
+  * Management of your "collection" and multiple playlists
+  * Import and export to m3u playlists
+  * Binary caching of audio meta-data and playlist information for faster
+    load times (starting with the second time you run JuK)
+  * Integration into KDE that allows drag-and-drop and clipboard usage
+    with other KDE and X apps
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kaboodle
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: libarts1-xine
+Suggests: khelpcenter
+Description: light, embedded media player for KDE
+ Kaboodle is a light, embedded media player, supporting both video and audio,
+ for KDE. It uses the aRts framework for playing media files.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kaudiocreator
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}, kdemultimedia-kio-plugins (= ${binary:Version})
+Recommends: vorbis-tools, flac
+Suggests: lame
+Description: CD ripper and audio encoder frontend for KDE
+ KAudioCreator is a tool for audio extraction (ripping) and encoding. It can
+ keep your WAV files, or convert them to Ogg/Vorbis, MP3, or FLAC. It also
+ searches CDDB to retrieve the information of the disk.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kdemultimedia-kfile-plugins
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Replaces: kdemultimedia-kio-plugins (<< 4:3.4.1-1)
+Description: au/avi/m3u/mp3/ogg/wav plugins for kfile
+ au/avi/m3u/mp3/ogg/wav file metainformation plugins for KDE.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kdemultimedia-kappfinder-data
+Section: kde
+Architecture: any
+Depends: kappfinder
+Description: multimedia data for kappfinder
+ This package provides data on multimedia applications for kappfinder.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kdemultimedia-kio-plugins
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: lame
+Conflicts: kdebase-audiolibs (<< 4:3.0.0)
+Replaces: kdebase-audiolibs (<< 4:3.0.0), kdebase-kio-plugins (<< 4:3.4.0)
+Description: enables the browsing of audio CDs under Konqueror
+ This package allow audio CDs to be browsed like a file system using
+ Konqueror and the audiocd:/ URL.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kmid
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: khelpcenter
+Description: MIDI/karaoke player for KDE
+ This package provides a MIDI and karaoke player for KDE.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kmix
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: khelpcenter
+Provides: x-audio-mixer
+Description: sound mixer applet for KDE
+ This package includes KDE's dockable sound mixer applet.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: krec
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: khelpcenter
+Description: sound recorder utility for KDE
+ This is a sound recording utility for KDE.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kscd
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: khelpcenter
+Description: audio CD player for KDE
+ This is KDE's audio CD player.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: libarts1-akode
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Replaces: libakode2 (<< 2-beta3-2), akode
+Description: akode plugin for aRts
+ This package contains akode plugins for aRts.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information
+
+Package: libarts1-audiofile
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: audiofile plugin for aRts
+ This package contains audiofile plugins for aRts.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: libarts1-mpeglib
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Conflicts: libarts-mpeglib (<< 4:3.0.0)
+Replaces: libarts-mpeglib (<< 4:3.0.0)
+Description: mpeglib plugin for aRts, supporting mp3 and mpeg audio/video
+ This package contains the mpeglib aRts plugin, supporting mp3 and mpeg
+ audio and video.
+ .
+ This is the arts (KDE Sound daemon) plugin.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: libarts1-xine
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: aRts plugin enabling xine support
+ This package contains aRts' xine plugin, allowing the use of the xine
+ multimedia engine though aRts.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: libkcddb1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: CDDB library for KDE
+ The KDE native CDDB (CD Data Base) library, providing easy access to Audio
+ CD meta-information (track titles, artist information, etc.) from on-line
+ databases, for KDE applications.
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: mpeglib
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: libarts1-mpeglib (= ${binary:Version})
+Replaces: kdemultimedia-dev (<< 4:3.5.2-1)
+Description: MP3 and MPEG-1 audio and video library
+ mpeglib is a MPEG-1 and MP3 audio and video library. It supports
+ MPEG-1 audio (layers 1, 2, 3), MPEG-1 video, MPEG-1 system layer,
+ and WAV playback
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: noatun
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: khelpcenter, noatun-plugins
+Description: media player for KDE
+ Noatun is an aRts-based audio and video player for KDE. It supports all
+ formats supported by your installation of aRts (including aRts plugins).
+ .
+ This package is part of KDE, as a component of the KDE multimedia module.
+ See the 'kde' and 'kdemultimedia' packages for more information.
+
+Package: kdemultimedia-dbg
+Section: libdevel
+Architecture: any
+Depends: kdelibs-dbg,  libkcddb1 (= ${binary:Version})
+Priority: extra
+Description: debugging symbols for kdemultimedia
+ This package contains the debugging symbols associated with kdemultimedia.
+ They will automatically be used by gdb for debugging kdemultimedia-related
+ issues.

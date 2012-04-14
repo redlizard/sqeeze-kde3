@@ -1,0 +1,8 @@
+?package(kmix):\
+	needs="X11"\
+	section="Applications/Sound"\
+	hints="KDE"\
+	title="KMix"\
+	icon32x32="/opt/kde3/share/pixmaps/kmix.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kmix-16.xpm"\
+	command="/opt/kde3/bin/kmix"

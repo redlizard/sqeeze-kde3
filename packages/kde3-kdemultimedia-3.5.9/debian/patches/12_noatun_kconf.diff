@@ -1,0 +1,13 @@
+--- kde.orig/noatun/Makefile.am
++++ kde.patched/noatun/Makefile.am
+@@ -11,7 +11,9 @@
+ 
+ updatedir = $(kde_datadir)/kconf_update
+ update_DATA = noatun.upd
+-update_PROGRAMS = noatun20update
++
++kconfdir = $(libdir)/kconf_update_bin
++kconf_PROGRAMS = noatun20update
+ 
+ noatun20update_SOURCES  = noatun20update.cpp
+ noatun20update_LDFLAGS = $(all_libraries) $(KDE_RPATH)

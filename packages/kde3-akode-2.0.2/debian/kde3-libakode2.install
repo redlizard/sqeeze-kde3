@@ -1,0 +1,10 @@
+debian/tmp/opt/kde3/bin/akodeplay
+debian/tmp/opt/kde3/lib/libakode.so.2
+debian/tmp/opt/kde3/lib/libakode.so.2.0.0
+debian/tmp/opt/kde3/lib/libakode_alsa_sink.so
+debian/tmp/opt/kde3/lib/libakode_jack_sink.so
+debian/tmp/opt/kde3/lib/libakode_mpc_decoder.so
+debian/tmp/opt/kde3/lib/libakode_mpeg_decoder.so
+debian/tmp/opt/kde3/lib/libakode_oss_sink.so
+debian/tmp/opt/kde3/lib/libakode_src_resampler.so
+debian/tmp/opt/kde3/lib/libakode_xiph_decoder.so

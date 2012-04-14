@@ -1,0 +1,15 @@
+--- kde.orig/mpeglib/configure.in.in
++++ kde.patched/mpeglib/configure.in.in
+@@ -144,12 +144,6 @@
+ AC_MSG_RESULT($OS_TYPE)
+ 
+ INTELCPPFLAG=
+-dnl MMX_SUPPORT is set as variable in main configure.in.in
+-dnl now make it a config.h entry
+-if test x$MMX_SUPPORT = xyes; then
+-   AC_DEFINE(INTEL,1,[Define if you have MMX support on x86 with gcc])
+-   INTELCPPFLAG="-DINTEL"
+-fi
+ AC_SUBST(INTELCPPFLAG)
+ 
+ AC_DEFUN([KDE_MPEGLIB_COMPILES],

@@ -1,0 +1,2 @@
+libarts1-xine: non-dev-pkg-with-shlib-symlink usr/lib/libarts_xine.so.0.0.0 usr/lib/libarts_xine.so
+libarts1-xine: package-name-doesnt-match-sonames libarts-xine0

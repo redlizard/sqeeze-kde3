@@ -1,0 +1,5 @@
+kmix: package-name-doesnt-match-sonames libkdeinit-kmix libkdeinit-kmixctrl
+kmix: no-shlibs-control-file usr/lib/libkdeinit_kmixctrl.so
+kmix: no-shlibs-control-file usr/lib/libkdeinit_kmix.so
+kmix: postinst-must-call-ldconfig usr/lib/libkdeinit_kmixctrl.so
+kmix: postrm-should-call-ldconfig usr/lib/libkdeinit_kmixctrl.so

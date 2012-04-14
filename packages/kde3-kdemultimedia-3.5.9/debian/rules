@@ -1,0 +1,39 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS := \
+	--with-extra-includes=/usr/include/speex:/opt/kde3/include/kde/arts
+	# The include/kde/arts one should be temporary. See
+	# "juk/Makefile.am: arts_includes vs ARTS_CFLAGS" in -talk.
+
+DEB_HOST_ARCH_OS := $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+
+ifeq ($(DEB_HOST_ARCH_OS), linux)
+DEB_CONFIGURE_EXTRA_FLAGS += --with-alsa --with-arts-alsa
+endif
+
+DOC_HTML_PRUNE := kde3-kcontrol
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-kdemultimedia-dbg
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-artsbuilder	:= -V'kde3-artsbuilder (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kmid		:= -V'kde3-kmid (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkcddb1	:= -V'kde3-libkcddb1 (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-mpeglib		:= -V'kde3-mpeglib (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-noatun		:= -V'kde3-noatun (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libarts1-mpeglib	:= -V'kde3-libarts1-mpeglib (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kdemultimedia-kio-plugins := -V'kde3-kdemultimedia-kio-plugins (>= 4:3.5.9)'
+
+#shlibs_ver = 4:3.5.0-1
+#$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+

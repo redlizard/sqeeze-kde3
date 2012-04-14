@@ -1,0 +1,44 @@
+Source: akode
+Section: sound
+Priority: optional
+Maintainer: @@@MAINTAINER@@@
+Uploaders: @@@UPLOADERS@@@
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5.0.31), autotools-dev, gawk, libflac-dev (>= 1.1.4-1), libmad0-dev, libogg-dev, libvorbis-dev, libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libsamplerate0-dev, libspeex-dev, libjack0.100.0-dev
+Standards-Version: 3.7.3
+Homepage: http://www.carewolf.com/akode
+
+Package: libakode2
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Conflicts: akode
+Replaces: akode
+Enhances: libarts1c2
+Description: akode plugin for aRts
+ aKode is a new multithreaded audio library that provides aRts with
+ plugins to play a variety of formats: Ogg Vorbis, Musepack (MPC),
+ FLAC and Speex. aKode also focuses on performance, and so it means a
+ big enhancement for users runing aRts in non-realtime mode.
+
+Package: libakode-dev
+Section: libdevel
+Architecture: any
+Depends: libakode2 (= ${binary:Version}), libflac-dev (>= 1.1.4-1), libmad0-dev, libogg-dev, libvorbis-dev, ${alsa-dev}, libsamplerate0-dev, libspeex-dev, libjack0.100.0-dev
+Replaces: kdemultimedia-dev (<< 4:3.5-rc1), libakode2 (<< 2.0-4)
+Description: development files for akode
+ aKode is a new multithreaded audio library that provides aRts with
+ plugins to play a variety of formats: Ogg Vorbis, Musepack (MPC),
+ FLAC and Speex. aKode also focuses on performance, and so it means a
+ big enhancement for users runing aRts in non-realtime mode.
+ .
+ This package contains the development files for libakode.
+
+Package: akode-dbg
+Section: libdevel
+Architecture: any
+Priority: extra
+Depends: libakode2 (= ${binary:Version})
+Description: debugging symbols for akode
+ This package contains the debugging symbols associated with akode.
+ They will automatically be used by gdb for debugging akode-related
+ issues.

@@ -1,0 +1,3 @@
+libarts1-audiofile: package-name-doesnt-match-sonames libarts-audiofile0
+libarts1-audiofile: non-dev-pkg-with-shlib-symlink usr/lib/libarts_audiofile.so.0.0.0 usr/lib/libarts_audiofile.so
+

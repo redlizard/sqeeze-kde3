@@ -1,0 +1,891 @@
+#DPATCHLEVEL=0
+--- kaboodle/kaboodle.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kaboodle/kaboodle.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Kaboodle
+ Name[bn]=ক্যাবুডল্
+ Name[eo]=Kabudlo
+@@ -69,7 +68,8 @@
+ GenericName[th]=โปรแกรมเล่นแฟ้มสื่อ
+ GenericName[tr]=Medya Yürütücüsü
+ GenericName[uk]=Програвач медіа-матеріалів
+-GenericName[uz]=Медиа плейер
++GenericName[uz]=Media pleyer
++GenericName[uz@cyrillic]=Медиа плейер
+ GenericName[ven]=Tshitambi tsha Media
+ GenericName[wa]=Djouweu multimedia
+ GenericName[xh]=Umdlali we Midia
+--- kaboodle/kaboodle_component.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kaboodle/kaboodle_component.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Embedded Media Player
+ Name[af]=Ingebedde Media Speler
+ Name[ar]=مشغل وسائط متعددة معلّب
+--- kaboodle/kaboodleengine.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kaboodle/kaboodleengine.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Embedded Media Player Engine
+ Name[af]=Ingebedde Media Speler Masjien
+ Name[bn]=সন্নিবিষ্ট মিডিয়া প্লেয়ার ইঞ্জিন
+--- libkcddb/kcmcddb/libkcddb.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ libkcddb/kcmcddb/libkcddb.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -4,7 +4,6 @@
+ Type=Application
+ X-KDE-ModuleType=Library
+ X-KDE-Library=cddb
+-Encoding=UTF-8
+ 
+ Name=CDDB Retrieval
+ Name[bg]=Извличане от CDDB
+@@ -118,7 +117,8 @@
+ GenericName[th]=ปรับแต่ง CDDB
+ GenericName[tr]=CDDB Yapılandırması
+ GenericName[uk]=Налаштування CDDB
+-GenericName[uz]=CDDB мосламаси
++GenericName[uz]=CDDB moslamasi
++GenericName[uz@cyrillic]=CDDB мосламаси
+ GenericName[ven]=Nzudzanyo ya CDDB
+ GenericName[wa]=Apontiaedje di CDDB
+ GenericName[zh_CN]=CDDB 配置
+--- noatun/modules/winskin/mimetypes/interface/x-winamp-skin.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ noatun/modules/winskin/mimetypes/interface/x-winamp-skin.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=MimeType
+ MimeType=interface/x-winamp-skin
+ Icon=colorscm
+--- noatun/modules/net/net.plugin	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ noatun/modules/net/net.plugin	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -63,7 +63,8 @@
+ Name[th]=แผงวงจรเครือข่าย
+ Name[tr]=Ağ Arayüzü
+ Name[uk]=Інтерфейс мережі
+-Name[uz]=Тармоқ интерфейси
++Name[uz]=Tarmoq interfeysi
++Name[uz@cyrillic]=Тармоқ интерфейси
+ Name[ven]=Vhukwamani
+ Name[xh]=Ujongano nomsebenzi womnatha
+ Name[zh_CN]=网络接口
+--- noatun/modules/simple/simple.plugin	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ noatun/modules/simple/simple.plugin	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -58,7 +58,8 @@
+ Name[th]=เรียบง่าย
+ Name[tr]=Basit
+ Name[uk]=Простий
+-Name[uz]=Оддий
++Name[uz]=Oddiy
++Name[uz@cyrillic]=Оддий
+ Name[ven]=Zwoleluwa
+ Name[wa]=Simpe
+ Name[xh]=Lula
+--- noatun/modules/kaiman/kaiman.plugin	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ noatun/modules/kaiman/kaiman.plugin	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -60,7 +60,8 @@
+ Name[th]=ส่วนติดต่อ Kaiman
+ Name[tr]=Kaiman Arayüzü
+ Name[uk]=Інтерфейс Kaiman
+-Name[uz]=Kaiman интерфейси
++Name[uz]=Kaiman interfeysi
++Name[uz@cyrillic]=Kaiman интерфейси
+ Name[ven]=Interface ya Kaiman
+ Name[xh]=Ujongano lwe Kaiman
+ Name[zh_CN]=Kaiman 接口
+--- noatun/modules/dcopiface/dcopiface.plugin	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ noatun/modules/dcopiface/dcopiface.plugin	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -62,7 +62,8 @@
+ Name[th]=ส่วนติดต่อ DCOP
+ Name[tr]=DCOP Arayüzü
+ Name[uk]=Інтерфейс DCOP
+-Name[uz]=DCOP интерфейси
++Name[uz]=DCOP interfeysi
++Name[uz@cyrillic]=DCOP интерфейси
+ Name[xh]=Ujongano lwe DCOP
+ Name[zh_CN]=DCOP 接口
+ Name[zh_HK]=DCOP 介面
+@@ -126,7 +127,8 @@
+ Comment[th]=ส่วนติดต่อ DCOP สำหรับการสื่อสารระหว่างโปรเซส
+ Comment[tr]=IPC için DCOP Arayüzü
+ Comment[uk]=Інтерфейс DCOP для взаємодії процесів (IPC)
+-Comment[uz]=Жараёнлараро боғланиш учун DCOP интерфейси
++Comment[uz]=Jarayonlararo bogʻlanish uchun DCOP interfeysi
++Comment[uz@cyrillic]=Жараёнлараро боғланиш учун DCOP интерфейси
+ Comment[ven]=DCOP Interface ya tshitenwa tsha vhudavhudzani
+ Comment[xh]=Ujongano lwe DCOP-lothungelwano lwangaphakathi oluqhubekayo
+ Comment[zh_CN]=进程间通信的 DCOP 接口
+--- noatun/noatun.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ noatun/noatun.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Noatun
+ Name[bn]=নোটান
+ Name[eo]=Sonorludilo
+@@ -68,7 +67,8 @@
+ GenericName[th]=โปรแกรมเล่นแฟ้มสื่อ
+ GenericName[tr]=Medya Yürütücüsü
+ GenericName[uk]=Програвач медіа-матеріалів
+-GenericName[uz]=Медиа плейер
++GenericName[uz]=Media pleyer
++GenericName[uz@cyrillic]=Медиа плейер
+ GenericName[ven]=Tshitambi tsha Media
+ GenericName[wa]=Djouweu multimedia
+ GenericName[xh]=Umdlali we Midia
+--- arts/tools/artscontrol.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ arts/tools/artscontrol.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=aRts Control Tool
+ Name[af]=Arts Kontrole Program
+ Name[ar]=أداة aRts للتحكم
+@@ -54,7 +53,8 @@
+ Name[th]=เครื่องมือควบคุม aRts
+ Name[tr]=aRts Denetim Aracı
+ Name[uk]=Керування aRts
+-Name[uz]=aRts бошқарув воситаси
++Name[uz]=aRts boshqaruv vositasi
++Name[uz@cyrillic]=aRts бошқарув воситаси
+ Name[ven]=Tshishumiswa tshau langula aRTs
+ Name[xh]=Ulawulo Lwemizobo
+ Name[zh_CN]=aRts 控制工具
+@@ -117,7 +117,8 @@
+ GenericName[th]=ควบคุมเซิร์ฟเวอร์เสียง
+ GenericName[tr]=Ses Sunucu Yöneticisi
+ GenericName[uk]=Керування сервером звуку
+-GenericName[uz]=Товуш серверини бошқариш
++GenericName[uz]=Tovush serverini boshqarish
++GenericName[uz@cyrillic]=Товуш серверини бошқариш
+ GenericName[ven]=Ndangulo ya siva ya mubvumo
+ GenericName[wa]=Contrôle do sierveu di sons
+ GenericName[xh]=Ulawulo Lomncedisi Wesandi
+--- arts/tools/artscontrolapplet.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ arts/tools/artscontrolapplet.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Type=Plugin
+-Encoding=UTF-8
+ Comment=Control the aRts sound server
+ Comment[ar]=تحكّم بخادم الصوت aRts
+ Comment[bg]=Управление на аудио сървъра aRts
+@@ -100,7 +99,8 @@
+ Name[tg]=aRts Идоракунӣ
+ Name[tr]=aRts Kontrol
+ Name[uk]=Керування aRts
+-Name[uz]=aRts бошқаруви
++Name[uz]=aRts boshqaruvi
++Name[uz@cyrillic]=aRts бошқаруви
+ Name[zh_CN]=aRts 控制
+ Name[zh_HK]=aRts 控制器
+ Name[zh_TW]=aRts 控制
+--- arts/builder/artsbuilder.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ arts/builder/artsbuilder.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=aRts Builder
+ Name[af]=Arts Builder
+ Name[ar]=باني Arts
+--- arts/builder/x-artsbuilder.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ arts/builder/x-artsbuilder.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ MimeType=application/x-artsbuilder
+ Comment=Arts Builder
+ Comment[ar]=أداة لبناء الأصوات باستخدام aRts
+--- kioslave/audiocd/kcmaudiocd/audiocd.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kioslave/audiocd/kcmaudiocd/audiocd.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=kcmshell audiocd
+ Icon=cdaudio_unmount
+ Type=Application
+@@ -62,7 +61,8 @@
+ Name[th]=ซีดีบันทึกเสียง
+ Name[tr]=Müzik CD
+ Name[uk]=Аудіо-КД
+-Name[uz]=Аудио компакт-дисклар
++Name[uz]=Audio kompakt-disklar
++Name[uz@cyrillic]=Аудио компакт-дисклар
+ Name[ven]=CD ino thetsheleswa
+ Name[xh]=CDs Zokuvakalayo
+ Name[zh_CN]=音频 CD
+--- kscd/xmcd.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kscd/xmcd.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Comment=CD Database File
+ Comment[af]=Cd Databasis Lêer
+ Comment[az]=CD Databeyzi Faylı
+@@ -59,7 +58,8 @@
+ Comment[th]=แฟ้มฐานข้อมูลซีดี
+ Comment[tr]=CD Veritabanı Dosyası
+ Comment[uk]=Файл бази даних CD
+-Comment[uz]=CD маълумот база файли
++Comment[uz]=CD maʼlumot baza fayli
++Comment[uz@cyrillic]=CD маълумот база файли
+ Comment[ven]=CD ya databeizi ya faela 
+ Comment[wa]=Båze di dnêyes des plakes
+ Comment[xh]=Ifayile yesiseko sedata ye CD
+--- kscd/kscd.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kscd/kscd.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=CD Player
+ GenericName[af]=Cd Speler
+ GenericName[ar]=مشغل الأقراص المدمجة
+@@ -56,7 +55,8 @@
+ GenericName[th]=โปรแกรมเล่นซีดี
+ GenericName[tr]=CD Çalar
+ GenericName[uk]=Програвач КД
+-GenericName[uz]=Компакт-диск плейер
++GenericName[uz]=Kompakt-disk pleyer
++GenericName[uz@cyrillic]=Компакт-диск плейер
+ GenericName[ven]=Tshitambi tsha CD
+ GenericName[wa]=Djoweu di plakes lazer
+ GenericName[xh]=Umdlali We CD
+--- krec/krec_exportwave.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ krec/krec_exportwave.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Wave-Export
+ Name[bg]=Експортиране в Wave
+@@ -48,7 +47,8 @@
+ Name[th]=ส่งออกแฟ้ม Wave
+ Name[tr]=Wave Aktarma
+ Name[uk]=Експорт Wave
+-Name[uz]=Wave экспорт
++Name[uz]=Wave eksport
++Name[uz@cyrillic]=Wave экспорт
+ Name[zh_CN]=声波-导出
+ Name[zh_HK]=Wave-匯出
+ Name[zh_TW]=Wave 匯出
+--- krec/kcm_krec.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ krec/kcm_krec.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=krec
+ Type=Service
+ ServiceTypes=KCModule
+@@ -49,7 +48,7 @@
+ Name[th]=โดยรวม
+ Name[tr]=Evrensel
+ Name[uk]=Глобальні
+-Name[uz]=Глобал
++Name[uz@cyrillic]=Глобал
+ Name[zh_CN]=全局
+ Name[zh_HK]=通用
+ Name[zh_TW]=全域
+--- krec/kcm_krec_files.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ krec/kcm_krec_files.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=filenew
+ Type=Service
+ ServiceTypes=KCModule
+@@ -63,7 +62,8 @@
+ Name[th]=แฟ้มใหม่
+ Name[tr]=Yeni Dosyalar
+ Name[uk]=Нові файли
+-Name[uz]=Янги файллар
++Name[uz]=Yangi fayllar
++Name[uz@cyrillic]=Янги файллар
+ Name[wa]=Noveas fitchîs
+ Name[zh_CN]=新建文件
+ Name[zh_HK]=新檔案
+@@ -119,7 +119,8 @@
+ Comment[th]=ค่าคุณสมบัติโดยปริยายสำหรับแฟ้มใหม่
+ Comment[tr]=Yeni Dosyalar İçin Öntanımlı Özellikler
+ Comment[uk]=Типові властивості для нових файлів
+-Comment[uz]=Янги файлларнинг андоза хоссалари
++Comment[uz]=Yangi fayllarning andoza xossalari
++Comment[uz@cyrillic]=Янги файлларнинг андоза хоссалари
+ Comment[zh_CN]=新文件的默认属性
+ Comment[zh_HK]=新檔案的預設值
+ Comment[zh_TW]=新檔案的預設內容
+--- krec/krec_exportitem.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ krec/krec_exportitem.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -51,7 +51,8 @@
+ Comment[th]=ปลั๊กอินส่งออกสำหรับ KRec
+ Comment[tr]=KRec için aktarma eklentisi
+ Comment[uk]=Втулок експорту для KRec
+-Comment[uz]=KRec учун экспорт плагини
++Comment[uz]=KRec uchun eksport plagini
++Comment[uz@cyrillic]=KRec учун экспорт плагини
+ Comment[zh_CN]=KRec 导出插件
+ Comment[zh_HK]=用於 KRec 的 匯出插件
+ Comment[zh_TW]=KRec 匯出外掛
+--- krec/ogg_export/krec_exportogg.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ krec/ogg_export/krec_exportogg.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=OGG-Export
+ Name[bg]=Експортиране в OGG
+@@ -51,7 +50,8 @@
+ Name[th]=ส่งออกเป็น OGG
+ Name[tr]=OGG Aktarımı
+ Name[uk]=Експорт OGG
+-Name[uz]=OGG экспорт
++Name[uz]=OGG eksport
++Name[uz@cyrillic]=OGG экспорт
+ Name[zh_CN]=OGG 导出
+ Name[zh_HK]=OGG-匯出
+ Name[zh_TW]=OGG 匯出
+--- krec/krec.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ krec/krec.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=krec %i %m -caption "%c"
+ Icon=krec
+@@ -61,7 +60,8 @@
+ GenericName[th]=เครื่องมือบันทึกเสียง
+ GenericName[tr]=Ses Kaydedici
+ GenericName[uk]=Засіб для запису
+-GenericName[uz]=Товуш ёзиш воситаси
++GenericName[uz]=Tovush yozish vositasi
++GenericName[uz@cyrillic]=Товуш ёзиш воситаси
+ GenericName[ven]=Tshishumiswa tshau rekhoda
+ GenericName[wa]=Usteye eredjîstresse di sons
+ GenericName[xh]=Isixhobo Sokubhala phantsi
+--- krec/mp3_export/krec_exportmp3.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ krec/mp3_export/krec_exportmp3.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=MP3-Export
+ Name[bg]=Експортиране в MP3
+@@ -50,7 +49,8 @@
+ Name[th]=ส่งออกเป็น MP3
+ Name[tr]=MP3 Aktarımı
+ Name[uk]=Експорт MP3
+-Name[uz]=MP3 экспорт
++Name[uz]=MP3 eksport
++Name[uz@cyrillic]=MP3 экспорт
+ Name[zh_CN]=MP3-导出
+ Name[zh_HK]=MP3-匯出
+ Name[zh_TW]=MP3 匯出
+--- kmid/kmid.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kmid/kmid.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KMid
+ Name[af]=Kmid
+ Name[bn]=কে-মিড
+@@ -68,7 +67,8 @@
+ GenericName[th]=โปรแกรมเล่นแฟ้มมิดี้/คาราโอเกะ
+ GenericName[tr]=Midi ve Karaoke Yürütücü
+ GenericName[uk]=Програвач Midi/Karaoke
+-GenericName[uz]=Midi/Караоки плейер
++GenericName[uz]=Midi/Karaoki pleyer
++GenericName[uz@cyrillic]=Midi/Караоки плейер
+ GenericName[ven]=Midi/Tshitambi tsha Karaoke
+ GenericName[xh]=Umdlali we Midi/Karaoke
+ GenericName[zh_CN]=Midi/卡拉 OK 播放器
+--- kmid/x-karaoke.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kmid/x-karaoke.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=MimeType
+ MimeType=audio/x-karaoke
+ Icon=sound
+@@ -55,7 +54,8 @@
+ Comment[th]=แฟ้มคาราโอเกะ
+ Comment[tr]=Karaoke Dosyası
+ Comment[uk]=Файл Karaoke
+-Comment[uz]=Караоки файли
++Comment[uz]=Karaoki fayli
++Comment[uz@cyrillic]=Караоки файли
+ Comment[zh_CN]=卡拉 OK 文件
+ Comment[zh_HK]=卡拉OK 檔案
+ Comment[zh_TW]=卡拉OK檔案
+--- kmid/audiomidi.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kmid/audiomidi.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,4 +1,3 @@
+ # This file used to define audio/x-midi, which is already defined as a mime type!
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+--- juk/juk.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ juk/juk.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=juk -caption "%c" %i %m
+ Icon=juk
+@@ -64,7 +63,8 @@
+ GenericName[th]=โปรแกรมเล่นดนตรี
+ GenericName[tr]=Müzik Çalar
+ GenericName[uk]=Програвач музики
+-GenericName[uz]=Мусиқа плейер
++GenericName[uz]=Musiqa pleyer
++GenericName[uz@cyrillic]=Мусиқа плейер
+ GenericName[zh_CN]=音乐播放器
+ GenericName[zh_HK]=音樂播放器
+ GenericName[zh_TW]=音樂播放器
+--- juk/jukservicemenu.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ juk/jukservicemenu.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -55,7 +55,8 @@
+ Name[th]=เพิ่มลงชุดสะสมของ JuK
+ Name[tr]=JuK Koleksiyonuna Ekle
+ Name[uk]=Додати до збірки JuK
+-Name[uz]=JuK тўпламига қўшиш
++Name[uz]=JuK toʻplamiga qoʻshish
++Name[uz@cyrillic]=JuK тўпламига қўшиш
+ Name[zh_CN]=添加到 JuK 收藏
+ Name[zh_TW]=新增到 JuK 收藏清單
+ Icon=juk
+--- juk/juk.cpp	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ juk/juk.cpp	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -382,6 +382,7 @@
+     saveConfig();
+ 
+     delete m_splitter;
++    m_splitter = 0;
+     return true;
+ }
+ 
+--- kappfinder-data/muse.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/muse.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=muse
+ Name=MusE
+ Name[bn]=মিউস
+--- kappfinder-data/freebirth.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/freebirth.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=freebirth
+ Icon=
+ Name=FreeBirth
+--- kappfinder-data/mixxx.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/mixxx.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=mixxx
+ Icon=
+ Name=Mixxx
+--- kappfinder-data/hydrogen.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/hydrogen.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=hydrogen
+ Icon=
+ Name=Hydrogen
+--- kappfinder-data/ams.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/ams.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=ams
+ Icon=
+ Name=ams
+--- kappfinder-data/galan.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/galan.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=galan
+ Icon=
+ Name=gAlan
+--- kappfinder-data/djplay.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/djplay.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=djplay
+ Icon=
+ Name=DJPlay
+--- kappfinder-data/amsynth.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/amsynth.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=amSynth
+ Icon=
+ Name=amSynth
+--- kappfinder-data/vkeybd.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/vkeybd.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=vkeybd
+ Icon=
+ Name=vkeybd
+--- kappfinder-data/jack-rack.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/jack-rack.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=jack-rack
+ Icon=
+ Name=Jack-Rack
+--- kappfinder-data/qsynth.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/qsynth.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=qsynth
+ Icon=qsynth
+ Name=QSynth
+--- kappfinder-data/rezound.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/rezound.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=rezound
+ Icon=
+ Name=reZound
+@@ -58,7 +57,8 @@
+ GenericName[th]=โปรแกรมแก้ไขเสียง
+ GenericName[tr]=Ses Düzenleyicisi
+ GenericName[uk]=Аудіо редактор
+-GenericName[uz]=Аудио таҳрирчи
++GenericName[uz]=Audio tahrirchi
++GenericName[uz@cyrillic]=Аудио таҳрирчи
+ GenericName[wa]=Aspougneu d' sons
+ GenericName[zh_CN]=音频编辑器
+ GenericName[zh_HK]=音效編輯器
+--- kappfinder-data/ecamegapedal.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/ecamegapedal.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=ecamegapedal
+ Icon=
+ Name=EcaMegaPedal
+--- kappfinder-data/meterbridge.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/meterbridge.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=meterbridge -t vu in_1 in_2
+ Icon=
+--- kappfinder-data/freqtweak.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/freqtweak.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=freqtweak
+ Icon=
+ Name=FreqTweak
+--- kappfinder-data/ardour.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/ardour.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=ardour
+ Icon=
+ Name=Ardour
+--- kappfinder-data/qjackctl.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/qjackctl.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=qjackctl
+ Icon=qjackctl
+ Name=QJackCtl
+--- kappfinder-data/jamin.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/jamin.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=jamin
+ Icon=
+ Name=Jamin
+--- kappfinder-data/zynaddsubfx.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kappfinder-data/zynaddsubfx.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=zynaddsubfx
+ Icon=
+ Name=ZynaddsubFX
+--- kaudiocreator/eventsrc	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kaudiocreator/eventsrc	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -259,7 +259,8 @@
+ Name[th]=ซีดีบันทึกเสียงที่ทำการดึงข้อมูลแล้ว
+ Name[tr]=CD Dönüştürüldü
+ Name[uk]=Витягнутий музичний КД
+-Name[uz]=Компакт-диск риппер
++Name[uz]=Kompakt-disk ripper
++Name[uz@cyrillic]=Компакт-диск риппер
+ Name[zh_CN]=CD 已抓取
+ Name[zh_HK]=已擷取的 CD
+ Name[zh_TW]=光碟已擷取
+--- kaudiocreator/kaudiocreator.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kaudiocreator/kaudiocreator.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Comment=Frontend for audio file creation
+ Comment[af]=Voorprogram vir audio lêer skep
+ Comment[bg]=Инструмент за кодиране на аудио файлове
+@@ -124,7 +123,8 @@
+ GenericName[th]=โปรแกรมดึงข้อมูลจากซีดีบันทึกเสียง
+ GenericName[tr]=Cd Aktarıcı
+ GenericName[uk]=Видирання з КД
+-GenericName[uz]=Компакт-диск риппер
++GenericName[uz]=Kompakt-disk ripper
++GenericName[uz@cyrillic]=Компакт-диск риппер
+ GenericName[zh_CN]=CD 提取器
+ GenericName[zh_HK]=CD 擷取器
+ GenericName[zh_TW]=光碟擷取器
+--- kmix/kmix.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kmix/kmix.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=kmix -caption "%c" %i %m
+ DocPath=kmix/index.html
+ OnlyShowIn=KDE;
+@@ -65,7 +64,8 @@
+ GenericName[th]=โปรแกรมผสมเสียง
+ GenericName[tr]=Ses Denetimleri
+ GenericName[uk]=Аудіомікшер
+-GenericName[uz]=Аудио миксер
++GenericName[uz]=Audio mikser
++GenericName[uz@cyrillic]=Аудио миксер
+ GenericName[ven]=Tshitanganisi tsha mubvumo
+ GenericName[wa]=Maxheu d' sons
+ GenericName[xh]=Umxubi WokuvakalayoU
+--- kmix/kmixapplet.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kmix/kmixapplet.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Plugin
+ Name=Sound Mixer
+ Name[bg]=Аудио миксер
+@@ -53,7 +52,8 @@
+ Name[th]=ปรับแต่งผสมเสียง
+ Name[tr]=Ses Karıştırıcı
+ Name[uk]=Аудіомікшер
+-Name[uz]=Аудио миксер
++Name[uz]=Audio mikser
++Name[uz@cyrillic]=Аудио миксер
+ Name[wa]=Maxheu d' sons
+ Name[zh_CN]=混音器
+ Name[zh_HK]=聲音混音器
+--- kmix/restore_kmix_volumes.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kmix/restore_kmix_volumes.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-autostart-phase=1
+ X-KDE-autostart-condition=kmixrc::startkdeRestore:true
+ Type=Application
+--- kmix/kmixctrl_restore.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kmix/kmixctrl_restore.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Restore Mixer Settings
+ Name[af]=Herstel Menger Instellings
+@@ -59,7 +58,8 @@
+ Name[th]=เรียกคืนค่าที่ตั้งไว้ของมิกเซอร์
+ Name[tr]=Karıştırıcı Ayarlarını Yeniden Yükle
+ Name[uk]=Відновити параметри мікшера
+-Name[uz]=Миксернинг мосламаларини қайта тиклаш
++Name[uz]=Mikserning moslamalarini qayta tiklash
++Name[uz@cyrillic]=Миксернинг мосламаларини қайта тиклаш
+ Name[ven]=Vhuedzedzani vhuvha ha tshitanganisi
+ Name[wa]=Rimete come divant les apontiaedjes d maxheu d' sons
+ Name[xh]=Gcina kwakhona izicwangciso zoMxubi
+--- kfile-plugins/avi/kfile_avi.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/avi/kfile_avi.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=AVI Info
+ Name[af]=Avi Inligting
+@@ -55,7 +54,8 @@
+ Name[th]=ข้อมูล AVI
+ Name[tr]=AVI Bilgisi
+ Name[uk]=Інформація по AVI
+-Name[uz]=AVI ҳақида маълумот
++Name[uz]=AVI haqida maʼlumot
++Name[uz@cyrillic]=AVI ҳақида маълумот
+ Name[xh]=Ulwazi lwe AVI
+ Name[zh_CN]=AVI 信息
+ Name[zh_HK]=AVI 資訊
+--- kfile-plugins/mp3/kfile_mp3.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/mp3/kfile_mp3.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=MP3 Info
+ Name[af]=Mp3 Inligting
+@@ -56,7 +55,8 @@
+ Name[th]=ข้อมูล MP3
+ Name[tr]=MP3 Bilgisi
+ Name[uk]=Інформація по MP3
+-Name[uz]=MP3 ҳақида маълумот
++Name[uz]=MP3 haqida maʼlumot
++Name[uz@cyrillic]=MP3 ҳақида маълумот
+ Name[wa]=Infôrmåcion MP3
+ Name[xh]=MP3 ulwazi
+ Name[zh_CN]=MP3 信息
+--- kfile-plugins/mpc/kfile_mpc.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/mpc/kfile_mpc.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Musepack Info
+ Name[bg]=Информация за Musepack
+--- kfile-plugins/sid/kfile_sid.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/sid/kfile_sid.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=SID Info
+ Name[bg]=Информация за SID
+--- kfile-plugins/theora/kfile_theora.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/theora/kfile_theora.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=theora Info
+ Name[bg]=Информация за theora
+--- kfile-plugins/m3u/kfile_m3u.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/m3u/kfile_m3u.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=M3U Playlist Info
+ Name[af]=M3u Liedjielys Inligting
+--- kfile-plugins/au/kfile_au.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/au/kfile_au.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=AU Info
+ Name[af]=Au Inligting
+@@ -54,7 +53,8 @@
+ Name[th]=ข้อมูล AU
+ Name[tr]=AU Bilgisi
+ Name[uk]=Інформація по AU
+-Name[uz]=XBM ҳақида маълумот
++Name[uz]=XBM haqida maʼlumot
++Name[uz@cyrillic]=XBM ҳақида маълумот
+ Name[xh]=Ulwazi lwe AU
+ Name[zh_CN]=AU 信息
+ Name[zh_HK]=AU 資訊
+--- kfile-plugins/flac/kfile_flac.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/flac/kfile_flac.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=FLAC Info
+ Name[bg]=Информация за FLAC
+@@ -51,7 +50,8 @@
+ Name[th]=ขอมูล FLAC
+ Name[tr]=FLAC Bilgisi
+ Name[uk]=Інформація по FLAC
+-Name[uz]=FLAC ҳақида маълумот
++Name[uz]=FLAC haqida maʼlumot
++Name[uz@cyrillic]=FLAC ҳақида маълумот
+ Name[zh_CN]=FLAC 信息
+ Name[zh_HK]=FLAC 資訊
+ Name[zh_TW]=FLAC 資訊
+--- kfile-plugins/mpeg/kfile_mpeg.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/mpeg/kfile_mpeg.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=MPEG Info
+ Name[bg]=Информация за MPEG
+--- kfile-plugins/ogg/kfile_ogg.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/ogg/kfile_ogg.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=OGG Info
+ Name[af]=Ogg Inligting
+@@ -55,7 +54,8 @@
+ Name[th]=ข้อมูล OGG
+ Name[tr]=OGG Bilgisi
+ Name[uk]=Інформація по OGG
+-Name[uz]=OGG ҳақида маълумот
++Name[uz]=OGG haqida maʼlumot
++Name[uz@cyrillic]=OGG ҳақида маълумот
+ Name[xh]=OGG Ulwazi
+ Name[zh_CN]=OGG 信息
+ Name[zh_HK]=OGG 資訊
+--- kfile-plugins/wav/kfile_wav.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ kfile-plugins/wav/kfile_wav.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=WAV Info
+ Name[af]=Wav Inligting
+@@ -54,7 +53,8 @@
+ Name[th]=ข้อมูล WAV
+ Name[tr]=WAV Bilgisi
+ Name[uk]=Інформація по WAV
+-Name[uz]=WAV ҳақида маълумот
++Name[uz]=WAV haqida maʼlumot
++Name[uz@cyrillic]=WAV ҳақида маълумот
+ Name[xh]=MAV Ulwazi
+ Name[zh_CN]=WAV 信息
+ Name[zh_HK]=WAV 資訊
+--- xine_artsplugin/tools/thumbnail/videothumbnail.desktop	(.../tags/KDE/3.5.9/kdemultimedia)	(revision 828850)
++++ xine_artsplugin/tools/thumbnail/videothumbnail.desktop	(.../branches/KDE/3.5/kdemultimedia)	(revision 828850)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Video Files
+ Name[af]=Video Lêers
+@@ -56,7 +55,8 @@
+ Name[th]=แฟ้มวิดีโอ
+ Name[tr]=Video Dosyaları
+ Name[uk]=Відеофайли
+-Name[uz]=Видео файллар
++Name[uz]=Video fayllar
++Name[uz@cyrillic]=Видео файллар
+ Name[ven]=Dzifaela dza Video
+ Name[wa]=Fitchîs videyo
+ Name[xh]=Iifayile ze Video

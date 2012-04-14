@@ -1,0 +1,730 @@
+dnl =======================================================
+dnl FILE: configure.in.in
+dnl =======================================================
+
+dnl    This file is part of the KDE libraries/packages
+dnl    Copyright (C) 2001 Stephan Kulow (coolo@kde.org)
+dnl                       modified by Walter Tasin (tasin@kdevelop.org)
+dnl                       for c++ console applications
+
+dnl    This file is free software; you can redistribute it and/or
+dnl    modify it under the terms of the GNU Library General Public
+dnl    License as published by the Free Software Foundation; either
+dnl    version 2 of the License, or (at your option) any later version.
+
+dnl    This library is distributed in the hope that it will be useful,
+dnl    but WITHOUT ANY WARRANTY; without even the implied warranty of
+dnl    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+dnl    Library General Public License for more details.
+
+dnl    You should have received a copy of the GNU Library General Public License
+dnl    along with this library; see the file COPYING.LIB.  If not, write to
+dnl    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+dnl    Boston, MA 02111-1307, USA.
+
+# Original Author was Kalle@kde.org
+# I lifted it in some mater. (Stephan Kulow)
+# I used much code from Janos Farkas
+
+dnl Process this file with autoconf to produce a configure script.
+
+AC_INIT(acinclude.m4) dnl a source file from your sub dir
+
+dnl This is so we can use kde-common
+AC_CONFIG_AUX_DIR(admin)
+
+dnl This ksh/zsh feature conflicts with `cd blah ; pwd`
+unset CDPATH
+
+dnl Checking host/target/build systems, for make, install etc.
+AC_CANONICAL_SYSTEM
+dnl Perform program name transformation
+AC_ARG_PROGRAM
+
+dnl Automake doc recommends to do this only here. (Janos)
+AM_INIT_AUTOMAKE(kdesupport,3.3)
+
+dnl almost the same like KDE_SET_PEFIX but the path is /usr/local
+dnl make /usr/local the default for the installation
+AC_PREFIX_DEFAULT(/usr/local)
+
+if test "x$prefix" = "xNONE"; then
+  prefix=$ac_default_prefix
+  ac_configure_args="$ac_configure_args --prefix $prefix"
+fi
+
+KDE_CHECK_EXTRA_LIBS
+KDE_FAST_CONFIGURE
+KDE_CONF_FILES
+
+dnl without this order in this file, automake will be confused!
+dnl
+AM_CONFIG_HEADER(config.h)
+
+dnl checks for programs.
+dnl first check for c/c++ compilers
+AC_CHECK_COMPILERS
+
+dnl CXXFLAGS="$NOOPT_CXXFLAGS" dnl __kdevelop[noopt]__
+dnl CFLAGS="$NOOPT_CFLAGS" dnl __kdevelop[noopt]__
+dnl CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" dnl __kdevelop[exc]__
+
+dnl create only shared libtool-libraries
+AC_ENABLE_SHARED(yes)
+
+dnl set the following to yes, if you want to create static
+dnl libtool-libraries, too.
+AC_ENABLE_STATIC(no)
+
+
+dnl create a working libtool-script
+KDE_PROG_LIBTOOL
+
+dnl activate the next macro call for DLOPEN tests and setting LIBDL
+dnl   (n.b. KDE_MISC_TESTS does the same to you, so use either this or the next one)
+dnl KDE_CHECK_DLOPEN
+
+dnl activate the next macro call for some additional tests
+dnl   (compat, crypt, socket, nsl, dlopen, ...)
+dnl KDE_MISC_TESTS dnl __kdevelop__
+
+dnl KDE_NEED_FLEX dnl __kdevelop__
+dnl AC_PROG_YACC dnl __kdevelop__
+
+dnl KDE_CHECK_EXTRA_LIBS
+all_libraries="$all_libraries $USER_LDFLAGS"
+all_includes="$all_includes $USER_INCLUDES"
+AC_SUBST(all_includes)
+AC_SUBST(all_libraries)
+
+AC_SUBST(AUTODIRS)
+
+dnl =======================================================
+dnl FILE: ./akode/configure.in.in
+dnl =======================================================
+
+dnl don't remove the below
+dnl AC_OUTPUT(akode/akode-config)
+
+AM_CONFIG_HEADER(akode/lib/akode_export.h)
+
+AC_DEFUN([AC_CHECK_LIBFLAC],
+[
+  AC_LANG_SAVE
+  AC_LANG_C
+  have_libFLAC=no
+  KDE_CHECK_HEADER(FLAC/seekable_stream_decoder.h,
+  [
+     KDE_CHECK_LIB(FLAC,FLAC__seekable_stream_decoder_process_single,
+	          have_libFLAC=yes)
+
+    ])
+  if test "x$have_libFLAC" = "xyes"; then
+      LIBFLAC="-lFLAC"
+      AC_DEFINE(HAVE_LIBFLAC, 1,
+        [Define if you have libFLAC 1.1.1 or 1.1.2])
+  fi
+  AC_SUBST(LIBFLAC)
+  AC_LANG_RESTORE
+])
+
+AC_DEFUN([AC_CHECK_LIBFLAC113],
+[
+  AC_LANG_SAVE
+  AC_LANG_C
+  have_libFLAC=no
+  KDE_CHECK_HEADER(FLAC/metadata.h,
+  [
+     KDE_CHECK_LIB(FLAC,FLAC__stream_decoder_seek_absolute,
+	          have_libFLAC=yes,,[-lFLAC -logg])
+
+    ])
+  if test "x$have_libFLAC" = "xyes"; then
+      LIBFLAC="-lFLAC -logg"
+      AC_DEFINE(HAVE_LIBFLAC113, 1,
+        [Define if you have libFLAC 1.1.3])
+  fi
+  AC_SUBST(LIBFLAC)
+  AC_LANG_RESTORE
+])
+
+AC_DEFUN([AC_CHECK_LIBOGGFLAC],
+[
+  AC_LANG_SAVE
+  AC_LANG_C
+  have_libOggFLAC=no
+  KDE_CHECK_HEADER(OggFLAC/seekable_stream_decoder.h,
+  [
+     KDE_CHECK_LIB(OggFLAC,OggFLAC__seekable_stream_decoder_process_single,
+	          have_libOggFLAC=yes,,[-lm -lOggFLAC -lFLAC])
+
+    ])
+  if test "x$have_libOggFLAC" = "xyes"; then
+      LIBOGGFLAC="-lOggFLAC"
+      AC_DEFINE(HAVE_LIBOGGFLAC, 1,
+        [Define if you have libOggFLAC (required for loading OggFLAC files)])
+  fi
+  AC_SUBST(LIBOGGFLAC)
+  AC_LANG_RESTORE
+])
+
+AC_DEFUN([KDE_CHECK_OGGVORBIS],
+[
+  have_oggvorbis=yes
+
+  KDE_CHECK_LIB(ogg, ogg_page_version,
+    [:], [have_oggvorbis=no])
+
+  KDE_CHECK_HEADER(vorbis/vorbisfile.h,
+    [:], [have_oggvorbis=no])
+
+  KDE_CHECK_LIB(vorbis, vorbis_info_init,
+    [:], [have_oggvorbis=no], -logg)
+
+  KDE_CHECK_LIB(vorbisfile, ov_open,
+    [:], [have_oggvorbis=no], -lvorbis -logg)
+
+  if test "x$have_oggvorbis" = xyes; then
+    VORBIS_LIBS="-lvorbis -logg"
+    VORBISFILE_LIBS="-lvorbisfile"
+
+    # for akode/plugins/xiph_decoder/
+    AC_DEFINE_UNQUOTED(HAVE_OGG_VORBIS, 1, [Define if you have ogg/vorbis installed])
+
+  fi
+
+  AC_SUBST(VORBIS_LIBS)
+  AC_SUBST(VORBISFILE_LIBS)
+])
+
+AC_DEFUN([KDE_CHECK_SEM],
+[
+  have_sem=no
+
+  AC_CHECK_HEADERS([semaphore.h],
+    [have_sem=yes])
+
+  dnl Solaris requires -lrt
+  AC_CHECK_LIB(rt, sem_init, [LIBSEM="-lrt"])
+  AC_SUBST(LIBSEM)
+])
+
+AC_DEFUN([KDE_CHECK_OSS],
+[
+  have_oss=no
+
+  AC_CHECK_HEADERS([soundcard.h sys/soundcard.h],
+    [have_oss=yes])
+
+  dnl OpenBSD requires an -lossaudio and soundcard.h to provide OSS audio I/O
+  AC_CHECK_LIB(ossaudio, _oss_ioctl, [LIBOSSAUDIO="-lossaudio"])
+  AC_SUBST(LIBOSSAUDIO)
+])
+
+AC_DEFUN([KDE_CHECK_SUN],
+[
+  have_sun=no
+
+  AC_CHECK_HEADERS([sys/audioio.h], [have_sun=yes])
+])
+
+AC_DEFUN([KDE_CHECK_ALSA],
+[
+  PKG_CHECK_MODULES([ALSA], [alsa >= 0.9], [have_alsa=yes], [have_alsa=no])
+
+  if test "x$have_alsa" = "xyes"; then
+    AC_DEFINE(HAVE_LIBASOUND2, 1, [Define if you have libasound.so.2 (required for ALSA 0.9.x/1.x support)])
+  fi
+])
+
+AC_ARG_WITH(flac,AC_HELP_STRING([--with-flac],[Enable FLAC support @<:@default=check@:>@]),[flac_test="$withval"],[flac_test="yes"])
+
+if test "x$flac_test" = "xyes" ; then
+  AC_CHECK_LIBFLAC113
+  if test "x$have_libFLAC" = "xno"; then
+    AC_CHECK_LIBFLAC
+    AC_CHECK_LIBOGGFLAC
+  fi
+fi
+
+AC_ARG_WITH(speex,AC_HELP_STRING([--with-speex],[Enable speex support @<:@default=check@:>@]),[speex_test="$withval"],[speex_test="yes"])
+
+if test "x$speex_test" = "xyes" ; then
+AC_MSG_CHECKING(for speex headers)
+have_libspeex=no
+kde_save_akode_cflags="$CFLAGS"
+kde_save_akode_libs="$LIBS"
+LIBS="$all_libraries $USER_LDFLAGS"
+CFLAGS="$CFLAGS $all_includes $USER_INCLUDES"
+AC_TRY_COMPILE([
+                #include <speex.h>
+                #include <speex_callbacks.h>
+                #include <ogg/ogg.h>
+                ],[
+                ],[
+                have_libspeex=yes
+                ])
+AC_MSG_RESULT($have_libspeex)
+if test x$have_libspeex = xyes; then
+   KDE_CHECK_LIB(speex,speex_decoder_ctl,,
+                have_libspeex=no,[-lspeex -logg])
+fi
+CFLAGS="$kde_save_akode_cflags"
+LIBS="$kde_save_akode_libs"
+AC_MSG_CHECKING(for speex11 headers)
+have_libspeex11=no
+kde_save_akode_cflags="$CFLAGS"
+kde_save_akode_libs="$LIBS"
+LIBS="$all_libraries $USER_LDFLAGS"
+CFLAGS="$CFLAGS $all_includes $USER_INCLUDES"
+AC_TRY_COMPILE([
+                #include <speex.h>
+                #include <speex_callbacks.h>
+                #include <speex_echo.h>
+                #include <speex_preprocess.h>
+                #include <ogg/ogg.h>
+                ],[
+                ],[
+                have_libspeex11=yes
+                ])
+AC_MSG_RESULT($have_libspeex11)
+if test x$have_libspeex11 = xyes; then
+   KDE_CHECK_LIB(speex,speex_decode_int,,
+                broken_libspeex11=yes,[-lspeex -logg])
+fi
+
+if test x$have_libspeex = xyes; then
+   AC_DEFINE(HAVE_SPEEX,1,[Define if you have speex installed])
+   SPEEXLIBS="-lspeex -logg"
+fi
+CFLAGS="$kde_save_akode_cflags"
+LIBS="$kde_save_akode_libs"
+AC_SUBST(SPEEXLIBS)
+
+if test x$have_libspeex11 = xyes; then
+   AC_DEFINE(HAVE_SPEEX11,1,[Define if you have libspeex 1.1.x installed])
+   if test x$broken_libspeex11 = xyes; then
+       AC_DEFINE(BROKEN_SPEEX11,1,[Define if you have one of the broken libspeex 1.1.x < 1.1.5])
+   fi
+fi
+fi
+
+AC_ARG_WITH(libmad,AC_HELP_STRING([--with-libmad],[Enable libmad support @<:@default=check@:>@]),[libmad_test="$withval"],[libmad_test="yes"])
+
+if test "x$libmad_test" = "xyes" ; then
+AC_MSG_CHECKING(for MADlib header)
+have_libMAD=no
+kde_save_akode_cflags="$CFLAGS"
+kde_save_akode_libs="$LIBS"
+LIBS="$all_libraries $USER_LDFLAGS"
+CFLAGS="$CFLAGS $all_includes $USER_INCLUDES"
+AC_TRY_COMPILE([
+                #include <mad.h>
+                ],[
+                ],[
+                have_libMAD=yes
+                ])
+AC_MSG_RESULT($have_libMAD)
+if test x$have_libMAD = xyes; then
+   KDE_CHECK_LIB(mad,mad_decoder_run,MAD_lib=yes,
+                have_libMAD=no,[-lmad])
+fi
+if test x$have_libMAD = xyes; then
+   AC_DEFINE(HAVE_MAD,1,[Define if you have MADlib installed])
+   MADLIBS="-lmad"
+fi
+CFLAGS="$kde_save_akode_cflags"
+LIBS="$kde_save_akode_libs"
+AC_SUBST(MADLIBS)
+fi
+
+AC_ARG_WITH(libsamplerate,AC_HELP_STRING([--with-libsamplerate],[Enable libsamplerate support @<:@default=check@:>@]),[libsamplerate_test="$withval"],[libsamplerate_test="yes"])
+
+if test "x$libsamplerate_test" = "xyes" ; then
+LIBSAMPLERATE=""
+KDE_CHECK_HEADERS(samplerate.h, [
+        KDE_CHECK_LIB(samplerate, src_simple, [
+                have_libsamplerate=yes
+                LIBSAMPLERATE="-lsamplerate"
+                AC_DEFINE(HAVE_LIBSAMPLERATE,1,[defined if you have libsamplerate library and header])
+        ])
+])
+AC_SUBST(LIBSAMPLERATE)
+fi
+
+dnl Check for pkg-config
+AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
+
+AC_ARG_WITH(jack,AC_HELP_STRING([--with-jack],[Enable Jack Audio Connection Kit support @<:@default=check@:>@]),[jack_test="$withval"],[jack_test="yes"])
+
+if test "x$jack_test" = "xyes" ; then
+AC_MSG_CHECKING(for Jack Audio Connection Kit)
+if $PKG_CONFIG --atleast-version 0.90 jack >/dev/null 2>&1 ; then
+  JACK_CFLAGS="`$PKG_CONFIG --cflags jack`"
+  JACK_LIBADD="`$PKG_CONFIG --libs-only-l jack`"
+  JACK_LDFLAGS="`$PKG_CONFIG --libs-only-L jack`"
+  have_jack=yes
+  AC_MSG_RESULT(yes)
+  AC_DEFINE(HAVE_LIBJACK, 1,
+        [Define if you have libjack (required if you want Jack support)])
+else
+  AC_MSG_RESULT(not installed)
+fi
+AC_SUBST(JACK_CFLAGS)
+AC_SUBST(JACK_LIBADD)
+AC_SUBST(JACK_LDFLAGS)
+fi
+
+AC_ARG_WITH(polypaudio,AC_HELP_STRING([--with-polypaudio],[Enable Polypaudio server support @<:@default=check@:>@]),[polypaudio_test="$withval"],[polypaudio_test="yes"])
+
+if test "x$polypaudio_test" = "xyes" ; then
+AC_MSG_CHECKING(for Polypaudio 0.7 or later)
+if $PKG_CONFIG --atleast-version 0.7 polyplib-simple >/dev/null 2>&1 ; then
+  POLYP_CFLAGS="`$PKG_CONFIG --cflags polyplib-simple`"
+  POLYP_LIBADD="`$PKG_CONFIG --libs-only-l polyplib-simple`"
+  POLYP_LDFLAGS="`$PKG_CONFIG --libs-only-L polyplib-simple`"
+  have_polyp=yes
+  AC_MSG_RESULT(yes)
+  AC_DEFINE(HAVE_LIBPOLYP, 1,
+        [Define if you have polyplib (required if you want Polypaudio server support)])
+else
+  AC_MSG_RESULT(not installed)
+fi
+AC_SUBST(POLYP_CFLAGS)
+AC_SUBST(POLYP_LIBADD)
+AC_SUBST(POLYP_LDFLAGS)
+fi
+
+AC_ARG_WITH(ffmpeg,AC_HELP_STRING([--with-ffmpeg],[Enable experimental FFMPEG decoder support @<:@default=check@:>@]),[ffmpeg_test="$withval"],[ffmpeg_test="yes"])
+
+if test "x$ffmpeg_test" = "xyes" ; then
+AC_MSG_CHECKING(for FFMPEG 0.5.0 or later)
+if $PKG_CONFIG --atleast-version 50 libavformat >/dev/null 2>&1 ; then
+if $PKG_CONFIG --atleast-version 50 libavcodec >/dev/null 2>&1 ; then
+  AVFORMAT_CFLAGS="`$PKG_CONFIG --cflags libavformat`"
+  AVCODEC_CFLAGS="`$PKG_CONFIG --cflags libavcodec`"
+  AVFORMAT_LIBADD="`$PKG_CONFIG --libs-only-l libavformat`"
+  AVCODEC_LIBADD="`$PKG_CONFIG --libs-only-l libavcodec`"
+  AVFORMAT_LDFLAGS="`$PKG_CONFIG --libs-only-L libavformat`"
+  AVCODEC_LDFLAGS="`$PKG_CONFIG --libs-only-L libavcodec`"
+  have_ffmpeg=yes
+  AC_MSG_RESULT(yes)
+  AC_DEFINE(HAVE_FFMPEG, 1,
+        [Define if you have libavcodec and libavformat from FFMPEG (required for WMA and RealAudio decoding)])
+else
+  AC_MSG_RESULT(not installed)
+fi
+else
+  AC_MSG_RESULT(not installed)
+fi
+AC_SUBST(AVCODEC_CFLAGS)
+AC_SUBST(AVCODEC_LIBADD)
+AC_SUBST(AVCODEC_LDFLAGS)
+AC_SUBST(AVFORMAT_CFLAGS)
+AC_SUBST(AVFORMAT_LIBADD)
+AC_SUBST(AVFORMAT_LDFLAGS)
+fi
+
+AKODE_LIBDL=-ldl
+
+AC_ARG_WITH(
+  libltdl,
+  AC_HELP_STRING([--without-libltdl],
+                    [Use libdl to load akode-plugins @<:@default=use libltdl@:>@]),
+  [libltdl_test="$withval"],
+  [libltdl_test="yes"])
+
+have_libltdl=no
+if test x$libltdl_test = xyes; then
+    KDE_CHECK_HEADERS(ltdl.h, [
+        KDE_CHECK_LIB(ltdl, lt_dlopen, [
+                have_libltdl=yes
+                AKODE_LIBDL="-lltdl"
+                AC_DEFINE(HAVE_LIBLTDL,1,[defined if you have libltdl library and header])
+        ])
+    ])
+fi
+
+if test "yes" = "$have_libltdl" ; then
+	# Do nothing, since we've already called CHECK_LIB
+	:
+else
+	KDE_CHECK_LIB(dl, dlopen,
+		[],[
+		AKODE_LIBDL=""
+		DO_NOT_COMPILE="akode $DO_NOT_COMPILE"
+		]
+	)
+fi
+
+AC_SUBST(AKODE_LIBDL)
+
+KDE_CHECK_LIBPTHREAD
+KDE_CHECK_SEM
+
+AC_CHECK_LIB(c, posix_madvise, have_posix_madvise=yes)
+AC_CHECK_LIB(c, posix_fadvise, have_posix_fadvise=yes)
+AC_CHECK_LIB(c, madvise, have_madvise=yes)
+AC_CHECK_LIB(c, fadvise, have_fadvise=yes)
+
+if test x$have_madvise = xyes; then
+    AC_LANG_SAVE
+    AC_LANG_CPLUSPLUS
+    AC_MSG_CHECKING([if madvise needs prototype])
+    AC_TRY_COMPILE([
+                #include <sys/types.h>
+                #include <sys/mman.h>
+                ],[
+                  ::madvise((char*)0,0, MADV_SEQUENTIAL);
+                ],[
+                  madvise_needs_prototype=no
+                  AC_MSG_RESULT(no)
+                ],[
+                  madvise_needs_prototype=yes
+                  AC_MSG_RESULT(yes)
+                ])
+    AC_LANG_RESTORE
+    AC_DEFINE(HAVE_MADVISE,1,[Define if your platform has madvise])
+    if test x$madvise_needs_prototype = xyes; then
+      AC_DEFINE(NEED_MADVISE_PROTOTYPE,1,[Define if madvise has no usefull prototype])
+    fi
+
+fi
+
+if test x$have_fadvise = xyes; then
+    AC_DEFINE(HAVE_FADVISE,1,[Define if your platform has fadvise])
+fi
+
+if test x$have_posix_madvise = xyes; then
+    AC_DEFINE(HAVE_POSIX_MADVISE,1,[Define if your platform has posix_madvise])
+fi
+
+if test x$have_posix_fadvise = xyes; then
+    AC_DEFINE(HAVE_POSIX_FADVISE,1,[Define if your platform has posix_fadvise])
+fi
+
+AC_CHECK_HEADERS(getopt.h, have_getopt_h=yes)
+if test x$have_getopt_h = xyes; then
+    AC_CHECK_LIB(c, getopt_long, have_gnu_getopt=yes)
+    if test x$have_gnu_getopt = xyes; then
+        AC_DEFINE(HAVE_GNU_GETOPT,1,[Define if your platform has getopt_long from glibc])
+    fi
+fi
+
+#AC_CHECK_HEADERS(features.h, have_features_h=yes)
+#
+#if test x$have_features_h=xyes; then
+#    AC_DEFINE(HAVE_FEATURES_H, 1, [Define if your platform has the features.h header])
+#fi
+
+#AC_ARG_ENABLE(akodelib,
+#  [  --enable-akodelib        Compile and install akodelib and akode_artsplugin (default yes)], enable_akodelib="$enableval",enable_akodelib=no)
+
+AM_CONDITIONAL(include_mpeg_decoder, test x$have_libMAD = xyes)
+
+AC_ARG_WITH(oss,
+  [AS_HELP_STRING(--with-oss,
+    [enable support for OSS output @<:@default=check@:>@])],
+  [], with_oss=check)
+
+if test "x$with_oss" != xno; then
+  KDE_CHECK_OSS
+
+  if test "x$with_oss" != xcheck && test "x$have_oss" != xyes; then
+    AC_MSG_FAILURE([--with-oss was given, but test for oss failed])
+  fi
+fi
+
+AC_ARG_WITH(sun,
+  [AS_HELP_STRING(--with-sun,
+    [enable support for Sun Audio output @<:@default=check@:>@])],
+  [], with_sun=check)
+
+if test "x$with_sun" != xno; then
+  KDE_CHECK_SUN
+
+  if test "x$with_sun" != xcheck && test "x$have_sun" != xyes; then
+    AC_MSG_FAILURE([--with-sun was given, but test for Sun Audio failed])
+  fi
+fi
+
+AC_ARG_WITH(alsa,
+  [AS_HELP_STRING(--with-alsa,
+    [enable support for ALSA output @<:@default=check@:>@])],
+  [], with_alsa=check)
+
+have_alsa=no
+if test "x$with_alsa" != xno; then
+  KDE_CHECK_ALSA
+
+  if test "x$with_alsa" != xcheck && test "x$have_alsa" != xyes; then
+    AC_MSG_FAILURE([--with-alsa was given, but test for ALSA failed])
+  fi
+fi
+
+AC_ARG_WITH(vorbis,
+  [AS_HELP_STRING(--with-vorbis,
+    [enable support for Ogg Vorbis @<:@default=check@:>@])],
+  [], with_vorbis=check)
+
+have_oggvorbis=no
+if test "x$with_vorbis" != xno; then
+  KDE_CHECK_OGGVORBIS
+
+  if test "x$with_vorbis" != xcheck && test "x$have_oggvorbis" != xyes; then
+    AC_MSG_FAILURE([--with-vorbis was given, but test for Ogg Vorbis failed])
+  fi
+fi
+
+usefull_xiph_decoder=yes
+if test x$have_libFLAC$have_libOggFLAC$have_oggvorbis$have_libspeex = xnononono; then
+    usefull_xiph_decoder=no
+fi
+
+AM_CONDITIONAL(include_xiph_decoder, test x$usefull_xiph_decoder = xyes)
+AM_CONDITIONAL(include_src_resampler, test x$have_libsamplerate = xyes)
+AM_CONDITIONAL(include_alsa_sink, test x$have_alsa = xyes)
+AM_CONDITIONAL(include_oss_sink, test x$have_oss = xyes)
+AM_CONDITIONAL(include_sun_sink, test x$have_sun = xyes)
+AM_CONDITIONAL(include_jack_sink, test x$have_jack = xyes)
+AM_CONDITIONAL(include_polyp_sink, test x$have_polyp = xyes)
+AM_CONDITIONAL(include_ffmpeg_decoder, test x$have_ffmpeg = xyes)
+
+AC_MSG_CHECKING(for compilable aKode)
+
+COMPILE_AKODE=yes
+if test x$have_PTHREAD = xno; then
+    COMPILE_AKODE=no
+fi
+
+AC_MSG_RESULT($COMPILE_AKODE)
+
+if test "x$COMPILE_AKODE" = "xno"; then
+DO_NOT_COMPILE="$DO_NOT_COMPILE akode"
+fi
+
+#if test "x$COMPILE_AKODE$enable_akodelib" = "xyesno"; then
+#DO_NOT_COMPILE="$DO_NOT_COMPILE akode"
+#fi
+KDE_CREATE_SUBDIRSLIST
+AM_CONDITIONAL(akode_SUBDIR_included, test "x$akode_SUBDIR_included" = xyes)
+AC_CONFIG_FILES([ Makefile ])
+AC_CONFIG_FILES([ akode/Makefile ])
+AC_CONFIG_FILES([ akode/akodeplay/Makefile ])
+AC_CONFIG_FILES([ akode/lib/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/alsa_sink/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/ffmpeg_decoder/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/jack_sink/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/mpc_decoder/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/mpc_decoder/mppdec/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/mpeg_decoder/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/oss_sink/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/polyp_sink/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/src_resampler/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/sun_sink/Makefile ])
+AC_CONFIG_FILES([ akode/plugins/xiph_decoder/Makefile ])
+AC_CONFIG_FILES([ akode/akode-config ])
+AC_OUTPUT
+if test "x$have_libFLAC" = "xno"; then
+        echo ">"
+        echo "> You do not seem to have a recent enough libFLAC"
+        echo "> installed. Without it aKode and aRts"
+        echo "> will not be able to play FLAC files."
+        echo "> You need atleast libFLAC 1.0.3 or newer."
+        echo ">"
+fi
+
+if test "x$have_libOggFLAC" = "xno"; then
+        echo ">"
+        echo "> You do not seem to have libOggFLAC installed."
+        echo "> Without it aKode and aRts will not be"
+        echo "> able to play Ogg-files with embedded FLAC streams"
+        echo "> You need atleast libOggFLAC 1.1.1 or newer."
+        echo ">"
+fi
+
+if test "x$have_libSPEEX" = "xno"; then
+        echo ">"
+        echo "> You do not seem to have libspeex installed."
+        echo "> Without it aKode and aRts will not be"
+        echo "> able to play speex-files and -stream."
+        echo ">"
+fi
+
+if test "x$have_oggvorbis" = "xno"; then
+        echo ">"
+        echo "> You do not seem to have libvorbisfile installed."
+        echo "> Without it aKode will not be able to play"
+        echo "> Ogg-files with embedded Vorbis streams"
+        echo "> You need atleast libvorbisfile 1.0 or newer."
+        echo ">"
+fi
+
+if test "x$have_libMAD" = "xno"; then
+        echo ">"
+        echo "> You do not seem to have MADlib installed."
+        echo "> Without it aKode will not be able to play"
+        echo "> MPEG-audio this includes the common MP3 format"
+        echo ">"
+fi
+
+if test "x$AKODE_LIBDL" = "x" ; then
+	echo ">"
+	echo "> You do not seem to have any dynamic-library manipulation"
+	echo "> library installed. aKode will not be compiled."
+	echo ">"
+fi
+
+#if test "x$have_libltdl" = "xno"; then
+#        echo ">"
+#        echo "> You do not seem to have libltdl installed."
+#        echo "> Without it aKode will not work on some platforms."
+#        echo "> Recent Linux, BSDs and Solaris will still work"
+#        echo ">"
+#fi
+# Check if KDE_SET_PREFIX was called, and --prefix was passed to configure
+if test -n "$kde_libs_prefix" -a -n "$given_prefix"; then
+  # And if so, warn when they don't match
+  if test "$kde_libs_prefix" != "$given_prefix"; then
+    # And if kde doesn't know about the prefix yet
+    echo ":"`kde-config --path exe`":" | grep ":$given_prefix/bin/:" 2>&1 >/dev/null
+    if test $? -ne 0; then
+      echo ""
+      echo "Warning: you chose to install this package in $given_prefix,"
+      echo "but KDE was found in $kde_libs_prefix."
+      echo "For this to work, you will need to tell KDE about the new prefix, by ensuring"
+      echo "that KDEDIRS contains it, e.g. export KDEDIRS=$given_prefix:$kde_libs_prefix"
+      echo "Then restart KDE."
+      echo ""
+    fi
+  fi
+fi
+
+if test x$GXX = "xyes" -a x$kde_have_gcc_visibility = "xyes" -a x$kde_cv_val_qt_gcc_visibility_patched = "xno"; then
+  echo ""
+  echo "Your GCC supports symbol visibility, but the patch for Qt supporting visibility"
+  echo "was not included. Therefore, GCC symbol visibility support remains disabled."
+  echo ""
+  echo "For better performance, consider including the Qt visibility supporting patch"
+  echo "located at:"
+  echo ""
+  echo "http://bugs.kde.org/show_bug.cgi?id=109386"
+  echo ""
+  echo "and recompile all of Qt and KDE. Note, this is entirely optional and"
+  echo "everything will continue to work just fine without it."
+  echo ""
+fi
+
+if test "$all_tests" = "bad"; then
+  if test ! "$cache_file" = "/dev/null"; then
+    echo ""
+    echo "Please remove the file $cache_file after changing your setup"
+    echo "so that configure will find the changes next time."
+    echo ""
+  fi
+else
+  echo ""
+  echo "Good - your configure finished. Start make now"
+  echo ""
+fi

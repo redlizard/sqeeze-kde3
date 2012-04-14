@@ -1,0 +1,8 @@
+?package(krec):\
+	needs="X11"\
+	section="Applications/Sound"\
+	hints="KDE"\
+	title="KRec"\
+	icon32x32="/opt/kde3/share/pixmaps/krec.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/krec-16.xpm"\
+	command="/opt/kde3/bin/krec"

@@ -1,0 +1,50 @@
+--- kdemultimedia-3.5.7.orig/juk/jukIface.h
++++ kdemultimedia-3.5.7/juk/jukIface.h
+@@ -64,6 +64,7 @@
+     virtual void forward() = 0;
+     virtual void seekBack() = 0;
+     virtual void seekForward() = 0;
++    virtual void forwardAlbum() = 0;
+ 
+     virtual void volumeUp() = 0;
+     virtual void volumeDown() = 0;
+--- kdemultimedia-3.5.7.orig/juk/playermanager.cpp
++++ kdemultimedia-3.5.7/juk/playermanager.cpp
+@@ -443,6 +443,17 @@
+         stop();
+ }
+ 
++void PlayerManager::forwardAlbum()
++{
++    m_playlistInterface->playNextAlbum();
++    FileHandle file = m_playlistInterface->currentFile();
++
++    if(!file.isNull())
++        play(file);
++    else
++        stop();
++}
++
+ void PlayerManager::volumeUp()
+ {
+     if(!player() || !m_sliderAction || !m_sliderAction->volumeSlider())
+--- kdemultimedia-3.5.7.orig/juk/playlistinterface.h
++++ kdemultimedia-3.5.7/juk/playlistinterface.h
+@@ -65,6 +65,7 @@
+ 
+     virtual void playNext() = 0;
+     virtual void playPrevious() = 0;
++    virtual void playNextAlbum() = 0;
+     virtual void stop() = 0;
+ 
+     virtual bool playing() const = 0;
+--- kdemultimedia-3.5.7.orig/juk/playermanager.h
++++ kdemultimedia-3.5.7/juk/playermanager.h
+@@ -78,6 +78,7 @@
+     void playPause();
+     void forward();
+     void back();
++    void forwardAlbum();
+     void volumeUp();
+     void volumeDown();
+     void mute();

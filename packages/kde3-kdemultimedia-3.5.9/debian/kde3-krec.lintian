@@ -1,0 +1,4 @@
+krec: package-name-doesnt-match-sonames libkdeinit-krec
+krec: no-shlibs-control-file usr/lib/libkdeinit_krec.so
+krec: postinst-must-call-ldconfig usr/lib/libkdeinit_krec.so
+krec: postrm-should-call-ldconfig usr/lib/libkdeinit_krec.so

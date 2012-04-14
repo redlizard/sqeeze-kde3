@@ -1,0 +1,1049 @@
+--- kdemultimedia-3.5.9/akode_artsplugin/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/akode_artsplugin/Makefile.am	2008-02-20 12:12:44.000000000 +0200
+@@ -9,7 +9,7 @@
+         akodeFFMPEGPlayObject_impl.cpp akodeXiphPlayObject_impl.cpp \
+         akodeVorbisStreamPlayObject_impl.cpp akodeSpeexStreamPlayObject_impl.cpp
+ libarts_akode_la_LDFLAGS = $(all_libraries) -module -no-undefined
+-libarts_akode_la_LIBADD =  $(akode_libs) -lkmedia2_idl -lsoundserver_idl -lartsflow
++libarts_akode_la_LIBADD =  $(akode_libs) -lkmedia2_idl -lartsflow -lartsflow_idl -lmcop
+ libarts_akode_la_METASOURCES = AUTO
+ libarts_akode_la_COMPILE_FIRST = akodearts.h
+ 
+--- kdemultimedia-3.5.9/arts/builder/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/arts/builder/Makefile.am	2008-02-20 11:33:28.000000000 +0200
+@@ -25,7 +25,7 @@
+ 
+ # the libraries to link against. Be aware of the order. First the libraries,
+ # that depend on the following ones.
+-artsbuilder_LDADD   = $(LIB_KFILE) -lqtmcop $(LIB_X11) $(LIBPTHREAD) $(top_builddir)/arts/runtime/libartsbuilder.la -lsoundserver_idl -lartskde
++artsbuilder_LDADD   = $(LIB_KFILE) -lqtmcop $(LIBPTHREAD) $(top_builddir)/arts/runtime/libartsbuilder.la -lsoundserver_idl -lartskde
+ 
+ rcdir = $(kde_datadir)/artsbuilder
+ rc_DATA = artsbuilderui.rc
+--- kdemultimedia-3.5.9/arts/gui/common/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/gui/common/Makefile.am	2008-02-20 11:35:28.000000000 +0200
+@@ -3,12 +3,12 @@
+ INCLUDES= -I$(arts_includes) -I$(top_builddir)/arts/runtime $(all_includes)
+ 
+ libartsgui_idl_la_SOURCES = artsgui.cc
+-libartsgui_idl_la_LIBADD = -lmcop $(LIBDL)
++libartsgui_idl_la_LIBADD = -lmcop
+ libartsgui_idl_la_LDFLAGS = $(all_libraries) -L$(arts_libraries) \
+   -no-undefined
+ 
+ libartsgui_la_SOURCES = genericguifactory_impl.cc
+-libartsgui_la_LIBADD = libartsgui_idl.la
++libartsgui_la_LIBADD = libartsgui_idl.la -lmcop
+ libartsgui_la_LDFLAGS = $(all_libraries) -no-undefined
+ libartsgui_la_COMPILE_FIRST = artsgui.h
+ 
+--- kdemultimedia-3.5.9/arts/gui/kde/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/gui/kde/Makefile.am	2008-02-20 11:34:40.000000000 +0200
+@@ -15,8 +15,8 @@
+   klevelmeter_normalbars.cpp klevelmeter_firebars.cpp \
+   ktickmarks_impl.cpp kvolumefader_impl.cpp klabel_impl.cpp
+ 
+-libartsgui_kde_la_LIBADD = $(LIB_KIO) -lkdecore -lkdeui \
+-  $(top_builddir)/arts/gui/common/libartsgui_idl.la
++libartsgui_kde_la_LIBADD = -lkdecore -lkdeui \
++  $(top_builddir)/arts/gui/common/libartsgui_idl.la $(LIB_QT) $(LIB_KDEUI) -lmcop -lkdefx
+ libartsgui_kde_la_LDFLAGS = $(all_libraries) -no-undefined
+ libartsgui_kde_la_COMPILE_FIRST = ../common/artsgui.h
+ 
+--- kdemultimedia-3.5.9/arts/midi/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/midi/Makefile.am	2008-02-20 13:18:42.000000000 +0200
+@@ -19,7 +19,7 @@
+ midisynctest_COMPILE_FIRST = artsmidi.h
+ 
+ libartsmidi_idl_la_SOURCES = artsmidi.cc
+-libartsmidi_idl_la_LIBADD = -lmcop -lartsflow
++libartsmidi_idl_la_LIBADD = -lmcop -lartsflow_idl
+ libartsmidi_idl_la_LDFLAGS = $(all_libraries) -L$(arts_libraries) \
+   -no-undefined
+ 
+@@ -30,7 +30,7 @@
+ 	alsamidiport_impl.cc midisyncgroup_impl.cc timestampmath.cc
+ libartsmidi_la_COMPILE_FIRST = artsmidi.h
+ 
+-libartsmidi_la_LIBADD = libartsmidi_idl.la -lartsflow $(ARTS_LIBASOUND)
++libartsmidi_la_LIBADD = libartsmidi_idl.la $(ARTS_LIBASOUND) -lartsflow_idl -lmcop -lartsflow
+ libartsmidi_la_LDFLAGS = $(all_libraries) -L$(arts_libraries) \
+   -no-undefined
+ 
+--- kdemultimedia-3.5.9/arts/modules/common/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/modules/common/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -25,7 +25,8 @@
+ 	$(top_builddir)/arts/gui/common/libartsgui_idl.la \
+ 	$(top_builddir)/arts/midi/libartsmidi_idl.la \
+ 	$(top_builddir)/arts/modules/synth/libartsmodulessynth.la \
+-	-lartsflow -lartsflow_idl -lmcop $(LIB_KDECORE)
++	$(top_builddir)/arts/runtime/libartsbuilder.la \
++	-lartsflow_idl -lmcop $(LIB_KDECORE) $(LIB_QT)
+ 
+ libartsmodulescommon_la_LDFLAGS = $(all_libraries) -L$(arts_libraries) -no-undefined
+ 
+--- kdemultimedia-3.5.9/arts/modules/effects/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/modules/effects/Makefile.am	2008-02-20 13:17:42.000000000 +0200
+@@ -37,8 +37,9 @@
+ 	$(top_builddir)/arts/modules/effects/freeverb/libfreeverb.la \
+ 	$(top_builddir)/arts/gui/common/libartsgui_idl.la \
+ 	$(top_builddir)/arts/gui/kde/libartsgui_kde.la \
+-	$(top_builddir)/arts/modules/common/libartsmodulescommon.la \
+-	-lartsflow -lartsflow_idl -lmcop
++	$(top_builddir)/arts/gui/common/libartsgui_idl.la \
++	$(top_builddir)/arts/modules/synth/libartsmodulessynth.la \
++	-lartsflow -lartsflow_idl -lmcop $(LIB_QT) $(LIB_KDECORE)
+ 
+ libartsmoduleseffects_la_LDFLAGS = $(all_libraries) -L$(arts_libraries) -no-undefined
+ 
+--- kdemultimedia-3.5.9/arts/modules/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/modules/Makefile.am	2008-02-20 13:16:42.000000000 +0200
+@@ -27,15 +27,7 @@
+ 
+ libartsmodules_la_SOURCES = artsmodules.cc
+ 
+-libartsmodules_la_LIBADD = \
+-   $(top_builddir)/arts/runtime/libartsbuilder.la \
+-   $(top_builddir)/arts/midi/libartsmidi_idl.la \
+-   $(top_builddir)/arts/gui/common/libartsgui_idl.la \
+-   $(top_builddir)/arts/modules/synth/libartsmodulessynth.la \
+-   $(top_builddir)/arts/modules/common/libartsmodulescommon.la \
+-   $(top_builddir)/arts/modules/effects/libartsmoduleseffects.la \
+-   $(top_builddir)/arts/modules/mixers/libartsmodulesmixers.la \
+-   -lartsflow -lmcop $(LIB_KDECORE) $(LIBDL)
++libartsmodules_la_LIBADD = -lmcop -lartsflow_idl
+ libartsmodules_la_LDFLAGS = $(all_libraries) -L$(arts_libraries) \
+    -no-undefined
+ 
+--- kdemultimedia-3.5.9/arts/modules/mixers/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/modules/mixers/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -36,7 +36,8 @@
+ 	$(top_builddir)/arts/gui/common/libartsgui_idl.la \
+ 	$(top_builddir)/arts/modules/common/libartsmodulescommon.la \
+ 	$(top_builddir)/arts/modules/effects/libartsmoduleseffects.la \
+-	-lartsflow -lartsflow_idl -lmcop
++	$(top_builddir)/arts/modules/synth/libartsmodulessynth.la \
++	-lartsflow -lartsflow_idl -lmcop $(LIB_KDECORE) $(LIB_QT)
+ 
+ libartsmodulesmixers_la_LDFLAGS = $(all_libraries) -L$(arts_libraries) -no-undefined
+ 
+--- kdemultimedia-3.5.9/arts/runtime/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/runtime/Makefile.am	2008-02-20 11:27:14.000000000 +0200
+@@ -11,7 +11,7 @@
+   structurebuilder_impl.cc structures_impl.cc moduleinfo.cc \
+   compatibility.cc localfactory_impl.cc artsbuilderloader_impl.cc
+ 
+-libartsbuilder_la_LIBADD = -lmcop -lartsflow $(LIBDL)
++libartsbuilder_la_LIBADD = -lmcop -lartsflow -lartsflow_idl
+ libartsbuilder_la_COMPILE_FIRST = artsbuilder.h
+ libartsbuilder_la_LDFLAGS = $(all_libraries) -L$(arts_libraries) \
+   -no-undefined
+--- kdemultimedia-3.5.9/arts/tools/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/arts/tools/Makefile.am	2008-02-20 13:17:06.000000000 +0200
+@@ -36,8 +36,11 @@
+ libartscontrolsupport_la_LDFLAGS = $(all_libraries) -version-info $(SOMAJOR):$(SOMINOR):$(SOSUBMINOR) -no-undefined
+ 
+ libartscontrolapplet_la_LIBADD = \
+-	-lartsflow -lartsflow_idl -lmcop -lqtmcop $(LIBDL) -lsoundserver_idl -lartskde \
+-	$(LIB_KDEUI) ./libartscontrolsupport.la
++	 -lartsflow_idl -lsoundserver_idl -lartskde \
++	$(top_builddir)/arts/gui/common/libartsgui_idl.la \
++	$(top_builddir)/arts/gui/kde/libartsgui_kde.la \
++	$(top_builddir)/arts/modules/effects/libartsmoduleseffects.la \
++	$(LIB_KDEUI) ./libartscontrolsupport.la $(LIB_KDECORE) $(LIB_QT)
+ 
+ # Arnolds version with dynamic-linking for testing.
+ #
+@@ -49,18 +52,19 @@
+ #	$(LIB_KDEUI)
+ 
+ libartscontrolsupport_la_LIBADD = \
+-	-lartsflow -lartsflow_idl -lmcop -lqtmcop $(LIBDL) -lsoundserver_idl -lartskde \
++	-lartsflow_idl -lmcop -lsoundserver_idl $(LIB_ARTS) \
+ 	$(top_builddir)/arts/gui/common/libartsgui_idl.la \
+ 	$(top_builddir)/arts/gui/kde/libartsgui_kde.la \
+-	$(top_builddir)/arts/modules/libartsmodules.la \
+-	$(LIB_KDEUI)
++	$(top_builddir)/arts/modules/common/libartsmodulescommon.la \
++	$(top_builddir)/arts/midi/libartsmidi_idl.la \
++	$(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ bin_PROGRAMS = artscontrol
+ artscontrol_SOURCES = main.cpp levelmeters.cpp
+ artscontrol_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ artscontrol_LDADD = libartscontrolsupport.la \
+-	$(LIB_KDEUI) $(LIB_KSYCOCA) $(LIB_KFILE) \
+-	-lqtmcop -lartsflow_idl -lsoundserver_idl -lartskde
++	$(top_builddir)/arts/modules/effects/libartsmoduleseffects.la \
++	$(LIB_KDEUI) -lqtmcop -lartsflow_idl -lsoundserver_idl -lartskde
+ 
+ xdg_apps_DATA = artscontrol.desktop
+ 
+--- kdemultimedia-3.5.9/audiofile_artsplugin/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/audiofile_artsplugin/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -6,7 +6,7 @@
+ libarts_audiofile_la_COMPILE_FIRST = audiofilearts.h
+ libarts_audiofile_la_SOURCES = audiofilearts.cc audiofilePlayObjectI.cpp
+ libarts_audiofile_la_LDFLAGS = $(all_libraries) -module -no-undefined
+-libarts_audiofile_la_LIBADD =  -lkmedia2_idl -lsoundserver_idl -lartsflow -laudiofile
++libarts_audiofile_la_LIBADD =  -lkmedia2_idl -lartsflow -laudiofile -lartsflow_idl -lmcop
+ libarts_audiofile_la_METASOURCES = AUTO
+ 
+ audiofilearts.mcopclass: audiofilearts.h
+--- kdemultimedia-3.5.9/juk/Makefile.am	2008-02-20 00:13:07.000000000 +0200
++++ kdemultimedia-3.5.9/juk/Makefile.am	2008-02-20 11:46:13.000000000 +0200
+@@ -83,8 +83,8 @@
+ mblibs = -ltunepimp
+ endif
+ ##################################################
+-
+-juk_LDADD = -lm $(LDADD_GST) $(mblibs) $(LIB_KIO) $(taglib_libs) $(akode_libs) $(LIB_KHTML) $(LIB_ARTS)
++JUK_LDADD_GST=-lgstreamer-0.10 -lgobject-2.0 -lglib-2.0 -L/usr/lib
++juk_LDADD = -lm $(JUK_LDADD_GST) $(mblibs) $(LIB_KIO) $(taglib_libs) $(akode_libs) $(LIB_ARTS)
+ juk_LDFLAGS = $(all_libraries) $(KDE_RPATH) $(LDFLAGS_GST)
+ 
+ KDE_CXXFLAGS = $(USE_EXCEPTIONS)
+--- kdemultimedia-3.5.9/kaboodle/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kaboodle/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -12,11 +12,11 @@
+ 	view.cpp \
+ 	kaboodle_factory.cpp
+ 
+-libs = $(LIB_KPARTS) -lqtmcop -lkmedia2_idl -lsoundserver_idl -lartskde -lkmediaplayer
++libs = $(LIB_KPARTS) -lkmedia2_idl $(LIB_ARTS) -lkmediaplayer
+ 
+ libkaboodlepart_la_SOURCES = dummy.cpp
+ libkaboodlepart_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-libkaboodlepart_la_LIBADD = libkaboodle_noinst.la $(libs)
++libkaboodlepart_la_LIBADD = libkaboodle_noinst.la $(libs) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP -lmcop
+ 
+ kaboodle_SOURCES = main.cpp \
+ 	kaboodleapp.cpp \
+--- kdemultimedia-3.5.9/kaudiocreator/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kaudiocreator/Makefile.am	2008-02-20 03:55:41.000000000 +0200
+@@ -12,7 +12,7 @@
+ EXTRA_DIST = encoder.h kaudiocreator.h kaudiocreator.desktop encoderconfigimp.h \
+ 	obqueimp.h ripper.h tracksimp.h encodefileimp.h
+ 
+-kaudiocreator_LDFLAGS = $(all_libraries) $(KDE_RPATH) -lkutils
++kaudiocreator_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ 
+ METASOURCES = AUTO
+ 
+@@ -20,7 +20,7 @@
+ 	$(XGETTEXT) *.cpp *.h -o $(podir)/kaudiocreator.pot
+ 
+ kaudiocreator_LDADD = $(LIB_KIO) $(top_builddir)/libkcddb/libkcddb.la \
+-	$(top_builddir)/kscd/libkcompactdisc.la
++	$(top_builddir)/kscd/libkcompactdisc.la $(LIB_KUTILS) $(ARTS_LIBASOUND) -lartsc
+ 
+ KDE_ICON = AUTO
+ 
+--- kdemultimedia-3.5.9/kfile-plugins/au/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/au/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_au_la_SOURCES = kfile_au.cpp 
+ kfile_au_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_au_la_LIBADD = $(LIB_KIO)
++kfile_au_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/avi/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/avi/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_avi_la_SOURCES = kfile_avi.cpp 
+ kfile_avi_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_avi_la_LIBADD = $(LIB_KIO)
++kfile_avi_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/flac/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/flac/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_flac_la_SOURCES = kfile_flac.cpp
+ kfile_flac_la_LDFLAGS = $(all_libraries) $(taglib_libs) -module $(KDE_PLUGIN)
+-kfile_flac_la_LIBADD = $(LIB_KIO)
++kfile_flac_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/m3u/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/m3u/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_m3u_la_SOURCES = kfile_m3u.cpp
+ kfile_m3u_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_m3u_la_LIBADD = $(LIB_KSYCOCA)
++kfile_m3u_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/mp3/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/mp3/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_mp3_la_SOURCES = kfile_mp3.cpp
+ kfile_mp3_la_LDFLAGS = $(all_libraries) $(taglib_libs) -module $(KDE_PLUGIN)
+-kfile_mp3_la_LIBADD = $(LIB_KIO)
++kfile_mp3_la_LIBADD = $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/mpc/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/mpc/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_mpc_la_SOURCES = kfile_mpc.cpp
+ kfile_mpc_la_LDFLAGS = $(all_libraries) $(taglib_libs) -module $(KDE_PLUGIN)
+-kfile_mpc_la_LIBADD = $(LIB_KIO)
++kfile_mpc_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/mpeg/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/mpeg/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_mpeg_la_SOURCES = kfile_mpeg.cpp
+ kfile_mpeg_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_mpeg_la_LIBADD = $(LIB_KIO)
++kfile_mpeg_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/ogg/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/ogg/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_ogg_la_SOURCES = kfile_ogg.cpp vcedit.c
+ kfile_ogg_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_ogg_la_LIBADD = $(LIB_KIO) -logg -lvorbis -lvorbisfile
++kfile_ogg_la_LIBADD = $(LIB_KIO) -logg -lvorbis -lvorbisfile $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/sid/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/sid/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_sid_la_SOURCES = kfile_sid.cpp
+ kfile_sid_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_sid_la_LIBADD = $(LIB_KIO)
++kfile_sid_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/theora/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/theora/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_theora_la_SOURCES = kfile_theora.cpp
+ kfile_theora_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_theora_la_LIBADD = $(LIB_KIO) -logg -lvorbis -ltheora
++kfile_theora_la_LIBADD = $(LIB_KIO) -logg -lvorbis -ltheora $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kfile-plugins/wav/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kfile-plugins/wav/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_wav_la_SOURCES = kfile_wav.cpp 
+ kfile_wav_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_wav_la_LIBADD = $(LIB_KIO)
++kfile_wav_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdemultimedia-3.5.9/kioslave/audiocd/kcmaudiocd/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kioslave/audiocd/kcmaudiocd/Makefile.am	2008-02-20 12:01:24.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_audiocd_la_SOURCES = audiocdconfig.ui kcmaudiocd.cpp
+ 
+ kcm_audiocd_la_LDFLAGS  =  $(all_libraries) $(KDE_PLUGIN) -module
+-kcm_audiocd_la_LIBADD = ../plugins/libaudiocdplugins.la $(LIB_KDEUI)
++kcm_audiocd_la_LIBADD = ../plugins/libaudiocdplugins.la $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ INCLUDES = -I$(srcdir)/../plugins -I$(top_srcdir)/libkcddb $(all_includes)
+ 
+--- kdemultimedia-3.5.9/kioslave/audiocd/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kioslave/audiocd/Makefile.am	2008-02-20 13:59:20.000000000 +0200
+@@ -16,7 +16,9 @@
+ 
+ kio_audiocd_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+-kio_audiocd_la_LIBADD = ./plugins/libaudiocdplugins.la $(LIB_KIO) $(CDPARANOIA_LIBS) $(top_builddir)/libkcddb/libkcddb.la $(top_builddir)/kscd/libkcompactdisc.la 
++kio_audiocd_la_LIBADD = ./plugins/libaudiocdplugins.la $(LIB_KIO) $(CDPARANOIA_LIBS) \
++	$(top_builddir)/libkcddb/libkcddb.la $(top_builddir)/kscd/libkcompactdisc.la \
++	$(ARTS_LIBASOUND) -lartsc $(LIB_KDECORE) $(LIB_QT) -lDCOP $(KDE_MT_LIBS)
+ 
+ noinst_HEADERS = audiocd.h
+ 
+--- kdemultimedia-3.5.9/kioslave/audiocd/plugins/flac/Makefile.am	2008-02-20 00:13:07.000000000 +0200
++++ kdemultimedia-3.5.9/kioslave/audiocd/plugins/flac/Makefile.am	2008-02-20 11:56:27.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ libaudiocd_encoder_flac_la_SOURCES = encoderflac.cpp
+ 
+-libaudiocd_encoder_flac_la_LIBADD = $(LIBFLAC) $(LIB_KIO) ../libaudiocdplugins.la
++libaudiocd_encoder_flac_la_LIBADD = $(LIBFLAC)
+ 
+ libaudiocd_encoder_flac_la_LDFLAGS = -avoid-version -module -no-undefined $(all_libraries)
+ 
+--- kdemultimedia-3.5.9/kioslave/audiocd/plugins/lame/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kioslave/audiocd/plugins/lame/Makefile.am	2008-02-20 13:20:47.000000000 +0200
+@@ -6,9 +6,9 @@
+ 
+ libaudiocd_encoder_lame_la_SOURCES = audiocd_lame_encoder.kcfgc encoderlame.cpp encoderlameconfig.ui collectingprocess.cpp
+ 
+-libaudiocd_encoder_lame_la_LIBADD = $(LIB_KIO) ../libaudiocdplugins.la
++libaudiocd_encoder_lame_la_LIBADD = $(LIB_KIO) $(top_builddir)/libkcddb/libkcddb.la $(LIB_QT) $(LIB_KDECORE)
+ 
+-libaudiocd_encoder_lame_la_LDFLAGS = -avoid-version -module -no-undefined $(taglib_libs) $(all_libraries)
++libaudiocd_encoder_lame_la_LDFLAGS = -avoid-version -module -no-undefined $(all_libraries)
+ 
+ pluginsdir = $(kde_datadir)/audiocd/plugins
+ 
+--- kdemultimedia-3.5.9/kioslave/audiocd/plugins/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kioslave/audiocd/plugins/Makefile.am	2008-02-20 11:58:23.000000000 +0200
+@@ -8,7 +8,7 @@
+ 		   
+ lib_LTLIBRARIES = libaudiocdplugins.la
+ 
+-libaudiocdplugins_la_LIBADD =  $(LIB_KDECORE) $(top_builddir)/libkcddb/libkcddb.la
++libaudiocdplugins_la_LIBADD =  $(LIB_KDECORE) $(LIB_QT)
+ 
+ libaudiocdplugins_la_LDFLAGS = $(all_libraries) -version-info 1:0:0 -no-undefined
+ 
+--- kdemultimedia-3.5.9/kioslave/audiocd/plugins/vorbis/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kioslave/audiocd/plugins/vorbis/Makefile.am	2008-02-20 13:20:05.000000000 +0200
+@@ -6,7 +6,8 @@
+ 
+ libaudiocd_encoder_vorbis_la_SOURCES = audiocd_vorbis_encoder.kcfgc encodervorbis.cpp encodervorbisconfig.ui
+ 
+-libaudiocd_encoder_vorbis_la_LIBADD = $(VORBIS_LIBS) $(VORBISFILE_LIBS) $(VORBISENC_LIBS) $(LIB_KIO) ../libaudiocdplugins.la
++libaudiocd_encoder_vorbis_la_LIBADD = $(VORBIS_LIBS) $(VORBISENC_LIBS) $(LIB_KIO) \
++	$(top_builddir)/libkcddb/libkcddb.la $(LIB_KIO) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_QT)
+ 
+ libaudiocd_encoder_vorbis_la_LDFLAGS = -avoid-version -module -no-undefined $(all_libraries)
+ 
+--- kdemultimedia-3.5.9/kioslave/audiocd/plugins/wav/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kioslave/audiocd/plugins/wav/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ libaudiocd_encoder_wav_la_SOURCES = encoderwav.cpp encodercda.cpp
+ 
+-libaudiocd_encoder_wav_la_LIBADD = $(LIB_KIO) ../libaudiocdplugins.la $(CDPARANOIA_LIBS)
++libaudiocd_encoder_wav_la_LIBADD = $(LIB_KIO) $(LIB_QT)
+ 
+ libaudiocd_encoder_wav_la_LDFLAGS = -avoid-version -module -no-undefined $(all_libraries)
+ 
+--- kdemultimedia-3.5.9/kmid/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kmid/Makefile.am	2008-02-20 12:03:34.000000000 +0200
+@@ -4,10 +4,9 @@
+ lib_LTLIBRARIES = libkmidlib.la
+ 
+ libkmidlib_la_LDFLAGS = $(all_libraries)
+-libkmidlib_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KIO) -lkmid
++libkmidlib_la_LIBADD = $(LIB_KIO) $(LIB_KPARTS) -lkmid $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ 
+ libkmidpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-libkmidpart_la_LIBADD = libkmidlib.la
+ 
+ libkmidlib_la_SOURCES = kmidframe.cpp kmidclient.cpp kdisptext.cpp \
+ 	qslidertime.cpp klcdnumber.cpp ktrianglebutton.cpp \
+--- kdemultimedia-3.5.9/kmix/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kmix/Makefile.am	2008-02-20 12:06:28.000000000 +0200
+@@ -25,13 +25,13 @@
+ 	volume.cpp kledbutton.cpp verticaltext.cpp mixerIface.skel \
+ 	kmixtoolbox.cpp mixertoolbox.cpp dialogviewconfiguration.cpp KMixApp.cpp dialogselectmaster.cpp
+ 
+-kmix_la_LIBADD = $(LIB_KDEUI) $(LIB_KUTILS) $(LIBALIB) $(LIBOSSAUDIO) $(LIBASOUND)
++kmix_la_LIBADD = $(LIB_KDEUI) $(LIBALIB) $(LIBOSSAUDIO) $(LIBASOUND) $(LIB_KDECORE) $(LIB_QT) -lDCOP
+ kmix_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN) -avoid-version
+ 
+ kmixctrl_la_SOURCES = kmixctrl.cpp mixer.cpp mixset.cpp mixdevice.cpp volume.cpp mixerIface.skel \
+ 	mixertoolbox.cpp mixer_backend.cpp
+ 
+-kmixctrl_la_LIBADD = $(LIB_KDECORE) $(LIBALIB) $(LIBOSSAUDIO) $(LIBASOUND)
++kmixctrl_la_LIBADD = $(LIB_KDECORE) $(LIBALIB) $(LIBOSSAUDIO) $(LIBASOUND) $(LIB_QT) -lDCOP
+ kmixctrl_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ 
+ kmix_panelapplet_la_SOURCES = kmixapplet.cpp \
+@@ -42,7 +42,7 @@
+ 	kmixtoolbox.cpp mixertoolbox.cpp dialogselectmaster.cpp
+ 
+ kmix_panelapplet_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kmix_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIB_KUTILS) $(LIBALIB) $(LIBOSSAUDIO) $(LIBASOUND)
++kmix_panelapplet_la_LIBADD = $(LIB_KDEUI) $(LIBALIB) $(LIBOSSAUDIO) $(LIBASOUND) $(LIB_KDECORE) $(LIB_QT) -lDCOP
+ 
+ xdg_apps_DATA = kmix.desktop
+ 
+--- kdemultimedia-3.5.9/krec/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/krec/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -45,17 +45,20 @@
+ krec_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ krec_la_LIBADD = \
+ 	lib_krec_common.la \
++	$(top_builddir)/arts/gui/common/libartsgui_idl.la \
+ 	$(top_builddir)/arts/gui/kde/libartsgui_kde.la \
+ 	$(top_builddir)/arts/tools/libartscontrolsupport.la \
+-	-lartskde $(LIBDL) $(LIB_KIO) $(LIB_KDEUI) $(LIB_KUTILS)
++	$(top_builddir)/arts/modules/effects/libartsmoduleseffects.la \
++	-lartskde $(LIB_KDEUI) $(LIB_KIO) $(LIB_QT) -lmcop $(LIB_KDECORE) \
++	-lartsflow_idl -lsoundserver_idl $(LIB_KUTILS)
+ 
+ kcm_krec_la_SOURCES = krecconfigure.cpp
+ kcm_krec_la_LDFLAGS = -module -avoid-version -no-undefined $(all_libraries)
+-kcm_krec_la_LIBADD = lib_krec_common.la $(LIB_KUTILS)
++kcm_krec_la_LIBADD = lib_krec_common.la $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kcm_krec_files_la_SOURCES = krecconfig_files.cpp
+ kcm_krec_files_la_LDFLAGS = -module -avoid-version -no-undefined $(all_libraries)
+-kcm_krec_files_la_LIBADD = lib_krec_common.la $(LIB_KUTILS)
++kcm_krec_files_la_LIBADD = lib_krec_common.la $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ lib_krec_common_la_SOURCES = \
+ 	krecglobal.cpp \
+@@ -67,7 +70,7 @@
+ 
+ libkrecexport_wave_la_SOURCES = krecexport_wave.cpp
+ libkrecexport_wave_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-libkrecexport_wave_la_LIBADD = lib_krec_common.la
++libkrecexport_wave_la_LIBADD = lib_krec_common.la $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ rcdir = $(kde_datadir)/krec
+ rc_DATA = krecui.rc
+--- kdemultimedia-3.5.9/krec/ogg_export/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/krec/ogg_export/Makefile.am	2008-02-20 12:07:48.000000000 +0200
+@@ -16,7 +16,7 @@
+ 
+ libkrecexport_ogg_la_SOURCES = krecexport_ogg.cpp
+ libkrecexport_ogg_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN) $(KDE_RPATH)
+-libkrecexport_ogg_la_LIBADD = ../lib_krec_common.la $(VORBISENC_LIBS) $(VORBIS_LIBS)
++libkrecexport_ogg_la_LIBADD = ../lib_krec_common.la $(VORBISENC_LIBS) $(VORBIS_LIBS) $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ kde_services_DATA = krec_exportogg.desktop
+ 
+--- kdemultimedia-3.5.9/kscd/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/kscd/Makefile.am	2008-02-20 03:55:41.000000000 +0200
+@@ -25,7 +25,7 @@
+ kscd_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+ kscd_LDADD = $(LIBCDROM) $(LIBCDAUDIO) \
+ 	     $(LIBFPE) $(LIB_KIO) -lkutils $(top_builddir)/libkcddb/libkcddb.la \
+-	     libkcompactdisc.la
++	     libkcompactdisc.la $(ARTS_LIBASOUND) -lartsc
+ 
+ profiledata_DATA = kscd.profile.xml
+ profiledatadir = $(kde_datadir)/profiles
+--- kdemultimedia-3.5.9/libkcddb/kcmcddb/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/libkcddb/kcmcddb/Makefile.am	2008-02-20 13:26:28.000000000 +0200
+@@ -8,7 +8,7 @@
+ kcm_cddb_la_LDFLAGS = \
+   $(all_libraries) -module -avoid-version -no-undefined
+ 
+-kcm_cddb_la_LIBADD = ../libkcddb.la $(LIB_KDEUI)
++kcm_cddb_la_LIBADD = ../libkcddb.la $(LIB_KDEUI) $(LIB_KIO) $(LIB_KDECORE) $(LIB_QT)
+ 
+ kcm_cddb_la_COMPILE_FIRST = ../configbase.h
+ 
+--- kdemultimedia-3.5.9/libkcddb/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/libkcddb/Makefile.am	2008-02-20 13:25:56.000000000 +0200
+@@ -14,7 +14,7 @@
+     cdinfoencodingwidget.cpp cdinfoencodingwidgetbase.ui
+ 
+ libkcddb_la_LDFLAGS = $(all_libraries) -version-info 1:0:0
+-libkcddb_la_LIBADD  = $(LIB_KDECORE) $(LIB_KIO)
++libkcddb_la_LIBADD  = $(LIB_KDECORE) $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT)
+ 
+ METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/cddaplay/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/cddaplay/Makefile.am	2008-02-20 13:55:15.000000000 +0200
+@@ -13,8 +13,7 @@
+ cddaplay_LDFLAGS	=	$(all_libraries) 
+ 
+ 
+-cddaplay_LDADD		=	../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
++cddaplay_LDADD		=	../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/yaf/yafcdda/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/yaf/yafcdda/Makefile.am	2008-02-20 13:55:44.000000000 +0200
+@@ -15,9 +15,7 @@
+ 
+ yaf_cdda_LDADD		=	../yafxplayer/libyafxplayer.la \
+ 				../yafcore/libyafcore.la \
+-				../../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
+-
++				../../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/yaf/yafcore/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/yaf/yafcore/Makefile.am	2008-02-20 13:43:24.000000000 +0200
+@@ -32,7 +32,7 @@
+ libyafcore_la_LDFLAGS	=	$(all_libraries) $(KDE_RPATH) \
+ 				-no-undefined -avoid-version
+ 
+-libyafcore_la_LIBADD	=	-lkdefakes $(THIS_LIB_LIBS)
++libyafcore_la_LIBADD	=	-lkdefakes
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/yaf/yafyuv/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/yaf/yafyuv/Makefile.am	2008-02-20 13:56:33.000000000 +0200
+@@ -16,9 +16,7 @@
+ 
+ yaf_yuv_LDADD		=	../yafxplayer/libyafxplayer.la \
+ 				../yafcore/libyafcore.la \
+-				../../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
+-
++				../../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/yaf/yafmpgplay/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/yaf/yafmpgplay/Makefile.am	2008-02-20 13:45:09.000000000 +0200
+@@ -16,8 +16,7 @@
+ 
+ yaf_mpgplay_LDADD	=	../yafcore/libyafcore.la \
+ 				../yafxplayer/libyafxplayer.la \
+-				../../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
++				../../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/yaf/yafsplay/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/yaf/yafsplay/Makefile.am	2008-02-20 13:56:07.000000000 +0200
+@@ -16,9 +16,7 @@
+ 
+ yaf_splay_LDADD		=	../yafxplayer/libyafxplayer.la \
+ 				../yafcore/libyafcore.la \
+-				../../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
+-
++				../../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/yaf/yaftplay/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/yaf/yaftplay/Makefile.am	2008-02-20 13:56:11.000000000 +0200
+@@ -14,9 +14,7 @@
+ 
+ yaf_tplay_LDADD		=	../yafcore/libyafcore.la \
+ 				../yafxplayer/libyafxplayer.la \
+-				../../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
+-
++				../../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/yaf/yafvorbis/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/yaf/yafvorbis/Makefile.am	2008-02-20 13:56:18.000000000 +0200
+@@ -15,9 +15,7 @@
+ yaf_vorbis_LDADD	=	 \
+ 				../yafcore/libyafcore.la \
+ 				../yafxplayer/libyafxplayer.la \
+-				../../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
+-
++				../../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/yaf/yafxplayer/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/yaf/yafxplayer/Makefile.am	2008-02-20 13:56:26.000000000 +0200
+@@ -24,9 +24,7 @@
+ 					-no-undefined -avoid-version
+ 
+ libyafxplayer_la_LIBADD		=	../../../lib/libmpeg.la \
+-					../yafcore/libyafcore.la \
+-					$(THIS_LIB_LIBS)
+-
++					../yafcore/libyafcore.la
+ 
+ 
+ yafxplayerdir			=	$(includedir)/$(THIS_LIB_NAME)/util/yaf/yafxplayer
+--- kdemultimedia-3.5.9/mpeglib/example/mpgplay/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/mpgplay/Makefile.am	2008-02-20 13:55:20.000000000 +0200
+@@ -12,8 +12,7 @@
+ 
+ mpgplay_LDFLAGS         =       $(all_libraries) 
+ 
+-mpgplay_LDADD		=	../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
++mpgplay_LDADD		=	../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/splay/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/splay/Makefile.am	2008-02-20 13:55:27.000000000 +0200
+@@ -18,9 +18,7 @@
+ 				$(THIS_LIB_LIBS)
+ 
+ mp3framing_LDFLAGS      =       $(all_libraries)
+-mp3framing_LDADD        =       ../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
+-
++mp3framing_LDADD        =       ../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib/example/tplay/Makefile.am	2008-02-20 00:13:08.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib/example/tplay/Makefile.am	2008-02-20 13:55:34.000000000 +0200
+@@ -13,9 +13,7 @@
+ tplay_LDFLAGS		=	$(all_libraries) 
+ 
+ 
+-tplay_LDADD		=	../../lib/libmpeg.la \
+-				$(THIS_LIB_LIBS)
+-
++tplay_LDADD		=	../../lib/libmpeg.la
+ 
+ 
+ 
+--- kdemultimedia-3.5.9/mpeglib_artsplug/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/mpeglib_artsplug/Makefile.am	2008-02-20 13:23:54.000000000 +0200
+@@ -79,8 +79,7 @@
+ 					-module \
+ 					-release $(MPEGLIB_ARTS_VERSION) \
+ 					-version-info $(MPEGLIB_ARTS_MAJOR_VERSION):$(MPEGLIB_ARTS_MINOR_VERSION):$(MPEGLIB_ARTS_MICRO_VERSION)
+-libarts_mpeglib_la_LIBADD       =       $(top_builddir)/mpeglib/lib/libmpeg.la \
+-					$(LIB_ARTS)
++libarts_mpeglib_la_LIBADD       =       $(top_builddir)/mpeglib/lib/libmpeg.la -lkmedia2_idl -lartsflow_idl -lartsflow -lmcop
+ 
+ libarts_splay_la_SOURCES	=	splayPlayObject.cc \
+ 					splayPlayObject_impl.cpp
+@@ -89,17 +88,16 @@
+ 					-no-undefined	 \
+ 					-module
+ libarts_splay_la_LIBADD         =       $(top_builddir)/mpeglib/lib/libmpeg.la \
+-					$(LIB_ARTS)
++					-lkmedia2_idl -lartsflow_idl -lartsflow -lmcop
+ 
+ 
+ bin_PROGRAMS			=	mpeglibartsplay
+ 
+-mpeglibartsplay_LDFLAGS         =       $(ARTSC_LIBS) $(all_libraries)
++mpeglibartsplay_LDFLAGS         =       $(all_libraries)
+ mpeglibartsplay_SOURCES		=	mpeglibartsplay.cpp
+ 
+ mpeglibartsplay_LDADD		=	-lsoundserver_idl \
+ 					-lkmedia2_idl \
+-					-lartsflow_idl \
+ 					-lmcop
+ 
+ splayPlayObject.lo: splayPlayObject.h
+--- kdemultimedia-3.5.9/noatun/app/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/app/Makefile.am	2008-02-20 12:39:44.000000000 +0200
+@@ -3,7 +3,7 @@
+ kdeinit_LTLIBRARIES = noatun.la
+ noatun_la_SOURCES = main.cpp
+ noatun_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -module -avoid-version
+-noatun_la_LIBADD = -lqtmcop -lkmedia2_idl -lsoundserver_idl $(top_builddir)/noatun/library/libnoatun.la
++noatun_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la $(LIB_QT) $(LIB_KDECORE)
+ 
+ bin_PROGRAMS =
+ lib_LTLIBRARIES =
+--- kdemultimedia-3.5.9/noatun/library/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/library/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -27,14 +27,14 @@
+ 
+ libnoatun_la_LDFLAGS     = \
+ 		-version-info 3:0:2 $(KDE_RPATH) $(all_libraries)
+-libnoatun_la_LIBADD      = $(top_builddir)/arts/gui/common/libartsgui.la \
+-	$(top_builddir)/arts/gui/kde/libartsgui_kde.la $(top_builddir)/arts/modules/libartsmodules.la \
+-	-lkio -lqtmcop -lkmedia2_idl $(top_builddir)/noatun/library/noatunarts/libnoatunarts.la \
+-	-lartsflow -lsoundserver_idl -lartskde $(LIBDL)
++libnoatun_la_LIBADD  = $(top_builddir)/arts/gui/kde/libartsgui_kde.la  \
++	-lkmedia2_idl $(top_builddir)/noatun/library/noatunarts/libnoatunarts.la \
++	-lartsflow -lsoundserver_idl $(LIB_ARTS) \
++	$(top_builddir)/arts/gui/common/libartsgui_idl.la -lartsflow_idl $(LIB_QT) -lmcop -lartsflow $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP $(LIB_KIO)
+ 
+ libnoatuncontrols_la_SOURCES = controls.cpp scrollinglabel.cpp
+ libnoatuncontrols_la_LDFLAGS = -version-info 3:0:2 $(KDE_RPATH) $(all_libraries) -no-undefined
+-libnoatuncontrols_la_LIBADD  = $(LIBDL) $(LIB_KDEUI)
++libnoatuncontrols_la_LIBADD  = $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ META_INCLUDES = $(srcdir)/noatun
+--- kdemultimedia-3.5.9/noatun/library/noatunarts/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/library/noatunarts/Makefile.am	2008-02-20 13:15:27.000000000 +0200
+@@ -7,7 +7,7 @@
+                            StereoVolumeControl_impl.cpp Session_impl.cpp
+ libnoatunarts_la_COMPILE_FIRST = noatunarts.h
+ libnoatunarts_la_LDFLAGS = $(all_libraries) -avoid-version -no-undefined
+-libnoatunarts_la_LIBADD =  -lkmedia2_idl -lsoundserver_idl -lartsflow
++libnoatunarts_la_LIBADD =  -lartsflow -lartsflow_idl -lmcop
+ libnoatunarts_la_METASOURCES = AUTO
+ 
+ noatunarts.mcoptype: noatunarts.h
+--- kdemultimedia-3.5.9/noatun/library/noatuntags/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/library/noatuntags/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ libnoatuntags_la_SOURCES = tags.cpp
+ libnoatuntags_la_LDFLAGS = -version-info 3:0:2 $(all_libraries)
+-libnoatuntags_la_LIBADD = ../libnoatun.la
++libnoatuntags_la_LIBADD = ../libnoatun.la $(LIB_QT) $(LIB_KDECORE)
+ 
+ libnoatuntags_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/artseffects/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/artseffects/Makefile.am	2008-02-20 12:36:26.000000000 +0200
+@@ -5,7 +5,7 @@
+ libartseffects_la_SOURCES = artseffects.cc extrastereo_impl.cc
+ libartseffects_la_COMPILE_FIRST = artseffects.cc
+ libartseffects_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-libartseffects_la_LIBADD =  $(top_builddir)/arts/gui/common/libartsgui_idl.la -lkmedia2_idl -lsoundserver_idl -lartsflow
++libartseffects_la_LIBADD =  $(top_builddir)/arts/gui/common/libartsgui_idl.la -lartsflow -lartsflow_idl -lmcop
+ 
+ 
+ artseffects.mcopclass: artseffects.h
+--- kdemultimedia-3.5.9/noatun/modules/dcopiface/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/dcopiface/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -4,7 +4,7 @@
+ noatun_dcopiface_la_SOURCES = dcopiface.cpp dcopiface.skel
+ 
+ noatun_dcopiface_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_dcopiface_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la
++noatun_dcopiface_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la -lDCOP $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_dcopiface_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/excellent/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/excellent/Makefile.am	2008-02-20 13:13:19.000000000 +0200
+@@ -5,10 +5,9 @@
+ 	userinterface.cpp 
+ 
+ noatun_excellent_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_excellent_la_LIBADD = $(LIB_KFILE) \
+-	$(top_builddir)/noatun/library/libnoatun.la \
++noatun_excellent_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la \
+ 	$(top_builddir)/noatun/library/libnoatuncontrols.la \
+-	-lqtmcop -lkmedia2_idl -lsoundserver_idl
++	$(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_excellent_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/htmlexport/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/htmlexport/Makefile.am	2008-02-20 12:37:03.000000000 +0200
+@@ -7,7 +7,7 @@
+ 
+ noatun_htmlexport_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+ noatun_htmlexport_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
+-                        -lqtmcop -lkmedia2_idl -lsoundserver_idl
++                        $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ noatun_htmlexport_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/infrared/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/infrared/Makefile.am	2008-02-20 12:34:06.000000000 +0200
+@@ -6,8 +6,7 @@
+ noinst_HEADERS = infrared.h lirc.h irprefs.h
+ 
+ noatun_infrared_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_infrared_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
+-                        -lqtmcop -lkmedia2_idl -lsoundserver_idl
++noatun_infrared_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ 
+ noatun_infrared_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/kaiman/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/kaiman/Makefile.am	2008-02-20 14:03:42.000000000 +0200
+@@ -9,8 +9,8 @@
+ 	pref.cpp
+ 
+ noatun_kaiman_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_kaiman_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
+-                        -lqtmcop -lkmedia2_idl -lsoundserver_idl
++noatun_kaiman_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la \
++                        $(LIB_XEXT) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_kaiman_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/keyz/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/keyz/Makefile.am	2008-02-20 12:42:29.000000000 +0200
+@@ -4,7 +4,7 @@
+ noatun_keyz_la_SOURCES = keyz.cpp
+ 
+ noatun_keyz_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_keyz_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la
++noatun_keyz_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_keyz_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/kjofol-skin/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/kjofol-skin/Makefile.am	2008-02-20 14:41:57.000000000 +0200
+@@ -23,9 +23,8 @@
+ 										kjskinselectorwidget.ui kjguisettingswidget.ui
+ 
+ noatun_kjofol_la_LDFLAGS	=	$(all_libraries) -module -avoid-version -no-undefined
+-noatun_kjofol_la_LIBADD		=	$(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
+-										$(LIB_KIO) -lm \
+-										$(top_builddir)/arts/modules/libartsmodules.la
++noatun_kjofol_la_LIBADD		=	$(LIB_KIO) $(top_builddir)/noatun/library/libnoatun.la \
++										-lm $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lkdefx -lkmedia2_idl
+ 
+ noinst_HEADERS					=	kjloader.h kjwidget.h kjbutton.h kjseeker.h \
+ 										kjsliders.h kjfont.h kjtextdisplay.h \
+--- kdemultimedia-3.5.9/noatun/modules/marquis/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/marquis/Makefile.am	2008-02-20 13:16:08.000000000 +0200
+@@ -4,8 +4,7 @@
+ noatun_marquis_la_SOURCES = marquis.cpp plugin.cpp
+ 
+ noatun_marquis_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_marquis_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
+-                        -lqtmcop -lkmedia2_idl -lsoundserver_idl
++noatun_marquis_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_marquis_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/metatag/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/metatag/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ noatun_metatag_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+ noatun_metatag_la_LIBADD = $(LIB_KIO) $(top_builddir)/noatun/library/libnoatun.la \
+-	$(top_builddir)/noatun/library/noatuntags/libnoatuntags.la
++	$(top_builddir)/noatun/library/noatuntags/libnoatuntags.la $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_metatag_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/monoscope/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/monoscope/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -5,7 +5,7 @@
+ #prefs.cpp
+ 
+ noatun_monoscope_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_monoscope_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la -lm
++noatun_monoscope_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la -lm $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_monoscope_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/net/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/net/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -4,7 +4,7 @@
+ noatun_net_la_SOURCES = net.cpp
+ 
+ noatun_net_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_net_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la
++noatun_net_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_net_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/noatunui/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/noatunui/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -4,9 +4,9 @@
+ noatun_ui_la_SOURCES = noatunui.cpp userinterface.cpp
+ 
+ noatun_ui_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_ui_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la \
++noatun_ui_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la \
+                         $(top_builddir)/noatun/library/libnoatuncontrols.la \
+-                        -lqtmcop -lkmedia2_idl -lsoundserver_idl
++                         $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatun_ui_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/simple/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/simple/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -6,7 +6,7 @@
+ noatunsimple_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ noatunsimple_la_LIBADD =  $(top_builddir)/noatun/library/libnoatun.la \
+ 			  $(top_builddir)/noatun/library/libnoatuncontrols.la \
+-			 -lkmedia2_idl -lsoundserver_idl -lartskde
++			 -lkmedia2_idl $(LIB_ARTS) $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ noatunsimple_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/systray/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/systray/Makefile.am	2008-02-20 03:55:41.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ 
+ noatun_systray_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_systray_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la
++noatun_systray_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la $(LIB_KIO) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
+ 
+ noatun_systray_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/splitplaylist/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/splitplaylist/Makefile.am	2008-02-20 03:55:41.000000000 +0200
+@@ -4,7 +4,7 @@
+ noatun_splitplaylist_la_SOURCES = splitplaylist.cpp playlist.cpp view.cpp find.cpp
+ 
+ noatun_splitplaylist_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_splitplaylist_la_LIBADD = $(LIB_KIO) $(top_builddir)/noatun/library/libnoatun.la
++noatun_splitplaylist_la_LIBADD = $(LIB_KIO) $(top_builddir)/noatun/library/libnoatun.la $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
+ 
+ noatun_splitplaylist_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/voiceprint/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/voiceprint/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -4,7 +4,7 @@
+ noatun_voiceprint_la_SOURCES = voiceprint.cpp prefs.cpp
+ 
+ noatun_voiceprint_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-noatun_voiceprint_la_LIBADD = $(LIB_KFILE) $(top_builddir)/noatun/library/libnoatun.la -lm
++noatun_voiceprint_la_LIBADD = $(top_builddir)/noatun/library/libnoatun.la -lm $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
+ 
+ noatun_voiceprint_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/winskin/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/winskin/Makefile.am	2008-02-20 13:08:22.000000000 +0200
+@@ -40,7 +40,8 @@
+ 					-module -avoid-version -no-undefined 
+ 
+ noatun_winskin_la_LIBADD		= $(top_builddir)/noatun/library/libnoatun.la \
+-					$(top_builddir)/noatun/modules/winskin/vis/libwinskinvis.la
++					$(top_builddir)/noatun/modules/winskin/vis/libwinskinvis.la \
++					$(top_builddir)/noatun/library/noatunarts/libnoatunarts.la $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KDECORE) -lsoundserver_idl
+ 
+ noatun_winskin_la_METASOURCES	=	AUTO
+ 
+--- kdemultimedia-3.5.9/noatun/modules/winskin/vis/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/noatun/modules/winskin/vis/Makefile.am	2008-02-20 13:14:40.000000000 +0200
+@@ -17,7 +17,7 @@
+ libwinskinvis_la_LDFLAGS=	$(all_libraries) -avoid-version \
+ 				-no-undefined
+ 
+-libwinskinvis_la_LIBADD =	-lkmedia2_idl -lsoundserver_idl -lartsflow
++libwinskinvis_la_LIBADD =	 -lartsflow -lartsflow_idl -lmcop
+ libwinskinvis_la_COMPILE_FIRST = winskinvis.cc
+ libwinskinvis_la_METASOURCES =	AUTO
+ 
+--- kdemultimedia-3.5.9/xine_artsplugin/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/xine_artsplugin/Makefile.am	2008-02-20 13:25:25.000000000 +0200
+@@ -9,7 +9,7 @@
+ 			  audio_fifo_out.c
+ libarts_xine_la_LDFLAGS = $(all_libraries) -module -no-undefined -pthread
+ libarts_xine_la_LIBADD = $(XINE_LIBS) $(LIB_X11) $(LIB_XEXT) \
+-			 -lkmedia2_idl -lsoundserver_idl -lartsflow
++			 -lkmedia2_idl -lsoundserver_idl -lartsflow -lartsflow_idl $(KDE_MT_LIBS) -lmcop
+ 
+ libarts_xine_la_METASOURCES = AUTO
+ 
+--- kdemultimedia-3.5.9/xine_artsplugin/tools/thumbnail/Makefile.am	2008-02-20 03:52:00.000000000 +0200
++++ kdemultimedia-3.5.9/xine_artsplugin/tools/thumbnail/Makefile.am	2008-02-20 13:25:12.000000000 +0200
+@@ -10,7 +10,7 @@
+ kde_module_LTLIBRARIES = videothumbnail.la
+ 
+ videothumbnail_la_SOURCES = videocreator.cpp videoscaler.cpp
+-videothumbnail_la_LIBADD = $(XINE_LIBS) $(LIB_KDECORE)
++videothumbnail_la_LIBADD = $(XINE_LIBS) $(LIB_KDECORE) $(KDE_MT_LIBS) $(LIB_QT)
+ videothumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN) -pthread
+ 
+ noinst_HEADERS = videocreator.h

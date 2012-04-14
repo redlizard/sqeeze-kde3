@@ -1,0 +1,10 @@
+Document: kdemultimedia-doc-html-noatun
+Title: NoAtun Handbook
+Author: Charles Samuels
+Abstract: NoAtun is a fully-featured plugin-based media player for KDE.
+Section: Sound
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/noatun/index.html
+Files: /usr/share/doc/kde/HTML/en/noatun/*.html
+

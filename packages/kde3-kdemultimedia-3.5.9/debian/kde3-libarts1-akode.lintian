@@ -1,0 +1,2 @@
+libarts1-akode: package-name-doesnt-match-sonames libarts-akode0
+libarts1-akode: non-dev-pkg-with-shlib-symlink usr/lib/libarts_akode.so.0.0.0 usr/lib/libarts_akode.so

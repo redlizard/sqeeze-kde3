@@ -1,0 +1,36 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_HOST_ARCH_OS = $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+ifeq (linux,$(DEB_HOST_ARCH_OS))
+DEB_DH_GENCONTROL_ARGS=-- -Valsa-dev=libasound2-dev
+endif
+
+DEB_CONFIGURE_EXTRA_FLAGS := --without-libltdl --without-polypaudio --with-extra-includes=/usr/include/speex/
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-akode-dbg
+
+PACKAGES_WITH_LIBS := kde3-libakode2
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-libakode2 := -V'kde3-libakode2 (>= 2-rc1-1)'
+
+
+common-install-prehook-arch::
+	grep -v libakode_alsa_sink debian/kde3-libakode2.install > debian/kde3-libakode2.install.kfreebsd-i386
+	grep -v libakode_alsa_sink debian/kde3-libakode2.install > debian/kde3-libakode2.install.kfreebsd-amd64
+	grep -v libakode_alsa_sink debian/kde3-libakode-dev.install > debian/kde3-libakode-dev.install.kfreebsd-i386
+	grep -v libakode_alsa_sink debian/kde3-libakode-dev.install > debian/kde3-libakode-dev.install.kfreebsd-amd64
+
+clean::
+	rm -f debian/kde3-libakode2.install.kfreebsd* debian/kde3-libakode-dev.install.kfreebsd*
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+

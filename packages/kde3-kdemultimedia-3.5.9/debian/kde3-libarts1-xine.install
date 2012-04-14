@@ -1,0 +1,12 @@
+debian/tmp/opt/kde3/lib/kde3/videothumbnail.la
+debian/tmp/opt/kde3/lib/kde3/videothumbnail.so
+debian/tmp/opt/kde3/lib/libarts_xine.la
+debian/tmp/opt/kde3/lib/libarts_xine.so
+debian/tmp/opt/kde3/lib/libarts_xine.so.0
+debian/tmp/opt/kde3/lib/libarts_xine.so.0.0.0
+debian/tmp/opt/kde3/lib/mcop/xineAudioPlayObject.mcopclass
+debian/tmp/opt/kde3/lib/mcop/xineVideoPlayObject.mcopclass
+debian/tmp/opt/kde3/share/apps/videothumbnail/sprocket-large.png
+debian/tmp/opt/kde3/share/apps/videothumbnail/sprocket-medium.png
+debian/tmp/opt/kde3/share/apps/videothumbnail/sprocket-small.png
+debian/tmp/opt/kde3/share/services/videothumbnail.desktop

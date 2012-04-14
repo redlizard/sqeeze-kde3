@@ -1,0 +1,9 @@
+debian/tmp/opt/kde3/bin/yaf-cdda
+debian/tmp/opt/kde3/bin/yaf-mpgplay
+debian/tmp/opt/kde3/bin/yaf-splay
+debian/tmp/opt/kde3/bin/yaf-tplay
+debian/tmp/opt/kde3/bin/yaf-vorbis
+debian/tmp/opt/kde3/bin/yaf-yuv
+debian/tmp/opt/kde3/lib/libmpeg-0.3.0.so
+debian/tmp/opt/kde3/lib/libyafcore.so
+debian/tmp/opt/kde3/lib/libyafxplayer.so

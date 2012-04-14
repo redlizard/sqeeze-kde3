@@ -1,0 +1,8 @@
+?package(noatun):\
+	needs="X11"\
+	section="Applications/Sound"\
+	hints="KDE"\
+	title="Noatun"\
+	icon32x32="/opt/kde3/share/pixmaps/noatun.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/noatun-16.xpm"\
+	command="/opt/kde3/bin/noatun"

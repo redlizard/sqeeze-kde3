@@ -1,0 +1,8 @@
+?package(juk):\
+	needs="X11"\
+	section="Applications/Sound"\
+	hints="KDE"\
+	title="JuK"\
+	icon32x32="/opt/kde3/share/pixmaps/juk.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/juk-16.xpm"\
+	command="/opt/kde3/bin/juk"

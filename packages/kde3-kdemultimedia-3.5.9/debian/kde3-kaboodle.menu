@@ -1,0 +1,8 @@
+?package(kaboodle):\
+	needs="X11"\
+	section="Applications/Sound"\
+	hints="KDE"\
+	title="Kaboodle"\
+	icon32x32="/opt/kde3/share/pixmaps/kaboodle.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kaboodle-16.xpm"\
+	command="/opt/kde3/bin/kaboodle"

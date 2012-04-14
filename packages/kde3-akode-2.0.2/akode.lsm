@@ -1,0 +1,11 @@
+Begin4
+Title:          aKode
+Version:        2.0.2
+Entered-date:   2007-04-06
+Description:    Audio decoding library
+Keywords:       KDE desktop audio
+Author:         Allan Sandfeld Jensen <kde@carewolf.com>
+Primary-site:   http://carewolf.com/akode
+Platforms:      Unix
+Copying-policy: LGPL
+End
