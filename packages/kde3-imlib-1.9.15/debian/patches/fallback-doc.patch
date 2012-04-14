@@ -1,0 +1,40 @@
+--- Imlib/load.c	22 Mar 2002 14:43:04 -0000	1.1.1.4
++++ Imlib/load.c	25 Mar 2002 03:58:42 -0000	1.4
+@@ -1789,6 +1789,7 @@
+     {
+       fprintf(stderr, "IMLIB ERROR: Cannot load image: %s\n"
+       		      "All fallbacks failed.\n", fil);
++      fprintf(stderr, "See /usr/share/doc/imlib1/README.fallback.\n");
+       return NULL;
+     }
+     
+--- Imlib/save.c	4 Mar 2002 16:51:35 -0000	1.1.1.2
++++ Imlib/save.c	15 Mar 2002 00:43:48 -0000	1.3
+@@ -550,6 +550,7 @@
+ #endif
+   fprintf(stderr, "IMLIB ERROR: Cannot save image: %s\n", file);
+   fprintf(stderr, "All fallbacks failed.\n");
++  fprintf(stderr, "See /usr/share/doc/imlib1/README.fallback.\n");
+ 
+   return 0;
+ }
+--- gdk_imlib/load.c	22 Mar 2002 14:43:29 -0000	1.1.1.3
++++ gdk_imlib/load.c	25 Mar 2002 03:58:42 -0000	1.4
+@@ -292,6 +292,7 @@
+     {
+       fprintf(stderr, "gdk_imlib ERROR: Cannot load image: %s\n"
+                       "All fallbacks failed.\n", file);
++      fprintf(stderr, "See /usr/share/doc/gdk-imlib1/README.fallback.\n");
+       return NULL;
+     }
+     
+--- gdk_imlib/save.c	4 Mar 2002 16:58:40 -0000	1.1.1.2
++++ gdk_imlib/save.c	15 Mar 2002 00:43:48 -0000	1.3
+@@ -168,6 +168,7 @@
+ #endif
+   fprintf(stderr, "gdk_imlib ERROR: Cannot save image: %s\n", file);
+   fprintf(stderr, "All fallbacks failed.\n");
++  fprintf(stderr, "See /usr/share/doc/gdk-imlib1/README.fallback.\n");
+ 
+   return 0;
+ }

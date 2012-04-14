@@ -1,0 +1,53 @@
+Index: kdegraphics-3.5.9/kamera/kcontrol/kamera.desktop
+===================================================================
+--- kdegraphics-3.5.9.orig/kamera/kcontrol/kamera.desktop	2008-07-02 00:39:38.000000000 +0200
++++ kdegraphics-3.5.9/kamera/kcontrol/kamera.desktop	2008-07-02 00:40:10.000000000 +0200
+@@ -183,8 +183,6 @@
+ Name[zh_HK]=數碼相機
+ Name[zh_TW]=數位相機
+ Name[zu]=Ikhamera ebonisa inani ngalinye
+-SwallowExec=
+-SwallowTitle=
+ Terminal=false
+ Type=Application
+ X-KDE-Library=kamera
+@@ -192,4 +190,4 @@
+ Icon=camera
+ Exec=kcmshell kamera
+ DocPath=kamera/index.html
+-Categories=Qt;KDE;X-KDE-settings-hardware;
++Categories=Qt;KDE;Settings;X-KDE-settings-hardware;
+Index: kdegraphics-3.5.9/kmrml/kmrml/kcontrol/kcmkmrml.desktop
+===================================================================
+--- kdegraphics-3.5.9.orig/kmrml/kmrml/kcontrol/kcmkmrml.desktop	2008-07-02 00:39:38.000000000 +0200
++++ kdegraphics-3.5.9/kmrml/kmrml/kcontrol/kcmkmrml.desktop	2008-07-02 00:40:10.000000000 +0200
+@@ -173,4 +173,4 @@
+ Keywords[zh_TW]=Images,Search,Query,Find,Gift,kmrml,mrml,CBIR,影像,搜尋,查詢,尋找
+ Keywords[zu]=Izithombe,Funa,Buza,Thola,Isipho,kmrml,mrml,CBIR
+ 
+-Categories=Qt;KDE;X-KDE-settings-system;
++Categories=Qt;KDE;Settings;X-KDE-settings-system;
+Index: kdegraphics-3.5.9/kpovmodeler/kpovmodeler.desktop
+===================================================================
+--- kdegraphics-3.5.9.orig/kpovmodeler/kpovmodeler.desktop	2008-07-02 00:39:38.000000000 +0200
++++ kdegraphics-3.5.9/kpovmodeler/kpovmodeler.desktop	2008-07-02 00:40:10.000000000 +0200
+@@ -53,8 +53,6 @@
+ GenericName[zh_HK]=Povray 建模器
+ Path=
+ ServiceTypes=KParts/ReadOnlyPart,KParts/ReadWritePart,Browser/View,KPovModeler/Document
+-SwallowExec=
+-SwallowTitle=
+ Terminal=false
+ Type=Application
+ X-KDE-Library=libkpovmodelerpart
+Index: kdegraphics-3.5.9/kiconedit/kiconedit.desktop
+===================================================================
+--- kdegraphics-3.5.9.orig/kiconedit/kiconedit.desktop	2008-07-02 00:39:38.000000000 +0200
++++ kdegraphics-3.5.9/kiconedit/kiconedit.desktop	2008-07-02 00:40:31.000000000 +0200
+@@ -1,6 +1,4 @@
+ [Desktop Entry]
+-SwallowExec=
+-SwallowTitle=
+ GenericName=Icon Editor
+ GenericName[af]=Ikoon Redigeerder
+ GenericName[ar]=محرر الإيقونات

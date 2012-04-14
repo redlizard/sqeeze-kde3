@@ -1,0 +1,10 @@
+Document: kdegraphics-doc-html-kview
+Title: KView Handbook
+Author: Hauke Hildebrandt, Sirtaj Singh Kang
+Abstract: KView is an image viewing program. 
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kview/index.html
+Files: /usr/share/doc/kde/HTML/en/kview/*.html
+

@@ -1,0 +1,3 @@
+kviewshell: shlib-missing-in-control-file libdjvu.so for usr/lib/libdjvu.so
+kviewshell: package-name-doesnt-match-sonames libdjvu libkmultipage0
+

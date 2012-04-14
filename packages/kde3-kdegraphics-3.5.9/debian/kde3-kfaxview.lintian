@@ -1,0 +1,4 @@
+kfaxview: no-shlibs-control-file usr/lib/libkfaximage.so
+kfaxview: postinst-must-call-ldconfig usr/lib/libkfaximage.so
+kfaxview: postrm-should-call-ldconfig usr/lib/libkfaximage.so
+kfaxview: package-name-doesnt-match-sonames libkfaximage

@@ -1,0 +1,99 @@
+.TH KDVI "1" "September 2002" KDE "KDE Application"
+.SH NAME
+kdvi \- KDE DVI Viewer
+.SH SYNOPSIS
+.B kviewshell
+[\fIQt-options\fR] [\fIKDE-options\fR] \fIpart file(s)\fR
+.SH DESCRIPTION
+This manual page documents briefly the
+.B kdvi
+KDE Application.
+This manual page was written for the Debian GNU/Linux distribution
+because the original program does not have a manual page.
+.P
+.B KDVI
+is a plugin for the KViewshell program which allows KViewshell to
+display DVI-files (.dvi) which are produced by the TeX typesetting
+system. KDVI supports many extensions of the DVI standard, for
+instance the inclusion of PostScript graphics or hyperlinks. More
+details, examples and all the technical specifications can be found in
+the file KDVI-features.dvi (or see KDVI-features.tex for the TeX
+source of that file). 
+.P
+For up-to-date information, consult KDVI's home page. 
+.P
+TeX is a high-end typesetting system geared towards scientific, and in
+particular mathematical typesetting. More information about TeX and
+DVI can be found on the homepage of the TeX user group or the German
+German DANTE e.V..  
+.P
+This program is part of the official KDE graphics module.
+.SS "Generic options:"
+.TP
+\fB\-\-help\fR
+Show help about options
+.TP
+\fB\-\-help\-qt\fR
+Show Qt specific options
+.TP
+\fB\-\-help\-kde\fR
+Show KDE specific options
+.TP
+\fB\-\-help\-all\fR
+Show all options
+.TP
+\fB\-\-author\fR
+Show author information
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+Show version information
+.TP
+\fB\-\-license\fR
+Show license information
+.TP
+\fB\-\-\fR
+End of options
+.SS "Arguments:"
+.TP
+part
+The part to use
+.SH OPTIONS
+.TP
+\fB\-\-unique\fR
+Check if the file is loaded in another kviewshell. If it is, bring up the other kviewshell. Otherwise, load the file.
+.TP
+\fB\-\-paper\fR
+Sets paper size (not implemented at the moment, only for compatibility with lyx)
+.TP
+file(s)
+Files to load
+.SH "SEE ALSO"
+The full documentation for
+.B kdvi
+is maintained as a docbook manual.  If the
+.B khelpcenter
+program is properly installed at your site, the command
+.IP
+.B khelpcenter help:/kdvi
+.PP
+should give you access to the complete manual.
+.SH AUTHOR
+KViewShell was written by
+.nh
+Matthias Hoelzer-Kluepfel <mhk@caldera.de>,
+David Sweet <dsweet@kde.org>,
+Mark Donohoe,
+Markku Hihnala,
+David Faure,
+Daniel Duley,
+Espen Sand and
+Stefan Kebekus <kebekus@kde.org>.
+.hy
+.br
+Please use http://bugs.kde.org to report bugs, do not mail the authors directly.
+.br
+This manual page was prepared by
+.nh
+Karolina Lindqvist <pgd\-karolinali@algonet.se>
+.hy
+for the Debian GNU/Linux system (but may be used by others).

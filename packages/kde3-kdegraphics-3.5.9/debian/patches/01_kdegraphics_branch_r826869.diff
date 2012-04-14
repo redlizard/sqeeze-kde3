@@ -1,0 +1,1347 @@
+#DPATCHLEVEL=0
+--- kpdf/kpdf_part.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kpdf/kpdf_part.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kpdf
+ Name=KPDF
+ Name[ar]=برنامج KPDF
+--- kpdf/xpdf/xpdf/JBIG2Stream.cc	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kpdf/xpdf/xpdf/JBIG2Stream.cc	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -507,7 +507,7 @@
+     ++nBytesRead;
+   }
+   while (1) {
+-    if (bufLen >= 7 && ((buf >> (bufLen - 7)) & 0x7f) == 0) {
++    if (bufLen >= 11 && ((buf >> (bufLen - 7)) & 0x7f) == 0) {
+       if (bufLen <= 12) {
+ 	code = buf << (12 - bufLen);
+       } else {
+@@ -550,14 +550,15 @@
+     ++nBytesRead;
+   }
+   while (1) {
+-    if (bufLen >= 6 && ((buf >> (bufLen - 6)) & 0x3f) == 0) {
++    if (bufLen >= 10 && ((buf >> (bufLen - 6)) & 0x3f) == 0) {
+       if (bufLen <= 13) {
+ 	code = buf << (13 - bufLen);
+       } else {
+ 	code = buf >> (bufLen - 13);
+       }
+       p = &blackTab1[code & 0x7f];
+-    } else if (bufLen >= 4 && ((buf >> (bufLen - 4)) & 0x0f) == 0) {
++    } else if (bufLen >= 7 && ((buf >> (bufLen - 4)) & 0x0f) == 0 &&
++	       ((buf >> (bufLen - 6)) & 0x03) != 0) {
+       if (bufLen <= 12) {
+ 	code = buf << (12 - bufLen);
+       } else {
+--- kpdf/xpdf/xpdf/Lexer.cc	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kpdf/xpdf/xpdf/Lexer.cc	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -298,7 +298,7 @@
+ 	  n = 0;
+ 	  
+ 	  // we are growing see if the document is not malformed and we are growing too much
+-	  if (objNum > 0)
++	  if (objNum > 0 && xref != NULL)
+ 	  {
+ 	    int newObjNum = xref->getNumEntry(curStr.streamGetPos());
+ 	    if (newObjNum != objNum)
+--- kpdf/xpdf/splash/SplashXPathScanner.cc	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kpdf/xpdf/splash/SplashXPathScanner.cc	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -397,7 +397,7 @@
+ 	for (; xx + 7 <= xx0; xx += 8) {
+ 	  *p++ = 0x00;
+ 	}
+-	if (xx <= xx0) {
++	if (xx < xx0) {
+ 	  *p &= 0xff >> (xx0 & 7);
+ 	}
+       }
+@@ -406,6 +406,7 @@
+       }
+     }
+     xx0 = (*x1 + 1) * splashAASize;
++    if (xx0 > aaBuf->getWidth()) xx0 = aaBuf->getWidth();
+     // set [xx, xx0) to 0
+     if (xx < xx0) {
+       p = aaBuf->getDataPtr() + yy * aaBuf->getRowSize() + (xx >> 3);
+@@ -420,7 +421,7 @@
+       for (; xx + 7 <= xx0; xx += 8) {
+ 	*p++ = 0x00;
+       }
+-      if (xx <= xx0) {
++      if (xx < xx0) {
+ 	*p &= 0xff >> (xx0 & 7);
+       }
+     }
+--- kpdf/xpdf/splash/SplashFont.cc	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kpdf/xpdf/splash/SplashFont.cc	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -167,27 +167,35 @@
+     size = ((bitmap2.w + 7) >> 3) * bitmap2.h;
+   }
+   p = NULL; // make gcc happy
+-  for (j = 0; j < cacheAssoc; ++j) {
+-    if ((cacheTags[i+j].mru & 0x7fffffff) == cacheAssoc - 1) {
+-      cacheTags[i+j].mru = 0x80000000;
+-      cacheTags[i+j].c = c;
+-      cacheTags[i+j].xFrac = (short)xFrac;
+-      cacheTags[i+j].yFrac = (short)yFrac;
+-      cacheTags[i+j].x = bitmap2.x;
+-      cacheTags[i+j].y = bitmap2.y;
+-      cacheTags[i+j].w = bitmap2.w;
+-      cacheTags[i+j].h = bitmap2.h;
+-      p = cache + (i+j) * glyphSize;
+-      memcpy(p, bitmap2.data, size);
+-    } else {
+-      ++cacheTags[i+j].mru;
++  if (cacheAssoc == 0)
++  {
++    // we had problems on the malloc of the cache, so ignore it
++    *bitmap = bitmap2;
++  }
++  else
++  {
++    for (j = 0; j < cacheAssoc; ++j) {
++      if ((cacheTags[i+j].mru & 0x7fffffff) == cacheAssoc - 1) {
++        cacheTags[i+j].mru = 0x80000000;
++        cacheTags[i+j].c = c;
++        cacheTags[i+j].xFrac = (short)xFrac;
++        cacheTags[i+j].yFrac = (short)yFrac;
++        cacheTags[i+j].x = bitmap2.x;
++        cacheTags[i+j].y = bitmap2.y;
++        cacheTags[i+j].w = bitmap2.w;
++        cacheTags[i+j].h = bitmap2.h;
++        p = cache + (i+j) * glyphSize;
++        memcpy(p, bitmap2.data, size);
++      } else {
++        ++cacheTags[i+j].mru;
++      }
+     }
++    *bitmap = bitmap2;
++    bitmap->data = p;
++    bitmap->freeData = gFalse;
++    if (bitmap2.freeData) {
++      gfree(bitmap2.data);
++    }
+   }
+-  *bitmap = bitmap2;
+-  bitmap->data = p;
+-  bitmap->freeData = gFalse;
+-  if (bitmap2.freeData) {
+-    gfree(bitmap2.data);
+-  }
+   return gTrue;
+ }
+--- kpdf/xpdf/splash/Splash.cc	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kpdf/xpdf/splash/Splash.cc	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1674,15 +1674,37 @@
+   Guchar *p;
+   int x1, y1, xx, xx1, yy;
+ 
++  p = glyph->data;
++  int xStart = x0 - glyph->x;
++  int yStart = y0 - glyph->y;
++  int xxLimit = glyph->w;
++  int yyLimit = glyph->h;
++
++  if (yStart < 0)
++  {
++    p += glyph->w * -yStart; // move p to the beginning of the first painted row
++    yyLimit += yStart;
++    yStart = 0;
++  }
++
++  if (xStart < 0)
++  {
++    p += -xStart; // move p to the first painted pixel
++    xxLimit += xStart;
++    xStart = 0;
++  }
++
++  if (xxLimit + xStart >= bitmap->width) xxLimit = bitmap->width - xStart;
++  if (yyLimit + yStart >= bitmap->height) yyLimit = bitmap->height - yStart;
++
+     if (noClip) {
+       if (glyph->aa) {
+-	pipeInit(&pipe, x0 - glyph->x, y0 - glyph->y,
++	pipeInit(&pipe, xStart, yStart,
+ 		 state->fillPattern, NULL, state->fillAlpha, gTrue, gFalse);
+-	p = glyph->data;
+-	for (yy = 0, y1 = y0 - glyph->y; yy < glyph->h; ++yy, ++y1) {
+-	  pipeSetXY(&pipe, x0 - glyph->x, y1);
+-	  for (xx = 0, x1 = x0 - glyph->x; xx < glyph->w; ++xx, ++x1) {
+-	    alpha = *p++;
++	for (yy = 0, y1 = yStart; yy < yyLimit; ++yy, ++y1) {
++	  pipeSetXY(&pipe, xStart, y1);
++	  for (xx = 0, x1 = xStart; xx < xxLimit; ++xx, ++x1) {
++	    alpha = p[xx];
+ 	    if (alpha != 0) {
+ 	      pipe.shape = (SplashCoord)(alpha / 255.0);
+ 	      pipeRun(&pipe);
+@@ -1692,16 +1714,18 @@
+ 	      pipeIncX(&pipe);
+ 	    }
+ 	  }
++	  p += glyph->w;
+ 	}
+       } else {
+-	pipeInit(&pipe, x0 - glyph->x, y0 - glyph->y,
++	const int widthEight = (int)ceil(glyph->w / 8.0);
++
++	pipeInit(&pipe, xStart, yStart,
+ 		 state->fillPattern, NULL, state->fillAlpha, gFalse, gFalse);
+-	p = glyph->data;
+-	for (yy = 0, y1 = y0 - glyph->y; yy < glyph->h; ++yy, ++y1) {
+-	  pipeSetXY(&pipe, x0 - glyph->x, y1);
+-	  for (xx = 0, x1 = x0 - glyph->x; xx < glyph->w; xx += 8) {
+-	    alpha0 = *p++;
+-	    for (xx1 = 0; xx1 < 8 && xx + xx1 < glyph->w; ++xx1, ++x1) {
++	for (yy = 0, y1 = yStart; yy < yyLimit; ++yy, ++y1) {
++	  pipeSetXY(&pipe, xStart, y1);
++	  for (xx = 0, x1 = xStart; xx < xxLimit; xx += 8) {
++	    alpha0 = p[xx / 8];
++	    for (xx1 = 0; xx1 < 8 && xx + xx1 < xxLimit; ++xx1, ++x1) {
+ 	      if (alpha0 & 0x80) {
+ 		pipeRun(&pipe);
+ 		updateModX(x1);
+@@ -1712,18 +1736,18 @@
+ 	      alpha0 <<= 1;
+ 	    }
+ 	  }
++	  p += widthEight;
+ 	}
+       }
+     } else {
+       if (glyph->aa) {
+-	pipeInit(&pipe, x0 - glyph->x, y0 - glyph->y,
++	pipeInit(&pipe, xStart, yStart,
+ 		 state->fillPattern, NULL, state->fillAlpha, gTrue, gFalse);
+-	p = glyph->data;
+-	for (yy = 0, y1 = y0 - glyph->y; yy < glyph->h; ++yy, ++y1) {
+-	  pipeSetXY(&pipe, x0 - glyph->x, y1);
+-	  for (xx = 0, x1 = x0 - glyph->x; xx < glyph->w; ++xx, ++x1) {
++	for (yy = 0, y1 = yStart; yy < yyLimit; ++yy, ++y1) {
++	  pipeSetXY(&pipe, xStart, y1);
++	  for (xx = 0, x1 = xStart; xx < xxLimit; ++xx, ++x1) {
+ 	    if (state->clip->test(x1, y1)) {
+-	      alpha = *p++;
++	      alpha = p[xx];
+ 	      if (alpha != 0) {
+ 		pipe.shape = (SplashCoord)(alpha / 255.0);
+ 		pipeRun(&pipe);
+@@ -1734,19 +1758,20 @@
+ 	      }
+ 	    } else {
+ 	      pipeIncX(&pipe);
+-	      ++p;
+ 	    }
+ 	  }
++	  p += glyph->w;
+ 	}
+       } else {
+-	pipeInit(&pipe, x0 - glyph->x, y0 - glyph->y,
++	const int widthEight = (int)ceil(glyph->w / 8.0);
++
++	pipeInit(&pipe, xStart, yStart,
+ 		 state->fillPattern, NULL, state->fillAlpha, gFalse, gFalse);
+-	p = glyph->data;
+-	for (yy = 0, y1 = y0 - glyph->y; yy < glyph->h; ++yy, ++y1) {
+-	  pipeSetXY(&pipe, x0 - glyph->x, y1);
+-	  for (xx = 0, x1 = x0 - glyph->x; xx < glyph->w; xx += 8) {
+-	    alpha0 = *p++;
+-	    for (xx1 = 0; xx1 < 8 && xx + xx1 < glyph->w; ++xx1, ++x1) {
++	for (yy = 0, y1 = yStart; yy < yyLimit; ++yy, ++y1) {
++	  pipeSetXY(&pipe, xStart, y1);
++	  for (xx = 0, x1 = xStart; xx < xxLimit; xx += 8) {
++	    alpha0 = p[xx / 8];
++	    for (xx1 = 0; xx1 < 8 && xx + xx1 < xxLimit; ++xx1, ++x1) {
+ 	      if (state->clip->test(x1, y1)) {
+ 		if (alpha0 & 0x80) {
+ 		  pipeRun(&pipe);
+@@ -1761,6 +1786,7 @@
+ 	      alpha0 <<= 1;
+ 	    }
+ 	  }
++	  p += widthEight;
+ 	}
+       }
+     }
+--- kpdf/shell/kpdf.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kpdf/shell/kpdf.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ MimeType=application/pdf;
+ Terminal=false
+ Name=KPDF
+@@ -65,7 +64,8 @@
+ GenericName[th]=ตัวแสดงผล PDF
+ GenericName[tr]=PDF Görüntüleyici
+ GenericName[uk]=Переглядач PDF
+-GenericName[uz]=PDF кўрувчи
++GenericName[uz]=PDF koʻruvchi
++GenericName[uz@cyrillic]=PDF кўрувчи
+ GenericName[ven]=Tshivhoni tsha PDF
+ GenericName[wa]=Håyneu di documints PDF
+ GenericName[xh]=Umboniseli we PDF
+@@ -73,10 +73,10 @@
+ GenericName[zh_HK]=PDF 檢視器
+ GenericName[zh_TW]=PDF 檢視器
+ GenericName[zu]=Umboniseli we PDF
+-Exec=kpdf %U %i %m -caption "%c"
++Exec=kpdf %U %i -caption "%c"
+ Icon=kpdf
+ Type=Application
+ DocPath=kpdf/index.html
+ InitialPreference=7
+-Categories=Qt;KDE;Graphics;PDFViewer;
++Categories=Qt;KDE;Graphics;Viewer;
+ 
+--- kfaxview/kfaxmultipage_tiff.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfaxview/kfaxmultipage_tiff.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=kfaxview_tiff
+ Name[da]=Kfaxview TIFF
+ Name[ne]=केडीई फ्याक्स दृश्य टिफ
+--- kfaxview/kfaxmultipage.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfaxview/kfaxmultipage.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=kfaxview
+ Name[hu]=KFaxView
+ Name[ja]=KfaxView
+--- kfaxview/kfaxview.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfaxview/kfaxview.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Fax Viewer
+ GenericName[af]=Faks Aansig
+ GenericName[ar]=عارض الفاكس
+@@ -54,7 +53,8 @@
+ GenericName[th]=เครื่องมือแสดงโทรสารของ KDE
+ GenericName[tr]=Faks Görüntüleyici
+ GenericName[uk]=Переглядач факсів
+-GenericName[uz]=Факс кўрувчи
++GenericName[uz]=Faks koʻruvchi
++GenericName[uz@cyrillic]=Факс кўрувчи
+ GenericName[ven]=Muvhoni wa Fekisi
+ GenericName[wa]=Håyneu di facs
+ GenericName[xh]=Umboniseli Wefax
+--- kview/kviewcanvas/config/kviewcanvasconfig.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/kviewcanvas/config/kviewcanvasconfig.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kview
+ Type=Service
+ ServiceTypes=KCModule
+@@ -62,7 +61,8 @@
+ Name[tg]=Намоишгар
+ Name[tr]=Görüntüleyici
+ Name[uk]=Переглядач
+-Name[uz]=Кўрувчи
++Name[uz]=Koʻruvchi
++Name[uz@cyrillic]=Кўрувчи
+ Name[wa]=Håyneu
+ Name[zh_CN]=查看器
+ Name[zh_HK]=檢視器
+--- kview/kview.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/kview.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kview -caption "%c" %i %m %U
+ Icon=kview
+@@ -64,7 +63,8 @@
+ GenericName[th]=เครื่องมือแสดงภาพ
+ GenericName[tr]=Resim Göstericisi
+ GenericName[uk]=Переглядач зображень
+-GenericName[uz]=Расм кўрувчи
++GenericName[uz]=Rasm koʻruvchi
++GenericName[uz@cyrillic]=Расм кўрувчи
+ GenericName[ven]=Tshivhoni tsha Mutaleli
+ GenericName[wa]=Håyneu d' imådjes
+ GenericName[xh]=Umboniseli Womfanekiso
+--- kview/photobook/photobook.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/photobook/photobook.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Photobook
+ GenericName[bg]=Фотоалбум
+ GenericName[br]=Levr foto
+@@ -38,7 +37,8 @@
+ GenericName[sv]=Fotoalbum
+ GenericName[ta]=புகைப்படப் புத்தகம்
+ GenericName[tr]=Albüm
+-GenericName[uz]=Расмлар тўплами
++GenericName[uz]=Rasmlar toʻplami
++GenericName[uz@cyrillic]=Расмлар тўплами
+ GenericName[zh_HK]=照相簿
+ 
+ MimeType=inode/directory
+@@ -76,7 +76,8 @@
+ Name[sv]=Fotoalbum
+ Name[ta]=புகைப்படப் புத்தகம்
+ Name[tr]=Albüm
+-Name[uz]=Расмлар тўплами
++Name[uz]=Rasmlar toʻplami
++Name[uz@cyrillic]=Расмлар тўплами
+ Name[zh_HK]=照相簿
+ Comment=Easily browse a folder of photographs
+ Comment[bg]=Колекциониране на снимки като във фотоалбум
+--- kview/config/kviewgeneralconfig.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/config/kviewgeneralconfig.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kview
+ Type=Service
+ ServiceTypes=KCModule
+@@ -70,7 +69,8 @@
+ Name[th]=แอพพลิเคชัน
+ Name[tr]=Uygulama
+ Name[uk]=Програма
+-Name[uz]=Дастур
++Name[uz]=Dastur
++Name[uz@cyrillic]=Дастур
+ Name[ven]=Apulifikhesheni
+ Name[wa]=Programe
+ Name[xh]=Isicelo
+--- kview/config/plugins/kviewpluginsconfig.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/config/plugins/kviewpluginsconfig.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=plugin
+ Type=Service
+ ServiceTypes=KCModule
+@@ -62,7 +61,8 @@
+ Name[tg]=Модулҳо
+ Name[tr]=Eklentiler
+ Name[uk]=Втулки
+-Name[uz]=Плагинлар
++Name[uz]=Plaginlar
++Name[uz@cyrillic]=Плагинлар
+ Name[wa]=Tchôke-divins
+ Name[zh_CN]=插件
+ Name[zh_HK]=插件
+@@ -111,7 +111,8 @@
+ Comment[ta]=சொருகுப்பொருள்களைத் தேர்ந்தெடுத்து வடிவமைக்கவும்
+ Comment[tr]=Eklentilerinizi Seçin ve Yapılandırın:
+ Comment[uk]=Виберіть та налаштуйте ваші втулки
+-Comment[uz]=Плагинларни танлаш ва мослаш
++Comment[uz]=Plaginlarni tanlash va moslash
++Comment[uz@cyrillic]=Плагинларни танлаш ва мослаш
+ Comment[zh_CN]=选择并配置您的插件
+ Comment[zh_HK]=選擇及設定你的插件
+ Comment[zh_TW]=選擇並設定您的外掛程式
+--- kview/config/kview.setdlg	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/config/kview.setdlg	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -49,7 +49,8 @@
+ Name[tg]=Намоишгар
+ Name[tr]=Görüntüleyici
+ Name[uk]=Переглядач
+-Name[uz]=Кўрувчи
++Name[uz]=Koʻruvchi
++Name[uz@cyrillic]=Кўрувчи
+ Name[wa]=Håyneu
+ Name[zh_CN]=查看器
+ Name[zh_HK]=檢視器
+@@ -159,7 +160,8 @@
+ Name[th]=แอพพลิเคชัน
+ Name[tr]=Uygulama
+ Name[uk]=Програма
+-Name[uz]=Дастур
++Name[uz]=Dastur
++Name[uz@cyrillic]=Дастур
+ Name[ven]=Apulifikhesheni
+ Name[wa]=Programe
+ Name[xh]=Isicelo
+--- kview/kviewviewer/config/kviewviewerpluginsconfig.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/kviewviewer/config/kviewviewerpluginsconfig.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=plugin
+ Type=Service
+ ServiceTypes=KCModule
+@@ -62,7 +61,8 @@
+ Name[tg]=Модулҳо
+ Name[tr]=Eklentiler
+ Name[uk]=Втулки
+-Name[uz]=Плагинлар
++Name[uz]=Plaginlar
++Name[uz@cyrillic]=Плагинлар
+ Name[wa]=Tchôke-divins
+ Name[zh_CN]=插件
+ Name[zh_HK]=插件
+@@ -111,7 +111,8 @@
+ Comment[ta]=சொருகுப்பொருள்களைத் தேர்ந்தெடுத்து வடிவமைக்கவும்
+ Comment[tr]=Eklentilerinizi Seçin ve Yapılandırın:
+ Comment[uk]=Виберіть та налаштуйте ваші втулки
+-Comment[uz]=Плагинларни танлаш ва мослаш
++Comment[uz]=Plaginlarni tanlash va moslash
++Comment[uz@cyrillic]=Плагинларни танлаш ва мослаш
+ Comment[zh_CN]=选择并配置您的插件
+ Comment[zh_HK]=選擇及設定你的插件
+ Comment[zh_TW]=選擇並設定您的外掛程式
+--- kview/modules/effects/kvieweffects.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/modules/effects/kvieweffects.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=effects
+ Type=Service
+ ServiceTypes=KPluginInfo
+@@ -60,7 +59,8 @@
+ Name[tg]=Воситаҳо
+ Name[tr]=Efektler
+ Name[uk]=Ефекти
+-Name[uz]=Эффектлар
++Name[uz]=Effektlar
++Name[uz@cyrillic]=Эффектлар
+ Name[wa]=Efets
+ Name[zh_CN]=特效
+ Name[zh_HK]=效果
+@@ -112,7 +112,8 @@
+ Comment[tg]=Якчанд воситаҳои коркарди тасвирот
+ Comment[tr]=Resim efektleri oluşturur
+ Comment[uk]=Надає деякі ефекти зображень
+-Comment[uz]=Расм эффектлари
++Comment[uz]=Rasm effektlari
++Comment[uz@cyrillic]=Расм эффектлари
+ Comment[zh_CN]=提供某些图像特效
+ Comment[zh_HK]=提供一些圖像效果
+ Comment[zh_TW]=提供影像特效
+--- kview/modules/browser/kviewbrowser.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/modules/browser/kviewbrowser.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=browser
+ Type=Service
+ ServiceTypes=KPluginInfo
+@@ -63,7 +62,8 @@
+ Name[tg]=Воқеъанигор
+ Name[tr]=Tarayıcı
+ Name[uk]=Навігатор
+-Name[uz]=Браузер
++Name[uz]=Brauzer
++Name[uz@cyrillic]=Браузер
+ Name[ven]=Burausa
+ Name[wa]=Foyteuse
+ Name[xh]=Umkhangeli wencwadi
+--- kview/modules/presenter/config/kviewpresenterconfig.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/modules/presenter/config/kviewpresenterconfig.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=kpresenter
+ Type=Service
+ ServiceTypes=KCModule
+@@ -57,7 +56,8 @@
+ Name[ta]=பெயர்
+ Name[tg]=Ном
+ Name[uk]=Назва
+-Name[uz]=Номи
++Name[uz]=Nomi
++Name[uz@cyrillic]=Номи
+ Name[wa]=No
+ Name[zh_CN]=名称
+ Name[zh_HK]=名稱
+@@ -112,7 +112,8 @@
+ Comment[tg]=Эзоҳ
+ Comment[tr]=Açıklama
+ Comment[uk]=Коментар
+-Comment[uz]=Изоҳ
++Comment[uz]=Izoh
++Comment[uz@cyrillic]=Изоҳ
+ Comment[wa]=Rawete
+ Comment[zh_CN]=注释
+ Comment[zh_HK]=註解
+--- kview/modules/presenter/kviewpresenter.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/modules/presenter/kviewpresenter.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=presenter
+ Type=Service
+ ServiceTypes=KPluginInfo
+--- kview/modules/scanner/kviewscanner.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/modules/scanner/kviewscanner.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=scanner
+ Type=Service
+ ServiceTypes=KPluginInfo
+@@ -61,7 +60,8 @@
+ Name[tg]=Сканер
+ Name[tr]=Tarayıcı
+ Name[uk]=Сканер
+-Name[uz]=Сканнер
++Name[uz]=Skanner
++Name[uz@cyrillic]=Сканнер
+ Name[ven]=Tshinanguludzi
+ Name[wa]=Sicanrece
+ Name[xh]=Umvavanyi
+--- kview/modules/template/kviewtemplate.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kview/modules/template/kviewtemplate.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=mypluginicon
+ Type=Service
+ ServiceTypes=KPluginInfo
+@@ -63,7 +62,8 @@
+ Name[tg]=Қолиб
+ Name[tr]=Şablon
+ Name[uk]=Шаблон
+-Name[uz]=Намуна
++Name[uz]=Namuna
++Name[uz@cyrillic]=Намуна
+ Name[wa]=Modele
+ Name[zh_CN]=模板
+ Name[zh_HK]=範本
+--- libkscan/scanservice.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ libkscan/scanservice.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KDE Scan Service
+ Name[af]=Kde Skandeer Diens
+@@ -57,7 +56,8 @@
+ Name[th]=บริการสแกนภาพ - K
+ Name[tr]=KDE Tarama Servisi
+ Name[uk]=Служба пошуку KDE
+-Name[uz]=KDE скан қилиш хизмати
++Name[uz]=KDE skan qilish xizmati
++Name[uz@cyrillic]=KDE скан қилиш хизмати
+ Name[ven]=Tshishumiswa tshau naga tsha KDE
+ Name[wa]=Siervice di scanaedje di KDE
+ Name[xh]=Inkonzo yemita yovavanyo ye KDE
+--- kpovmodeler/kpovmodeler.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kpovmodeler/kpovmodeler.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -59,4 +59,3 @@
+ Type=Application
+ X-KDE-Library=libkpovmodelerpart
+ Categories=Qt;KDE;Graphics;
+-Encoding=UTF-8
+--- kgamma/kcmkgamma/kgamma.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kgamma/kcmkgamma/kgamma.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -78,7 +78,7 @@
+ Name[tg]=Гамма
+ Name[th]=แกมมา
+ Name[uk]=Гама
+-Name[uz]=Гамма
++Name[uz@cyrillic]=Гамма
+ Name[wa]=Gama
+ Name[xh]=Unobumba wesithathu konoobumba besiGrike
+ Name[zh_HK]=伽馬（Gamma）
+@@ -116,7 +116,7 @@
+ Keywords[ta]=கேகாமா, கேகாமா, காமா, காமா
+ Keywords[tg]=KGamma,kgamma,Gamma,gamma,гамма,монитор
+ Keywords[uk]=KGamma, kgamma, Gamma, gamma, гама, яскравість
+-Keywords[uz]=KGamma, kgamma, Гамма, гамма
++Keywords[uz@cyrillic]=KGamma, kgamma, Гамма, гамма
+ Keywords[wa]=KGamma, kgamma, Gama, gama
+ Keywords[zh_CN]=KGamma, kgamma, Gamma, gamma,伽玛
+ Type=Application
+@@ -126,5 +126,4 @@
+ X-KDE-ModuleType=Library
+ X-KDE-Test-Module=true
+ NoDisplay=true
+-Encoding=UTF-8
+ Categories=Qt;KDE;Settings;X-KDE-settings-peripherals;
+--- kdvi/kdvi.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kdvi/kdvi.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=DVI Viewer
+ GenericName[af]=Dvi Aansig
+ GenericName[ar]=عارض ملفات DVI
+@@ -61,7 +60,8 @@
+ GenericName[th]=ตัวแสดงผล DVI
+ GenericName[tr]=DVI Görüntüleyici
+ GenericName[uk]=Переглядач DVI
+-GenericName[uz]=DVI кўрувчи
++GenericName[uz]=DVI koʻruvchi
++GenericName[uz@cyrillic]=DVI кўрувчи
+ GenericName[ven]=Muvhoni wa DVI
+ GenericName[wa]=Håyneu di fitchîs DVI
+ GenericName[xh]=Umboniseli we DVI
+--- kdvi/fontpool.cpp	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kdvi/fontpool.cpp	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -111,6 +111,9 @@
+   kdDebug(4300) << "fontPool::~fontPool() called" << endl;
+ #endif
+ 
++  // need to manually clear the fonts _before_ freetype gets unloaded
++  fontList.clear();
++
+ #ifdef HAVE_FREETYPE
+   if (FreeType_could_be_loaded == true)
+     FT_Done_FreeType( FreeType_library );
+--- kcoloredit/kcoloredit.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kcoloredit/kcoloredit.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kcoloredit %i %m %U
+ Icon=kcoloredit
+--- kcoloredit/uninstall.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kcoloredit/uninstall.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+--- kcoloredit/kcolorchooser.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kcoloredit/kcolorchooser.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kcolorchooser %i %m
+ Icon=kcolorchooser
+@@ -63,7 +62,8 @@
+ GenericName[th]=เครื่องมือเลือกสีของ KDE
+ GenericName[tr]=Renk Seçici
+ GenericName[uk]=Селектор кольорів
+-GenericName[uz]=Ранг танловчи
++GenericName[uz]=Rang tanlovchi
++GenericName[uz@cyrillic]=Ранг танловчи
+ GenericName[ven]=Munangi wa Muvhala
+ GenericName[wa]=Tchoezixheu di coleurs
+ GenericName[xh]=Mkhethi Wombala
+@@ -97,7 +97,8 @@
+ Name[th]=เครื่องมือเลือกสี - K
+ Name[tr]=K Renk Seçici
+ Name[uk]=Селектор кольорів
+-Name[uz]=Ранг танловчи
++Name[uz]=Rang tanlovchi
++Name[uz@cyrillic]=Ранг танловчи
+ Name[ven]=Tshinangi tsha muvhala tsha K
+ Name[xh]=Umkhethi Wombala i K
+ Name[zh_TW]=KColorChooser 顏色選擇器
+--- kooka/kooka.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kooka/kooka.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kooka %i %m %U
+ Icon=scanner
+--- kuickshow/src/kuickshow.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kuickshow/src/kuickshow.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Kuickshow
+ Name[af]=Vinnig-vertoon
+ Name[ar]=عرض سريع
+@@ -81,7 +80,8 @@
+ GenericName[th]=เครื่องมือแสดงภาพ
+ GenericName[tr]=Resim Göstericisi
+ GenericName[uk]=Переглядач зображень
+-GenericName[uz]=Расм кўрувчи
++GenericName[uz]=Rasm koʻruvchi
++GenericName[uz@cyrillic]=Расм кўрувчи
+ GenericName[ven]=Tshivhoni tsha Mutaleli
+ GenericName[wa]=Håyneu d' imådjes
+ GenericName[xh]=Umboniseli Womfanekiso
+--- kolourpaint/kolourpaint.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kolourpaint/kolourpaint.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ 
+ Name=KolourPaint
+ Name[nb]=KPaint
+@@ -66,7 +65,8 @@
+ GenericName[th]=โปรแกรมวาดภาพธรรมดาๆ
+ GenericName[tr]=Boyama Programı
+ GenericName[uk]=Програма для малювання
+-GenericName[uz]=Чизиш дастури
++GenericName[uz]=Chizish dasturi
++GenericName[uz@cyrillic]=Чизиш дастури
+ GenericName[ven]=Mbekanyamushumo ya Pennde
+ GenericName[wa]=Program di dessinaedje
+ GenericName[xh]=Udweliso lwenkqubo lwepeyinti
+--- ksvg/core/ksvgrenderer.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ ksvg/core/ksvgrenderer.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=ServiceType
+ X-KDE-ServiceType=KSVG/Renderer
+ X-KDE-Derived=
+--- ksvg/plugin/ksvgplugin.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ ksvg/plugin/ksvgplugin.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KSVGPlugin
+ Name[ar]=برنامج KSVGPlugin
+ Name[ca]=Connector KSVG
+@@ -72,7 +71,8 @@
+ Comment[tg]=Намоиши SVG
+ Comment[tr]=Boyutlandırılabilir Vektör Grafik Gösterici
+ Comment[uk]=Переглядач векторної графіки
+-Comment[uz]=SVG кўрувчи
++Comment[uz]=SVG koʻruvchi
++Comment[uz@cyrillic]=SVG кўрувчи
+ Comment[ven]=Muvhono wa girafiki wa scalable vector
+ Comment[xh]=Umboniseli wemizobo olinganiselwayo onesalathiso
+ Comment[zh_CN]=可缩放矢量图查看器
+--- ksvg/plugin/backends/libart/ksvglibartcanvas.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ ksvg/plugin/backends/libart/ksvglibartcanvas.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KSVG/Renderer
+ X-KDE-Library=libksvgrendererlibart
+--- ksvg/plugin/backends/agg/ksvgaggcanvas.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ ksvg/plugin/backends/agg/ksvgaggcanvas.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ ServiceTypes=KSVG/Renderer
+ X-KDE-Library=libksvgrendereragg
+--- ksvg/plugin/svgthumbnail.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ ksvg/plugin/svgthumbnail.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Scalable Vector Graphics
+ Name[ar]=رسومات ثابتة قابلة للقياس
+--- ksnapshot/uninstall.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ ksnapshot/uninstall.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+--- ksnapshot/ksnapshot.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ ksnapshot/ksnapshot.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Screen Capture Program
+ GenericName[af]=Skerm Vang Program
+ GenericName[ar]=برنامج تصوير الشاشة
+@@ -56,7 +55,8 @@
+ GenericName[th]=โปรแกรมจับภาพหน้าจอ
+ GenericName[tr]=Ekran Yakalama Programı
+ GenericName[uk]=Захоплювач екрана
+-GenericName[uz]=Скриншот олиш дастури
++GenericName[uz]=Skrinshot olish dasturi
++GenericName[uz@cyrillic]=Скриншот олиш дастури
+ GenericName[ven]=Mbekanya mushumo ino gavha tshikirini
+ GenericName[wa]=Programe po fé des waitroûlêyes
+ GenericName[xh]=Iinkcazelo Ezigcina Ikhusi
+--- kviewshell/plugins/djvu/djvumultipage.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kviewshell/plugins/djvu/djvumultipage.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=kdjview
+ Name[hu]=KDjView
+ Name[ja]=Kdjview
+--- kmrml/kmrml/kcontrol/kcmkmrml.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kmrml/kmrml/kcontrol/kcmkmrml.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=kcmshell kcmkmrml
+ Icon=folder_image
+ Type=Application
+@@ -58,7 +57,8 @@
+ Name[th]=ดัชนีรูปภาพ
+ Name[tr]=Resim İndeksi
+ Name[uk]=Індекс зображень
+-Name[uz]=Расм индекси
++Name[uz]=Rasm indeksi
++Name[uz@cyrillic]=Расм индекси
+ Name[ven]=Index ya tshifanyiso
+ Name[wa]=Indecse des imådjes
+ Name[xh]=Isalathisi Somfanekiso
+--- kmrml/kmrml/mrml-servicemenu.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kmrml/kmrml/mrml-servicemenu.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -54,7 +54,8 @@
+ Name[th]=ค้นหาภาพที่เหมือนกัน...
+ Name[tr]=Benzer Resimleri Ara...
+ Name[uk]=Пошук схожих зображень...
+-Name[uz]=Ўхшаш расмларни қидириш
++Name[uz]=Oʻxshash rasmlarni qidirish
++Name[uz@cyrillic]=Ўхшаш расмларни қидириш
+ Name[ven]=Todani zwifanyiso zwielanaho...
+ Name[wa]=Cweri après des rshonnantès imådjes...
+ Name[xh]=Phendla Imifanekiso Efanayo...
+--- kmrml/kmrml/server/daemonwatcher.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kmrml/kmrml/server/daemonwatcher.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KDED KMRML Daemon Watcher
+ Name[ar]=مراقب KDED KMRML Daemon
+--- kfax/kfax.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfax/kfax.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ MimeType=image/fax-g3;image/tiff;
+ GenericName=Fax Viewer
+ GenericName[af]=Faks Aansig
+@@ -55,7 +54,8 @@
+ GenericName[th]=เครื่องมือแสดงโทรสารของ KDE
+ GenericName[tr]=Faks Görüntüleyici
+ GenericName[uk]=Переглядач факсів
+-GenericName[uz]=Факс кўрувчи
++GenericName[uz]=Faks koʻruvchi
++GenericName[uz@cyrillic]=Факс кўрувчи
+ GenericName[ven]=Muvhoni wa Fekisi
+ GenericName[wa]=Håyneu di facs
+ GenericName[xh]=Umboniseli Wefax
+--- kghostview/kghostview_part.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kghostview/kghostview_part.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KGhostView
+ Name[af]=Kghostview
+ Name[ar]=برنامج KGhostView
+--- kghostview/kghostview.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kghostview/kghostview.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KGhostView
+ Name[af]=Kghostview
+ Name[ar]=برنامج KGhostView
+@@ -74,7 +73,8 @@
+ GenericName[th]=เครื่องมือแสดงแฟ้มโพสต์สคริปต์ PS/PDF
+ GenericName[tr]=PS/PDF Görüntüleyici
+ GenericName[uk]=Переглядач PDF/PS
+-GenericName[uz]=PS/PDF кўрувчи
++GenericName[uz]=PS/PDF koʻruvchi
++GenericName[uz@cyrillic]=PS/PDF кўрувчи
+ GenericName[ven]=Muvhoni wa PS/PDF
+ GenericName[wa]=Håyneu di documints PS/PDF
+ GenericName[xh]=Umboniseli we PS/PDF
+--- kamera/kcontrol/kamera.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kamera/kcontrol/kamera.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Comment=Configure Kamera
+ Comment[af]=Konfigureer Kamera
+ Comment[ar]=إعداد Kamera
+@@ -60,7 +59,8 @@
+ Comment[th]=ปรับแต่ง Kamera
+ Comment[tr]=Kamera'yı Yapılandır
+ Comment[uk]=Налаштувати Kamera
+-Comment[uz]=Фотоапаратни мослаш
++Comment[uz]=Fotoaparatni moslash
++Comment[uz@cyrillic]=Фотоапаратни мослаш
+ Comment[ven]=Dzudzanya kamera
+ Comment[xh]=Qwalasela Umfoti
+ Comment[zh_CN]=配置 Kamera
+@@ -175,7 +175,8 @@
+ Name[th]=กล้องดิจิตอล
+ Name[tr]=Sayısal Kamera
+ Name[uk]=Цифровий фотоапарат
+-Name[uz]=Фотоапарат
++Name[uz]=Fotoaparat
++Name[uz@cyrillic]=Фотоапарат
+ Name[ven]=Tshau dzhia zwifanyiso tsha didzhithala
+ Name[xh]=Ikhamera Yesuntswana
+ Name[zh_CN]=数码相机
+--- kruler/uninstall.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kruler/uninstall.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,3 +1,2 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Hidden=true
+--- kruler/eventsrc	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kruler/eventsrc	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -57,7 +57,8 @@
+ Comment[th]=ไม้บรรทัดบนหน้าจอของ KDE
+ Comment[tr]=KDE Ekran Cetveli
+ Comment[uk]=Лінійка екрана KDE
+-Comment[uz]=KDE экран линейкаси
++Comment[uz]=KDE ekran lineykasi
++Comment[uz@cyrillic]=KDE экран линейкаси
+ Comment[ven]=Muvhusi wa tshikirini tsha KDE
+ Comment[xh]=Umlawuli wekhusi le KDE
+ Comment[zh_CN]=KDE 屏幕标尺
+--- kruler/kruler.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kruler/kruler.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Screen Ruler
+ GenericName[af]=Skerm Liniaal
+ GenericName[ar]=مسطرة الشاشة
+@@ -52,7 +51,8 @@
+ GenericName[th]=ไม้บรรทัดสำหรับจอภาพ
+ GenericName[tr]=Ekran Cetveli
+ GenericName[uk]=Лінійка екрана
+-GenericName[uz]=Экран линейкаси
++GenericName[uz]=Ekran lineykasi
++GenericName[uz@cyrillic]=Экран линейкаси
+ GenericName[ven]=Muvhusi wa Tshikirini
+ GenericName[zh_CN]=屏幕标尺
+ GenericName[zh_HK]=螢幕尺規
+--- kiconedit/kiconedit.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kiconedit/kiconedit.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ SwallowExec=
+ SwallowTitle=
+ GenericName=Icon Editor
+@@ -58,7 +57,8 @@
+ GenericName[th]=เครื่องมือแก้ไขไอคอน
+ GenericName[tr]=Simge Düzenleyici
+ GenericName[uk]=Редактор піктограм
+-GenericName[uz]=Нишонча таҳрирчи
++GenericName[uz]=Nishoncha tahrirchi
++GenericName[uz@cyrillic]=Нишонча таҳрирчи
+ GenericName[ven]=Musengulusi wa Aikhono
+ GenericName[wa]=Aspougneu d' imådjetes
+ GenericName[xh]=Umhleli we Icon
+--- kfile-plugins/ps/kfile_ps.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/ps/kfile_ps.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=PostScript Info
+ Name[af]=Postscript Inligting
+@@ -52,7 +51,8 @@
+ Name[th]=ข้อมูลโพสต์สคริปต์
+ Name[tr]=PostScript Bilgisi
+ Name[uk]=Інформація про PostScript
+-Name[uz]=PostScript ҳақида маълумот
++Name[uz]=PostScript haqida maʼlumot
++Name[uz@cyrillic]=PostScript ҳақида маълумот
+ Name[ven]=Mafhungo a mabammbiri a poso
+ Name[wa]=Informåcion sol documint PostScript
+ Name[xh]=Ulwazi Lwe PostScript
+--- kfile-plugins/ps/gsthumbnail.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/ps/gsthumbnail.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=PostScript, PDF and DVI Files
+ Name[ar]=ملفات الــ PostScript ، PDF و DVI
+@@ -50,7 +49,8 @@
+ Name[th]=แฟ้ม PDF, DVI และ โพสต์สคริปต์
+ Name[tr]=PostScript, PDF ve DVI Dosyaları
+ Name[uk]=Файли PostScript, PDF та DVI
+-Name[uz]=PostScript, PDF ва DVI файллари
++Name[uz]=PostScript, PDF va DVI fayllari
++Name[uz@cyrillic]=PostScript, PDF ва DVI файллари
+ Name[zh_CN]=PostScript、PDF 和 DVI 文件
+ Name[zh_HK]=PostScript 、PDF 及 DVI 檔案
+ Name[zh_TW]=PostScript，PDF 與 DVI 檔 
+--- kfile-plugins/dvi/kfile_dvi.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/dvi/kfile_dvi.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Icon=
+ MimeType=application/x-dvi
+ Name=DVI Info
+@@ -49,7 +48,8 @@
+ Name[th]=ข้อมูลแฟ้ม DVI
+ Name[tr]=DVI Bilgisi
+ Name[uk]=Інформація по DVI
+-Name[uz]=DVI ҳақида маълумот
++Name[uz]=DVI haqida maʼlumot
++Name[uz@cyrillic]=DVI ҳақида маълумот
+ Name[wa]=Informåcion sol documint DVI
+ Name[zh_CN]=DVI 信息
+ Name[zh_HK]=DVI 資訊
+--- kfile-plugins/png/kfile_png.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/png/kfile_png.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=PNG Info
+ Name[af]=Png Inligting
+@@ -50,7 +49,8 @@
+ Name[th]=ข้อมูลแฟ้ม PNG
+ Name[tr]=PNG Bilgisi
+ Name[uk]=Інформація про PNG
+-Name[uz]=PNG ҳақида маълумот
++Name[uz]=PNG haqida maʼlumot
++Name[uz@cyrillic]=PNG ҳақида маълумот
+ Name[ven]=Mafhungo a PNG
+ Name[wa]=Informåcion sol imådje PNG
+ Name[xh]=PNG Ulwazi
+--- kfile-plugins/jpeg/kfile_jpeg.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/jpeg/kfile_jpeg.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=JPEG EXIF Info
+ Name[ar]=معلومات JPEG EXIF
+@@ -49,7 +48,8 @@
+ Name[th]=ข้อมูลแฟ้ม JPEG EXIF
+ Name[tr]=JPEG EXIF Bilgisi
+ Name[uk]=Інформація про JPEG EXIF
+-Name[uz]=JPEG EXIF ҳақида маълумот
++Name[uz]=JPEG EXIF haqida maʼlumot
++Name[uz@cyrillic]=JPEG EXIF ҳақида маълумот
+ Name[ven]=Mafhungo a JPEG EXIF
+ Name[wa]=Informåcion sol imådje JPEG EXIF
+ Name[xh]=Ulwazi lwe JPEG EXIF
+--- kfile-plugins/xbm/kfile_xbm.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/xbm/kfile_xbm.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=XBM Info
+ Name[af]=Xbm Inligting
+@@ -50,7 +49,8 @@
+ Name[th]=ข้อมูลแฟ้ม XBM
+ Name[tr]=XBM Bilgisi
+ Name[uk]=Інформація по XBM
+-Name[uz]=XBM ҳақида маълумот
++Name[uz]=XBM haqida maʼlumot
++Name[uz@cyrillic]=XBM ҳақида маълумот
+ Name[ven]=Mafhungo a XBM
+ Name[wa]=Informåcion sol imådje XBM
+ Name[xh]=Ulwazi lwe XBM
+--- kfile-plugins/tiff/kfile_tiff.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/tiff/kfile_tiff.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=TIFF File Meta Info
+ Name[af]=Tiff Lêer Meta Inligting
+@@ -52,7 +51,8 @@
+ Name[th]=ข้อมูลเมตาแฟ้ม TIFF
+ Name[tr]=TIFF Dosya Bilgisi
+ Name[uk]=Метаінформація про файл TIFF
+-Name[uz]=TIFF-файлининг мета-маълумоти
++Name[uz]=TIFF-faylining meta-maʼlumoti
++Name[uz@cyrillic]=TIFF-файлининг мета-маълумоти
+ Name[ven]=Mafhungo a Meta faela ya TIFF
+ Name[wa]=Informåcion sol imådje TIFF
+ Name[xh]=Ulwazi lwe TIFF Ifayile Esembindini
+--- kfile-plugins/raw/kfile_raw.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/raw/kfile_raw.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=RAW Camera Files
+ Name[br]=Restroù kamera kriz
+--- kfile-plugins/pnm/kfile_pnm.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/pnm/kfile_pnm.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=PNM Info
+ Name[ar]=معلومات PNM
+@@ -48,7 +47,8 @@
+ Name[th]=ข้อมูลแฟ้ม PNM
+ Name[tr]=PNM Bilgisi
+ Name[uk]=Інформація про PNM
+-Name[uz]=PNM ҳақида маълумот
++Name[uz]=PNM haqida maʼlumot
++Name[uz@cyrillic]=PNM ҳақида маълумот
+ Name[wa]=Informåcion sol imådje PNM
+ Name[zh_CN]=PNM 信息
+ Name[zh_HK]=PNM 資訊
+--- kfile-plugins/pcx/kfile_pcx.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/pcx/kfile_pcx.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=PCX File Meta Info
+ Name[ar]=معلومات ملف PCX
+@@ -50,7 +49,8 @@
+ Name[th]=ข้อมูลเมตาแฟ้ม PCX
+ Name[tr]=PCX Dosya Bilgisi
+ Name[uk]=Метаінформація про файл PCX
+-Name[uz]=PCX-файлининг мета-маълумоти
++Name[uz]=PCX-faylining meta-maʼlumoti
++Name[uz@cyrillic]=PCX-файлининг мета-маълумоти
+ Name[wa]=Informåcion sol imådje PCX
+ Name[zh_CN]=PCX 文件元信息
+ Name[zh_HK]=PCX 檔案 Meta 資訊
+--- kfile-plugins/exr/kfile_exr.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/exr/kfile_exr.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=EXR Info
+ Name[br]=Titouroù EXR
+@@ -46,7 +45,8 @@
+ Name[th]=ข้อมูลแฟ้ม EXR
+ Name[tr]=EXR Bilgisi
+ Name[uk]=Інформація по EXR
+-Name[uz]=EXR ҳақида маълумот
++Name[uz]=EXR haqida maʼlumot
++Name[uz@cyrillic]=EXR ҳақида маълумот
+ Name[zh_CN]=EXR 信息
+ Name[zh_HK]=EXR 資訊
+ Name[zh_TW]=EXR 資訊
+--- kfile-plugins/xpm/kfile_xpm.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/xpm/kfile_xpm.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=XPM Info
+ Name[br]=Titouroù XPM
+@@ -42,7 +41,8 @@
+ Name[th]=ข้อมูลแฟ้ม XPM
+ Name[tr]=XPM Bilgisi
+ Name[uk]=Інформація про XPM
+-Name[uz]=XPM ҳақида маълумот
++Name[uz]=XPM haqida maʼlumot
++Name[uz@cyrillic]=XPM ҳақида маълумот
+ Name[zh_CN]=XPM 信息
+ Name[zh_HK]=XPM 資訊
+ Name[zh_TW]=XPM 資訊
+--- kfile-plugins/gif/kfile_gif.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/gif/kfile_gif.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=GIF Info
+ Name[af]=Gif Inligting
+@@ -51,7 +50,8 @@
+ Name[th]=ข้อมูลแฟ้ม GIF
+ Name[tr]=GIF Bilgisi
+ Name[uk]=Інформація по GIF
+-Name[uz]=GIF ҳақида маълумот
++Name[uz]=GIF haqida maʼlumot
++Name[uz@cyrillic]=GIF ҳақида маълумот
+ Name[ven]=Mafhungo a GIF
+ Name[wa]=Informåcion sol imådje GIF
+ Name[xh]=Ulwazi lwe GIF
+--- kfile-plugins/pdf/kfile_pdf.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/pdf/kfile_pdf.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=PDF Info
+ Name[af]=Pdf Inligting
+@@ -50,7 +49,8 @@
+ Name[th]=ข้อมูลแฟ้ม PDF
+ Name[tr]=PDF Bilgisi
+ Name[uk]=Інформація про PDF
+-Name[uz]=PDF ҳақида маълумот
++Name[uz]=PDF haqida maʼlumot
++Name[uz@cyrillic]=PDF ҳақида маълумот
+ Name[ven]=Mafhungo a PDF
+ Name[wa]=Informåcion sol documint PDF
+ Name[xh]=PDF Ulwazi
+--- kfile-plugins/ico/kfile_ico.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/ico/kfile_ico.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=ICO Info
+ Name[af]=Ico Inligting
+@@ -50,7 +49,8 @@
+ Name[th]=ข้อมูลแฟ้ม ICO
+ Name[tr]=ICO Bilgisi
+ Name[uk]=Інформація по ICO
+-Name[uz]=ICO ҳақида маълумот
++Name[uz]=ICO haqida maʼlumot
++Name[uz@cyrillic]=ICO ҳақида маълумот
+ Name[ven]=Mafhungo a ICO
+ Name[wa]=Informåcion sol imådjete ICO
+ Name[xh]=Ulwazi lwe ICO
+--- kfile-plugins/dds/kfile_dds.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/dds/kfile_dds.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=DirectDraw Surface Info
+ Name[ca]=Informació de superfície DirectDraw
+--- kfile-plugins/rgb/kfile_rgb.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/rgb/kfile_rgb.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=SGI Image (RGB)
+ Name[br]=Skeudenn SGI (RGB)
+@@ -50,7 +49,8 @@
+ Name[th]=ภาพ SGI (RGB)
+ Name[tr]=SGI Resmi(KYM)
+ Name[uk]=Зображення SGI (RGB)
+-Name[uz]=SGI-расм (RGB)
++Name[uz]=SGI-rasm (RGB)
++Name[uz@cyrillic]=SGI-расм (RGB)
+ Name[zh_CN]=SGI 图像(RGB)
+ Name[zh_HK]=SGI 圖像 (RGB)
+ Name[zh_TW]=SGI 影像（RGB）
+--- kfile-plugins/tga/kfile_tga.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/tga/kfile_tga.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=Truevision Targa Info
+ Name[ar]=معلومات Truevision Targa
+@@ -49,7 +48,8 @@
+ Name[th]=ข้อมูลแฟ้ม Truevision Targa
+ Name[tr]=Truevision Targa Bilgisi
+ Name[uk]=Інформація по Truevision Targa
+-Name[uz]=TGA ҳақида маълумот
++Name[uz]=TGA haqida maʼlumot
++Name[uz@cyrillic]=TGA ҳақида маълумот
+ Name[ven]=Mafhungo a Targa ya mbonalelo ya vhukuma
+ Name[wa]=Informåcion sol imådje Truevision Targa
+ Name[xh]=Ulwazi lwe Truevision Targa
+--- kfile-plugins/bmp/kfile_bmp.desktop	(.../tags/KDE/3.5.9/kdegraphics)	(revision 826869)
++++ kfile-plugins/bmp/kfile_bmp.desktop	(.../branches/KDE/3.5/kdegraphics)	(revision 826869)
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=BMP Info
+ Name[af]=Bmp Inligting
+@@ -51,7 +50,8 @@
+ Name[th]=ข้อมูลแฟ้ม BMP
+ Name[tr]=BMP Bilgisi
+ Name[uk]=Інформація по BMP
+-Name[uz]=BMP ҳақида маълумот
++Name[uz]=BMP haqida maʼlumot
++Name[uz@cyrillic]=BMP ҳақида маълумот
+ Name[ven]=Mafhungo BMP
+ Name[wa]=Informåcion sol imådje BMP
+ Name[xh]=Ulwazi lwe BMP

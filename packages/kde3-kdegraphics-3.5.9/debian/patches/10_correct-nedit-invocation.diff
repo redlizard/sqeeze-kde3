@@ -1,0 +1,11 @@
+--- kdegraphics-orig/kdvi/optionDialogSpecialWidget.cpp
++++ kdegraphics-patched/kdvi/optionDialogSpecialWidget.cpp
+@@ -46,7 +46,7 @@
+   editorDescriptionString += i18n("Kile works very well");
+   
+   editorNameString        += "NEdit";
+-  editorCommandString     += "ncl -noask -line %l %f || nc -noask -line %l %f";
++  editorCommandString     += "nedit-nc -noask -line %l %f";
+   editorDescriptionString += i18n("NEdit perfectly supports inverse search.");
+   
+   editorNameString        += "VIM - Vi IMproved / GUI";

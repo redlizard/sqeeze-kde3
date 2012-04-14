@@ -1,0 +1,30 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-kdegraphics-dbg
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-kghostview	:= -V'kde3-kghostview (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kpovmodeler	:= -V'kde3-kpovmodeler (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-ksvg		:= -V'kde3-ksvg (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kview		:= -V'kde3-kview (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-kviewshell	:= -V'kde3-kviewshell (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkscan1	:= -V'kde3-libkscan1 (>= 4:3.5.9)'
+
+binary-post-install/kde3-kuickshow::
+ifeq ($(DEB_HOST_ARCH), powerpc)
+	chrpath -d -k debian/kuickshow/opt/kde3/lib/libkdeinit_kuickshow.so
+endif
+
+#shlibs_ver = 4:3.5.0-1
+#$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+

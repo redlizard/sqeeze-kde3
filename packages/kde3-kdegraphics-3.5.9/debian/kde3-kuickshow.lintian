@@ -1,0 +1,4 @@
+kuickshow: no-shlibs-control-file usr/lib/libkdeinit_kuickshow.so
+kuickshow: postinst-must-call-ldconfig usr/lib/libkdeinit_kuickshow.so
+kuickshow: postrm-should-call-ldconfig usr/lib/libkdeinit_kuickshow.so
+kuickshow: package-name-doesnt-match-sonames libkdeinit-kuickshow

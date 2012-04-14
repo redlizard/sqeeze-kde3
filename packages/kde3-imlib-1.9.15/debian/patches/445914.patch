@@ -1,0 +1,46 @@
+
+Fixes #445914.
+
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 18 May 2008 02:11:57 +0100
+
+--- imlib-1.9.15.orig/gdk_imlib/misc.c
++++ imlib-1.9.15/gdk_imlib/misc.c
+@@ -455,6 +455,8 @@
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+@@ -1004,6 +1006,8 @@
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+--- imlib-1.9.15.orig/Imlib/misc.c
++++ imlib-1.9.15/Imlib/misc.c
+@@ -423,6 +423,8 @@
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+@@ -1026,6 +1028,8 @@
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+

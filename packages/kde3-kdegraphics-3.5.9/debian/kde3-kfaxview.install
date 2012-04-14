@@ -1,0 +1,17 @@
+debian/tmp/opt/kde3/bin/kfaxview
+debian/tmp/opt/kde3/lib/kde3/kfaxviewpart.so
+debian/tmp/opt/kde3/lib/kde3/kfaxviewpart.la
+debian/tmp/opt/kde3/lib/libkfaximage.so
+debian/tmp/opt/kde3/lib/libkfaximage.la
+debian/tmp/opt/kde3/share/applications/kde/kfaxview.desktop
+debian/tmp/opt/kde3/share/apps/kfaxview/kviewshell.rc
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kfaxview.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kfaxview.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/kfaxview.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kfaxview.png
+debian/tmp/opt/kde3/share/icons/hicolor/scalable/apps/kfaxview.svgz
+debian/tmp/opt/kde3/share/services/kfaxmultipage.desktop
+debian/tmp/opt/kde3/share/services/kfaxmultipage_tiff.desktop
+
+debian/icons/kfaxview.xpm           /opt/kde3/share/pixmaps
+debian/icons/kfaxview-16.xpm        /opt/kde3/share/pixmaps

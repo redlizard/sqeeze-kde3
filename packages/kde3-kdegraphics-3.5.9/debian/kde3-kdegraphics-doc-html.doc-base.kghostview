@@ -1,0 +1,11 @@
+Document: kdegraphics-doc-html-kghostview
+Title: KGhostView Handbook
+Author: Pamela Roberts
+Abstract: KGhostView displays and prints PostScript and
+ Portable Document Format files.
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kghostview/index.html
+Files: /usr/share/doc/kde/HTML/en/kghostview/*.html
+

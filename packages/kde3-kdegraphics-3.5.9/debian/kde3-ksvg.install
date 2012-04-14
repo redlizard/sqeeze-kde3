@@ -1,0 +1,17 @@
+debian/tmp/opt/kde3/bin/printnodetest
+debian/tmp/opt/kde3/bin/svgdisplay
+debian/tmp/opt/kde3/lib/kde3/libksvgplugin.la
+debian/tmp/opt/kde3/lib/kde3/libksvgplugin.so
+debian/tmp/opt/kde3/lib/kde3/libksvgrendererlibart.la
+debian/tmp/opt/kde3/lib/kde3/libksvgrendererlibart.so
+debian/tmp/opt/kde3/lib/kde3/svgthumbnail.la
+debian/tmp/opt/kde3/lib/kde3/svgthumbnail.so
+debian/tmp/opt/kde3/lib/libksvg.so.0
+debian/tmp/opt/kde3/lib/libksvg.so.0.0.1
+debian/tmp/opt/kde3/lib/libtext2path.so.0
+debian/tmp/opt/kde3/lib/libtext2path.so.0.0.0
+debian/tmp/opt/kde3/share/apps/ksvg/ksvgplugin.rc
+debian/tmp/opt/kde3/share/services/ksvglibartcanvas.desktop
+debian/tmp/opt/kde3/share/services/ksvgplugin.desktop
+debian/tmp/opt/kde3/share/services/svgthumbnail.desktop
+debian/tmp/opt/kde3/share/servicetypes/ksvgrenderer.desktop

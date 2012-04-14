@@ -1,0 +1,12 @@
+--- imlib-1.9.15.orig/configure.in
++++ imlib-1.9.15/configure.in
+@@ -197,7 +197,7 @@
+     AC_MSG_RESULT(no)
+     no_xshm=yes
+   else
+-    if test -f "$x_includes/X11/extensions/XShm.h"; then
++    if test -f "$x_includes/X11/extensions/XShm.h" || test -f "/usr/include/X11/extensions/XShm.h"; then
+       AC_MSG_RESULT(yes)
+       AC_DEFINE(HAVE_XSHM_H, 1, [ ])
+     else
+

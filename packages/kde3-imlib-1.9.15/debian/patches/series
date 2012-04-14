@@ -1,0 +1,10 @@
+bpp16-CVE-2007-3568.patch
+search-system-include-for-xshm.patch
+link-against-x11.patch
+imlib-m4.patch
+imlib-config.patch
+445914.patch
+448360.patch
+gxlibs.patch
+gmodule.patch
+gdk-makefile

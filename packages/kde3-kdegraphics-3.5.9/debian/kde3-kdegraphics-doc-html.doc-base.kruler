@@ -1,0 +1,10 @@
+Document: kdegraphics-doc-html-kruler
+Title: KRuler Handbook
+Author: Lauri Watts
+Abstract: KRuler can be used to measure objects on the screen. 
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kruler/index.html
+Files: /usr/share/doc/kde/HTML/en/kruler/*.html
+

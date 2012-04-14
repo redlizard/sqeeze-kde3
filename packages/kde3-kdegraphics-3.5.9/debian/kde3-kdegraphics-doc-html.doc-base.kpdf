@@ -1,0 +1,10 @@
+Document: kdegraphics-doc-html-kpdf
+Title: KPDF Handbook
+Author: Albert Astals Cid
+Abstract: KPDF is a KDE PDF viewer based on xpdf code.
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kpdf/index.html
+Files: /usr/share/doc/kde/HTML/en/kpdf/*.html
+

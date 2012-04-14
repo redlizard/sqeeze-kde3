@@ -1,0 +1,11 @@
+?package(kuickshow):\
+	needs="X11"\
+	section="Applications/Viewers"\
+	hints="KDE"\
+	title="Kuickshow"\
+	icon32x32="/opt/kde3/share/pixmaps/kuickshow.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kuickshow-16.xpm"\
+	command="/opt/kde3/bin/kuickshow"
+
+# Icon 32x32 kuickshow/src/cr32-app-kuickshow.png kuickshow.xpm
+# Icon 16x16 kuickshow/src/cr16-app-kuickshow.png kuickshow-16.xpm

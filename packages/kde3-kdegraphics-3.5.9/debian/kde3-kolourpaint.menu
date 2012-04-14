@@ -1,0 +1,11 @@
+?package(kolourpaint):\
+	needs="X11"\
+	section="Applications/Graphics"\
+	hints="KDE"\
+	title="KolourPaint"\
+	icon32x32="/opt/kde3/share/pixmaps/kolourpaint.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kolourpaint-16.xpm"\
+	command="/opt/kde3/bin/kolourpaint"
+
+# Icon 32x32 kolourpaint/pics/hi32-app-kolourpaint.png kolourpaint.xpm
+# Icon 16x16 kolourpaint/pics/hi16-app-kolourpaint.png kolourpaint-16.xpm

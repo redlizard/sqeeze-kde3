@@ -1,0 +1,379 @@
+Source: kde3-kdegraphics
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Fathi Boudra <fabo@debian.org>, Francesco Pedrini <francesco.pedrini@gmail.com>, Modestas Vainius <modestas@vainius.eu>, Pino Toscano <pino@kde.org>, Sune Vuorela <debian@pusling.com>
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5.0.31), autotools-dev, gawk, gettext, kde3-imlib11-dev, kde3-kdelibs4-dev (>= 3.5.8), libexif-dev (>= 0.6.9), libfribidi-dev, freeglut3-dev, libgphoto2-2-dev, libltdl3-dev, libopenexr-dev (>= 1.2.1), libpaper-dev, libpoppler-qt-dev, libsane-dev (>> 1.0.15), libtiff4-dev, libtiff-tools, libusb-dev, sharutils, libxxf86vm-dev, xpdf, chrpath [powerpc]
+Standards-Version: 3.7.3
+Homepage: http://www.kde.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdegraphics
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdegraphics
+
+Package: kde3-kdegraphics
+Section: kde
+Architecture: all
+Depends: kde3-kamera (>= ${source:Version}), kde3-kcoloredit (>= ${source:Version}), kde3-kdegraphics-kfile-plugins (>= ${source:Version}), kde3-kdvi (>= ${source:Version}), kde3-kfax (>= ${source:Version}), kde3-kfaxview (>= ${source:Version}), kde3-kgamma (>= ${source:Version}), kde3-kghostview (>= ${source:Version}), kde3-kiconedit (>= ${source:Version}), kde3-kmrml (>= ${source:Version}), kde3-kolourpaint (>= ${source:Version}), kde3-kooka (>= ${source:Version}), kde3-kpdf (>= ${source:Version}), kde3-kpovmodeler (>= ${source:Version}), kde3-kruler (>= ${source:Version}), kde3-ksnapshot (>= ${source:Version}), kde3-ksvg (>= ${source:Version}), kde3-kuickshow (>= ${source:Version}), kde3-kview (>= ${source:Version}), kde3-kviewshell (>= ${source:Version}), kde3-libkscan1 (>= ${source:Version})
+Suggests: kde3-kdegraphics-doc-html (>= ${source:Version})
+Description: graphics apps from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of graphics applications
+ provided with the official release of KDE.
+
+Package: kde3-kdegraphics-doc-html
+Architecture: all
+Section: doc
+Suggests: kde3-konqueror | www-browser, kde3-kdebase
+Description: KDE graphics documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE graphics documentation converted to
+ HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/kamera/. Documentation is provided for most
+ KDE graphics packages.
+ .
+ This package is part of KDE, and a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kamera
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: digital camera io_slave for Konqueror
+ This is a digital camera io_slave for KDE which uses gphoto2 and libgpio
+ to allow access to your camera's pictures with the URL camera:/
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kcoloredit
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: a color palette editor and color picker for KDE
+ This package contains two programs, a color palette editor and also a color
+ picker.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kdegraphics-dev
+Section: devel
+Architecture: any
+Depends: kde3-kghostview (= ${binary:Version}), kde3-kmrml (= ${binary:Version}), kde3-kpovmodeler (= ${binary:Version}), kde3-ksvg (= ${binary:Version}), kde3-kuickshow (= ${binary:Version}), kde3-kview (= ${binary:Version}), kde3-kviewshell (= ${binary:Version}), kde3-kdelibs4-dev (>= ${source:Upstream-Version})
+Description: development files for the KDE graphics module
+ This package contains headers and other development files for the KDE
+ graphics module.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kdegraphics-kfile-plugins
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: KDE metainfo plugins for graphic files
+ This packages provides meta information for graphic files (file sizes,
+ tags, etc. all from within the file manager).
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kdvi
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}, texlive-fonts-recommended
+Suggests: kde3-khelpcenter
+Description: dvi viewer for KDE
+ This program and KPart allow the user to display *.DVI files from TeX.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kfax
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}, libtiff-tools
+Description: G3/G4 fax viewer for KDE
+ A fax viewer for KDE, supporting the display of raw and tiffed fax images
+ (g3, g3-2d, g4).
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kfaxview
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: G3/G4 fax viewer for KDE using kviewshell
+ A fax viewer for KDE, supporting the display of raw and tiffed fax images
+ (g3, g3-2d, g4).
+ .
+ This faxviewer uses kviewshell and is intended to replace the standalone
+ kfax application once it reproduces all of kfax's features.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kgamma
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Homepage: http://kgamma.berlios.de/index2.php
+Description: gamma correction module for the KDE Control Center
+ KGamma is a KDE Control Center module for gamma calibration/correction
+ of XFree86. With proper gamma settings, your display (websites, images,
+ etc.) will look the same on your monitor as on other monitors.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+ .
+
+Package: kde3-kghostview
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}, ghostscript-x
+Suggests: kde3-khelpcenter
+Provides: postscript-viewer, pdf-viewer
+Description: PostScript viewer for KDE
+ KGhostview is KDE's PostScript viewer. It is a port of Tim Theisen's
+ Ghostview program which is used to view documents prepared in Adobe's
+ PostScript page description language. PostScript is the major page
+ description language for printing on UNIX systems, and this application is
+ useful to preview material intended for printing, or for reading documents
+ online.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kiconedit
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: an icon editor for KDE
+ KIconedit allows you easily to create and edit icons.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kmrml
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: gnuift
+Description: a Konqueror plugin for searching pictures
+ MRML is short for Multimedia Retrieval Markup Language, which defines a
+ protocol for querying a server for images based on their content. See 
+ http://www.mrml.net about MRML and the GNU Image Finding Tool (GIFT), an 
+ MRML server.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kolourpaint
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Homepage: http://kolourpaint.sourceforge.net
+Description: a simple paint program for KDE
+ KolourPaint is a very simple paint program for KDE. It aims to be
+ conceptually simple to understand; providing a level of functionality
+ targeted towards the average user. It's designed for daily tasks like:
+ .
+  * Painting - drawing diagrams and "finger painting" 
+  * Image Manipulation - editing screenshots and photos; applying effects 
+  * Icon Editing - drawing clipart and logos with transparency 
+ .
+ It's not an unusable and monolithic program where simple tasks like
+ drawing lines become near impossible. Nor is it so simple that it lacks
+ essential features like Undo/Redo.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kooka
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: ocrad | gocr
+Suggests: kde3-khelpcenter
+Homepage: http://kooka.kde.org/
+Description: scanner program for KDE
+ Kooka is an open source GNU/Linux scan program based on SANE and
+ KScan library.
+ .
+ Kooka helps you to handle the most important scan parameters, find the
+ correct image file format to save and manage your scanned images. It
+ offers support for different OCR modules. Libkscan, a autonomous part
+ of Kooka, provides a scan service for easy and consistent use to all
+ KDE applications.
+ .
+ Install ocrad or gocr if you wish to enable optical character recognition
+ in kooka.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kpdf
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: kde3-kghostview (= ${binary:Version})
+Suggests: kde3-khelpcenter
+Provides: pdf-viewer
+Description: PDF viewer for KDE
+ KPDF allows you to view PDF (Portable Document Format) files. This package
+ includes kpdfpart so you can embed in konqueror or run as a standalone
+ application.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kpovmodeler
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter, povray
+Homepage: http://www.kpovmodeler.org
+Description: a graphical editor for povray scenes
+ KPovmodeler is KDE's graphical editor for povray scenes. KPovModeler is a
+ modeling and composition program for creating POV-Ray scenes in KDE.
+ .
+ For most modelers, POV-Ray is nothing but a rendering engine. This greatly
+ limits the innate possibilities of the POV-Ray scripted language. This
+ is not the case for KPovModeler, which allows you to use all the features
+ of POV-Ray through the translation of POV-Ray language into a graphical
+ tree.
+ .
+ kpovmodeler uses the povray package, currently available only in Debian's
+ non-free, unsupported repository.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+ .
+
+Package: kde3-kruler
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: a screen ruler and color measurement tool for KDE
+ Kruler is a screen ruler (using pixels) and color measurement tool for KDE.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-ksnapshot
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: screenshot utility for KDE
+ KSnapshot is a simple applet for taking screenshots. It is capable of 
+ capturing images of either the whole desktop or just a single window. 
+ The images can then be saved in a variety of formats.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-ksvg
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: SVG viewer for KDE
+ KSVG allows you view SVG (scalable vector graphics) files. This package
+ includes kpart so you can embed it in konqueror and a standalone
+ application.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kuickshow
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Homepage: http://kuickshow.sourceforge.net
+Description: KDE image/slideshow viewer
+ KuickShow is an image browser/viewer with a nice filebrowser to select
+ images to be shown, slideshow support and the ability to display the
+ following image formats: jpg, gif, tiff, png, bmp, psd, xpm, xbm, pbm
+ and eim. Images can be displayed either in their own window, as large
+ as the image, or fullscreen (which shrinks images too large to
+ display). KuickShow also has a slideshow mode. 
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kview
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: kde3-khelpcenter
+Description: simple image viewer/converter for KDE
+ KView is a simple image viewer and converter application. It supports
+ a number of plugins, which add an array of basic editing capabilities
+ as well.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kviewshell
+Section: graphics
+Architecture: any
+Depends: ${shlibs:Depends}
+Provides: djvu-viewer
+Description: generic framework for viewer applications in KDE
+ KViewShell is a generic viewing framework that allows the graphical
+ applications, such as the kview image viewer, to be embedded in other
+ KDE applications, such as Konqueror.
+ .
+ KViewShell comes with a djvuviewpart plugin included, for viewing
+ DjVu images.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-libkscan-dev
+Section: libdevel
+Architecture: any
+Depends: kde3-libkscan1 (= ${binary:Version}), kde3-kdelibs4-dev (>= ${source:Upstream-Version})
+Description: development files for the KDE scanner library
+ This package contains development files for KDE's scanner library.
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-libkscan1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: scanner library for KDE
+ KScan is KDE's scanner library. It's used by kooka and by koffice currently.
+ It provides an easy-to-use library, which allows you to access your scanner
+ (as long as it's supported by SANE).
+ .
+ This package is part of KDE, as a component of the KDE graphics module.
+ See the 'kde' and 'kdegraphics' packages for more information.
+
+Package: kde3-kdegraphics-dbg
+Section: libdevel
+Architecture: any
+Priority: extra
+Depends: kde3-kdelibs-dbg, kde3-libkscan1 (= ${binary:Version})
+Description: debugging symbols for kdegraphics
+ This package contains the debugging symbols associated with kdegraphics.
+ They will automatically be used by gdb for debugging kdegraphics-related
+ issues.
+

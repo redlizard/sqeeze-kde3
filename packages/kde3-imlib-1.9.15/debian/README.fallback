@@ -1,0 +1,23 @@
+		Imlib Image Conversion
+		----------------------
+
+The imlib and gdk-imlib libraries have a number of built-in image
+conversion routines, and are capable of loading or saving in *at
+least* the following formats: GIF, JPEG, PNG, TIFF, PS, BMP, XPM, and
+PPM.
+
+Prior to version 1.9.13, imlib and gdk-imlib could use an external
+program, such as Imagemagick's "convert", to load or save images
+in formats not handled internally to Imlib.  
+
+
+
+		"All fallbacks failed."
+		-----------------------
+
+This message indicates that the file you wished to load is not handled
+by Imlib.
+
+The remedy is to convert the image file by hand using, for example,
+Imagemagick's "convert" command: "convert foo.rgb foo.png".  Then
+you'll have to fix up the application to use the new filename instead.

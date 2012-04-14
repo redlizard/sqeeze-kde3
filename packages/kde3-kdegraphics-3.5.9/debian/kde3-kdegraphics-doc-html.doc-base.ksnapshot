@@ -1,0 +1,10 @@
+Document: kdegraphics-doc-html-ksnapshot
+Title: KSnapshot Handbook
+Author: Richard J. Moore, Robert L. McCormick, Brad Hards, Lauri Watts
+Abstract: KSnapshot is a simple applet for taking screenshots.
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/ksnapshot/index.html
+Files: /usr/share/doc/kde/HTML/en/ksnapshot/*.html
+

@@ -1,0 +1,3 @@
+kmrml: no-shlibs-control-file usr/lib/libkdeinit_mrmlsearch.so
+kmrml: postinst-must-call-ldconfig usr/lib/libkdeinit_mrmlsearch.so
+kmrml: package-name-doesnt-match-sonames libkdeinit-mrmlsearch

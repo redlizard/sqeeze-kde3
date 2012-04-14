@@ -1,0 +1,643 @@
+--- kdegraphics-3.5.9/kmrml/kmrml/Makefile.am	2008-02-19 11:35:33.000000000 +0200
++++ kdegraphics-3.5.9/kmrml/kmrml/Makefile.am	2008-02-19 00:52:23.000000000 +0200
+@@ -9,13 +9,13 @@
+ kde_module_LTLIBRARIES = kio_mrml.la libkmrmlpart.la
+ 
+ kio_mrml_la_SOURCES = mrml.cpp
+-kio_mrml_la_LIBADD  = $(LIB_KMRMLSTUFF) $(LIB_KIO)
++kio_mrml_la_LIBADD  = $(LIB_KMRMLSTUFF) $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ kio_mrml_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ 
+ libkmrmlpart_la_SOURCES = mrml_part.cpp mrml_view.cpp loader.cpp \
+ 	mrml_elements.cpp mrml_creator.cpp browser.cpp algorithmdialog.cpp \
+ 	collectioncombo.cpp algorithmcombo.cpp propertysheet.cpp
+-libkmrmlpart_la_LIBADD = $(LIB_KMRMLSTUFF) $(LIB_KPARTS)
++libkmrmlpart_la_LIBADD = $(LIB_KMRMLSTUFF) $(LIB_KPARTS) $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ libkmrmlpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN)
+ 
+ services_DATA = mrml.protocol mrml_part.desktop
+@@ -32,7 +32,7 @@
+ lib_LTLIBRARIES = 
+ kdeinit_LTLIBRARIES = mrmlsearch.la
+ 
+-mrmlsearch_la_LIBADD = $(LIB_KMRMLSTUFF) $(LIB_KDECORE)
++mrmlsearch_la_LIBADD = $(LIB_KMRMLSTUFF) $(LIB_KDECORE) $(LIB_QT) -lDCOP
+ mrmlsearch_la_LDFLAGS = $(all_libraries) -module -avoid-version
+ mrmlsearch_la_SOURCES = mrmlsearch.cpp
+ 
+--- kdegraphics-3.5.9/ksvg/impl/libs/libtext2path/src/Makefile.am	2008-02-19 11:29:19.000000000 +0200
++++ kdegraphics-3.5.9/ksvg/impl/libs/libtext2path/src/Makefile.am	2008-02-19 11:29:33.000000000 +0200
+@@ -7,4 +7,4 @@
+ libtext2path_include_HEADERS = BezierPath.h Glyph.h GlyphTracer.h
+ 
+ libtext2path_la_SOURCES = Affine.cpp Rectangle.cpp Font.cpp Glyph.cpp GlyphTracer.cpp Converter.cpp QtUnicode.cpp
+-libtext2path_la_LDFLAGS = $(FRIBIDI_LIBS) $(FONTCONFIG_LIBS)
++libtext2path_la_LDFLAGS = $(FRIBIDI_LIBS) $(FONTCONFIG_LIBS) -lfreetype
+--- kdegraphics-3.5.9/kamera/kcontrol/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kamera/kcontrol/Makefile.am	2008-02-19 01:04:41.000000000 +0200
+@@ -3,7 +3,7 @@
+ kcm_kamera_la_SOURCES = kamera.cpp kameradevice.cpp kameraconfigdialog.cpp
+ 
+ kcm_kamera_la_LDFLAGS  = $(all_libraries) -module $(KDE_PLUGIN)
+-kcm_kamera_la_LIBADD = $(LIB_KIO) $(GPHOTO2_LIBS)
++kcm_kamera_la_LIBADD = $(GPHOTO2_LIBS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ INCLUDES= $(all_includes) $(GPHOTO2_INCS)
+ 
+ kcm_kamera_la_METASOURCES = AUTO
+--- kdegraphics-3.5.9/kamera/kioslave/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kamera/kioslave/Makefile.am	2008-02-19 01:06:22.000000000 +0200
+@@ -8,7 +8,7 @@
+ kde_module_LTLIBRARIES = kio_kamera.la
+ 
+ kio_kamera_la_SOURCES = kamera.cpp
+-kio_kamera_la_LIBADD  = $(LIB_KIO) -lgphoto2
++kio_kamera_la_LIBADD  = $(LIB_KIO) -lgphoto2 $(LIB_QT) $(LIB_KDECORE)
+ kio_kamera_la_LDFLAGS = $(all_libraries) $(GPHOTO2_LIBS) -module $(KDE_PLUGIN)
+ 
+ noinst_HEADERS = kamera.h
+--- kdegraphics-3.5.9/kdvi/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kdvi/Makefile.am	2008-02-19 01:16:15.000000000 +0200
+@@ -31,6 +31,7 @@
+ 
+ kdvipart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+ kdvipart_la_LIBADD = $(LIBFREETYPE_LIBS) -lkparts \
++			$(LIB_QT) -lDCOP $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KDEPRINT) $(LIB_KIO) \
+ 			$(top_builddir)/kviewshell/libkmultipage.la
+ 
+ # Which sources should be compiled for squeeze.
+--- kdegraphics-3.5.9/kfaxview/libkfaximage/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfaxview/libkfaximage/Makefile.am	2008-02-19 00:43:23.000000000 +0200
+@@ -2,7 +2,7 @@
+ 
+ lib_LTLIBRARIES = libkfaximage.la
+ libkfaximage_la_LDFLAGS = $(all_libraries) -no-undefined -avoid-version
+-libkfaximage_la_LIBADD  = $(LIB_KDECORE)
++libkfaximage_la_LIBADD  = $(LIB_KDECORE) $(LIB_QT)
+ libkfaximage_la_SOURCES = kfaximage.cpp faxexpand.cpp faxinit.cpp
+ 
+ include_HEADERS = kfaximage.h
+--- kdegraphics-3.5.9/kfaxview/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfaxview/Makefile.am	2008-02-19 01:16:42.000000000 +0200
+@@ -23,7 +23,8 @@
+ 
+ kde_module_LTLIBRARIES = kfaxviewpart.la
+ kfaxviewpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kfaxviewpart_la_LIBADD = -lkdeprint -lkparts $(top_builddir)/kviewshell/libkmultipage.la libkfaximage/libkfaximage.la
++kfaxviewpart_la_LIBADD = -lkparts $(top_builddir)/kviewshell/libkmultipage.la libkfaximage/libkfaximage.la \
++	    $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP
+ kfaxviewpart_la_SOURCES = faxmultipage.cpp faxrenderer.cpp
+ 
+ partdir = $(kde_datadir)/kfaxview
+--- kdegraphics-3.5.9/kfile-plugins/bmp/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/bmp/Makefile.am	2008-02-19 00:54:01.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_bmp_la_SOURCES = kfile_bmp.cpp 
+ kfile_bmp_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_bmp_la_LIBADD = $(LIB_KSYCOCA)
++kfile_bmp_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/dds/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/dds/Makefile.am	2008-02-19 00:31:41.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_dds_la_SOURCES = kfile_dds.cpp 
+ kfile_dds_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_dds_la_LIBADD = $(LIB_KSYCOCA)
++kfile_dds_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/dvi/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/dvi/Makefile.am	2008-02-19 00:32:21.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_dvi_la_SOURCES = kfile_dvi.cpp
+ kfile_dvi_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_dvi_la_LIBADD = $(LIB_KIO)
++kfile_dvi_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/exr/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/exr/Makefile.am	2008-02-19 01:10:31.000000000 +0200
+@@ -13,7 +13,7 @@
+ 
+ kfile_exr_la_SOURCES = kfile_exr.cpp
+ kfile_exr_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_exr_la_LIBADD = $(LIB_KIO) $(LIB_EXR)
++kfile_exr_la_LIBADD = $(LIB_KIO) -lIlmImf $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/gif/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/gif/Makefile.am	2008-02-19 00:55:46.000000000 +0200
+@@ -12,7 +12,7 @@
+ 
+ kfile_gif_la_SOURCES = kfile_gif.cpp
+ kfile_gif_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_gif_la_LIBADD = $(LIB_KIO)
++kfile_gif_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/ico/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/ico/Makefile.am	2008-02-19 00:56:16.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_ico_la_SOURCES = kfile_ico.cpp 
+ kfile_ico_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_ico_la_LIBADD = $(LIB_KSYCOCA)
++kfile_ico_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/jpeg/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/jpeg/Makefile.am	2008-02-19 00:56:08.000000000 +0200
+@@ -12,7 +12,7 @@
+ 
+ kfile_jpeg_la_SOURCES = kfile_jpeg.cpp exif.cpp kfile_setcomment.cpp
+ kfile_jpeg_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_jpeg_la_LIBADD = $(LIB_KIO)
++kfile_jpeg_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/pcx/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/pcx/Makefile.am	2008-02-19 01:12:23.000000000 +0200
+@@ -9,7 +9,7 @@
+ 
+ kfile_pcx_la_SOURCES = kfile_pcx.cpp
+ kfile_pcx_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_pcx_la_LIBADD = $(LIB_KIO) $(LIBTIFF)
++kfile_pcx_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/pdf/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/pdf/Makefile.am	2008-02-19 01:07:08.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_pdf_la_SOURCES = kfile_pdf.cpp
+ kfile_pdf_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_pdf_la_LIBADD = $(LIB_KIO) $(POPPLER_LIBS)
++kfile_pdf_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) -lpoppler-qt
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/png/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/png/Makefile.am	2008-02-19 00:38:03.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_png_la_SOURCES = kfile_png.cpp
+ kfile_png_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_png_la_LIBADD = $(LIB_KIO)
++kfile_png_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE) $(LIBZ)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/pnm/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/pnm/Makefile.am	2008-02-19 00:12:43.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_pnm_la_SOURCES = kfile_pnm.cpp
+ kfile_pnm_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_pnm_la_LIBADD = $(LIB_KIO)
++kfile_pnm_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/ps/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/ps/Makefile.am	2008-02-19 00:45:27.000000000 +0200
+@@ -10,10 +10,10 @@
+ 
+ kfile_ps_la_SOURCES = kfile_ps.cpp
+ kfile_ps_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_ps_la_LIBADD = $(LIB_KIO) ../../kghostview/libdscparse.la
++kfile_ps_la_LIBADD = $(LIB_KIO) ../../kghostview/libdscparse.la $(LIB_KDECORE) $(LIB_QT)
+ 
+ gsthumbnail_la_SOURCES = gscreator.cpp
+-gsthumbnail_la_LIBADD = $(LIB_KDECORE) ../../kghostview/libdscparse.la
++gsthumbnail_la_LIBADD = $(LIB_QT) ../../kghostview/libdscparse.la
+ gsthumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ # let automoc handle all of the meta source files (moc)
+--- kdegraphics-3.5.9/kfile-plugins/raw/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/raw/Makefile.am	2008-02-19 00:31:55.000000000 +0200
+@@ -9,7 +9,7 @@
+ kde_module_LTLIBRARIES = kfile_raw.la
+ 
+ kfile_raw_la_SOURCES = kcamerarawplugin.cpp parse.c
+-kfile_raw_la_LIBADD = $(LIB_KIO) 
++kfile_raw_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ kfile_raw_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ # let automoc handle all of the meta source files (moc)
+--- kdegraphics-3.5.9/kfile-plugins/rgb/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/rgb/Makefile.am	2008-02-19 00:51:53.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_rgb_la_SOURCES = kfile_rgb.cpp
+ kfile_rgb_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_rgb_la_LIBADD = $(LIB_KSYCOCA)
++kfile_rgb_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/tga/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/tga/Makefile.am	2008-02-19 00:50:22.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_tga_la_SOURCES = kfile_tga.cpp 
+ kfile_tga_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_tga_la_LIBADD = $(LIB_KSYCOCA)
++kfile_tga_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/tiff/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/tiff/Makefile.am	2008-02-19 01:08:51.000000000 +0200
+@@ -9,7 +9,7 @@
+ 
+ kfile_tiff_la_SOURCES = kfile_tiff.cpp
+ kfile_tiff_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_tiff_la_LIBADD = $(LIB_KIO) $(LIBTIFF)
++kfile_tiff_la_LIBADD = $(LIB_KIO) $(LIBTIFF) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/xbm/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/xbm/Makefile.am	2008-02-19 00:57:59.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_xbm_la_SOURCES = kfile_xbm.cpp 
+ kfile_xbm_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_xbm_la_LIBADD = $(LIB_KSYCOCA)
++kfile_xbm_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdegraphics-3.5.9/kfile-plugins/xpm/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kfile-plugins/xpm/Makefile.am	2008-02-19 00:55:56.000000000 +0200
+@@ -9,7 +9,7 @@
+ 
+ kfile_xpm_la_SOURCES = kfile_xpm.cpp
+ kfile_xpm_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_xpm_la_LIBADD = $(LIB_KIO)
++kfile_xpm_la_LIBADD = $(LIB_KIO) $(LIB_QT) $(LIB_KDECORE)
+ kfile_xpm_la_METASOURCES = kfile_xpm.moc
+ 
+ # let automoc handle all of the meta source files (moc)
+--- kdegraphics-3.5.9/kgamma/kcmkgamma/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kgamma/kcmkgamma/Makefile.am	2008-02-19 00:25:49.000000000 +0200
+@@ -5,7 +5,7 @@
+ kcm_kgamma_la_METASOURCES=AUTO
+ kcm_kgamma_la_SOURCES = xf86configpath.cpp xvidextwrap.cpp displaynumber.cpp \
+                         gammactrl.cpp kgamma.cpp 
+-kcm_kgamma_la_LIBADD = $(LIBVM) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
++kcm_kgamma_la_LIBADD = $(LIBVM) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIB_X11)
+ kcm_kgamma_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ SUBDIRS = pics 
+--- kdegraphics-3.5.9/kghostview/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kghostview/Makefile.am	2008-02-19 01:17:49.000000000 +0200
+@@ -10,10 +10,11 @@
+ noinst_LTLIBRARIES = libdscparse.la
+ 
+ libkghostviewlib_la_LDFLAGS = $(all_libraries)
+-libkghostviewlib_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) -lkdeprint libdscparse.la
++libkghostviewlib_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KDEPRINT) libdscparse.la \
++		$(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_X11)
+ 
+ libkghostviewpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-libkghostviewpart_la_LIBADD = libkghostviewlib.la
++libkghostviewpart_la_LIBADD = libkghostviewlib.la $(LIB_QT)
+ 
+ # Check "make final" after making changes to the following line!!
+ libkghostviewlib_la_SOURCES = kgvshell.cpp kgvdocument.cpp kgv_miniwidget.cpp \
+--- kdegraphics-3.5.9/kmrml/kmrml/kcontrol/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kmrml/kmrml/kcontrol/Makefile.am	2008-02-19 00:56:41.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kcm_kmrml_la_SOURCES = kcmkmrml.cpp mainpage.cpp indexer.cpp serverconfigwidget.ui indexcleaner.cpp
+ kcm_kmrml_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_kmrml_la_LIBADD = $(LIB_KMRMLSTUFF) $(LIB_KIO)
++kcm_kmrml_la_LIBADD = $(LIB_KMRMLSTUFF) $(LIB_KIO) $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE) -lDCOP
+ INCLUDES= -I$(top_srcdir)/kmrml/kmrml/lib $(all_includes)
+  
+ kcm_kmrml_la_METASOURCES = AUTO
+--- kdegraphics-3.5.9/kmrml/kmrml/server/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kmrml/kmrml/server/Makefile.am	2008-02-19 01:20:05.000000000 +0200
+@@ -4,7 +4,8 @@
+ kded_daemonwatcher_la_SOURCES = watcher.cpp watcher.skel
+ # watcher.stub
+ kded_daemonwatcher_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kded_daemonwatcher_la_LIBADD = $(LIB_KSYCOCA) $(LIB_KDEUI)
++kded_daemonwatcher_la_LIBADD = $(LIB_KDEUI) \
++	$(LIB_QT) $(LIB_KDECORE) -lDCOP -lkdeinit_kded  $(LIB_QT) $(LIB_KDECORE)
+ 
+ METASOURCES = AUTO
+ 
+--- kdegraphics-3.5.9/kooka/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kooka/Makefile.am	2008-02-19 01:22:53.000000000 +0200
+@@ -16,7 +16,7 @@
+ 		kocrocrad.cpp
+ # 		pagesetup.cpp 
+ 
+-kooka_LDADD   = $(LIB_KFILE) -lkdeprint -lktexteditor $(LIBTIFF) $(top_builddir)/libkscan/libkscan.la $(KADMOS_LIB) $(LIB_KSPELL)
++kooka_LDADD   = $(LIB_KPARTS) $(LIB_KFILE) $(LIB_KDEPRINT) $(LIBTIFF) $(top_builddir)/libkscan/libkscan.la $(KADMOS_LIB)
+ kooka_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+ 
+ INCLUDES         = -I$(top_srcdir)/libkscan $(all_includes) $(LIBSANE_INCLUDES) $(KADMOS_INC)
+--- kdegraphics-3.5.9/kpdf/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kpdf/Makefile.am	2008-02-19 00:34:21.000000000 +0200
+@@ -19,7 +19,9 @@
+ libkpdfpart_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ libkpdfpart_la_LIBADD  = xpdf/xpdf/libxpdf.la conf/libkpdfconf.la \
+                          core/libkpdfcore.la ui/libkpdfui.la $(LIB_KPARTS) \
+-                         $(LIB_KFILE) $(LIB_KDEPRINT) $(LIB_KUTILS) -lm
++                         $(LIB_KFILE) $(LIB_KDEPRINT) $(LIB_KUTILS) -lm \
++                         $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lkdefx -lDCOP \
++                         -lkwalletclient -lfreetype $(XFT_LIBS) $(LIBPAPER_LIBS)
+ 
+ partdesktopdir   = $(kde_servicesdir)
+ partdesktop_DATA = kpdf_part.desktop
+--- kdegraphics-3.5.9/kpovmodeler/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kpovmodeler/Makefile.am	2008-02-19 01:32:30.000000000 +0200
+@@ -110,7 +110,8 @@
+ 	pmpartiface.skel
+ 
+ libkpovmodeler_la_LDFLAGS = $(all_libraries) -version-info 0:0:0 -no-undefined $(LIBFREETYPE_RPATH)
+-libkpovmodeler_la_LIBADD = $(LIBFREETYPE_LIBS) $(LIB_KPARTS) $(GLLIB) -lXmu -lXi
++libkpovmodeler_la_LIBADD = -lfreetype $(LIB_KPARTS) $(GLLIB) -lXmu \
++	$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO) -lDCOP
+ METASOURCES = AUTO
+ 
+ noinst_HEADERS = pmpart.h pmfactory.h pmview.h pmshell.h pmobjectdrag.h \
+@@ -218,7 +219,7 @@
+ kde_module_LTLIBRARIES = libkpovmodelerpart.la
+ 
+ libkpovmodelerpart_la_SOURCES = dummy.cpp
+-libkpovmodelerpart_la_LIBADD = libkpovmodeler.la
++libkpovmodelerpart_la_LIBADD =
+ libkpovmodelerpart_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ ####
+--- kdegraphics-3.5.9/ksvg/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/ksvg/Makefile.am	2008-02-19 01:33:09.000000000 +0200
+@@ -6,7 +6,8 @@
+ libksvg_la_LDFLAGS = -version-info 0:1:0 -no-undefined $(all_libraries)
+ libksvg_la_LIBADD  = dom/libksvgdom.la impl/libksvgdomimpl.la core/libksvgcore.la ecma/libksvgecma.la \
+ 		     $(LCMS_LIBS) impl/libs/xrgbrender/libksvgxrgbrender.la impl/libs/libtext2path/src/libtext2path.la \
+-			 impl/libs/art_support/libksvgart.la -lkjs $(LIB_KHTML) $(LIBART_LIBS) $(FREETYPE_LIBS) $(FONTCONFIG_LIBS)
++			 impl/libs/art_support/libksvgart.la -lkjs $(LIB_KHTML) $(LIBART_LIBS) \
++			$(LIB_KDECORE) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDEUI) $(LIB_X11) $(LIB_KIO)
+ 
+ INCLUDES = -I$(top_srcdir)/ksvg/dom -I$(top_srcdir)/ksvg/impl $(all_includes)
+ 
+--- kdegraphics-3.5.9/ksvg/plugin/backends/libart/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/ksvg/plugin/backends/libart/Makefile.am	2008-02-19 00:42:03.000000000 +0200
+@@ -2,7 +2,8 @@
+ 
+ libksvgrendererlibart_la_SOURCES = BezierPathLibart.cpp GlyphTracerLibart.cpp LibartCanvas.cpp LibartCanvasItems.cpp LibartCanvasFactory.cpp 
+ libksvgrendererlibart_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-libksvgrendererlibart_la_LIBADD = ../../../libksvg.la
++libksvgrendererlibart_la_LIBADD = ../../../libksvg.la $(LIB_QT) $(LIB_KDECORE) \
++	$(LIB_KHTML) $(LIBART_LIBS) ../../../impl/libs/libtext2path/src/libtext2path.la
+ libksvgrendererlibart_la_METASOURCES = AUTO
+ 
+ kde_services_DATA = ksvglibartcanvas.desktop
+--- kdegraphics-3.5.9/ksvg/plugin/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/ksvg/plugin/Makefile.am	2008-02-19 00:48:02.000000000 +0200
+@@ -7,7 +7,9 @@
+ kde_module_LTLIBRARIES = libksvgplugin.la svgthumbnail.la
+ 
+ libksvgplugin_la_SOURCES = ksvg_plugin.cpp ksvg_factory.cpp ksvg_widget.cpp
+-libksvgplugin_la_LIBADD = ../libksvg.la
++libksvgplugin_la_LIBADD = ../libksvg.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) \
++		 $(LIB_KPARTS) $(LIB_KHTML) $(LIB_KIO) \
++		 ../impl/libs/libtext2path/src/libtext2path.la
+ libksvgplugin_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+ 
+ ksvginclude_HEADERS = ksvg_plugin.h
+@@ -16,7 +18,7 @@
+ kde_services_DATA = ksvgplugin.desktop
+ 
+ svgthumbnail_la_SOURCES = svgcreator.cpp
+-svgthumbnail_la_LIBADD = ../libksvg.la
++svgthumbnail_la_LIBADD = ../libksvg.la $(LIB_QT) $(LIB_KDECORE)
+ svgthumbnail_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ services_DATA = svgthumbnail.desktop
+--- kdegraphics-3.5.9/kuickshow/src/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kuickshow/src/Makefile.am	2008-02-19 01:34:59.000000000 +0200
+@@ -10,7 +10,8 @@
+ METASOURCES = AUTO
+ 
+ kuickshow_la_LDFLAGS = $(all_libraries) -module -avoid-version
+-kuickshow_la_LIBADD  = $(LIB_KDEPRINT) $(LIB_IMLIB)
++kuickshow_la_LIBADD  = $(LIB_KDEPRINT) -lImlib $(LIB_QT) \
++	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO) $(LIB_X11)
+ kuickshow_la_SOURCES =	kuickshow.cpp \
+ 	aboutwidget.cpp     generalwidget.cpp  kuickconfigdlg.cpp  main.cpp \
+ 	defaultswidget.cpp  imagewindow.cpp    kuickdata.cpp  \
+--- kdegraphics-3.5.9/kview/config/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/config/Makefile.am	2008-02-19 00:44:01.000000000 +0200
+@@ -9,7 +9,7 @@
+ 
+ kcm_kviewgeneralconfig_la_SOURCES = kviewconfmodules.cpp
+ kcm_kviewgeneralconfig_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kcm_kviewgeneralconfig_la_LIBADD = $(LIB_KDEUI)
++kcm_kviewgeneralconfig_la_LIBADD = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kcm_kviewgeneralconfig_DATA = kviewgeneralconfig.desktop
+ kcm_kviewgeneralconfigdir = $(kde_servicesdir)/kconfiguredialog
+--- kdegraphics-3.5.9/kview/config/plugins/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/config/plugins/Makefile.am	2008-02-19 00:58:29.000000000 +0200
+@@ -8,7 +8,7 @@
+ 
+ kcm_kviewpluginsconfig_la_SOURCES = kviewpluginsconfig.cpp
+ kcm_kviewpluginsconfig_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kcm_kviewpluginsconfig_la_LIBADD = $(LIB_KUTILS)
++kcm_kviewpluginsconfig_la_LIBADD = $(LIB_KUTILS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ kcm_kviewpluginsconfig_DATA = kviewpluginsconfig.desktop
+ kcm_kviewpluginsconfigdir = $(kde_servicesdir)/kconfiguredialog
+--- kdegraphics-3.5.9/kview/kimageviewer/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/kimageviewer/Makefile.am	2008-02-19 00:53:45.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ libkimageviewer_la_SOURCES = canvas.cpp viewer.cpp
+ libkimageviewer_la_LDFLAGS = $(all_libraries) -no-undefined -version-info 0:0
+-libkimageviewer_la_LIBADD  = $(LIB_KPARTS)
++libkimageviewer_la_LIBADD  = $(LIB_KPARTS) $(LIB_QT) $(LIB_KDEUI)
+ 
+ INCLUDES = $(all_includes)
+ 
+--- kdegraphics-3.5.9/kview/kviewcanvas/config/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/kviewcanvas/config/Makefile.am	2008-02-19 00:33:09.000000000 +0200
+@@ -5,7 +5,7 @@
+ 
+ kcm_kviewcanvasconfig_la_SOURCES = generalconfigwidget.ui confmodules.cpp
+ kcm_kviewcanvasconfig_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -module -avoid-version
+-kcm_kviewcanvasconfig_la_LIBADD  = $(LIB_KDEUI)
++kcm_kviewcanvasconfig_la_LIBADD  = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ 
+ kcm_kviewcanvasconfig_DATA = kviewcanvasconfig.desktop
+ kcm_kviewcanvasconfigdir = $(kde_servicesdir)/kconfiguredialog
+--- kdegraphics-3.5.9/kview/kviewcanvas/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/kviewcanvas/Makefile.am	2008-02-19 01:37:07.000000000 +0200
+@@ -7,8 +7,8 @@
+ 
+ libkviewcanvas_la_SOURCES = kimageholder.cpp kimagecanvas.cpp
+ libkviewcanvas_la_LDFLAGS = $(all_libraries) -module -no-undefined -avoid-version
+-libkviewcanvas_la_LIBADD = $(LIB_KPARTS) $(LIB_KDEPRINT) $(LIB_KUTILS) \
+-                           $(top_builddir)/kview/kimageviewer/libkimageviewer.la
++libkviewcanvas_la_LIBADD = $(LIB_KUTILS) $(top_builddir)/kview/kimageviewer/libkimageviewer.la \
++                           $(LIB_QT) $(LIB_KDECORE) -lkdefx
+ 
+ METASOURCES = AUTO
+ 
+--- kdegraphics-3.5.9/kview/kviewviewer/config/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/kviewviewer/config/Makefile.am	2008-02-19 00:44:30.000000000 +0200
+@@ -8,7 +8,7 @@
+ 
+ kcm_kviewviewerpluginsconfig_la_SOURCES = kviewviewerpluginsconfig.cpp
+ kcm_kviewviewerpluginsconfig_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kcm_kviewviewerpluginsconfig_la_LIBADD = $(LIB_KUTILS)
++kcm_kviewviewerpluginsconfig_la_LIBADD = $(LIB_KUTILS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ kcm_kviewviewerpluginsconfig_DATA = kviewviewerpluginsconfig.desktop
+ kcm_kviewviewerpluginsconfigdir = $(kde_servicesdir)/kconfiguredialog
+--- kdegraphics-3.5.9/kview/kviewviewer/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/kviewviewer/Makefile.am	2008-02-19 00:53:29.000000000 +0200
+@@ -8,7 +8,8 @@
+ libkviewviewer_la_SOURCES = printimagesettings.ui imagesettings.cpp kviewkonqextension.cpp kviewviewer.cpp
+ libkviewviewer_la_LDFLAGS = $(all_libraries) -avoid-version -module -no-undefined
+ libkviewviewer_la_LIBADD = $(LIB_KDEPRINT) $(LIB_KUTILS) \
+-                           $(top_builddir)/kview/kimageviewer/libkimageviewer.la
++                           $(top_builddir)/kview/kimageviewer/libkimageviewer.la \
++                           $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KPARTS) $(LIB_KIO)
+ 
+ METASOURCES = AUTO
+ 
+--- kdegraphics-3.5.9/kview/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/Makefile.am	2008-02-19 00:48:35.000000000 +0200
+@@ -12,7 +12,7 @@
+ 
+ kview_la_SOURCES = kview.cpp main.cpp
+ kview_la_LDFLAGS = $(KDE_RPATH) $(all_libraries) -module -avoid-version
+-kview_la_LIBADD = $(LIB_KPARTS) $(LIB_KUTILS)
++kview_la_LIBADD = $(LIB_KPARTS) $(LIB_KUTILS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ 
+ xdg_apps_DATA = kview.desktop
+ 
+--- kdegraphics-3.5.9/kview/modules/browser/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/modules/browser/Makefile.am	2008-02-19 01:35:42.000000000 +0200
+@@ -3,7 +3,8 @@
+ kde_module_LTLIBRARIES = kview_browserplugin.la
+ 
+ kview_browserplugin_la_SOURCES = kmyfileitemlist.cpp kviewbrowser.cpp
+-kview_browserplugin_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) -lkdeprint
++kview_browserplugin_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) \
++		$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ kview_browserplugin_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ plugdir   = $(kde_datadir)/kviewviewer/kpartplugins
+--- kdegraphics-3.5.9/kview/modules/effects/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/modules/effects/Makefile.am	2008-02-19 01:36:11.000000000 +0200
+@@ -3,7 +3,7 @@
+ kde_module_LTLIBRARIES = kview_effectsplugin.la
+ 
+ kview_effectsplugin_la_SOURCES = kvieweffects.cpp
+-kview_effectsplugin_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) -lkdeprint
++kview_effectsplugin_la_LIBADD = $(LIB_KPARTS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lkdefx
+ kview_effectsplugin_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ plugdir   = $(kde_datadir)/kview/kpartplugins
+--- kdegraphics-3.5.9/kview/modules/presenter/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/modules/presenter/Makefile.am	2008-02-19 00:17:19.000000000 +0200
+@@ -5,7 +5,7 @@
+ kde_module_LTLIBRARIES = kview_presenterplugin.la
+ 
+ kview_presenterplugin_la_SOURCES = imagelistitem.cpp imagelistdialog.ui kviewpresenter.cpp
+-kview_presenterplugin_la_LIBADD = $(LIB_KIO) $(LIB_KPARTS)
++kview_presenterplugin_la_LIBADD = $(LIB_KIO) $(LIB_KPARTS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ kview_presenterplugin_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ plugdir   = $(kde_datadir)/kview/kpartplugins
+--- kdegraphics-3.5.9/kview/modules/scanner/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/modules/scanner/Makefile.am	2008-02-19 01:36:19.000000000 +0200
+@@ -3,7 +3,7 @@
+ kde_module_LTLIBRARIES = kview_scannerplugin.la
+ 
+ kview_scannerplugin_la_SOURCES = kviewscanner.cpp
+-kview_scannerplugin_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) -lkdeprint
++kview_scannerplugin_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ kview_scannerplugin_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+ 
+ plugdir   = $(kde_datadir)/kview/kpartplugins
+--- kdegraphics-3.5.9/kview/photobook/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/kview/photobook/Makefile.am	2008-02-19 00:59:21.000000000 +0200
+@@ -6,7 +6,7 @@
+ libphotobook_la_SOURCES = photobook.cpp
+ 
+ libphotobook_la_LDFLAGS = -module $(KDE_PLUGIN) $(all_libraries)
+-libphotobook_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS)
++libphotobook_la_LIBADD = $(LIB_KFILE) $(LIB_KPARTS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ partrcdir = $(kde_servicesdir)
+ partrc_DATA = photobook.desktop
+--- kdegraphics-3.5.9/kviewshell/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kviewshell/Makefile.am	2008-02-19 00:59:02.000000000 +0200
+@@ -18,7 +18,8 @@
+ 		optionDialogGUIWidget_base.ui optionDialogAccessibilityWidget.ui simplePageSize.cpp
+ 
+ kviewerpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kviewerpart_la_LIBADD = ./libifaces.la $(LIB_KFILE) -lkparts
++kviewerpart_la_LIBADD = ./libifaces.la $(LIB_KFILE) -lkparts \
++		$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ libkmultipage_la_SOURCES = kmultipage.cpp pageView.cpp marklist.cpp kmultipageInterface.skel \
+ 		units.cpp pageSize.cpp simplePageSize.cpp renderedDocumentPage.cpp renderedDocumentPagePixmap.cpp \
+@@ -30,11 +31,12 @@
+ kde_kcfg_DATA = kviewshell.kcfg
+ 
+ libkmultipage_la_LDFLAGS = $(all_libraries)
+-libkmultipage_la_LIBADD = $(LIB_KFILE) -lkdeprint -lkparts
++libkmultipage_la_LIBADD = $(LIB_KFILE) $(LIB_KDEPRINT) $(LIB_KPARTS) \
++		 $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP -lkdefx
+ 
+ emptymultipagepart_la_SOURCES = empty_multipage.cpp emptyRenderer.cpp
+ emptymultipagepart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-emptymultipagepart_la_LIBADD = -lkparts libkmultipage.la
++emptymultipagepart_la_LIBADD = -lkparts libkmultipage.la $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lDCOP
+ 
+ libkviewshell_la_SOURCES = kviewshell.cpp
+ 
+--- kdegraphics-3.5.9/kviewshell/plugins/djvu/Makefile.am	2008-02-18 15:49:33.000000000 +0200
++++ kdegraphics-3.5.9/kviewshell/plugins/djvu/Makefile.am	2008-02-19 00:57:32.000000000 +0200
+@@ -18,7 +18,8 @@
+ 
+ kde_module_LTLIBRARIES = djvuviewpart.la
+ djvuviewpart_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-djvuviewpart_la_LIBADD = -lkdeprint -lkparts $(top_builddir)/kviewshell/libkmultipage.la libdjvu/libdjvu.la
++djvuviewpart_la_LIBADD = -lkdeprint -lkparts $(top_builddir)/kviewshell/libkmultipage.la libdjvu/libdjvu.la \
++	$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO) -lDCOP
+ djvuviewpart_la_SOURCES = djvumultipage.cpp djvurenderer.cpp kprintDialogPage_DJVUpageoptions.cpp \
+ 	kprintDialogPage_DJVUconversionoptions.cpp kprintDialogPage_DJVUconversionoptions_basewidget.ui \
+ 	pageRangeWidget_base.ui pageRangeWidget.cpp \
+--- kdegraphics-3.5.9/libkscan/Makefile.am	2008-02-18 15:49:32.000000000 +0200
++++ kdegraphics-3.5.9/libkscan/Makefile.am	2008-02-19 00:51:34.000000000 +0200
+@@ -19,7 +19,8 @@
+ 
+ 
+ libkscan_la_LDFLAGS = $(all_libraries) $(LIBSANE_LDFLAGS) -no-undefined -version-info 1:0
+-libkscan_la_LIBADD = $(LIBSANE_LIBS) $(LIB_KFILE)
++libkscan_la_LIBADD = $(LIBSANE_LIBS) $(LIB_KFILE) \
++	$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) -lkdefx
+ 
+ kde_services_DATA = scanservice.desktop
+ 

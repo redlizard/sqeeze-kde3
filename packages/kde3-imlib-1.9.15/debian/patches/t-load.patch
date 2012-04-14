@@ -1,0 +1,107 @@
+Index: Imlib/Makefile.am
+===================================================================
+RCS file: /home/steve/lib/cvs/debian/imlib/Imlib/Makefile.am,v
+retrieving revision 1.1.1.4
+diff -u -b -B -r1.1.1.4 Makefile.am
+--- Imlib/Makefile.am	22 Mar 2002 14:43:04 -0000	1.1.1.4
++++ Imlib/Makefile.am	7 Jul 2002 16:12:56 -0000
+@@ -39,3 +38,8 @@
+ 	-DSYSCONFDIR=\"$(sysconfdir)\"
+ 
+ INCLUDES = -I. -I$(srcdir) -I.. -I$(srcdir)/.. $(X_CFLAGS)
++
++
++noinst_PROGRAMS = t-load
++
++t_load_LDADD = libImlib.la
+Index: Imlib/t-load.c
+===================================================================
+RCS file: Imlib/t-load.c
+diff -N Imlib/t-load.c
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ Imlib/t-load.c	25 Mar 2002 03:58:42 -0000	1.1
+@@ -0,0 +1,38 @@
++#include <stdio.h>
++#include "Imlib.h"
++
++
++int
++main( int ac, char* av[] )
++{
++    Display *disp;
++    ImlibData *id;
++    XSetWindowAttributes attr;
++    Window win;
++    ImlibImage *img;
++    Pixmap p,m;
++    int w,h;
++     
++    /* Be nice and tell the user if they don't, to provide a file as an arg */
++    if (ac != 2) {
++	fprintf( stderr, "usage: %s filename\n", av[0] );
++	return 33;
++    }
++
++    /* Connect to the default Xserver */
++    disp = XOpenDisplay(NULL);
++
++    /* Immediately afterwards Intitialise Imlib */
++    id = Imlib_init(disp);
++
++    /* Load the image specified as the first argument */
++    img = Imlib_load_image(id,av[1]);
++
++
++    if ( img == NULL ) {
++	fprintf( stderr, "failed to load file '%s'.\n", av[1] );
++	return 1;
++    }
++
++    return 0;
++}
+Index: gdk_imlib/Makefile.am
+===================================================================
+RCS file: /home/steve/lib/cvs/debian/imlib/gdk_imlib/Makefile.am,v
+retrieving revision 1.1.1.4
+retrieving revision 1.5
+diff -u -b -B -r1.1.1.4 -r1.5
+--- gdk_imlib/Makefile.am	25 Mar 2002 16:45:24 -0000	1.1.1.4
++++ gdk_imlib/Makefile.am	7 Jul 2002 00:59:29 -0000	1.5
+@@ -82,1 +88,7 @@
+ 
++# These programs are built only to check that the plugin
++# libs have correct library information.
++
++check_PROGRAMS = t-load
++
++t_load_LDADD = libgdk_imlib.la
+Index: gdk_imlib/t-load.c
+===================================================================
+RCS file: gdk_imlib/t-load.c
+diff -N gdk_imlib/t-load.c
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ gdk_imlib/t-load.c	25 Mar 2002 03:58:42 -0000	1.2
+@@ -0,0 +1,23 @@
++#include <stdio.h>
++#include "gdk_imlib.h"
++
++
++int
++main( int ac, char* av[] )
++{
++    GdkImlibImage* img;
++
++    if (ac != 2) {
++	fprintf( stderr, "usage: %s filename\n", av[0] );
++	return 33;
++    }
++
++    img = gdk_imlib_load_image( av[1] );
++
++    if ( img == NULL ) {
++	fprintf( stderr, "failed to load file '%s'.\n", av[1] );
++	return 1;
++    }
++
++    return 0;
++}

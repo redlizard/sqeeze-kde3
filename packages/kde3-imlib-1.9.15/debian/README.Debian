@@ -1,0 +1,45 @@
+		Imlib Version 11
+		----------------
+
+Imlib11 is linked with libpng12, which began life as libpng3.  This is
+in accordance with the practice of Redhat.  The GDK version of imlib,
+being part of GNOME 1, has remained linked with libpng2.
+
+No library that links with this version of Imlib may also link with
+libpng2.
+
+No application that links with this version of Imlib may link with
+libpng2, neither directly nor through a third library.
+
+If you accidentally link an application with imlib and libpng2, the
+application may behave in unpredictible ways, possibly crashing,
+possibly emitting warnings similar to the following:
+
+  libpng warning: Application was compiled with png.h from libpng-1.2.1
+  libpng warning: Application  is running with png.c from libpng-1.0.12
+  libpng error: Incompatible libpng version in application and library
+
+
+
+		Imlib Version 1
+		---------------
+
+Imlib1 and gdk-imlib1 are compiled against libpng2.  If you need to
+build with libpng2, install the package imlib1-dev or gdk-imlib1-dev
+as appropriate.
+
+
+		The Palette File
+		----------------
+
+The system Imlib/Gdk-Imlib palette file was moved from the directory
+`/etc/im' to `/etc/imlib'.  This move may cause problems for users who
+have a `.imrc' file in their home directory since that file may
+contain a reference to the old location of the palette file.  To
+correct this problem, the "PaletteFile" entry should look like:
+
+        PaletteFile /etc/imlib/im_palette.pal
+
+I believe this changed happened in late 1999.
+
+ -- Steve M. Robbins <smr@debian.org>, Sun Oct 19 15:11:42 2003

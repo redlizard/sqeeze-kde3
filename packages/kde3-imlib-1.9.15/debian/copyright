@@ -1,0 +1,19 @@
+This package was debianized by Sean E. Perry shaleh@debian.org on
+Sun, 7 Jun 1998 13:30:00 -0500.
+
+It was downloaded from http://www.labs.redhat.com/imlib
+
+The current location for imlib is http://www.gnome.org.  Version
+1.9.14 taken from ftp://ftp.gnome.org/pub/GNOME/stable/latest/sources/
+
+
+Copyright:
+
+Copyright 1998 by The Rasterman (Carsten Haitzler) (raster@redhat.com),
+with some parts copyright the Free Software Foundation.
+
+License:
+
+All libraries in this package are released under the LGPL
+(/usr/share/common-licenses/LGPL-2).  The programs and examples are
+under the GPL (/usr/share/common-licenses/GPL).

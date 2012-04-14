@@ -1,0 +1,11 @@
+--- imlibs/configure.in	22 Mar 2002 14:51:24 -0000	1.1.1.4
++++ imlibs/configure.in	7 Jul 2002 00:59:28 -0000	1.7
+@@ -138,7 +140,8 @@
+   CPPFLAGS="$CPPFLAGS $GTK_CFLAGS"
+   GX_LIBS="$GTK_LIBS"
+ fi
++AC_SUBST(GX_LIBS)
+ 
+ CPPFLAGS="$CPPFLAGS -I$includedir -I$prefix/include"
+ 
+===================================================================

@@ -1,0 +1,11 @@
+Document: kdegraphics-doc-html-kiconedit
+Title: KIconEdit Handbook
+Author: Thomas Tanghus, Lauri Watts
+Abstract: KIconEdit is designed to help create icons for KDE using the
+ standard icon palette.
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kiconedit/index.html
+Files: /usr/share/doc/kde/HTML/en/kiconedit/*.html
+

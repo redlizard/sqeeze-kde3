@@ -1,0 +1,28 @@
+--- imlib-1.9.15.orig/imlib-config.in
++++ imlib-1.9.15/imlib-config.in
+@@ -49,21 +49,21 @@
+       if test @includedir@ != /usr/include ; then
+         includes=-I@includedir@
+       fi
+-      echo $includes @X_CFLAGS@ 
++      echo $includes
+       ;;
+     --cflags-gdk)
+       if test @includedir@ != /usr/include ; then
+         includes=-I@includedir@
+       fi
+-      echo `@GTK_CONFIG@ --cflags` $includes @X_CFLAGS@
++      echo `@GTK_CONFIG@ --cflags` $includes
+       ;;
+     --libs)
+       libdirs=-L@libdir@
+-      echo $libdirs -lImlib @LDFLAGS@ $gx_libs @X_LIBS@ @X_PRE_LIBS@ -lXext -lX11 @X_EXTRA_LIBS@
++      echo $libdirs -lImlib 
+       ;;
+     --libs-gdk)
+       libdirs=-L@libdir@
+-      echo $libdirs -lgdk_imlib$gdk_gx_libs `@GTK_CONFIG@ --libs` $gdk_libs
++      echo $libdirs -lgdk_imlib
+       ;;
+     *)
+       echo "${usage}" 1>&2

@@ -1,0 +1,23 @@
+?package(kcoloredit):\
+	needs="X11"\
+	section="Applications/Graphics"\
+	hints="KDE"\
+	title="KColorChooser"\
+	icon32x32="/opt/kde3/share/pixmaps/kcolorchooser.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kcolorchooser-16.xpm"\
+	command="/opt/kde3/bin/kcolorchooser"
+
+?package(kcoloredit):\
+	needs="X11"\
+	section="Applications/Graphics"\
+	hints="KDE"\
+	title="KColorEdit"\
+	icon32x32="/opt/kde3/share/pixmaps/kcoloredit.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kcoloredit-16.xpm"\
+	command="/opt/kde3/bin/kcoloredit"
+
+# Icon 22x22 kcoloredit/cr22-app-kcolorchooser.png kcolorchooser.xpm
+# Icon 16x16 kcoloredit/cr16-app-kcolorchooser.png kcolorchooser-16.xpm
+
+# Icon 32x32 kcoloredit/cr32-app-kcoloredit.png kcoloredit.xpm
+# Icon 16x16 kcoloredit/cr16-app-kcoloredit.png kcoloredit-16.xpm

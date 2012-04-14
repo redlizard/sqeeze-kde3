@@ -1,0 +1,10 @@
+Document: kdegraphics-doc-html-kgamma
+Title: KGamma Handbook
+Author: Michael v. Ostheim
+Abstract: KGamma is a simple tool for monitor gamma correction.
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kgamma/index.html
+Files: /usr/share/doc/kde/HTML/en/kgamma/*.html
+

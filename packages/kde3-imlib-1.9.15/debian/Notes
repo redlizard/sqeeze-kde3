@@ -1,0 +1,173 @@
+		Libpng
+		------
+
+Imlib11 is linked with libpng12 (nee libpng3).  This is in accordance
+with the practice of Redhat.  The GDK version of imlib, being part of
+GNOME 1, has remained linked with libpng10 (a.k.a. png2).  
+
+Two recent discussions on this point are:
+  http://lists.debian.org/debian-devel/2003/debian-devel-200304/msg01256.html
+  http://lists.debian.org/debian-devel/2002/debian-devel-200207/msg00653.html
+
+
+
+		Loadable Modules
+		----------------
+
+Gdk_imlib can be built with all the graphics libs linked in, or it
+can be built with a set of loadable modules, one for each graphics
+format.
+
+For most Debian releases, the second option was used.  This worked
+fine until upstream version 1.9.13 in which the loadable modules
+started linking against libgdk_imlib itself.  This triggered a libtool
+bug related to DESTDIR (see below).  I didn't figure out the cause or
+the fix at the time, so I resorted to the second option.
+
+With imlib 1.9.14-2, I disabled the module code, and linked all the
+graphics libraries directly into libgdk_imlib.  This led to requiring
+gdk-imlib-dev to depend on the corresponding -dev packages for each
+graphics library.
+
+Starting with 1.9.14-5, we're going back to loadable modules.  Now the
+trick with libtool is that at install time, each shared object (shared
+lib or loadable module) is re-linked.  Consider the case of a shared
+module, e.g. libimlib-bmp.so, which is linked against libgdk_imlib.
+
+The make rules re-link and install libgdk_imlib first.  Then
+libimlib-bmp.so is re-linked before installation.  Normally, this is
+fine, because libgdk_imlib is in the correct location and can be found
+by the linker.
+
+However, when building a Debian package, the files are first installed in
+a staging area (i.e. debian/tmp).  The linker is not expecting to look
+there when re-linking libimlib-bmp.so, and thus it fails.
+
+This is a known problem in the libtool community, see e.g. the
+notes on "The DESTDIR bug" at
+
+    http://fink.sourceforge.net/doc/porting/libtool.php
+
+A patches to libtool was provided by Bruno Haible, and later updated
+by Ewald Snel
+
+    http://mail.gnu.org/pipermail/libtool/2002-April/006268.html 
+    http://mail.gnu.org/pipermail/bug-libtool/2002-February/003019.html 
+
+Unfortunately, these did not work.  I tried the patch from Sam Couter
+at http://bugs.debian.org/57087 that worked!
+
+  *** BIG FAT WARNING ***
+  Do not run "libtoolize" without a patched libtool!
+
+
+
+		Devel Dependencies
+		------------------
+
+Library libImlib (package imlib11) is directly linked to several
+libraries, so imlib11-dev has to depend on the corresponding -dev
+packages.
+
+imlib11 deps (from shlibs)		imlib11-dev deps
+--------------------------		--------------
+
+libjpeg62				libjpeg62-dev
+libpng2(>=1.0.12)			libpng2-dev
+libtiff3g				libtiff3g-dev
+libungif4g (>= 4.1.0b1)			libungif4-dev
+xlibs (>> 4.1.0)			xlibs-dev
+zlib1g (>= 1:1.1.4)			zlib1g-dev
+
+
+	A Caveat
+	--------
+
+However, see Bug #152364.  The package gnome-libs generates a
+"gnome-config" script using the list of libraries emitted by
+"imlib-config --libs-gdk".  Historically, gdk-imlib has always built
+the modules, and consequently imlib-config did not list the individual
+graphics libs.
+
+In March, a new release came out that caused me some problems.  I
+couldn't get the modules built correctly, so I disabled them, linking
+all the graphics libs into gdk-imlib.
+
+A new gnome-libs comes out, and picks up all the graphics libs from
+"imlib-config --libs-gtk".
+
+For version 1.9.14-5, I straightened out the mess with imlib so that I
+could build the modules again.  I didn't know anything about
+gnome-config picking up the graphics libs, so I naively thought I
+could remove the dependencies.
+
+Boom!  See Bug #152364.
+
+In version 1.9.14-6, I reverted package gdk-imlib-dev to list the
+graphics libs until such time as gnome-libs gets rebuilt.  The gnome
+libs were updated by 2002-07-29, so version 1.9.14-7 removes the
+graphics lib dependencies from gdk-imlib-dev, again.
+
+
+
+		Plugins
+		-------
+
+The shared libs in gdk-imlib1 confuse dh_makeshlibs.  The result is
+a bunch of duplicated entries in the shlibs file.  I fixed this
+by providing a shlibs file for gdk-imlib which thankfully does 
+override the generated one.  So the warnings can be ignored.
+
+
+		Source Changes
+		--------------
+
+Any changes to a generated file such as Makefile.in or configure is a
+side-effect of either a change to the corresponding source file
+(i.e. Makefile.am or configure.in), or simply a result of running
+autoconf & automake prior to building the Debian source package.  As
+such, these changes should be ignored.
+
+The files config.guess and config.sub are refreshed manually from
+/usr/share/misc.
+
+
+* config-quoting.patch
+
+Quote autoconf macro arguments, to please autoconf 2.53.
+Posted to upstream Bugzilla 2002-07-07.
+
+
+* gxlibs.patch
+
+Ensure libgdk and libgtk are linked with gdk_imlib.
+Posted to upstream Bugzilla 2002-07-07.
+
+
+* moduledir.patch
+
+Install helper modules into configurable moduledir.
+Posted to upstream Bugzilla 2002-07-07.
+
+
+* tload.patch
+
+Build test programs (both Imlib and gdk_imlib versions) to
+test that the linking is correct, and modules can be found.
+
+
+* palfile-buffer.patch
+
+Bug fix to prevent overwriting a too-short buffer.
+Posted to upstream Bugzilla 2002-07-07.
+
+
+* fallback-doc.patch
+
+Debian specific.  Emit diagnostic pointing to README file that
+explains what to do when "all fallbacks failed."
+
+
+* bpp16-CVE-2007-3568.patch
+
+Fix DoS via a BMP image with a Bits Per Page (BPP) value of 0

@@ -1,0 +1,11 @@
+?package(kpdf):\
+	needs="X11"\
+	section="Applications/Viewers"\
+	hints="KDE"\
+	title="KPDF"\
+	icon32x32="/opt/kde3/share/pixmaps/kpdf.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kpdf-16.xpm"\
+	command="/opt/kde3/bin/kpdf"
+
+# Icon 32x32 kpdf/cr32-app-kpdf.png kpdf.xpm
+# Icon 16x16 kpdf/cr16-app-kpdf.png kpdf-16.xpm

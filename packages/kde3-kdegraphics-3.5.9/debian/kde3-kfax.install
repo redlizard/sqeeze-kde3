@@ -1,0 +1,13 @@
+debian/tmp/opt/kde3/bin/kfax
+debian/tmp/opt/kde3/share/applications/kde/kfax.desktop
+debian/tmp/opt/kde3/share/apps/kfax/kfaxui.rc
+debian/tmp/opt/kde3/share/apps/kfax/pics/kfax.tif
+debian/tmp/opt/kde3/share/apps/kfax/pics/kfaxlogo.xpm
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kfax.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/kfax.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kfax.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kfax.png
+debian/tmp/opt/kde3/share/icons/hicolor/scalable/apps/kfax.svgz
+
+debian/icons/kfax.xpm		/opt/kde3/share/pixmaps
+debian/icons/kfax-16.xpm	/opt/kde3/share/pixmaps

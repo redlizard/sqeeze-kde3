@@ -1,0 +1,30 @@
+--- imlib-1.9.15.orig/gdk_imlib/Makefile.am
++++ imlib-1.9.15/gdk_imlib/Makefile.am
+@@ -15,7 +15,7 @@
+ libimlib_jpeg_la_LIBADD  = $(JPEGLIBS) libgdk_imlib.la
+ 
+ libimlib_png_la_SOURCES = io-png.c
+-libimlib_png_la_LDFLAGS = $(common_ldflags)
++libimlib_png_la_LDFLAGS = $(common_ldflags) -lglib
+ libimlib_png_la_LIBADD  = $(PNGLIBS) libgdk_imlib.la
+ 
+ libimlib_tiff_la_SOURCES = io-tiff.c
+@@ -31,7 +31,7 @@
+ libimlib_bmp_la_LIBADD = libgdk_imlib.la
+ 
+ libimlib_xpm_la_SOURCES = io-xpm.c
+-libimlib_xpm_la_LDFLAGS = $(common_ldflags)
++libimlib_xpm_la_LDFLAGS = $(common_ldflags) -lX11
+ libimlib_xpm_la_LIBADD = libgdk_imlib.la
+ 
+ libimlib_ppm_la_SOURCES = io-ppm.c
+@@ -86,7 +86,7 @@
+ 	modules.c
+ 
+ 
+-libgdk_imlib_la_LDFLAGS = -version-info 10:15:9
++libgdk_imlib_la_LDFLAGS = -version-info 10:15:8
+ libgdk_imlib_la_LIBADD = $(GX_LIBS)
+ 
+ 
+

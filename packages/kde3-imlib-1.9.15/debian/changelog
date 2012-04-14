@@ -1,0 +1,863 @@
+kde3-imlib (1.9.15-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Sat, 14 Apr 2012 18:28:23 +0000
+
+imlib (1.9.15-7) unstable; urgency=medium
+
+  * QA upload.
+  * Fix bashism in debian/rules (Closes: #478405)
+  * Move to quilt patch system
+    - Move debian/*.{patch,diff} to debian/patches
+    - Add applied patches to debian/patches/series
+    - Add Build-Depends on quilt
+  * Delete debian/.cvsignore
+  * Cosmetic changes to debian/rules
+
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Sat, 17 May 2008 23:28:16 +0100
+
+imlib (1.9.15-6) unstable; urgency=low
+
+  * QA upload.
+  * If max bpp > 24 force to 24. (Closes: #445914).
+    + Thanks to Timo Jyrinki for the patch.
+  * Add back in @GTK_CONFIG@ --cflags for --cflags-gdk. (Closes: #458881).
+  * Change libungif4-dev debp/build-dep to libgif-dev.
+  * Update --x-includes and --x-libraries options in configure.
+  * Bump debhelper build-dep and compat to 5.
+  * Bump Standars Version to 3.7.3. (No changes needed).
+
+ -- Barry deFreese <bddebian@comcast.net>  Sun, 03 Feb 2008 17:11:05 -0500
+
+imlib (1.9.15-5) unstable; urgency=low
+
+  * QA upload
+  * Remove ancient suggests (Closes: 441371)
+  * Purge loads of unneeded stuff in imlib-config output (Closes: 375807)
+  * Fix m4 file (Closes: 294120)
+
+ -- Sune Vuorela <debian@pusling.com>  Thu, 06 Dec 2007 14:00:10 +0000
+
+imlib (1.9.15-4) unstable; urgency=low
+
+  * QA upload.
+
+  [ Michel Dänzer ]
+  * Fix incorrect rendering when the MIT-SHM extension doesn't support shared
+    pixmaps, e.g. using EXA with current versions of Xorg:
+    + the boolean value returned via the last parameter to XShmQueryVersion()
+      isn't honoured everywhere
+    + the init functions that take parameters allow the caller to enable
+      shared pixmaps when they aren't supported (or disabled by configuration
+      files)
+    Closes: #448360.
+
+ -- Julien Cristau <jcristau@debian.org>  Mon, 03 Dec 2007 14:55:26 +0100
+
+imlib (1.9.15-3) unstable; urgency=high
+
+  * QA upload by the testing security team
+  * Include patch (bpp16-CVE-2007-3568.patch) to fix a DoS caused via a
+    BMP image with a Bits Per Page (BPP) value of 0 (Closes: #437708)
+    Fixes: CVE-2007-3568
+    Thanks to Luciano Bello for forwarding the patch
+
+ -- Steffen Joeris <white@debian.org>  Tue, 14 Aug 2007 11:13:36 +0000
+
+imlib (1.9.15-2) unstable; urgency=low
+
+  * QA upload.
+  * Fix the upstream sonames for consistency with previous, compatible
+    versions
+  * Relibtoolize with unstable Debian version of libtool instead of the
+    experimental version, to restore the previous module loader behavior
+  * Don't ignore errors from make distclean.
+
+ -- Steve Langasek <vorlon@debian.org>  Sun, 22 Jul 2007 17:10:06 -0700
+
+imlib (1.9.15-1) unstable; urgency=low
+
+  * QA upload.
+  * New upstream release from September 2004.
+  * Bump to Standards-Version 3.7.2.
+  * Change Source-Version substvars to binary:Version.
+
+ -- Clint Adams <schizo@debian.org>  Sun, 22 Jul 2007 08:07:47 -0400
+
+imlib (1.9.14-32) unstable; urgency=low
+
+  * QA upload. 
+  * config.{guess,sub} and libtool update (closes: bug#264931, bug#373875,
+    bug#287135).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Fri,  1 Dec 2006 00:00:52 +0100
+
+imlib (1.9.14-31) unstable; urgency=low
+
+  * Orphaning package.
+  * debian/control (Maintainer): Set to Debian QA Group.
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Mon, 11 Sep 2006 23:08:04 -0700
+
+imlib (1.9.14-30) unstable; urgency=low
+
+  * configure.in (X11/extensions/XShm.h): Succeed also if the file is in
+  /usr/include. (Closes: #364628)
+    
+  * Rerun autoconf.
+  
+ -- Thomas Bushnell, BSG <tb@debian.org>  Fri, 28 Apr 2006 20:20:21 -0700
+
+imlib (1.9.14-29) unstable; urgency=low
+
+  * debian/copyright: Correct to distinguish copyright from license.
+    (Closes: #290164)
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Wed,  1 Mar 2006 17:04:48 -0800
+
+imlib (1.9.14-28) unstable; urgency=low
+
+  * debian/rules (configure): configure script looks for a libxt header
+    file to determine where X is installed.  Rather than add a useless
+    dependency, however, just specify --x-includes and --x-libraries on
+    the configure line.
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Wed,  4 Jan 2006 16:11:07 -0800
+
+imlib (1.9.14-27) unstable; urgency=low
+
+  * debian/control (Build-Depends): Replace defunct xlibs-dev with
+    libx11-dev, libxext-dev, x-dev, libsm-dev, libice-dev.  Many thanks to
+    Steve Langasek for suggesting this list of replacements.
+    (imlib11-dev, gdk-imlib11-dev): Same for Depends here.
+    (Closes: #345577)
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Wed,  4 Jan 2006 11:47:01 -0800
+
+imlib (1.9.14-26) unstable; urgency=low
+
+  * debian/watch: New file.
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Sun,  6 Nov 2005 22:29:06 -0800
+
+imlib (1.9.14-25) unstable; urgency=low
+
+  * debian/control (imlib11-dev): Remove Conflicts and Replaces of
+    gdk-imlib1-dev and imlib1-dev.  (Closes: #334948).
+  (imlib-base): Likewise.
+  (gdk-imlib11-dev): Likewise.
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Sun, 30 Oct 2005 19:45:51 -0800
+
+imlib (1.9.14-24) unstable; urgency=low
+
+  * debian/control (gdk-imlib11, gdk-imlib11-dev): Remove mention of
+    libpng2 from description.
+   
+  * debian/control (gdk-imlib11): Declare Conflicts/Replaces of very old
+    and now gone-from-Debian package gdk-imlib2, since it might still be
+    hanging around on some systems.  (Closes: #333412)
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Thu, 13 Oct 2005 10:52:36 -0700
+
+imlib (1.9.14-23) unstable; urgency=low
+
+  * debian/control (imlib-base): Only conflict with old
+    (pre-1.9.14-22) versions of gdk-imlib1-dev now that gdk-imlib11-dev
+    provides that name.
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Tue, 11 Oct 2005 23:56:51 -0700
+
+imlib (1.9.14-22) unstable; urgency=low
+
+  * debian/control (gdk-imlib1): New package.  Masquerade as old
+    gdk-imlib1 package that was built from imlib+png2 source package.
+    Contains symlinks to the files from gdk-imlib11.
+  * debian/rules (install): Generate gdk-imlib1 package.
+    
+  * debian/control (gdk-imlib11-dev): Provides gdk-imlib1-dev now.
+  
+ -- Thomas Bushnell, BSG <tb@debian.org>  Mon, 10 Oct 2005 10:37:42 -0700
+
+imlib (1.9.14-21) unstable; urgency=low
+
+  * debian/imlib11-dev.preinst, debian/imlib11-dev.postrm: Remove files.
+    (They only provided the diversion for imlib-config, which is no longer
+    necessary or useful now that imlib-config is in imlib-base and the
+    imlib+png2 package is going away.)  (Closes: #331666)
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Wed,  5 Oct 2005 02:06:20 -0700
+
+imlib (1.9.14-20) unstable; urgency=low
+
+  * debian/rules: Properly install /usr/lib/libgdk_imlib.so into
+    gdk-imlib11-dev.
+
+ -- Thomas Bushnell, BSG <tb@debian.org>  Sun,  2 Oct 2005 19:34:13 -0700
+
+imlib (1.9.14-19) unstable; urgency=low
+
+  * New maintainer. (Closes: #289789)
+  * imlib11: Change Section to oldlibs.
+  * gdk-imlib11, gdk-imlib11-dev, imlib-base: New packages.
+  * debian/rules (install): dh_install the files for the new packages.
+  * debian/control (imlib11, imlib11-dev): Bump versioned dependency on
+    imlib-base.
+  * debian/rules (install): Put imlib-config in imlib-base, not imlib11-dev.
+  
+  * Acknowledge NMU. (Closes #284925)
+  
+ -- Thomas Bushnell, BSG <tb@debian.org>  Tue, 27 Sep 2005 21:49:51 -0700
+
+imlib (1.9.14-17.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * High-urgency upload for sarge-targetted RC bugfix
+  * CAN-2004-1026: fix various overflows in image decoding routines.
+    Closes: #284925.
+
+ -- Steve Langasek <vorlon@debian.org>  Thu, 16 Dec 2004 05:57:41 -0800
+
+imlib (1.9.14-17) unstable; urgency=high
+
+  * Applied patch by Marcus Meissner <meissner@suse.de> to fix arbitrary
+    code execution through a heap overflow [gdk_imlib/io-bmp.c,
+    CAN-2004-0817, http://bugzilla.gnome.org/show_bug.cgi?id=151034]
+  
+  * imlib.m4: Quote macros AM_PATH_IMLIB and AM_PATH_GDK_IMLIB.  
+    Closes: #267804.
+
+ -- Steve M. Robbins <smr@debian.org>  Tue, 31 Aug 2004 19:50:02 -0400
+
+imlib (1.9.14-16) unstable; urgency=low
+
+  * debian/control: build with libtiff4.
+
+ -- Steve M. Robbins <smr@debian.org>  Sat, 31 Jul 2004 11:33:33 -0400
+
+imlib (1.9.14-15) unstable; urgency=low
+
+  * debian/control: Expand description of imlib11-dev.  Closes: #209555.
+
+ -- Steve M. Robbins <smr@debian.org>  Wed, 17 Mar 2004 22:58:19 -0500
+
+imlib (1.9.14-14) unstable; urgency=low
+
+  * Divert imlib-config.1 manpage, too.
+  * Conflict and replace imlib-dev.
+
+ -- Steve M. Robbins <smr@debian.org>  Sat, 24 May 2003 16:00:58 -0400
+
+imlib (1.9.14-13) unstable; urgency=low
+
+  * Set SOVERSION to 11, bringing Debian in line with other
+  distributions.
+
+ -- Steve M. Robbins <smr@debian.org>  Sat, 17 May 2003 01:07:16 -0400
+
+imlib (1.9.14-12) unstable; urgency=low
+
+  * Update config.{guess,sub}.
+  
+  * Do not build gdk-imlib2 nor gdk-imlib-dev.  Those packages were
+    a terrible mistake.
+  
+  * Move imlib-base and imlib-progs packages back to imlib+png2.
+    (The latter depends on gdk-imlib1 package).
+
+ -- Steve M. Robbins <smr@debian.org>  Wed, 22 Jan 2003 23:53:17 -0500
+
+imlib (1.9.14-11) unstable; urgency=low
+
+  * Revert changes made in -10.  This is the same as revision -8.
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 22 Sep 2002 22:32:47 -0400
+
+imlib (1.9.14-10) unstable; urgency=low
+  
+  * gdk-imlib2: do not build (it was a mistake).
+  * gdk-imlib1: build using modified g_module() that loads plugins without
+    RTLD_GLOBAL (thanks, Redhat).
+  * gdk-imlib1-dev: empty package that depends on gdk-imlib-dev.
+    This exists solely to satisfy dependencies.  Cannot be provided by
+    package gdk-imlib-dev, as some dependencies are versioned.
+  
+ -- Steve M. Robbins <smr@debian.org>  Sun, 22 Sep 2002 13:39:38 -0400
+
+imlib (1.9.14-9) unstable; urgency=low
+  
+  * Not released.
+
+ -- Steve M. Robbins <smr@debian.org>  Sun, 22 Sep 2002 13:39:22 -0400
+
+imlib (1.9.14-8) unstable; urgency=low
+  
+  * imlib2: don't provide libimlib2.  Closes: #157408.
+  * gdk-imlib2: don't provide libgdk-imlib2.
+
+ -- Steve M. Robbins <smr@debian.org>  Wed, 21 Aug 2002 21:14:17 -0400
+
+imlib (1.9.14-7) unstable; urgency=low
+  
+  * Build with libpng3.
+    Bump SOVERSION to 2.  Closes: #155905.
+
+  * imlib-dev does not need to depend on libglib1.2-dev or libgtk1.2-dev.
+  
+  * gdk-imlib-dev does not need to depend on the graphic library -dev packages. 
+    (gnome-libs has been rebuilt)  Closes: #151998.
+    
+ -- Steve M. Robbins <smr@debian.org>  Sun, 11 Aug 2002 13:38:32 -0400
+
+imlib (1.9.14-6) unstable; urgency=low
+  
+  * Restore graphic lib dependencies to gdk-imlib-dev.  Closes: #152364.
+    This measure is temporary, until gnome-libs gets rebuilt.
+    (Reopens: #151998).
+  
+  * libImlib does not need to link against gdk nor gtk libraries.
+  
+ -- Steve M. Robbins <smr@debian.org>  Tue,  9 Jul 2002 23:47:57 -0400
+
+imlib (1.9.14-5) unstable; urgency=low
+  
+  * Build gdk_imlib with modules (again).  
+    - gdk-imlib-dev does not need to depend on the graphic library
+      -dev packages. Closes: #151998.
+    - you still cannot link gdk_imlib with libpng3, however.
+  
+  * configure.in: add quoting to satisfy autoconf 2.53.
+
+ -- Steve M. Robbins <smr@debian.org>  Sat,  6 Jul 2002 20:53:21 -0400
+
+imlib (1.9.14-4) unstable; urgency=low
+  
+  * Imlib/misc.c: Do not strcpy() onto too-short a buffer.
+    Closes: #146562.
+  
+ -- Steve M. Robbins <smr@debian.org>  Sat, 11 May 2002 10:42:42 -0400
+
+imlib (1.9.14-3) unstable; urgency=low
+  
+  * Build-depend on libglib1.2-dev.
+  * imlib-dev depends on libglib1.2-dev, libgtk1.2-dev.  
+    Thanks, Colin Watson.  Closes: #142085.
+  * gdk-imlib-dev depends on libglib1.2-dev.
+  
+  * Suppress autotool invocation at build time.
+  
+  * Update config.guess, config.sub.
+  
+ -- Steve M. Robbins <smr@debian.org>  Sat, 20 Apr 2002 19:21:32 -0400
+
+imlib (1.9.14-2) unstable; urgency=low
+  
+  * Forget the modules; build all image IO code into gdk_imlib.
+    Closes: #140096, #140411.
+  
+ -- Steve M. Robbins <smr@debian.org>  Fri, 29 Mar 2002 08:48:52 -0500
+
+imlib (1.9.14-1) unstable; urgency=low
+  
+  * New upstream version.
+  
+ -- Steve M. Robbins <smr@debian.org>  Mon, 25 Mar 2002 18:22:18 -0500
+
+imlib (1.9.13-2) unstable; urgency=low
+  
+  * Applied patches from upstream CVS:
+    - expunge all external helper code.  Closes: 139488.
+  * gdk_imlib/Makefile.am: Link the dynamic modules with correct
+    dependency information. Closes: 139541.
+  
+ -- Steve M. Robbins <smr@debian.org>  Sun, 24 Mar 2002 14:49:50 -0500
+
+imlib (1.9.13-1) unstable; urgency=low
+  
+  * New upstream release.
+    - Fallback to external programs (e.g. Imagemagick) for image conversion
+    have been removed.
+  * Removed build dependencies on Imagemagick, libjpeg-progs, and netpbm.
+  * Removed suggestion of Imagemagick.
+
+ -- Steve M. Robbins <smr@debian.org>  Thu, 14 Mar 2002 18:56:20 -0500
+
+imlib (1.9.11-4) unstable; urgency=low
+
+  * imlib-dev.preinst, imlib-dev.postrm: Fix up the diversions so that
+    upgrade works.  Closes: 113318.
+  * imlib-base.postrm: Remove empty /etc/imlib directory on purge; 
+    workaround for dpkg bug #59343.
+  * Conflict and Build-conflict with libpng3-dev.
+  * Imlib will not be built with libpng3.  Closes: 127129, 127130.
+  
+ -- Steve M. Robbins <smr@debian.org>  Mon, 25 Feb 2002 18:10:09 -0500
+
+imlib (1.9.11-3) unstable; urgency=low
+
+  * imlib-dev.preinst, imlib-dev.postrm: Set diverted name for manpage
+    imlib-config to end in .1.gz to avoid confusing tools that expect this
+    naming convention.  Closes: 110131.
+  * configure.in: Substitute GX_LIBS.
+  * gdk_imlib/Makefile.am: Link libgdk_imlib with GX_LIBS to pick up X11
+    dependencies.  Closes: 110892.
+  * gdk_imlib/Makefile.am, gdk_imlib/modules.c: Install plugins into
+    configurable moduledir.
+  * debian/rules, debian/gdk-imlib1.files: Install plugins into 
+    /usr/lib/gdk-imlib1.
+  * gdk_imlib/Makefile.am: Remove useless dependency of plugins on 
+    libgdk_imlib.
+
+ -- Steve M. Robbins <smr@debian.org>  Tue,  4 Sep 2001 21:04:39 -0400
+
+imlib (1.9.11-2) unstable; urgency=low
+
+  * Do not unconditionally copy config.guess and config.sub during build.
+    No longer depends on autotools-dev.
+  * Fix configure.in to use "libtool" script in source directory.  (Closes: 109147)
+  * Improve diagnostic message if image conversion fails.  (Closes: 108723)
+  * Suggest imagemagick for imlib1.
+  * Remove suggestions of netpbm and libjpeg-progs from gdk-imlib1; the
+    code to use these as fallbacks is disabled at the moment.
+  
+ -- Steve M. Robbins <smr@debian.org>  Sat, 18 Aug 2001 16:08:17 -0400
+
+imlib (1.9.11-1) unstable; urgency=low
+
+  * New upstream release.
+  * Remove debian/*.1; upstream incorporated Ossama's manpages.
+  * Remove /usr/share/doc/$pkg in preinst, if it is a symlink.  
+    Closes: 81015.
+  * Create shlibs file by hand, since dh_makeshlibs generates bogus
+    entries for libimlib-* plugins of gdk-imlib1.
+  * Because we no longer use dh_makeshlibs, both imlib1 and gdk-imlib1
+    need postinst and postrm scripts that run ldconfig.
+  * Standards-Version updated to 3.5.6; no changes were required.
+
+ -- Steve M. Robbins <smr@debian.org>  Fri, 10 Aug 2001 19:05:29 -0400
+
+imlib (1.9.10-5) unstable; urgency=low
+
+  * Build with libungif4-dev. (Closes: 105397, 105405, 105546)
+    - changed build-depends to list libungif4-dev exclusively
+      (used to be libungif4-dev | libungif3g-dev | giflib3g-dev)
+    - changed depends for imlib-dev and gdk-imlib-dev in same way
+  * Use up-to-date config.guess and config.sub files.  (Closes: 105599)
+    - files are copied from /usr/share, so add build-depends on autotools-dev
+  * Make imlib-dev and gdk-imlib-dev replace, rather than conflict,
+    imlib-progs (<< 1.9.4).  (Closes: 105396)
+  * Change relationship of gdk-imlib-dev and imlib-dev (<<1.9.4)
+    from conflicts to replaces (imlib.m4 is replaced).
+
+ -- Steve M. Robbins <smr@debian.org>  Wed, 18 Jul 2001 23:44:07 -0400
+
+imlib (1.9.10-4) unstable; urgency=low
+
+  * New maintainer.
+  * Re-work packaging using vanilla debhelper.
+  * imlib-progs: Move script imlib-config and its manpage to ...
+  * imlib-dev, gdk-imlib-dev: ... here.  (Closes: #80402)
+    - Use diversion in imlib-dev.
+    - Add conflict with previous versions of imlib-progs.
+    - Remove depends on imlib-progs.
+  * gdk-imlib-dev: Install imlib.m4 file.  (Closes: #43792)
+    - Add conflict with previous version of imlib-dev.
+  * imlib-dev: Divert imlib.m4 to allow installation of both -dev packages.
+  * Install the libtool ".la" files.
+
+ -- Steve M. Robbins <smr@debian.org>  Sat, 14 Jul 2001 17:58:04 -0400
+
+imlib (1.9.10-3) unstable; urgency=high
+
+  * Rebuilt against the correct (released) debs of X.
+    (Closes: 94931, 94932, 94933) 
+
+ -- Ossama Othman <ossama@ece.uci.edu>  Sun, 22 Apr 2001 20:00:22 -0700
+
+imlib (1.9.10-2) unstable; urgency=low
+
+  * Added "Section" fields to the {gdk-}imlib1 and the {gdk-}imlib-dev
+    packages.  They each belong in the "libs" and "devel" sections,
+    respectively.
+
+ -- Ossama Othman <ossama@ece.uci.edu>  Sun, 22 Apr 2001 14:29:58 -0700
+
+imlib (1.9.10-1) unstable; urgency=low
+
+  * New upstream.
+  * Made libungif4-dev the preferred GIF "-dev" package since the
+    libungif4 run-time library is the preferred one.  (Closes: #93191)
+  * No longer any need to define "-DNO_INIT_MSG."  It no longer appears
+    to be used in the Imlib/gdk-imlib sources.
+  * Wildcarded the glob expression for the shared libraries listed in
+    imlib1.files.in and gdk-imlib1.files.in so that libraries with
+    revisions that have more than one digit (e.g. 1.9.10 vs 1.9.8.1)
+    will be installed.  Thanks to  "Eric Gillespie, Jr."
+    <epg@pobox.com> for pointing out the problem and suggesting a fix.
+  * Install the pkgconfig files for both the Imlib and the gdk_imlib
+    libraries in the `/usr/lib/pkgconfig' directory.  Unlike the
+    imlib-config script, each file has been placed in its
+    corresponding "-dev" package.
+
+ -- Ossama Othman <ossama@ece.uci.edu>  Fri, 20 Apr 2001 12:12:05 -0700
+
+imlib (1.9.8.1-2) unstable; urgency=low
+
+  * Added missing Build-Depends-Indep and Build-Depends fields to the
+    control file.
+  * Changed hardcoded package version dependencies to use automatic
+    ${Source-Version} substvar instead.
+  * Added missing `xlibs-dev' dependency to the `imlib-dev' and
+    `gdk-imlib-dev' packages.  (closes: #82169, #82252)
+  * Added menu hints.  (closes: #82331)
+  * Added `libjpeg-progs' package to `gdkimlib1' "Suggests" control
+    field.
+  * Set DH_COMPAT = 2 to ensure that debhelper v2 features are used.
+  * Fixed problems revealed by lintian regarding /usr/doc/* ->
+    /usr/share/doc/* links.
+  * Updated Standards-Version to 3.2.1.0.
+
+ -- Ossama Othman <ossama@ece.uci.edu>  Mon, 15 Jan 2001 11:28:50 -0800
+
+imlib (1.9.8.1-1) unstable; urgency=low
+
+  * New upstream release from the GNOME team.  (#69237)
+  * imlib-base package now Pre-Depends on dpkg >= 1.6.8, and added
+    appropriate check in its preinst script.  (#63078)
+  * Suggest imagemagick and netpbm packages for gdk-imlib1 package.
+  * Built against unstable distribution to correct "convert" path.
+    (#64749)
+  * Patched greyscale PNG support.  (#40499, #67470, #67471, #67820)
+  * Patched imlib_config to properly use current locale.  Patch supplied
+    by Peter Novodvorsky <petya@logic.ru>.  (#68403)
+
+ -- Ossama Othman <ossama@debian.org>  Thu, 24 Aug 2000 11:05:54 -0700
+
+imlib (1.9.8-4) frozen unstable; urgency=high
+
+  * Fixed broken imlib-base.preinst script.  It didn't check if
+    /etc/imlib/imrc existed prior to running egrep on it.  This resulted
+    in an empty /etc/imlib directory when upgrading.  If the directory is
+    empty then recreate the missing files.  (#60048, #60052)
+
+ -- Ossama Othman <ossama@debian.org>  Fri, 24 Mar 2000 15:34:40 -0800
+
+imlib (1.9.8-3) frozen unstable; urgency=low
+
+  * Updated dependencies for imlib-dev and gdk-imlib-dev packages to
+    also accept libungif4-dev as a GIF development package, in addition
+    to the existing ones.  (#55941)
+  * Updated Standards Version to 3.1.1.1.
+
+ -- Ossama Othman <ossama@debian.org>  Sun, 30 Jan 2000 12:46:08 -0800
+
+imlib (1.9.8-2) unstable; urgency=low
+
+  * Added `im_palette-small.pal' and `im_palette-tiny.pal' to the
+    imlib-base conffile list.
+  * Removed `libimlib-*.so.[0-9]' and `libimlib.so.[0-9].[0-9].[0-9]' from
+    `gdk-imlib1.files.in'.  No such libraries exist.
+  * If PaletteFile entry in existing system imrc file still points to
+    `/etc/im/imrc' then update it to point to `/etc/imlib/imrc'.
+
+ -- Ossama Othman <ossama@debian.org>  Wed, 27 Oct 1999 20:06:27 -0500
+
+imlib (1.9.8-1) unstable; urgency=low
+
+  * New upstream.
+
+ -- Ossama Othman <ossama@debian.org>  Wed, 20 Oct 1999 11:43:21 -0500
+
+imlib (1.9.7-2) unstable; urgency=low
+
+  * Switched from dhelp to doc-base to fix annoying dhelp_parse
+    warnings/errors.  (Closes #44942)
+
+ -- Ossama Othman <ossama@debian.org>  Sun, 12 Sep 1999 17:00:50 -0500
+
+imlib (1.9.7-1) unstable; urgency=low
+
+  * New upstream.  (fixes color map weirdness)
+
+ -- Ossama Othman <ossama@debian.org>  Thu,  9 Sep 1999 18:38:18 -0500
+
+imlib (1.9.6-2) unstable; urgency=low
+
+  * Added versioned dependency flag to dh_makeshlibs call.  (Closes #40531)
+  * Now installs dhelp files in /usr/share/doc, in accordance with FHS.
+
+ -- Ossama Othman <ossama@debian.org>  Wed,  8 Sep 1999 17:20:29 -0500
+
+imlib (1.9.6-1) unstable; urgency=low
+
+  * New upstream.  (Closes #44141)
+
+ -- Ossama Othman <ossama@debian.org>  Mon,  6 Sep 1999 13:59:46 -0500
+
+imlib (1.9.5-2) unstable; urgency=low
+
+  * Created a simple manual page for imlib_config program. (#39462)
+
+  * Fixed dependencies for imlib-dev and gdk-imlib-dev packages.  They
+    should depend on specific versions of their corresponding run-time
+    libraries. (#43704)
+
+ -- Ossama Othman <ossama@debian.org>  Sun, 29 Aug 1999 14:07:07 -0500
+
+imlib (1.9.5-1) unstable; urgency=low
+
+  * New upstream.
+
+ -- Ossama Othman <ossama@debian.org>  Thu, 15 Jul 1999 19:52:50 -0500
+
+imlib (1.9.4-5) unstable; urgency=low
+
+  * Updated dependencies for imlib1 and gdk-imlib1 so that imlib-base gets 
+    updated.  Previously, the old 1.8.1 imlib-base package wouldn't get
+    updated to the 1.9.4 package since there was no explicit dependency on 
+    the new package.  The new package is needed due to the conffile move
+    from /etc/im to /etc/imlib.
+  * Added informative message to the imlib-base preinst script about the
+    conffile move to /etc/imlib.
+  * #ifdefed out the "Imlib Init" message in `Imlib/misc.c'.  It appears
+    that I accidentally lost the original patch during my imlib
+    updates. (#39122)
+  * Corrected spelling in README file.  (#38876)
+
+ -- Ossama Othman <ossama@debian.org>  Tue, 22 Jun 1999 15:12:28 -0500
+
+imlib (1.9.4-4) unstable; urgency=low
+
+  * Updated README.Debian with note about potential problem users with
+    a `~/.imrc' file may have when upgrading to imlib-base 1.9.4-3 or
+    or higher.
+
+ -- Ossama Othman <ossama@debian.org>  Tue, 27 Apr 1999 13:39:38 -0500
+
+imlib (1.9.4-3) unstable; urgency=low
+
+  * Moved conffile location from /etc/im to /etc/imlib.
+  * Made /etc/imlib/* conffiles.  It appears that the original conffile
+    in the control area somehow got lost so I created one.
+
+ -- Ossama Othman <ossama@debian.org>  Thu,  8 Apr 1999 12:36:10 -0500
+
+imlib (1.9.4-2) unstable; urgency=low
+
+  * Removed libgtk-dev from the dependency list to prevent libgtk-dev 1.0
+    from being used to fulfill the dependency.  It should depend on
+    libgtk1.2-dev.
+
+ -- Ossama Othman <ossama@debian.org>  Wed,  7 Apr 1999 22:01:33 -0500
+
+imlib (1.9.4-1) unstable; urgency=low
+
+  * Updated gdk-imlib-dev dependency information to use gtk1.2-dev instead
+    of gtk1.1-dev.  Thanks to Paolo Molaro <lupus@lettere.unipd.it> for
+    pointing this out.
+
+ -- Ossama Othman <ossama@debian.org>  Fri,  5 Mar 1999 12:33:53 -0600
+
+imlib (1.9.4-0.1) unstable; urgency=low
+
+  * Non-maintainer upload for gnome-1.0
+  * New upstream version
+
+ -- Jules Bean <jules@debian.org>  Thu,  4 Mar 1999 08:27:44 +0000
+
+imlib (1.9.3-5) unstable; urgency=low
+
+  * Linked against glib/gtk 1.2.
+
+ -- Ossama Othman <ossama@debian.org>  Fri, 26 Feb 1999 15:59:44 -0600
+
+imlib (1.9.3-4) unstable; urgency=low
+
+  * Forgot to mention that the below change fixes a series of bugs:
+    (#33655, #33710, #33711, #33721)
+
+ -- Ossama Othman <ossama@debian.org>  Mon, 22 Feb 1999 15:41:33 -0600
+
+imlib (1.9.3-3) unstable; urgency=low
+
+  * Moved imlib.m4 back to imlib-dev from imlib-base to make everyone happy,
+    although I believe this to be the incorrect solution. 
+
+ -- Ossama Othman <ossama@debian.org>  Mon, 22 Feb 1999 15:13:55 -0600
+
+imlib (1.9.3-2) unstable; urgency=low
+
+  * Moved the `libimlib-*' libraries to their corresponding gdk-imlib
+    packages.  They didn't belong in the Imlib packages.
+  * Moved `libimlib-*.so' to the gdk-imlib1 run-time library package since
+    the links are needed for run-time operation not compile time operation.
+    This fixes the gdk_imlib image loading problem.  (#33630)
+
+ -- Ossama Othman <ossama@debian.org>  Sat, 20 Feb 1999 16:36:40 -0600
+
+imlib (1.9.3-1) unstable; urgency=low
+
+  * New maintainer upload.
+  * New upstream release.
+  * Patched ltconfig to support non-i386 platforms:
+        check_shared_deplibs_method=\
+             'file_magic ELF [0-9][0-9]-bit [ML]SB shared object'
+    instead of:
+        check_shared_deplibs_method=\
+             'file_magic ELF 32-bit LSB shared object'
+  * The below fix also fixes the wmakerconf/imlib problem (#32661), it seems.
+  * Added @PREFIX@/lib/libimlib-*.so and @PREFIX@/lib/libimlib-*.a to
+    imlib-dev.files.in so that the `.so' links to the individual image
+    type Imlib shared libraries and their corresponding static libraries
+    get installed.  They were not added after Imlib was split into several
+    libraries.
+  * Created man page for imlib-config.
+  * Created dhelp file to register Imlib programmers' guide found in
+    imlib-base with dhelp (#31189)
+  * Added rules to patch libtool after the configure script builds it
+    so that an rpath isn't built into the libraries.
+    (patch description available in lintian package)
+  * Updated Standards-Version in control.in to 2.5.0.0.
+  * Now lintian clean.
+
+ -- Ossama Othman <ossama@debian.org>  Tue, 16 Feb 1999 20:08:17 -0600
+
+imlib (1.9.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Brian M. Almeida <bma@debian.org>  Sat, 23 Jan 1999 18:50:29 -0500
+
+imlib (1.9.0-4) unstable; urgency=low
+
+  * Rebuilt against the new debhelper (#32222, #32234)
+
+ -- Brian M. Almeida <bma@debian.org>  Thu, 21 Jan 1999 22:50:29 -0500
+
+imlib (1.9.0-3) unstable; urgency=low
+
+  * Fixed /usr/doc/copyright to point to correct download location (#32181)
+
+ -- Brian M. Almeida <bma@debian.org>  Wed, 20 Jan 1999 12:41:29 -0500
+
+imlib (1.9.0-2) unstable; urgency=low
+
+  * Fixed the PNG problems (added libimlib-* to the imlib1.files)
+
+ -- Brian M. Almeida <bma@debian.org>  Wed, 13 Jan 1999 20:16:29 -0500
+
+imlib (1.9.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Brian M. Almeida <bma@debian.org>  Tue, 12 Jan 1999 20:32:29 -0500
+
+imlib (1.8.2-3) unstable; urgency=low
+
+  * Now makes shared lib correct version (upstream bug)
+
+ -- Brian M. Almeida <bma@debian.org>  Thu,  7 Jan 1999 18:20:00 -0500
+
+imlib (1.8.2-3) unstable; urgency=low
+
+  * Made /etc/im/imrc a conffile 
+
+ -- Brian M. Almeida <bma@debian.org>  Sun,  3 Jan 1999 12:45:00 -0500
+
+imlib (1.8.2-2) unstable; urgency=low
+
+  * Had #if NO_INIT_MSG instead of #ifndef NO_INIT_MSG. Fixed.
+
+ -- Brian M. Almeida <bma@debian.org>  Sat,  2 Jan 1999 15:17:00 -0500
+
+imlib (1.8.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Brian M. Almeida <bma@debian.org>  Fri,  1 Jan 1999 20:15:07 -0500
+
+imlib (1.8.1-2) unstable; urgency=low
+
+  * Recompiled against libgtk1.1.5
+  * Removed 'Imlib Init' printf by using #ifdef DEBIAN (#29676)
+
+ -- Brian M. Almeida <bma@debian.org>  Tue,  1 Dec 1998 19:40:07 -0500
+
+imlib (1.8.1-1) frozen unstable; urgency=low
+
+  * New maintainer
+  * Moved imlib_config menu item from System to Apps/System (#27437)
+  * Now looks for ImageMagick in proper paths if installed (#27995, #28381)
+  * Moved imlib.m4 into imlib-dev (#29169)
+  * Recompiled against libjpeg62(libjpeg6b with fixed soname)
+
+ -- Brian M. Almeida <bma@debian.org>  Sun,  9 Nov 1998 16:28:07 -0500
+
+imlib (1.8.1-0.2) unstable; urgency=low
+
+  * NMU rebuilt with libjpeg6b dependencies.
+
+ -- Christopher C. Chimelis <chris@classnet.med.miami.edu>  Sat,  3 Oct 1998 08:50:07 -0500
+
+imlib (1.8.1-0.1) unstable; urgency=low
+
+  * New upstream release.  Non-maintainer upload.
+
+ -- Jim Pick <jim@jimpick.com>  Fri, 25 Sep 1998 20:21:52 -0700
+
+imlib (1.7-2) unstable; urgency=low
+
+  * added imlib-progs to imlib and gdk-imlib -dev depends lines
+  * cleaned up debian/ directory
+  * Added gtk1.1 dependency info
+  * Added imlib-config to imlib-progs
+
+ -- Sean E. Perry <shaleh@debian.org>  Mon, 10 Aug 1998 22:16:52 -0400
+
+imlib (1.7-1) unstable; urgency=low
+
+  * Removed imagemagick dependency
+
+ -- Sean E. Perry <shaleh@debian.org>  Thu, 23 Jul 1998 01:54:49 -0400
+
+imlib (1.7-0) unstable; urgency=low
+
+  * New upstream version
+  * Returned the packages to their former names
+  * Once this release is up, I will close ALL outstanding bugs on these packages -- YAY"
+
+ -- Sean E. Perry <shaleh@debian.org>  Sun, 19 Jul 1998 04:46:29 -0400
+
+imlib (1.6-1.11) unstable; urgency=low
+
+  * Fixed bug in 8bpp displays, sent upstream
+
+ -- Sean E. Perry <shaleh@debian.org>  Sat, 27 Jun 1998 03:25:08 -0400
+
+imlib (1.6-1.1) unstable; urgency=low
+
+  * Maintainer release -- new and improved
+
+ -- Sean E. Perry <shaleh@debian.org>  Sun, 14 Jun 1998 21:33:32 -0400
+
+imlib (1.6-0.1) unstable; urgency=low
+
+  * New upstream version.
+  * Modified to use "debconfigure" script.
+  * Non-maintainer release.
+
+ -- Jim Pick <jim@jimpick.com>  Fri, 12 Jun 1998 14:09:56 -0700
+
+imlib (1.4-1) frozen unstable; urgency=low
+
+  * Fixes need to have non-free components to build free part.  As reported
+    by James Troup, this closes his bug
+  * Lib itself has been through a security audit by Alan Cox.
+  * numerous bug fixes in the lib itself
+  * now builds from one source, rather than one for gdk_imlib and one for
+    imlib
+
+ -- Sean E. Perry <shaleh@debian.org>  Sun, 7 Jun 1998 13:30:00 -0500
+
+

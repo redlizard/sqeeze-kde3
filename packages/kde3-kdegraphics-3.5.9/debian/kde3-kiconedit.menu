@@ -1,0 +1,11 @@
+?package(kiconedit):\
+	needs="X11"\
+	section="Applications/Graphics"\
+	hints="KDE"\
+	title="KIconEdit"\
+	icon32x32="/opt/kde3/share/pixmaps/kiconedit.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kiconedit-16.xpm"\
+	command="/opt/kde3/bin/kiconedit"
+
+# Icon 32x32 kiconedit/pics/cr32-app-kiconedit.png kiconedit.xpm
+# Icon 16x16 kiconedit/pics/cr16-app-kiconedit.png kiconedit-16.xpm

@@ -1,0 +1,11 @@
+?package(kfaxview):\
+	needs="X11"\
+	section="Applications/Viewers"\
+	hints="KDE"\
+	title="KFaxView"\
+	icon32x32="/opt/kde3/share/pixmaps/kfaxview.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kfaxview-16.xpm"\
+	command="/opt/kde3/bin/kfaxview"
+
+# Icon 32x32 kfaxview/hi32-app-kfaxview.png kfaxview.xpm
+# Icon 16x16 kfaxview/hi16-app-kfaxview.png kfaxview-16.xpm

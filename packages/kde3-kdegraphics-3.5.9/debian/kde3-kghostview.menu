@@ -1,0 +1,11 @@
+?package(kghostview):\
+	needs="X11"\
+	section="Applications/Viewers"\
+	hints="KDE,Documents"\
+	title="KGhostView"\
+	icon32x32="/opt/kde3/share/pixmaps/kghostview.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kghostview-16.xpm"\
+	command="/opt/kde3/bin/kghostview"
+
+# Icon 32x32 kghostview/cr32-app-kghostview.png kghostview.xpm
+# Icon 16x16 kghostview/cr16-app-kghostview.png kghostview-16.xpm

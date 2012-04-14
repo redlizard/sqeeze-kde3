@@ -1,0 +1,42 @@
+Index: gdk_imlib/Makefile.am
+===================================================================
+RCS file: /home/steve/lib/cvs/debian/imlib/gdk_imlib/Makefile.am,v
+retrieving revision 1.1.1.4
+retrieving revision 1.5
+diff -u -b -B -r1.1.1.4 -r1.5
+--- gdk_imlib/Makefile.am	25 Mar 2002 16:45:24 -0000	1.1.1.4
++++ gdk_imlib/Makefile.am	7 Jul 2002 00:59:29 -0000	1.5
+@@ -1,5 +1,12 @@
+ common_ldflags = -avoid-version
+ 
++# The modules for loading/saving the various graphics formats
++# are located in $(moduledir).  Default it to libdir for backwards
++# compatibility.
++#
++moduledir = $(libdir)
++
++
+ libimlib_gif_la_SOURCES = io-gif.c
+ libimlib_gif_la_LDFLAGS = $(common_ldflags)
+ libimlib_gif_la_LIBADD  = $(GIFLIBS) libgdk_imlib.la
+@@ -65,9 +72,8 @@
+ 
+ endif
+ 
+-lib_LTLIBRARIES = \
+-	libgdk_imlib.la		\
+-	$(DYNAMIC_LIBS)
++lib_LTLIBRARIES = libgdk_imlib.la
++module_LTLIBRARIES = $(DYNAMIC_LIBS)
+ 
+ libgdk_imlib_la_SOURCES =	\
+ 	cache.c      		\
+@@ -82,9 +88,10 @@
+ 
+ 
+ DEFS =  -DSYSTEM_IMRC=\"$(sysconfdir)/imrc\" \
+-	-DIMLIB_LIB=\""$(libdir)"\" -DSYSCONFDIR=\"$(sysconfdir)\"
++	-DIMLIB_LIB=\"$(moduledir)\" -DSYSCONFDIR=\"$(sysconfdir)\"
+ 
+ INCLUDES = -I. -I$(srcdir) -I.. -I$(srcdir)/.. \
+ 	$(GTK_CFLAGS) $(X_CFLAGS) $(GMODULE_FLAGS) 

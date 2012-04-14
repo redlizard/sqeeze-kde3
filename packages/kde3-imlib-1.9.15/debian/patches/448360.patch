@@ -1,0 +1,95 @@
+
+Fixes #448360.
+
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 18 May 2008 02:11:57 +0100
+
+--- imlib-1.9.15.orig/gdk_imlib/misc.c	2008-05-18 01:47:54.000000000 +0100
++++ imlib-1.9.15/gdk_imlib/misc.c	2008-05-18 02:14:13.000000000 +0100
+@@ -676,6 +674,10 @@
+   visual = gdk_rgb_get_visual();
+   id->x.visual = GDK_VISUAL_XVISUAL(visual);	/* the visual type */
+   id->x.depth = visual->depth;	/* the depth of the screen in bpp */
++
++  id->x.shm = 0;
++  id->x.shmp = 0;
++  id->max_shm = 0;
+ #ifdef HAVE_SHM
+   if (XShmQueryExtension(id->x.disp))
+     {
+@@ -691,17 +693,14 @@
+ 	      id->x.last_xim = NULL;
+ 	      id->x.last_sxim = NULL;
+ 	      id->max_shm = 0x7fffffff;
+-	      if (XShmPixmapFormat(id->x.disp) == ZPixmap)
++	      if ((XShmPixmapFormat(id->x.disp) == ZPixmap) &&
++		  (pm == True))
+ 		id->x.shmp = 1;
+ 	    }
+ 	}
+     }
+-  else
+ #endif
+-    {
+-      id->x.shm = 0;
+-      id->x.shmp = 0;
+-    }
++
+   id->cache.on_image = 0;
+   id->cache.size_image = 0;
+   id->cache.num_image = 0;
+@@ -937,8 +936,8 @@
+ 	}
+       if (p->flags & PARAMS_SHAREDPIXMAPS)
+ 	{
+-	  if (id->x.shm)
+-	    id->x.shmp = p->sharedpixmaps;
++	  if (!p->sharedpixmaps)
++	    id->x.shmp = 0;
+ 	}
+       if (p->flags & PARAMS_PALETTEOVERRIDE)
+ 	override = p->paletteoverride;
+--- imlib-1.9.15.orig/Imlib/misc.c	2008-05-18 01:47:54.000000000 +0100
++++ imlib-1.9.15/Imlib/misc.c	2008-05-18 02:14:13.000000000 +0100
+@@ -677,6 +675,10 @@
+   id->x.root = DefaultRootWindow(disp);		/* the root window id */
+   id->x.visual = DefaultVisual(disp, id->x.screen);	/* the visual type */
+   id->x.depth = DefaultDepth(disp, id->x.screen);	/* the depth of the screen in bpp */
++
++  id->x.shm = 0;
++  id->x.shmp = 0;
++  id->max_shm = 0;
+ #ifdef HAVE_SHM
+   if (XShmQueryExtension(id->x.disp))
+     {
+@@ -692,17 +694,14 @@
+ 	      id->x.last_xim = NULL;
+ 	      id->x.last_sxim = NULL;
+ 	      id->max_shm = 0x7fffffff;
+-	      if (XShmPixmapFormat(id->x.disp) == ZPixmap)
++	      if ((XShmPixmapFormat(id->x.disp) == ZPixmap &&
++		   (pm == True)))
+ 		id->x.shmp = 1;
+ 	    }
+ 	}
+     }
+-  else
+ #endif
+-    {
+-      id->x.shm = 0;
+-      id->x.shmp = 0;
+-    }
++
+   id->cache.on_image = 0;
+   id->cache.size_image = 0;
+   id->cache.num_image = 0;
+@@ -954,8 +953,8 @@
+ 	}
+       if (p->flags & PARAMS_SHAREDPIXMAPS)
+ 	{
+-	  if (id->x.shm)
+-	    id->x.shmp = p->sharedpixmaps;
++	  if (!p->sharedpixmaps)
++	    id->x.shmp = 0;
+ 	}
+       if (p->flags & PARAMS_PALETTEOVERRIDE)
+ 	override = p->paletteoverride;

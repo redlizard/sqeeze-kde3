@@ -1,0 +1,10 @@
+Document: kdegraphics-doc-html-kuickshow
+Title: KuickShow Handbook
+Author: Carsten Pfeiffer 
+Abstract: KuickShow is a comfortable image browser/viewer.
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kuickshow/index.html
+Files: /usr/share/doc/kde/HTML/en/kuickshow/*.html
+

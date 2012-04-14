@@ -1,0 +1,32 @@
+--- imlib-1.9.15.orig/imlib.m4
++++ imlib-1.9.15/imlib.m4
+@@ -6,7 +6,7 @@
+ dnl AM_PATH_IMLIB([MINIMUM-VERSION, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]]])
+ dnl Test for IMLIB, and define IMLIB_CFLAGS and IMLIB_LIBS
+ dnl
+-AC_DEFUN(AM_PATH_IMLIB,
++AC_DEFUN([AM_PATH_IMLIB],
+ [dnl 
+ dnl Get the cflags and libraries from the imlib-config script
+ dnl
+@@ -164,7 +164,7 @@
+ ])
+ 
+ # Check for gdk-imlib
+-AC_DEFUN(AM_PATH_GDK_IMLIB,
++AC_DEFUN([AM_PATH_GDK_IMLIB],
+ [dnl 
+ dnl Get the cflags and libraries from the imlib-config script
+ dnl
+@@ -291,8 +291,8 @@
+           LIBS="$ac_save_LIBS"
+        fi
+      fi
+-     IMLIB_CFLAGS=""
+-     IMLIB_LIBS=""
++     GDK_IMLIB_CFLAGS=""
++     GDK_IMLIB_LIBS=""
+      ifelse([$3], , :, [$3])
+   fi
+   AC_SUBST(GDK_IMLIB_CFLAGS)
+

@@ -1,0 +1,11 @@
+?package(kruler):\
+	needs="X11"\
+	section="Applications/Viewers"\
+	hints="KDE"\
+	title="KRuler"\
+	icon32x32="/opt/kde3/share/pixmaps/kruler.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/kruler-16.xpm"\
+	command="/opt/kde3/bin/kruler"
+
+# Icon 32x32 kruler/pics/cr32-app-kruler.png kruler.xpm
+# Icon 16x16 kruler/pics/cr16-app-kruler.png kruler-16.xpm

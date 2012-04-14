@@ -1,0 +1,10 @@
+Document: kdegraphics-doc-html-kamera
+Title: Kamera Handbook
+Author: Not listed
+Abstract: Kamera allows you to view and download images on a digital camera.
+Section: Graphics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kamera/index.html
+Files: /usr/share/doc/kde/HTML/en/kamera/*.html
+

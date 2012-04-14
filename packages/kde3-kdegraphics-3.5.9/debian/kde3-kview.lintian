@@ -1,0 +1,2 @@
+kview: shlib-missing-in-control-file libkdeinit_kview.so for usr/lib/libkdeinit_kview.so
+kview: package-name-doesnt-match-sonames libkdeinit-kview libkimageviewer0

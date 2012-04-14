@@ -1,0 +1,73 @@
+--- imlib/configure.in	22 Mar 2002 14:51:24 -0000	1.1.1.4
++++ imlib/configure.in	7 Jul 2002 00:59:28 -0000	1.7
+@@ -230,42 +233,41 @@
+ 
+ dnl Test for libtiff
+ AC_CHECK_LIB(tiff, TIFFReadScanline,
+-  AC_CHECK_HEADER(tiffio.h,
+-    TIFFLIBS="-ltiff"
+-    SUPPORT_LIBS="$SUPPORT_LIBS -ltiff"; AC_DEFINE(HAVE_LIBTIFF),
+-    AC_MSG_ERROR(*** TIFF header files not found ***)),
+-  AC_CHECK_LIB(tiff, TIFFWriteScanline,
+-    AC_CHECK_HEADER(tiffio.h,
+-      TIFFLIBS="-ltiff -ljpeg -lz"
+-      SUPPORT_LIBS="$SUPPORT_LIBS -ltiff -ljpeg -lz"; AC_DEFINE(HAVE_LIBTIFF),
+-      AC_MSG_ERROR(*** TIFF header files not found ***)),
+-    AC_CHECK_LIB(tiff34, TIFFFlushData,
+-      AC_CHECK_HEADER(tiffio.h,
+-        TIFFLIBS="-ltiff34 -ljpeg -lz"
+-        SUPPORT_LIBS="$SUPPORT_LIBS -ltiff34 -ljpeg -lz"; AC_DEFINE(HAVE_LIBTIFF),
+-        AC_MSG_ERROR(*** TIFF header files not found ***)),
+-    AC_MSG_ERROR(*** TIFF library not found ***), -ljpeg -lz $GX_LIBS), -ljpeg -lz $GX_LIBS), $GX_LIBS)
++  [AC_CHECK_HEADER(tiffio.h,
++    [TIFFLIBS="-ltiff"
++    SUPPORT_LIBS="$SUPPORT_LIBS -ltiff"; AC_DEFINE(HAVE_LIBTIFF)],
++    [AC_MSG_ERROR(*** TIFF header files not found ***)])],
++  [AC_CHECK_LIB(tiff, TIFFWriteScanline,
++    [AC_CHECK_HEADER(tiffio.h,
++      [TIFFLIBS="-ltiff -ljpeg -lz"
++       SUPPORT_LIBS="$SUPPORT_LIBS -ltiff -ljpeg -lz"; AC_DEFINE(HAVE_LIBTIFF)],
++      [AC_MSG_ERROR(*** TIFF header files not found ***)])],
++    [AC_CHECK_LIB(tiff34, TIFFFlushData,
++      [AC_CHECK_HEADER(tiffio.h,
++        [TIFFLIBS="-ltiff34 -ljpeg -lz"
++         SUPPORT_LIBS="$SUPPORT_LIBS -ltiff34 -ljpeg -lz"; AC_DEFINE(HAVE_LIBTIFF)],
++        [AC_MSG_ERROR(*** TIFF header files not found ***)])],
++    [AC_MSG_ERROR(*** TIFF library not found ***)], -ljpeg -lz $GX_LIBS)], -ljpeg -lz $GX_LIBS)], $GX_LIBS)
+ 
+ 
+ AC_CHECK_HEADER(gif_lib.h,
+-  AC_CHECK_LIB(ungif, DGifOpenFileName,
+-    GIFLIBS="-lungif"
+-    SUPPORT_LIBS="$SUPPORT_LIBS -lungif"; AC_DEFINE(HAVE_LIBGIF),
+-    AC_CHECK_LIB(gif, DGifOpenFileName,
+-      GIFLIBS="-lgif"
++  [AC_CHECK_LIB(ungif, DGifOpenFileName,
++    [GIFLIBS="-lungif"
++     SUPPORT_LIBS="$SUPPORT_LIBS -lungif"; AC_DEFINE(HAVE_LIBGIF)],
++    [AC_CHECK_LIB(gif, DGifOpenFileName,
++      [GIFLIBS="-lgif"
+       SUPPORT_LIBS="$SUPPORT_LIBS -lgif"
+-      AC_DEFINE(HAVE_LIBGIF),
+-      AC_SUBST(GIFLIBS)
+-      AC_MSG_ERROR(*** GIF library file not found ***), 
+-      $GX_LIBS),
+-    $GX_LIBS),
+-  AC_MSG_ERROR(*** GIF header not found ***))
++       AC_DEFINE(HAVE_LIBGIF)],
++      [AC_MSG_ERROR(*** GIF library file not found ***)], 
++      $GX_LIBS)],
++    $GX_LIBS)],
++  [AC_MSG_ERROR(*** GIF header not found ***)])
+ 
+ AC_CHECK_LIB(png, png_read_info,
+-  AC_CHECK_HEADER(png.h,
++  [AC_CHECK_HEADER(png.h,
+     png_ok=yes,
+-    png_ok=no),
+-  AC_MSG_ERROR(*** PNG library not found ***), -lz -lm $GX_LIBS)
++    png_ok=no)],
++  [AC_MSG_ERROR(*** PNG library not found ***)], -lz -lm $GX_LIBS)
+ if test "$png_ok" = yes; then
+   AC_MSG_CHECKING([for png_structp in png.h])
+   AC_TRY_COMPILE([#include <png.h>],

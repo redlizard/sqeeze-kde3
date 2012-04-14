@@ -1,0 +1,35 @@
+Source: kde3-imlib
+Build-Depends: debhelper (>= 5), quilt, libjpeg62-dev, libpng12-dev, libtiff4-dev, libgif-dev, zlib1g-dev, libx11-dev, libxext-dev, x11proto-core-dev, libsm-dev, libice-dev
+Build-Conflicts: libpng2-dev
+Section: graphics
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Standards-Version: 3.7.3
+
+Package: kde3-imlib-base
+Architecture: all
+Pre-Depends: dpkg (>= 1.6.8)
+Recommends: kde3-imlib11 | kde3-gdk-imlib11
+Description: Common files needed by the Imlib/Gdk-Imlib packages
+ Configuration files used by all Imlib and Gdk-imlib packages.
+
+Package: kde3-imlib11
+Architecture: any
+Section: oldlibs
+Depends: kde3-imlib-base (>= 1.9.14-18), ${shlibs:Depends}
+Provides: imlib
+Description: Imlib is an imaging library for X and X11
+ Imlib is a low-level Xlib interface for X programmers.  It allows easier
+ access to many graphics formats and can write to them as well.
+
+Package: kde3-imlib11-dev
+Architecture: any
+Section: libdevel
+Depends: kde3-imlib-base (>= 1.9.14-18), kde3-imlib11 (= ${binary:Version}), libjpeg62-dev, libpng12-dev, libtiff4-dev, libgif-dev, zlib1g-dev, libx11-dev, libxext-dev, x11proto-core-dev, libsm-dev, libice-dev
+Provides: imlib-development
+Description: Imlib is an imaging library for X and X11
+ Imlib is a low-level Xlib interface for X programmers.  It allows easier
+ access to many graphics formats and can write to them as well.
+ .
+ This is the development package containing header files and link
+ libraries for Imlib.

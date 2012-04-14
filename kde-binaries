@@ -716,3 +716,12 @@ arts-dbg
 libxxf86misc1
 libxxf86misc1-dbg
 libxxf86misc-dev
+libakode-dev
+akode-dbg
+libakode2
+imlib-base
+imlib11
+imlib11-dev
+gdk-imlib11
+gdk-imlib11-dev
+gdk-imlib1
