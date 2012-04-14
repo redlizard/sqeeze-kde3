@@ -1,0 +1,20 @@
+etc/kde3/khangmanrc
+opt/kde3/bin/khangman
+opt/kde3/share/applications/kde/khangman.desktop
+opt/kde3/share/apps/khangman/data
+opt/kde3/share/apps/khangman/khangmanui.rc
+opt/kde3/share/apps/khangman/pics
+opt/kde3/share/apps/khangman/sounds
+opt/kde3/share/config.kcfg/khangman.kcfg
+opt/kde3/share/doc/kde/HTML/en/khangman/common
+opt/kde3/share/doc/kde/HTML/en/khangman/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/khangman/*.docbook
+opt/kde3/share/doc/kde/HTML/en/khangman/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/khangman.png
+opt/kde3/share/icons/hicolor/22x22/apps/khangman.png
+opt/kde3/share/icons/hicolor/32x32/apps/khangman.png
+opt/kde3/share/icons/hicolor/48x48/apps/khangman.png
+opt/kde3/share/icons/hicolor/64x64/apps/khangman.png
+opt/kde3/share/icons/hicolor/128x128/apps/khangman.png
+opt/kde3/share/icons/hicolor/scalable/apps/khangman.svgz
+../icons/khangman.xpm opt/kde3/share/pixmaps

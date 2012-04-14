@@ -1,0 +1,117 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KSTARS 1 "March 16, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+kstars \- a desktop planetarium for KDE
+.SH SYNOPSIS
+.B kstars
+.RI "[ " generic-options " ]"
+[ \fB\-\-date\fP \fIdate-and-time\fP ]
+[ \fB\-\-paused\fP ]
+.PP
+.B kstars \fB\-\-dump\fP
+[ \fB\-\-filename\fP \fIimage-file\fP ]
+[ \fB\-\-height\fP \fIpixels\fP ] [ \fB\-\-width\fP \fIpixels\fP ]
+[ \fB\-\-date\fP \fIdate-and-time\fP ]
+[ \fB\-\-script\fP \fIscript-file\fP ]
+.SH DESCRIPTION
+\fBKStars\fP is a graphical desktop planetarium for KDE.  It depicts an
+accurate simulation of the night sky, including stars, constellations,
+star clusters, nebulae, galaxies, all planets, the Sun, the Moon,
+comets and asteroids.  You can see the sky as it appears from any
+location on Earth, on any date.
+.PP
+The user interface is highly intuitive and flexible.  The display can
+be panned and zoomed with the mouse, and you can easily identify
+objects and track their motion across the sky.  KStars includes many
+powerful features, yet the interface is clean and simple and fun to use.
+.PP
+Normally KStars launches a full graphical user interface.  By passing the
+\fB\-\-dump\fP option, you can make KStars dump an image of the sky to
+a graphics file and exit immediately without launching a graphical user
+interface at all.  Several other options are available to control
+precisely how this image is dumped.
+.PP
+This application is part of the official KDE edutainment module.
+.SH OPTIONS
+Below are the kstars-specific options.
+For a full summary of options, run \fIkstars \-\-help\fP.
+.PP
+Options that can be used when starting the full graphical user interface
+are as follows.
+.TP
+\fB\-\-date\fP \fIdate-and-time\fP
+Starts with the simulation clock set to the given date and time (default is
+current date and time).
+.TP
+\fB\-\-paused\fP
+Starts with the simulation clock paused.
+.PP
+Options that can be used when dumping an image of the sky are as
+follows.
+.TP
+\fB\-\-dump\fP
+Dumps the sky image to a graphics file and exits immediately.
+Several other options (described below) are available to control
+precisely how the image is dumped.
+.TP
+\fB\-\-date\fP \fIdate-and-time\fP
+Specifies the date and time for the sky image to dump (default is
+current date and time).
+.TP
+\fB\-\-filename\fP \fIimage-file\fP
+Dumps the sky image to the given file (default is \fIkstars.png\fP).
+.TP
+\fB\-\-height\fP \fIpixels\fP
+Specifies the height of the sky image to dump (default is 480).
+.TP
+\fB\-\-script\fP \fIscript-file\fP
+Specifies a DCOP script to run before the sky image is dumped.
+The script can be used to set where the image is pointing, set the
+geographic location, set the time and date, change the zoom level, and
+adjust other view options.
+.br
+KStars includes a script builder (found in the Tools menu) to help
+with writing DCOP scripts.  The full user documentation (discussed
+below) contains a more detailed explanation of how such scripts can
+be written and used.
+.TP
+\fB\-\-width\fP \fIpixels\fP
+Specifies the width of the sky image to dump (default is 640).
+.SH SEE ALSO
+.BR indiserver (1).
+.PP
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/kstars/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/kstars/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdeedu-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/kstars/\fP.
+.SH AUTHOR
+KStars was written by Jason Harris <jharris@30doradus.org>,
+Heiko Evermann <heiko@evermann.de>, Thomas Kabelmann <tk78@gmx.de>,
+Pablo de Vicente <pvicentea@wanadoo.es>, Jasem Mutlaq <mutlaqja@ikarustech.com>,
+Carsten Niehaus <cniehaus@gmx.de>, Mark Hollomon <mhh@mindspring.com>,
+Vincent Jagot <vincent.jagot@free.fr> and
+Martin Piskernig <martin.piskernig@stuwo.at>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

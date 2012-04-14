@@ -1,0 +1,214 @@
+Index: kdeedu-3.5.9/blinken/src/blinken.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/blinken/src/blinken.desktop	2008-06-29 16:17:27.000000000 +0200
++++ kdeedu-3.5.9/blinken/src/blinken.desktop	2008-06-29 16:17:31.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=blinKen
+ Name[bn]=ব্লিনকেন
+ Name[eo]=blinKeno
+Index: kdeedu-3.5.9/kalzium/src/kalzium.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kalzium/src/kalzium.desktop	2008-06-29 16:17:13.000000000 +0200
++++ kdeedu-3.5.9/kalzium/src/kalzium.desktop	2008-06-29 16:17:15.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kalzium -caption "%c" %i %m
+ Icon=kalzium
+Index: kdeedu-3.5.9/kanagram/src/kanagram.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kanagram/src/kanagram.desktop	2008-06-29 16:16:55.000000000 +0200
++++ kdeedu-3.5.9/kanagram/src/kanagram.desktop	2008-06-29 16:16:57.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Kanagram
+ Name[bn]=কে-অ্যানাগ্রাম
+ Name[cy]=blinKen
+Index: kdeedu-3.5.9/kbruch/src/kbruch.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kbruch/src/kbruch.desktop	2008-06-29 16:16:39.000000000 +0200
++++ kdeedu-3.5.9/kbruch/src/kbruch.desktop	2008-06-29 16:16:41.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kbruch -caption "%c" %i %m
+ Icon=kbruch
+Index: kdeedu-3.5.9/keduca/keduca/keduca_part.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/keduca/keduca/keduca_part.desktop	2008-06-29 16:15:31.000000000 +0200
++++ kdeedu-3.5.9/keduca/keduca/keduca_part.desktop	2008-06-29 16:15:34.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Service
+ Name=KEduca
+ Name[af]=Keduca
+Index: kdeedu-3.5.9/keduca/resources/keduca.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/keduca/resources/keduca.desktop	2008-06-29 16:16:18.000000000 +0200
++++ kdeedu-3.5.9/keduca/resources/keduca.desktop	2008-06-29 16:16:20.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Tests & Exams
+ GenericName[af]=Toetse & Eksamens
+ GenericName[ar]=الاختبارات والامتحانات
+Index: kdeedu-3.5.9/keduca/resources/keducabuilder.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/keduca/resources/keducabuilder.desktop	2008-06-29 16:16:13.000000000 +0200
++++ kdeedu-3.5.9/keduca/resources/keducabuilder.desktop	2008-06-29 16:16:15.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Tests & Exams Editor
+ GenericName[af]=Toetse & Eksamens Redigeerder
+ GenericName[ar]=محرّر اختبارات وامتحانات
+Index: kdeedu-3.5.9/kgeography/src/kgeography.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kgeography/src/kgeography.desktop	2008-06-29 16:15:05.000000000 +0200
++++ kdeedu-3.5.9/kgeography/src/kgeography.desktop	2008-06-29 16:15:07.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KGeography
+ Name[bn]=কে-জিওগ্রাফি
+ Name[hr]=KZemljopis
+Index: kdeedu-3.5.9/kig/kig/kig.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kig/kig/kig.desktop	2008-06-29 16:14:43.000000000 +0200
++++ kdeedu-3.5.9/kig/kig/kig.desktop	2008-06-29 16:14:45.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Kig
+ Name[bn]=কিগ
+ Name[hi]=केआईजी
+Index: kdeedu-3.5.9/kiten/kiten.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kiten/kiten.desktop	2008-06-29 16:14:21.000000000 +0200
++++ kdeedu-3.5.9/kiten/kiten.desktop	2008-06-29 16:14:22.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Japanese Reference/Study Tool
+ GenericName[af]=Japanese Verwysings/Leerder
+ GenericName[ar]=مرجع اللغة اليابانية
+Index: kdeedu-3.5.9/klatin/klatin/klatin.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/klatin/klatin/klatin.desktop	2008-06-29 16:13:44.000000000 +0200
++++ kdeedu-3.5.9/klatin/klatin/klatin.desktop	2008-06-29 16:13:46.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=klatin -caption "%c" %i %m
+ Icon=klatin
+Index: kdeedu-3.5.9/klettres/klettres/klettres.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/klettres/klettres/klettres.desktop	2008-06-29 16:13:30.000000000 +0200
++++ kdeedu-3.5.9/klettres/klettres/klettres.desktop	2008-06-29 16:13:32.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=klettres -caption "%c" %i %m
+ Icon=klettres
+Index: kdeedu-3.5.9/kmplot/kmplot/kmplot.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kmplot/kmplot/kmplot.desktop	2008-06-29 16:13:14.000000000 +0200
++++ kdeedu-3.5.9/kmplot/kmplot/kmplot.desktop	2008-06-29 16:13:17.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kmplot
+ Icon=kmplot
+Index: kdeedu-3.5.9/kpercentage/kpercentage/kpercentage.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kpercentage/kpercentage/kpercentage.desktop	2008-06-29 16:13:03.000000000 +0200
++++ kdeedu-3.5.9/kpercentage/kpercentage/kpercentage.desktop	2008-06-29 16:13:05.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KPercentage
+ Name[af]=K-Persentasie
+ Name[ar]=النسبة المئوية
+Index: kdeedu-3.5.9/kstars/kstars/kstars.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kstars/kstars/kstars.desktop	2008-06-29 16:12:49.000000000 +0200
++++ kdeedu-3.5.9/kstars/kstars/kstars.desktop	2008-06-29 16:12:51.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kstars -caption "%c" %i %m
+ Icon=kstars
+Index: kdeedu-3.5.9/ktouch/ktouch.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/ktouch/ktouch.desktop	2008-06-29 16:11:37.000000000 +0200
++++ kdeedu-3.5.9/ktouch/ktouch.desktop	2008-06-29 16:12:36.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=ktouch -caption "%c" %i %m
+ Icon=ktouch
+@@ -79,4 +78,4 @@
+ Name[sv]=Ktouch
+ Name[ta]=கேடச்
+ Name[ven]=KFara
+-Categories=Qt;KDE;Education;Miscellaneous;
++Categories=Qt;KDE;Education;
+Index: kdeedu-3.5.9/kturtle/src/kturtle.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kturtle/src/kturtle.desktop	2008-06-29 16:11:27.000000000 +0200
++++ kdeedu-3.5.9/kturtle/src/kturtle.desktop	2008-06-29 16:11:29.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ DocPath=kturtle/index.html
+ Name=KTurtle
+ Name[af]=KSkilpad
+Index: kdeedu-3.5.9/kverbos/kverbos/kverbos.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kverbos/kverbos/kverbos.desktop	2008-06-29 16:11:02.000000000 +0200
++++ kdeedu-3.5.9/kverbos/kverbos/kverbos.desktop	2008-06-29 16:11:05.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kverbos -caption "%c" %i %m
+ Icon=kverbos
+Index: kdeedu-3.5.9/kvoctrain/kvoctrain/kvoctrain.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kvoctrain/kvoctrain/kvoctrain.desktop	2008-06-29 16:10:48.000000000 +0200
++++ kdeedu-3.5.9/kvoctrain/kvoctrain/kvoctrain.desktop	2008-06-29 16:10:50.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Vocabulary Trainer
+ GenericName[af]=Woordeskat-afrigter
+ GenericName[ar]=مدرب الكلمات
+Index: kdeedu-3.5.9/kwordquiz/src/kwordquiz.desktop
+===================================================================
+--- kdeedu-3.5.9.orig/kwordquiz/src/kwordquiz.desktop	2008-06-29 16:10:34.000000000 +0200
++++ kdeedu-3.5.9/kwordquiz/src/kwordquiz.desktop	2008-06-29 16:10:36.000000000 +0200
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kwordquiz -caption "%c" %i %m
+ Icon=kwordquiz

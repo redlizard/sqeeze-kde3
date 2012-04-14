@@ -1,0 +1,83 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH LANGEN2KVTML 1 "November 22, 2002"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+langen2kvtml \- convert Langenscheidt data files to KVocTrain data files
+.SH SYNOPSIS
+.B langen2kvtml
+[ \fB\-\-lang=\fP\fIxx\fP ] [ \fB\-\-trans=\fP\fIxx\fP ]
+[ \fB\-\-author=\fP\fIname\fP ] [ \fB\-\-longlesson\fP ]
+[ \fB\-\-outdir=\fP\fIdir\fP ] [ \fB\-\-proxy=\fP\fIproxy\fP ]
+{ \fB\-\-country=\fP\fIxx\fP | \fIvocfile\fP ... }
+.SH DESCRIPTION
+\fBlangen2kvtml\fP is a script that will convert Langenscheidt
+data files (*.voc) to KVocTrain data files (*.kvtml).
+.PP
+For each Langenscheidt data file given on the command-line, a
+corresponding KVocTrain data file will be created.  If no Langenscheidt
+data files are given, a set of data files for the given country (see
+the \fB\-\-country\fP option) will be downloaded from the internet and
+converted.  If neither data files nor a country are specified, country
+GB (Great Britain) will be assumed.
+.PP
+Note that you \fBmust\fP run KVocTrain at least once before this script
+can be used.  In some circumstances this script will edit the user's
+KVocTrain preferences file.
+.PP
+This utility is part of the official KDE edutainment module.
+.SH OPTIONS
+.TP
+\fB\-\-lang=\fP\fIxx\fP
+Specifies the original language used in the data file(s).  The script
+will try to guess this based on the names of the Langenscheidt data files.
+.TP
+\fB\-\-trans=\fP\fIxx\fP
+Specifies the translated language used in the data file(s).  This
+defaults to de (Deutsch).
+.TP
+\fB\-\-author=\fP\fIname\fP
+Specifies the author of the data file(s).  This defaults to
+http://www.vokabeln.de.
+.TP
+\fB\-\-longlesson\fP
+Specifies that long lesson names should be used in the converted
+KVocTrain data file(s).  Short lesson names are the default.
+.TP
+\fB\-\-outdir=\fP\fIdir\fP
+Specifies that the converted KVocTrain data files be written in the
+given directory.  This defaults to the current directory.
+.TP
+\fB\-\-proxy=\fP\fIproxy\fP
+Specifies a proxy to use when downloading Langenscheidt data files from
+the internet.
+.TP
+\fB\-\-country=\fP\fIxx\fP
+Requests that Langenscheidt data files for the given country be
+downloaded from the internet and converted.  The country should be
+specified by the code used at \fIhttp://www.vokabeln.de/\fP, such as
+GB for Great Britain, D for Germany and so on.
+.SH SEE ALSO
+.BR kvoctrain (1),
+.BR spotlight2kvtml (1).
+.PP
+Langenscheidt data files can be downloaded directly from
+\fIhttp://www.vokabeln.de/files.htm\fP.
+.SH AUTHOR
+langen2kvtml was written by Andreas Neuper.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

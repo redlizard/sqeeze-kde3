@@ -1,0 +1,7 @@
+?package(ktouch):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="KTouch"\
+  longtitle="KTouch (Touch Typing Tutor)"\
+  command="/opt/kde3/bin/ktouch"\
+  icon="/opt/kde3/share/pixmaps/ktouch.xpm"

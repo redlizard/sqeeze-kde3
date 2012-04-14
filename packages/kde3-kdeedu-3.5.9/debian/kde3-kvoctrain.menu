@@ -1,0 +1,7 @@
+?package(kvoctrain):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="KVocTrain"\
+  longtitle="KVocTrain (Vocabulary Trainer)"\
+  command="/opt/kde3/bin/kvoctrain"\
+  icon="/opt/kde3/share/pixmaps/kvoctrain.xpm"

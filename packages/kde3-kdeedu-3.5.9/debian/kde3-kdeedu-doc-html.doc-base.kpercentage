@@ -1,0 +1,10 @@
+Document: kpercentage
+Title: KPercentage Handbook
+Author: Matthias Messmer <bmlmessmer@web.de>, Carsten Niehaus <cniehaus@gmx.de> and Robert Gogolok <mail@robert-gogolok.de.de>
+Abstract: KPercentage is a small math application that will help pupils
+ to improve their skills in calculating percentages.
+Section: Science/Mathematics
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kpercentage/index.html
+Files: /usr/share/doc/kde/HTML/en/kpercentage/*.html

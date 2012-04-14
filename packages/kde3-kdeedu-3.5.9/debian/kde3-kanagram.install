@@ -1,0 +1,16 @@
+opt/kde3/bin/kanagram
+opt/kde3/share/applications/kde/kanagram.desktop
+opt/kde3/share/apps/kanagram
+opt/kde3/share/config.kcfg/kanagram.kcfg
+opt/kde3/share/doc/kde/HTML/en/kanagram/common
+opt/kde3/share/doc/kde/HTML/en/kanagram/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/kanagram/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kanagram/*.png
+opt/kde3/share/doc/kde/HTML/en/kanagram/*.svgz
+opt/kde3/share/icons/hicolor/16x16/apps/kanagram.png
+opt/kde3/share/icons/hicolor/22x22/apps/kanagram.png
+opt/kde3/share/icons/hicolor/32x32/apps/kanagram.png
+opt/kde3/share/icons/hicolor/48x48/apps/kanagram.png
+opt/kde3/share/icons/hicolor/128x128/apps/kanagram.png
+opt/kde3/share/icons/hicolor/scalable/apps/kanagram.svgz
+../icons/kanagram.xpm opt/kde3/share/pixmaps

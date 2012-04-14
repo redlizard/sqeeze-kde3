@@ -1,0 +1,15 @@
+opt/kde3/bin/kalzium
+opt/kde3/share/applications/kde/kalzium.desktop
+opt/kde3/share/config.kcfg/kalzium.kcfg
+opt/kde3/share/doc/kde/HTML/en/kalzium/common
+opt/kde3/share/doc/kde/HTML/en/kalzium/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/kalzium/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kalzium/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/kalzium.png
+opt/kde3/share/icons/hicolor/22x22/apps/kalzium.png
+opt/kde3/share/icons/hicolor/32x32/apps/kalzium.png
+opt/kde3/share/icons/hicolor/48x48/apps/kalzium.png
+opt/kde3/share/icons/hicolor/64x64/apps/kalzium.png
+opt/kde3/share/icons/hicolor/128x128/apps/kalzium.png
+opt/kde3/share/icons/hicolor/scalable/apps/kalzium.svgz
+../icons/kalzium.xpm opt/kde3/share/pixmaps

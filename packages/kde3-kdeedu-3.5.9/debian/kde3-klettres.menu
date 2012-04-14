@@ -1,0 +1,7 @@
+?package(klettres):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="KLettres"\
+  longtitle="KLettres (Learn Alphabet)"\
+  command="/opt/kde3/bin/klettres"\
+  icon="/opt/kde3/share/pixmaps/klettres.xpm"

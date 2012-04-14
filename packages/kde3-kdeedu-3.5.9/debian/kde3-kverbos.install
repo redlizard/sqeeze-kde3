@@ -1,0 +1,16 @@
+opt/kde3/bin/kverbos
+opt/kde3/share/applications/kde/kverbos.desktop
+opt/kde3/share/apps/kverbos
+opt/kde3/share/config.kcfg/kverbos.kcfg
+opt/kde3/share/doc/kde/HTML/en/kverbos/common
+opt/kde3/share/doc/kde/HTML/en/kverbos/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/kverbos/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kverbos/*.png
+opt/kde3/share/icons/crystalsvg/16x16/actions/kverbosuser.png
+opt/kde3/share/icons/hicolor/16x16/apps/kverbos.png
+opt/kde3/share/icons/hicolor/22x22/apps/kverbos.png
+opt/kde3/share/icons/hicolor/32x32/apps/kverbos.png
+opt/kde3/share/icons/hicolor/48x48/apps/kverbos.png
+opt/kde3/share/icons/hicolor/128x128/apps/kverbos.png
+opt/kde3/share/icons/hicolor/scalable/apps/kverbos.svgz
+../icons/kverbos.xpm opt/kde3/share/pixmaps

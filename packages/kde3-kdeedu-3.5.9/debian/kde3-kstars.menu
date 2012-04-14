@@ -1,0 +1,7 @@
+?package(kstars):needs="X11"\
+  section="Applications/Science/Astronomy"\
+  hints="KDE"\
+  title="KStars"\
+  longtitle="KStars (Desktop Planetarium)"\
+  command="/opt/kde3/bin/kstars"\
+  icon="/opt/kde3/share/pixmaps/kstars.xpm"

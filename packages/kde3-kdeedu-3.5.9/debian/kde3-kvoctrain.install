@@ -1,0 +1,22 @@
+etc/kde3/kvoctrainrc
+opt/kde3/bin/kvoctrain
+opt/kde3/bin/spotlight2kvtml
+opt/kde3/lib/libkvoctraincore.la
+opt/kde3/lib/libkvoctraincore.so
+opt/kde3/lib/libkvoctraincore.so.0
+opt/kde3/lib/libkvoctraincore.so.0.0.0
+opt/kde3/share/applications/kde/kvoctrain.desktop
+opt/kde3/share/apps/kvoctrain
+opt/kde3/share/mimelnk/text/x-kvtml.desktop
+opt/kde3/share/config.kcfg/kvoctrain.kcfg
+opt/kde3/share/config.kcfg/languagesettings.kcfg
+opt/kde3/share/config.kcfg/presettings.kcfg
+opt/kde3/share/doc/kde/HTML/en/kvoctrain/common
+opt/kde3/share/doc/kde/HTML/en/kvoctrain/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/kvoctrain/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kvoctrain/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/kvoctrain.png
+opt/kde3/share/icons/hicolor/22x22/apps/kvoctrain.png
+opt/kde3/share/icons/hicolor/32x32/apps/kvoctrain.png
+opt/kde3/share/icons/hicolor/48x48/apps/kvoctrain.png
+../icons/kvoctrain.xpm opt/kde3/share/pixmaps

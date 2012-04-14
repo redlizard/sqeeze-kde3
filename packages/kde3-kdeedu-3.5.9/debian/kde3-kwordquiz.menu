@@ -1,0 +1,7 @@
+?package(kwordquiz):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="KWordQuiz"\
+  longtitle="KWordQuiz (Vocabulary Trainer)"\
+  command="/opt/kde3/bin/kwordquiz"\
+  icon="/opt/kde3/share/pixmaps/kwordquiz.xpm"

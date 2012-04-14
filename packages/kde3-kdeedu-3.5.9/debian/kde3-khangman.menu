@@ -1,0 +1,7 @@
+?package(khangman):needs="X11"\
+  section="Games/Puzzles"\
+  hints="KDE"\
+  title="KHangMan"\
+  longtitle="KHangMan (Hangman Game)"\
+  command="/opt/kde3/bin/khangman"\
+  icon="/opt/kde3/share/pixmaps/khangman.xpm"

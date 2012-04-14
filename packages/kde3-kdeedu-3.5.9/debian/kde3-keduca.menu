@@ -1,0 +1,15 @@
+?package(keduca):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="KEduca"\
+  longtitle="KEduca (Tests and Exams)"\
+  command="/opt/kde3/bin/keduca"\
+  icon="/opt/kde3/share/pixmaps/keduca.xpm"
+
+?package(keduca):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="KEduca-Editor"\
+  longtitle="KEduca-Editor (Tests and Exams Editor)"\
+  command="/opt/kde3/bin/keducabuilder"\
+  icon="/opt/kde3/share/pixmaps/keduca.xpm"

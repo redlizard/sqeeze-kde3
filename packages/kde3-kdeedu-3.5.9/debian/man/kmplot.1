@@ -1,0 +1,58 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KMPLOT 1 "March 16, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+kmplot \- a mathematical function plotter for KDE
+.SH SYNOPSIS
+.B kmplot
+.RI "[ " generic-options " ]"
+[ \fIURL\fP ]
+.SH DESCRIPTION
+\fBKmPlot\fP is a mathematical function plotter for KDE.
+It has a powerful built-in parser.  You can plot different functions
+simultaneously and combine them to build new functions.
+.PP
+KmPlot supports parametric functions and functions in polar
+coordinates.  Several grid modes are supported.  Plots may be printed
+with high precision in the correct scale.
+.PP
+KmPlot also provides some numerical and visual features, like
+filling and calculating the area between the plot and the first axis,
+finding maximum and minimum values,
+changing function parameters dynamically and
+plotting derivatives and integral functions.
+.PP
+This application is part of the official KDE edutainment module.
+.SH OPTIONS
+For a full summary of options, run \fIkmplot \-\-help\fP.
+.SH SEE ALSO
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/kmplot/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/kmplot/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdeedu-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/kmplot/\fP.
+.SH AUTHOR
+KmPlot was written by Klaus-Dieter Moeller <kdmoeller@foni.net>,
+Matthias Messmer <bmlmessmer@web.de> and Fredrik Edemar <f_edemar@linux.se>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

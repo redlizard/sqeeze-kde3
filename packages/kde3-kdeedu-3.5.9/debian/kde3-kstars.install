@@ -1,0 +1,17 @@
+etc/kde3/kstarsrc
+opt/kde3/bin/kstars
+opt/kde3/include/kde/kstarsinterface.h
+opt/kde3/include/kde/simclockinterface.h
+opt/kde3/share/applications/kde/kstars.desktop
+opt/kde3/share/config.kcfg/kstars.kcfg
+opt/kde3/share/doc/kde/HTML/en/kstars/common
+opt/kde3/share/doc/kde/HTML/en/kstars/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/kstars/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kstars/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/kstars.png
+opt/kde3/share/icons/hicolor/32x32/apps/kstars.png
+opt/kde3/share/icons/hicolor/48x48/apps/kstars.png
+opt/kde3/share/icons/hicolor/64x64/apps/kstars.png
+opt/kde3/share/icons/hicolor/128x128/apps/kstars.png
+opt/kde3/share/icons/hicolor/scalable/apps/kstars.svgz
+../icons/kstars.xpm opt/kde3/share/pixmaps

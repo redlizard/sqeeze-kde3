@@ -1,0 +1,15 @@
+etc/kde3/klettresrc
+opt/kde3/bin/klettres
+opt/kde3/share/applications/kde/klettres.desktop
+opt/kde3/share/config.kcfg/klettres.kcfg
+opt/kde3/share/doc/kde/HTML/en/klettres/common
+opt/kde3/share/doc/kde/HTML/en/klettres/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/klettres/*.docbook
+opt/kde3/share/doc/kde/HTML/en/klettres/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/klettres.png
+opt/kde3/share/icons/hicolor/22x22/apps/klettres.png
+opt/kde3/share/icons/hicolor/32x32/apps/klettres.png
+opt/kde3/share/icons/hicolor/48x48/apps/klettres.png
+opt/kde3/share/icons/hicolor/128x128/apps/klettres.png
+opt/kde3/share/icons/hicolor/scalable/apps/klettres.svgz
+../icons/klettres.xpm opt/kde3/share/pixmaps

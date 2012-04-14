@@ -1,0 +1,8 @@
+?package(kig):needs="X11"\
+  section="Applications/Science/Mathematics"\
+  hints="KDE"\
+  title="Kig"\
+  longtitle="Kig (Interactive Geometry)"\
+  command="/opt/kde3/bin/kig"\
+  icon="/opt/kde3/share/pixmaps/kig.xpm"
+

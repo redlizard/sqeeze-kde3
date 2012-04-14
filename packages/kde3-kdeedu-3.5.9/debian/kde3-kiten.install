@@ -1,0 +1,13 @@
+opt/kde3/bin/kiten
+opt/kde3/bin/kitengen
+opt/kde3/share/applications/kde/kiten.desktop
+opt/kde3/share/doc/kde/HTML/en/kiten/common
+opt/kde3/share/doc/kde/HTML/en/kiten/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/kiten/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kiten/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/kiten.png
+opt/kde3/share/icons/hicolor/32x32/apps/kiten.png
+opt/kde3/share/icons/hicolor/48x48/apps/kiten.png
+opt/kde3/share/icons/hicolor/128x128/apps/kiten.png
+opt/kde3/share/icons/hicolor/scalable/apps/kiten.svgz
+../icons/kiten.xpm opt/kde3/share/pixmaps

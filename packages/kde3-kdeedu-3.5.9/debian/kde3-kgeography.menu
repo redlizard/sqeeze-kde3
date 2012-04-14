@@ -1,0 +1,7 @@
+?package(kgeography):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="KGeography"\
+  longtitle="KGeography (Geography Learning Tool)"\
+  command="/opt/kde3/bin/kgeography"\
+  icon="/opt/kde3/share/pixmaps/kgeography.xpm"

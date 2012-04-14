@@ -1,0 +1,10 @@
+Document: blinken
+Title: Blinken Handbook
+Author: Danny Allen <danny@dannyallen.co.uk>
+Abstract: Blinken brings a retro electronic memory game from the 1970's
+ to KDE.
+Section: Games/Puzzles
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/blinken/index.html
+Files: /usr/share/doc/kde/HTML/en/blinken/*.html

@@ -1,0 +1,69 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KWORDQUIZ 1 "March 16, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+kwordquiz \- a flashcard and vocabulary learning program for KDE
+.SH SYNOPSIS
+.B kwordquiz
+.RI "[ " generic-options " ]"
+.PP
+.B kwordquiz
+.RI "[ " generic-options " ]"
+[ \fB\-m, \-\-mode\fP \fInumber\fP ]
+[ \fB\-g, \-\-goto\fP \fIsession\fP ]
+.I file
+.SH DESCRIPTION
+\fBKWordQuiz\fP is a flashcard-based tool that helps you to master new
+vocabularies.  It may be a language or any other kind of terminology.
+.PP
+KWordQuiz can open several types of vocabulary data.  Supported
+are \fI.kvtml\fP files used by other KDE programs such as KVocTrain,
+\fI.wql\fP files used by WordQuiz for Windows, \fI.csv\fP files with
+comma-separated text, and \fI.xml.gz\fP
+files created by Pauker (\fIhttp://pauker.sourceforge.net/\fP).
+.PP
+This application is part of the official KDE edutainment module.
+.SH OPTIONS
+Below are the kwordquiz-specific options.
+For a full summary of options, run \fIkwordquiz \-\-help\fP.
+.PP
+.TP
+\fB\-m, \-\-mode\fP \fInumber\fP
+Specify the order and direction in which questions are asked.
+The \fInumber\fP argument must be 1, 2, 3, 4 or 5 (corresponding to the
+five entries in the Mode menu).
+.TP
+\fB\-g, \-\-goto\fP \fIsession\fP
+Begin a quiz immediately.  The \fIsession\fP argument may be
+\fBflash\fP (for a flashcard quiz), \fBmc\fP (for a multiple choice
+quiz) or \fBqa\fP (for a question and answer quiz).
+.SH SEE ALSO
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/kwordquiz/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/kwordquiz/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdeedu-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/kwordquiz/\fP.
+.SH AUTHOR
+KWordQuiz was written by Peter Hedlund <peter@peterandlinda.com>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

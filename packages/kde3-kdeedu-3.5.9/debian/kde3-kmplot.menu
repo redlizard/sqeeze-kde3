@@ -1,0 +1,7 @@
+?package(kmplot):needs="X11"\
+  section="Applications/Science/Mathematics"\
+  hints="KDE"\
+  title="KmPlot"\
+  longtitle="KmPlot (Mathematical Function Plotter)"\
+  command="/opt/kde3/bin/kmplot"\
+  icon="/opt/kde3/share/pixmaps/kmplot.xpm"

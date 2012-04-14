@@ -1,0 +1,7 @@
+?package(kanagram):needs="X11"\
+  section="Games/Puzzles"\
+  hints="KDE"\
+  title="KAnagram"\
+  longtitle="KAnagram (Letter Order Game)"\
+  command="/opt/kde3/bin/kanagram"\
+  icon="/opt/kde3/share/pixmaps/kanagram.xpm"

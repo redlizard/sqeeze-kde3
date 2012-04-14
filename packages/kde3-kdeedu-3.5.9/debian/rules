@@ -1,0 +1,56 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_DH_INSTALL_SOURCEDIR := $(DEB_DESTDIR)
+
+# Ensure that kig's python scripting built successfully.
+common-build-arch::
+	test -e $(DEB_BUILDDIR)/kig/scripting/libscripting.la
+
+# kalzium/solver doesn't work with builddir != srcdir; work around
+# this by copying from srcdir to builddir
+common-configure-impl:: debian/stamp-solver-copy
+
+common-install-prehook-arch::
+	cp -f debian/kde3-indi.install.kfreebsd-i386 debian/kde3-indi.install.kfreebsd-amd64
+
+build/kde3-kig::
+	cp $(DEB_SRCDIR)/doc/kig/scripting-api/*.png $(DEB_BUILDDIR)/doc/kig/scripting-api/
+	cd $(DEB_BUILDDIR)/doc/kig/scripting-api && doxygen Doxyfile.scripting-api
+	install -d -m 755 $(DEB_BUILDDIR)/doc/kig/scripting-api/build/html/ debian/tmp/opt/kde3/share/doc/kde/HTML/en/kig/scripting-api/
+	install -m644  $(DEB_BUILDDIR)/doc/kig/scripting-api/build/html/* debian/tmp/opt/kde3/share/doc/kde/HTML/en/kig/scripting-api/
+
+
+
+debian/stamp-solver-copy:
+	rm -rf $(DEB_BUILDDIR)/kalzium/src/solver/
+	mkdir -p $(DEB_BUILDDIR)/kalzium/src
+	cp -a $(DEB_SRCDIR)/kalzium/src/solver/ $(DEB_BUILDDIR)/kalzium/src/solver
+	touch $@
+
+clean::
+	rm -f debian/indi.install.kfreebsd-amd64
+	rm -f debian/stamp-solver-copy
+	rm -f $(DEB_TAR_SRCDIR).tar.bz2.cdbs-config_list
+
+DEB_INSTALL_DOCS_ALL :=
+
+DEB_INSTALL_CHANGELOGS_ALL = $(shell for f in ChangeLog CHANGELOG CHANGES; do if test -s $(DEB_SRCDIR)/$(cdbs_curpkg)/$$f; then echo $(DEB_SRCDIR)/$(cdbs_curpkg)/$$f; break; fi; done)
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkdeedu3 := -V'kde3-libkdeedu3 (>= 4:3.5.9)'
+DEB_DH_MAKESHLIBS_ARGS_kde3-libkiten1 := -V'kde3-libkiten1 (>= 4:3.5.9)'
+
+PACKAGES_WITH_LIBS := kde3-libkdeedu3 kde3-libkiten1 kde3-kvoctrain
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE += /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mv debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+

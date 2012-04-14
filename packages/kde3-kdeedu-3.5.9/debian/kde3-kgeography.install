@@ -1,0 +1,18 @@
+opt/kde3/bin/kgeography
+opt/kde3/share/applications/kde/kgeography.desktop
+opt/kde3/share/config.kcfg/kgeography.kcfg
+opt/kde3/share/doc/kde/HTML/en/kgeography
+opt/kde3/share/icons/crystalsvg/128x128/apps/kgeography.png
+opt/kde3/share/icons/crystalsvg/16x16/apps/kgeography.png
+opt/kde3/share/icons/crystalsvg/22x22/apps/kgeography.png
+opt/kde3/share/icons/crystalsvg/32x32/apps/kgeography.png
+opt/kde3/share/icons/crystalsvg/48x48/apps/kgeography.png
+opt/kde3/share/icons/crystalsvg/64x64/apps/kgeography.png
+opt/kde3/share/icons/crystalsvg/scalable/apps/kgeography.svgz
+opt/kde3/share/icons/hicolor/128x128/apps/kgeography.png
+opt/kde3/share/icons/hicolor/16x16/apps/kgeography.png
+opt/kde3/share/icons/hicolor/22x22/apps/kgeography.png
+opt/kde3/share/icons/hicolor/32x32/apps/kgeography.png
+opt/kde3/share/icons/hicolor/48x48/apps/kgeography.png
+opt/kde3/share/icons/hicolor/64x64/apps/kgeography.png
+../icons/kgeography.xpm opt/kde3/share/pixmaps

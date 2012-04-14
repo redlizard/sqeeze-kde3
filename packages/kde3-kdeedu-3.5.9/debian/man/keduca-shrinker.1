@@ -1,0 +1,66 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KEDUCA-SHRINKER 1 "September 1, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+keduca-shrinker \- extract a random sample from a large KEduca test file
+.SH SYNOPSIS
+.B keduca-shrinker
+[ \fB\-o, \-\-output\fP=\fIfile\fP ]
+[ \fB\-n, \-\-number\fP=\fInumber\fP ]
+\fB\-i, \-\-input\fP=\fIfile\fP
+.SH DESCRIPTION
+\fBkeduca-shrinker\fP is a small program that reads a large KEduca
+test file (.edu) and extracts a random sample of questions to create a
+new smaller test file.  For example, it could take a 100 question test
+file as input and then output a test file with 20 questions selected at
+random.
+.PP
+Note that the input file \fBmust\fP be uncompressed.  When you save the
+original test in the KEduca Editor, you should explicitly clear the "Compress
+the file" checkbox.  Otherwise keduca-shrinker will not be able to read it.
+.PP
+\fBKEduca\fP is a flash-card application for working with interactive
+form-based tests.  It is shipped as part of the official KDE edutainment
+module.
+.SH OPTIONS
+.TP
+\fB\-i, \-\-input\fP=\fIfile\fP
+The large KEduca test file that should be read as input.
+.TP
+\fB\-o, \-\-output\fP=\fIfile\fP
+The smaller KEduca test file that should be written as output.
+This defaults to the input filename with \fI-shrinked\fP appended to its
+base.  For example, if the input file is \fIfoo.edu\fP then the
+default output file is \fIfoo-shrinked.edu\fP.
+.TP
+\fB\-n, \-\-number\fP=\fInumber\fP
+The number of random questions to select from the input file.
+This defaults to 20.
+.SH SEE ALSO
+.BR keduca (1),
+.BR keducabuilder (1).
+.PP
+This tool is not yet part of the official KDE edutainment module.
+Its upstream site is
+\fIhttps://gna.org/projects/keduca-shrinker/\fP.
+.SH AUTHOR
+keduca-shrinker was written by Mathieu Roy <yeupou@coleumes.org>.
+It is licensed under the GNU General Public License (see the script
+itself for details).
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

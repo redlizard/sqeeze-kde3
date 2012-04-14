@@ -1,0 +1,123 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH INDISERVER 1 "October 16, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+indiserver \- INDI server for telescope control under KStars
+.SH SYNOPSIS
+.B indiserver
+[ \fB\-p\fP \fIport\fP ]
+[ \fB\-r\fP \fIattempts\fP ]
+[ \fB\-vv\fP ]
+\fIdriver\fP [ \fIdriver\fP ... ]
+.SH DESCRIPTION
+KStars allows you to configure
+and control astronomical instruments such as telescopes and focusers via
+the INDI protocol.  \fBindiserver\fP is a server that sits between the
+KStars user interface and the low-level hardware drivers.
+.PP
+The INDI server is a network server, in that either local or remote clients
+may connect to it to control astronomical instruments.  The INDI server must
+be running on the machine that is physically connected to the
+astronomical instruments.
+.PP
+Note that there is no need for you to run the INDI server directly.  Using
+the KStars device manager, you can set up astronomical instruments and start
+or stop the INDI server all from within KStars.
+.PP
+You may however choose to run the INDI server manually from the command
+line.  In this case you must pass the names of one or more drivers for
+individual astronomical instruments.  The current list of available
+drivers is:
+.PP
+.RS
+celestrongps (Celestron GPS)
+.br
+fliccd (Finger Lakes Instruments CCD)
+.br
+lx200_16 (LX200 16")
+.br
+lx200autostar (LX200 Autostar)
+.br
+lx200classic (LX200 Classic)
+.br
+lx200generic (LX200 Generic)
+.br
+lx200gps (LX200 GPS)
+.br
+temma (Temma Takahashi)
+.br
+v4ldriver (Video4Linux Generic)
+.br
+v4lphilips (Philips Webcam)
+.RE
+.PP
+Much more detailed information can be found in the KStars Handbook, as
+described below.
+.PP
+KStars is a graphical desktop planetarium for KDE, and forms part of
+the official KDE edutainment module.
+.SH OPTIONS
+.TP
+\fB\-p\fP \fIport\fP
+Specify the port to listen on (defaults to 7624).
+.TP
+\fB\-r\fP \fIattempts\fP
+Specify the maximum number of restart attempts for each driver (defaults to 2).
+.TP
+\fB\-vv\fP
+Write more verbose output to stderr.
+.SH EXAMPLE
+To start an INDI server running an LX200 GPS driver and listening to
+connections on port 8000:
+.PP
+.RS
+\fIprompt$\fP indiserver -p 8000 lx200gps
+.RE
+.SH SEE ALSO
+.BR celestrongps (1),
+.BR fliccd (1),
+.BR lx200_16 (1),
+.BR lx200autostar (1),
+.BR lx200classic (1),
+.BR lx200generic (1),
+.BR lx200gps (1),
+.BR kstars (1),
+.BR temma (1),
+.BR v4ldriver (1),
+.BR v4lphilips (1).
+.PP
+The KStars Handbook contains detailed information on how to use INDI for
+telescope control.  You can read this handbook in the KDE Help Centre.
+Alternatively you can enter the URL
+\fIhelp:/kstars/indi.html\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/kstars/indi.html\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdeedu-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/kstars/indi.html\fP.
+.SH AUTHOR
+KStars was written by Jason Harris <jharris@30doradus.org>,
+Heiko Evermann <heiko@evermann.de>, Thomas Kabelmann <tk78@gmx.de>,
+Pablo de Vicente <pvicentea@wanadoo.es>, Jasem Mutlaq <mutlaqja@ikarustech.com>,
+Carsten Niehaus <cniehaus@gmx.de>, Mark Hollomon <mhh@mindspring.com>,
+Vincent Jagot <vincent.jagot@free.fr> and
+Martin Piskernig <martin.piskernig@stuwo.at>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

@@ -1,0 +1,10 @@
+Document: kvoctrain
+Title: KVocTrain Handbook
+Author: Ewald Arnold <ewald@ewald-arnold.de>
+Abstract: KVocTrain is a little utility to help you train your vocabulary,
+ when you are trying to learn a foreign language.
+Section: Games/Tools
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kvoctrain/index.html
+Files: /usr/share/doc/kde/HTML/en/kvoctrain/*.html

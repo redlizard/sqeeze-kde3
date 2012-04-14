@@ -1,0 +1,23 @@
+opt/kde3/bin/keduca
+opt/kde3/bin/keducabuilder
+opt/kde3/lib/kde3/libkeducapart.la
+opt/kde3/lib/kde3/libkeducapart.so
+opt/kde3/share/applications/kde/keduca.desktop
+opt/kde3/share/applications/kde/keducabuilder.desktop
+opt/kde3/share/apps/keduca
+opt/kde3/share/config.kcfg/keduca.kcfg
+opt/kde3/share/doc/kde/HTML/en/keduca/common
+opt/kde3/share/doc/kde/HTML/en/keduca/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/keduca/*.docbook
+opt/kde3/share/doc/kde/HTML/en/keduca/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/keduca.png
+opt/kde3/share/icons/hicolor/22x22/apps/keduca.png
+opt/kde3/share/icons/hicolor/32x32/apps/keduca.png
+opt/kde3/share/icons/hicolor/48x48/apps/keduca.png
+opt/kde3/share/icons/hicolor/64x64/apps/keduca.png
+opt/kde3/share/icons/hicolor/128x128/apps/keduca.png
+opt/kde3/share/mimelnk/application/x-edu.desktop
+opt/kde3/share/mimelnk/application/x-edugallery.desktop
+opt/kde3/share/services/keduca_part.desktop
+../icons/keduca.xpm opt/kde3/share/pixmaps
+../keduca-shrinker opt/kde3/bin

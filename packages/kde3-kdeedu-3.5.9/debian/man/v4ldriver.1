@@ -1,0 +1,69 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH V4LDRIVER 1 "March 16, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+v4ldriver \- Video4Linux Generic driver for INDI telescope control
+.SH SYNOPSIS
+.B v4ldriver
+[ \fB\-v\fP ]
+.SH DESCRIPTION
+KStars allows you to configure
+and control astronomical instruments such as telescopes and focusers via
+the INDI protocol.  \fBv4ldriver\fP is a device driver for supporting
+particular types of external hardware.
+.PP
+You should normally not need to run this driver directly.  Instead you
+should use KStars to configure and operate your astronomical instruments.
+Most operations can be found under the Devices menu within KStars.
+.PP
+KStars will start the INDI server internally, and the INDI server will
+in turn start this device driver.
+.PP
+Much more detailed information can be found in the KStars Handbook, as
+described below.
+.PP
+KStars is a graphical desktop planetarium for KDE, and forms part of
+the official KDE edutainment module.
+.SH OPTIONS
+.TP
+\fB\-v\fP
+Write more verbose output to stderr.
+.SH SEE ALSO
+.BR indiserver (1),
+.BR kstars (1).
+.PP
+The KStars Handbook contains detailed information on how to use INDI for
+telescope control.  You can read this handbook in the KDE Help Centre.
+Alternatively you can enter the URL
+\fIhelp:/kstars/indi.html\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/kstars/indi.html\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdeedu-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/kstars/indi.html\fP.
+.SH AUTHOR
+KStars was written by Jason Harris <jharris@30doradus.org>,
+Heiko Evermann <heiko@evermann.de>, Thomas Kabelmann <tk78@gmx.de>,
+Pablo de Vicente <pvicentea@wanadoo.es>, Jasem Mutlaq <mutlaqja@ikarustech.com>,
+Carsten Niehaus <cniehaus@gmx.de>, Mark Hollomon <mhh@mindspring.com>,
+Vincent Jagot <vincent.jagot@free.fr> and
+Martin Piskernig <martin.piskernig@stuwo.at>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

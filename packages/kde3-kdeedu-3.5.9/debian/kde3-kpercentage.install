@@ -1,0 +1,14 @@
+opt/kde3/bin/kpercentage
+opt/kde3/share/applications/kde/kpercentage.desktop
+opt/kde3/share/apps/kpercentage
+opt/kde3/share/doc/kde/HTML/en/kpercentage/common
+opt/kde3/share/doc/kde/HTML/en/kpercentage/index.cache.bz2
+opt/kde3/share/doc/kde/HTML/en/kpercentage/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kpercentage/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/kpercentage.png
+opt/kde3/share/icons/hicolor/22x22/apps/kpercentage.png
+opt/kde3/share/icons/hicolor/32x32/apps/kpercentage.png
+opt/kde3/share/icons/hicolor/48x48/apps/kpercentage.png
+opt/kde3/share/icons/hicolor/128x128/apps/kpercentage.png
+opt/kde3/share/icons/hicolor/scalable/apps/kpercentage.svgz
+../icons/kpercentage.xpm opt/kde3/share/pixmaps

@@ -1,0 +1,11 @@
+debian/man/celestrongps.1
+debian/man/fliccd.1
+debian/man/indiserver.1
+debian/man/lx200_16.1
+debian/man/lx200autostar.1
+debian/man/lx200classic.1
+debian/man/lx200generic.1
+debian/man/lx200gps.1
+debian/man/temma.1
+debian/man/v4ldriver.1
+debian/man/v4lphilips.1

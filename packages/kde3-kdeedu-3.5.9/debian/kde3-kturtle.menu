@@ -1,0 +1,7 @@
+?package(kturtle):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="KTurtle"\
+  longtitle="KTurtle (Logo Programming Environment)"\
+  command="/opt/kde3/bin/kturtle"\
+  icon="/opt/kde3/share/pixmaps/kturtle.xpm"

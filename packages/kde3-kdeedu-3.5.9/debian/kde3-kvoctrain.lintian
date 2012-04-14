@@ -1,0 +1,3 @@
+kvoctrain: package-name-doesnt-match-sonames libkvoctraincore0
+kvoctrain: non-dev-pkg-with-shlib-symlink usr/lib/libkvoctraincore.so.0.0.0 usr/lib/libkvoctraincore.so
+

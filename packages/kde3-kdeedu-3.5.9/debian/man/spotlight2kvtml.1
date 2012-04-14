@@ -1,0 +1,52 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH SPOTLIGHT2KVTML 1 "March 16, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+spotlight2kvtml \- convert a Spotlight Online vocabulary list to a
+KVocTrain data file
+.SH SYNOPSIS
+.B spotlight2kvtml
+.I spotfile month year
+.SH DESCRIPTION
+\fBspotlight2kvtml\fP is used to convert a Spotlight Online vocabulary
+list to a KVocTrain data file (*.kvtml).
+.PP
+The given vocabulary list (\fIspotfile\fP) must be in plain text format
+(i.e., you will need to convert the downloaded RTF or Word document into
+a plain text file).  The name of the new KVocTrain data file
+will be derived from the given \fIspotfile\fP.
+.PP
+The given month and year will be used in the title and lesson names
+in the new KVocTrain data file.
+.PP
+Note that Spotlight Online changes its vocabulary list format from time
+to time, so spotlight2kvtml might be out of date and might not behave
+correctly.
+.PP
+This utility is part of the official KDE edutainment module.
+.SH SEE ALSO
+.BR kvoctrain (1),
+.BR langen2kvtml (1).
+.PP
+Spotlight Online vocabulary lists can be downloaded from
+\fIhttp://www.spotlight-online.de/\fP.
+.SH AUTHOR
+spotlight2kvtml was written by Ewald Arnold <kvoctrain@ewald-arnold.de>
+and others.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

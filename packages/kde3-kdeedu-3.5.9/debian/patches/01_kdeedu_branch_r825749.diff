@@ -1,0 +1,580 @@
+#DPATCHLEVEL=0
+--- blinken/src/blinken.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ blinken/src/blinken.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -34,6 +34,7 @@
+ GenericName[is]=Hermi leikur
+ GenericName[it]=Gioco Simon Says
+ GenericName[ja]=ゲーム「サイモンさんが言いました」
++GenericName[ka]=თამაში "წერეთელმა დაგვიბარა"
+ GenericName[km]=ល្បែង ស៊ីម៉ុន​និយាយ
+ GenericName[lt]=Simon Says žaidimas
+ GenericName[nb]=Hukommelsesleke
+@@ -86,6 +87,7 @@
+ Comment[is]=Minnisþjálfunarleikur
+ Comment[it]=Un programma per esercitare la memoria
+ Comment[ja]=レトロな記憶力増強ゲーム
++Comment[ka]=მეხსიერების გასავარჯიშებელი თამაში
+ Comment[km]=ល្បែង​ត្រឡប់​បន្កើន​សតិ
+ Comment[lt]=Retro atminties padidinimo priemonė
+ Comment[nb]=Et hukommelsesspill etter gammel stil
+--- khangman/khangman/khangman.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ khangman/khangman/khangman.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -35,6 +35,7 @@
+ GenericName[is]=Hengimann leikur
+ GenericName[it]=Gioco dell'impiccato
+ GenericName[ja]=ハングマンゲーム
++GenericName[ka]=თამაში "ჩამოხრჩობანა"
+ GenericName[km]=ល្បែង​ព្យួរក
+ GenericName[lt]=Budelio žaidimas
+ GenericName[lv]=Karātavu Spēle
+@@ -91,8 +92,10 @@
+ Comment[he]=משחק איש תלוי של KDE
+ Comment[hr]=KDE igra vješala
+ Comment[hu]=KDE-s akasztófás játék
++Comment[is]=KDE Hengimann
+ Comment[it]=Gioco dell'impiccato per KDE
+ Comment[ja]=ハングマンゲーム
++Comment[ka]=KDE თამაში "ჩამოხრჩობანა"
+ Comment[km]=ល្បែង​ព្យួរក​របស់ KDE
+ Comment[lt]=KDE pakaruoklio žaidimas
+ Comment[ms]=Permainan Hangman KDE
+--- kpercentage/kpercentage/kpercentage.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kpercentage/kpercentage/kpercentage.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -44,6 +44,7 @@
+ GenericName[is]=Æfa prósentureikninga
+ GenericName[it]=Esercizi con le percentuali
+ GenericName[ja]=パーセンテージ (百分率) の練習
++GenericName[ka]=სავარჯიშოები პროცენტებთან
+ GenericName[km]=លំហាត់​ភាគរយ
+ GenericName[lt]=Procentų mokymosi priemonė
+ GenericName[mk]=Вежбајте проценти
+--- kturtle/src/kturtle.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kturtle/src/kturtle.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -39,6 +39,7 @@
+ GenericName[is]=Logo forritunarumhverfi
+ GenericName[it]=Ambiente di programmazione Logo
+ GenericName[ja]=ロゴプログラミング環境
++GenericName[ka]=პროგრამირება "ლოგოზე"
+ GenericName[km]=បរិស្ថាន​កម្មវិធី​រូប​សញ្ញា
+ GenericName[lt]=Logo programavimo aplinka
+ GenericName[nb]=Programmeringsmiljø for Logo
+@@ -94,6 +95,7 @@
+ Comment[is]=KDE Logo forritunarumhverfi
+ Comment[it]=Ambiente di programmazione Logo per KDE
+ Comment[ja]=KDE ロゴプログラミング環境
++Comment[ka]=KDE "ლოგოზე" პროგრამირების გარემო
+ Comment[km]=បរិស្ថាន​កម្មវិធី​រូប​សញ្ញា​របស់ KDE
+ Comment[lt]=KDE Logo programavimo aplinka
+ Comment[nb]=Et KDE-miljø for Logo-programmering
+--- klettres/klettres/klettres.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ klettres/klettres/klettres.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -28,8 +28,10 @@
+ Comment[he]=תוכנת KDE ללימוד האלפבית
+ Comment[hr]=KDE program za učenje abecede
+ Comment[hu]=KDE-alapú oktatóprogram az ábécé gyakorlásához
++Comment[is]=KDE forrit til að læra stafrófið
+ Comment[it]=Un programma KDE per imparare l'alfabeto
+ Comment[ja]=アルファベットを学習するプログラム
++Comment[ka]= KDE ანბანის შესასწავლი პროგრამა
+ Comment[km]= កម្មវិធី​របស់ KDE សម្រាប់​រៀន​អក្ខរក្រម
+ Comment[lt]= KDE programa raidyno mokymuisi
+ Comment[nb]=Et KDE-program for å lære alfabetet
+@@ -100,6 +102,7 @@
+ GenericName[is]=Læra stafrófið
+ GenericName[it]=Impara l'alfabeto
+ GenericName[ja]=アルファベットの学習
++GenericName[ka]=ანბანის შესწავლა
+ GenericName[km]=រៀន​អក្ខរក្រម
+ GenericName[lt]=Išmokite raidyną
+ GenericName[mk]=Учете азбука
+--- kwordquiz/src/x-kwordquiz.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kwordquiz/src/x-kwordquiz.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -28,6 +28,7 @@
+ Comment[is]=KWordQuiz orðaforði
+ Comment[it]=Vocabolario KWordQuiz
+ Comment[ja]=KWordQuiz 単語集
++Comment[ka]=KWordQuiz სიტყვარი
+ Comment[km]=វាក្យសព្ទ KWordQuiz
+ Comment[lt]=KWordQuiz žodynas
+ Comment[mk]=KWordQuiz Речник
+--- kwordquiz/src/kwordquiz.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kwordquiz/src/kwordquiz.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -33,6 +33,7 @@
+ Comment[is]=Hjálparkorta og orðaforða-kennslutól
+ Comment[it]=Un programma di supporto alla memorizzazione
+ Comment[ja]=フラッシュカードと語彙学習プログラム
++Comment[ka]=სიტყვათა მარაგის შემოწმება ბარათებით
+ Comment[km]=កម្មវិធី​រៀន​វាក្យសព្ទ និង​បណ្ណ​បង្ហាញ
+ Comment[lt]=Žodyno mokymosi kortelių pagalba programa
+ Comment[mk]=Флеш картичка и програма за проширување на речникот
+@@ -95,6 +96,7 @@
+ GenericName[is]=Æfir orðaforða
+ GenericName[it]=Apprendimento di vocaboli
+ GenericName[ja]=ボキャブラリの強化
++GenericName[ka]=სიტყვათა მარაგის შემოწმება
+ GenericName[km]=កម្មវិធី​បង្ហាត់​វាក្យសព្ទ
+ GenericName[lt]=Žodyno treniruoklis
+ GenericName[lv]=Mācību Vārdnīca
+--- kwordquiz/src/eventsrc	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kwordquiz/src/eventsrc	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -69,6 +69,7 @@
+ Comment[is]=Rétt svar
+ Comment[it]=Risposta esatta
+ Comment[ja]=正解
++Comment[ka]=სწორი პასუხი
+ Comment[km]=ចម្លើយ​ត្រឹមត្រូវ
+ Comment[lt]=Teisingas atsakymas
+ Comment[mk]=Точен одговор
+@@ -156,6 +157,7 @@
+ Comment[is]=Rangt svar
+ Comment[it]=Risposta sbagliata
+ Comment[ja]=不正解
++Comment[ka]=მცდარი პასუხი
+ Comment[km]=ចម្លើយ​ខុស
+ Comment[lt]=Neteisingas atsakymas
+ Comment[mk]=Погрешен одговор
+@@ -251,6 +253,7 @@
+ Comment[is]=Villa
+ Comment[it]=Errore di sintassi
+ Comment[ja]=構文上のエラー
++Comment[ka]=სინტაქსური შეცდომა
+ Comment[km]=កំហុស​ក្នុង​ស្លាក
+ Comment[lt]=Sintaksės klaida
+ Comment[mk]=Грешка во синтаксата
+--- kvoctrain/kvoctrain/kvoctrain.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kvoctrain/kvoctrain/kvoctrain.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -29,6 +29,7 @@
+ GenericName[is]=Æfir orðaforða
+ GenericName[it]=Apprendimento di vocaboli
+ GenericName[ja]=ボキャブラリの強化
++GenericName[ka]=სიტყვათა მარაგის შემოწმება
+ GenericName[km]=កម្មវិធី​បង្ហាត់​វាក្យសព្ទ
+ GenericName[lt]=Žodyno treniruoklis
+ GenericName[lv]=Mācību Vārdnīca
+--- kvoctrain/kvoctrain/x-kvtml.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kvoctrain/kvoctrain/x-kvtml.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -29,6 +29,7 @@
+ Comment[is]=Orðaforða skjal
+ Comment[it]=Documento KVocTrain
+ Comment[ja]=ボキャブラリ強化のドキュメント
++Comment[ka]=სიტყვათა მარაგის დოკუმენტი
+ Comment[km]=ឯកសារ​កម្មវិធី​បង្ហាត់​វាក្យសព្ទ
+ Comment[lt]=Žodyno treniruoklio dokumentas
+ Comment[lv]=Mācību Vārdnīcas Dokuments
+--- kmplot/kmplot/x-kmplot.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kmplot/kmplot/x-kmplot.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -29,6 +29,7 @@
+ Comment[is]=KmPlot-skrá
+ Comment[it]=File di KmPlot
+ Comment[ja]=KmPlot ファイル
++Comment[ka]=KmPlot ფაილი
+ Comment[km]=ឯកសារ KmPlot
+ Comment[lt]=KmPlot byla
+ Comment[ms]=Fail KmPlot
+--- kmplot/kmplot/kmplot.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kmplot/kmplot/kmplot.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -37,6 +37,7 @@
+ Comment[is]=Teiknar gröf falla
+ Comment[it]=Grafici di funzioni
+ Comment[ja]=関数プロッタ
++Comment[ka]=ფუნქციების გრაფიკები
+ Comment[km]=កម្មវិធី​គ្រោង​អនុគមន៍
+ Comment[lt]=funkcijinis braižytuvas
+ Comment[lv]=Funkciju Zīmētājs
+@@ -108,6 +109,7 @@
+ GenericName[is]=Teiknar gröf falla
+ GenericName[it]=Grafici di funzioni matematiche
+ GenericName[ja]=数学関数プロッタ
++GenericName[ka]=მათიმატიკური ფუნქციების გრაფიკები
+ GenericName[km]=កម្មវិធី​គ្រោង​អនុគមន៍​គណិតវិទ្យា
+ GenericName[lt]=Matematinės funkcijos braižytuvas
+ GenericName[ms]=Pemplot Fungsi Matematik
+--- kig/kfile/kfile_drgeo.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kig/kfile/kfile_drgeo.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -27,6 +27,7 @@
+ Name[is]=Dr. Geo upplýsingar
+ Name[it]=Informazioni Dr. Geo
+ Name[ja]=Dr. Geo 情報
++Name[ka]=Dr. Geo - მონაცემები
+ Name[km]=ព័ត៌មាន Dr. Geo
+ Name[mk]=Dr. Geo инфо
+ Name[nb]=Dr. Geo-info
+--- kig/kfile/kfile_kig.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kig/kfile/kfile_kig.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -26,6 +26,7 @@
+ Name[is]=Kig upplýsingar
+ Name[it]=Informazioni Kig
+ Name[ja]=Kig 情報
++Name[ka]=Kig - მონაცემები
+ Name[km]=ព័ត៌មាន Kig
+ Name[mk]=Kig инфо
+ Name[nb]=Kig-info
+--- kig/kig/kig.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kig/kig/kig.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -35,6 +35,7 @@
+ GenericName[is]=Gagnvirk rúmfræði
+ GenericName[it]=Geometria interattiva
+ GenericName[ja]=幾何学との対話
++GenericName[ka]=ინტერაქტიური გეომეტრია
+ GenericName[km]=ធរណីមាត្រ​អន្តរកម្ម
+ GenericName[lt]=Interaktyvi geometrija
+ GenericName[ms]=Geometri Interaktif
+@@ -86,8 +87,10 @@
+ Comment[he]=חקור מבנים גאומטריים
+ Comment[hr]=Upoznajte geometrijske konstrukcije
+ Comment[hu]=Geometriai oktatóprogram
++Comment[is]=Kanna rúmfræðilega byggingu forma
+ Comment[it]=Esplora le costruzioni geometriche
+ Comment[ja]=幾何学との対話
++Comment[ka]=გეომეტრიულ ფიგურათა შესწავლა
+ Comment[km]=រុករក​សំណង់​ធរណីមាត្រ
+ Comment[lt]=Geometrinių konstrukcijų tyrinėjimas
+ Comment[ms]=Jelahan Pembinaan Geometrik
+--- kig/mimetypes/x-kgeo.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kig/mimetypes/x-kgeo.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -32,6 +32,7 @@
+ Comment[is]=KGeo mynd
+ Comment[it]=Figura di KGeo
+ Comment[ja]=KGeo 図
++Comment[ka]=KGeo ფიგურა
+ Comment[km]=រូប​ពន្យល់ KGeo
+ Comment[lt]=KGeo figūra
+ Comment[lv]=KGeo Figūra
+--- kig/mimetypes/x-kseg.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kig/mimetypes/x-kseg.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -34,6 +34,7 @@
+ Comment[is]=KSeg skjal
+ Comment[it]=Documento KSeg
+ Comment[ja]=KSeg ドキュメント
++Comment[ka]=KSeg დოკუმენტი
+ Comment[km]=ឯកសារ KSeg
+ Comment[lt]=KSeg dokumentas
+ Comment[lv]=KSeg Dokuments
+--- kig/mimetypes/x-kig.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kig/mimetypes/x-kig.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -33,6 +33,7 @@
+ Comment[is]=Kig mynd
+ Comment[it]=Figura di Kig
+ Comment[ja]=Kig 図
++Comment[ka]=Kig ფიგურა
+ Comment[km]=រូប​ពន្យល់ Kig
+ Comment[lt]=Kig figūra
+ Comment[lv]=Kig Figūra
+--- kig/mimetypes/x-cabri.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kig/mimetypes/x-cabri.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -32,6 +32,7 @@
+ Comment[is]=Cabri mynd
+ Comment[it]=Figura di Cabri
+ Comment[ja]=Cabri 図
++Comment[ka]=Cabri ფიგურა
+ Comment[km]=រូប​ពន្យល់ Cabri
+ Comment[lt]=Cabri figūra
+ Comment[lv]=Cabri Figūra
+--- kig/mimetypes/x-drgeo.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kig/mimetypes/x-drgeo.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -30,6 +30,7 @@
+ Comment[is]=Dr. Geo mynd
+ Comment[it]=Figura di Dr. Geo
+ Comment[ja]=Dr. Geo 図
++Comment[ka]=Dr. Geo ფიგურა
+ Comment[km]=រូប​ពន្យល់ Dr. Geo
+ Comment[lt]=Dr. Geo figūra
+ Comment[ms]=Figure Dr. Geo
+--- kiten/kiten.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kiten/kiten.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -29,6 +29,7 @@
+ GenericName[is]=Japanskt uppsláttarrit/kennslutól
+ GenericName[it]=Programma per lo studio del giapponese
+ GenericName[ja]=日本語参照/学習ツール
++GenericName[ka]=იაპონურის ლექსიკონი/შესწავლა
+ GenericName[km]=ឧបករណ៍​សិក្សា/យោង ជប៉ុន
+ GenericName[lt]=Japoniškas žinynas/studijavimo įrankis
+ GenericName[lv]=Japāņu Valodas Mācību/References Rīks
+@@ -78,6 +79,7 @@
+ Comment[he]=כלי עיון\לימוד יפנית
+ Comment[hr]=Program za proučavanje japanskog jezika
+ Comment[hu]=Japán írásjeloktató
++Comment[is]=Japanskt uppsláttarrit/kennslutól
+ Comment[it]=Programma per lo studio del giapponese
+ Comment[ja]=日本語参照/学習ツール
+ Comment[km]=សេចក្ដីយោង និង​ឧបករណ៍​សិក្សា​​ភាសា​ជប៉ុន
+--- kverbos/kverbos/kverbos.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kverbos/kverbos/kverbos.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -48,6 +48,7 @@
+ GenericName[is]=Læra spánskar sagnir
+ GenericName[it]=Studia i verbi spagnoli
+ GenericName[ja]=スペイン語の動詞の活用を学習
++GenericName[ka]=ესპანურ ზმნათა ფორმების შესწავლა
+ GenericName[km]=សិក្សា​ទម្រង់​ករិយាសព្ទ​អេស្ប៉ាញ
+ GenericName[lt]=Ispanų kalbos veiksmažodžių formų studijavimas
+ GenericName[mk]=Учете шпански глаголски форми
+--- kanagram/src/kanagram.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kanagram/src/kanagram.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -34,6 +34,7 @@
+ Comment[hu]=KDE-alapú szókirakó játék
+ Comment[it]=Gioco di anagrammi per KDE
+ Comment[ja]=KDE 回文ゲーム
++Comment[ka]=KDE ასოების გადალაგების თამაში
+ Comment[km]=ល្បែង​តម្រៀប​អក្សរ​របស់ KDE
+ Comment[ms]=Permainan Susun Huruf KDE
+ Comment[nb]=Ordlek med bokstavrekkefølge
+@@ -84,6 +85,7 @@
+ GenericName[is]=Stafaröðunarleikur
+ GenericName[it]=Gioco di anagrammi
+ GenericName[ja]=回文ゲーム
++GenericName[ka]=ასოების გადალაგება
+ GenericName[km]=ល្បែង​តម្រៀប​អក្សរ
+ GenericName[lt]=Raidžių rūšiavimo žaidimas
+ GenericName[lv]=Burtu Kārtības Spēle
+--- klatin/klatin/klatin.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ klatin/klatin/klatin.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -32,6 +32,7 @@
+ Comment[is]=Forrit til að fara yfir Latínu
+ Comment[it]=Un programma per ripassare il Latino
+ Comment[ja]=ラテン語を学習するプログラム
++Comment[ka]=ლათინურის შესასწავლი პროგრამა
+ Comment[km]=កម្មវិធី​សម្រាប់​ជួយ​កែប្រែ​ភាសា​ឡាតាំង
+ Comment[lt]=Programa lotynų kalbos studijavimui
+ Comment[mk]=Програма која ќе ви помогне да го повторите латинскиот јазик
+@@ -97,6 +98,7 @@
+ GenericName[is]=Latínupúki
+ GenericName[it]=Studio del Latino
+ GenericName[ja]=ラテン語の学習
++GenericName[ka]=ლათინურის შემოწმება
+ GenericName[km]=កម្មវិធី​កែប្រែ​ភាសា​ឡាតាំង
+ GenericName[lt]=Pagalbinė lotynų kalbos priemonė
+ GenericName[ms]=Ulangkaji Latin
+--- applnk/science.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ applnk/science.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -33,6 +33,7 @@
+ Name[is]=Vísindi
+ Name[it]=Scienza
+ Name[ja]=サイエンス
++Name[ka]=მეცნიერება
+ Name[km]=វិទ្យាសាស្ត្រ
+ Name[lt]=Mokslas
+ Name[lv]=Zinātne
+@@ -61,7 +62,8 @@
+ Name[tg]=Фан
+ Name[tr]=Bilim
+ Name[uk]=Наука
+-Name[uz]=Фан
++Name[uz]=Fan
++Name[uz@cyrillic]=Фан
+ Name[ven]=Vhutsila
+ Name[vi]=Khoa học
+ Name[xh]=Inzulu lwazi
+--- applnk/mathematics.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ applnk/mathematics.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -33,6 +33,7 @@
+ Name[is]=Stærðfræði
+ Name[it]=Matematica
+ Name[ja]=数学
++Name[ka]=მათემატიკა
+ Name[km]=គណិតវិទ្យា
+ Name[lt]=Matematika
+ Name[lv]=Matemātika
+@@ -60,7 +61,8 @@
+ Name[tg]=Математика
+ Name[tr]=Matematik
+ Name[uk]=Математика
+-Name[uz]=Математика
++Name[uz]=Matematika
++Name[uz@cyrillic]=Математика
+ Name[ven]=Zwa dzimbalo
+ Name[vi]=Toán học
+ Name[xh]=Imathematika
+--- applnk/tools.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ applnk/tools.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -33,6 +33,7 @@
+ Name[is]=Kennslutól
+ Name[it]=Strumenti per l'insegnamento
+ Name[ja]=教育ツール
++Name[ka]=სასწავლო პროგრამები
+ Name[km]=សម្ភារៈ​ឧបទេស
+ Name[lt]=Mokymo įrankiai
+ Name[lv]=Mācību Instrumenti
+--- applnk/miscellaneous.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ applnk/miscellaneous.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -32,6 +32,7 @@
+ Name[is]=Ýmislegt
+ Name[it]=Varie
+ Name[ja]=その他
++Name[ka]=სხვადასხვა
+ Name[km]=ផ្សេងៗ
+ Name[lt]=Įvairūs dalykai
+ Name[lv]=Dažādi
+@@ -58,7 +59,8 @@
+ Name[tg]=Гуногун
+ Name[tr]=Çeşitli
+ Name[uk]=Різне
+-Name[uz]=Ҳар хил
++Name[uz]=Har xil
++Name[uz@cyrillic]=Ҳар хил
+ Name[vi]=Linh tinh
+ Name[zh_CN]=杂项
+ Name[zh_TW]=雜項
+--- applnk/languages.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ applnk/languages.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -33,6 +33,7 @@
+ Name[is]=Tungumál
+ Name[it]=Lingue
+ Name[ja]=言語
++Name[ka]=ენები
+ Name[km]=ភាសា
+ Name[lt]=Kalbos
+ Name[lv]=Valodas
+@@ -60,7 +61,8 @@
+ Name[tg]=Забонҳо
+ Name[tr]=Diller
+ Name[uk]=Мови
+-Name[uz]=Тиллар
++Name[uz]=Tillar
++Name[uz@cyrillic]=Тиллар
+ Name[ven]=Dzinyambo
+ Name[vi]=Ngôn ngữ
+ Name[xh]=Iilwimi
+--- keduca/resources/keduca.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ keduca/resources/keduca.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -31,6 +31,7 @@
+ GenericName[is]=Verkefni & Próf
+ GenericName[it]=Prove ed esami
+ GenericName[ja]=テスト & 試験
++GenericName[ka]=ტესტები და გამოცდები
+ GenericName[km]=ការ​ប្រលង និង​សាកល្បង
+ GenericName[lt]=Testai ir egzaminai
+ GenericName[lv]=Testi & Eksāmeni
+@@ -87,8 +88,10 @@
+ Comment[he]=תוכנת מבחנים ובחנים של KDE
+ Comment[hr]=KDE programi za provjeravanje i ispitivanje
+ Comment[hu]=Teszt- és vizsgakészítő program
++Comment[is]=KDE prófa- & þrautaleikur
+ Comment[it]=Prove ed esami per KDE
+ Comment[ja]=KDE テスト & 試験
++Comment[ka]=KDE ტესტებისა და გამოცდების პროგრამა
+ Comment[km]=កម្មវិធី​ប្រលង និង​សាកល្បង
+ Comment[lt]=KDE testų ir egzaminų programa
+ Comment[nb]=KDE-program for prøver og eksamener
+--- keduca/resources/x-edu.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ keduca/resources/x-edu.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -32,6 +32,7 @@
+ Comment[is]=Edu skjal
+ Comment[it]=Documento Edu
+ Comment[ja]=Edu ドキュメント
++Comment[ka]=Edu ტესტი
+ Comment[km]=ឯកសារ​របស់ Edu
+ Comment[lt]=Edu dokumentas
+ Comment[lv]=Edu Dokuments
+--- keduca/resources/x-edugallery.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ keduca/resources/x-edugallery.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -31,6 +31,7 @@
+ Comment[is]=Edu gallerýskjal
+ Comment[it]=Documento galleria Edu
+ Comment[ja]=Edu ギャラリードキュメント
++Comment[ka]=Edu ტესტების ნაკრები
+ Comment[km]=ឯកសារ​វិចិត្រសាល​របស់ Edu
+ Comment[lt]=Edu galerijos dokumentas
+ Comment[lv]=Edu Galerijas Dokuments
+--- keduca/resources/keducabuilder.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ keduca/resources/keducabuilder.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -30,6 +30,7 @@
+ GenericName[is]=Verkefna og prófa-ritill
+ GenericName[it]=Editor di prove ed esami
+ GenericName[ja]=テスト & 試験エディタ
++GenericName[ka]=ტესტებისა და გამოცდების რედაქტორი
+ GenericName[km]=កម្មវិធី​និពន្ធ​ការ​ប្រលង និង​សាកល្បង
+ GenericName[lt]=Testų ir egzaminų redaktorius
+ GenericName[lv]=Testu & Eksāmenu Redaktors
+@@ -88,6 +89,7 @@
+ Name[is]=KEduca-Ritill
+ Name[it]=Editor di KEduca
+ Name[ja]=KEduca エディタ
++Name[ka]=KEduca რედაქტორი
+ Name[km]=កម្មវិធី​និពន្ធ KEduca
+ Name[lt]=KEduca redaktorius
+ Name[lv]=KEduca-Redaktors
+--- ktouch/ktouch.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ ktouch/ktouch.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -33,6 +33,7 @@
+ GenericName[is]=Vélritunarkennsla
+ GenericName[it]=Istruttore di dattilografia
+ GenericName[ja]=タッチタイプの練習
++GenericName[ka]="ბრმა" ბეჭდვის შესწავლა
+ GenericName[km]=កម្មវិធី​បង្រៀន​វាយ​ដោយ​ការ​ប៉ះ
+ GenericName[lt]=Aklo spausdinimo mokytojas
+ GenericName[lv]=Ātrakstīšanas Skolotājs
+--- kgeography/src/kgeography.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kgeography/src/kgeography.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -35,6 +35,7 @@
+ GenericName[is]=Landafræðiþjálfun
+ GenericName[it]=Impara la geografia
+ GenericName[ja]=地理学トレーナー
++GenericName[ka]=გეოგრაფიის სავარჯიშოები
+ GenericName[km]=កម្មវិធី​បង្ហាត់​ភូមិវិទ្យា
+ GenericName[lt]=Geografijos treniruoklis
+ GenericName[ms]=Jurulatih Geografi
+@@ -85,6 +86,7 @@
+ Comment[is]=Landafræði forrit
+ Comment[it]=Un programma per imparare la geografia
+ Comment[ja]=地理学学習プログラム
++Comment[ka]=გეოგრაფიის სასწავლო პროგრამა
+ Comment[km]=កម្មវិធី​រៀន​ភូមិវិទ្យា
+ Comment[lt]=Geografijos mokymo programa
+ Comment[nb]=Et program for å lære geografi
+--- kstars/kstars/kstars.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kstars/kstars/kstars.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -36,6 +36,7 @@
+ Comment[is]=Skjáborðsstjörnuver
+ Comment[it]=Planetario per il desktop
+ Comment[ja]=デスクトッププラネタリウム
++Comment[ka]=სამაგიდო პლანეტარიუმი
+ Comment[km]=សំណាក​ចក្រវាល​ផ្ទៃ​តុ
+ Comment[lt]=Darbastalio planetariumas
+ Comment[lv]=Darbvirsmas Planetārijs
+@@ -117,6 +118,7 @@
+ GenericName[is]=Skjáborðsstjörnuver
+ GenericName[it]=Planetario per il desktop
+ GenericName[ja]=デスクトッププラネタリウム
++GenericName[ka]=სამაგიდო პლანეტარიუმი
+ GenericName[km]=សំណាក​ចក្រវាល​ផ្ទៃ​តុ
+ GenericName[lt]=Darbastalio planetariumas
+ GenericName[mk]=Планетариум на раб. површина
+--- kalzium/src/kalzium.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kalzium/src/kalzium.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -28,8 +28,10 @@
+ Comment[he]=הטבלה המחזורית של היסודות של KDE
+ Comment[hr]=KDE periodni sustav elemenata
+ Comment[hu]=KDE-alapú periódusos rendszer
++Comment[is]=KDE Lotukerfi
+ Comment[it]=Tavola periodica degli elementi per KDE
+ Comment[ja]=元素周期表
++Comment[ka]=ელემენტების პერიოდული ცხრილი
+ Comment[km]=តារាង​ខួប​នៃ​ធាតុ​គីមី​របស់ KDE
+ Comment[lt]=KDE periodinė elementų lentelė
+ Comment[nb]=Grunnstoffenes periodiske system i KDE
+@@ -96,6 +98,7 @@
+ GenericName[is]=Lotukerfið
+ GenericName[it]=Tavola periodica degli elementi
+ GenericName[ja]=元素周期表
++GenericName[ka]=ელემენტების პერიოდული ცხრილი
+ GenericName[km]=តារាង​ខួម​នៃ​ធាតុ​គីមី
+ GenericName[lt]=Periodinė elementų lentelė
+ GenericName[mk]=Периодична табела на елементи
+--- kbruch/src/kbruch.desktop	(.../tags/KDE/3.5.9/kdeedu)	(revision 825749)
++++ kbruch/src/kbruch.desktop	(.../branches/KDE/3.5/kdeedu)	(revision 825749)
+@@ -35,6 +35,7 @@
+ GenericName[is]=Tugabrotaæfingar
+ GenericName[it]=Esercizi con le frazioni
+ GenericName[ja]=分数の練習
++GenericName[ka]=ვარჯიში წილადებთან
+ GenericName[km]=លំហាត់​ប្រភាគ
+ GenericName[mk]=Вежбајте дропки
+ GenericName[ms]=Latih Pecahan
+@@ -90,6 +91,7 @@
+ Comment[is]=Gera æfingar með tugabrotum
+ Comment[it]=Esercizi con le frazioni
+ Comment[ja]=分数の実践練習
++Comment[ka]=პრაქტიკული სავარჯიშოები წილადებთან
+ Comment[km]=លំហាត់​អនុវត្ត​ប្រភាគ
+ Comment[lv]=Praktiskie uzdevumi ar daļām
+ Comment[mk]=Вежбајте задачи со дропки

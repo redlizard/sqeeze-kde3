@@ -1,0 +1,18 @@
+opt/kde3/bin/kbruch
+opt/kde3/share/apps/kbruch/kbruchui.rc
+opt/kde3/share/applications/kde/kbruch.desktop
+opt/kde3/share/config.kcfg/kbruch.kcfg
+opt/kde3/share/doc/kde/HTML/en/kbruch/*.bz2
+opt/kde3/share/doc/kde/HTML/en/kbruch/common
+opt/kde3/share/doc/kde/HTML/en/kbruch/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kbruch/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/kbruch.png
+opt/kde3/share/icons/hicolor/22x22/apps/kbruch.png
+opt/kde3/share/icons/hicolor/32x32/apps/kbruch.png
+opt/kde3/share/icons/hicolor/48x48/apps/kbruch.png
+opt/kde3/share/icons/hicolor/64x64/apps/kbruch.png
+opt/kde3/share/icons/hicolor/128x128/apps/kbruch.png
+opt/kde3/share/icons/hicolor/scalable/apps/kbruch.svgz
+opt/kde3/share/icons/crystalsvg/32x32/actions/kbruch_*.png
+opt/kde3/share/icons/crystalsvg/64x64/actions/kbruch_*.png
+../icons/kbruch.xpm opt/kde3/share/pixmaps

@@ -1,0 +1,11 @@
+opt/kde3/bin/test_extdate
+opt/kde3/bin/test_extdatepicker
+opt/kde3/include/kde/libkdeedu
+opt/kde3/lib/libextdate.la
+opt/kde3/lib/libextdate.so
+opt/kde3/lib/libkdeeducore.la
+opt/kde3/lib/libkdeeducore.so
+opt/kde3/lib/libkdeeduui.la
+opt/kde3/lib/libkdeeduui.so
+opt/kde3/lib/libkdeeduplot.la
+opt/kde3/lib/libkdeeduplot.so

@@ -1,0 +1,225 @@
+This package was debianised by Ben Burton <bab@debian.org> on
+Sun, 19 May 2002 18:44:16 +1000.
+Thanks to Karl Soderstrom and Gregory J. Oschwald for originally packaging
+kstars and ktouch respectively.
+
+It was downloaded from: http://www.kde.org/download
+
+Upstream Authors:
+
+  Blinken: Albert Astals Cid <tsdgeos@terra.es>,
+      Danny Allen <danny@dannyallen.co.uk>
+  Kalzium: Carsten Niehaus <cniehaus@kde.org>
+  KAnagram: Joshua Keel <joshuakeel@gmail.com>,
+      Danny Allen <danny@dannyallen.co.uk>
+  KBruch: Sebastian Stein <seb.kde@hpfsc.de>,
+      Eva Brucherseifer <eva@kde.org> and others
+  KEduca: Javier Campos <javi@asyris.org>, Klas Kalass <klas@kde.org>,
+      Henrique Pinto <henrique.pinto@kdemail.net>,
+      Anne-Marie Mahfouf <annma@kde.org>
+  KGeography: Albert Astals Cid <tsdgeos@terra.es>
+  KHangMan: Primoz Anzur <zerokode@gmx.net>, Anne-Marie Mahfouf <annma@kde.org>
+  Kig: Dominique Devriese <devriese@kde.org>,
+      Maurizio Paolini <paolini@dmf.bs.unicatt.it>,
+      Franco Pasquarelli <pasqui@dmf.bs.unicatt.it>,
+      Pino Toscano <toscano.pino@tiscali.it> and others
+  Kiten: Jason Katz-Brown <jason@katzbrown.com>,
+      Jim Breen <jwb@csse.monash.edu.au>,
+      Neil Stevens <neil@qualityassistant.com>
+  KLatin: George Wright <gwright@kde.org> and others
+  KLettres: Anne-Marie Mahfouf <annma@kde.org> and many others
+  KMathTool: Birgit Schulz <B.Schulz@Superlehrer.de>,
+      Marco Wegner <mail@marcowegner.de>
+  KmPlot: Klaus-Dieter M�ller <kdmoeller@foni.net>,
+      Matthias Messmer <bmlmessmer@web.de>,
+      Fredrik Edemar <f_edemar@linux.se>
+  KPercentage: Matthias Messmer <bmlmessmer@web.de>,
+      Carsten Niehaus <cniehaus@gmx.de>,
+      Robert Gogolok <mail@robert-gogolok.de>
+  KStars: Jason Harris <jharris@30doradus.org>,
+      Heiko Evermann <heiko@evermann.de>, Thomas Kabelmann <tk78@gmx.de>,
+      Pablo de Vicente <pvicentea@wanadoo.es>,
+      Jasem Mutlaq <mutlaqja@ikarustech.com>, Carsten Niehaus <cniehaus@gmx.de>,
+      Mark Hollomon <mhh@mindspring.com>, Vincent Jagot <vincent.jagot@free.fr>,
+      Martin Piskernig <martin.piskernig@stuwo.at>
+  KTouch: Haavard Froeiland <haavard@users.sourceforge.net>,
+      Andreas Nicolai <Andreas.Nicolai@gmx.net>
+  KTurtle: Cies Breijs <cies # kde.nl>,
+      Walter Schreppers <Walter.Schreppers # ua.ac.be>,
+      Anne-Marie Mahfouf <annemarie.mahfouf # free.fr>
+  Kverbos: Arnold Kraschinski <arnold.k67@gmx.de>
+  KVocTrain: Ewald Arnold <kvoctrain@ewald-arnold.de>,
+      Peter Hedlund <peter@peterandlinda.com>
+  KWordQuiz: Peter Hedlund <peter@peterandlinda.com>
+  libkdeedu: Scott Wheeler <wheeler@kde.org>,
+      Jason Harris <jharris@30doradus.org>
+
+Copyright:
+
+  All components of this package are released under the GNU General
+  Public License (GPL), with the following exceptions.  Note that the
+  abbreviation LGPL refers to the GNU Library General Public License.
+
+    Kiten: (see below)
+    KStars: (see below)
+    KVocTrain: GPL, though some source files are under the LGPL
+    KWordQuiz: GPL, though many source files are under the LGPL
+    Libraries:
+      libextdate.so: Sources under a mixture of GPL and LGPL
+      libkdeeducore.so: LGPL
+    DocBook documentation: (see below)
+
+  On Debian GNU/Linux systems, the complete texts of the GPL and the LGPL
+  can be found in the files `/usr/share/common-licenses/GPL' and
+  `/usr/share/common-licenses/LGPL` respectively.
+
+  --------------------
+
+  Kiten:
+
+    This application is released under the GPL, though a few of its
+    source files are under the following license:
+
+      Copyright (C) 2001 Neil Stevens <neil@qualityassistant.com>
+
+      Permission is hereby granted, free of charge, to any person
+      obtaining a copy of this software and associated documentation
+      files (the "Software"), to deal in the Software without
+      restriction, including without limitation the rights to use, copy,
+      modify, merge, publish, distribute, sublicense, and/or sell copies
+      of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT.  IN NO EVENT SHALL THE THE AUTHOR(S) BE LIABLE
+      FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+      CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+      Except as contained in this notice, the name(s) of the author(s)
+      shall not be used in advertising or otherwise to promote the sale,
+      use or other dealings in this Software without prior written
+      authorization from the author(s).
+
+  --------------------
+
+  KStars:
+
+    While KStars itself is released under the GPL, its INDI server and
+    drivers, its data catalogue and some of its images are under different
+    licenses as follows.
+
+    INDI server and drivers:
+
+      Released under the LGPL, with the following exceptions:
+
+        The ColourConVerT library along with some related code is released
+        under the GPL.  This is used in the V4L and Philips webcam drivers.
+
+        The file celestronprotocol.c is released under the GPL.  This is
+        used in the Celestron GPS driver.
+
+        The Finger Lakes Instruments driver is released under the
+        following license:
+
+          Copyright (c) 2000, 2002 Finger Lakes Instrumentation (FLI), L.L.C.
+          All rights reserved.
+
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted provided that the following conditions
+          are met:
+
+                Redistributions of source code must retain the above copyright
+                notice, this list of conditions and the following disclaimer.
+
+                Redistributions in binary form must reproduce the above
+                copyright notice, this list of conditions and the following
+                disclaimer in the documentation and/or other materials
+                provided with the distribution.
+
+                Neither the name of Finger Lakes Instrumentation (FLI), LLC
+                nor the names of its contributors may be used to endorse or
+                promote products derived from this software without specific
+                prior written permission.
+
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+          ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+          LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+          FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+          REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+          INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+          BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+          LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+          CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+          LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+          ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+          POSSIBILITY OF SUCH DAMAGE.
+
+        The FITS reading/writing library is released under the GPL.
+        This is used in the static libindicom library that is linked
+        into KStars.
+
+    Star catalogue:
+
+      Star catalog derived from the Hipparcos and Tycho star catalogs.
+      These catalogs are in the public domain, and can be obtained from
+      http://cdsweb.u-strasbg.fr/viz-bin/Cat?I/239
+
+      Changes made to the raw catalog include stripping out certain data
+      fields, reformatting, and manual matching up common and genetive
+      star names.  The modified catalog is (C) Jason Harris, 2003, and is
+      licensed under the terms of the GNU General Public License (GPL):
+      http://www.gnu.org/licenses/gpl.html
+
+      The Hipparcos data is in the public domain and may be used
+      by anyone. We do request however that use of the catalogue data
+      is acknowledged. Something similar to "This application
+      makes use of the  Hipparcos and Tycho catalogues (ESA, 1997)"
+      could be appropriate, and a link to the ESA Hipparcos web pages
+      (http://sci.esa.int/hipparcos) would also be appreciated.
+
+    Images:
+
+      KStars uses images in the skymap that are under copyright.  
+      In most cases, these images are freely available for 
+      non-commercial uses.  When required, we have obtained 
+      permission from the image's author.  For each image, we 
+      credit the author or source and provide a link to their 
+      website, when available.
+
+      Key:
+      PD:       Public Domain
+      CR:       Authorship Credit Requested
+      GPL:      Released under the General Public License
+
+      NASA/GSFC:Nat'l Aeronautics and Space Admin./Goddard Spaceflight Center
+
+
+      Planets Inline Image Credits:
+      Mercury:  NASA/GSFC (PD/CR)
+      Venus:    NASA/GSFC (PD/CR)
+      Moon:     based on a photo contributed by Frank Stefani (GPL)
+      Mars:     NASA and Hubble Heritage team (PD/CR)
+      Jupiter:  NASA/GSFC (PD/CR)
+      Saturn:   NASA and Hubble Heritage team (PD/CR)
+      Uranus:   Erich Karkoschka (University of Arizona) and NASA (PD/CR)
+      Neptune:  NASA Voyager 2 (PD/CR)
+      Pluto:    NASA/GSFC (PD/CR)
+
+  --------------------
+
+  DocBook Documentation:
+
+    Permission is granted to copy, distribute and/or modify this
+    document under the terms of the GNU Free Documentation License,
+    Version 1.1 or any later version published by the Free Software
+    Foundation; with no Invariant Sections, with no Front-Cover Texts,
+    and with no Back-Cover Texts.
+
+    A copy of the GNU Free Documentation License (Version 1.2) can be
+    found on Debian systems in  `/usr/share/common-licenses/GFDL-1.2'

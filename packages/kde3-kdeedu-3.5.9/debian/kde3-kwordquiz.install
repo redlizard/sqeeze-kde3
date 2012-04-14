@@ -1,0 +1,23 @@
+etc/kde3/kwordquizrc
+opt/kde3/bin/kwordquiz
+opt/kde3/share/applications/kde/kwordquiz.desktop
+opt/kde3/share/apps/kwordquiz
+opt/kde3/share/config.kcfg/kwordquiz.kcfg
+opt/kde3/share/doc/kde/HTML/en/kwordquiz/*.bz2
+opt/kde3/share/doc/kde/HTML/en/kwordquiz/common
+opt/kde3/share/doc/kde/HTML/en/kwordquiz/*.docbook
+opt/kde3/share/doc/kde/HTML/en/kwordquiz/*.png
+opt/kde3/share/icons/hicolor/16x16/apps/kwordquiz.png
+opt/kde3/share/icons/hicolor/22x22/apps/kwordquiz.png
+opt/kde3/share/icons/hicolor/32x32/apps/kwordquiz.png
+opt/kde3/share/icons/hicolor/48x48/apps/kwordquiz.png
+opt/kde3/share/icons/hicolor/128x128/apps/kwordquiz.png
+opt/kde3/share/icons/hicolor/scalable/apps/kwordquiz.svg
+opt/kde3/share/icons/crystalsvg/16x16/mimetypes/kwordquiz_doc.png
+opt/kde3/share/icons/crystalsvg/22x22/mimetypes/kwordquiz_doc.png
+opt/kde3/share/icons/crystalsvg/32x32/mimetypes/kwordquiz_doc.png
+opt/kde3/share/icons/crystalsvg/48x48/mimetypes/kwordquiz_doc.png
+opt/kde3/share/icons/crystalsvg/128x128/mimetypes/kwordquiz_doc.png
+opt/kde3/share/icons/crystalsvg/scalable/mimetypes/kwordquiz_doc.svg
+opt/kde3/share/mimelnk/application/x-kwordquiz.desktop
+../icons/kwordquiz.xpm opt/kde3/share/pixmaps

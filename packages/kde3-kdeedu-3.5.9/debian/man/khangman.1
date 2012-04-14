@@ -1,0 +1,52 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KHANGMAN 1 "October 16, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+khangman \- the classical hangman game for KDE
+.SH SYNOPSIS
+.B khangman
+.RI "[ " generic-options " ]"
+.SH DESCRIPTION
+\fBKHangMan\fP is a game based on the well known hangman game.  It is aimed
+for children aged 6 and above.  It has four levels of difficulty:
+Animals (animals words), Easy, Medium and Hard.
+.PP
+A word is picked at random and the letters are hidden.  You must guess
+the word by trying one letter after another.  Each time you guess a wrong
+letter, a picture of a hangman is drawn.  You must guess the word before
+getting hanged!  You have 10 tries.
+.PP
+This application is part of the official KDE edutainment module.
+.SH OPTIONS
+For a full summary of options, run \fIkhangman \-\-help\fP.
+.SH SEE ALSO
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/khangman/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/khangman/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdeedu-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/khangman/\fP.
+.SH AUTHOR
+KHangMan was written by Primoz Anzur <zerokode@gmx.net> and
+Anne-Marie Mahfouf <annma@kde.org>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

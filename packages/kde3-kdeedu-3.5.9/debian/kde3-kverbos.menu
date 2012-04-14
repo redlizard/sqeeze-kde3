@@ -1,0 +1,7 @@
+?package(kverbos):needs="X11"\
+  section="Applications/Education"\
+  hints="KDE"\
+  title="Kverbos"\
+  longtitle="Kverbos (Study Spanish Verbforms)"\
+  command="/opt/kde3/bin/kverbos"\
+  icon="/opt/kde3/share/pixmaps/kverbos.xpm"

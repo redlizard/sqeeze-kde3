@@ -1,0 +1,56 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KLATIN 1 "March 16, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+klatin \- an application to help revise/teach Latin
+.SH SYNOPSIS
+.B klatin
+.RI "[ " generic-options " ]"
+.SH DESCRIPTION
+\fBKLatin\fP is a program to help revise Latin.  There are three "sections"
+in which different aspects of the language can be revised.  These are the
+vocabulary, grammar and verb testing sections.  In addition there is a
+set of revision notes that can be used for self-guided revision.
+.PP
+In the vocabulary section an XML file is loaded containing various
+words and their local language translations.  KLatin asks you what each
+of these words translate into.  The questions take place in a
+multiple-choice environment.
+.PP
+In the grammar and verb sections KLatin asks for a particular part of a
+noun or a verb, such as the "ablative singular", or the "1st person
+indicative passive plural", and is not multiple choice.
+.PP
+This application is part of the official KDE edutainment module.
+.SH OPTIONS
+For a full summary of options, run \fIklatin \-\-help\fP.
+.SH SEE ALSO
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/klatin/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/klatin/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdeedu-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/klatin/\fP.
+.SH AUTHOR
+KLatin was written by George Wright <gwright@kde.org> and others.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).
