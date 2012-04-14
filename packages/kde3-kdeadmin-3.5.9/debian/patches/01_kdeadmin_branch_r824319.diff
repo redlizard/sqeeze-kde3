@@ -1,0 +1,191 @@
+#DPATCHLEVEL=0
+--- ksysv/ksysv.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ ksysv/ksysv.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -29,6 +29,7 @@
+ GenericName[is]=SysV Init-stjóri
+ GenericName[it]=Editor per SysV-Init
+ GenericName[ja]=SystemV 起動スクリプトエディタ
++GenericName[ka]=SysV-Init რედაქტორი
+ GenericName[kk]=SysV-Init редакторы
+ GenericName[km]=កម្មវិធី​និពន្ធ SysV-Init
+ GenericName[ko]=SysV Init 편집기
+--- ksysv/x-ksysv.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ ksysv/x-ksysv.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -33,6 +33,7 @@
+ Comment[is]=Vistaðar Init stillingar
+ Comment[it]=Configurazione di Init salvata
+ Comment[ja]=保存されている起動スクリプトの設定
++Comment[ka]=Init-ის შენახული კონფიგურაცია
+ Comment[kk]=Сақталған инициализацияның баптаулары
+ Comment[km]=ការ​កំណត់​រចនា​សម្ព័ន្ធ Init ដែល​បាន​រក្សា​ទុក
+ Comment[ko]=Init 설정을 저장했습니다
+--- ksysv/x-ksysv-log.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ ksysv/x-ksysv-log.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -29,6 +29,7 @@
+ Comment[is]=SysV-Init stjóra annáll
+ Comment[it]=File di log dell'editor di SysV-Init
+ Comment[ja]=SystemV 起動スクリプトエディタのログファイル
++Comment[ka]=SysV-Init რედაქტორის ჟურნალი
+ Comment[kk]=SysV-Init редактордың журналы
+ Comment[km]=ឯកសារ​កំណត់​ហេតុ​កម្មវិធី​និពន្ធ SysV-Init
+ Comment[ko]=SysV-Init 편집기 로그 파일
+--- kdat/kdat.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ kdat/kdat.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -43,6 +43,7 @@
+ GenericName[is]=Spólu afritunartól
+ GenericName[it]=Strumento per la copia di sicurezza su nastro
+ GenericName[ja]=テープバックアップツール
++GenericName[ka]=სარეზერვო ასლის ხელსაწყო
+ GenericName[kk]=Таспаға сақтық көшірмелеу құралы
+ GenericName[km]=ឧបករណ៍​បម្រុង​ទុក​កាសែត
+ GenericName[ko]=테이프 백업 도구
+--- kuser/kuser.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ kuser/kuser.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -19,7 +19,8 @@
+ Name[ta]=கேபயனீட்டாளர்
+ Name[tg]=KИстифодакунанда
+ Name[th]=จัดการบัญชีผู้ใช้ - K
+-Name[uz]=Фойдаланувчилар
++Name[uz]=Foydalanuvchilar
++Name[uz@cyrillic]=Фойдаланувчилар
+ GenericName=User Manager
+ GenericName[af]=Gebruiker Bestuurder
+ GenericName[ar]=مسيير المستخدمين
+@@ -52,6 +53,7 @@
+ GenericName[is]=Notandastjóri
+ GenericName[it]=Gestore utenti
+ GenericName[ja]=ユーザマネージャ
++GenericName[ka]=მომხმარებელთა მმართველი
+ GenericName[kk]=Пайдаланушылар менеджерx
+ GenericName[km]=កម្មវិធី​គ្រប់គ្រង​អ្នក​ប្រើ
+ GenericName[ko]=사용자 관리자
+@@ -83,7 +85,8 @@
+ GenericName[th]=เครื่องมือจัดการบัญชีผู้ใช้
+ GenericName[tr]=Kullanıcı Yöneticisi
+ GenericName[uk]=Менеджер користувачів
+-GenericName[uz]=Фойдаланувчилар бошқарувчиси
++GenericName[uz]=Foydalanuvchilar boshqaruvchisi
++GenericName[uz@cyrillic]=Фойдаланувчилар бошқарувчиси
+ GenericName[ven]=Murangaphanda wa Mushumisi
+ GenericName[vi]=Bộ quản lý người dùng
+ GenericName[wa]=Manaedjeu d' uzeus
+--- lilo-config/kde/lilo.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ lilo-config/kde/lilo.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -41,6 +41,7 @@
+ Name[is]=Ræsistjóri (LILO)
+ Name[it]=Gestore di avvio (LILO)
+ Name[ja]=ブートマネージャ (LILO)
++Name[ka]=ჩატვირთვის მმართველი (LILO)
+ Name[kk]=Жүктеуіш (LILO)
+ Name[km]=កម្មវិធី​គ្រប់គ្រង​ការ​ចាប់ផ្ដើម​ឡើង​វិញ (LILO)
+ Name[ko]=부트 관리자 (LILO)
+@@ -109,6 +110,7 @@
+ Comment[is]=Stilla LILO (Linux ræsistjórann)
+ Comment[it]=Configura LILO (il gestore dell'avvio di Linux)
+ Comment[ja]=LILO (Linux ブートマネージャ) の設定
++Comment[ka]=LILO-ს კონფიგურაცია (ლინუქსის ჩატვირთვის მმართველი)
+ Comment[kk]=LILO (Linux жүктеуішін) баптауы
+ Comment[km]=កំណត់​រចនា​សម្ព័ន្ធ LILO (កម្មវិធី​គ្រប់គ្រង​ការ​ចាប់ផ្ដើម​ឡើង​វិញ​លីនុច)
+ Comment[ko]=LILO(리눅스 부트 관리자) 설정
+@@ -174,6 +176,7 @@
+ Keywords[is]=lilo,boot,bootup,boot manager,linux,Other OS,MBR,startup,start,ræsa
+ Keywords[it]=lilo,boot,boot manager,linux,altri sistemi operativi,MBR,avvio,gestore avvio
+ Keywords[ja]=lilo,ブート,ブートマネージャ,linux,他のOS,MBR,起動,開始
++Keywords[ka]=lilo,ჩატვირთვა,ჩატვირთვის მმართველი,linux,სხვა ოს,MBR,შესრულება,დაწყება
+ Keywords[km]=lilo,ចាប់ផ្ដើម​ឡើង​វិញ,bootup,កម្មវិធី​គ្រប់គ្រង​ការ​ចាប់ផ្ដើម​ឡើង​វិញ,លីនុច,OS ផ្សេង​ទៀត,MBR,ចាប់ផ្ដើម​ឡើង​វិញ,ចាប់ផ្ដើម
+ Keywords[ko]=lilo,부팅,부트로더,리눅스,MBR,시작
+ Keywords[lt]=lilo,boot,bootup,boot manager,linux,Other OS,MBR,startup,start,užkrova,krovimasis,kitos OS
+--- kpackage/kpackage.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ kpackage/kpackage.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -49,6 +49,7 @@
+ GenericName[is]=Pakkastjóri
+ GenericName[it]=Gestione pacchetti
+ GenericName[ja]=パッケージマネージャ
++GenericName[ka]=პაკეტების მმართველი
+ GenericName[kk]=Дестелер менеджері
+ GenericName[km]=កម្មវិធី​គ្រប់គ្រង​កញ្ចប់
+ GenericName[ko]=꾸러미 관리자
+--- kfile-plugins/deb/kfile_deb.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ kfile-plugins/deb/kfile_deb.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -29,6 +29,7 @@
+ Name[hr]=DEB statistike
+ Name[hu]=DEB-statisztika
+ Name[it]=Statistiche DEB
++Name[ka]=DEB სტატისტიკა
+ Name[kk]=DEB статистикасы
+ Name[km]=សភាព DEB
+ Name[ko]=DEB 상태
+--- kfile-plugins/rpm/kfile_rpm.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ kfile-plugins/rpm/kfile_rpm.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -29,6 +29,7 @@
+ Name[hr]=RPM statistike
+ Name[hu]=RPM-információ
+ Name[it]=Statistiche RPM
++Name[ka]=RPM სტატისტიკა
+ Name[kk]=RPM статистикасы
+ Name[km]=សភាព RPM
+ Name[ko]=RPM 상태
+--- knetworkconf/knetworkconf/knetworkconf.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ knetworkconf/knetworkconf/knetworkconf.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -31,6 +31,7 @@
+ Comment[is]=Umsjón TCP/IP stillinga
+ Comment[it]=Configura le impostazioni TCP/IP
+ Comment[ja]=TCP/IP の設定
++Comment[ka]=TCP/IP პარამეტრების კონფიგურაცია
+ Comment[kk]=TCP/IP параметрлерін баптау
+ Comment[km]=កំណត់​រចនា​សម្ព័ន្ធ​ការ​កំណត់ TCP/IP
+ Comment[ko]=TCP/IP 설정
+@@ -95,6 +96,7 @@
+ GenericName[is]=Umsjón TCP/IP stillinga
+ GenericName[it]=Configura le impostazioni TCP/IP
+ GenericName[ja]=TCP/IP の設定
++GenericName[ka]=TCP/IP პარამეტრების კონფიგურაცია
+ GenericName[kk]=TCP/IP параметрлерін баптау
+ GenericName[km]=កំណត់​រចនា​សម្ព័ន្ធ​ការ​កំណត់ TCP/IP
+ GenericName[ko]=TCP/IP 설정
+--- knetworkconf/knetworkconf/kcm_knetworkconfmodule.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ knetworkconf/knetworkconf/kcm_knetworkconfmodule.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -37,6 +37,7 @@
+ Comment[is]=Umsjón netstillinga
+ Comment[it]=Configura le impostazioni di rete
+ Comment[ja]=ネットワーク設定
++Comment[ka]=ქსელის პარამეტრების კონფიგურაცია
+ Comment[kk]=Желінің параметрлерін баптау
+ Comment[km]=កំណត់​រចនា​សម្ព័ន្ធ​ការ​កំណត់​បណ្ដាញ
+ Comment[ko]=네트워크 설정
+@@ -95,6 +96,7 @@
+ Name[is]=Netstillingar
+ Name[it]=Impostazioni di rete
+ Name[ja]=ネットワーク設定
++Name[ka]=ქსელის პარამეტრები
+ Name[kk]=Желінің параметрлері
+ Name[km]=ការ​កំណត់​បណ្ដាញ
+ Name[ko]=네트워크 설정
+@@ -148,6 +150,7 @@
+ Keywords[hu]=Hálózat,DNS,útvonalak,hálózati csatolók
+ Keywords[it]=Rete,DNS,route,interfacce
+ Keywords[ja]=ネットワーク,DNS,ルート,インターフェース
++Keywords[ka]=ქსელი,DNS,ბილიკები,ინტერფეისი
+ Keywords[km]=បណ្ដាញ,DNS,ផ្លូវ,ចំណុច​ប្រទាក់
+ Keywords[ko]=네트워크,DNS,인터페이스
+ Keywords[lt]=Network,DNS,routes,interfaces,tinklas,DNS,maršrutai,sąsajos
+--- kcron/kcron.desktop	(.../tags/KDE/3.5.9/kdeadmin)	(revision 824319)
++++ kcron/kcron.desktop	(.../branches/KDE/3.5/kdeadmin)	(revision 824319)
+@@ -47,6 +47,7 @@
+ GenericName[is]=Verkefnastjóri
+ GenericName[it]=Pianificatore di operazioni
+ GenericName[ja]=タスクスケジューラ
++GenericName[ka]=ამოცანათა დამგეგმავი
+ GenericName[kk]=Тапсырма жоспарлағыш
+ GenericName[km]=កម្មវិធី​កំណត់​ពេល​ភារកិច្ច
+ GenericName[ko]=작업 스케줄러
+@@ -78,7 +79,8 @@
+ GenericName[th]=ตารางงาน
+ GenericName[tr]=Görev Zamanlayıcı
+ GenericName[uk]=Планувальник задач
+-GenericName[uz]=Вазифани жадвал бўйича бажаргич
++GenericName[uz]=Vazifani jadval boʻyicha bajargich
++GenericName[uz@cyrillic]=Вазифани жадвал бўйича бажаргич
+ GenericName[ven]=Muvhekanyi wa Mushumo
+ GenericName[vi]=Bộ lập lịch công việc
+ GenericName[wa]=Tiestires C

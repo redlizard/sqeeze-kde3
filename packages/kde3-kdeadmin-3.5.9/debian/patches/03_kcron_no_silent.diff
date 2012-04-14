@@ -1,0 +1,148 @@
+Index: kdeadmin/kcron/kttask.cpp
+===================================================================
+--- kdeadmin/kcron/kttask.cpp	(revision 653121)
++++ kdeadmin/kcron/kttask.cpp	(working copy)
+@@ -172,11 +172,6 @@
+   chkEnabled->setChecked(cttask->enabled);
+   h3a->addWidget( chkEnabled );
+ 
+-  // enabled
+-  chkSilent = new QCheckBox(i18n("&Silent"), this, "chkSilent");
+-  chkSilent->setChecked(cttask->silent);
+-  h3a->addWidget( chkSilent );
+-
+   QHBoxLayout *h4 = new QHBoxLayout( ml, KDialogBase::spacingHint() );
+ 
+   ml->addSpacing( 2 * KDialogBase::spacingHint() );
+@@ -651,7 +646,6 @@
+   cttask->comment = (const char *)leComment->text().local8Bit();
+   cttask->command = (const char *)leCommand->text().local8Bit();
+   cttask->enabled = chkEnabled->isChecked();
+-  cttask->silent = chkSilent->isChecked();
+ 
+   for (int mo = 1; mo <= 12; mo++)
+   {
+Index: kdeadmin/kcron/cttask.h
+===================================================================
+--- kdeadmin/kcron/cttask.h	(revision 653121)
++++ kdeadmin/kcron/cttask.h	(working copy)
+@@ -90,7 +90,6 @@
+   string       command;
+   string       comment;
+   bool         enabled;
+-  bool         silent;
+ 
+ private:
+   bool         syscron;
+@@ -98,7 +97,6 @@
+   string       initialCommand;
+   string       initialComment;
+   bool         initialEnabled;
+-  bool         initialSilent;
+ };
+ 
+ #endif // CTTASK_H
+Index: kdeadmin/kcron/kttask.h
+===================================================================
+--- kdeadmin/kcron/kttask.h	(revision 653121)
++++ kdeadmin/kcron/kttask.h	(working copy)
+@@ -149,7 +149,6 @@
+   QPushButton*    pbBrowse;
+ 
+   QCheckBox*      chkEnabled;
+-  QCheckBox*      chkSilent;
+ 
+   QButtonGroup*   bgMonth;
+   QCheckBox*      cbMonth[13];
+Index: kdeadmin/kcron/cttask.cpp
+===================================================================
+--- kdeadmin/kcron/cttask.cpp	(revision 653121)
++++ kdeadmin/kcron/cttask.cpp	(working copy)
+@@ -33,15 +33,12 @@
+   else
+     enabled = true;
+ 
++  //older versions had something called silence. We should still be able to not choke on what we have been 
++  //writing earlier. This has no use though.
+   if (tokStr.substr(0,1) == "-")
+   {
+     tokStr = tokStr.substr(1,tokStr.length() - 1);
+-    silent = true;
+   }
+-  else
+-  {
+-    silent = false;
+-  }
+   
+   if (tokStr.substr(0,1) == "@")
+   {
+@@ -119,7 +116,6 @@
+   initialCommand = command;
+   initialComment = comment;
+   initialEnabled = enabled;
+-  initialSilent = silent;
+ }
+ 
+ CTTask::CTTask(const CTTask &source) :
+@@ -132,12 +128,10 @@
+   command(source.command),
+   comment(source.comment),
+   enabled(source.enabled),
+-  silent(source.silent),
+   initialUser(""),
+   initialCommand(""),
+   initialComment(""),
+-  initialEnabled(true),
+-  initialSilent(false)
++  initialEnabled(true)
+ {
+ }
+ 
+@@ -152,12 +146,10 @@
+   command        = source.command;
+   comment        = source.comment;
+   enabled        = source.enabled;
+-  silent         = source.silent;
+   initialUser    = "";
+   initialCommand = "";
+   initialComment = "";
+   initialEnabled = true;
+-  initialSilent  = false;
+   return;
+ }
+ 
+@@ -169,9 +161,6 @@
+   if (!task.enabled)
+     outputStream << "#\\";
+ 
+-  if (task.silent)
+-    outputStream << "-";
+-
+   outputStream << task.minute << " ";
+   outputStream << task.hour << " ";
+   outputStream << task.dayOfMonth << " ";
+@@ -197,7 +186,6 @@
+   initialCommand = command;
+   initialComment = comment;
+   initialEnabled = enabled;
+-  initialSilent = silent;
+ }
+ 
+ void CTTask::cancel()
+@@ -211,7 +199,6 @@
+   command = initialCommand;
+   comment = initialComment;
+   enabled = initialEnabled;
+-  silent = initialSilent;
+ }
+ 
+ bool CTTask::dirty() const
+@@ -219,7 +206,7 @@
+   return (month.dirty() || dayOfMonth.dirty() || dayOfWeek.dirty() ||
+     hour.dirty() || minute.dirty() || (user != initialUser) ||
+     (command != initialCommand) || (comment != initialComment) ||
+-    (enabled != initialEnabled) || (silent != initialSilent));
++    (enabled != initialEnabled) );
+ }
+ 
+ string CTTask::describe() const

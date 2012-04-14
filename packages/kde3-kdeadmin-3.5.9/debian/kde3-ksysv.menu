@@ -1,0 +1,8 @@
+?package(ksysv):\
+	needs="X11"\
+	section="Applications/Editors"\
+	hints="KDE"\
+	title="KDE SysV-Init Editor"\
+	icon32x32="/opt/kde3/share/pixmaps/ksysv.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/ksysv-16.xpm"\
+	command="/opt/kde3/bin/ksysv"

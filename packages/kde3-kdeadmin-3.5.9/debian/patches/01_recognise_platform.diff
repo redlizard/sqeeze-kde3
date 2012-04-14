@@ -1,0 +1,143 @@
+diff -Nrua kdeadmin-3.5.9.orig/knetworkconf/backends/network-conf.in kdeadmin-3.5.9/knetworkconf/backends/network-conf.in
+--- kdeadmin-3.5.9.orig/knetworkconf/backends/network-conf.in	2008-02-13 10:35:51.000000000 +0100
++++ kdeadmin-3.5.9/knetworkconf/backends/network-conf.in	2008-06-25 21:17:19.000000000 +0200
+@@ -69,7 +69,7 @@
+               "mandriva-2006.1", "mandriva-2007.0", "mandriva-2007.1",
+               "yoper-2.2",
+               "blackpanther-4.0",
+-	      "debian-2.2", "debian-3.0", "debian-3.1", "debian-4.0", "debian-testing",
++              "debian-2.2", "debian-3.0", "debian-3.1", "debian-4.0", "debian-5.0", "debian-testing",
+               "ubuntu-5.04", "ubuntu-5.10", "ubuntu-6.06", "ubuntu-6.10", "ubuntu-7.04", "ubuntu-7.10", "ubuntu-8.04",
+               "suse-7.0", "suse-9.0", "suse-9.1",
+               "turbolinux-7.0", "fedora-1", "fedora-2", "fedora-3", "fedora-4", "fedora-5", "rpath",
+diff -Nrua kdeadmin-3.5.9.orig/knetworkconf/backends/network.pl.in kdeadmin-3.5.9/knetworkconf/backends/network.pl.in
+--- kdeadmin-3.5.9.orig/knetworkconf/backends/network.pl.in	2008-02-13 10:35:51.000000000 +0100
++++ kdeadmin-3.5.9/knetworkconf/backends/network.pl.in	2008-06-25 21:15:54.000000000 +0200
+@@ -497,6 +497,7 @@
+        "debian-3.0"   => "debian-2.2",
+        "debian-3.1"   => "debian-2.2",
+        "debian-4.0"   => "debian-2.2",
++       "debian-5.0"   => "debian-2.2",
+        "debian-testing" => "debian-2.2",
+        "ubuntu-5.04"  => "debian-2.2",
+        "ubuntu-5.10"  => "debian-2.2",
+@@ -1825,6 +1826,7 @@
+           "debian-3.0"   => \&gst_network_deb22_get_file,
+           "debian-3.1"   => \&gst_network_deb22_get_file,
+           "debian-4.0"   => \&gst_network_deb22_get_file,
++          "debian-5.0"   => \&gst_network_deb22_get_file,
+           "debian-testing" => \&gst_network_deb22_get_file,
+           "ubuntu-5.04"  => \&gst_network_deb22_get_file,    
+           "ubuntu-5.10"  => \&gst_network_deb22_get_file,    
+@@ -3954,6 +3956,7 @@
+           "debian-3.0"   => "lo",
+           "debian-3.1"   => "lo",
+           "debian-4.0"   => "lo",
++          "debian-5.0"   => "lo",
+           "debian-testing" => "lo",
+           "ubuntu-5.04"  => "lo",    
+           "ubuntu-5.10"  => "lo",    
+@@ -4128,6 +4131,7 @@
+           "debian-3.0"   => "debian-2.2",
+           "debian-3.1"   => "debian-2.2",
+           "debian-4.0"   => "debian-2.2",
++          "debian-5.0"   => "debian-2.2",
+           "debian-testing" => "debian-2.2",
+           "ubuntu-5.04"  => "debian-2.2",
+           "ubuntu-5.10"  => "debian-2.2",
+@@ -4558,6 +4562,7 @@
+           "debian-3.0"   => "debian-3.0",
+           "debian-3.1"   => "debian-3.0",
+           "debian-4.0"   => "debian-3.0",
++          "debian-5.0"   => "debian-3.0",
+           "debian-testing" => "debian-3.0",
+           "ubuntu-5.04"  => "debian-3.0",
+           "ubuntu-5.10"  => "debian-3.0",
+@@ -5405,6 +5410,7 @@
+           "debian-3.0"   => "debian-2.2",
+           "debian-3.1"   => "debian-2.2",
+           "debian-4.0"   => "debian-2.2",
++          "debian-5.0"   => "debian-2.2",
+           "debian-testing" => "debian-2.2",
+           "ubuntu-5.04"  => "debian-2.2",
+           "ubuntu-5.10"  => "debian-2.2",
+@@ -5820,6 +5826,7 @@
+           "debian-3.0"   => "debian-3.0",
+           "debian-3.1"   => "debian-3.0",
+           "debian-4.0"   => "debian-3.0",
++          "debian-5.0"   => "debian-3.0",
+           "debian-testing" => "debian-3.0",
+           "ubuntu-5.04"  => "debian-3.0",
+           "ubuntu-5.10"  => "debian-3.0",
+diff -Nrua kdeadmin-3.5.9.orig/knetworkconf/backends/platform.pl.in kdeadmin-3.5.9/knetworkconf/backends/platform.pl.in
+--- kdeadmin-3.5.9.orig/knetworkconf/backends/platform.pl.in	2008-02-13 10:35:51.000000000 +0100
++++ kdeadmin-3.5.9/knetworkconf/backends/platform.pl.in	2008-06-25 21:40:10.000000000 +0200
+@@ -42,6 +42,7 @@
+   "debian-3.0"      => "Debian GNU/Linux 3.0 Woody",
+   "debian-3.1"      => "Debian GNU/Linux 3.1 Sarge",
+   "debian-4.0"      => "Debian GNU/Linux 4.0 Etch",
++  "debian-5.0"      => "Debian GNU/Linux 5.0 Lenny",
+   "debian-testing"  => "Debian GNU/Linux Testing/Unstable",
+   "ubuntu-5.04"     => "Kubuntu 5.04, Hoary Hedgehog",
+   "ubuntu-5.10"     => "Kubuntu 5.10, Breezy Badger",
+@@ -137,15 +138,22 @@
+   my ($ver, $i);
+   my %vermap =
+       ("testing/unstable" => "testing",
++       "lenny/sid"        => "testing",
+        "3.1"              => "sarge",
+-       "4.0"              => "etch");
++       "4.0"              => "etch",
++       "5.0"              => "lenny");
+ 
+   open DEBIAN, "$gst_prefix/etc/debian_version" or return -1;
+   chomp ($ver = <DEBIAN>);
+   close DEBIAN;
+ 
+-  $ver = $vermap{$ver} if exists $vermap{$ver};
+-  
++  #if $ver is not found, we will assume it is testing
++  if($ver and exists $vermap{$ver}) {
++    $ver = $vermap{$ver};
++  } else {
++    $ver = "testing";
++  }
++
+   return "debian-$ver";
+ }
+ 
+diff -Nrua kdeadmin-3.5.9.orig/knetworkconf/backends/service.pl.in kdeadmin-3.5.9/knetworkconf/backends/service.pl.in
+--- kdeadmin-3.5.9.orig/knetworkconf/backends/service.pl.in	2008-02-13 10:35:51.000000000 +0100
++++ kdeadmin-3.5.9/knetworkconf/backends/service.pl.in	2008-06-25 20:51:01.000000000 +0200
+@@ -83,6 +83,7 @@
+        "debian-3.0"   => ["$gst_prefix/etc", "$gst_prefix/etc/init.d", "../init.d"],
+        "debian-3.1"   => ["$gst_prefix/etc", "$gst_prefix/etc/init.d", "../init.d"],
+        "debian-4.0"   => ["$gst_prefix/etc", "$gst_prefix/etc/init.d", "../init.d"],
++       "debian-5.0"   => ["$gst_prefix/etc", "$gst_prefix/etc/init.d", "../init.d"],
+        "debian-testing" => ["$gst_prefix/etc", "$gst_prefix/etc/init.d", "../init.d"],
+        "ubuntu-5.04"  => ["$gst_prefix/etc", "$gst_prefix/etc/init.d", "../init.d"],
+        "ubuntu-5.10"  => ["$gst_prefix/etc", "$gst_prefix/etc/init.d", "../init.d"],
+@@ -162,6 +163,7 @@
+        "debian-3.0"     => [2, 3],
+        "debian-3.1"     => [2, 3],
+        "debian-4.0"     => [2, 3],
++       "debian-5.0"     => [2, 3],
+        "debian-testing" => [2, 3],
+        "ubuntu-5.04"    => [2, 3],
+        "ubuntu-5.10"    => [2, 3],
+@@ -240,6 +242,7 @@
+      "debian-3.0"     => "debian-2.2",
+      "debian-3.1"     => "debian-2.2",
+      "debian-4.0"     => "debian-2.2",
++     "debian-5.0"     => "debian-2.2",
+      "debian-testing" => "debian-2.2",
+      "ubuntu-5.04"    => "debian-2.2",
+      "ubuntu-5.10"    => "debian-2.2",
+@@ -1721,6 +1724,7 @@
+        "debian-3.0"   => \&gst_service_debian_get_status,
+        "debian-3.1"   => \&gst_service_debian_get_status,
+        "debian-4.0"   => \&gst_service_debian_get_status,
++       "debian-5.0"   => \&gst_service_debian_get_status,
+        "debian-testing" => \&gst_service_debian_get_status,
+        "ubuntu-5.04"  => \&gst_service_debian_get_status,
+        "ubuntu-5.10"  => \&gst_service_debian_get_status,

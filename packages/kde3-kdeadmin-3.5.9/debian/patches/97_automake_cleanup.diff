@@ -1,0 +1,55 @@
+--- kdeadmin-3.5.9/kfile-plugins/deb/Makefile.am	2008-02-19 23:18:36.000000000 +0200
++++ kdeadmin-3.5.9/kfile-plugins/deb/Makefile.am	2008-02-19 23:36:38.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_deb_la_SOURCES = kfile_deb.cpp
+ kfile_deb_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_deb_la_LIBADD = $(LIB_KSYCOCA)
++kfile_deb_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdeadmin-3.5.9/kfile-plugins/rpm/Makefile.am	2008-02-19 23:18:36.000000000 +0200
++++ kdeadmin-3.5.9/kfile-plugins/rpm/Makefile.am	2008-02-19 23:36:38.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kfile_rpm_la_SOURCES = kfile_rpm.cpp
+ kfile_rpm_la_LDFLAGS = $(all_libraries) -module $(KDE_PLUGIN)
+-kfile_rpm_la_LIBADD = $(LIB_KSYCOCA)
++kfile_rpm_la_LIBADD = $(LIB_KSYCOCA) $(LIB_QT) $(LIB_KDECORE)
+ 
+ # let automoc handle all of the meta source files (moc)
+ METASOURCES = AUTO
+--- kdeadmin-3.5.9/knetworkconf/knetworkconf/Makefile.am	2008-02-19 23:18:34.000000000 +0200
++++ kdeadmin-3.5.9/knetworkconf/knetworkconf/Makefile.am	2008-02-19 23:36:38.000000000 +0200
+@@ -10,7 +10,7 @@
+ 
+ kde_module_LTLIBRARIES = kcm_knetworkconfmodule.la
+ 
+-kcm_knetworkconfmodule_la_LIBADD   =  $(LIB_KDEUI)
++kcm_knetworkconfmodule_la_LIBADD   =  $(LIB_KDEUI) $(LIB_QT) -lDCOP $(LIB_KDECORE)
+ 
+ # the library search path. 
+ kcm_knetworkconfmodule_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+--- kdeadmin-3.5.9/kpackage/Makefile.am	2008-02-19 23:18:37.000000000 +0200
++++ kdeadmin-3.5.9/kpackage/Makefile.am	2008-02-19 23:37:02.000000000 +0200
+@@ -24,7 +24,7 @@
+ 
+ # the libraries to link against. Be aware of the order. First the libraries,
+ # that depend on the following ones.
+-kpackage_LDADD   =  $(LIB_KFILE) $(LIBINTL) $(LIBZ)  $(LIBUTEMPTER)
++kpackage_LDADD   =  $(LIB_KFILE) $(LIBINTL) $(LIBUTEMPTER)
+ 
+ INCLUDES = $(all_includes)
+ 
+--- kdeadmin-3.5.9/lilo-config/kde/Makefile.am	2008-02-19 23:18:33.000000000 +0200
++++ kdeadmin-3.5.9/lilo-config/kde/Makefile.am	2008-02-19 23:36:38.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ kcm_lilo_la_SOURCES = kcontrol.cpp Details.cpp InputBox.cpp
+ kcm_lilo_la_LDFLAGS  = $(all_libraries) -module -avoid-version -no-undefined
+-kcm_lilo_la_LIBADD = ../kde-qt-common/libwidgets.la $(LIB_KIO)
++kcm_lilo_la_LIBADD = ../kde-qt-common/libwidgets.la $(LIB_KIO) $(LIB_QT) $(LIB_KDEUI) $(LIB_KDECORE)
+ kcm_lilo_la_METASOURCES = AUTO
+ AM_CXXFLAGS = -DUSE_KDE
+ 

@@ -1,0 +1,12 @@
+diff -uNr kdeadmin-3.5.6/knetworkconf/backends/replace.pl.in kdeadmin-3.5.6.patched/knetworkconf/backends/replace.pl.in
+--- kdeadmin-3.5.6/knetworkconf/backends/replace.pl.in	2006-01-19 18:20:15.000000000 +0200
++++ kdeadmin-3.5.6.patched/knetworkconf/backends/replace.pl.in	2007-03-12 23:57:26.000000000 +0200
+@@ -1000,7 +1000,7 @@
+ {
+   my ($line) = @_;
+ 
+-  return 1 if $line =~ /^(iface|auto|mapping)[ \t]+[^ \t]/;
++  return 1 if $line =~ /^(iface|auto|mapping|allow-\w+)[ \t]+[^ \t]/;
+   return 0;
+ }
+ 

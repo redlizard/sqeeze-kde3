@@ -1,0 +1,11 @@
+Document: kdeadmin-doc-html-kpackage
+Title: KPackage Handbook
+Author: Toivo Pedaste, Lauri Watts 
+Abstract: KPackage is a graphical interface to the RPM, Debian,
+ Slackware and BSD package managers.
+Section: System/Administration
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kpackage/index.html
+Files: /usr/share/doc/kde/HTML/en/kpackage/*.html
+

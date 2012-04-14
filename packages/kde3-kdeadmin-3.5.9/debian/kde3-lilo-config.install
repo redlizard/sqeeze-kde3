@@ -1,0 +1,6 @@
+debian/tmp/opt/kde3/lib/kde3/kcm_lilo.la
+debian/tmp/opt/kde3/lib/kde3/kcm_lilo.so
+debian/tmp/opt/kde3/share/applications/kde/lilo.desktop
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/lilo-config/index.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/lilo-config/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/lilo-config/common

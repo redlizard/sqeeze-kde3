@@ -1,0 +1,75 @@
+--- kdeadmin-3.5.9.orig/kcron/kcron.desktop
++++ kdeadmin-3.5.9/kcron/kcron.desktop
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kcron %i %m -caption "%c"
+ Icon=kcron
+--- kdeadmin-3.5.9.orig/kdat/kdat.desktop
++++ kdeadmin-3.5.9/kdat/kdat.desktop
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KDat
+ Name[af]=Kdat
+ Name[ar]=برنامج KDat
+--- kdeadmin-3.5.9.orig/knetworkconf/knetworkconf/knetworkconf.desktop
++++ kdeadmin-3.5.9/knetworkconf/knetworkconf/knetworkconf.desktop
+@@ -1,6 +1,5 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=kdesu knetworkconf -caption "%c" %i %m
+ Icon=knetworkconf
+--- kdeadmin-3.5.9.orig/kpackage/kpackage.desktop
++++ kdeadmin-3.5.9/kpackage/kpackage.desktop
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KPackage
+ Name[af]=Kpackage
+ Name[ar]=برنامج KPackage
+--- kdeadmin-3.5.9.orig/ksysv/ksysv.desktop
++++ kdeadmin-3.5.9/ksysv/ksysv.desktop
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KSysV
+ Name[ar]=برنامج KSysV
+ Name[bn]=কে-সিস-ভি
+--- kdeadmin-3.5.9.orig/kuser/kuser.desktop
++++ kdeadmin-3.5.9/kuser/kuser.desktop
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KUser
+ Name[af]=Kuser
+ Name[ar]=برنامج KUser
+--- kdeadmin-3.5.9.orig/lilo-config/kde/lilo.desktop
++++ kdeadmin-3.5.9/lilo-config/kde/lilo.desktop
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Exec=kcmshell lilo
+ Icon=hdd_unmount
+ Type=Application
+@@ -207,4 +206,4 @@
+ Keywords[zh_CN]=lilo,boot,bootup,boot manager,linux,Other OS,MBR,startup,start,启动,启动管理器,其它操作系统
+ Keywords[zu]=lilo,isingxobo,faka isingxobo umphathi wesingxobo,linux,Ezinye OS,MBR,faka isiqalo,qala
+ 
+-Categories=Qt;KDE;X-KDE-settings-system;
++Categories=Qt;KDE;Settings;X-KDE-settings-system;
+--- kdeadmin-3.5.9.orig/knetworkconf/knetworkconf/kcm_knetworkconfmodule.desktop
++++ kdeadmin-3.5.9/knetworkconf/knetworkconf/kcm_knetworkconfmodule.desktop
+@@ -1,8 +1,7 @@
+ # KDE Config File
+ [Desktop Entry]
+-Encoding=UTF-8
+ X-KDE-RootOnly=true
+-Categories=Qt;KDE;X-KDE-settings-network;Configuration-KDE-Network-mdk;
++Categories=Qt;KDE;Settings;X-KDE-settings-network;
+ X-KDE-ModuleType=Library
+ X-KDE-Library=knetworkconfmodule
+ X-KDE-FactoryName=knetworkconfmodule

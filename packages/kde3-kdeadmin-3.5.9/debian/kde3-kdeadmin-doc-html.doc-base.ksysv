@@ -1,0 +1,10 @@
+Document: kdeadmin-doc-html-ksysv
+Title: KSysV Handbook
+Author: Peter Putzer 
+Abstract: KSysV is a graphical editor for the SysV style init configuration.
+Section: System/Administration
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/ksysv/index.html
+Files: /usr/share/doc/kde/HTML/en/ksysv/*.html
+

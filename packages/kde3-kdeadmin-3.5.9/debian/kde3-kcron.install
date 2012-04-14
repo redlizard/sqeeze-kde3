@@ -1,0 +1,17 @@
+debian/tmp/opt/kde3/bin/kcron
+debian/tmp/opt/kde3/share/applications/kde/kcron.desktop
+debian/tmp/opt/kde3/share/apps/kcron/kcronui.rc
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcron/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcron/index.cache.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcron/index.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcron/kcron.png
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcron/kcronstart.png
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcron/newtask.png
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcron/newvariable.png
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/kcron/print.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kcron.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/kcron.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kcron.png
+
+debian/icons/kcron.xpm		/opt/kde3/share/pixmaps
+debian/icons/kcron-16.xpm	/opt/kde3/share/pixmaps
