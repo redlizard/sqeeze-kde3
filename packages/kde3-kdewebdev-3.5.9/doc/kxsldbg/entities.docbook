@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sect1 id="entities">
+<sect1info>
+<authorgroup>
+<author>
+<firstname>Keith</firstname>
+<surname>Isdale</surname>
+<affiliation>
+<address><email>k_isdale@tpg.com.au</email></address>
+</affiliation>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+</sect1info>
+<title>Working With &XML; Data Files (Entities)</title>
+
+<para> If the inspector dialog is not showing use the <menuchoice>
+<guimenu>Tools</guimenu> <guimenuitem>Show inspectors</guimenuitem>
+</menuchoice> menu item. To work with entities click on the
+<guilabel>Entities</guilabel> tab of dialog shown.  </para>
+
+<para> All external &XML; entities included via the DATA file or one
+of its siblings are listed here. For this example I have run &kxsldbg;
+on <filename>testdoc.xsl</filename> with
+<filename>testdoc.xml</filename> (found in the 
+<filename role="directory">&lt;KDE PREFIX&gt;/share/apps/kxsldbg</filename> folder so that you can see some entities.</para>
+
+<screenshot>
+<screeninfo>The Entities Window</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="entities_window.png" format="PNG" />
+</imageobject>
+<textobject><phrase>The Entities Window</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+<para>
+Clicking on a entity entry in the list shown will cause the cursor in the
+main window to move to the start of the file indicated.
+</para>
+</sect1>

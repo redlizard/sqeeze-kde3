@@ -1,0 +1,8 @@
+
+There are some docs ( at 11.04.2001 avaible docs for html, css, php, javascript )
+you need to download packages from http://quanta.sourceforge.net
+( html.tar.bz2, php.tar.bz2, css.tar.bz2 ) and uncompress them 
+to $KDEDIR/share/apps/quanta/doc/ 
+or to ~/.kde/share/apps/quanta/doc/ 
+and restart quanta.
+

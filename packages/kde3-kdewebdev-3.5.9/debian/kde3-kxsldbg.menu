@@ -1,0 +1,7 @@
+?package(kxsldbg):\
+    needs="X11"\
+    hints="KDE"\
+    section="Applications/Programming"\
+    title="KXSLDbg"\
+    longtitle="KXSLDbg (XSLT Debugger)"\
+    command="/opt/kde3/bin/kxsldbg"

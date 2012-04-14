@@ -1,0 +1,2 @@
+SUBDIRS = jpg others png 
+

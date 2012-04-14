@@ -1,0 +1,24 @@
+Do list:
+
+- Option to skip already timed-out hosts
+
+- Ability to do edit actions after a search is finished,
+  like findind links, etc
+
+- GUI for search stats
+
+- GUI for info about a page/URL
+
+- Send email with broken links
+
+- Check the size for complete request on homepage
+
+- Use proper charset for the pages
+
+- Advanced search features like:
+	- check only files modified recently
+	- check only files matching given regular expression
+	- check only files in given path
+
+- Write better documentation
+ 

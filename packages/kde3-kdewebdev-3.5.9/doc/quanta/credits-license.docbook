@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter id="credits-license-3-2">
+<chapterinfo>
+<title>Credits and License</title>
+<authorgroup>
+<author>
+<firstname>Christopher</firstname>
+<surname>Hornbaker</surname>
+<affiliation>
+<address><email>chrishornbaker@earthlink.net</email></address>
+</affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+</chapterinfo>
+
+<title>Credits and License</title>
+
+<note>
+<para>
+Sorry to anyone I missed or if I mis-spelt your name!
+</para>
+</note>
+
+<para>
+Much thanks to everyone who has spent the time to contribute!
+</para>
+
+<variablelist>
+<title>The &quantaplus; Development Team:</title>
+
+<varlistentry>
+<term>Bergia, Andrea</term>
+<listitem><para>Original &CSS; editor.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Britton, Marc</term>
+<listitem><para><application>Kommander</application>, various features, and bug fixes.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Colton, Matthew</term>
+<listitem><para>Splash screen for many versions</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Deschildre, Nicolas</term>
+<listitem><para><application>Visual Page Layout</application> &amp; undo/redo system</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Dmitrienko, Dmitri</term>
+<listitem><para>&PHP;4 debugger</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Gulmini, Luciano</term>
+<listitem><para><application>Frame Wizard</application></para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Hanley, Jason P.</term>
+<listitem><para>Various fixes, foundational code for &DTD; parsing, and other &DTD; related work</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Hindsgaul, Claus</term>
+<listitem><para>Danish translation</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Hornbaker, Christopher</term>
+<listitem><para>The Anal &XML; Guy &amp; Documentation</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Isdale, Keith</term>
+<listitem><para>&XSL; 1.0 &DTEP;, <application>&kxsl;</application></para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Kooiman, Mathieu</term>
+<listitem><para>Documentation, bug fixes, and &PHP; debugger framework.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Laffoon, Eric</term>
+<listitem><para>Project Manager and web site admin.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Mantia, Andr&aacute;s</term>
+<listitem><para>Core Developer</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Moore, Richard</term>
+<listitem><para>Coding, original TagXML docs, and more</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Mous, Fabrice</term>
+<listitem><para>Documentation</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Nickel, Robert C.</term>
+<listitem><para>Documentation</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Pibil, Ted</term>
+<listitem><para>Addition and maintainence of &DTD;s</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Poplavsky, Dmitry</term>
+<listitem><para>ex-Core Developer &mdash; left for commercial version</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Vilches, George</term>
+<listitem><para>Tree-based upload dialog</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Yakovlev, Alexander</term>
+<listitem><para>ex-Core Developer &mdash; left for commercial version</para></listitem>
+</varlistentry>
+<!--
+<varlistentry>
+<term>Firstname Surname</term>
+<listitem><para>Function</para></listitem>
+</varlistentry>
+-->
+
+</variablelist>
+
+<variablelist>
+<title>Special Thanks To:</title>
+
+<varlistentry>
+<term>xmlsoft.org</term>
+<listitem><para>The writers of <application>libxml2</application> and <application>libxslt</application>.</para></listitem>
+</varlistentry>
+<!--
+<varlistentry>
+<term>Name</term>
+<listitem><para>Function</para></listitem>
+</varlistentry>
+-->
+
+</variablelist>
+
+<para>
+&quantaplus; <trademark class="copyright" /> 2000, 2001, 2002, 2003 &quantaplus; Development Team.
+</para>
+
+<para>
+&quantaplus; User Manual <trademark class="copyright" /> 2002, 2003 &quantaplus; Development Team.
+</para>
+
+&underFDL;
+&underGPL;
+</chapter>

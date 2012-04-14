@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter id="introduction">
+<title>Introduction</title>
+
+<para>
+&xsldbg; is a text based tool to debug stylesheets (the eXtensible
+Stylesheet Language) and has commands similar to the Unix/Linux debugger
+gdb. It has three major modes of execution of stylesheets.
+</para>
+<para>
+<informaltable>
+    <tgroup cols="1"><tbody>
+	    <row><entry>Run the whole stylesheet</entry></row>
+            <row><entry>Step to next xsl instruction</entry></row>
+	    <row><entry>Continue until next break point is found, or stylesheet has restarted</entry></row>
+     </tbody></tgroup>
+</informaltable>
+</para>
+
+</chapter>

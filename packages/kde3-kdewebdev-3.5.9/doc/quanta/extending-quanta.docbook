@@ -1,0 +1,1789 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter id="extending-quanta-3-2">
+<chapterinfo>
+<title>Extending &quantaplus;</title>
+<authorgroup>
+<author>
+<firstname>Christopher</firstname>
+<surname>Hornbaker</surname>
+<affiliation>
+<address><email>chrishornbaker@earthlink.net</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>Andr&#225;s</firstname>
+<surname>Mantia</surname>
+<affiliation>
+<address><email>amantia@kde.org</email></address>
+</affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+</chapterinfo>
+
+<title>Extending &quantaplus;</title>
+
+<para>
+This chapter describes how to customize &quantaplus; to your particular
+needs and how you can help &quantaplus; become better.
+</para>
+
+<!--<sect1 id="kommander-3-2">
+<title>Using Kommander With &quantaplus;</title>
+
+<para>
+Kommander, by Marc Britton.
+</para>
+</sect1> -->
+
+<sect1 id="dtep-intro-3-2">
+<title>Document Type Editing Package (&DTEP;)</title>
+
+<para>
+Document Type Editing Packages (&DTEP;s) are used in &quantaplus; to add
+support for markup, scripting languages, and &CSS;. They allow
+&quantaplus; to provide features like auto-completion and node trees.
+Their simplicity and flexibility are what make &quantaplus; a fast,
+developer friendly &IDE; for web developers. They are what make &quantaplus;
+an easy-to-use, productive environment.
+</para>
+
+<para>
+&DTEP;s come in two flavors, Family 1, which are markups, and Family 2,
+which are scripting and &CSS;. &DTEP;s are made up of two parts, the Tag
+Folder and the Toolbars. Tag Folders are composed of two types of files,
+the &descriptionrc; and TagXML files, which carry the extension .tag.
+Toolbars are the handy, icon-oriented tabs of buttons (above the editing
+window) which place text into a document faster than the user can type.
+</para>
+
+<para>
+  &DTEP;s can be created manually (see below), <link linkend="download-resources">downloaded</link> or automatically created from an existing DTD. See <xref linkend="converting-dtd" /> for details about the conversion.
+</para>
+
+<para>
+This document describes how to make TagXML files, the &descriptionrc;, and
+toolbars. In short, a &DTEP;.
+</para>
+
+<para>
+TagXML files (.tag) define both the attributes specific to a tag and the
+layout and contents of the properties dialog &quantaplus; shows for the tag.
+The &descriptionrc; file provides rules and information on the &DTEP;
+itself. Toolbars provide a quick means for adding tags into a document
+without worry of mis-spellings and such.
+</para>
+
+<sect2 id="dtep-packaging-3-2">
+<title>Packaging</title>
+
+<para>
+Tag Folders are just that, folders. They are composed only of the
+&descriptionrc; and TagXML files. Tag Folders carry the name of the mark-up
+language and version, if applicable. (For example, html-4.01-strict)
+</para>
+</sect2>
+
+<sect2 id="tagxml-3-2">
+<title>TagXML</title>
+
+<para>
+The table below lists the elements defined in TagXML and declares whether
+they are required or not. While not all are required, it is recommended
+that you use as many as you can so that other users can have a better
+experience and more information to work with.
+</para>
+
+<informaltable>
+<tgroup cols="3">
+<thead>
+<row>
+<entry>Element</entry>
+<entry>Default Usage</entry>
+<entry>Case Usage</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>TAGS</entry>
+<entry>required</entry>
+<entry>always</entry>
+</row>
+<row>
+<entry>tag</entry>
+<entry>required</entry>
+<entry>always</entry>
+</row>
+<row>
+<entry>label</entry>
+<entry>optional</entry>
+<entry>required to create a properties dialog</entry>
+</row>
+<row>
+<entry>attr</entry>
+<entry>optional</entry>
+<entry>required to define an attribute</entry>
+</row>
+<row>
+<entry>tooltip</entry>
+<entry>optional</entry>
+<entry>required to have the properties dialog display a tooltip</entry>
+</row>
+<row>
+<entry>whatsthis</entry>
+<entry>optional</entry>
+<entry>required to have the properties dialog display a <quote>What's This
+</quote></entry>
+</row>
+<row>
+<entry>list</entry>
+<entry>optional</entry>
+<entry>required when an attr is of the type <quote>list</quote></entry>
+</row>
+<row>
+<entry>item</entry>
+<entry>optional</entry>
+<entry>required when &lt;list> is used</entry>
+</row>
+<row>
+<entry>textlocation</entry>
+<entry>optional</entry>
+<entry>always</entry>
+</row>
+<row>
+<entry>location</entry>
+<entry>optional</entry>
+<entry>required when label is used</entry>
+</row>
+<row>
+<entry>text</entry>
+<entry>optional</entry>
+<entry>required when label is used</entry>
+</row>
+<row>
+<entry>children</entry>
+<entry>optional</entry>
+<entry>list of tags that can appear within the tag being defined</entry>
+</row>
+<row>
+<entry>child</entry>
+<entry>required</entry>
+<entry>a children entry</entry>
+</row>
+<row>
+<entry>stoppingtags</entry>
+<entry>optional</entry>
+<entry>list of tags that tell another tag to end</entry>
+</row>
+<row>
+<entry>stoppingtag</entry>
+<entry>required</entry>
+<entry>a stoppingtags entry</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+
+<sect3 id="dtep-element-descriptions-3-2">
+<title>TagXML Element Descriptions</title>
+
+<para>
+The following sections will describe, in detail, each element. Everything
+from where they can go to what goes in them is layed out in an
+easy-to-follow manner.
+</para>
+
+<sect4 id="TAGS-3-2">
+<title>TAGS</title>
+
+<para>
+This is the root element of a TagXML document. It may appear in a document
+only once. It can contain the definition of multiple tags. This is an
+element-only type element.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry><emphasis>NONE</emphasis></entry>
+<entry>tag</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="tag-3-2">
+<title>tag</title>
+
+<para>
+Wrapper for tag being defined. This is an element-only type element.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>TAGS</entry>
+<entry>label, attr, stoppingtags</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<informaltable>
+<tgroup cols="6">
+<thead>
+<row>
+<entry>Attribute</entry><entry>Type</entry><entry>Values</entry>
+<entry>Default</entry><entry>Use</entry><entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>name</entry><entry>string</entry><entry></entry><entry></entry>
+<entry>required</entry><entry>Specifies the name of the tag being defined.</entry>
+</row>
+<row>
+<entry>single</entry><entry>boolean</entry><entry></entry><entry></entry>
+<entry>optional</entry><entry>Specifies whether or not the tag requires a
+closing tag &lt;/(tagname)>.</entry>
+</row>
+<row>
+<entry>type</entry><entry>string</entry><entry></entry><entry>xmltag</entry>
+<entry>optional</entry><entry>Specifies the type of tag being defined.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>xmltag</entry><entry></entry>
+<entry></entry><entry>Type of tag is XML-based. (Family 1 only.)</entry>
+</row>
+<row>
+  <entry></entry><entry></entry><entry>entity</entry><entry></entry>
+  <entry></entry><entry>The tag describes an entity. (Family 1 only.)</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>property</entry><entry></entry>
+<entry></entry><entry>Type of tag is &CSS; related. (Family 2 only.)</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>function</entry><entry></entry>
+<entry></entry><entry>Type of tag is a script function. When used,
+&lt;attr> becomes arguments of the function. (Family 2 only.)</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>class</entry><entry></entry>
+<entry></entry><entry>Type of tag is a script class. (Family 2 only.)</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>method</entry><entry></entry>
+<entry></entry><entry>Type of tag is a class method. (Family 2 only.)</entry>
+</row>
+<row>
+<entry>returnType</entry><entry>string</entry><entry></entry><entry>void
+</entry>
+<entry>optional</entry><entry>Specifies the return type of tag being
+defined. (Family 2 only.)</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>void</entry><entry></entry>
+<entry></entry><entry>Type of tag returns void.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>int</entry><entry></entry>
+<entry></entry><entry>Type of tag returns int.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>float</entry><entry></entry>
+<entry></entry><entry>Type of tag returns float.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>long</entry><entry></entry>
+<entry></entry><entry>Type of tag returns long.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>string</entry><entry></entry>
+<entry></entry><entry>Type of tag returns string.</entry>
+</row>
+<row>
+  <entry>version</entry><entry>string</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>Specifies the version of the language for which this tag is valid</entry>
+</row>
+<row>
+  <entry>extends</entry><entry>string</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>Valid only if the type of the tag is "class". The name of the base class for this class. (Family 2 only.)</entry>
+</row>
+<row>
+  <entry>class</entry><entry>string</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>Valid only if the type is "method". Specifies the name of the class to where this method belongs. (Family 2 only.)</entry>
+</row>
+<row>
+  <entry>common</entry><entry>boolean</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>if "yes", the tag specifies a common attribute group and the attributes inside this tag can be attached to any other tag. (Family 1 only.)</entry>
+</row>
+<row>
+  <entry>comment</entry><entry>string</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>the comment string appears near the tag name in the completion box</entry>
+</row></tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="label-3-2">
+<title>label</title>
+
+<para>
+Place a label in the dialog. The text is specified by the &lt;text> tag.
+This is an element-only type element.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>tag</entry>
+<entry>text, location</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="attr-3-2">
+<title>attr</title>
+
+<para>
+Defines an attribute of the tag. This element occurs once for each
+attribute. It defines the name and type of attribute. It also contains
+additional tags that specify how this attribute should be displayed, et cetera.
+This is an element-only type element.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>tag</entry>
+<entry>location, list, tooltip, whatsthis, textlocation</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<informaltable>
+<tgroup cols="6">
+<thead>
+<row>
+<entry>Attribute</entry><entry>Type</entry><entry>Values</entry>
+<entry>Default</entry><entry>Use</entry><entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>name</entry><entry>string</entry><entry></entry><entry></entry>
+<entry>required</entry><entry>Specifies the name of the attribute being
+defined.</entry>
+</row>
+<row>
+<entry>type</entry><entry>string</entry><entry></entry><entry>input</entry>
+<entry>required</entry><entry>Specifies the type of the attribute being
+defined.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>input</entry><entry></entry>
+<entry></entry><entry>Field supports free text entries (text field).</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>check</entry><entry></entry>
+<entry></entry><entry>Field value is boolean (check box).</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>color</entry><entry></entry>
+<entry></entry><entry>Field value is a color.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>url</entry><entry></entry>
+<entry></entry><entry>Field value is a &URL;. (Local file to refer to.)</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>list</entry><entry></entry>
+<entry></entry><entry>Field value is an item from a specified list.</entry>
+</row>
+<row>
+<entry>status</entry><entry>string</entry><entry></entry><entry>optional</entry>
+<entry>required</entry><entry>Specifies whether or not the argument is
+required. (Family 2 only.)</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>optional</entry><entry></entry>
+<entry></entry><entry>Argument is optional.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>required</entry><entry></entry>
+<entry></entry><entry>Argument is required.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>implied</entry><entry></entry>
+<entry></entry><entry>Argument is implied.</entry>
+</row>
+<row>
+  <entry>source</entry><entry>string</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>Specifies the sources used to fill the entry for the attribute in the tag editor dialog and the attribute tree</entry>
+</row>
+<row>
+  <entry></entry><entry></entry><entry>selection</entry><entry></entry>
+  <entry></entry><entry>The selected text is used as source</entry>
+</row>
+<row>
+  <entry></entry><entry></entry><entry>dcop</entry><entry></entry>
+  <entry></entry><entry>The result of a dcop method is used as source</entry>
+</row>
+<row>
+  <entry>interface</entry><entry>string</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>Requires source="dcop". The dcop interface from inside &quantaplus; used to get the source data.</entry>
+</row>
+<row>
+  <entry>method</entry><entry>string</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>Requires source="dcop" and an interface name. The dcop method name from inside &quantaplus; used to get the source data.</entry>
+</row>
+<row>
+  <entry>arguments</entry><entry>string</entry><entry></entry><entry></entry>
+  <entry>optional</entry><entry>Requires source="dcop", an interface and a method name. The arguments passed to the method. It can be empty or "%tagname%", meaning the current tags name.</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="tooltip-3-2">
+<title>tooltip</title>
+
+<para>
+Defines the tooltip for a field in the dialog. This element is text-only.
+</para>
+
+<note>
+<para>
+Currently only plain text is supported (you cannot use any markup).
+</para>
+</note>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>attr</entry>
+<entry><emphasis>NONE</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="whatsthis-3-2">
+<title>whatsthis</title>
+
+<para>
+Defines the 'What's This' help for a field in the dialog. This element is
+text-only.
+</para>
+
+<note>
+<para>
+Currently only plain text is supported (you cannot use any markup).
+</para>
+</note>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>attr</entry>
+<entry><emphasis>NONE</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="list-3-2">
+<title>list</title>
+
+<para>
+A container tag that groups together the items in a list. It may appear
+only once for each attribute description. This is an element-only type
+element.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>attr</entry>
+<entry>item</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="item-3-2">
+<title>item</title>
+
+<para>
+Defines an item in a list. This element is text-only.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>list</entry>
+<entry><emphasis>NONE</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="textlocation-3-2">
+<title>textlocation</title>
+
+<para>
+Specifies the position of a tag's attribute text within a dialog. This tag
+can only occur once for each attribute in the dialog (&ie; one for each
+&lt;attr> tag). This element is empty.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry>
+<entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>attr</entry>
+<entry><emphasis>NONE</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<informaltable>
+<tgroup cols="4">
+<thead>
+<row>
+<entry>Attribute</entry><entry>Type</entry>
+<entry>Use</entry><entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>row</entry><entry>nonNegativeInteger</entry>
+<entry>required</entry><entry>Specifies the row in the dialog layout of a
+field or label.</entry>
+</row>
+<row>
+<entry>col</entry><entry>nonNegativeInteger</entry>
+<entry>required</entry><entry>Specifies the column in the dialog layout of
+a field or label.</entry>
+</row>
+<row>
+<entry>rowspan</entry><entry>nonNegativeInteger</entry>
+<entry>optional</entry><entry>Specifies the number of rows a field should
+span.</entry>
+</row>
+<row>
+<entry>colspan</entry><entry>nonNegativeInteger</entry>
+<entry>optional</entry><entry>Specifies the number of columns a field
+should span.</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="location-3-2">
+<title>location</title>
+
+<para>
+Specifies the position and size of a field in the dialog. This tag should
+occur once for each field in the dialog (&ie; one for each &lt;attr> and
+&lt;label> tag). This element is empty.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry><entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>label, attr</entry><entry><emphasis>NONE</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<informaltable>
+<tgroup cols="4">
+<thead>
+<row>
+<entry>Attribute</entry><entry>Type</entry>
+<entry>Use</entry><entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>row</entry><entry>nonNegativeInteger</entry>
+<entry>required</entry><entry>Specifies the row in the dialog layout of a
+field or label.</entry>
+</row>
+<row>
+<entry>col</entry><entry>nonNegativeInteger</entry>
+<entry>required</entry><entry>Specifies the column in the dialog layout of
+a field or label.</entry>
+</row>
+<row>
+<entry>rowspan</entry><entry>nonNegativeInteger</entry>
+<entry>optional</entry><entry>Specifies the number of rows a field should
+span.</entry>
+</row>
+<row>
+<entry>colspan</entry><entry>nonNegativeInteger</entry>
+<entry>optional</entry><entry>Specifies the number of columns a field
+should span.</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="text-3-2">
+<title>text</title>
+
+<para>
+Define the text for a label or check box. This element is text-only.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry><entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>label, attr</entry><entry><emphasis>NONE</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="children-3-2">
+<title>children</title>
+
+<para>
+Defines a list of elements that can appear within the tag being specified.
+This element is an element-only type element.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry><entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>tag</entry><entry>child</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="child-3-2">
+<title>child</title>
+
+<para>
+Defines a child tag. This element is empty.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry><entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>children</entry><entry><emphasis>NONE</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<informaltable>
+<tgroup cols="4">
+<thead>
+<row>
+<entry>Attribute</entry><entry>Type</entry><entry>Values</entry>
+<entry>Use</entry><entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>name</entry><entry>string</entry><entry></entry>
+<entry>required</entry><entry>Specifies a tag that can appear within the a
+certain tag.</entry>
+</row>
+<row>
+<entry>usage</entry><entry>string</entry><entry></entry>
+<entry>optional</entry><entry>Specifies the relation with the parent.</entry>
+</row>
+<row>
+<entry></entry><entry></entry><entry>required</entry>
+<entry></entry><entry>The parent must have at least one child with this name.</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="stoppingtags-3-2">
+<title>stoppingtags</title>
+
+<para>
+Defines a list of elements that force a tag to end. This element is an
+element-only type element.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry><entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>tag</entry><entry>stoppingtag</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+
+<sect4 id="stoppingtag-3-2">
+<title>stoppingtag</title>
+
+<para>
+Defines a stopping tag. This element is empty.
+</para>
+
+<informaltable>
+<tgroup cols="2">
+<thead>
+<row>
+<entry>Parent(s)</entry><entry>Children</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>stoppingtags</entry><entry><emphasis>NONE</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<informaltable>
+<tgroup cols="4">
+<thead>
+<row>
+<entry>Attribute</entry><entry>Type</entry>
+<entry>Use</entry><entry>Description</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>name</entry><entry>string</entry>
+<entry>required</entry><entry>Specifies which tags force the ending of
+another tag.</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</sect4>
+</sect3>
+
+<sect3 id="tagxml-usage-3-2">
+<title>TagXML Usage</title>
+
+<para>
+All TagXML files must begin with the &XML; declaration: &lt;?xml
+version="1.0" encoding="UTF-8"?> and must be properly nested and closed.
+</para>
+
+<important>
+<para>
+White space does not adversely affect anything, but watch out for &amp; and
+&lt; characters.  These should likely be replaced with an &amp;amp; and
+&amp;lt;, respectively, in elements such as &lt;tooltip>, &lt;whatsthis>,
+and &lt;text>. Not doing so will not cause a crash, but you will have
+chunks of your work disappear if you do not.
+</para>
+</important>
+</sect3>
+
+<sect3 id="tagxml-validation-3-2">
+<title>TagXML Validation</title>
+
+<para>
+To validate your TagXML files, simply click the <quote>Tools</quote>
+pop-up dialog at the top of &quantaplus; and select <quote>Validate
+TagXML.</quote> A dialog will present itself and you need only to follow
+the simple directions.
+</para>
+
+<note>
+<para>
+This feature is currently not present. Currently validation occurs when
+the TagXML files are loaded into &quantaplus;.
+</para>
+</note>
+</sect3>
+
+<sect3 id="tagxml-examples-3-2">
+<title>TagXML Examples</title>
+
+<sect4 id="family-one-3-2">
+<title>Family 1</title>
+
+<para>
+The following will show you a valid Family 1 TagXML file. This file
+happens to describe &W3C; &XML; Schema's &lt;schema> element. The file name
+for this TagXML file would be schema.tag. Simple, eh?
+</para>
+
+<informalexample>
+<literallayout>
+<markup>
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE TAGS>
+&lt;TAGS>
+ &lt;tag name="schema">
+  &lt;label>
+   &lt;text>id&lt;/text>
+   &lt;location col="0" row="0"/>
+  &lt;/label>
+  &lt;attr name="id" type="input">
+   &lt;tooltip>A unique ID for the element.&lt;/tooltip>
+   &lt;whatsthis>A unique ID for the element.&lt;/whatsthis>
+   &lt;location col="1" row="0"/>
+  &lt;/attr>
+
+  &lt;label>
+   &lt;text>version&lt;/text>
+   &lt;location col="0" row="1"/>
+  &lt;/label>
+  &lt;attr name="version" type="input">
+   &lt;tooltip>Version of the schema.&lt;/tooltip>
+   &lt;whatsthis>Version of the schema.&lt;/whatsthis>
+   &lt;location col="1" row="1"/>
+  &lt;/attr>
+
+  &lt;label>
+   &lt;text>targetNamespace&lt;/text>
+   &lt;location col="0" row="2"/>
+  &lt;/label>
+  &lt;attr name="targetNamespace" type="input">
+   &lt;tooltip>&URI; reference of the namespace of this schema.&lt;/tooltip>
+   &lt;whatsthis>&URI; reference of the namespace of this schema.&lt;/whatsthis>
+   &lt;location col="1" row="2"/>
+  &lt;/attr>
+
+  &lt;label>
+   &lt;text>xmlns&lt;/text>
+   &lt;location col="0" row="3"/>
+  &lt;/label>
+  &lt;attr name="xmlns" type="input">
+   &lt;tooltip>&URI; reference for one or more namespaces for use in this schema.
+   If no prefix is used, then components of that namespace may be used unqualified.&lt;/tooltip>
+   &lt;whatsthis>&URI; reference for one or more namespaces for use in this schema.
+   If no prefix is used, then components of that namespace may be used unqualified.&lt;/whatsthis>
+   &lt;location col="1" row="3"/>
+  &lt;/attr>
+
+  &lt;label>
+   &lt;text>attributeFormDefault&lt;/text>
+   &lt;location col="0" row="4"/>
+  &lt;/label>
+  &lt;attr name="attributeFormDefault" type="list">
+   &lt;items>
+    &lt;item>qualified&lt;/item>
+    &lt;item>unqualified&lt;/item>
+   &lt;/items>
+   &lt;tooltip>Default form for all attributes within this schema.&lt;/tooltip>
+   &lt;whatsthis>Default form for all attributes within this schema.&lt;/whatsthis>
+   &lt;location col="1" row="4"/>
+  &lt;/attr>
+
+  &lt;label>
+   &lt;text>elementFormDefault&lt;/text>
+   &lt;location col="0" row="5"/>
+  &lt;/label>
+  &lt;attr name="elementFormDefault" type="list">
+   &lt;items>
+    &lt;item>qualified&lt;/item>
+    &lt;item>unqualified&lt;/item>
+   &lt;/items>
+   &lt;tooltip>Default form for all elements within this schema.&lt;/tooltip>
+   &lt;whatsthis>Default form for all elements within this schema.&lt;/whatsthis>
+   &lt;location col="1" row="5"/>
+  &lt;/attr>
+
+  &lt;label>
+   &lt;text>blockDefault&lt;/text>
+   &lt;location col="0" row="6"/>
+  &lt;/label>
+  &lt;attr name="blockDefault" type="input">
+   &lt;location col="1" row="6"/>
+  &lt;/attr>
+
+  &lt;label>
+   &lt;text>finalDefault&lt;/text>
+   &lt;location col="0" row="7"/>
+  &lt;/label>
+  &lt;attr name="finalDefault" type="input">
+   &lt;location col="1" row="7"/>
+  &lt;/attr>
+ &lt;/tag>
+&lt;/TAGS>
+</markup>
+</literallayout>
+</informalexample>
+</sect4>
+
+<sect4 id="family-two-3-2">
+<title>Family 2</title>
+
+<para>
+The following will show you a valid Family 2 TagXML file. This file
+happens to describe &PHP;'s overload function. The file name for this
+TagXML file would be overload.tag.
+</para>
+
+<informalexample>
+<literallayout>
+<markup>
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE tags>
+&lt;tags>
+  &lt;tag name="overload" type="function" returnType="void">
+&lt;attr name="class_name" type="string" status="optional"/>
+  &lt;/tag>
+&lt;/tags>
+</markup>
+</literallayout>
+</informalexample>
+</sect4>
+</sect3>
+</sect2>
+
+<sect2 id="descriptionrc-3-2">
+<title>&descriptionrc;</title>
+
+<para>
+The &descriptionrc; file is, also, quite simple and there is an editor for it accessible from <menuchoice><guimenu>DTD</guimenu><guimenuitem>Edit DTD Settings</guimenuitem></menuchoice>. This will edit the &descriptionrc; for a &DTEP; you can select from a list. In order to
+edit the &descriptionrc; for a newly created &DTEP; you should create a simple &descriptionrc; with the following entries:
+</para>
+<para>
+  <informalexample>
+    <literallayout>
+      <markup>
+        [General]
+        Version = Use 1 for &quantaplus; version &lt;=3.1.2 and 2 for any version greater.
+        Name = DTD definition string. (-//&W3C;//DTD HTML 4.01 Transitional//EN)
+        NickName = The beautified name of the DTD. (HTML 4.01 Transitional). If not defined, Name is
+        used as NickName.
+      </markup>
+    </literallayout>
+  </informalexample>
+</para>
+<para>Once you have created it at put aside of the tag files, load the newly created &DTEP; with <menuchoice><guimenu>DTD</guimenu><guimenuitem>Load DTD Package (DTEP)</guimenuitem></menuchoice> and after it is loaded you can proceed with editing the settings of the &DTEP;. Check the tooltips and the whatsthis text of the entries in the editor dialog to understand the meaning of each entry. Alternatively you can read the <filename>quanta/data/dtep/dtd-description.txt</filename> from the source tarball containing a description about the format.
+</para>
+</sect2>
+</sect1>
+
+<sect1 id="user-actions">
+<title>User Defined Actions</title>
+<para>
+Actions are very common in every application. You meed them often when you use any application. Clicking on a toolbar icon, selecting a menu item or using a shortcut usually executes an action. In &quantaplus; actions are taken to the next level. Instead of hardcoded actions (that are created by the application
+programmer at the source code level) it is possible for the ordinary user to create and modify actions and by this way adding
+new functionality to &quantaplus;. These are the user defined actions, and many of the standard &quantaplus; actions are user defined (and user modifiable) actions as well.
+</para>
+<para>There are three types of user definable actions:
+<itemizedlist>
+<listitem><para><link linkend="text-actions">Text actions</link></para></listitem>
+<listitem><para><link linkend="tag-actions">Tag actions</link></para></listitem>
+<listitem><para><link linkend="script-actions">Script actions</link></para></listitem>
+</itemizedlist>
+</para>
+<sect2 id="creating-actions">
+<title>Creating actions</title>
+<para>
+ You can create an action by going to
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Actions</guimenuitem>
+</menuchoice>
+. Click on <guibutton>New Action</guibutton> and you will face a similar dialog:
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img7.png" format="PNG" />
+</imageobject>
+</mediaobject>
+<variablelist>
+<varlistentry>
+<term><guilabel>Type</guilabel></term>
+<listitem><para>Specifies the action's type (<link linkend="text-actions">Text</link>, <link linkend="tag-actions">Tag</link>, <link linkend="script-actions">Script</link>).</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Text</guilabel></term>
+<listitem><para>The user visible name of the action.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>The button near the <guilabel>Text</guilabel> label</term>
+<listitem><para>The icon assigned to this action. Click on it in order to change the current icon.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Tool tip</guilabel></term>
+<listitem><para>Short description of what the action does.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Shortcut</guilabel></term>
+<listitem><para>The shortcut assigned to this action. Click on <guilabel>Custom</guilabel> or the button near <guilabel>Custom</guilabel> to assign a shortcut; click on <guilabel>None</guilabel> to remove the currently assigned shortcut.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Container toolbars</guilabel></term>
+<listitem><para>The user defined toolbars where this action appears. See <xref linkend="creating-toolbars-3-2"/>.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Detailed Settings</guilabel></term>
+<listitem><para>Specific settings for the different type of actions. See below.
+</para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+<sect2 id="text-actions">
+<title>Text actions</title>
+<para>
+<mediaobject><imageobject>
+<imagedata fileref="text-action.png" format="PNG" />
+</imageobject></mediaobject>
+ The simplest actions. You can enter some text in the <guilabel>Detailed Settings</guilabel> area and whenever the action is executed this text will be inserted in your document
+ at the current cursor position. See the below example.
+</para>
+</sect2>
+<sect2 id="tag-actions">
+<title>Tag actions</title>
+<para>
+ Useful to insert XML tags, but of course you can use them for other purposes as well.
+<mediaobject><imageobject>
+<imagedata fileref="tag-actions.png" format="PNG" />
+</imageobject></mediaobject>
+<variablelist>
+<varlistentry>
+<term><guilabel>&lt;tag&gt;</guilabel></term>
+<listitem><para>The name of the tag.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>&lt;/tag&gt;</guilabel></term>
+<listitem><para>If checked when the action is executed this text will be inserted as a closing tag. If there is a selected area in the document before you execute the action, the &lt;tag&gt; will be inserted before the selected area and the &lt;/tag&gt; after.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Run "Edit tag" dialog if available</guilabel></term>
+<listitem><para>If checked and there is a tagXML file for this tag, a tag editing dialog will be shown prior of inserting the tag inside the document, so you can fine-tune the tag attributes.</para></listitem>
+</varlistentry>
+</variablelist>
+The &lt;tag&gt; and &lt;/tag&gt; will be inserted as you've typed there. The &lt;, &gt; or the / sign won't be automatically appended.
+</para>
+</sect2>
+<sect2 id="script-actions">
+<title>Script actions</title>
+<para>
+<mediaobject><imageobject>
+<imagedata fileref="script-action.png" format="PNG" />
+</imageobject></mediaobject>
+ The most powerful action type. With the help of this action you
+can run external applications (usually scripts, but it's
+not limited to scripts), which can alter your document or use your document (or part of your document) as input. Examples from &quantaplus; itself are the <guibutton>Quick Start</guibutton> dialog, the various <guilabel>View In...</guilabel> actions for the (X)HTML DTEPs.
+</para>
+<para>
+First you have to enter the name of your script with the interpreter as well. Example:
+<command>sh /home/myHome/myScript.sh</command>.
+</para>
+<para>
+Although you can use full paths, the recommended way is to use the <command>%scriptdir</command> variable in the command line, like <command>sh %scriptdir/myScript.sh</command>. This way &quantaplus; will try to locate your script in the following places:
+<itemizedlist>
+<listitem><para>global script folder: <filename><envar>$KDEDIR</envar>/share/apps/quanta/scripts</filename></para></listitem>
+<listitem><para>local script folder: <filename><envar>$KDEHOME</envar>/share/apps/quanta/scripts</filename></para></listitem>
+<listitem><para>your path: <envar>$PATH</envar></para></listitem>
+</itemizedlist>
+There are other special variables that you can use in the command line:
+<itemizedlist>
+<listitem><para><command>%f</command>: will be replaced with the URL of the current document. In case of local documents, file:/ will be stripped from the document.</para></listitem>
+<listitem><para><command>%input</command>: will be replaced with the selected input. See below.</para></listitem>
+<listitem><para><command>%projectbase</command>: will be replaced with the URL of the current project. It is empty if no project is loaded.</para></listitem>
+<listitem><para><command>%pid</command>: will be replaced with the PID of the running &quantaplus; process. If &quantaplus; is running in unique mode, the "unique " text will be prepended to the PID number. Useful when you use DCOP to control &quantaplus; from the external script.</para></listitem>
+<listitem><para><command>%userarguments</command>: useful in case of events. This entry will be replaced by the event properties in the following order: <variablelist>
+<varlistentry>
+<term>First argument</term>
+<listitem><para>The unique id of the script</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Second argument</term>
+<listitem><para>the event name</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Third argument</term>
+<listitem><para>the parameters for the event, usually the file name of the current document or the path to the project file.</para></listitem>
+</varlistentry>
+</variablelist>
+ </para></listitem>
+</itemizedlist>
+</para>
+<para>
+Aside of the above methods the script can receive input from &quantaplus; on the standard input. In the <guilabel>Input</guilabel> combobox you can select what to send to the standard input. Choices are:
+<itemizedlist>
+<listitem><para><guilabel>None</guilabel>: nothing is sent to the script.</para></listitem>
+<listitem><para><guilabel>Current document</guilabel>: the whole document is sent to the script.</para></listitem>
+<listitem><para><guilabel>Selected text</guilabel>: the selected area of the document is sent to the script. Using the <command>%input</command> variable usually makes sense only when using this setting.</para></listitem>
+</itemizedlist>
+</para>
+<para>
+Similar to the <guilabel>Input</guilabel> you can catch the output of the executed application. There are two kind of outputs:
+<itemizedlist>
+<listitem><para>normal output, printed to the standard output;</para>
+</listitem>
+<listitem><para>error messages, printed to the standard error.</para>
+</listitem>
+</itemizedlist>
+You can specify what should happen with the text printed to the standard output. This can be done by modifying the value of the <guilabel>Output</guilabel> combobox:
+<itemizedlist>
+<listitem><para><guilabel>None</guilabel>: the output of the application is ignored.</para></listitem>
+<listitem><para><guilabel>Insert in cursor position</guilabel>: the output will be inserted in the current document and the cursor position.</para></listitem>
+<listitem><para><guilabel>Replace selection</guilabel>: the selected area of the document will be replaced with the output.</para></listitem>
+<listitem><para><guilabel>Replace selection</guilabel>: the selected area of the document will be replaced with the output.</para></listitem>
+<listitem><para><guilabel>Create a new document</guilabel>: a new document will be created and will contain all the output of the script.</para></listitem>
+<listitem><para><guilabel>Replace current document</guilabel>: the entire document will be replaced with the output.</para></listitem>
+<listitem><para><guilabel>Message window</guilabel>: the output will appear in the <guilabel>Messages</guilabel> toolview.</para></listitem>
+</itemizedlist>
+</para>
+<para>The choices for the standard error output (<guilabel>Error</guilabel>) are the same as for the normal output.</para>
+</sect2>
+</sect1>
+
+<sect1 id="creating-toolbars-3-2">
+<title>Creating Toolbars</title>
+
+<para>
+The following will show you how to create toolbars for a &DTEP;. Toolbars
+are graphical elements that are assigned to actions. Actions, in
+&quantaplus;, are the basis for nearly all the extensions that
+&quantaplus; has and will acquire in the future. The same mechanism that
+defines an action in &quantaplus; also enables auto-completion and tag
+dialogs. With actions, the limit of what you can do is virtually
+limitless.  For means of an example, we will use <ulink
+url="http://tidy.sf.net">&HTML; tidy</ulink> on our web pages.
+</para>
+
+<sect2 id="from-scratch-to-complete-3-2">
+<title>From Scratch to Complete</title>
+
+<para>
+To begin, you will need to create a user toolbar. Select
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guimenuitem>Add User Toolbar</guimenuitem>
+</menuchoice>.
+</para>
+
+<para>
+If there are many tags for the markup language, it is recommended that you
+split up the tags into logical groups. You will need to create a new user
+toolbar for each group. In this case, there are not many, so we will be
+making one toolbar and naming it with the name of the markup.
+</para>
+
+<para>
+Once all your toolbars are created, you must add and configure the
+actions. To do this, select
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Actions</guimenuitem>
+</menuchoice>
+<emphasis>
+</emphasis>.
+</para>
+
+<para>
+The parts of this window are pretty straight forward. Press the
+<guibutton>New action</guibutton> button at the bottom of the window to
+enter the editing mode.
+</para>
+
+<para>
+Fill in all of the necessary fields and add the tag to the appropriate
+toolbar(s).
+</para>
+
+<para>
+Complete the rest and, if the tag has attributes and you always plan to
+use them, check the <guilabel>Run "Edit tag" dialog if available
+</guilabel> box so that you will be prompted every time the action is used.
+</para>
+
+<para>
+You should now have something much like the following.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img7.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Press the <guibutton>Apply</guibutton> button and you will see the action
+added to the toolbar(s) you have selected.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img8.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Egad! That's an awful icon. How will yourself and others remember that
+icon goes with that action? Let's replace it before trouble arises.
+</para>
+
+<para>
+To create an icon that more accurately describes that action, we will be
+using &kiconedit;. Select it from the &kmenu;, <menuchoice>
+<guisubmenu>Graphics</guisubmenu>
+<guisubmenu>More Programs</guisubmenu>
+</menuchoice> (or where ever your distribution placed it).
+</para>
+
+<para>
+&kiconedit; defaults to the size 32x32 pixels, but we need 22x22. To
+change this, select
+<menuchoice>
+<guimenu>Edit</guimenu>
+<guimenuitem>Resize</guimenuitem>
+</menuchoice>.
+</para>
+
+<para>
+Keep in mind that you are creating an icon that will assist in helping not
+only yourself to remember which action does what, but also other users of
+the &DTEP;.
+</para>
+
+<para>
+Since the tag I am creating the icon for is called <quote>start,</quote>
+I have decided to create a <quote>Start sign.</quote> Using the color green
+(green often interpreted as <quote>go,</quote> <quote>start,</quote> or
+<quote>proceed</quote>) will, or, at least, should, convey a message
+to the user that clicking this action will place the &lt;start&gt; tag in the
+current document.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img15.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Now that I am finished with the creation of the icon, I will save it.
+</para>
+
+<para>
+Once you are done with creating the icon(s), you must associate the icon
+with the action. To do this, open
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Actions</guimenuitem>
+</menuchoice> again (in &quantaplus;) and select the action you made
+the icon for. Beside the <guilabel>Text</guilabel> field, you will see a
+button, click it.
+</para>
+
+<para>
+Select <guilabel>Other Icons</guilabel> and then click the <guibutton>
+Browse</guibutton> button.
+</para>
+
+<para>
+Goto the folder in which you saved the icon, select the icon, and click
+<guibutton>OK</guibutton>.
+</para>
+
+<para>
+Press the <guibutton>Apply</guibutton> button and either continue to do the
+same with the other tags, if any, or click <guibutton>OK</guibutton> to
+finish.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img18.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Let us say you would like to add some common &quantaplus; functions to your
+toolbar or maybe you think the toolbar would be better off organized in a
+different manner with some separators to group the actions. Open the
+<guilabel>Configure Toolbars</guilabel> dialog by going
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars</guimenuitem>
+</menuchoice>. Make sure your toolbar is selected.
+</para>
+
+<para>
+I will be choosing the separator (top of the left column) for my toolbar.
+Once you have selected the item you wish to add to your toolbar, press the
+right arrow button. This will add it to your toolbar.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img21.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+I think I would like a quick way to access the <guilabel>Konqueror
+Preview</guilabel>. I will select it and add it to the toolbar.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img22.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Note how the separator helps in grouping. Someone new to my toolbar might
+have thought that the &konqueror; button was like or the opposite of the
+start button.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img23.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Apply your changes and, when you are done, press <guibutton>OK</guibutton>
+to finish.
+</para>
+
+<para>
+Ah, look at the fantastic new toolbar! Much more handy now.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img24.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Remember to test your toolbar, by clicking all the buttons, so that you
+know the output is correct.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="dtep_doc_img25.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Now to save the toolbar, we will select
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guisubmenu>Save Toolbars</guisubmenu>
+<guimenuitem>Save as Local Toolbar</guimenuitem>
+</menuchoice>.
+</para>
+
+<para>
+Save it to the correct folder. Since NeXML does not exist, I will just
+have it to the top-level folder, but your toolbar(s) should be saved to
+the correct folder. Make sure to adjust your &descriptionrc; to have it
+load your toolbar(s) when a new file of that type is created.
+</para>
+</sect2>
+</sect1>
+
+
+<sect1 id="creating-quanta-docs-3-2">
+<sect1info>
+<title>Creating Your Own Documentation</title>
+<authorgroup>
+<author>
+<firstname>Robert</firstname>
+<surname>Nickel</surname>
+<affiliation>
+<address><email>robert@artnickel.com</email></address>
+</affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+</sect1info>
+
+<title>Creating Your Own Documentation</title>
+
+<para>
+Probably the most notable additions to &quantaplus; for the general user
+will be the addition of documentation for the markup or scripting language
+that you like best. To that end, this chapter will explain how I create
+the &PHP; documentation tree for my personal use.
+</para>
+
+<para>
+Before starting on creating your own documentation, you may wish to check
+out the <ulink url="http://quanta.sf.net/main1.php?contfile=resource">
+&quantaplus; repository</ulink> to see if someone else has already done
+this set.
+</para>
+
+<para>
+There are two parts to this process. First, you must obtain the existing
+documentation for the markup/scripting/&etc; language that you are after.
+Second, you have to create the <filename>docrc</filename> file. The first
+is up to you, the second is what we will cover here.
+</para>
+
+<para>
+The general form of the docrc file is as follows:
+</para>
+
+<informalexample>
+<literallayout>
+#KDE Config File
+[Tree]
+Doc dir=<replaceable>path, relative to this file, of the documentation html files</replaceable> &eg; php42/
+#top level elements
+Top Element=<replaceable>Your description for these documentation</replaceable> &eg; &PHP; 4.2 documentation
+
+Section 1=Section1.html
+Section 2=#Sec2.1,#Sec2.2,#Sec2.3
+Sec2.1=Sec2.1.html
+Sec2.2=Sec2.2.html
+Sec2.3=Sec2.3.html
+...
+
+[Context]
+ContextList=func1,func2,tag1,tag2,tag3
+func1=func1.html
+func2=func2.html
+tag1=tag1.html
+tag2=tag2.html
+tag3=tag3.html
+</literallayout>
+</informalexample>
+
+<para>
+The <filename>docrc</filename> is broken down into two sections: Tree and
+Context.
+</para>
+
+<para>
+The Tree section defines the presentation aspect of the documentation in
+the documentation tab. For example, you will see that in the &PHP;
+documentation you have something akin to this:
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="doc-view1.png" format="PNG" />
+</imageobject>
+</mediaobject>
+
+<para>
+Relating this to the above, my &PHP; <filename>docrc</filename> looks like
+this:
+</para>
+
+<informalexample>
+<literallayout>
+#KDE Config File
+
+[Tree]
+
+Doc dir=php42/
+
+#top level elements
+Top Element=PHP 4.2 documentation
+
+PHP 4.2 documentation=Table of Contents,#Getting Started,#Language Reference
+
+Table of Contents=index.html
+
+Getting Started=Introduction, ...
+Introduction=introduction.html
+...
+
+Language Reference=Basic syntax, ...
+Basic syntax=language.basic-syntax.html
+...
+
+</literallayout>
+</informalexample>
+
+<para>
+Notice the <literal>#</literal> in front of <quote>Getting Started</quote>
+and <quote>Language Reference</quote>. This indicates that these are sub
+containers in the tree and have content of their own. I do not believe that
+there is a set limit to the depth here (other than that driven by sanity)
+&mdash; use your judgment.
+</para>
+
+<para>
+For the Table of Contents, you will notice that it is referenced directly to
+a file (and consequently shows up at the bottom of the tree view &mdash;
+folders first!).
+</para>
+
+<important>
+<para>
+Spaces do not adversely affect anything, but watch out for &amp; and &lt;
+characters. These should likely be replaced by &amp;amp; and &amp;lt;
+respectively in all of the &XML; based &quantaplus; resource files.
+</para>
+</important>
+
+<para>
+The Context section is the section of the docrc file that is used to
+facilitate context sensitive help. For example, you are writing a &PHP;
+script and you would like to see the documentation for the
+<function>mysql_fetch_array</function> function. You simply highlight the
+function and then press <keycombo action="simul">&Ctrl;<keycap>H</keycap>
+</keycombo> for context help. The documentation on
+<function>mysql_fetch_array</function> will immediately display. There are
+only two entry types here: the ContextList and the file association lines.
+</para>
+
+<variablelist>
+<varlistentry>
+<term>ContextList</term>
+<listitem>
+<para>
+Really simple, this is just a comma separated list of the context items
+you wish to have available (for &PHP;, these are the functions for &PHP;).
+</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>File association lines</term>
+<listitem>
+<para>
+These are of the form context item=html doc page. &eg;
+acos=function.acos.html
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para>
+A pared down version of my <filename>docrc</filename> Context section is
+as follows:
+</para>
+
+<informalexample>
+<literallayout>
+#Keywords for context help
+[Context]
+ContextList=abs,acos,acosh,addcslashes,addslashes,...
+
+abs=function.abs.html
+acos=function.acos.html
+acosh=function.acosh.html
+addcslashes=function.addcslashes.html
+addslashes=function.addslashes.html
+...
+</literallayout>
+</informalexample>
+
+<para>
+Now you can just save your <filename>docrc</filename> file, save it in
+<filename class="directory">$<envar>HOME</envar>/.kde/share/apps/quanta/doc</filename>
+or <filename
+class="directory">$<envar>KDEDIR</envar>/share/apps/quanta/doc</filename>
+for local or global use respectively. Then create a folder (the one
+specified in your <filename>docrc</filename> file) in the same folder
+as your <filename>docrc</filename> file and copy your &HTML; pages in
+there.
+</para>
+
+<para>
+You will need to restart &quantaplus; to see your documentation.
+</para>
+
+<para>
+Once you are sure that they are good and worth sharing, send the <filename>
+docrc</filename> file along with a description of any pertinent
+information on what documentation you used to the
+<ulink url="http://quanta.sf.net/main1.php?contfile=resource">&quantaplus;
+repository</ulink> for use by the &quantaplus; community. You will not get
+rich, but you will feel great knowing that you contributed to the best web
+development platform around.
+</para>
+
+</sect1>
+
+<sect1 id="sharing-resources">
+  <title>Sharing Resources</title>
+  <para>With &quantaplus; you are not alone. It is possible to share the various resources (DTEP packages, toolbars with actions, scripts, templates) with others. There are two ways to do it:
+  </para>
+  <variablelist>
+    <varlistentry>
+      <term>Sending in Email</term>
+      <listitem><para>The resources can be sent in email to your friends, partners or to whomever you want. You will see the <guilabel>Send in Email</guilabel> menu entries in various places, like <menuchoice><guimenu>DTD</guimenu><guimenuitem>Send DTD Package (DTEP) in Email</guimenuitem></menuchoice>, <menuchoice><guimenu>Toolbars</guimenu><guimenuitem>Send Toolbar in Email</guimenuitem></menuchoice>, in the context menu of the files and folders in the <guilabel>Templates</guilabel> and <guilabel>Scripts</guilabel> tree.
+      </para></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Uploading to the main server</term>
+      <listitem><para>The resources can be uploaded to our main repository, from where all other &quantaplus; users can download them. The submissions are reviewed and made available only if our team considers correct and useful will be published. In order to make a valid submission it is suggested to sign the resources, thus you need a GPG/PGP key. This information is used to verify the origin of the resources both by our team and by the downloaders.</para>
+        <para>About getting the resources from the main server see <xref linkend="download-resources" />.</para>
+      <para>When uploading you will be asked to enter the passphrase for your secret GPG key (the passphrase will not be stored), or in the case of having more secret keys, you will be able to pick up the one you want to use. In the <guilabel>Share Hot New Stuff</guilabel> dialog fill the input fields (the <guilabel>Preview URL</guilabel> may remain empty) and start the upload by clicking <guilabel>OK</guilabel>.</para>
+      <para>  
+        The upload can be initiated from 
+        <menuchoice><guimenu>DTD</guimenu><guimenuitem>Upload DTD Package (DTEP)</guimenuitem></menuchoice>, <menuchoice><guimenu>Toolbars</guimenu><guimenuitem>Upload Toolbar</guimenuitem></menuchoice>, in the context menu of the files and folders in the <guilabel>Templates</guilabel> and <guilabel>Scripts</guilabel> tree.
+        </para>
+      </listitem>
+    </varlistentry>
+</variablelist>
+</sect1>
+<sect1 id="download-resources">
+<title>Getting Resources</title>
+<para>It is possible to upgrade your &quantaplus; without getting a new version, by getting new resources like DTEP packages, toolbars with actions, templates, scripts and documentation. One possibility is that you got the resources in email or have downloaded from a web server, in which cases you usually need to manually install them. In lucky case you also got an install script when you have downloaded the resources. But &quantaplus; has a dedicated server holding resources that were either not included in the main distribution because of their sizes or infrequent usage, or they were contributed later by users, and these resources are automatically installed. Do download such resources use the various <guilabel>Download</guilabel> menu entries. You can find them at <menuchoice><guimenu>DTD</guimenu><guimenuitem>Download DTD Package (DTEP)</guimenuitem></menuchoice>, <menuchoice><guimenu>Toolbars</guimenu><guimenuitem>Download Toolbar</guimenuitem></menuchoice>, in the context menu of an empty area or toplevel item in the <guilabel>Templates</guilabel>, <guilabel>Scripts</guilabel> and <guilabel>Documentation</guilabel> trees. 
+</para>
+<para>
+After a resource was downloaded, but before it is installed, &quantaplus; verifies if the resource is valid, by checking the integrity and the signature. In case of problems it warns you and you can decide if you want to continue or not. Please read the warning dialogs carefully. In the case when the integrity is correct and the resource is correctly signed, you will still get an information dialog, so you can see who created the resource.
+</para>
+<para>
+  <caution><para>Be sure that you install resources, especially toolbars and scripts, only from trusted sources!</para></caution>
+</para>
+</sect1>
+
+<sect1 id="converting-dtd">
+  <title>Converting a DTD to a &DTEP;</title>
+  <para>It is possible to work on XML languages currently not supported by &quantaplus; by creating a DTEP package. But the creation can be time consuming, as you may need to write hundreds of tag files in <link linkend="tagxml-3-2">tagXML</link> format. Of course, there is a nicer way to go, by converting the DTD automatically into a DTEP package. 
+  </para>
+  <para>The conversion can be started from the <menuchoice><guimenu>DTD</guimenu><guimenuitem>Load &amp; Convert DTD</guimenuitem></menuchoice> menu. Select the <filename>.dtd</filename> file which defines the DTD you want to use, and after that you will see the following dialog:
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="dtd-conversion.png" format="PNG" />
+      </imageobject>
+    </mediaobject>  
+  </para>
+<para>The entries are:</para>
+<itemizedlist>
+  <listitem><para><guilabel>Target directory name:</guilabel>the newly created &DTEP; will go under this name to the <filename><envar>$KDEHOME</envar>/share/apps/quanta/dtep</filename> folder.
+  </para>
+  </listitem>
+  <listitem><para><guilabel>Name:</guilabel>the name (definition string) of the DTD</para></listitem>
+  <listitem><para><guilabel>Nickname:</guilabel> the user visible name of the &DTEP;</para></listitem>
+  <listitem><para><guilabel>!DOCTYPE definition line:</guilabel>
+    the string that should appear in the !DOCTYPE tag, like
+      HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"</para></listitem>
+  <listitem><para><guilabel>DTD URL:</guilabel> the URL pointing to the DTD file</para></listitem>
+  <listitem><para><guilabel>Default extension:</guilabel> the extension usually used for files that were written in this DTD</para></listitem>
+  <listitem><para><guilabel>Case-sensitive tags and attributes:</guilabel> self explaining, usually true for XML language variants</para></listitem>
+  <listitem><para><guilabel>Fine-tune the DTEP after conversion:</guilabel> if checked, after the conversion is done, &quantaplus; will bring up the &descriptionrc; editor, so you can fine tune the newly created &DTEP;. It is recommended to leave this options checked.</para></listitem>
+</itemizedlist>
+
+</sect1>
+</chapter>

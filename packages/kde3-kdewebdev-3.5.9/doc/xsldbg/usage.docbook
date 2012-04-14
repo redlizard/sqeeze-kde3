@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter id="using-xsldbg">
+<title>Using &xsldbg;</title>
+<para></para>
+<sect1><title>xsldbg command arguments</title>
+<para>
+On systems with readline library available you can use the back/forward
+keys to navigate the history of entered commands.
+On all systems the last entered command can be repeated by just pressing
+the &lt;ENTER&gt; key. 
+</para>
+<para>If your operating system supports it file names will be expanded.</para>
+<para>
+Several commands take more that one argument. Quotes may be used to lead to
+complex expressions being treated as one arument. eg break &quot;* | @&quot; would allow you to se a breakpoint on the 
+  template with the name &quot;* | @&quot;
+</para>
+</sect1>
+
+<sect1 id="legend"><title>Legend of terms</title>
+<para>The following table describes the terms used in the subsiquent command guide</para>
+<informaltable>
+<tgroup cols="1"><tbody>
+     <row><entry>
+        TEMPLATE_NAME : A valid template name contains only ASCI
+        character codes 0x00 to 0x7F. And can be a fully qualified name ie
+        "xsl:templateName". </entry></row>
+     <row><entry>
+        FILENAME : A valid file name local to the system of the
+        user. It can have a "~" prefix on *nix and CYGWIN platforms. Or
+        environment variables under RISC OS
+     </entry></row>
+     <row><entry>URI : A Uniform Resource Identifiers as defined by RFC 2396</entry></row>
+     <row><entry>MODE_NAME The mode of template which can be fully qualified name ie "xsl:modeName".</entry></row>
+     <row><entry>QNAME : A fully qualified name ie "xsl:localPart"</entry></row>
+     <row><entry>LINENO : A valid line number in associated &lt;FILENAME&gt;</entry></row>
+     <row><entry>NUMBER_OF_FRAMES : A valid line number frames to change position by</entry></row>
+     <row><entry>BREAKPOINT_ID : A valid break point number</entry></row>
+     <row><entry>WATCH_ID : A valid watch expression number as indicated by showwatch command</entry></row>
+     <row><entry>SPEED: speed to walk through code at, between 0 to 9</entry></row>
+     <row><entry>
+         &nbsp;&nbsp;&nbsp;&nbsp;<emphasis>(Comment)</emphasis>: a 
+         comment about command meaning or usage
+     </entry></row>
+     <row><entry>{ opt1 | opt2 | opt2 .. etc} : Choose one of the opt's</entry></row>
+     <row><entry>XPATH : a xpath selection of node(s)</entry></row>
+     <row><entry>PARAM_ID : a valid parameter number as indicated by showparam command</entry></row>
+     <row><entry>
+         PATH : A path to change working directory to On some operating systems a 
+         "~" prefix will be replaced by your home directory path
+     </entry></row>
+     <row><entry>
+         TEXT : Free form text &nbsp;&nbsp;&nbsp;&nbsp;<emphasis>(no
+	 restrictions)</emphasis>
+     </entry></row>
+     <row><entry>COMMAND : A valid command for the xsdbg</entry></row>
+     <row><entry>QNAME : A valid variable/parameter name</entry></row>
+     <row><entry>SOURCE : The stylesheet being/to be executed. See &lt;FILENAME&gt; and &lt;URI&gt;</entry></row>
+     <row><entry>
+         DATA : The xml data(document) being/to be processed by the
+	 stylesheet. See &lt;FILENAME&gt; 
+         and &lt;URI&gt;
+     </entry></row>
+     <row><entry>DEVICE_PATH : Is a valid terminal on the operating system</entry></row>
+     <row><entry>TTY_LEVEL : Is a valid level of input/output to use</entry></row>
+</tbody></tgroup></informaltable>
+<para></para>
+</sect1>
+
+<sect1 id="command_summary"><title>Overview of available commands</title>
+<informaltable>
+<tgroup cols="1"><tbody>
+<row><entry>Help related :<link linkend="help_cmd" endterm="help_cmd.title">help</link></entry></row>
+<row><entry>
+   Running related : {<link linkend="bye_cmd" endterm="bye_cmd.title">bye</link>|<link linkend="exit_cmd" endterm="exit_cmd.title">exit</link>|
+   <link linkend="quit_cmd" endterm="quit_cmd.title">quit</link>}, <link linkend="step_cmd" endterm="step_cmd.title">step</link>, 
+   <link linkend="stepup_cmd" endterm="stepup_cmd.title">stepup</link>, <link linkend="stepdown_cmd" endterm="stepdown_cmd.title">stepdown</link>,
+   <link linkend="next_cmd" endterm="next_cmd.title">next</link>,
+   <link linkend="continue_cmd" endterm="continue_cmd.title">continue</link>,
+   <link linkend="run_cmd" endterm="run_cmd.title">run</link>, 
+<link linkend="trace_cmd" endterm="trace_cmd.title">trace</link>, <link linkend="setoption_cmd" endterm="setoption_cmd.title">setoption</link>,
+   <link linkend="options_cmd" endterm="options_cmd.title">options</link>
+</entry></row>
+<row><entry>
+   Libxslt parameter related : <link linkend="addparam_cmd" endterm="addparam_cmd.title">addparam</link>,
+   <link linkend="delparam_cmd" endterm="delparam_cmd.title">delparam</link>, <link linkend="showparam_cmd" endterm="showparam_cmd.title">showparam</link>,
+   <link linkend="output_cmd" endterm="output_cmd.title">output</link>, <link linkend="setoption_cmd" endterm="setoption_cmd.title">setoption</link>, 
+   <link linkend="options_cmd" endterm="options_cmd.title">options</link>
+</entry></row>
+<row><entry>
+   Template related : <link linkend="templates_cmd" endterm="templates_cmd.title">templates</link>,
+   <link linkend="where_cmd" endterm="where_cmd.title">where</link>, <link
+   linkend="frame_cmd" endterm="frame_cmd.title">frame</link>
+</entry></row>
+<row><entry>
+   Break point related : <link linkend="break_cmd" endterm="break_cmd.title">break</link>, 
+   <link linkend="showbreak_cmd"
+   endterm="showbreak_cmd.title">showbreak</link>, <link linkend="delete_cmd" endterm="delete_cmd.title">delete</link>, 
+   <link linkend="enable_cmd" endterm="enable_cmd.title">enable</link>
+</entry></row>
+<row><entry>
+   Expression viewing(xpath) : <link linkend="cat_cmd"
+   endterm="cat_cmd.title">cat</link>
+</entry></row>
+<row><entry>
+   Node viewing : <link linkend="ls_cmd" endterm="ls_cmd.title">ls</link>, <link linkend="dir_cmd" endterm="dir_cmd.title">dir</link>, 
+   <link linkend="du_cmd" endterm="du_cmd.title">du</link>, <link
+   linkend="cat_cmd" endterm="cat_cmd.title">cat</link>, <link
+   linkend="pwd_cmd" endterm="pwd_cmd.title">pwd</link>
+</entry></row>
+<row><entry>
+   Variable viewing : <link linkend="globals_cmd" endterm="globals_cmd.title">globals</link>, 
+   <link linkend="locals_cmd" endterm="locals_cmd.title">locals</link>, 
+   <link linkend="cat_cmd" endterm="cat_cmd.title">cat</link>, 
+   <link linkend="addwatch_cmd" endterm="addwatch_cmd.title">addwatch</link>
+</entry></row>
+<row><entry>
+   Variable setting: <link linkend="set_cmd"
+   endterm="set_cmd.title">set</link>
+</entry></row>
+<row><entry>
+   Node selection : <link linkend="source_cmd" endterm="source_cmd.title">source</link>, 
+   <link linkend="data_cmd" endterm="data_cmd.title">data</link>, <link
+   linkend="cd_cmd" endterm="cd_cmd.title">cd</link>
+</entry></row>
+<row><entry>
+   Searching :<link linkend="search_cmd"
+   endterm="search_cmd.title">search</link>
+</entry></row>
+<row><entry>
+   Operating system related :<link linkend="chdir_cmd" endterm="chdir_cmd.title">chdir</link>,
+   <link linkend="shell_cmd" endterm="shell_cmd.title">shell</link>, <link linkend="tty_cmd" endterm="tty_cmd.title">tty</link></entry></row>
+<row><entry>File related : <link linkend="output_cmd" endterm="output_cmd.title">output</link>, 
+   <link linkend="entities_cmd" endterm="entities_cmd.title">entities</link>, <link linkend="system_cmd" endterm="system_cmd.title">system</link>, 
+   <link linkend="public_cmd" endterm="public_cmd.title">public</link>
+</entry></row>
+<row><entry>
+   Disabled file commands: <link linkend="validate_cmd" endterm="validate_cmd.title">validate</link>, 
+   <link linkend="load_cmd" endterm="load_cmd.title">load</link>, <link linkend="save_cmd" endterm="save_cmd.title">save</link>, 
+   <link linkend="write_cmd" endterm="write_cmd.title">write</link>, <link
+   linkend="free_cmd" endterm="free_cmd.title">free</link>
+</entry></row>
+</tbody></tgroup></informaltable>
+</sect1>
+
+</chapter>
+

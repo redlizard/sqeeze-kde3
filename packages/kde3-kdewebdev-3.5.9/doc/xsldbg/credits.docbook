@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter id="credits">
+<title>Credits and License</title>
+
+<para>
+&xsldbg;
+</para>
+<para>
+Program copyright 2004 Keith Isdale <email>k_isdale tpg com au</email>
+</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+&underFDL;
+&underGPL;
+
+<sect1 id="thanks">
+<title>Thanks to </title>
+<para> The writers the libxml and libxsl.</para>
+<para><ulink url="http://members.nextra.at/johsixt/">Johannes Sixt</ulink> for helping with adding xsldbg support to KDbg</para></sect1>
+
+</chapter>

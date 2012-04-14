@@ -1,0 +1,751 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+
+<chapter id="new_parserdocs">
+<chapterinfo>
+<title>&kommander; New Parser</title>
+<authorgroup>
+<author>
+<firstname>Michal</firstname>
+<othername></othername>
+<surname>Rudolf</surname>
+<affiliation>
+<address><email>mrudolf@kdewebdev.org</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>Eric</firstname>
+<othername></othername>
+<surname>Laffoon</surname>
+<affiliation>
+<address><email>eric@kdewebdev.org</email></address>
+</affiliation>
+</author>
+</authorgroup>
+<copyright>
+<year>2005-2008</year>
+<holder>Michal Rudolf</holder>
+<holder>Eric Laffoon</holder>
+</copyright>
+<legalnotice>&FDLNotice;</legalnotice>
+</chapterinfo>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+<title>New Parser Documentation</title>
+<para>
+The new parser was introduced in &kommander; with version 1.2, released with 
+KDE 3.4. This document was originally released to show all the features of new parser. 
+As of &kommander; 1.3, released with KDE 3.5.9, the new parser is now the default, except for MainWindow applications created in &Qt; Designer. Because 
+the new parser is so much richer in ability, overcomes the limitations of nesting in the 
+old parser and adds so many new features we strongly recommend using it.
+</para>
+<para>
+&kommander; itself will not be described here. Please refer to other documents to 
+see what is &kommander; for, how to create dialogs and how to manipulate widgets
+on runtime.
+</para>
+<!--
+</chapter>
+
+
+
+<chapter id="two_parsers">
+<title>New parser vs. old parser</title>
+-->
+<sect1 id="two_parsers">
+<title>Old parser</title>
+<para>
+Here we compare the two parsers. While we advocate the new one for most purposes the old one is still
+supported and useful, particularly when working with other scripting languages.
+</para>
+
+<sect2 id="old_parser">
+<title>Old parser</title>
+<para>
+The old parser was in fact macro parser. Only strings beginning with &#064; were 
+recognized, locally parsed and expanded.
+<screen>
+@LineEdit1.setText(@ListBox.selection)
+</screen>
+</para>
+
+<para>
+All the underlying functionality (local variables, expressions, file manipulation) 
+had to be done in another scripting language, such as Bash. While the intent with &kommander; is to support
+all other scripting languages, and this is presently possible to some degree, there
+was a need for a fast, native scripting language that was assured to be portable. 
+The biggest problem with the old parser is that the &kommander; specials are evaluated <emphasis>before</emphasis> the code is passed to the scripting language, making them impossible to use in loops and conditions.</para>
+<para>
+The developers considered bash slow and not friendly to new users, and the old parser 
+had been initially bash calling DCOP. The paradox for &kommander; being language neutral
+resulted in a need to do more than just functions natively.
+</para>
+</sect2>
+
+<sect2 id="new_parser">
+<title>New parser</title>
+<para>
+The new parser is a full parser. It parses the whole script, not just functions. As we were interested 
+in GUI interaction, not the proliferation of scripting languages, we made compromises.
+As a result you should find &kommander;'s scripting to be capable for most basic tasks
+and natural and easy to use. There is also the <emphasis>Function Browser</emphasis>, which will help you 
+assemble statements. The Function Browser is intended to make &kommander; accessible to complete novice 
+programmers. It is similar to what you would find in KSpread to help you choose a function
+and fill in the parameters. 
+<tip><para>If you want enhanced functionality found in other languages you can include
+them in &kommander; script objects headed with a shebang. While in these scripts the Function
+Browser will help you insert references to widgets. Just remember when using this functionality 
+that the parser makes one pass for the old parser functions and one pass for your script. So if you 
+try to change something in a widget and read it in the middle of a script you may not get what you expect.</para></tip>
+<screen>
+#!/usr/bin/php
+</screen>
+</para>
+<para>The following feature list is from version 1.2</para>
+<itemizedlist>
+<listitem><para>local and global variables and associative arrays</para></listitem>
+<listitem><para>numerical expressions</para></listitem>
+<listitem><para>string manipulation</para></listitem>
+<listitem><para>various structure commands: if, while, for, foreach</para></listitem>
+<listitem><para>most functions from old parser</para></listitem>
+<listitem><para>direct widget manipulation</para></listitem>
+<listitem><para>many additional functions</para></listitem>
+<listitem><para>decent execution speed</para></listitem>
+<listitem><para>receive parameters from signals in script slots</para></listitem>
+</itemizedlist>
+<para>This list is from version 1.3</para>
+<itemizedlist>
+<listitem><para>pass parameters and receive them with script execute calls</para></listitem>
+<listitem><para>return a value from a script</para></listitem>
+<listitem><para>create widgets on the fly</para></listitem>
+<listitem><para>connect signals and slots on the fly</para></listitem>
+<listitem><para>use a variable alias for a widget name</para></listitem>
+<listitem><para>simple indexed array functions</para></listitem>
+<listitem><para>directly access a widgets slots</para></listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="invoking">
+<title>Invoking new parser</title>
+<para>
+To enable new parser, set <command>useInternalParser</command> property of the dialog to
+<command>true</command>. You can also enable new parser in a single script by putting
+<screen>
+#!kommander
+</screen>
+on the first line of the script. Also note if you are using another scripting language in 
+a script with a shebang that &kommander; automatically enables the old parser for interacting 
+with the dialog.
+<screen>
+#!/bin/bash
+echo @Self.item(0)
+# returns first parameter passed to script
+# echo $returnvalue passes back to calling script
+</screen>
+</para>
+</sect2>
+</sect1>
+<!--
+</chapter>
+<chapter id="features">
+-->
+<sect1 id="features">
+<title>New Parser Features</title>
+
+<sect2 id="types">
+<title>Types</title>
+<para>
+Each value is of one of three types: string, integer or double. Type conversion is 
+automatic and chooses most appropriate type (for example, if you add double to integer,
+result will be double). If one of the values is string, result will be string too.
+</para>
+<para>Places you can get into trouble here are getting a numerical value from a widget
+and trying to perform a mathematical function on it. Since &kommander; uses <command>+</command> 
+to concatonate two strings of text it can treat <command>LineEdit1.text + 2</command> as 
+<command>22</command> instead of <command>2</command>. See the conversion functions in 
+<link linkend="string_functions">String functions</link> to avoid problems.
+</para>
+</sect2>
+
+<sect2 id="expressions">
+<title>Expressions</title>
+<para>
+The following mathematical operators are supported: <command>+, -, *, mod, </command>. Standard brackets 
+are of course supported as well.
+</para>
+
+<para>
+All kinds of comparisons are supported: <command>&lt;</command>, <command>&gt;</command>, <command>&lt;=</command>, 
+<command>&gt;=</command>, <command>==</command>, <command>!=</command>. Instead of
+<command>!=</command> you can also use <command>&lt;&gt;</command>. 
+Also, logical operators <command>and</command>, <command>or</command>, <command>not</command> 
+are supported, as well as their C equivalents (<command>&amp;&amp;</command>, <command>||</command>, <command>!</command>).
+</para>
+
+<para>
+For strings you can use <command>+</command> operator for string concatenation.
+</para>
+
+<para>
+Some examples of valid expressions:
+<screen>
+2+3
+-5 * (2 - 13 mod 3)
+"This list has " + 12 + "items."
+</screen>
+</para>
+</sect2>
+
+<sect2 id="variables">
+<title>Variables</title>
+<para>
+Variables don't need to be declared. Once you use variable, it is considered declared. 
+<link linkend="types">Type</link> of a variable is recognized automatically and can be changed later.
+</para>
+
+<para>
+Associative arrays are supported as well. They map string keys onto values of any type. To declare
+such array, you can just add some element to it, for example: <command>A["Quanta"] = "Web editor"</command>.
+Arrays are also handled by <link linkend="foreach">foreach </link> command and 
+<link linkend="array_functions">array functions</link>.
+</para>
+
+<para>
+Local and global variables are supported. Global variables are marked by leading underscore.
+So, <command>myVar</command> is a local variable, but <command>_myVar</command> is global. The same applies
+to arrays.
+</para>
+
+<screen>
+a = 5
+b = 2 * 5 - (a + 1)
+c = "[Item " + b + "]"
+d["MyKey"] = "MyValue"
+d["MyKey2"] = 5
+</screen>
+
+<para>
+Using variables for widgets works much as you would expect. This is useful when looping widgets into a table.
+</para>
+
+<screen>
+for i=0 to 10 do
+  mycombo = "ComboTable"+i
+  createWidget(mycombo, "ComboBox", "Form1")
+end
+</screen>
+</sect2>
+
+<sect2 id="comments">
+<title>Comments</title>
+<para>
+You can use comments in &kommander; using the two traditional program language comment forms for line comments. For those users who are new to programming wondering <quote>what traditional form?</quote> see below. You can copy and paste the text below into a button or dialog initialization and see how comments behave in action.
+</para>
+<screen>
+// this is a comment for one line
+message_info("Hello World") //traditional first program
+// the above comment also ignored - the messagebox is not
+# this is also a comment
+message_info("This message will show")
+</screen>
+<para>
+Using the following multi-line comment will <emphasis>not</emphasis> work and will cause the rest of the widget execution to fail.
+</para>
+<screen>
+/*
+Hi, I was supposed to be a comment 
+None of the script after this will execute
+DON'T USE THIS TYPE OF COMMENT IN KOMMANDER!
+*/
+</screen>
+</sect2>
+
+<sect2 id="globals">
+<title>Built in Globals</title>
+<para>
+&kommander; has some built in globals you may find handy.
+</para>
+<itemizedlist>
+<listitem>
+<para><command>_ARGS</command> - the argument string passed to the dialog on opening 
+</para></listitem>
+<listitem>
+<para><command>_ARGCOUNT</command> - the count of arguments passed. These can be retrieved as <command>ARG1</command> to <command>ARGn</command> where n is the total number of args passed
+</para></listitem>
+<listitem>
+<para><command>_KDDIR</command> - the directory from which the dialog was run. &kommander; will default to your home directory, or a directory change if asked for it's current directory. This is useful for saving and reading files with the &kommander; file.
+</para></listitem>
+<listitem>
+<para><command>_NAME</command> - there is no reason to use this so don't
+</para></listitem>
+<listitem>
+<para><command>_PID</command> - the process id the current dialog is being run from - also available as just <emphasis>pid</emphasis> Avoid using this name for your variables!
+</para></listitem>
+<listitem>
+<para><command>_VERSION</command> - this is handy if you want to display the version of &kommander; that is running
+</para></listitem>
+</itemizedlist>
+</sect2>
+<sect2 id="passargs">
+<title>Passing arguments in &kommander;</title>
+<para>You can pass arguments via script parameters, signals and slots, command line parameters and DCOP. Let's look at scripts. Call your script like:
+<screen>result = ScriptObject1.execute("Hello World")
+debug(result)</screen>
+Inside your script you might have the following
+<screen>var = str_upper(Self.Item(0))
+return(var)</screen> 
+Now you will get a return in your <emphasis>Stderr</emphasis> message log of <emphasis>HELLO WORLD</emphasis>
+</para>
+<para>Receiving a signal connected to a script slot works the same way. <emphasis>Self.Item(0)</emphasis> is parameter one and so on. You can retrieve the count of arguments passed with <emphasis>ScriptObject.count</emphasis>.
+</para>
+<para>Command line parameters allow for named or unnamed arguments. Unnamed look like
+<screen>kmdr-executor myprog.kmdr 100 red</screen>
+Where you will find _ARG1 = 100 and _ARG2 = red. One quirk is passing strings with spaces as an argument means they need to be quoted. Using the dialog command complicates matters as the entire argument string must pass as one string, meaning in quotes.
+<screen>dialog("mydialog.kmdr", 100+" \"Hello World\"")</screen>
+This returns <emphasis>_ARG1 = 100</emphasis> and <emphasis>_ARG2 = Hello World</emphasis>. Without the escaped quotes you would have <emphasis>_ARG2 = Hello</emphasis> and <emphasis>_ARG3 = World</emphasis>. Using Named Parameters is rather nice and potentially less confusing.
+<screen>dialog("mydialog.kmdr", "xcount=100 xquote=Hello world")</screen>
+And now you access those with <emphasis>_xcount</emphasis> and <emphasis>_xquote</emphasis> global variables.
+</para>
+<para>
+DCOP can be complex, which is why we recommend using the tools we develop to enable creating DCOP for remote &kommander; dialogs with something like a function browser. Here is an example DCOP call issued from a dialog opened from a parent &kommander; window. Since it knows who its parent is it can send information back while it is open and freely access all its parent's functionality with the exception of slots. Of course that can be done internally with a script which can be called externally, so in practice there is no limit to what can be done.
+<screen>dcop("kmdr-executor-"+parentPid, "KommanderIf", "setText(QString,QString)", "StatusBar8", "Hello")</screen>
+Let's look at this piece by piece. First of all we add <emphasis>parentPid</emphasis> to "kmdr-executor-" as we make no assumption a &kommander; window was the caller. You could use this with Quanta or KSpread or whatever. Next we are addressing <emphasis>KommanderIf</emphasis>, which is a <emphasis>nice</emphasis> interface for end users which has been cleaned up. We hope eventually as KDE moves from DCOP to DBUS on KDE4 that more applications adopt a nice interface for integration. The next parameter, <emphasis>"setText(QString,QString)"</emphasis> is important because it <emphasis>prototypes</emphasis> the parameters allowed. Otherwise &kommander; could not validate the call. So without a definition of the DCOP call being used you will get an error. The remaining parameters are of course what is being passed. We recommend you look at applications with <command>kdcop</command> to see how this works and practice dcop calls from the shell to get your syntax right.
+</para>
+</sect2>
+</sect1>
+<!--
+</chapter>
+-->
+<sect1 id="parser_commands">
+
+<title>Commands</title>
+<para>
+Various structure commands are supported. They can be freely nested.
+</para>
+
+<para>
+There are also three special commands: <command>exit</command>, <command>break</command> and <command>continue</command>.
+The first one ends script execution and returns. The second exits current block (<link linkend="while">while</link>,
+<link linkend="for">for</link> or <link linkend="foreach">foreach</link> and the third exits just a current step, restarting
+from the beginning of the loop.
+</para>
+
+
+<sect2 id="if">
+<title>if</title>
+<para>
+Command <command>if</command> has following syntax:
+</para>
+ 
+<para>
+<command>if</command> <emphasis>condition</emphasis> <command>then</command>
+<emphasis>code</emphasis> <command>elseif</command> <emphasis>condition</emphasis> 
+<command>then</command> <emphasis>code</emphasis> <command>else</command>
+<emphasis>code</emphasis> <command>endif</command>
+</para>
+
+<para>
+Both <command>elseif</command> and <command>else</command> parts are optional. <emphasis>Condition</emphasis>
+is any expression. <emphasis>Code</emphasis> is executed if condition is true. That means:
+<itemizedlist>
+<listitem><para>non-zero for integers and double</para></listitem>
+<listitem><para>non-empty for strings</para></listitem>
+</itemizedlist>
+</para>
+
+<screen>
+if a * 2 &gt; 7 then
+   b = 1
+elseif a &lt; 0 then
+   b = 2
+elseif 
+   b = 0
+endif
+</screen>
+</sect2>
+
+<sect2 id="while">
+<title>while</title>
+<para>
+<command>while</command> <emphasis>condition</emphasis> <command>do</command>
+<emphasis>code</emphasis> <command>end</command> 
+</para>
+
+<para>
+<emphasis>Condition</emphasis> is recalculated each time loop is executed.
+<screen>
+while i &lt; 15 do
+  i = i + a
+end  
+</screen>
+</para>
+
+
+</sect2>
+
+<sect2 id="for">
+<title>for</title>
+<para>
+Command <command>for</command> has following syntax:
+</para>
+ 
+<para>
+<command>for</command> <emphasis>variable</emphasis> <command>=</command>
+<emphasis>start value</emphasis> <command>to</command> <emphasis>end value</emphasis> 
+<command>step</command> <emphasis>expression</emphasis> <command>do</command>
+<emphasis>code</emphasis> <command>end</command>
+</para>
+
+<para>
+Loop is executed starting from <emphasis>start value</emphasis> and it is ended when variable's value is 
+bigger then <emphasis>end value</emphasis>. If <command>step</command> part is specified, on each step
+variable's value is increased by given value instead of <command>1</command>.
+<screen>
+foreach i = 1 to 20 step 5 do
+  a = a + 2 * i
+end  
+</screen>
+</para>
+</sect2>
+
+<sect2 id="foreach">
+<title>foreach</title>
+<para>
+Command <command>foreach</command> has following syntax:
+</para>
+ 
+<para>
+<command>for</command> <emphasis>variable</emphasis> <command>in</command>
+<emphasis>array</emphasis> <command>do</command>
+<emphasis>code</emphasis> <command>end</command>
+</para>
+
+<para>
+Loop is executed for each key in given array. In each step variable is assigned the next key from the array.
+
+<screen>
+sum = 0
+foreach i in myArray do 
+  sum = sum + myArray[i]
+end  
+</screen>
+</para>
+</sect2>
+</sect1>
+<!--
+</chapter>
+-->
+<sect1 id="functions">
+
+<title>Functions</title>
+<para>
+Most old parser functions are supported by new parser. Also, some new functions were added.
+</para>
+
+
+<sect2 id="string_functions">
+<title>String functions</title>
+<para>String functions are the same as in old parser, the only difference is that their names
+are preceeded by <command>str_</command> instead of <command>@String.</command>
+
+<itemizedlist>
+<listitem>
+<para><command>str_length(<parameter>string</parameter>)</command> - returns length of <emphasis>string</emphasis>
+</para></listitem>
+<listitem>
+<para><command>str_contains(<parameter>string</parameter>, <parameter>text</parameter>)</command> - returns 1 if <emphasis>string</emphasis> contains <emphasis>text</emphasis>
+</para></listitem>
+<listitem>
+<para><command>str_find(<parameter>string</parameter>, <parameter>text</parameter>, <parameter>start</parameter>)</command> - returns position of the first occurrence of <emphasis>text</emphasis> in <emphasis>string</emphasis>; optional <emphasis>start</emphasis>
+ specifies start of the search
+</para></listitem>
+<listitem>
+<para><command>str_find(<parameter>string</parameter>, <parameter>text</parameter>, <parameter>start</parameter>)</command> - returns position of the last occurrence of <emphasis>text</emphasis> in <emphasis>string</emphasis>; optional <emphasis>start</emphasis>
+ specifies start of the search
+</para></listitem>
+<listitem>
+<para><command>str_left(<parameter>string</parameter>, <parameter>count</parameter>)</command> - returns first <emphasis>count</emphasis> characters of <emphasis>string</emphasis>
+</para></listitem>
+<listitem>
+<para><command>str_right(<parameter>string</parameter>, <parameter>count</parameter>)</command> - returns last <emphasis>count</emphasis> characters of <emphasis>string</emphasis>
+</para></listitem>
+<listitem>
+<para><command>str_right(<parameter>string</parameter>, <parameter>start</parameter>, <parameter>count</parameter>)</command> - returns substring of <emphasis>string</emphasis> starting from <emphasis>start</emphasis> and containing <emphasis>count</emphasis>
+characters (or everything to the end of the string if last parameter is not specified)
+</para></listitem>
+<listitem>
+<para><command>str_remove(<parameter>string</parameter>, <parameter>text</parameter>)</command> - returns <emphasis>string</emphasis> with all substrings equal to <emphasis>text</emphasis> removed
+</para></listitem>
+<listitem>
+<para><command>str_replace(<parameter>string</parameter>, <parameter>text</parameter>, <parameter>text2</parameter>)</command> - returns <emphasis>string</emphasis> with all substrings equal to <emphasis>text</emphasis> replaced with <emphasis>text2</emphasis>
+</para></listitem>
+<listitem>
+<para><command>str_lower(<parameter>string</parameter>)</command> - returns <emphasis>string</emphasis> converted to lowercase
+</para></listitem>
+<listitem>
+<para><command>str_upper(<parameter>string</parameter>)</command> - returns <emphasis>string</emphasis> converted to uppercase
+</para></listitem>
+<listitem>
+<para><command>str_section(<parameter>string</parameter>, <parameter>separator</parameter>, <parameter>start</parameter>,
+<parameter>end</parameter>)</command> - returns substring containing appropriate sections of <emphasis>string</emphasis> determined 
+by <emphasis>separator</emphasis>; if no <emphasis>end</emphasis> is given, single <emphasis>start</emphasis> section is returned
+</para></listitem>
+<listitem>
+<para><command>str_args(<parameter>string</parameter>, <parameter>...</parameter>)</command> - returns <emphasis>string</emphasis> with <command>%1</command>, <command>%2</command>, <command>%3</command> replaced with following parameters.
+</para></listitem>
+<listitem>
+<para><command>str_isnumber(<parameter>string</parameter>)</command> - returns 1 if <emphasis>string</emphasis> is a valid number
+</para></listitem>
+<listitem>
+<para><command>str_isempty(<parameter>string</parameter>)</command> - returns 1 if <emphasis>string</emphasis> is empty
+</para></listitem>
+<listitem>
+<para><command>str_toint(<parameter>string</parameter>, <parameter>default</parameter>)</command> - returns <emphasis>string</emphasis> converted to integer; if conversion is not possible, optional <emphasis>default</emphasis> value is returned
+</para></listitem>
+<listitem>
+<para><command>str_todouble(<parameter>string</parameter>, <parameter>default</parameter>)</command> - returns <emphasis>string</emphasis> converted to double; if conversion is not possible, optional <emphasis>default</emphasis> value is returned
+</para></listitem>
+</itemizedlist></para>
+</sect2>
+
+<sect2 id="kommander_functions">
+<title>&kommander; functions</title>
+<para>
+Most &kommander; functions are supported; some (such as <command>expr</command>)
+were obsoleted by new parser and are not available.
+</para>
+
+<itemizedlist>
+<listitem>
+<para><command>debug(<parameter>string</parameter>, <parameter>...</parameter>)</command> - writes all parameters on stderr
+</para></listitem>
+<listitem>
+<para><command>echo(<parameter>string</parameter>, <parameter>...</parameter>)</command> - writes all parameters on stdout
+</para></listitem>
+<listitem>
+<para><command>dcop(<parameter>string</parameter>, <parameter>...</parameter>)</command> - calls DCOP function</para>
+</listitem>
+<listitem>
+<para><command>exec(<parameter>string</parameter>, <parameter>shell</parameter>)</command> - executes external program
+(using optional <emphasis>shell</emphasis>); block the execution of the current dialog until the program passed as the parameter exits; returns output of that program
+</para></listitem>
+<listitem>
+<para><command>i18n(<parameter>string</parameter>)</command> - marks <emphasis>string</emphasis> for future translation
+</para></listitem>
+<listitem>
+<para><command>env(<parameter>string</parameter>)</command> - returns a value of environmental variable
+</para></listitem>
+<listitem>
+<para><command>readSetting(<parameter>key</parameter>, <parameter>default</parameter>)</command> - returns a value stored in config
+file with given <emphasis>key</emphasis>; if there is no such value <emphasis>default</emphasis> is returned
+</para></listitem>
+<listitem><para>
+<command>writeSetting(<parameter>key</parameter>, <parameter>value</parameter>)</command> - writes pair
+<emphasis>key</emphasis> and <emphasis>value</emphasis> in config file
+</para></listitem>
+</itemizedlist>
+<para>New in &kommander; 1.3</para>
+<itemizedlist>
+<listitem>
+<para><command>execBackground(<parameter>string</parameter>, <parameter>shell</parameter>)</command> - executes external program
+(using optional <emphasis>shell</emphasis>) in the background, without blocking the current dialog; contrary to the above <command>exec</command> function, it will not return the output of the program.
+</para></listitem>
+<listitem>
+<para><command>return(<parameter>value</parameter>)</command> - returns a value to the calling object (script, button...)
+</para></listitem>
+<listitem>
+<para><command>createWidget(<parameter>widgetname</parameter>, <parameter>widgettype</parameter>, <parameter>parent</parameter>)</command> - creates a new widget. You can then place it in a table or toolbox, for example and use <command>mywidget.show(true)</command> to make it visible.  If you are putting an new widget on the form you need to consider layout issues. &kommander; will not create layouts on the fly or edit pixel by pixel positioning (in most cases). This is confusing even in C++ development. We recommend you use a groupbox and do a layout in the dialog
+for best control.
+</para></listitem>
+<listitem>
+<para><command>connect(<parameter>sender</parameter>, <parameter>signal</parameter>, <parameter>receiver</parameter>, <parameter>slot</parameter>)</command> - connect a widget signal to a widget slot. See the connection dialog and select similar widgets for possibilities. If for instance a signal looks like looks like <command>execute(const QString&amp;)</command> that is exactly what must be in quotes there.
+</para></listitem>
+<listitem>
+<para><command>disconnect(<parameter>sender</parameter>, <parameter>signal</parameter>, <parameter>receiver</parameter>, <parameter>slot</parameter>)</command> - undo the connection as listed above. Again, exact syntax is essential.
+</para></listitem>
+<listitem>
+<para><command>widgetExists(<parameter>widgetname</parameter>)</command> - remember you can use a variable name to reference a widget now. Use this when accessing created widgets to insure they are there. Calling a non-existant widget obviously will throw an error.
+</para></listitem>
+</itemizedlist>
+</sect2>  
+
+<sect2 id="array_functions">
+<title>Array functions</title>
+<para>
+Most array functions are supported; some (such as <command>value</command>)
+were obsoleted by new parser and are not available. The only difference is that their names
+are preceeded by <command>array_</command> instead of <command>@Array.</command>
+</para>
+
+<warning><para>Due to parser limitation, name of array has to be specified as string now; for example
+<command>array_count("MyArray")</command>.</para></warning>
+
+<itemizedlist>
+<listitem>
+<para><command>array_clear(<parameter>array</parameter>)</command> - removes all elements from <emphasis>array</emphasis>
+</para></listitem>
+<listitem>
+<para><command>array_count(<parameter>array</parameter>)</command> - returns number of elements in <emphasis>array</emphasis>
+</para></listitem>
+<listitem>
+<para><command>array_keys(<parameter>array</parameter>)</command> - returns string containing EOL-separated keys of <emphasis>array</emphasis> - note that if you had imported a scalar (keys without values, see below for an example) into an array with &kommander; you would not be able to access it with <command>array_values("myarray")</command> as you might think (since it seems to only have values) but would instead need to use <command>array_keys("myarray")</command>. You might find a better choice for this is to use the new <emphasis>indexed arrays</emphasis> described below.
+</para></listitem>
+<listitem>
+<para><command>array_values(<parameter>array</parameter>)</command> - returns string containing EOL-separated values of <emphasis>array</emphasis>
+</para></listitem>
+<listitem>
+<para><command>array_tostring(<parameter>array</parameter>)</command> - returns string containing whole <emphasis>array</emphasis> 
+as EOL-separated pairs containing key and value separated with TAB character
+</para></listitem>
+<listitem>
+<para><command>array_fromstring(<parameter>array</parameter>, <parameter>string</parameter>)</command> - reads array from <emphasis>string</emphasis> (usually provided by <command>array_tostring</command> function)
+</para></listitem>
+<listitem>
+<para><command>array_remove(<parameter>array</parameter>, <parameter>key</parameter>)</command> - removes item with key
+<emphasis>key</emphasis> from <emphasis>array</emphasis>
+</para></listitem>
+</itemizedlist>
+<para>Here is an example for array manipulation:</para>
+<screen>
+array_fromstring("myArray", "1\tA\nsecond\tB\n3\tC")
+foreach key in myArray do
+  debug("myArray[" + key + "]= " + myArray[key])
+end
+</screen>
+<para>This will print out the following to the stderr. It is visible that there is no guarantee about the order of array elements, as well that the keys are strings, not numbers.</para>
+<screen>
+myArray[1]= A
+myArray[3]= C
+myArray[second]= B
+</screen>
+<para>Another example for keyless arrays:</para>
+<screen>
+array_fromstring("myArray", "A\nB\nC")
+foreach key in myArray do
+  debug(key)
+end
+debug("Array elements:\n" + array_keys("myArray"))
+</screen>
+<para>This results in:</para>
+<screen>
+A
+B
+C
+Array elements:
+A
+B
+C
+</screen>
+
+<para>New in &kommander; 1.3</para>
+<itemizedlist>
+<listitem>
+<para><command>array_indexedFromString(<parameter>array</parameter>, <parameter>string</parameter>, <parameter>separator</parameter>)</command> - this compensates for &kommander; not having indexed arrays. it creates an array with a zero based sequential index. Remember to use quotes on the array name and any strings not represented by a variable. The separator argument is optional and defaults to "\t" [TAB] which is used to separate fields reading and writing tables, arrays or detail widgets. <emphasis>Remember this array index does not enforce any rules on its self. It is just like you created it with a for loop, just more convenient.</emphasis>
+</para></listitem>
+<listitem>
+<para><command>array_indexedInsertElements(<parameter>array</parameter>, <parameter>key</parameter>, <parameter>string</parameter>, <parameter>separator</parameter>)</command> - this function is part of the indexed array suite and enables you to insert elements in your array  while maintaining an index that is sequential, contiguous and unique. Set the index key to start at and the text string and how it is separated. The elements will be added shifting all the index numbers after by the number added.
+</para></listitem>
+<listitem>
+<para><command>array_indexedRemoveElements(<parameter>array</parameter>, <parameter>key start</parameter>, <parameter>number</parameter>)</command> - this enables you to remove elements from an indexed array and avoid gaps in your index. Specify the key to start at and optionally how many to remove. The default is one. You will end up with a re-indexed array less the removed elements.
+</para></listitem>
+<listitem>
+<para><command>array_indexedToString(<parameter>array</parameter>, <parameter>separator</parameter>)</command> - this enables you to convert your indexed array back into a string, particularly useful for detail widgets. For instance if you are displaying a database query result in TreeWidget1 and it has six columns you can use <command>TreeWidget1.selection</command> to get the selected row. it will be separated by tabs and you could look at a the fifth element by using <command>str_section(TreeWidget1.selection, "\t", 4)</command> (remember it is zero based). That's nice for reading a value, but if you want to change it you can see you have a lot more work to do. After you split that string you have to reassemble with <command>val1+"\t"+val2...</command> Using indexed arrays you could edit that fifth element like so...
+<screen>
+idx = TreeWidget1.currentItem
+array_indexedFromString("z", TreeWidget1.selection)
+z[4] = "new value"
+TreeWidget1.removeItem(idx)
+TreeWidget1.insertItem(array_indexedToString("z"), idx)
+</screen>
+Note that only two short lines were added to accomplish this! This was very welcome for database use.
+</para></listitem>
+</itemizedlist>
+</sect2>  
+
+
+<sect2 id="file_functions">
+<title>File functions</title>
+<para>
+All file functions are supported, the only difference is that their names
+are preceeded by <command>file_</command> instead of <command>@File.</command>
+</para>
+
+<itemizedlist>
+<listitem>
+<para><command>file_read(<parameter>name</parameter>)</command> - returns content of file <emphasis>name</emphasis>
+</para></listitem>
+<listitem>
+<para><command>file_write(<parameter>name</parameter>, <parameter>...</parameter>)</command> - writes all arguments
+to file <emphasis>name</emphasis>
+</para></listitem>
+<listitem>
+<para><command>file_append(<parameter>name</parameter>, <parameter>...</parameter>)</command> - appends all arguments
+to file <emphasis>name</emphasis>
+</para></listitem>
+</itemizedlist>
+</sect2>  
+
+  
+<sect2 id="input_functions">
+<title>Input functions</title>
+<para>
+These functions show some dialog allowing user to enter some value. They are accessible in the old parser using <command>@Input.</command>. For most functions all parameters are optional, exception is
+<command>input_text</command> which requires 2 parameters and  <command>input_value</command> which requires 5 parameters.
+</para>
+
+<itemizedlist>
+<listitem>
+<para><command>input_color(<parameter>caption</parameter>, <parameter>default</parameter>)</command> - returns color in #RRGGBB format
+</para></listitem>
+<listitem>
+<para><command>input_text(<parameter>caption</parameter>, <parameter>label</parameter>, <parameter>default</parameter>)</command> - returns text entered by user
+</para></listitem>
+<listitem>
+<para><command>input_value(<parameter>caption</parameter>, <parameter>label</parameter>, <parameter>default</parameter>, 
+<parameter>min</parameter>, <parameter>max</parameter>, <parameter>step</parameter>)</command> - returns value entered by user
+</para></listitem>
+<listitem>
+<para><command>input_directory(<parameter>startdir</parameter>, <parameter>filter</parameter>, <parameter>caption</parameter>)</command> - returns directory selected by user
+</para></listitem>
+<listitem>
+<para><command>input_openfile(<parameter>caption</parameter>, <parameter>label</parameter>, <parameter>default</parameter>)</command> - returns existing file entered by user
+</para></listitem>
+<listitem>
+<para><command>input_savefile(<parameter>caption</parameter>, <parameter>label</parameter>, <parameter>default</parameter>)</command> - returns file entered by user (if file exists, confirmation will be required)
+</para></listitem>
+<listitem>
+<para><command>input_openfiles(<parameter>caption</parameter>, <parameter>label</parameter>, <parameter>default</parameter>)</command> - returns string of EOL-separated existing files entered by user
+</para></listitem>
+</itemizedlist>
+</sect2>  
+
+
+<sect2 id="message_functions">
+<title>Message functions</title>
+<para>
+These functions show some message for user or ask user to confirm some action. In the old parser use <command>@Message.</command> instead.
+</para>
+
+<itemizedlist>
+<listitem>
+<para><command>message_info(<parameter>text</parameter>, <parameter>caption</parameter>)</command> - shows information text
+</para></listitem>
+<listitem>
+<para><command>message_error(<parameter>text</parameter>, <parameter>caption</parameter>)</command> - shows error text
+</para></listitem>
+<listitem>
+<para><command>message_warning(<parameter>text</parameter>, <parameter>caption</parameter>, <parameter>button1</parameter>, 
+<parameter>button2</parameter>, <parameter>button3</parameter>)</command> - shows question with warning and up to three buttons; number 
+of chosen button is returned; if no button names are specified, <command>Yes</command> and <command>No</command> will be displayed
+</para></listitem>
+<listitem>
+<para><command>message_question(<parameter>text</parameter>, <parameter>caption</parameter>, <parameter>button1</parameter>, 
+<parameter>button2</parameter>, <parameter>button3</parameter>)</command> - shows question and up to three buttons; number 
+of chosen button is returned; if no button names are specified, <command>Yes</command> and <command>No</command> will be displayed
+</para></listitem>
+</itemizedlist>
+</sect2>  
+</sect1>
+</chapter>
+
+
+

@@ -1,0 +1,23 @@
+debian/icons/kimagemapeditor.xpm	/opt/kde3/share/pixmaps
+
+debian/tmp/opt/kde3/bin/kimagemapeditor
+debian/tmp/opt/kde3/lib/kde3/libkimagemapeditor.la
+debian/tmp/opt/kde3/lib/kde3/libkimagemapeditor.so
+debian/tmp/opt/kde3/share/applications/kde/kimagemapeditor.desktop
+debian/tmp/opt/kde3/share/apps/kimagemapeditor
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/kimagemapeditor.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/addpoint.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/arrow.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/circle2.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/circle.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/freehand.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/lower.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/polygon.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/raise.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/rectangle.png
+debian/tmp/opt/kde3/share/apps/kimagemapeditor/icons/hicolor/22x22/actions/removepoint.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/kimagemapeditor.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/kimagemapeditor.png
+debian/tmp/opt/kde3/share/icons/locolor/16x16/apps/kimagemapeditor.png
+debian/tmp/opt/kde3/share/icons/locolor/32x32/apps/kimagemapeditor.png
+debian/tmp/opt/kde3/share/services/kimagemapeditorpart.desktop

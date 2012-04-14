@@ -1,0 +1,20 @@
+# These are shipped with quanta's kommander scripts and do not need to be
+# executable.
+quanta-data: script-not-executable ./usr/share/apps/quanta/scripts/dwt.pl
+quanta-data: script-not-executable ./usr/share/apps/quanta/scripts/TemplateMagic.pl
+quanta-data: script-not-executable ./usr/share/apps/quanta/scripts/externalpreview.sh
+
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/picturewizard.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/docbook_table.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/listwizard.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/tidy.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/checkxml.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/xmlval.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/dwt.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/scriptinfo.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/xsltproc.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/tablewizard.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/gubed_install.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/htmlquickstart.kmdr
+quanta-data: executable-not-elf-or-script ./usr/share/apps/quanta/scripts/meinproc.kmdr
+

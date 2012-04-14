@@ -1,0 +1,11 @@
+--- kde.orig/configure.in.in
++++ kde.patched/configure.in.in
+@@ -13,6 +13,8 @@
+ AM_INIT_AUTOMAKE(@MODULENAME@, @VERSION@)
+ KDE_ENABLE_HIDDEN_VISIBILITY
+ 
++AM_MAINTAINER_MODE
++
+ quanta_datadir='${kde_datadir}/quanta'
+ package="quanta"
+ AC_SUBST(package)

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sect1 id="variables">
+<sect1info>
+<authorgroup>
+<author>
+<firstname>Keith</firstname>
+<surname>Isdale</surname>
+<affiliation>
+<address><email>k_isdale@tpg.com.au</email></address>
+</affiliation>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+</sect1info>
+
+<title>Working With Variables</title>
+
+<para>
+If the inspector dialog is not showing use the
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Show inspectors</guimenuitem>
+</menuchoice>
+menu item.
+</para>
+
+<para>
+Local and global variables are show in a tab on the inspector dialog. 
+The following example shows a XSLT code segment that declares a global and a local variable
+</para>
+<informalexample>
+<programlisting>
+    &lt;xsl:variable name="globalvariable" select="'foo'"/&gt;
+
+    &lt;xsl:template match="/"/&gt;
+	&lt;xsl:param name="localvariable" select="'bar'"/&gt;
+    &lt;/xsl:template match="/"/&gt;
+</programlisting>
+</informalexample>
+<para>
+Clicking with with mouse on a variable in the list will cause summary 
+information to be displayed in the bottom of the dialog. If a variable has
+ a select expression, for example
+</para>
+<informalexample>
+<programlisting>
+    &lt;xsl:variable name="changeable" select="'oldValue'" /&gt;
+</programlisting>
+</informalexample>
+<para>
+then a new XPath an be choosen by entering a new value
+ for <guilabel>Variable expression</guilabel> then clicking the <guibutton>Set expression</guibutton> button.</para>
+
+<screenshot>
+<screeninfo>The Variables tab</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="variables_window.png" format="PNG" />
+</imageobject>
+<textobject><phrase>The Variables Tab</phrase></textobject>
+<caption><para>The Variables Tab</para></caption>
+</mediaobject>
+</screenshot>
+
+<para>
+Clicking on a variable entry in the list shown will cause the cursor in
+the main window to move to the file and line number indicated.
+</para>
+</sect1>

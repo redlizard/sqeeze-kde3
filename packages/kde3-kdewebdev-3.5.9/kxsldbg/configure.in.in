@@ -1,0 +1,176 @@
+LIBXSLT_REQUIRED_VERSION="1.0.18"
+AC_SUBST(LIBXSLT_REQUIRED_VERSION)
+
+dnl
+dnl Math detection
+dnl
+
+AC_CHECK_HEADERS(sys/types.h unistd.h string.h)
+AC_CHECK_HEADERS(ieeefp.h nan.h math.h fp_class.h float.h ansidecl.h)
+AC_CHECK_HEADERS(time.h sys/stat.h stdarg.h)
+AC_CHECK_FUNCS(stat _stat)
+
+AC_CHECK_FUNC(isnan, , AC_CHECK_LIB(m, isnan,
+  [M_LIBS="-lm"; AC_DEFINE(HAVE_ISNAN)]))
+
+AC_CHECK_FUNC(isinf, , AC_CHECK_LIB(m, isinf,
+  [M_LIBS="-lm"; AC_DEFINE(HAVE_ISINF)]))
+
+AC_CHECK_FUNC(pow, , AC_CHECK_LIB(m, pow,
+  [M_LIBS="-lm"; AC_DEFINE(HAVE_POW)]))
+
+AC_CHECK_FUNC(floor, , AC_CHECK_LIB(m, pow,
+  [M_LIBS="-lm"; AC_DEFINE(HAVE_FLOOR)]))
+
+AC_CHECK_FUNC(fabs, , AC_CHECK_LIB(m, pow,
+  [M_LIBS="-lm"; AC_DEFINE(HAVE_FABS)]))
+AC_CHECK_FUNCS(gettimeofday)
+AC_CHECK_FUNCS(mktime localtime asctime)
+
+AH_TEMPLATE(USE_DOCS_MACRO)
+AH_TEMPLATE(TIMESTAMP)
+AH_TEMPLATE(WITH_DEBUG_HELP)
+AH_TEMPLATE(WITH_XSLDBG_DEBUG)
+AH_TEMPLATE(XSLDBG_BIN)
+AH_TEMPLATE(USE_XSLDBG_AS_THREAD)
+AH_TEMPLATE(HAVE_INCLUDE_FIX)
+
+AH_TEMPLATE(_GNU_SOURCE)
+AH_TEMPLATE(HAVE_ISINF)
+AH_TEMPLATE(HAVE_ISNAN)
+AH_TEMPLATE(HAVE_POW)
+AH_TEMPLATE(HAVE_FLOOR)
+AH_TEMPLATE(HAVE_FABS)
+AH_TEMPLATE(HAVE_QT)
+AH_TEMPLATE(HAVE_PTHREAD)
+AH_TEMPLATE(HAVE_READLINE)
+AH_TEMPLATE(HAVE_HISTORY)
+
+dnl
+dnl how are we to invoke xsldbg, or the other stylesheet processor (xsltproc?)
+dnl
+
+AC_DEFINE(XSLDBG_BIN, "xsldbg")
+
+
+dnl
+dnl Do we have we fix for included xml files
+dnl
+
+save_LDFLAGS="$LDFLAGS"
+save_CFLAGS="$CFLAGS"
+LDFLAGS="$LDFLAGS $LIBXML_LIBS"
+CFLAGS="$CFLAGS $LIBXML_CFLAGS"
+
+AC_CHECK_LIB(xml2, xmlSetEntityReferenceFunc,
+  [AC_DEFINE(HAVE_INCLUDE_FIX)],
+  [AC_MSG_RESULT(
+!!Warning!!  The version of libxml2 installed does not support
+  debugging of files included as entities. Test 10 will be skipped
+  as it will fail.   You will not be able to set breakpoints on external
+        entities. Try upgrading your libxml2.
+  See also --enable-includefix)
+  RUNTEST10="false"
+  ])
+  
+LDFLAGS="$save_LDFLAGS"
+CFLAGS="$save_CFLAGS" 
+
+AC_ARG_ENABLE([includefix], 
+              [  --enable-includefix     Do you want to force the use of include fix (no)], [do_include_fix=$enableval], [do_include_fix="no"])
+
+if test "x$do_include_fix" = "xyes"; then
+   AC_DEFINE(HAVE_INCLUDE_FIX)
+   AC_MSG_RESULT(Forcing the use if include fix)
+fi
+
+
+
+XSLDBG_MAJOR_VERSION=3
+XSLDBG_MINOR_VERSION=1
+XSLDBG_MICRO_VERSION=7
+XSLDBG_VERSION=$XSLDBG_MAJOR_VERSION.$XSLDBG_MINOR_VERSION.$XSLDBG_MICRO_VERSION
+XSLDBG_VERSION_INFO=`expr $XSLDBG_MAJOR_VERSION + \
+$XSLDBG_MINOR_VERSION`:$XSLDBG_MICRO_VERSION:$XSLDBG_MINOR_VERSION
+
+XSLDBG_VERSION_NUMBER=`expr $XSLDBG_MAJOR_VERSION \* 10000 + \
+$XSLDBG_MINOR_VERSION \* 100 + $XSLDBG_MICRO_VERSION`
+AC_SUBST(XSLDBG_MAJOR_VERSION)
+AC_SUBST(XSLDBG_MINOR_VERSION)
+AC_SUBST(XSLDBG_MICRO_VERSION)
+AC_SUBST(XSLDBG_VERSION)
+AC_SUBST(XSLDBG_VERSION_INFO)
+AC_SUBST(XSLDBG_VERSION_NUMBER)
+
+
+dnl
+dnl We must run xsldbg as a thread
+dnl
+AC_CHECK_HEADERS(pthread.h,
+    AC_DEFINE(HAVE_PTHREAD)
+    AVE_PTHREAD=1
+    SE_XSLDBG_AS_THREAD=1
+    AC_DEFINE(USE_XSLDBG_AS_THREAD),
+    AC_MSG_ERROR(PThread library not found)
+)
+XSLDBG_INCLUDEDIR="`pwd`/kxsldbg/kxsldbgpart"
+
+dnl Where is the xsldbg documentation stored
+dnl
+docs_macro=true
+AC_ARG_ENABLE(docs_macro,
+  [  --enable-docs-macro     Use a compiler macro to specify where documentation is (PREFIX/doc/xsldbg/)],
+  [docs_macro=$enableval], [docs_macro="yes"])
+
+if test "x$docs_macro" = "xyes"; then
+       AC_DEFINE(USE_DOCS_MACRO, 1)
+       if test "x$prefix" != "x"
+       then
+       AC_MSG_RESULT(xsldbg will look for installed documentation in ${prefix}/doc/xsldbg)
+       else
+       AC_MSG_RESULT(xsldbg will look for installed documentation in ${ac_default_prefix}doc/xsldbg/)
+       fi
+       DOCS_PATH="${prefix}/doc/xsldbg"
+AC_SUBST(DOCS_PATH)
+
+else
+       AC_MSG_RESULT(
+
+       !!Warning!! Using a environment variable for specifiying location of documentation.
+       On non risc os systems :  XSLDBG_DOCS_DIR
+       On risc os systems : XSLDebugDocs\$Dir
+       See --enable-docs-macro in ./configure
+       )
+fi
+
+
+dnl include extra debugging for xsldbg?
+AC_ARG_ENABLE([xsldbg-debugging], 
+              [  --enable-xsldbg-debugging     Do you want to enable lots of debugging messages in xsldbg (no)], [do_xsldbg_debugging=$enableval], [do_xsldbg_debugging="no"])
+
+if test "x$do_xsldbg_debugging" = "xyes"; then
+   AC_DEFINE(WITH_XSLDBG_DEBUG)
+   AC_MSG_RESULT(Enabling lots of debug messages in xsldbg)
+fi
+
+
+
+
+AC_MSG_RESULT(Using xsldbg as a part of kxsldbg)
+
+dnl
+dnl Check for readline and history
+dnl
+XSLDBG_EXTRA_LIBS=""
+dnl AC_CHECK_HEADERS(readline/readline.h, [
+dnl        AC_DEFINE(HAVE_READLINE)
+dnl        XSLDBG_EXTRA_LIBS="-lreadline -lncurses"])
+dnl AC_CHECK_HEADER(readline/history.h, [
+dnl         AC_DEFINE(HAVE_HISTORY)
+dnl        XSLDBG_EXTRA_LIBS="$XSLDBG_EXTRA_LIBS -lhistory"])
+
+AC_SUBST(XSLDBG_INCLUDEDIR)
+AC_SUBST(XSLDBG_EXTRA_LIBS)
+XSLDBG_CFLAGS="-I${XSLDBG_INCLUDEDIR} ${LIBXSLT_CFLAGS} "
+AC_SUBST(XSLDBG_CFLAGS)
+AC_SUBST(XSLDBG_PREFIX)

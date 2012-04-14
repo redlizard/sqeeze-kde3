@@ -1,0 +1,10 @@
+Document: xsldbg
+Title: Xsldbg Handbook
+Author: Keith Isdale <k_isdale@tpg.com.au>
+Abstract: xlsdbg is a XSLT scripts debbuger.
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/xsldbg/index.html
+Files: /usr/share/doc/kde/HTML/en/xsldbg/*.html
+

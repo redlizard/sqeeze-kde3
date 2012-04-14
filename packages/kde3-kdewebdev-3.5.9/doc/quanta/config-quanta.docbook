@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter id="quanta-configuring">
+  <chapterinfo>
+    <title>Configuring &quantaplus;</title>
+    <authorgroup>
+      <author>
+        <firstname>Andr&#225;s</firstname>
+        <surname>Mantia</surname>
+        <affiliation>
+          <address><email>amantia@kde.org</email></address>
+        </affiliation>
+      </author>
+      
+      <!-- TRANS:ROLES_OF_TRANSLATORS -->
+      
+    </authorgroup>
+  </chapterinfo>
+  
+  <title>Configuring &quantaplus;</title>
+  
+  <para>
+    This chapter describes how you can control the behavior of &quantaplus;.
+  </para>
+  <para>
+    The configuration dialogs are accessible from the <guilabel>Settings</guilabel> menu. Here we will discuss only few of them, the rest are not &quantaplus; specific and a short description can be found at <xref linkend="settings-menu-3-2" />.
+  </para>
+  
+  <sect1 id="configure-quanta">
+    <title>Configuring Quanta</title>
+    <para>The configuration dialog can be invoked by using <menuchoice><guimenu>Settings</guimenu><guimenu>Configure Quanta...</guimenu></menuchoice>. The dialog has several pages, we will discuss them one by one.
+    </para>
+<variablelist>
+<varlistentry>
+<term><guilabel>Tag Style</guilabel></term>
+<listitem><para>You can change the behavior of &quantaplus; related to tags, including autocompletion. The entries are:
+<itemizedlist>
+<listitem><para><guilabel>Tag case:</guilabel> the case of the automatically inserted tags. <guilabel>Default Case</guilabel> means the tags will be inserted as they are described in the <link linkend="tagxml-3-2">tagXML</link> files.</para></listitem>
+<listitem><para><guilabel>Attribute case:</guilabel> the case of the automatically inserted attributes. <guilabel>Default Case</guilabel> means the attributes will be inserted as they are described in the <link linkend="tagxml-3-2">tagXML</link> files.</para></listitem>
+<listitem><para><guilabel>Attribute quotation:</guilabel> how to quote attributes inserted by &quantaplus;.</para></listitem>
+<listitem><para><guilabel>Auto-close optional tags:</guilabel> if checked, tags for which closing tag is option will be automatically closed once the tag closing &gt; is entered.</para></listitem>
+<listitem><para><guilabel>Auto-close non-single and non-optional tags:</guilabel> same as before for the rest of tags, exception being the single tags.</para></listitem>
+<listitem><para><guilabel>Use auto-completion:</guilabel> turn on/off the autocompletion of tags, attributes, functions, etc.
+</para></listitem>
+<listitem><para><guilabel>Update opening/closing tag automatically:</guilabel> if enabled, whenever you change the opening tag, the corresponding closing tag will be changed as well and vice-versa.</para></listitem>
+<listitem><para><guilabel>Automatic replacement of the accented characters:</guilabel> if enabled the accented characters will be replaced with their codes as you type.</para></listitem>
+</itemizedlist>
+</para>
+</listitem>
+
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Environment</guilabel></term>
+<listitem><para>A page to control the environment and some default settings.
+</para>
+<itemizedlist>
+<listitem><para><guilabel>Mimetypes:</guilabel> mimetypes used to recognize different kind of files. Use the <guilabel>Reset to Default</guilabel> button to fill in the entries with the default settings.</para></listitem>
+<listitem><para><guilabel>Default character encoding:</guilabel> the encoding of the newly created files, or files loaded in other way than <menuchoice><guimenu>File</guimenu><guimenuitem>Open</guimenuitem></menuchoice> (where you can override the encoding). This setting is overridden by the same setting in the <guilabel>Project Properties</guilabel> if a project is loaded.</para></listitem>
+<listitem><para><guilabel>Default DTD:</guilabel> the DTD used for newly created files, or files whose DTD was not recognized. This setting is overridden by the same setting in the <guilabel>Project Properties</guilabel> if a project is loaded.</para></listitem>
+<listitem><para><guilabel>Create backups:</guilabel> &quantaplus; will create backup files periodically, so in case of power failure or crash, on the next startup the document can be restored from this backup. This is not the same as the backup created on file save. Even for not-yet saved documents there is a backup created.</para></listitem>
+<listitem><para><guilabel>Startup Options:</guilabel> self explanatory setting which control what will happen on startup.</para></listitem>
+
+</itemizedlist>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>User Interface</guilabel></term>
+<listitem><para>Here you can control the look and feel of &quantaplus;.
+</para>
+<para>The preview and the documentation can appear in the editor area or in a separate toolview, in which case it's possible to look at the documentation/preview and the source as well.</para>
+<para>It's also possible to configure the look of the toolview and document tabs.</para>
+<para><guilabel>Reset window layout to the default on the next startup</guilabel> is useful when you have messed up the user interface by changing the MDI modes and docking/undocking the toolviews. It is the same as the <command>--resetlayout</command> command line switch.</para>
+<para>This is the place also to control the behavior of the file trees.</para>
+<para>The <guilabel>Warning Messages</guilabel> section is useful to enable or disable the warning messages that can be dismissed by checking the <guilabel>Do not show again</guilabel> box in them.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>VPL View</guilabel></term>
+<listitem><para>The place to change the &VPL; behavior. You can enable the showing of an icon in place of scripts as well as configure the synchronization of the VPL and source view when the splitted mode is activated. See <xref linkend="view-menu-3-2"/> to learn how to activate the different modes.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Parser</guilabel></term>
+<listitem><para>Here you can fine-tune the parser and the structure tree, which is the visual representation of the parser nodes in the document.</para>
+<para>In the <guilabel>Clicks on Structure Tree Items</guilabel> it is possible to change the actions assigned to mouse buttons when you click on the structure tree.</para>
+<para>In the <guilabel>Structure Tree Look &amp; Feel</guilabel> it is possible to configure what kind of nodes are visible in the tree, how often is the tree updated while editing and on an update how deeply should be the structure tree automatically opened. Empty nodes are the white-space text nodes, while empty groups are groups for whom there was no element found in the current document.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Abbreviations</guilabel></term>
+<listitem><para>
+The place to define abbreviations (some kind of templates), that can be expanded to bigger text while editing. Abbreviations are organized in groups, each group can be valid for more than one &DTEP;. This means you can have a group valid for PHP where the "ifclause" abbreviation template means something else than in a group valid for JavaScript.</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+  </sect1>
+  
+<sect1 id="configure-actions">
+<title>Configuring Actions</title>
+<para>User defineable action creation and editing is described in <xref linkend="user-actions"/>.</para>
+</sect1>  
+
+<sect1 id="configure-plugins">
+  <title>Configuring Plugins</title>
+  <para>Here you can manage your plugins. Plugins are KPart applications written by third parties that can be reused in any KPart aware application, the most known being &konqueror;. When creating a plugin you must specify the:
+  <itemizedlist>
+  <listitem><para><guilabel>Name:</guilabel> the user visible name</para></listitem>
+  <listitem><para><guilabel>Output window:</guilabel> plugins can appear in a tab of the editor area or in a separate toolview at the bottom</para></listitem>
+  <listitem><para><guilabel>Location:</guilabel> the path to the plugin, if it is not located in the standard locations, like <filename class="directory">$<envar>KDEDIR</envar>/lib</filename> .</para></listitem>
+  <listitem><para><guilabel>File name:</guilabel> the relative path and the filename to the plugin's libtool file, like <filename class="libraryfile">kde3/libcervisiapart.la</filename></para></listitem>  
+  <listitem><para><guilabel>Input:</guilabel> the plugin will get this information on startup, so it can open the <guilabel>Current File</guilabel>, the folder of the current file (<guilabel>Current File Path</guilabel>) or the <guilabel>Project Folder</guilabel>.</para></listitem>  
+  <listitem><para><guilabel>Read only part:</guilabel> check if the plugin refuses to load. Read-only KParts usually refuse to load without this option checked.</para></listitem>  
+  <listitem><para><guilabel>Validate plugin:</guilabel> if checked, &quantaplus; will test if the entered information is correct or not. Uncheck if the plugin is not yet available, but you will install later, so you can close the dialog.</para></listitem>    
+</itemizedlist>
+  </para>
+  <para>See <xref linkend="plugins-menu-3-2" /> and <xref linkend="kparts-3-2" /> for information about using the plugins.</para>
+</sect1>  
+</chapter>

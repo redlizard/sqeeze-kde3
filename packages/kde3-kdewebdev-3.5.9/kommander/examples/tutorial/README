@@ -1,0 +1,123 @@
+Those example illustrate various Kommander features.
+
+In the future they would be used together with Kommander tutorials. 
+For now, only brief information is available
+
+
+* GLOBALS.KMDR
+Shows using global and setGlobal DCOP calls to provide global
+variables for script.
+Functions/concepts:
+- global
+- setGlobal
+- changeWidgetText
+
+* DCOP.KMDR
+Shows how to use both local and external DCOP calls to communicate 
+with external application (here: KMail). 
+Functions/concepts:
+- external DCOP
+- addListItem
+- enableWidget
+- @selectedWidgetText
+- @widgetText
+
+* SLOTS.KMDR
+Shows how to use connections/slots to handle events. Both population and
+standard slots are used.
+- slots/connections
+- populate()
+
+* SETTINGS.KMDR
+Shows how to use @readSetting and @writeSetting functions to write/restore
+widget content. Also, shows how to use populate() slot to initialize widget
+content.
+Functions/concepts:
+- @readSetting
+- @writeSetting
+- populate()
+- slots/connections
+- destroy
+
+* APPEND.KMDR
+Shows how you can append text to TextEdit, and how you can use it to display
+formatted text.
+Functions/concepts:
+- changeWidetText
+- RichTextEdit
+
+* CMDLINE.KMDR
+Shows how you can pass parameters to Kommander dialog via command-line.
+Also, shows how to change list content and button text.
+Functions/concepts:
+- command-line arguments
+- global
+- changeWidgetText
+- addListItem
+- clearList
+
+* INITIALIZE.KMDR
+Shows how you can use 'initialization' and 'destroy' scripts of main
+dialog to initialize and store some settings.
+Functions/concepts:
+- initialization
+- destroy
+- readSetting
+- writeSetting
+
+* ARRAY.KMDR
+Shows how to use assocative arrays to store and restore information
+associated with container items.
+Functions/concepts:
+- @Array functions
+
+* STRINGS.KMDR
+Shows how to use string-handling functions
+Functions/concepts:
+- @String functions
+- rich text editor
+
+* TREE.KMDR
+Shows how to use tree widget
+- tree widget
+- FileSelector
+- initialization
+- env
+
+* WIDGETS.KMDR
+Shows how to get widget information
+- type method
+- children method
+
+* STATUSBAR.KMDR
+Shows how to use statusbar widget
+- statusbar widget
+- populate
+
+* LOOP.KMDR
+Shows how to use internal loops
+- for
+- forEach
+
+* CALC.KMDR
+Shows how to use @expr function to do some calculations
+- expr
+- String.replace
+
+* PICVIEW.KMDR
+Shows how to use PixmapLabel widget using populate() function
+- PixmapLabel
+- populate
+- FileSelector
+- slots/connections
+
+* TABLE.KMDR
+Shows how to use Table widget
+- insertRow
+- insertColumn
+- currentRow
+- currentColumn
+- setColumnCaption
+- setRowCaption
+- removeRow
+- removeColumn

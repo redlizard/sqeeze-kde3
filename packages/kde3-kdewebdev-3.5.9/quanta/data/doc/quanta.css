@@ -1,0 +1,9 @@
+a:link { text-decoration: none; color: blue; }
+a:visited { text-decoration: none; color: blue; }
+a:active { text-decoration: none; color: blue; }
+a:hover { text-decoration: underline; color: blue; }
+..firstchar {color: #805417; font-weight: bold; font-size: larger}
+..minihdr {color: #008080; font-weight: bold; font-size: larger}
+td.blah { background-image:url(lines.png);}
+td.bla { background-color: #505050; }
+

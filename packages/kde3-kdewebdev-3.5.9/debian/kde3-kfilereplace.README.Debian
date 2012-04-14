@@ -1,0 +1,10 @@
+KFileReplace for Debian
+-----------------------
+
+KFileReplace is currently not available as a standalone application.
+Instead it is made available as a KPart (an embedded KDE component).
+
+An example of an application that uses the KFileReplace component is
+Quanta Plus, found in the package quanta.
+
+ -- Ben Burton <bab@debian.org>, Sat, 31 Jan 2004 12:08:48 +1100

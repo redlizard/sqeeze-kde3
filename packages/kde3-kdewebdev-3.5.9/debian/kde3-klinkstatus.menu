@@ -1,0 +1,8 @@
+?package(klinkstatus):\
+    needs="X11"\
+    hints="KDE"\
+   section="Applications/Web Development"\
+    title="KLinkStatus"\
+    longtitle="KLinkStatus (Link Checker)"\
+    icon="/opt/kde3/share/pixmaps/klinkstatus.xpm"\
+    command="/opt/kde3/bin/klinkstatus"

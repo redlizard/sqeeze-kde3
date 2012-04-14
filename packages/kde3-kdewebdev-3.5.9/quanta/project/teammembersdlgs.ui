@@ -1,0 +1,249 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>TeamMembersDlgS</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>TeamMembersDlgS</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>579</width>
+            <height>492</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Mailing list:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>mailingListEdit</cstring>
+            </property>
+        </widget>
+        <widget class="KLineEdit" row="0" column="1">
+            <property name="name">
+                <cstring>mailingListEdit</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>textLabel1_2</cstring>
+            </property>
+            <property name="text">
+                <string>You are:</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="1">
+            <property name="name">
+                <cstring>yourselfLabel</cstring>
+            </property>
+            <property name="font">
+                <font>
+                    <bold>1</bold>
+                </font>
+            </property>
+            <property name="text">
+                <string>Please select your identity from the member list.</string>
+            </property>
+            <property name="alignment">
+                <set>AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="QGroupBox" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>groupBox1</cstring>
+            </property>
+            <property name="title">
+                <string>&amp;Team Members</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="KPushButton" row="1" column="0">
+                    <property name="name">
+                        <cstring>addMemberButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Add...</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton" row="1" column="1">
+                    <property name="name">
+                        <cstring>editMemberButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Edit...</string>
+                    </property>
+                </widget>
+                <widget class="KListView" row="0" column="0" rowspan="1" colspan="5">
+                    <column>
+                        <property name="text">
+                            <string>Name</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Nickname</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Email</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Role</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Task</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Subproject</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>membersListView</cstring>
+                    </property>
+                </widget>
+                <widget class="KPushButton" row="1" column="2">
+                    <property name="name">
+                        <cstring>deleteMemberButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Delete</string>
+                    </property>
+                </widget>
+                <spacer row="1" column="3">
+                    <property name="name">
+                        <cstring>spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>100</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="KPushButton" row="1" column="4">
+                    <property name="name">
+                        <cstring>setToYourselfButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Set to &amp;Yourself</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>addMemberButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TeamMembersDlgS</receiver>
+        <slot>slotAddMember()</slot>
+    </connection>
+    <connection>
+        <sender>deleteMemberButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TeamMembersDlgS</receiver>
+        <slot>slotDeleteMember()</slot>
+    </connection>
+    <connection>
+        <sender>editMemberButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TeamMembersDlgS</receiver>
+        <slot>slotEditMember()</slot>
+    </connection>
+    <connection>
+        <sender>membersListView</sender>
+        <signal>doubleClicked(QListViewItem*)</signal>
+        <receiver>TeamMembersDlgS</receiver>
+        <slot>slotEditMember()</slot>
+    </connection>
+    <connection>
+        <sender>setToYourselfButton</sender>
+        <signal>clicked()</signal>
+        <receiver>TeamMembersDlgS</receiver>
+        <slot>slotSetToYourself()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>mailingListEdit</tabstop>
+    <tabstop>membersListView</tabstop>
+    <tabstop>addMemberButton</tabstop>
+    <tabstop>editMemberButton</tabstop>
+    <tabstop>deleteMemberButton</tabstop>
+    <tabstop>setToYourselfButton</tabstop>
+</tabstops>
+<slots>
+    <slot>slotAddMember()</slot>
+    <slot>slotEditMember()</slot>
+    <slot>slotDeleteMember()</slot>
+    <slot>slotSetToYourself()</slot>
+</slots>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>klistview.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+</includehints>
+</UI>

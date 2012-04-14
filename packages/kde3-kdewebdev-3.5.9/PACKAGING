@@ -1,0 +1,77 @@
+ Here there is some information about requirements for packagers. Please take
+care of the below compilation and runtime dependencies when packaging Quanta.
+
+Severity levels mean:
+- Required: Quanta will not run without it
+- Highly recommended: Quanta will run, but some important functionality will be missing
+- Recommended: some functionality will be missing
+- Optional: completes the functionalities in Quanta, making the development easier
+
+1. Compilation requirements:
+------------------------------
+- KDE 3.4 libraries or above
+    Severity: Required
+- cvsservice headers:
+    Description: cvsservice headers are used for the incorporated CVS actions. Without them
+                        the CVS submenu from the file context menus will be missing.
+    Severity: Highly recommended
+    Location: kdesdk/cervisia
+
+2. Runtime dependencies:
+---------------------------
+- Kommander:
+    Description: Required to run some of the dialogs in Quanta+
+    Severity: Highly recommended
+    Location: kdewebdev module
+
+- KFileReplace:
+    Description: Used to search and replace in external files
+    Severity: Highly recommended
+    Location: kdewebdev module
+
+- KLinkStatus:
+    Description: Used to check the validity of the links
+    Severity: Highly recommended
+    Location: kdewebdev module
+
+- HTML Tidy:
+    Description: Used to check the validity of the HTML documents
+    Severity: Highly recommended
+    Location: http://tidy.sf.net
+
+- Gubed:
+    Description: the PHP Debugger used by Quanta
+    Severity: Highly recommended
+    Location: http://gubed.sf.net (only the server is required)
+
+- cvsservice:
+    Description: used by the *integrated* CVS commands.
+    Severity: Highly Recommended
+    Localtion: kdesdk module
+
+- Cervisia:
+    Description: Used to perform CVS operations
+    Severity: Recommended
+    Location: kdesdk module
+
+- KXSLDbg:
+    Description: XSLT debugger
+    Severity: Recommended
+    Location: kdewebdev module
+
+- KImageMapEditor:
+    Description: Helps creation and editing of HTML image-maps
+    Severity: Optional
+    Location: kdewebdev module
+
+- Kompare:
+    Description: compares two files by content. Used when a file was modified outside of Quanta.
+    Severity: Recommended
+    Localtion: kdesdk module
+
+- GPG (OpenPGP):
+    Description: digital signature tool. Makes possible the signature verification of downloaded
+		 resources.
+    Severity: Highly Recommended
+    Location: http://www.gnupg.de		 
+    

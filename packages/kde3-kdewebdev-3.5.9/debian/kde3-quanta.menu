@@ -1,0 +1,8 @@
+?package(quanta):\
+    needs="X11"\
+    hints="KDE"\
+    section="Applications/Web Development"\
+    title="Quanta Plus"\
+    longtitle="Quanta Plus (Web Development Environment)"\
+    icon="/opt/kde3/share/pixmaps/quanta.xpm"\
+    command="/opt/kde3/bin/quanta"

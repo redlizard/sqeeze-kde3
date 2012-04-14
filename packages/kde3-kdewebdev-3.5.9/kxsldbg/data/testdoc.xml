@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+     File : testdoc.xml     
+     Author: Keith Isdale <k_isdale@tpg.com.au>
+     Description: xml data for stylesheet for testing
+     Copyright Reserved Under GPL     
+-->
+<!-- This file does not require translation -->
+<!-- NO TRANSLATION -->
+
+<!DOCTYPE simple SYSTEM "testdoc.dtd">
+
+<simple>
+ &mytext;
+ &anotherDoc;
+ &anotherDoc;
+ &anotherDoc;
+ &anotherDoc2;
+ &anotherDoc3;
+ &anotherDoc4;
+</simple>
+
+
+<!-- initialization code for xemacs -->
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE helpbook [
+    <!ENTITY nbsp " ">
+    <!ENTITY introduction-chapter SYSTEM "introduction.docbook">
+    <!ENTITY usage-chapter SYSTEM "usage.docbook">
+    <!ENTITY commands-chapter SYSTEM "commands.docbook">
+    <!ENTITY xsldbg "xsldbg"> 
+]>
+
+
+<!--
+    Note: xsldbg's index.docbook file is not used because it is much slower to process.
+    Translations required are passed as command line arguments to xsldbg
+ -->
+
+
+
+<helpbook>
+&introduction-chapter;
+&usage-chapter;
+&commands-chapter;
+</helpbook>

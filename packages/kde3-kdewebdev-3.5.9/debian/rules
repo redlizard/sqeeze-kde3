@@ -1,0 +1,32 @@
+#! /usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_INSTALL_CHANGELOGS_kde3-kfilereplace    := kfilereplace/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-kimagemapeditor := kimagemapeditor/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-klinkstatus     := klinkstatus/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-kommander       := kommander/ChangeLog
+DEB_INSTALL_CHANGELOGS_kde3-quanta          := quanta/ChangeLog
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-kdewebdev-dbg
+
+PACKAGES_WITH_LIBS := kde3-kommander
+
+DEB_DH_MAKESHLIBS_ARGS_kde3-kommander := -V'kde3-kommander (>= 4:3.5.8-1)'
+
+#shlibs_ver = 4:3.5.0-1
+#$(foreach p,$(PACKAGES_WITH_LIBS),$(eval DEB_DH_MAKESHLIBS_ARGS_$(p) := -V'$(p) (>= $(shlibs_ver))'))
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+
+

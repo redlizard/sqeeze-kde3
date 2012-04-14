@@ -1,0 +1,6 @@
+<!ELEMENT simple (#PCDATA)>
+<!ENTITY mytext "Some text">
+<!ENTITY anotherDoc SYSTEM "test1.xml" >
+<!ENTITY anotherDoc2 SYSTEM "test2.xml" >
+<!ENTITY anotherDoc3 SYSTEM "test3.xml" >
+<!ENTITY anotherDoc4 SYSTEM "test4.xml" >

@@ -1,0 +1,2619 @@
+#DPATCHLEVEL=0
+--- kfilereplace/kfilereplacepart.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kfilereplace/kfilereplacepart.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -24,6 +24,7 @@
+ Comment[is]=Tól til að leita að texta og skipta út
+ Comment[it]=Uno strumento per la ricerca e la sostituzione in sequenza
+ Comment[ja]=バッチ検索および置換ツール
++Comment[ka]=ჯგუფური ძიების და ჩანაცვლების ხელსაწყო
+ Comment[lt]=Paketinis paieškos ir keitimo įrankis
+ Comment[ms]=Gugusan alatan cari dan ganti
+ Comment[nds]=En Söök- un Utwesselwarktüüch för Stapelbedrief
+@@ -72,6 +73,7 @@
+ GenericName[is]=Texta útskiptingarsýn
+ GenericName[it]=Vista di sostituzione file
+ GenericName[ja]=ファイル置換ビュー
++GenericName[ka]=ფაილის ჩანაცვლების ხედი
+ GenericName[lt]=Keitimų bylose vaizdas
+ GenericName[ms]=Paparan Ganti Fail
+ GenericName[nds]=Datei-Utwesselansicht
+--- kfilereplace/kfilereplace.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kfilereplace/kfilereplace.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -33,6 +33,7 @@
+ GenericName[is]=Tól til að leita að texta og skipta út
+ GenericName[it]=Strumento di ricerca e sostituzione
+ GenericName[ja]=検索および置換ツール
++GenericName[ka]=ძიების და ჩანაცვლების ხელსაწყო
+ GenericName[lt]=Paieškos ir keitimo įrankis
+ GenericName[ms]=Alatan Cari & Ganti
+ GenericName[nds]=Söök- un Utwesselwarktüüch
+--- quanta/components/debugger/interfaces/quantadebugger.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ quanta/components/debugger/interfaces/quantadebugger.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -21,6 +21,7 @@
+ Comment[is]=Quanta aflúsunaríforrit
+ Comment[it]=Un plugin debugger di Quanta
+ Comment[ja]=Quanta デバッガプラグイン
++Comment[ka]=Quanta-ს განბზიკვის მოდული
+ Comment[lt]=Quanta derintuvės priedas
+ Comment[ms]=Plug masuk penyah-ralat Quanta
+ Comment[nds]=En Fehlersöök-Komponent för Quanta
+--- quanta/components/debugger/gubed/quantadebuggergubed.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ quanta/components/debugger/gubed/quantadebuggergubed.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -22,6 +22,7 @@
+ Comment[is]=Quanta aflúsunaríforrit til samskipta við Gubed PHP aflúsarann. Sjá http://gubed.sf.net
+ Comment[it]=Plugin debugger di Quanta per interagire con il debugger PHP Gubed, vedi http://gubed.sf.net
+ Comment[ja]=Gubed PHP デバッガと対話する Quanta デバッガ。詳細は http://gubed.sf.net
++Comment[ka]=Quanta-ს განბზიკვის მოდული Gubed PHP განბზიკავთან დასაკავშირებლად, იხილეთ http://gubed.sf.net
+ Comment[lt]=Quanta derintuvės priedas skirtas dirbti su Gubed PHP derintuve, žr.http://gubed.sf.net
+ Comment[ms]=Plug masuk penyah-ralat Quanta untuk berinteraksi dengan penyah-ralat Gubed PHP, lihat http://gubed.sf.net
+ Comment[nds]=Fehlersöök-Moduul för Quanta för't Tosamenwarken mit den PHP-Fehlersöker "Gubed", kiek op http://gubed.sf.net
+--- quanta/components/debugger/dbgp/quantadebuggerdbgp.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ quanta/components/debugger/dbgp/quantadebuggerdbgp.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -21,6 +21,7 @@
+ Comment[is]=DBGp aflúsunaríforrit. Sjá http://xdebug.org
+ Comment[it]=Plugin di degub DBGp, vedi http://xdebug.org
+ Comment[ja]=DBGp デバッガ プラグイン。http://xdebug.org をご覧ください。
++Comment[ka]=DBGp განბზიკვის მოდული, იხილეთ http://xdebug.org
+ Comment[lt]=DBGp derintuvės priedas, žr. http://xdebug.org
+ Comment[ms]=Plugin nyahpepijat DBGp, lihat http://xdebug.org
+ Comment[nds]=Fehlersöök-Moduul för't DBGp, kiek bi http://xdebug.org
+--- quanta/src/quanta.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ quanta/src/quanta.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -30,6 +30,7 @@
+ GenericName[is]=Vefþróunarumhverfi
+ GenericName[it]=Ambiente per lo sviluppo Web
+ GenericName[ja]=ウェブ開発環境
++GenericName[ka]=ვებ დამუშავების გარსი
+ GenericName[lt]=Žiniatinklio kūrimo aplinka
+ GenericName[ms]=Persekitaran Pembangunan Web
+ GenericName[nds]=Ümgeven för Nett-Entwickeln
+@@ -70,6 +71,7 @@
+ Comment[is]=Vefþróunarumhverfi
+ Comment[it]=Ambiente per lo sviluppo Web
+ Comment[ja]=ウェブ開発環境
++Comment[ka]=ვებ დამუშავების გარსი
+ Comment[lt]=Žiniatinklio kūrimo aplinka
+ Comment[ms]=Persekitaran Pembangunan Web
+ Comment[nds]=Ümgeven för Nett-Entwickeln
+--- quanta/src/x-webprj.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ quanta/src/x-webprj.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -19,6 +19,7 @@
+ Comment[is]=Quanta verkefnið
+ Comment[it]=Progetto Quanta
+ Comment[ja]=Quanta プロジェクト
++Comment[ka]=Quanta პროექტი
+ Comment[lt]=Quanta projektas
+ Comment[ms]=Projek Quanta
+ Comment[nds]=Quanta-Projekt
+--- quanta/src/quanta_be.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ quanta/src/quanta_be.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -24,6 +24,7 @@
+ GenericName[is]=Vefþróunarumhverfi
+ GenericName[it]=Ambiente per lo sviluppo Web
+ GenericName[ja]=ウェブ開発環境
++GenericName[ka]=ვებ დამუშავების გარსი
+ GenericName[lt]=Žiniatinklio kūrimo aplinka
+ GenericName[ms]=Persekitaran Pembangunan Web
+ GenericName[nds]=Ümgeven för Nett-Entwickeln
+@@ -69,6 +70,7 @@
+ Comment[is]=Vefþróunarumhverfi
+ Comment[it]=Ambiente per lo sviluppo Web
+ Comment[ja]=ウェブ開発環境
++Comment[ka]=ვებ დამუშავების გარსი
+ Comment[lt]=Žiniatinklio kūrimo aplinka
+ Comment[ms]=Persekitaran Pembangunan Web
+ Comment[nds]=Ümgeven för Nett-Entwickeln
+--- quanta/data/config/quanta_preview_config.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ quanta/data/config/quanta_preview_config.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -21,6 +21,7 @@
+ Name[is]=Stilla KHTML vafrahluti
+ Name[it]=Parte browser configura KHTML
+ Name[ja]=KHTML ブラウザ部を設定
++Name[ka]=KHTML ბროუზერის ნაწილის კონფიგურაცია
+ Name[lt]=Konfigūruoti KHTML naršyklės dalį
+ Name[ms]=Selaraskan Bahagian Pelayar KHTML
+ Name[nds]=KHTML-Browserkomponent inrichten
+--- README	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ README	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -12,7 +12,7 @@
+ KFileReplace: powerful search and replace in multiple files
+ KXSLDbg: XSL debugger
+ KImageMapEditor: image map editor
+-KLinkStatus: link validity checker
++KLinkStatus: link checker
+ 
+ Be sure to read the README files in each application's directory!
+ Packagers, please read the PACKAGING file for detailed information about compilation
+--- kxsldbg/kxsldbgpart/qxsldbgdoc.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/qxsldbgdoc.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -25,10 +25,11 @@
+   ~QXsldbgDoc();
+ 
+   void enableBreakPoint(uint lineNumber, bool state);
+-  void addBreakPoint(uint lineNumber);
++  void addBreakPoint(uint lineNumber, bool enabled);
+   void deleteBreakPoint(uint lineNumber);
+-  void selectBreakPoint(uint lineNumberbool);
++  void selectBreakPoint(uint lineNumberbool, bool reachedBreakPoint);
+   bool isSelected(uint lineNumberbool);
++  void clearMarks(bool allMarkTypes);
+ 
+   KURL url() const;
+   KTextEditor::Document *kateDoc() {return kDoc;};
+--- kxsldbg/kxsldbgpart/xsldbgbreakpoints.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgbreakpoints.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,6 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgBreakpoints</class>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QWidget">
+     <property name="name">
+         <cstring>XsldbgBreakpoints</cstring>
+--- kxsldbg/kxsldbgpart/libqtnotfier/xsldbgevent.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libqtnotfier/xsldbgevent.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -522,7 +522,7 @@
+ 
+ 
+ 
+-	if (item->comp && item->comp->inst && item->comp->inst->doc){
++	if (item->computed && item->comp && item->comp->inst && item->comp->inst->doc){
+ 	  fileName = XsldbgDebuggerBase::fromUTF8FileName(item->comp->inst->doc->URL);
+ 	  lineNumber= xmlGetLineNo(item->comp->inst);
+ 	}
+@@ -566,7 +566,7 @@
+ 	  name = (XsldbgDebuggerBase::fromUTF8FileName(item->nameURI)).append(":");
+ 	name.append(XsldbgDebuggerBase::fromUTF8(item->name));
+ 
+-	if (item->comp && item->comp->inst){
++	if (item->computed && item->comp && item->comp->inst){
+ 	  varXmlNode = item->comp->inst;
+ 
+ 	  /* try to find out what template this variable belongs to */
+--- kxsldbg/kxsldbgpart/xsldbgsources.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgsources.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,6 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgSources</class>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QWidget">
+     <property name="name">
+         <cstring>XsldbgSources</cstring>
+--- kxsldbg/kxsldbgpart/xsldbgconfigimpl.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgconfigimpl.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -366,7 +366,7 @@
+ 
+ void XsldbgConfigImpl::slotChooseSourceFile()
+ {
+-	KURL url = KFileDialog::getOpenURL(QString::null, "*.xsl; *.XSL; *.Xsl \n *.*", this,
++	KURL url = KFileDialog::getOpenURL(QString::null, "*.xsl; *.XSL; *.Xsl ; *.xslt; *.XSLT; *.Xslt \n *.*", this,
+ 		i18n("Choose XSL Source to Debug"));
+ 	QString fileName = url.prettyURL();
+ 
+--- kxsldbg/kxsldbgpart/xsldbgwalkspeed.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgwalkspeed.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,5 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgWalkSpeed</class>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QDialog">
+     <property name="name">
+         <cstring>XsldbgWalkSpeed</cstring>
+--- kxsldbg/kxsldbgpart/kxsldbg_part.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/kxsldbg_part.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -62,6 +62,7 @@
+ #include "xsldbgoutputview.h"
+ #include "xsldbgconfigimpl.h"
+ #include <kdebug.h>
++#include "xsldbgdebugger.h"
+ 
+ typedef KParts::GenericFactory<KXsldbgPart> KXsldbgPartFactory;
+ K_EXPORT_COMPONENT_FACTORY( libkxsldbgpart, KXsldbgPartFactory )
+@@ -95,6 +96,7 @@
+ 
+     QSplitter *splitter = new QSplitter(QSplitter::Vertical, frame);
+     mainView = new QWidgetStack(splitter);
++    mainView->setMinimumHeight(400); //## TODO don't use a magic number 
+     outputview = new XsldbgOutputView(splitter);
+     setWidget(frame);
+     docDictionary.setAutoDelete(true);
+@@ -648,15 +650,26 @@
+ 
+   openURL(fileName);
+ 
++  QXsldbgDoc *docPtr;
++  QDictIterator<QXsldbgDoc> it(docDictionary);
++  while (it.current()){
++      docPtr = it.current();
++      // cause all Execution and BreakpointReached marks to be cleared
++      docPtr->clearMarks(false);
++      ++it;
++  }
+  /* Did we stop at a breakpoint if so move the marker */
+-  if (breakpoint && currentDoc) {
+-      currentDoc->selectBreakPoint(lineNumber);
++  if (currentDoc) {
++      currentDoc->selectBreakPoint(lineNumber -1, breakpoint);
+       QByteArray params;
+       QDataStream stream(params, IO_WriteOnly);
+       stream << currentFileName << lineNumber;
+       emitDCOPSignal("debuggerPositionChanged(QString,int)", params);
++  }else {
++    qWarning("Unable to retrieve document from internal cache");
+   }
+ 
++
+   /* Move cursor and update status bar */
+   if (currentDoc && currentDoc->kateView()){
+       KTextEditor::ViewCursorInterface *cursorIf = KTextEditor::viewCursorInterface(currentDoc->kateView());   
+@@ -801,12 +814,9 @@
+     /* Go through all documents and remove all breakpoints */
+     QDictIterator<QXsldbgDoc> it(docDictionary);
+     QXsldbgDoc *docPtr;
+-    KTextEditor::MarkInterface *markIf = 0L;
+     while (it.current()){
+       docPtr = it.current();
+-      markIf = KTextEditor::markInterface(docPtr->kateDoc());   
+-      if (markIf)
+-	   markIf->clearMarks();
++      docPtr->clearMarks(true);
+      ++it;
+     }
+   }else{
+@@ -820,10 +830,16 @@
+ 	fetchURL(fileName);
+     }
+ */
++    fileName =  XsldbgDebugger::fixLocalPaths(fileName);
++    KURL temp(fileName);
++    fileName = temp.prettyURL();
+     fetchURL(fileName);
+     QXsldbgDoc *docPtr = docDictionary[fileName] ;
+-   if (docPtr)
+-	docPtr->enableBreakPoint(--lineNumber, enabled);
++   if (docPtr){
++        docPtr->addBreakPoint(lineNumber - 1, enabled);
++   }else {
++       qWarning("Unable to get doc %s from docDictionary", fileName.local8Bit().data());
++   }
+   }
+ }
+ 
+--- kxsldbg/kxsldbgpart/libxsldbg/xsldbgmsg.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/xsldbgmsg.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -3,8 +3,8 @@
+                           xsldbgmsg.h  -  description
+                              -------------------
+     begin                : Thu Dec 20 2001
+-    copyright            : (C) 2001 by keith
+-    email                : keith@linux
++    copyright            : (C) 2001 by Keith Isdale
++    email                : k_isdale@tpg.com.au
+  ***************************************************************************/
+ 
+ /***************************************************************************
+--- kxsldbg/kxsldbgpart/libxsldbg/files.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/files.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1320,8 +1320,10 @@
+       if (!xmlStrnCmp(uri, "file:///", 8))
+ 	tempName = uri + 8;
+ #else
+-      if (!xmlStrnCmp(uri, "file://", 7))
+-	tempName = uri + 6; /* we need the leading '/'*/
++      if (!xmlStrnCmp(uri, "file:/", 6))
++	tempName = uri + 5; //  we need the leading '/'*/
++        while (tempName[0] == '/' && tempName[1] == '/' ) 
++            tempName++;
+ #endif
+     }
+ 
+@@ -1377,8 +1379,7 @@
+ void
+ xsldbgUpdateFileDetails(xmlNodePtr node)
+ {
+-    if ((node != NULL) && (node->doc != NULL)
+-        && (node->doc->URL != NULL)) {
++    if ((node != NULL) && (node->doc != NULL)){
+         if (currentUrl != NULL)
+             xmlFree(currentUrl);
+         currentUrl =  filesGetBaseUri(node);
+--- kxsldbg/kxsldbgpart/libxsldbg/breakpoint_cmds.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/breakpoint_cmds.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -22,6 +22,7 @@
+ #include "utils.h"
+ #include <libxml/valid.h>       /* needed for xmlSplitQName2 */
+ #include <libxml/xpathInternals.h> /* needed for xmlNSLookup */
++#include <libxml/uri.h>    /* needed for  xmlURIEscapeStr */
+ #include "xsldbgthread.h"       /* for getThreadStatus() */
+ #include "xsldbgmsg.h"
+ #include "options.h"
+@@ -378,8 +379,16 @@
+                     /* try to guess whether we are looking for source or data 
+                      * break point
+                      */
++                    xmlChar *escapedURI;
+                     trimString(opts[0]);
+-                    url = xmlStrdup(opts[0]);
++                    url = filesExpandName(opts[0]);
++                    if (url){
++                        escapedURI = xmlURIEscapeStr(url, (const xmlChar*)"/");
++                        if (escapedURI){
++                            xmlFree(url);
++                            url = escapedURI;
++                        }
++                    }
+                     if (url) {
+ 			if (!orphanedBreakPoint){
+ 			    if (filesIsSourceFile(url)) {
+@@ -685,7 +694,16 @@
+ 		    !sscanf((char *) opts[1], "%ld", &lineNo)) {
+                     xsldbgGenericErrorFunc(i18n("Error: Unable to parse %1 as a line number.\n").arg((char*)opts[1]));
+                 } else {
+-                    url = xmlStrdup(opts[0]);
++                    xmlChar *escapedURI;
++                    trimString(opts[0]);
++                    url = filesExpandName(opts[0]);
++                    if (url){
++                        escapedURI = xmlURIEscapeStr(url, (const xmlChar*)"/");
++                        if (escapedURI){
++                            xmlFree(url);
++                            url = escapedURI;
++                        }
++                    }
+                     if (url) {
+                         if (filesIsSourceFile(url)) {
+                             if (validateSource(&url, &lineNo))
+@@ -802,7 +820,16 @@
+ 		    !sscanf((char *) opts[1], "%ld", &lineNo)) {
+                     xsldbgGenericErrorFunc(i18n("Error: Unable to parse %1 as a line number.\n").arg((char*)opts[1]));
+                 } else {
+-                    url = xmlStrdup(opts[0]);
++                    xmlChar *escapedURI;
++                    trimString(opts[0]);
++                    url = filesExpandName(opts[0]);
++                    if (url){
++                        escapedURI = xmlURIEscapeStr(url, (const xmlChar*)"/");
++                        if (escapedURI){
++                            xmlFree(url);
++                            url = escapedURI;
++                        }
++                    }
+                     if (url) {
+                         if (strstr((char *) url, ".xsl")) {
+                             if (validateSource(&url, NULL))
+--- kxsldbg/kxsldbgpart/libxsldbg/files_unix.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/files_unix.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -140,7 +140,6 @@
+ filesExpandName(const xmlChar * fileName)
+ {
+     xmlChar *result = NULL;
+-    const char pathSepString[2] = { PATHCHAR, '\0' };
+ 
+     if (fileName) {
+         if ((fileName[0] == '~') && getenv("HOME")) {
+@@ -149,14 +148,16 @@
+                                       strlen(getenv("HOME")) + 1);
+             if (result) {
+                 xmlStrCpy(result, getenv("HOME"));
+-                xmlStrCat(result, pathSepString);
+                 xmlStrCat(result, &fileName[1]);
+             } else {
+                 xsldbgGenericErrorFunc(i18n("Error: Out of memory.\n"));
+             }
+-        } else {
+-            /* don't make any changes, return a copy only */
+-            result = xmlStrdup(fileName);
++        } else if (!xmlStrnCmp(fileName, "file:/", 6)){
++            /* return a copy of the corrected path */
++            result = filesURItoFileName(fileName);
++        }else{
++            /* return a copy only */
++             result = xmlStrdup(fileName);
+         }
+     }
+     return result;
+--- kxsldbg/kxsldbgpart/libxsldbg/xsldbgthread.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/xsldbgthread.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -3,8 +3,8 @@
+                           xsldbgthread.c  -  basic thread support
+                              -------------------
+     begin                : Thu Dec 20 2001
+-    copyright            : (C) 2001 by keith
+-    email                : keith@linux
++    copyright            : (C) 2001 by Keith Isdale
++    email                : k_isdale@tpg.com.au
+  ***************************************************************************/
+ 
+ /***************************************************************************
+--- kxsldbg/kxsldbgpart/libxsldbg/xsldbgnotifier.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/xsldbgnotifier.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -3,8 +3,8 @@
+                           xsldbgnotifier.h  -  description
+                              -------------------
+     begin                : Thu Dec 20 2001
+-    copyright            : (C) 2001 by keith
+-    email                : keith@linux
++    copyright            : (C) 2001 by Keith Isdale
++    email                : k_isdale@tpg.com.au
+  ***************************************************************************/
+ 
+ /***************************************************************************
+--- kxsldbg/kxsldbgpart/libxsldbg/options.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/options.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -26,6 +26,7 @@
+ #include <kglobal.h>
+ #include <kstandarddirs.h> 
+ #include <qfileinfo.h>
++#include <qstringlist.h>
+ 
+ 
+ /* keep track of our integer/boolean options */
+@@ -94,10 +95,17 @@
+     QStringList search;
+ 
+     // assemble the local search paths
+-    const QStringList localDoc = KGlobal::dirs()->resourceDirs("html");
++    QStringList localDoc = KGlobal::dirs()->resourceDirs("html");
++    // also look in each of the KDEDIR paths
++    QString kdeDirs = getenv("KDEDIRS");
++    QStringList kdeDirsList = QStringList::split(":", kdeDirs);
++    if (!kdeDirs.isEmpty() && !kdeDirsList.isEmpty()){
++	for (QStringList::iterator it = kdeDirsList.begin(); it != kdeDirsList.end(); it++)
++          localDoc.append((*it) + "/share/doc/HTML/") ;
++    }
+ 
+     // look up the different languages
+-    for (int id=localDoc.count()-1; id >= 0; --id)
++    for (uint id=0; id < localDoc.count(); id++)
+     {
+         QStringList langs = KGlobal::locale()->languageList();
+         langs.append( "en" );
+--- kxsldbg/kxsldbgpart/libxsldbg/help_unix.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/help_unix.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -59,7 +59,6 @@
+     
+ 
+     char buff[500], helpParam[100];
+-    const QString appDataDir = KGlobal::dirs()->findResourceDir("data", "xsldbg/xsldbghelp.xsl");
+ 
+     const char *docsDirPath =
+         (const char *) optionsGetStringOption(OPTIONS_DOCS_PATH);
+@@ -78,15 +77,14 @@
+                  " --param helpErrorTxt:%c'%s'%c "
+                  " --output %s "
+                  " --cd %s "
+-                 "%sxsldbg%cxsldbghelp.xsl %s%cxsldbghelp.xml",
++                 "xsldbghelp.xsl xsldbghelp.xml",
+                  XSLDBG_BIN, helpParam,
+                  QUOTECHAR, VERSION, QUOTECHAR,
+                  QUOTECHAR, xsldbgVerTxt.utf8().data(), QUOTECHAR,
+                  QUOTECHAR, helpDocVerTxt.utf8().data(), QUOTECHAR,
+                  QUOTECHAR, helpErrorTxt.utf8().data(), QUOTECHAR,
+                  filesTempFileName(0),
+-		 docsDirPath,
+-                 appDataDir.utf8().data(), PATHCHAR, docsDirPath, PATHCHAR);
++		 docsDirPath);
+         if (xslDbgShellExecute((xmlChar *) buff, optionsGetIntOption(OPTIONS_VERBOSE)) == 0) {
+             if (docsDirPath)
+                 xsldbgGenericErrorFunc(i18n("Error: Unable to display help. Help files not found in %1 or xsldbg not found in path.\n").arg(docsDirPath)); /* FIXME: Comments not correct - the command is that invoked  */
+--- kxsldbg/kxsldbgpart/libxsldbg/cmds.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/cmds.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -3,8 +3,8 @@
+                           cmds.h  -  A list of valid commands ID's for xsldbg
+                              -------------------
+     begin                : Thu Dec 27 2001
+-    copyright            : (C) 2001 by keith
+-    email                : keith@linux
++    copyright            : (C) 2001 by Keith Isdale
++    email                : k_isdale@tpg.com.au
+  ***************************************************************************/
+ 
+ /***************************************************************************
+--- kxsldbg/kxsldbgpart/libxsldbg/debugXSL.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/debugXSL.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1060,6 +1060,9 @@
+     xmlDocPtr tempDoc = NULL;
+     xmlNodePtr tempNode = NULL;
+     rootCopy = root;
++    static const xmlChar *lastTemplate = NULL;
++    xmlBufferPtr buffer = xmlBufferCreate();
++    static char mybuff[6] = " 0\n\x0";
+ 
+     if (ctxt && templ && root && !xsldbgReachedFirstTemplate)
+ 	xsldbgReachedFirstTemplate = true;
+@@ -1100,10 +1103,31 @@
+ 	  /* we only want messages if we are not
+ 	    in the process of completing the next command */
+ 	  if (terminalIO == NULL) {
+-            if (root->match)
++
++            if (root->match){
+                 xsldbgGenericErrorFunc(i18n("\nReached template: \"%1\" mode: \"%2\"\n").arg(xsldbgText(root->match)).arg(xsldbgText(modeTemp)));
+-            else
++		if (lastTemplate != root->match && buffer){
++		    xmlBufferCCat(buffer, "\nreached matched template:");
++		    xmlBufferCat(buffer, root->match); 
++		    xmlBufferCCat(buffer, mybuff);
++		    xsltCopyTextString(ctxt, ctxt->insert,xmlBufferContent(buffer),0);
++		    mybuff[1]++;
++		    lastTemplate = root->match;
++		}
++            }else{
+                 xsldbgGenericErrorFunc(i18n("\nReached template: \"%1\" mode: \"%2\"\n").arg(xsldbgText(nameTemp)).arg(xsldbgText(modeTemp)));
++		if (lastTemplate != root->name && buffer){
++		    xmlBufferCCat(buffer, "\nreached named template:");
++		    xmlBufferCat(buffer,root->match); 
++		    xmlBufferCCat(buffer,mybuff);
++		    xsltCopyTextString(ctxt, ctxt->insert,xmlBufferContent(buffer),0);
++		    mybuff[1]++;
++		    lastTemplate = root->name;
++		}
++		
++	    }
++	    if (buffer)
++	       xmlBufferFree(buffer);
+ 	  } else {
+             if ((xslDebugStatus == DEBUG_TRACE) ||
+                 (xslDebugStatus == DEBUG_WALK)) {
+--- kxsldbg/kxsldbgpart/libxsldbg/xsldbgthread.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/xsldbgthread.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -3,8 +3,8 @@
+                           xsldbgthread.h  -  description
+                              -------------------
+     begin                : Thu Dec 20 2001
+-    copyright            : (C) 2001 by keith
+-    email                : keith@linux
++    copyright            : (C) 2001 by Keith Isdale
++    email                : k_isdale@tpg.com.au
+  ***************************************************************************/
+ 
+ /***************************************************************************
+--- kxsldbg/kxsldbgpart/libxsldbg/xsldbg.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/xsldbg.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -909,11 +909,7 @@
+ 
+     if (optionsGetIntOption(OPTIONS_TIMING))
+         startTimer();
+-#if LIBXML_VERSION >= 2006000
+-    style = xmlSAXParseFile(&mySAXhdlr, (const char *) optionsGetStringOption(OPTIONS_SOURCE_FILE_NAME), 0);
+-#else
+     style = xmlParseFile((const char *) optionsGetStringOption(OPTIONS_SOURCE_FILE_NAME));
+-#endif
+     if (optionsGetIntOption(OPTIONS_TIMING))
+         endTimer(i18n("Parsing stylesheet %1").arg((const char*)optionsGetStringOption(OPTIONS_SOURCE_FILE_NAME)));
+     if (style == NULL) {
+@@ -961,8 +957,13 @@
+ xsldbgLoadXmlData(void)
+ {
+     xmlDocPtr doc = NULL;
++    xmlSAXHandler mySAXHandler;
+     doc = NULL;
+ 
++    xmlSAXVersion(&mySAXHandler,2);
++    oldGetEntity = mySAXHandler.getEntity;
++    mySAXHandler.getEntity = xsldbgGetEntity;
++
+     if (optionsGetIntOption(OPTIONS_TIMING))
+         startTimer();
+ #ifdef LIBXML_HTML_ENABLED
+@@ -979,8 +980,9 @@
+                             NULL);
+     else
+ #endif
+-#if LIBXML_VERSION >= 2006000
+-        doc = xmlSAXParseFile(&xmlDefaultSAXHandler,
++
++#if LIBXML_VERSION >= 20600
++        doc = xmlSAXParseFile(&mySAXHandler,
+ 			     (char *) optionsGetStringOption(OPTIONS_DATA_FILE_NAME), 0);
+ #else
+         doc = xmlParseFile((char *) optionsGetStringOption(OPTIONS_DATA_FILE_NAME));
+@@ -1184,7 +1186,6 @@
+ 
+     if (!initialized) {
+         sscanf(xmlParserVersion, "%d", &xmlVer);
+-        xsldbgHasLineNumberFix = (xmlVer >= 20508);
+         if (!debugInit()) {
+ #ifdef WITH_XSLDBG_DEBUG_PROCESS
+             xsltGenericError(xsltGenericErrorContext,
+@@ -1221,7 +1222,7 @@
+         /* set up the parser */
+         xmlInitParser();
+ #if 0
+-#if LIBXML_VERSION >= 2006000
++#if LIBXML_VERSION >= 20600
+      xmlSetGenericErrorFunc(NULL,  NULL);
+      xmlSetStructuredErrorFunc(NULL , (xmlStructuredErrorFunc)xsldbgStructErrorHandler);
+ #else
+@@ -1238,10 +1239,6 @@
+ 	 */
+ 	xmlDefaultSAXHandlerInit();
+ 	xmlDefaultSAXHandler.cdataBlock = NULL;
+-if (xsldbgHasLineNumberFix){
+-	oldGetEntity = xmlDefaultSAXHandler.getEntity;
+-	xmlDefaultSAXHandler.getEntity = xsldbgGetEntity;
+-}
+ 
+         if (getThreadStatus() != XSLDBG_MSG_THREAD_NOTUSED) {
+             initialized = 1;
+--- kxsldbg/kxsldbgpart/libxsldbg/file_cmds.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/file_cmds.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -229,7 +229,7 @@
+ {
+   int result = 0;
+   if (arg && (xmlStrLen(arg) > 0)){
+-     if (!xmlStrnCmp(arg, "file://", 7)){
++     if (!xmlStrnCmp(arg, "file:/", 6)){
+       /* convert URI to local file name */
+       xmlChar *outputFileName = filesURItoFileName(arg);
+       if (outputFileName){
+--- kxsldbg/kxsldbgpart/libxsldbg/nodeview_cmds.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/nodeview_cmds.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -527,47 +527,51 @@
+             }
+         } else {
+             /* list local variables */
+-            if (styleCtxt->varsBase) {
+-                xsltStackElemPtr item =
+-                    styleCtxt->varsTab[styleCtxt->varsBase];
+-                if (getThreadStatus() == XSLDBG_MSG_THREAD_RUN) {
+-                    notifyListStart(XSLDBG_MSG_LOCALVAR_CHANGED);
+-                    while (item) {
+-                        notifyListQueue(item);
+-                        item = item->next;
+-                    }
+-                    notifyListSend();
++            if (styleCtxt->varsNr &&  styleCtxt->varsTab) {
++		if (getThreadStatus() == XSLDBG_MSG_THREAD_RUN) {
++		    notifyListStart(XSLDBG_MSG_LOCALVAR_CHANGED);
++		    for (int i = styleCtxt->varsNr; i > styleCtxt->varsBase; i--) {
++			    xsltStackElemPtr item = styleCtxt->varsTab[i-1];
++			    while (item) {
++				    notifyListQueue(item);
++				    item = item->next;
++			    }
++		    }
++		    notifyListSend();
+                 } else {
+ 		    xmlChar * fullQualifiedName = nodeViewBuffer;
+-                    while (item) {		      
+-                        if (item->name) {			     
+-			    if (item->nameURI == NULL){
+-				snprintf((char*)fullQualifiedName, sizeof(nodeViewBuffer), "$%s",
+-					 item->name);
+-			    }else{
++		    for (int i = styleCtxt->varsNr; i > styleCtxt->varsBase; i--) {
++			    xsltStackElemPtr item = styleCtxt->varsTab[i-1];
++			    while (item) {		      
++				    if (item->name) {			     
++					    if (item->nameURI == NULL){
++						    snprintf((char*)fullQualifiedName, sizeof(nodeViewBuffer), "$%s",
++								    item->name);
++					    }else{
+ 
+-				snprintf((char*)fullQualifiedName, sizeof(nodeViewBuffer), "$%s:%s",
+-					 item->nameURI, item->name);
++						    snprintf((char*)fullQualifiedName, sizeof(nodeViewBuffer), "$%s:%s",
++								    item->nameURI, item->name);
++					    }
++					    if (printVariableValue == 0){
++						    xsldbgGenericErrorFunc(i18n(" Local %1").arg(xsldbgText(fullQualifiedName)));
++					    }else{
++						    if (item->computed == 1){
++							    xsldbgGenericErrorFunc(i18n(" Local "));
++							    printXPathObject(item->value, fullQualifiedName);
++						    }else if (item->tree){
++							    xsldbgGenericErrorFunc(i18n(" Local = %1\n").arg(xsldbgText(fullQualifiedName)));
++							    xslDbgCatToFile(item->tree, stderr);
++						    }else if (item->select){
++							    xsldbgGenericErrorFunc(i18n(" Local = %1\n%2").arg(xsldbgText(fullQualifiedName)).arg(xsldbgText(item->select)));
++						    }else{
++							    /* can't find a value give only a variable name and an error */
++							    xsldbgGenericErrorFunc(i18n(" Local = %1\n%2").arg(xsldbgText(fullQualifiedName)).arg(i18n("Warning: No value assigned to variable.\n")));
++						    }
++					    }
++					    xsltGenericError(xsltGenericErrorContext, "\n\032\032\n");
++				    }
++				    item = item->next;
+ 			    }
+-			    if (printVariableValue == 0){
+-				xsldbgGenericErrorFunc(i18n(" Local %1").arg(xsldbgText(fullQualifiedName)));
+-			    }else{
+-			        if (item->computed == 1){
+-			           xsldbgGenericErrorFunc(i18n(" Local "));
+-			           printXPathObject(item->value, fullQualifiedName);
+-			        }else if (item->tree){
+-			           xsldbgGenericErrorFunc(i18n(" Local = %1\n").arg(xsldbgText(fullQualifiedName)));
+-			           xslDbgCatToFile(item->tree, stderr);
+-			        }else if (item->select){
+-				  xsldbgGenericErrorFunc(i18n(" Local = %1\n%2").arg(xsldbgText(fullQualifiedName)).arg(xsldbgText(item->select)));
+-				}else{
+-				  /* can't find a value give only a variable name and an error */
+-				  xsldbgGenericErrorFunc(i18n(" Local = %1\n%2").arg(xsldbgText(fullQualifiedName)).arg(i18n("Warning: No value assigned to variable.\n")));
+-				}
+-			    }
+-			    xsltGenericError(xsltGenericErrorContext, "\n\032\032\n");
+-			}
+-                        item = item->next;
+ 		    }
+                 }
+                 result = 1;
+--- kxsldbg/kxsldbgpart/libxsldbg/variable_cmds.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/libxsldbg/variable_cmds.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -60,19 +60,20 @@
+             if (name && selectExpr) {
+                 xsltStackElemPtr def = NULL;
+ 
+-                if (styleCtxt->varsBase) {
++                if (styleCtxt->varsNr && styleCtxt->varsTab) {
+                     /* try finding varaible in stack */
+-                    xsltStackElemPtr item =
+-                        styleCtxt->varsTab[styleCtxt->varsBase];
+-                    while (item) {
+-                        if ((xmlStrCmp(name, item->name) == 0) &&
+-                            (item->nameURI == NULL
+-                             || (xmlStrCmp(name, item->nameURI) == 0))) {
+-                            def = item;
+-                            break;
+-                        }
+-                        item = item->next;
+-                    }
++		    for (int i = styleCtxt->varsNr; i > styleCtxt->varsBase; i--) {
++			    xsltStackElemPtr item = styleCtxt->varsTab[i-1];
++			    while (item) {
++				    if ((xmlStrCmp(name, item->name) == 0) &&
++						    (item->nameURI == NULL
++						     || (xmlStrCmp(name, item->nameURI) == 0))) {
++					    def = item;
++					    break;
++				    }
++				    item = item->next;
++			    }
++		    }
+                 }
+ 
+                 if (def == NULL)
+@@ -81,9 +82,9 @@
+                                        name, nameURI);
+                 if (def != NULL) {
+                     if (def->select) {
+-                        /* we've found the variable so change it */
+-                        xmlFree((void*)def->select);
+-                        def->select = selectExpr;
++			def->select = xmlDictLookup(styleCtxt->dict, selectExpr, -1);
++			def->tree = NULL;  /* maybe a memory leak, but play it safe */
++			def->computed = 1;
+                         if (def->comp->comp)
+                             xmlXPathFreeCompExpr(def->comp->comp);
+                         def->comp->comp = xmlXPathCompile(def->select);
+--- kxsldbg/kxsldbgpart/qxsldbgdoc.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/qxsldbgdoc.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -11,7 +11,9 @@
+ #include <qfile.h>
+ #include <qdir.h>
+ #include <qtextstream.h>
++#include <qptrlist.h>
+ 
++
+ QXsldbgDoc::QXsldbgDoc(QWidget *parent, KURL url)
+     : QObject(0L, "QXsldbgDoc"), kDoc(0L),kView(0L), locked(false) 
+ {
+@@ -78,16 +80,26 @@
+ 
+     KTextEditor::MarkInterface *markIf = KTextEditor::markInterface(kDoc);
+     if (markIf){
+-	if (state)
+-	    markIf->setMark(lineNumber, KTextEditor::MarkInterface::markType02);
+-	else
+-	    markIf->setMark(lineNumber, KTextEditor::MarkInterface::markType03);
+-    }   
++	if (state){
++	    markIf->setMark(lineNumber, KTextEditor::MarkInterface::BreakpointActive);
++        }else{
++	    markIf->removeMark(lineNumber, KTextEditor::MarkInterface::BreakpointDisabled);
++        }
++    }
+ }
+ 
+-void QXsldbgDoc::addBreakPoint(uint lineNumber)
++void QXsldbgDoc::addBreakPoint(uint lineNumber, bool enabled)
+ {
+-    enableBreakPoint(lineNumber, true);    
++    if (locked)
++	return;
++
++    KTextEditor::MarkInterface *markIf = KTextEditor::markInterface(kDoc);
++    if (markIf){
++        if (enabled)
++            markIf->setMark(lineNumber, KTextEditor::MarkInterface::BreakpointActive);
++        else
++            markIf->setMark(lineNumber, KTextEditor::MarkInterface::BreakpointDisabled);
++    }
+ }
+ 
+ void QXsldbgDoc::deleteBreakPoint(uint lineNumber)
+@@ -101,16 +113,43 @@
+ }
+ 
+ 
+-void QXsldbgDoc::selectBreakPoint(uint lineNumber)
++void QXsldbgDoc::clearMarks(bool allMarkTypes)
+ {
+     if (locked)
+ 	return;
+ 
+     KTextEditor::MarkInterface *markIf = KTextEditor::markInterface(kDoc);
+-    if (markIf)
+-	markIf->setMark(lineNumber, KTextEditor::MarkInterface::markType05);
++    if (markIf){
++        if (!allMarkTypes){
++            QPtrList<KTextEditor::Mark> marks = markIf->marks();
++            while ( marks.current()) {
++                markIf->removeMark(marks.current()->line, KTextEditor::MarkInterface::Execution);
++                markIf->removeMark(marks.current()->line, KTextEditor::MarkInterface::BreakpointReached);
++                marks.next();
++            }
++        }else {
++            markIf->clearMarks();
++        }
++    }
++
+ }
+ 
++void QXsldbgDoc::selectBreakPoint(uint lineNumber, bool reachedBreakPoint)
++{
++    if (locked)
++	return;
++
++    clearMarks(false);
++    KTextEditor::MarkInterface *markIf = KTextEditor::markInterface(kDoc);
++    if (markIf){
++        if (reachedBreakPoint){
++            //markIf->setMark(lineNumber, KTextEditor::MarkInterface::BreakpointReached);
++        }else{
++            markIf->setMark(lineNumber, KTextEditor::MarkInterface::Execution);
++        }
++    }
++}
++
+ void QXsldbgDoc::lockDoc()
+ {
+     locked = true;
+--- kxsldbg/kxsldbgpart/xsldbgcallstack.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgcallstack.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,6 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgCallStack</class>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QWidget">
+     <property name="name">
+         <cstring>XsldbgCallStack</cstring>
+--- kxsldbg/kxsldbgpart/xsldbgconfig.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgconfig.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,6 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgConfig</class>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QWidget">
+     <property name="name">
+         <cstring>XsldbgConfig</cstring>
+--- kxsldbg/kxsldbgpart/xsldbgmsgdialog.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgmsgdialog.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,7 +1,7 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgMsgDialog</class>
+ <comment>Used with QT3 or greater</comment>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QDialog">
+     <property name="name">
+         <cstring>XsldbgMsgDialog</cstring>
+--- kxsldbg/kxsldbgpart/xsldbglocalvariables.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbglocalvariables.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,6 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgLocalVariables</class>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QWidget">
+     <property name="name">
+         <cstring>XsldbgLocalVaraibles</cstring>
+--- kxsldbg/kxsldbgpart/xsldbgentities.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgentities.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,6 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgEntities</class>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QWidget">
+     <property name="name">
+         <cstring>XsldbgEntities</cstring>
+--- kxsldbg/kxsldbgpart/xsldbgdebugger.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgdebugger.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -26,6 +26,7 @@
+ #include <libxsldbg/xsldbgevent.h>
+ #include <libxsldbg/qtnotifier2.h>
+ #include <libxsldbg/options.h>
++#include <libxsldbg/files.h>
+ 
+ extern int xsldbgStop;
+ 
+@@ -119,10 +120,10 @@
+ {
+     QString result = file;
+ 
+-    if ((file.left(5) == "file:") && (file.left(8) != "file:///")){
+-	KURL url(file);
+-	// libxml2 does not like file:/<localfilepath>
+-	result = "file://" + url.encodedPathAndQuery();
++    if (file.left(6) == "file:/"){
++        xmlChar * tempResult = filesExpandName((xmlChar *)file.utf8().data());
++        result = QString::fromUtf8((char*)tempResult);
++        xmlFree(tempResult);
+     }
+ 
+     return result;
+@@ -134,7 +135,7 @@
+ 	QString fileName;
+ 
+ 	if (optionsGetStringOption(OPTIONS_SOURCE_FILE_NAME) != 0L)
+-		fileName = KURL::decode_string((const char*)optionsGetStringOption(OPTIONS_SOURCE_FILE_NAME));
++		fileName = QString::fromUtf8((const char*)optionsGetStringOption(OPTIONS_SOURCE_FILE_NAME));
+ 
+ 	return fileName;
+ }
+@@ -144,7 +145,7 @@
+ 	QString fileName;
+ 
+ 	if (optionsGetStringOption(OPTIONS_DATA_FILE_NAME) != 0L)
+-		fileName = KURL::decode_string((const char*)optionsGetStringOption(OPTIONS_DATA_FILE_NAME));
++		fileName = QString::fromUtf8((const char*)optionsGetStringOption(OPTIONS_DATA_FILE_NAME));
+ 
+ 	return fileName;
+ }
+@@ -154,7 +155,7 @@
+ 	QString fileName;
+ 
+ 	if (optionsGetStringOption(OPTIONS_OUTPUT_FILE_NAME) != 0L)
+-		fileName = KURL::decode_string((const char*)optionsGetStringOption(OPTIONS_OUTPUT_FILE_NAME));
++		fileName = QString::fromUtf8((const char*)optionsGetStringOption(OPTIONS_OUTPUT_FILE_NAME));
+ 
+ 	return fileName;
+ }
+--- kxsldbg/kxsldbgpart/xsldbgglobalvariables.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgglobalvariables.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,6 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgGlobalVariables</class>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QWidget">
+     <property name="name">
+         <cstring>XsldbgGlobalVariables</cstring>
+--- kxsldbg/kxsldbgpart/xsldbgtemplates.ui	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/kxsldbgpart/xsldbgtemplates.ui	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,6 +1,6 @@
+ <!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+ <class>XsldbgTemplates</class>
+-<author>Keith Isdale</author>
++<author>Keith Isdale &lt;k_isdale@tpg.com.au&gt;</author>
+ <widget class="QWidget">
+     <property name="name">
+         <cstring>XsldbgTemplates</cstring>
+--- kxsldbg/data/xsldbghelp.xsl	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/data/xsldbghelp.xsl	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,127 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8" ?>
+-<!-- 
+-     File : xsldoc.xsl     
+-     Author: Keith Isdale <k_isdale@tpg.com.au>
+-     Description: Stylesheet to process xsldoc.xml and generate help text
+-     Copyright Reserved Under GPL     
+--->
+-<!-- This file does not require translation -->
+-<!-- NO TRANSLATION -->
+-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+-                version="1.0">
+-  <xsl:output method="text"/>
+-  <xsl:strip-space elements="text"/>
+-  <!-- The selected nodes to be printed for overview -->
+-  <xsl:variable name="overview_node" select="//chapter[@id='introduction']"/>
+-  <!-- The selected nodes to be printed for usage overview -->
+-  <xsl:variable name="usage_node" select="//chapter[@id='using-xsldbg']"/>
+-  <!-- The list of valid xsldbg commands -->
+-  <xsl:variable name="command_nodes" select="//chapter[@id='commands']"/>
+-  <!-- The list of i18n paras -->
+-  <xsl:variable name="i18n_para" select="//i18n"/>
+-  <!-- What version is this document-->
+-  <xsl:variable name="doc_version" select="'3.3.0-1'"/>
+-  <!-- The default version of xsldbg -->
+-  <xsl:param name="xsldbg_version" select="'3.3.0'"/>
+-  <!-- We want 'help' to point to a invalid command if stylesheet
+-       user has not provided a value for 'help' param-->
+-  <xsl:param name="help" select="'_#_'"/>
+-  <xsl:variable name="help_id" select="concat($help,'_cmd')"/>
+-  <!-- Do we printout all documentation '1' if so '0' otherwise -->
+-  <xsl:param name="alldocs" select="0"/>
+-  <!-- The documentation we can find for 'help' user requires -->
+-  <xsl:variable name="help_cmd" select="$command_nodes/sect1[@id=$help_id or @shortcut=$help_id]"/>
+-
+-  <!-- Our translatables -->
+-  <xsl:param name="xsldbgVerTxt" select="'xsldbg version'"/>
+-  <xsl:param name="helpDocVerTxt" select="'Help document version'"/>
+-  <xsl:param name="helpErrorTxt" select="'Help not found for command'"/>
+-
+-
+-
+-  <!-- Main template-->
+-  <xsl:template match="/">
+-<xsl:text>         </xsl:text><xsl:value-of select="$xsldbgVerTxt"/><xsl:text> </xsl:text><xsl:value-of select="$xsldbg_version"/>
+-<xsl:text> 
+-</xsl:text>   
+-<xsl:text>         ====================</xsl:text><xsl:text> 
+-</xsl:text>  
+-    <xsl:choose>
+-    <xsl:when test="count($help_cmd) > 0" >
+-      <xsl:apply-templates select="$help_cmd" />
+-      <xsl:value-of select="$helpDocVerTxt"/><xsl:text> </xsl:text><xsl:value-of select="$doc_version"/><xsl:text> 
+-</xsl:text> 
+-      </xsl:when>
+-    <xsl:otherwise>
+-        <xsl:if test="$help !='_#_'">
+-	  <xsl:value-of select="$helpErrorTxt"/><xsl:text> </xsl:text>  
+-          <xsl:value-of select="$help"/>
+-	</xsl:if>
+-        <xsl:if test="$help ='_#_'">
+-	    <xsl:apply-templates select="$overview_node"/>
+-	    <xsl:text>
+-</xsl:text>
+-	    <xsl:apply-templates select="$usage_node"/>
+-	    <xsl:value-of select="$helpDocVerTxt"/><xsl:text> </xsl:text><xsl:value-of select="$doc_version"/><xsl:text> 
+-</xsl:text> 
+-	</xsl:if>
+-<xsl:text> 
+-</xsl:text>   
+-   </xsl:otherwise>
+-  </xsl:choose>
+-<xsl:text> 
+-</xsl:text> 
+-  </xsl:template>
+-
+-
+-   <!-- Convert title into something useful -->
+-  <xsl:template match="title">
+-<xsl:for-each select="ancestor::node()"><xsl:text>  </xsl:text></xsl:for-each><xsl:value-of select="."/>
+-<xsl:text> 
+-</xsl:text><xsl:for-each select="ancestor::node()"><xsl:text>  </xsl:text></xsl:for-each>
+-<xsl:value-of
+-  select="substring('____________________________________________________________',
+-  1, string-length())" />
+-<xsl:text> 
+-</xsl:text>
+-  </xsl:template>
+-
+-  <xsl:template match="text()">
+-    <xsl:value-of select="normalize-space()"/>
+-  </xsl:template>
+-
+-  <xsl:template match="row">
+-    <xsl:value-of select="$indentgroup/indent[@level=$indentcount]" />
+-    <xsl:apply-templates/>
+-  </xsl:template>
+-  
+-  <xsl:template match="para">
+-    <xsl:text> 
+-</xsl:text>
+-    <xsl:apply-templates/>
+-  </xsl:template>
+-
+-  <xsl:template match="informaltable|table">
+-    <xsl:text>
+-</xsl:text>
+-    <xsl:apply-templates select="title"/>
+-    <xsl:for-each select="tgroup/tbody/row/entry|tbody/row/entry">
+-      <xsl:for-each select="ancestor::node()"><xsl:text>  </xsl:text></xsl:for-each><xsl:apply-templates/>
+-      <xsl:text>
+-</xsl:text>
+-    </xsl:for-each>
+-  </xsl:template>
+-
+-</xsl:stylesheet>
+-
+-
+-<!-- initialization code for xemacs -->
+-<!--
+-Local Variables:
+-mode: xsl
+-sgml-minimize-attributes:nil
+-sgml-general-insert-case:lower
+-sgml-indent-step:2
+-sgml-indent-data:nil
+-End:
+--->
+--- kxsldbg/data/Makefile.am	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kxsldbg/data/Makefile.am	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -13,4 +13,4 @@
+ 
+ 
+ xsldbgdir = ${kde_datadir}/xsldbg
+-xsldbg_DATA =  xsldbghelp.xsl ${commondata}
++xsldbg_DATA =  ${commondata}
+--- kimagemapeditor/kimagemapeditorpart.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kimagemapeditor/kimagemapeditorpart.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -23,6 +23,7 @@
+ Comment[is]=HTML myndakortsritill
+ Comment[it]=Un editor per le mappe di immagini HTML
+ Comment[ja]=HTML イメージマップエディタ
++Comment[ka]=HTML გამოსახულების რუქის რედაქტორი
+ Comment[lt]=HTML paveikslėlių žemėlapių rengyklė
+ Comment[ms]=Penyunting Peta Imej HTML
+ Comment[nds]=En Editor för HTML-Bildkoorten
+--- kimagemapeditor/kimagemapeditor.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kimagemapeditor/kimagemapeditor.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -31,6 +31,7 @@
+ GenericName[is]=HTML myndakortsritill
+ GenericName[it]=Editor per le mappe di immagini HTML
+ GenericName[ja]=HTML イメージマップエディタ
++GenericName[ka]=HTML გამოსახულების რუქის რედაქტორი
+ GenericName[lt]=HTML paveikslėlių žemėlapių rengyklė
+ GenericName[ms]=Penyunting Peta Imej HTML
+ GenericName[nds]=Editor för HTML-Bildkoorten
+--- doc/xsldbg/xsldbghelp.xsl	(.../tags/KDE/3.5.9/kdewebdev)	(revision 0)
++++ doc/xsldbg/xsldbghelp.xsl	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -0,0 +1,127 @@
++<?xml version="1.0" encoding="UTF-8" ?>
++<!-- 
++     File : xsldoc.xsl     
++     Author: Keith Isdale <k_isdale@tpg.com.au>
++     Description: Stylesheet to process xsldoc.xml and generate help text
++     Copyright Reserved Under GPL     
++-->
++<!-- This file does not require translation -->
++<!-- NO TRANSLATION -->
++<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
++                version="1.0">
++  <xsl:output method="text"/>
++  <xsl:strip-space elements="text"/>
++  <!-- The selected nodes to be printed for overview -->
++  <xsl:variable name="overview_node" select="//chapter[@id='introduction']"/>
++  <!-- The selected nodes to be printed for usage overview -->
++  <xsl:variable name="usage_node" select="//chapter[@id='using-xsldbg']"/>
++  <!-- The list of valid xsldbg commands -->
++  <xsl:variable name="command_nodes" select="//chapter[@id='commands']"/>
++  <!-- The list of i18n paras -->
++  <xsl:variable name="i18n_para" select="//i18n"/>
++  <!-- What version is this document-->
++  <xsl:variable name="doc_version" select="'3.3.0-1'"/>
++  <!-- The default version of xsldbg -->
++  <xsl:param name="xsldbg_version" select="'3.3.0'"/>
++  <!-- We want 'help' to point to a invalid command if stylesheet
++       user has not provided a value for 'help' param-->
++  <xsl:param name="help" select="'_#_'"/>
++  <xsl:variable name="help_id" select="concat($help,'_cmd')"/>
++  <!-- Do we printout all documentation '1' if so '0' otherwise -->
++  <xsl:param name="alldocs" select="0"/>
++  <!-- The documentation we can find for 'help' user requires -->
++  <xsl:variable name="help_cmd" select="$command_nodes/sect1[@id=$help_id or @shortcut=$help_id]"/>
++
++  <!-- Our translatables -->
++  <xsl:param name="xsldbgVerTxt" select="'xsldbg version'"/>
++  <xsl:param name="helpDocVerTxt" select="'Help document version'"/>
++  <xsl:param name="helpErrorTxt" select="'Help not found for command'"/>
++
++
++
++  <!-- Main template-->
++  <xsl:template match="/">
++<xsl:text>         </xsl:text><xsl:value-of select="$xsldbgVerTxt"/><xsl:text> </xsl:text><xsl:value-of select="$xsldbg_version"/>
++<xsl:text> 
++</xsl:text>   
++<xsl:text>         ====================</xsl:text><xsl:text> 
++</xsl:text>  
++    <xsl:choose>
++    <xsl:when test="count($help_cmd) > 0" >
++      <xsl:apply-templates select="$help_cmd" />
++      <xsl:value-of select="$helpDocVerTxt"/><xsl:text> </xsl:text><xsl:value-of select="$doc_version"/><xsl:text> 
++</xsl:text> 
++      </xsl:when>
++    <xsl:otherwise>
++        <xsl:if test="$help !='_#_'">
++	  <xsl:value-of select="$helpErrorTxt"/><xsl:text> </xsl:text>  
++          <xsl:value-of select="$help"/>
++	</xsl:if>
++        <xsl:if test="$help ='_#_'">
++	    <xsl:apply-templates select="$overview_node"/>
++	    <xsl:text>
++</xsl:text>
++	    <xsl:apply-templates select="$usage_node"/>
++	    <xsl:value-of select="$helpDocVerTxt"/><xsl:text> </xsl:text><xsl:value-of select="$doc_version"/><xsl:text> 
++</xsl:text> 
++	</xsl:if>
++<xsl:text> 
++</xsl:text>   
++   </xsl:otherwise>
++  </xsl:choose>
++<xsl:text> 
++</xsl:text> 
++  </xsl:template>
++
++
++   <!-- Convert title into something useful -->
++  <xsl:template match="title">
++<xsl:for-each select="ancestor::node()"><xsl:text>  </xsl:text></xsl:for-each><xsl:value-of select="."/>
++<xsl:text> 
++</xsl:text><xsl:for-each select="ancestor::node()"><xsl:text>  </xsl:text></xsl:for-each>
++<xsl:value-of
++  select="substring('____________________________________________________________',
++  1, string-length())" />
++<xsl:text> 
++</xsl:text>
++  </xsl:template>
++
++  <xsl:template match="text()">
++    <xsl:value-of select="normalize-space()"/>
++  </xsl:template>
++
++  <xsl:template match="row">
++    <xsl:value-of select="$indentgroup/indent[@level=$indentcount]" />
++    <xsl:apply-templates/>
++  </xsl:template>
++  
++  <xsl:template match="para">
++    <xsl:text> 
++</xsl:text>
++    <xsl:apply-templates/>
++  </xsl:template>
++
++  <xsl:template match="informaltable|table">
++    <xsl:text>
++</xsl:text>
++    <xsl:apply-templates select="title"/>
++    <xsl:for-each select="tgroup/tbody/row/entry|tbody/row/entry">
++      <xsl:for-each select="ancestor::node()"><xsl:text>  </xsl:text></xsl:for-each><xsl:apply-templates/>
++      <xsl:text>
++</xsl:text>
++    </xsl:for-each>
++  </xsl:template>
++
++</xsl:stylesheet>
++
++
++<!-- initialization code for xemacs -->
++<!--
++Local Variables:
++mode: xsl
++sgml-minimize-attributes:nil
++sgml-general-insert-case:lower
++sgml-indent-step:2
++sgml-indent-data:nil
++End:
++-->
+--- klinkstatus/src/klinkstatus.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ klinkstatus/src/klinkstatus.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -29,6 +29,7 @@
+ GenericName[is]=Yfirfer tengla
+ GenericName[it]=Controllo dei collegamenti
+ GenericName[ja]=リンクチェッカー
++GenericName[ka]=ბმულების შემმოწმებელი
+ GenericName[lt]=Nuorody tikrintuvė
+ GenericName[ms]=Pemeriksa Pautan
+ GenericName[nds]=Linkprööv
+--- kommander/widget/functionlib.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widget/functionlib.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -55,6 +55,20 @@
+   return params[0].toString().contains(params[1].toString());
+ }
+ 
++static ParseNode f_stringCompare(Parser*, const ParameterList& params)
++{
++  int result = QString::compare(params[0].toString(),params[1].toString());
++  if (result < 0)
++  {
++    result = -1;
++  } else
++  if (result > 0)
++  {
++    result = 1;
++  }
++  return result;
++}
++
+ static ParseNode f_stringFind(Parser*, const ParameterList& params)
+ {
+   return params[0].toString().find(params[1].toString(), params.count() == 3 ? params[2].toInt() : 0);
+@@ -147,6 +161,12 @@
+   return params[0];
+ }
+ 
++static ParseNode f_stringRound(Parser*, const ParameterList& params)
++{
++  QString s;
++  s.sprintf("%."+params[1].toString()+"f", params[0].toDouble());
++  return s;
++}
+ 
+ /******************* Debug function ********************************/
+ static ParseNode f_debug(Parser*, const ParameterList& params)
+@@ -206,6 +226,14 @@
+   return 1;
+ }
+ 
++static ParseNode f_fileExists(Parser*, const ParameterList& params)
++{
++  QFile file(params[0].toString());
++  if (!file.exists())
++    return 0;
++  else
++    return 1;
++}
+ 
+ static ParseNode f_executeSlot(Parser* parser, const ParameterList& params)
+ {
+@@ -883,6 +911,7 @@
+ {
+   registerFunction("str_length", Function(&f_stringLength, ValueInt, ValueString));
+   registerFunction("str_contains", Function(&f_stringContains, ValueInt, ValueString, ValueString));
++  registerFunction("str_compare", Function(&f_stringCompare, ValueInt, ValueString, ValueString));
+   registerFunction("str_find", Function(&f_stringFind, ValueInt, ValueString, ValueString, ValueInt, 2));
+   registerFunction("str_findrev", Function(&f_stringFindRev, ValueInt, ValueString, ValueString, ValueInt, 2));
+   registerFunction("str_left", Function(&f_stringLeft, ValueString, ValueString, ValueInt));
+@@ -898,12 +927,14 @@
+   registerFunction("str_isempty", Function(&f_stringIsEmpty, ValueInt, ValueString));
+   registerFunction("str_toint", Function(&f_stringToInt, ValueString, ValueInt, 1));
+   registerFunction("str_todouble", Function(&f_stringToDouble, ValueString, ValueDouble, 1));
++  registerFunction("str_round", Function(&f_stringRound, ValueInt, ValueDouble, ValueInt, 2));
+   registerFunction("return", Function(&f_return, ValueNone, ValueString, 1, 1));
+   registerFunction("debug", Function(&f_debug, ValueNone, ValueString, 1, 100));
+   registerFunction("echo", Function(&f_echo, ValueNone, ValueString, 1, 100));
+   registerFunction("file_read", Function(&f_fileRead, ValueString, ValueString, 1, 1));
+   registerFunction("file_write", Function(&f_fileWrite, ValueInt, ValueString, ValueString, 2, 100));
+   registerFunction("file_append", Function(&f_fileAppend, ValueInt, ValueString, ValueString, 2, 100));
++  registerFunction("file_exists", Function(&f_fileExists, ValueString, ValueString, 1, 1));
+   registerFunction("internalDcop", Function(&f_internalDcop, ValueString, ValueString, ValueString, 2, 100));
+   registerFunction("executeSlot", Function(&f_executeSlot, ValueString, ValueString, ValueString, 2, 100));
+   registerFunction("createWidget", Function(&f_createWidget, ValueString, ValueString, ValueString, 3, 100));
+--- kommander/editor/assoctexteditorimpl.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/editor/assoctexteditorimpl.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -125,6 +125,16 @@
+   a = view->actionCollection()->action("edit_replace");
+   if (a)
+     a->plug(popup);
++  popup->insertSeparator();
++  a = view->actionCollection()->action("edit_cut");
++  if (a)
++    a->plug(popup);
++  a = view->actionCollection()->action("edit_copy");
++  if (a)
++    a->plug(popup);
++  a = view->actionCollection()->action("edit_paste");
++  if (a)
++    a->plug(popup);
+   readOnlyAction = view->actionCollection()->action("tools_toggle_write_lock");
+   popup->insertSeparator();
+   highlightPopup = new KPopupMenu(popup);
+--- kommander/editor/kmdr-editor.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/editor/kmdr-editor.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -20,6 +20,7 @@
+ GenericName[is]=Dynamic Dialog ritillinn
+ GenericName[it]=Editor per le maschere dinamiche
+ GenericName[ja]=動的ダイアログエディタ
++GenericName[ka]=დინამიურ დიალოგთა რედაქტორი
+ GenericName[lt]=Dinaminė dialogų rengyklė
+ GenericName[ms]=Penyunting Dialog Dinamik
+ GenericName[nds]=Editor för dünaamsch Dialogen
+@@ -102,6 +103,7 @@
+ Comment[is]=Dynamic Dialog ritillinn
+ Comment[it]=Editor per le maschere dinamiche
+ Comment[ja]=動的ダイアログエディタ
++Comment[ka]=დინამიურ დიალოგთა რედაქტორი
+ Comment[lt]=Dinaminė dialogų rengyklė
+ Comment[ms]=Penyunting Dialog Dinamik
+ Comment[nds]=Editor för dünaamsch Dialogen
+--- kommander/editor/connectioneditorimpl.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/editor/connectioneditorimpl.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -35,9 +35,9 @@
+ 
+ static const char *const ignore_slots[] = {
+   "destroyed()",
+-  "setCaption(const QString&)",
++  //"setCaption(const QString&)",
+   "setIcon(const QPixmap&)",
+-  "setIconText(const QString&)",
++  //"setIconText(const QString&)",
+   "setMouseTracking(bool)",
+   "clearFocus()",
+   "setUpdatesEnabled(bool)",
+@@ -52,8 +52,8 @@
+   "repaint(int,int,int,int)",
+   "repaint(const QRect&)",
+   "repaint(const QRegion&)",
+-  "show()",
+-  "hide()",
++  //"show()",
++  //"hide()",
+   "iconify()",
+   "showMinimized()",
+   "showMaximized()",
+@@ -61,19 +61,19 @@
+   "showNormal()",
+   "polish()",
+   "constPolish()",
+-  "raise()",
+-  "lower()",
++  //"raise()",
++  //"lower()",
+   "stackUnder(QWidget*)",
+-  "move(int,int)",
++  //"move(int,int)",
+   "move(const QPoint&)",
+-  "resize(int,int)",
++  //"resize(int,int)",
+   "resize(const QSize&)",
+-  "setGeometry(int,int,int,int)",
++  //"setGeometry(int,int,int,int)",
+   "setGeometry(const QRect&)",
+   "focusProxyDestroyed()",
+   "showExtension(bool)",
+   "setUpLayout()",
+-  "showDockMenu(const QPoint&)",
++  //"showDockMenu(const QPoint&)",
+   "init()",
+   "destroy()",
+   "deleteLater()",
+@@ -112,14 +112,15 @@
+         !lst.contains(it.current()->name()))
+       lst << it.current()->name();
+   }
+-  lst.sort();
+   
+   // Fill receiver combos with widget list    
+-  fillWidgetList(comboReceiver, lst, m_receiver->name());
++//  fillWidgetList(comboReceiver, lst, m_receiver->name());
+   
+   // Fill receiver combos with widget and action list    
+   for (QPtrListIterator<QAction> it(m_formWindow->actionList()); it.current(); ++it)
+     lst << it.current()->name();
++  lst.sort();
++  fillWidgetList(comboReceiver, lst, m_receiver->name());
+   fillWidgetList(comboSender, lst, m_sender->name());
+   senderChanged(m_sender->name());
+   fillConnectionsList();
+--- kommander/editor/kommander-new.xml	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/editor/kommander-new.xml	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -26,13 +26,16 @@
+       <item>clear</item>
+       <item>checked</item>
+       <item>children</item>
++      <item>columnCount</item>
+       <item>count</item>
+       <item>currentColumn</item>
+       <item>currentItem</item>
+       <item>currentRow</item>
+       <item>execute</item> 
+       <item>findItem</item>
++      <item>geometry</item>
+       <item>global</item>
++      <item>hasFocus</item>
+       <item>insertColumn</item>
+       <item>insertItem</item>
+       <item>insertItems</item>
+@@ -43,6 +46,7 @@
+       <item>removeColumn</item>
+       <item>removeItem</item>
+       <item>removeRow</item>
++      <item>rowCount</item>
+       <item>selection</item>
+       <item>setAssociatedText</item>
+       <item>setChecked</item>
+@@ -133,12 +137,14 @@
+       <item>str_args</item>
+       <item>str_toint</item>
+       <item>str_todouble</item>
++      <item>str_round</item>
+     </list>
+     
+     <list name="kmdrfile">
+       <item>file_read</item>
+       <item>file_write</item>
+       <item>file_append</item>
++      <item>file_exists</item>
+     </list>
+     
+     <list name="kmdrinput">
+--- kommander/editor/kommander.xml	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/editor/kommander.xml	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -32,7 +32,9 @@
+       <item>currentRow</item>
+       <item>execute</item> 
+       <item>findItem</item>
++      <item>geometry</item>
+       <item>global</item>
++      <item>hasFocus</item>
+       <item>insertColumn</item>
+       <item>insertItem</item>
+       <item>insertItems</item>
+@@ -117,12 +119,14 @@
+       <item>isNumber</item>
+       <item>section</item>
+       <item>args</item>
++      <item>round</item>
+     </list>
+     
+     <list name="kmdrfile">
+       <item>read</item>
+       <item>write</item>
+       <item>append</item>
++      <item>exists</item>
+     </list>
+     
+     <list name="kmdrinput">
+--- kommander/ChangeLog	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/ChangeLog	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -1,3 +1,42 @@
++2008-04-23 - Eric Laffoon <sequitur@kde.org>
++    o add a little color to tab widgets with icons
++2008-04-21 - Eric Laffoon <sequitur@kde.org>
++    o added the ability to set alignment in columns in Tree/list widget
++    o enhanced find to now use column and set additional parameters in TreeWidget
++    o renamed some new functions only released in special release recently as cleanup
++2008-04-17 - Eric Laffoon <sequitur@kde.org>
++    o added round function in strings to round number to x digits
++2008-04-14 - Eric Laffoon <sequitur@kde.org>
++    o added cut, copy and paste to editor popup menu
++    o added file exists function
++    0 added geometry and hasFocus to primary data widgets
++2008-03-28 - Eric Laffoon <sequitur@kde.org>
++    o added test geometry function to buttons for popup use
++2008-03-23 - Eric Laffoon <sequitur@kde.org>
++    o it's about time scripts had a boolean execute slot!
++2008-03-23 - Eric Laffoon <sequitur@kde.org>
++    o Table - added keepCellVisible for my application - I will need to clean up the code if I want to release it as I want to rename some things and do other cleanup
++    o ComboBox - added popupList to bring up the list without using the mouse - faster data entry
++2008-03-22 - Eric Laffoon <sequitur@kde.org>
++    o LineEdit - added gotfocus event
++2008-03-20 - Eric Laffoon <sequitur@kde.org>
++    o made actions sort along with widgets in the connection dialog
++    o Tree/Detail (ListView) widget - enabled adding columns
++    o Tree/Detail (ListView) widget - enabled removing columns (copied from table widget)
++    o Tree/Detail (ListView) widget - return column count
++    o Tree/Detail (ListView) widget - return column caption for given index
++    o Tree/Detail (ListView) widget - set sort column and where ASC or DESC
++    o Tree/Detail (ListView) widget - set column width - serves as hide colum at 0 width
++    o Table widget - add column sort that does by whole rows - doesn't do well with float as strings :(
++    o TextEdit - added lostFocus event
++    o LineEdit - added gotFocus event
++    o fixed about dialog license to take text and files correctly
++2008-03-19 - Andras Mantia <amantia@kde.org>
++    o regression: add back the missing str_compare function. 
++2008-03-18 - Eric Laffoon <sequitur@kde.org>
++    o raised the number of allowed paramaters for scripts
++2008-03-10 - Eric Laffoon <sequitur@kde.org>
++    o enable additional slots in dialog and restore slots for actions - you can now directly manipulate actions on a MainWindow via signals and slots from the dialog
+ 2008-01-20 - Eric Laffoon <sequitur@kde.org>
+     o set new functions only available to new parser such as createWidget to not be shown in the function browser if the old parser is run.
+ 
+--- kommander/x-kommander.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/x-kommander.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -21,6 +21,7 @@
+ Comment[is]=Kommander skrá
+ Comment[it]=File di Kommander
+ Comment[ja]=Kommander ファイル
++Comment[ka]=Kommander-ის ფაილი
+ Comment[lt]=Kommander byla
+ Comment[ms]=Fail Kommander
+ Comment[nds]=Kommander-Datei
+--- kommander/executor/kmdr-executor.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/executor/kmdr-executor.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -24,6 +24,7 @@
+ Comment[is]=Executor fyrir Kommander glugga
+ Comment[it]=Esecutore per maschere di Kommander
+ Comment[ja]=Kommander ダイアログ用の Executor
++Comment[ka]=Kommander-ის დიალოგის შემსრულებელნი
+ Comment[lt]=Kommander dialogų vykdyklė
+ Comment[ms]=Pelaksana untuk dialog Kommander
+ Comment[nds]=Föhrt Kommander-Dialogen ut
+--- kommander/plugin/specialinformation.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/plugin/specialinformation.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -296,6 +296,8 @@
+   insert(DCOP::clear, "clear(QString widget)",
+          i18n("Removes all content from the widget."), 1);
+   insertAlias(DCOP::clear, "clearList");
++  insertInternal(DCOP::columnCount, "columnCount(QString widget)", 
++        i18n("Get the column count"), 1);
+   insert(DCOP::count, "count(QString widget)",
+          i18n("Returns number of items in a widget such as combobox or listbox."), 1);
+   insert(DCOP::currentColumn, "currentColumn(QString widget)", 
+@@ -305,9 +307,9 @@
+   insert(DCOP::currentRow, "currentRow(QString widget)", 
+          i18n("Returns index of current row."), 1);
+   insert(DCOP::execute, "execute(QString widget)", 
+-         i18n("Executes the script associated with the widget. With the new parser the execute method can take one or more arguments."), 1, 6);
+-  insert(DCOP::findItem, "findItem(QString widget, QString item)",
+-         i18n("Returns the index of an item with the given text."), 2);
++         i18n("Executes the script associated with the widget. With the new parser the execute method can take one or more arguments."), 1, 9);
++  insert(DCOP::findItem, "findItem(QString widget, QString item, int column, bool CaseSensitive, bool ExactMatch)",
++         i18n("Returns the index of an item with the given text. Defaults to case sensitive. Matching can be an exact match or match if it contains the string. Only the first argument is requred. If no column is given it will search the first by default."), 2, 5);
+   insert(DCOP::insertColumn, "insertColumn(QString widget, int column, int count)",
+          i18n("Inserts new column (or <i>count</i> columns) at <i>column</i> position."), 2);
+   insert(DCOP::insertItem, "insertItem(QString widget, QString item, int index)",
+@@ -325,7 +327,7 @@
+   insert(DCOP::itemPath, "itemPath(QString widget, int index)",
+          i18n("Returns the slash-separated path to the given item in the tree."), 2);
+   insert(DCOP::removeColumn, "removeColumn(QString widget, int column, int count)",
+-         i18n("Removes the column (or <i>count</i> consecutive columns) with the given index."), 3);
++         i18n("Removes the column (or <i>count</i> consecutive columns) with the given index."), 2, 3);
+   insert(DCOP::removeItem, "removeItem(QString widget, int index)",
+          i18n("Removes the item with the given index."), 2);
+   insertAlias(DCOP::removeItem, "removeListItem");
+@@ -373,6 +375,10 @@
+      i18n("Returns type(class) of widget."), 1);
+   insert(DCOP::setEditable, "setEditable(QString widget, bool editable)", 
+      i18n("Makes the widget editable or read only, depending on the editable argument."), 2);
++  insertInternal(DCOP::geometry, "geometry(QString widget)", 
++     i18n("Return the widget's geometry as <i>x y w h</i>. This is useful for positioning a created widget."), 1);
++  insertInternal(DCOP::hasFocus, "hasFocus(QString widget)", 
++     i18n("Returns true if the widget has focus."), 1);
+ 
+   insertGroup(Group::Slots, i18n("Slots"), "");
+ 
+@@ -510,6 +516,8 @@
+     i18n("Returns given section of a string."), 1);
+   insert(String::args, "args(QString string, QString arg1, QString arg2, QString arg3)", 
+     i18n("Returns the given string with %1, %2, %3 replaced with <i>arg1</i>, <i>arg2</i>, <i>arg3</i> accordingly."), 2);
++  insert(String::round, "round(QString Number, int Digits)", 
++    i18n("Round a floating point number by x digits."), 2);
+ 
+   insertInternal(String::toInt, "toint(QString string, QString default)",
+     i18n("Convert a string to an integer. If not possible use the default value"), 1, 2);
+@@ -517,12 +525,14 @@
+     i18n("Convert a string to a double precision floating point value. If not possible use the default value"), 1, 2);
+ 
+   insertGroup(Group::File, "File", "file");
+-  insert(File::read, "read(QString)", 
++  insert(File::read, "read(QString file)", 
+     i18n("Returns content of given file."), 1);
+   insert(File::write, "write(QString file, QString string)", 
+     i18n("Writes given string to a file."), 2);
+   insert(File::append, "append(QString file, QString string)", 
+     i18n("Appends given string to the end of a file."), 2);
++  insert(File::exists, "exists(QString file)", 
++    i18n("Checks to see if file exists."), 1);
+   
+   insertGroup(Group::Input, "Input", "input");
+   insert(Input::color, "color(QString defaultColor)", i18n("Shows color dialog. Returns color in #RRGGBB format. Defaults to the parameter, if specified."), 0, 1);
+--- kommander/plugin/specials.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/plugin/specials.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -28,12 +28,12 @@
+ 
+ namespace DCOP
+ {
+-  enum {addUniqueItem, associatedText, cancel, cellText, clear, checked, children, count, currentColumn,
++  enum {addUniqueItem, associatedText, cancel, cellText, clear, checked, children, columnCount, count, currentColumn,
+     currentItem, currentRow, execute, findItem, global, insertColumn, insertItem, insertItems, insertRow, 
+     item, itemDepth, itemPath, removeColumn, removeItem, removeRow, selection, setAssociatedText, setChecked, 
+     setCellText, setCurrentItem, insertTab, setColumnCaption, setEnabled, setGlobal, setMaximum, setPixmap, 
+     setRowCaption, setSelection, setText, 
+-    setVisible, text, type, setCellWidget, cellWidget, setEditable};
++    setVisible, text, type, setCellWidget, cellWidget, setEditable, geometry, hasFocus};
+ }
+ 
+ namespace Kommander
+@@ -51,12 +51,12 @@
+ namespace String
+ {
+   enum {length, contains, find, findRev, left, right, mid, remove, replace, upper, lower,
+-  compare, isEmpty, isNumber, section, args, toInt, toDouble};
++  compare, isEmpty, isNumber, section, args, toInt, toDouble, round};
+ }
+ 
+ namespace File
+ {
+-  enum {read, write, append};
++  enum {read, write, append, exists};
+ }
+ 
+ namespace Input
+--- kommander/part/kommander_part.desktop	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/part/kommander_part.desktop	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -7,7 +7,9 @@
+ Name[nds]=Kommander-Komponent
+ Name[nl]=Kommander-component
+ Name[pl]=Moduł Kommandera
++Name[ru]=Компонент Kommander
+ Name[sv]=Kommander-delprogram
++Name[zh_TW]=Kommander 部件
+ MimeType=application/x-kommander;
+ ServiceTypes=KParts/ReadOnlyPart
+ X-KDE-Library=libkommander_part
+--- kommander/widgets/treewidget.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/treewidget.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -3,6 +3,8 @@
+                              -------------------
+     copyright            : (C) 2002-2003 Marc Britton <consume@optusnet.com.au>
+                            (C) 2004      Michal Rudolf <mrudolf@kdewebdev.org>
++                           (C) 2008      Andras Mantia <amantia@kdewebdev.org>
++                           (C) 2008      Eric Laffoon  <eric@kdewebdev.org>
+  ***************************************************************************/
+ 
+ /***************************************************************************
+@@ -18,6 +20,7 @@
+ #include <klocale.h>
+ #include <kglobal.h>
+ #include <kiconloader.h>
++#include <klistview.h>
+ 
+ /* QT INCLUDES */
+ #include <qstring.h>
+@@ -32,6 +35,16 @@
+ #include "kommanderplugin.h"
+ #include "specials.h"
+ 
++#define TW_FUNCTION 275
++#define addColumnTree TW_FUNCTION+1
++#define setAltBackground TW_FUNCTION+2
++#define setColAlignment TW_FUNCTION+3
++//#define colCount TW_FUNCTION+3
++#define colCaption TW_FUNCTION+4
++#define setColWidth TW_FUNCTION+5
++#define setSortCol TW_FUNCTION+6
++#define TW_LAST_FUNCTION setSortCol
++
+ enum Functions {
+   FirstFunction = 189,
+   SelectedIndexes,
+@@ -48,6 +61,13 @@
+   setPathSeparator("/");
+   KommanderPlugin::setDefaultGroup(Group::DCOP);
+   KommanderPlugin::registerFunction(SelectedIndexes, "selectedIndexes(QString widget)",  "", 1);
++  KommanderPlugin::registerFunction(addColumnTree, "addColumn(QString widget, const QString & label, int width = -1 )", i18n("Add column at end with column header"), 2, 3);
++  KommanderPlugin::registerFunction(setSortCol, "setSortColumn(QString widget, int column, bool ascending=true)", i18n("Set sorting for a column"), 2, 3);
++  //KommanderPlugin::registerFunction(setAltBackground, "setAltBackground(QString widget, const QColor & c)",  i18n("Alternate colors in list view"), 2);
++//  KommanderPlugin::registerFunction(colCount, "colCount(QString widget)", i18n("Get the column count"), 1);
++  KommanderPlugin::registerFunction(colCaption, "columnCaption(QString widget, int column)", i18n("Get the column caption for column index"), 2);
++  KommanderPlugin::registerFunction(setColWidth, "setColWidth(QString widget, int column, int width)", i18n("Set the pixel width for column index - use 0 to hide"), 3);
++  KommanderPlugin::registerFunction(setColAlignment, "setColumnAlignment(QString widget, int column, QString Alignment)", i18n("Set to <i>left</i>, <i>right</i> or <i>center</i>, case insensitive "), 3);
+ }
+ 
+ TreeWidget::~TreeWidget()
+@@ -251,12 +271,22 @@
+   emit contextMenuRequested(p.x(), p.y());
+ }
+ 
++void TreeWidget::setColAlign(int column, const QString& align)
++{
++  if (align.lower() == "left")
++    setColumnAlignment (column, Qt::AlignLeft);
++  else if (align.lower() == "right")
++    setColumnAlignment (column, Qt::AlignRight);
++  else if (align.lower() == "center")
++    setColumnAlignment (column, Qt::AlignCenter);
++}
++
+ bool TreeWidget::isFunctionSupported(int f)
+ {
+   return f == DCOP::insertItem || f == DCOP::text || f == DCOP::setText || f == DCOP::insertItems ||
+     f == DCOP::selection || f == DCOP::setSelection || f == DCOP::clear || f == DCOP::removeItem || 
+     f == DCOP::currentItem || f == DCOP::setCurrentItem || f == DCOP::findItem || f == DCOP::item || 
+-      f == DCOP::itemPath || f == DCOP::itemDepth || f == DCOP::setPixmap || f == DCOP::setColumnCaption || (f > FirstFunction && f < LastFunction);
++      f == DCOP::itemPath || f == DCOP::itemDepth || f == DCOP::setPixmap || f == DCOP::setColumnCaption || f == DCOP::removeColumn || f == DCOP::columnCount || f == DCOP::geometry || f == DCOP::hasFocus  || (f > FirstFunction && f < LastFunction) || (f >= TW_FUNCTION && f <= TW_LAST_FUNCTION);
+ }
+ 
+ QString TreeWidget::handleDCOP(int function, const QStringList& args)
+@@ -337,15 +367,31 @@
+       break;
+     case DCOP::currentItem:
+       return QString::number(itemToIndex(currentItem()));
++      break;
+     case DCOP::setCurrentItem:
+       setCurrentItem(indexToItem(args[0].toInt()));
+       break;
+     case DCOP::findItem:
+-      return QString::number(itemToIndex(findItem(args[0], 0)));
++      if (!args[1])
++        return QString::number(itemToIndex(findItem(args[0], 0)));
++      else
++      {
++        if (args[2].toUInt() && args[3].toUInt())
++          return QString::number(itemToIndex(findItem(args[0], args[1].toInt())));
++        else if (args[2].toUInt())
++          return QString::number(itemToIndex(findItem(args[0], args[1].toInt(), Qt::CaseSensitive | Qt::Contains)));
++        else if (args[3].toUInt())
++          return QString::number(itemToIndex(findItem(args[0], args[1].toInt(), Qt::ExactMatch)));
++        else
++          return QString::number(itemToIndex(findItem(args[0], args[1].toInt(), Qt::Contains)));
++      }
++      break;
+     case DCOP::item:
+       return itemText(indexToItem(args[0].toInt()));
++      break;
+     case DCOP::itemPath:
+       return itemPath(indexToItem(args[0].toInt()));
++      break;
+     case DCOP::itemDepth:
+     {
+       QListViewItem* item = indexToItem(args[0].toInt());
+@@ -366,8 +412,52 @@
+       break;
+     }
+     case DCOP::setColumnCaption:
+-      setColumnText(args[0].toInt(), args[1]);
++      if (columns() >= args[0].toInt())
++        setColumnText(args[0].toInt(), args[1]);
+       break;
++    case addColumnTree:
++      return QString::number(KListView::addColumn(args[0], args[1].toInt()));
++      break;
++    case setSortCol:
++      KListView::setSorting(args[0].toInt(), args[1].toInt());
++      break;
++    case DCOP::columnCount:
++      return QString::number(QListView::columns() );
++      break;
++    case colCaption:
++       return QListView::columnText(args[0].toInt()) ;
++      break;
++    case setColWidth:
++      QListView::setColumnWidth(args[0].toInt(), args[1].toInt());
++      break;
++    case setColAlignment:
++      setColAlign(args[0].toInt(), args[1]);
++      break;
++    case setAltBackground:
++      KListView::setAlternateBackground(QColor(args[0]));
++      break;
++    case DCOP::removeColumn:
++    {
++      if (!args[1].toInt())
++        removeColumn(args[0].toInt());
++      else
++      {
++        int column = args[0].toInt();
++        int lines = args[1].toInt();
++        for (int i = 0; i < lines; i++)
++          removeColumn(column);
++      }
++      break;
++    }  
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
++    case DCOP::hasFocus:
++      return QString::number(this->hasFocus());
++      break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/execbutton.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/execbutton.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -156,7 +156,7 @@
+ 
+ bool ExecButton::isFunctionSupported(int f)
+ {
+-  return f == DCOP::text || f == DCOP::setText || f == DCOP::execute;
++  return f == DCOP::text || f == DCOP::setText || f == DCOP::execute || f == DCOP::geometry;
+ }
+ 
+ QString ExecButton::handleDCOP(int function, const QStringList& args)
+@@ -170,6 +170,12 @@
+     case DCOP::execute:
+       startProcess();
+       break;
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/textedit.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/textedit.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -24,7 +24,15 @@
+ /* OTHER INCLUDES */
+ #include <specials.h>
+ #include "textedit.h"
++#include <klocale.h>
++#include <kommanderplugin.h>
+ 
++enum Functions {
++  FirstFunction = 450, //CHANGE THIS NUMBER TO AN UNIQUE ONE!!!
++  TE_isModified,
++  LastFunction
++};
++
+ TextEdit::TextEdit(QWidget * a_parent, const char *a_name):KTextEdit(a_parent, a_name),
+ KommanderWidget((QObject *) this)
+ {
+@@ -34,6 +42,9 @@
+   setDisplayStates(states);
+ 
+   connect(this, SIGNAL(textChanged()), this, SLOT(setTextChanged()));
++
++  KommanderPlugin::setDefaultGroup(Group::DCOP);
++  KommanderPlugin::registerFunction(TE_isModified, "isModified(QString widget)",  i18n("see if widget has been modified."), 1);
+ }
+ 
+ QString TextEdit::currentState() const
+@@ -86,6 +97,18 @@
+   emit widgetTextChanged(text());
+ }
+ 
++void TextEdit::focusOutEvent( QFocusEvent * e)
++{
++  QTextEdit::focusOutEvent(e);
++  emit lostFocus();
++}
++
++void TextEdit::focusInEvent( QFocusEvent * e)
++{
++  QTextEdit::focusInEvent(e);
++  emit gotFocus();
++}
++
+ void TextEdit::showEvent(QShowEvent * e)
+ {
+   QTextEdit::showEvent(e);
+@@ -101,7 +124,7 @@
+ 
+ bool TextEdit::isFunctionSupported(int f)
+ {
+-  return f == DCOP::text || f == DCOP::setText || f == DCOP::selection || f == DCOP::setSelection || f == DCOP::clear || f == DCOP::setEditable;
++  return f == DCOP::text || f == DCOP::setText || f == DCOP::selection || f == DCOP::setSelection || f == DCOP::clear || f == DCOP::setEditable || f == DCOP::geometry || f == DCOP::hasFocus || (f >= FirstFunction && f <= LastFunction);
+ }
+ 
+ QString TextEdit::handleDCOP(int function, const QStringList& args)
+@@ -123,6 +146,18 @@
+     case DCOP::setEditable:
+       setReadOnly(args[0] == "false" || args[0] == "0");
+       break;
++    case TE_isModified:
++      return isModified() ? "1" : "0";
++      break;
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
++    case DCOP::hasFocus:
++      return QString::number(this->hasFocus());
++      break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/aboutdialog.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/aboutdialog.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -9,6 +9,7 @@
+ // Copyright: See COPYING file that comes with this distribution
+ //
+ //
++#include <qfile.h>
+ #include "aboutdialog.h"
+ 
+ #include "kommanderplugin.h"
+@@ -190,13 +191,19 @@
+   {
+     file = locate("data", "LICENSES/ARTISTIC");
+   }
+-  if (file.isEmpty())
++  if (file.isEmpty() && !QFile::exists( key ))
+   {
+     if (!key.isEmpty())
+-      m_aboutData->setLicenseText(key.latin1());
++      m_license = key;
++      m_aboutData->setLicenseText(m_license);
+   }
+   else
+   {
++    if (file.isEmpty())
++    {
++      if (!key.isEmpty())
++        file = key;
++    }
+     m_aboutData->setLicenseTextFile(file);
+   } 
+   
+--- kommander/widgets/dialog.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/dialog.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -177,7 +177,7 @@
+ 
+ bool Dialog::isFunctionSupported(int f)
+ {
+-  return f == DCOP::text || f == DCOP::setText;
++  return f == DCOP::text || f == DCOP::setText || f == DCOP::geometry;
+ }
+ 
+ QString Dialog::handleDCOP(int function, const QStringList& args)
+@@ -188,6 +188,9 @@
+     case DCOP::setText:
+       setWidgetText(args[0]);
+       break;
++    case DCOP::geometry:
++      return QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/lineedit.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/lineedit.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -59,9 +59,11 @@
+   void widgetOpened();
+   void widgetTextChanged(const QString &);
+   void contextMenuRequested(int xpos, int ypos);
++  void gotFocus();
+ protected:
+   virtual void showEvent( QShowEvent *e );
+   void contextMenuEvent( QContextMenuEvent * e );
++  void focusInEvent( QFocusEvent* e);
+ private:
+ };
+ 
+--- kommander/widgets/table.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/table.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -55,6 +55,7 @@
+   public slots:
+     virtual void populate();
+     virtual void setWidgetText(const QString &);
++    //void adjustColumn(int col);
+   signals:
+     void contextMenuRequested(int xpos, int ypos);
+   protected:
+--- kommander/widgets/lineedit.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/lineedit.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -40,6 +40,12 @@
+   emit widgetOpened();
+ }
+ 
++void LineEdit::focusInEvent( QFocusEvent * e)
++{
++  QLineEdit::focusInEvent(e);
++  emit gotFocus();
++}
++
+ QString LineEdit::currentState() const
+ {
+   return QString("default");
+@@ -101,7 +107,7 @@
+ bool LineEdit::isFunctionSupported(int f)
+ {
+   return f == DCOP::text || f == DCOP::setText || f == DCOP::selection || f == DCOP::setSelection ||
+-    f == DCOP::clear || f == DCOP::setEditable;
++    f == DCOP::clear || f == DCOP::setEditable || f == DCOP::geometry || f == DCOP::hasFocus ;
+ }
+ 
+ QString LineEdit::handleDCOP(int function, const QStringList& args)
+@@ -123,6 +129,15 @@
+     case DCOP::setEditable:
+       setReadOnly(args[0] == "false" || args[0] == "0");
+       break;
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
++    case DCOP::hasFocus:
++      return QString::number(this->hasFocus());
++      break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/pixmaplabel.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/pixmaplabel.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -96,7 +96,7 @@
+ 
+ bool PixmapLabel::isFunctionSupported(int f)
+ {
+-  return f == DCOP::text || f == DCOP::setText || f == DCOP::clear;
++  return f == DCOP::text || f == DCOP::setText || f == DCOP::clear || f == DCOP::geometry;
+ }
+ 
+ QString PixmapLabel::handleDCOP(int function, const QStringList& args)
+@@ -110,6 +110,12 @@
+       break;
+     case DCOP::text:
+       return text();
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/textedit.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/textedit.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -57,10 +57,14 @@
+   void widgetOpened();
+   void widgetTextChanged(const QString&);
+   void contextMenuRequested(int xpos, int ypos);
++  void lostFocus();
++  void gotFocus();
+ 
+ protected:
+   void showEvent(QShowEvent* e);
+   void contextMenuEvent( QContextMenuEvent * e );
++  void focusOutEvent( QFocusEvent* e);
++  void focusInEvent( QFocusEvent* e);
+ };
+ 
+ #endif
+--- kommander/widgets/aboutdialog.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/aboutdialog.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -65,6 +65,7 @@
+   QStringList m_addresses;
+   QString m_description;
+   QString m_homepage;
++  QString m_license;
+ };
+ 
+ #endif
+--- kommander/widgets/scriptobject.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/scriptobject.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -54,6 +54,7 @@
+   virtual void execute(const QString&);
+   virtual void execute(int);
+   virtual void execute(int, int);
++  virtual void execute(bool);
+ signals:
+   void widgetOpened();
+ 
+--- kommander/widgets/combobox.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/combobox.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -15,6 +15,8 @@
+  ***************************************************************************/
+ 
+ /* KDE INCLUDES */
++#include <kiconloader.h>
++#include <klocale.h>
+ 
+ /* QT INCLUDES */
+ #include <qobject.h>
+@@ -23,9 +25,17 @@
+ #include <qstringlist.h>
+ 
+ /* OTHER INCLUDES */
++#include <kommanderplugin.h>
+ #include <specials.h>
+ #include "combobox.h"
+ 
++enum Functions {
++  FirstFunction = 355, //CHANGE THIS NUMBER TO AN UNIQUE ONE!!!
++  popupList,
++  LastFunction
++};
++
++
+ ComboBox::ComboBox(QWidget *a_parent, const char *a_name)
+   : KComboBox(a_parent, a_name), KommanderWidget(this)
+ {
+@@ -35,6 +45,10 @@
+   setDisplayStates(states);
+ 
+   connect(this, SIGNAL(activated(int)), this, SLOT(emitWidgetTextChanged(int)));
++
++  KommanderPlugin::setDefaultGroup(Group::DCOP);
++  KommanderPlugin::registerFunction(popupList, "popupList(QString widget)",  i18n("Make the ComboBox expose it's list without mousing around."), 1);
++
+ }
+ 
+ ComboBox::~ComboBox()
+@@ -107,7 +121,7 @@
+   return f == DCOP::text || f == DCOP::selection || f == DCOP::setSelection ||
+       f == DCOP::currentItem || f == DCOP::setCurrentItem || f == DCOP::item || 
+       f == DCOP::removeItem || f == DCOP::insertItem || f == DCOP::insertItems ||
+-      f == DCOP::addUniqueItem || f == DCOP::clear || f == DCOP::count || f == DCOP::setEditable;
++      f == DCOP::addUniqueItem || f == DCOP::clear || f == DCOP::count || f == DCOP::setEditable || f == DCOP::geometry || f == DCOP::hasFocus  || (f >= FirstFunction && f <= LastFunction);
+ }
+ 
+ QString ComboBox::handleDCOP(int function, const QStringList& args)
+@@ -165,6 +179,18 @@
+     case DCOP::setEditable:
+       setEditable(args[0] != "false" && args[0] != "0");
+       break;
++    case popupList:
++      QComboBox::popup();
++      break;
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
++    case DCOP::hasFocus:
++      return QString::number(this->hasFocus());
++      break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/tabwidget.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/tabwidget.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -14,6 +14,8 @@
+  *                                                                         *
+  ***************************************************************************/
+ /* KDE INCLUDES */
++#include <klocale.h>
++#include <kiconloader.h>
+ 
+ /* QT INCLUDES */
+ #include <qstring.h>
+@@ -24,9 +26,16 @@
+ 
+ /* OTHER INCLUDES */
+ #include <kommanderwidget.h>
++#include "kommanderplugin.h"
+ #include <specials.h>
+ #include "tabwidget.h"
+ 
++enum Functions {
++  FirstFunction = 355,
++  TAB_setTabIcon,
++  LastFunction
++};
++
+ TabWidget::TabWidget(QWidget *a_parent, const char *a_name, int a_flags)
+ 	: QTabWidget(a_parent, a_name, a_flags), KommanderWidget(this)
+ {
+@@ -34,6 +43,9 @@
+   states << "default";
+   setStates(states);
+   setDisplayStates(states);
++
++  KommanderPlugin::setDefaultGroup(Group::DCOP);
++  KommanderPlugin::registerFunction(TAB_setTabIcon, "setTabIcon(QString widget, int Tab, QString Icon)", i18n("Sets an icon on the specified tab. Index is zero based."), 3);
+ }
+ 
+ TabWidget::~TabWidget()
+@@ -89,7 +101,7 @@
+ 
+ bool TabWidget::isFunctionSupported(int f)
+ {
+-  return f == DCOP::currentItem || f == DCOP::setCurrentItem || f == DCOP::insertTab  ;
++  return f == DCOP::currentItem || f == DCOP::setCurrentItem || f == DCOP::insertTab || (f >= FirstFunction && f <= LastFunction) ;
+ }
+ 
+ QString TabWidget::handleDCOP(int function, const QStringList& args)
+@@ -103,6 +115,12 @@
+     case DCOP::insertTab:
+       insertTab(0L, args[0], args[1].toUInt());
+       break;
++    case TAB_setTabIcon:
++    {
++      QWidget *w = page(args[0].toInt());
++      setTabIconSet(w, KGlobal::iconLoader()->loadIcon(args[1], KIcon::NoGroup, KIcon::SizeMedium));
++      break;
++    }
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/datepicker.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/datepicker.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -101,7 +101,7 @@
+ 
+ bool DatePicker::isFunctionSupported(int f)
+ {
+-  return f == DCOP::text || f == DCOP::setText;
++  return f == DCOP::text || f == DCOP::setText || f == DCOP::geometry || f == DCOP::hasFocus ;
+ }
+ 
+ QString DatePicker::handleDCOP(int function, const QStringList& args)
+@@ -112,6 +112,15 @@
+     case DCOP::setText:
+       setDate(QDate::fromString(args[0], Qt::ISODate));
+       break;    
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
++    case DCOP::hasFocus:
++      return QString::number(this->hasFocus());
++      break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/timer.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/timer.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -74,6 +74,10 @@
+ 
+ void Timer::setInterval(int a_interval)
+ {
++  if (mTimer->isActive())
++  {
++    mTimer->changeInterval(a_interval);
++  }
+   mInterval = a_interval;
+ }
+       
+@@ -174,7 +178,7 @@
+       cancel();
+       break;
+     case SetInterval:
+-      mTimer->changeInterval(args[0].toInt());
++      setInterval(args[0].toInt());
+       break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+--- kommander/widgets/table.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/table.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -15,6 +15,9 @@
+ 
+ 
+ /* KDE INCLUDES */
++#include <klocale.h>
++#include <kglobal.h>
++#include <kmessagebox.h>
+ 
+ /* QT INCLUDES */
+ #include <qmetaobject.h>
+@@ -24,9 +27,24 @@
+ #include <qpoint.h>
+ 
+ /* OTHER INCLUDES */
+-#include <specials.h>
++#include "kommanderplugin.h"
++#include "specials.h"
+ #include "table.h"
+ 
++enum Functions {
++  FirstFunction = 365,
++  TBL_sortColumnExtra,
++  TBL_keepCellVisible,
++  TBL_selectCells,
++  TBL_selectRow,
++  TBL_selectColumn,
++  TBL_setColumnReadOnly,
++  TBL_setRowReadOnly,
++  TBL_rowCount,
++  LastFunction
++};
++
++
+ Table::Table(QWidget *a_parent, const char *a_name)
+   : QTable(a_parent, a_name), KommanderWidget(this)
+ {
+@@ -34,6 +52,16 @@
+   states << "default";
+   setStates(states);
+   setDisplayStates(states);
++  KommanderPlugin::setDefaultGroup(Group::DCOP);
++  KommanderPlugin::registerFunction(TBL_sortColumnExtra, "sortColumnExtra(QString widget, int col, bool ascending, bool wholeRows)", i18n("Sets a column to sort ascending or descending. Optionally can sort with rows intact for database use."), 2, 4);
++  KommanderPlugin::registerFunction(TBL_keepCellVisible, "keepCellVisible(QString widget, int row, int col)", i18n("Scrolls the table so the cell indicated is visible."), 3);
++  KommanderPlugin::registerFunction(TBL_selectCells, "selectCells(QString widget, int row, int col, int row, int col)", i18n("Select cells using the upper left and lower right cell addresses<br /><b>Not guaranteed to have KDE4 compatiblility</b>"), 5);
++  KommanderPlugin::registerFunction(TBL_selectRow, "selectRow(QString widget, int row)", i18n("Select the row with the zero based index."), 2);
++  KommanderPlugin::registerFunction(TBL_selectColumn, "selectColumn(QString widget, int col)", i18n("Select the column with the zero based index.<br /><b>Not guaranteed to have KDE4 compatiblility</b>"), 2);
++  KommanderPlugin::registerFunction(TBL_setColumnReadOnly, "setColumnReadOnly(QString widget, int col, bool Readonly)", i18n("Set the column read only using zero based index.<br /><b>Not guaranteed to have KDE4 compatiblility</b>"), 3);
++  KommanderPlugin::registerFunction(TBL_setRowReadOnly, "setRowReadOnly(QString widget, int row, bool Readonly)", i18n("Set the row read only using zero based index.<br /><b>Not guaranteed to have KDE4 compatiblility</b>"), 3);
++  KommanderPlugin::registerFunction(TBL_rowCount, "rowCount(QString widget)", i18n("Returns the number of rows of the table"), 1);
++
+ }
+ 
+ Table::~Table()
+@@ -89,9 +117,9 @@
+ bool Table::isFunctionSupported(int f)
+ {
+   return f == DCOP::currentColumn || f == DCOP::currentRow || f == DCOP::insertColumn || 
+-      f == DCOP::insertRow || f == DCOP::cellText || f == DCOP::setCellText || f == DCOP::setCellWidget || f == DCOP::cellWidget ||
++      f == DCOP::insertRow || f == DCOP::cellText || f == DCOP::setCellText || f == DCOP::setCellWidget || f == DCOP::cellWidget || f == DCOP::columnCount ||
+       f == DCOP::removeRow || f == DCOP::removeColumn || f == DCOP::setColumnCaption ||
+-      f == DCOP::setRowCaption || f == DCOP::text || f == DCOP::setText || f == DCOP::selection;
++      f == DCOP::setRowCaption || f == DCOP::text || f == DCOP::setText || f == DCOP::selection || f == DCOP::geometry || f == DCOP::hasFocus  || (f >= FirstFunction && f <= LastFunction);
+ }
+ 
+ void Table::setCellWidget(int row, int col, const QString & _widgetName)
+@@ -105,6 +133,9 @@
+       setCurrentCell(-1, -1); //hack to not delete the cellwidget after clicking away to another cell. 
+ //I don't know why it does so, but without this on a click to another cell calls endEdit, which calls
+ //clearCellWidget, all this before the currentChanged signal is emitted.
++//this hack does ugly things once table starts scrolling - let's try to minize damage
++//we should have a way to test doe cellWidget looses focus and send it right or down too
++      QTable::ensureCellVisible(row, col);
+       clearCellWidget(row, col);
+       QTable::setCellWidget(row, col, widget);
+    }
+@@ -149,8 +180,15 @@
+   QPoint p = e->globalPos();
+   emit contextMenuRequested(p.x(), p.y());
+ }
+-
+-
++/*
++void Table::adjustColumn(int col)
++{
++  if (numRows() >= col)
++    QTable::adjustColumn(col);
++  else
++    KMessageBox::error(this, "Attempted to size nonexistant column");
++}
++*/
+ QString Table::handleDCOP(int function, const QStringList& args)
+ {
+   switch (function) 
+@@ -158,10 +196,12 @@
+     case DCOP::cellText:
+       return text(args[0].toInt(), args[1].toInt());
+     case DCOP::setCellText:
+-      setCellText(args[0].toInt(), args[1].toInt(), args[2]);
++      if (numRows() >= args[0].toInt() && numCols() >+ args[1].toInt())
++        setCellText(args[0].toInt(), args[1].toInt(), args[2]);
+       break;
+     case DCOP::setCellWidget:
+-      setCellWidget(args[0].toInt(), args[1].toInt(), args[2]);
++      if (numRows() >= args[0].toInt() && numCols() >+ args[1].toInt())
++        setCellWidget(args[0].toInt(), args[1].toInt(), args[2]);
+       break;
+     case DCOP::cellWidget:
+       return cellWidget(args[0].toInt(), args[1].toInt());
+@@ -176,14 +216,26 @@
+       return QString::number(currentColumn());
+     case DCOP::currentRow:
+       return QString::number(currentRow());
++    case DCOP::columnCount:
++      return QString::number(numCols());
++      break;
+     case DCOP::removeColumn:
++    if (numCols() >= args[0].toInt())
+     {
+-      int column = args[0].toInt();
+-      int lines = args[1].toInt();
+-      for (int i = 0; i < lines; i++)
+-        removeColumn(column);
++      if (!args[1].toInt())
++        removeColumn(args[0].toInt());
++      else
++      {
++        int column = args[0].toInt();
++        int lines = args[1].toInt();
++        for (int i = 0; i < lines; i++)
++          removeColumn(column);
++      }
+       break;
+-    }  
++    }
++    case TBL_rowCount:
++      return QString::number(numRows());
++      break;
+     case DCOP::removeRow:
+     {
+       int row = args[0].toInt();
+@@ -193,10 +245,12 @@
+       break;
+     }
+     case DCOP::setColumnCaption:
+-      horizontalHeader()->setLabel(args[0].toInt(), args[1]);
++      if (numCols() >= args[0].toInt())
++        horizontalHeader()->setLabel(args[0].toInt(), args[1]);
+       break;
+     case DCOP::setRowCaption:
+-      verticalHeader()->setLabel(args[0].toInt(), args[1]);
++      if (numRows() >= args[0].toInt())
++        verticalHeader()->setLabel(args[0].toInt(), args[1]);
+       break;
+     case DCOP::text:
+     {
+@@ -239,6 +293,36 @@
+     case DCOP::selection:
+       return selectedArea();
+       break;
++    case TBL_sortColumnExtra:
++      QTable::sortColumn(args[0].toInt(), args[1].toInt(), args[2].toInt());
++      break;
++    case TBL_keepCellVisible:
++      QTable::ensureCellVisible(args[0].toInt()-1, args[1].toInt()-1);
++      break;
++    case   TBL_selectCells:
++      QTable::selectCells (args[0].toInt(), args[1].toInt(), args[2].toInt(), args[3].toInt());
++      break;
++    case TBL_selectRow:
++      QTable::selectRow (args[0].toInt());
++      break;
++    case TBL_selectColumn:
++      QTable::selectColumn (args[0].toInt());
++      break;
++    case TBL_setColumnReadOnly:
++      QTable::setColumnReadOnly (args[0].toInt(), args[1].toUInt());
++      break;
++    case TBL_setRowReadOnly:
++      QTable::setRowReadOnly (args[0].toInt(), args[1].toUInt());
++      break;
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
++    case DCOP::hasFocus:
++      return QString::number(this->hasFocus());
++      break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/scriptobject.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/scriptobject.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -141,6 +141,13 @@
+   executeProcess(true);
+ }
+ 
++void ScriptObject::execute(bool i)
++{
++  m_params.clear();
++  m_params.append(QString::number(i));
++  executeProcess(true);
++}
++
+ bool ScriptObject::isFunctionSupported(int f)
+ {
+   return f == DCOP::setText || f == DCOP::clear || f == DCOP::execute || f == DCOP::item 
+--- kommander/widgets/treewidget.h	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/treewidget.h	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -77,6 +77,10 @@
+   QListViewItem* itemFromString(QListViewItem* parent, const QString& s);
+   QPtrVector<QListViewItem> m_lastPath;
+   QString m_pathSeparator;
++  int addColumnTree(const QString & label, int width = -1 );
++  void setSortCol(int column, bool ascending=true);
++  void setAltBackground(const QColor & c);
++  void setColAlign(int column, const QString& align);
+ };
+ 
+ #endif
+--- kommander/widgets/listbox.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/listbox.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -96,7 +96,7 @@
+   return f == DCOP::text || f == DCOP::setText || f == DCOP::selection || f == DCOP::setSelection ||
+     f == DCOP::insertItems || f == DCOP::insertItem || f == DCOP::removeItem || f == DCOP::clear ||
+     f == DCOP::currentItem || f == DCOP::setCurrentItem || f == DCOP::item || f == DCOP::addUniqueItem ||
+-      f == DCOP::findItem || f == DCOP::setPixmap || f == DCOP::count;
++      f == DCOP::findItem || f == DCOP::setPixmap || f == DCOP::count || f == DCOP::geometry || f == DCOP::hasFocus;
+ }
+ 
+ void ListBox::contextMenuEvent( QContextMenuEvent * e )
+@@ -197,6 +197,15 @@
+         strings += item(i)->text();
+       return strings.join("\n");
+     }
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
++    case DCOP::hasFocus:
++      return QString::number(this->hasFocus());
++      break;
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }
+--- kommander/widgets/popupmenu.cpp	(.../tags/KDE/3.5.9/kdewebdev)	(revision 825557)
++++ kommander/widgets/popupmenu.cpp	(.../branches/KDE/3.5/kdewebdev)	(revision 825557)
+@@ -138,7 +138,7 @@
+ 
+ bool PopupMenu::isFunctionSupported(int f)
+ {
+-  return f == DCOP::clear || f == DCOP::execute || f == DCOP::item || (f >= INSERTMENUITEM && f <= LAST_FUNCTION) || f == DCOP::count;
++  return f == DCOP::clear || f == DCOP::execute || f == DCOP::item || (f >= INSERTMENUITEM && f <= LAST_FUNCTION) || f == DCOP::count || f == DCOP::geometry;
+ }
+ 
+ QString PopupMenu::handleDCOP(int function, const QStringList& args)
+@@ -227,6 +227,12 @@
+     }
+     case DCOP::count:
+       return QString::number(m_menu->count());
++    case DCOP::geometry:
++    {
++      QString geo = QString::number(this->x())+" "+QString::number(this->y())+" "+QString::number(this->width())+" "+QString::number(this->height());
++      return geo;
++      break;
++    }
+     default:
+       return KommanderWidget::handleDCOP(function, args);
+   }

@@ -1,0 +1,44 @@
+<sect1 id="sources-section">
+<sect1info>
+<authorgroup>
+<author>
+<firstname>Keith</firstname>
+<surname>Isdale</surname>
+<affiliation>
+<address><email>k_isdale@tpg.com.au</email></address>
+</affiliation>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+</sect1info>
+<title>Working With &XSLT; Source Files (Sources)</title>
+
+<para>
+If the inspector dialog is not showing use the
+<menuchoice>
+<guimenu>Tools</guimenu>
+
+<guimenuitem>Show inspectors</guimenuitem>
+</menuchoice>
+menu item. To work with sources click on the sources tab of dialog shown.
+</para>
+
+<para>
+All &XSLT; source files that are included by the &XSLT; file or one of its
+siblings are listed here.</para>
+
+<screenshot>
+<screeninfo>The Sources Window</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="sources_window.png" format="PNG" />
+</imageobject>
+<textobject><phrase>The Sources Window</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+<para>
+Clicking on a source entry in the list shown will cause the cursor in the
+main window to move to the start of file indicated.
+</para>
+</sect1>

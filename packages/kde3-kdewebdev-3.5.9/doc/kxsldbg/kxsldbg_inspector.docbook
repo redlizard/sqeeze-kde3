@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sect1 id="breakpoints">
+<sect1info>
+<authorgroup>
+<author>
+<firstname>Keith</firstname>
+<surname>Isdale</surname>
+<affiliation>
+<address><email>k_isdale@tpg.com.au</email></address>
+</affiliation>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+</sect1info>
+<title>Setting and Modifying Breakpoints</title>
+	
+<para>
+The primary way to work with breakpoints is via the main window. See
+<xref linkend="mainwindow-section"/>
+</para>
+
+<para>
+Once you have started the style sheet, you can use the
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Show inspectors</guimenuitem>
+</menuchoice>
+menu item. Then click on the Breakpoints tab. See below for an example.
+</para>
+
+<screenshot>
+<screeninfo>Setting Breakpoints</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="breakpoints_window.png" format="PNG" />
+</imageobject>
+<textobject><phrase>Setting Breakpoints</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2>
+<title>Adding a Breakpoint</title>
+
+<para>
+You can add a breakpoint by supplying any of:</para>
+<orderedlist>
+<listitem><para>a file and line number</para>
+</listitem>
+<listitem><para>a template name</para>
+</listitem>
+<listitem><para>a template name and a mode name</para>
+</listitem>
+<listitem><para>a mode name</para>
+</listitem>
+</orderedlist>
+
+
+<para>
+And then pressing the <guibutton>Add</guibutton> button.
+</para>
+</sect2>
+
+<sect2>
+<title>Argument Details</title>
+
+<para>
+A file name may be absolute path to a local file. Or partial file (&eg;
+<filename>xsldoc.xsl</filename>).
+</para>
+
+<para>
+A template or mode name may is fully Qualified Name where the non-local
+part is optional &eg; <emphasis>xsl:mytemplate</emphasis> is matched by
+<emphasis>mytemplate</emphasis>
+</para>
+</sect2>
+
+<sect2>
+<title>Deleting a Breakpoint</title>
+
+<para>
+Firstly left mouse click the breakpoint you want to delete in the list of
+current breakpoints. Then click the <guibutton>Delete</guibutton> button.
+</para>
+</sect2>
+
+<sect2>
+<title>Deleting All Breakpoints</title>
+
+<para>
+Click the <guibutton>Delete All</guibutton> button.
+</para>
+</sect2>
+
+<sect2>
+<title>Enabling or Disabling a Breakpoint</title>
+
+<para>
+Firstly &LMB; click the breakpoint you want to delete in the list of
+current breakpoints. Then click the <guibutton>Enable</guibutton> button.
+</para>
+</sect2>
+</sect1>

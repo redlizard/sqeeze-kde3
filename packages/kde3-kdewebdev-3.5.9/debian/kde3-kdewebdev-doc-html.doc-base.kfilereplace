@@ -1,0 +1,10 @@
+Document: kfilereplace
+Title: KFileReplace Handbook
+Author: Emiliano Gulmini <emi_barbarossa@yahoo.it>
+Abstract: KFileReplace is an utility to search and replace strings.
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kfilereplace/index.html
+Files: /usr/share/doc/kde/HTML/en/kfilereplace/*.html
+

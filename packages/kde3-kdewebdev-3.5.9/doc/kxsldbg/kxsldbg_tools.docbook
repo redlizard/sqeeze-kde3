@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sect1 id="tools-section">
+<sect1info>
+<authorgroup>
+<author>
+<firstname>Keith</firstname>
+<surname>Isdale</surname>
+<affiliation>
+<address><email>k_isdale@tpg.com.au</email></address>
+</affiliation>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+</sect1info>
+
+<title>Miscellenous Tools</title>
+
+<para>
+Several tools are available via the tools menu the main tool is the
+inspector tool.
+</para>
+
+<sect2>
+<title>Inspector Tool</title>
+
+<para>
+The inspector tool is the contains all the individual dialogs for working
+with:</para>
+<itemizedlist>
+<listitem><para>Breakpoints</para></listitem>
+<listitem><para>Templates</para></listitem>
+<listitem><para>Variables</para></listitem>
+<listitem><para>Callstack entries</para></listitem>
+<listitem><para>&XSL; source files</para></listitem>
+<listitem><para>&XML; Enties</para></listitem>
+</itemizedlist>
+
+</sect2>
+
+<sect2>
+<title>Execute by Walking</title>
+
+<para>By clicking on <guimenuitem>Start execution with
+walking</guimenuitem> menu a dialog is shown to allow the walk speed
+to be chosen.</para>
+
+<screenshot>
+<screeninfo>The Walk Window</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="walk_window.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>The Walk Window</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+<para>To stop walking either use the <keycap>W</keycap> key or select the
+<guimenuitem>Start execution with walking</guimenuitem> menu item.</para>
+</sect2>
+
+<sect2>
+<title>Lookup &XML; Entities</title>
+
+<para>To lookup a System ID in the current &XML; catalog
+use the <guimenuitem>Lookup System ID</guimenuitem> menu then enter the
+value to find the the dialog that displays.</para>
+
+<screenshot>
+<screeninfo>The System ID Window</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="systemid_window.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>The System ID Window</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+<para>To lookup a PUBLIC ID use the <guimenuitem>Lookup Public
+ID</guimenuitem> menu entry then enter the value to find the the dialog that
+displays.</para>
+
+<screenshot>
+<screeninfo>The Public ID Window</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="publicid_window.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>The Public ID Window</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+</sect1>

@@ -1,0 +1,61 @@
+Index: kdewebdev-3.5.9/kxsldbg/kxsldbg.desktop
+===================================================================
+--- kdewebdev-3.5.9.orig/kxsldbg/kxsldbg.desktop	2008-06-28 20:09:36.000000000 +0200
++++ kdewebdev-3.5.9/kxsldbg/kxsldbg.desktop	2008-06-28 20:54:50.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KXSLDbg
+ Name[sv]=Kxsldbg
+ Name[ta]=KXSLDபிஜி
+Index: kdewebdev-3.5.9/quanta/src/quanta.desktop
+===================================================================
+--- kdewebdev-3.5.9.orig/quanta/src/quanta.desktop	2008-06-28 20:09:36.000000000 +0200
++++ kdewebdev-3.5.9/quanta/src/quanta.desktop	2008-06-28 20:54:50.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=Quanta Plus
+ Name[br]=Quanta+
+ Name[hi]=क्वांटा प्लस
+Index: kdewebdev-3.5.9/kfilereplace/kfilereplace.desktop
+===================================================================
+--- kdewebdev-3.5.9.orig/kfilereplace/kfilereplace.desktop	2008-06-28 20:56:16.000000000 +0200
++++ kdewebdev-3.5.9/kfilereplace/kfilereplace.desktop	2008-06-28 20:56:19.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KFileReplace
+ Name[hi]=के-फ़ाइल-रिप्लेस
+ Name[ne]=बदल्ने केडीई फाइल
+Index: kdewebdev-3.5.9/kimagemapeditor/kimagemapeditor.desktop
+===================================================================
+--- kdewebdev-3.5.9.orig/kimagemapeditor/kimagemapeditor.desktop	2008-06-28 20:56:06.000000000 +0200
++++ kdewebdev-3.5.9/kimagemapeditor/kimagemapeditor.desktop	2008-06-28 20:56:08.000000000 +0200
+@@ -1,6 +1,5 @@
+ [Desktop Entry]
+ Type=Application
+-Encoding=UTF-8
+ MimeType=text/html;
+ Exec=kimagemapeditor -caption "%c" %i %m
+ Icon=kimagemapeditor
+Index: kdewebdev-3.5.9/klinkstatus/src/klinkstatus.desktop
+===================================================================
+--- kdewebdev-3.5.9.orig/klinkstatus/src/klinkstatus.desktop	2008-06-28 20:55:46.000000000 +0200
++++ kdewebdev-3.5.9/klinkstatus/src/klinkstatus.desktop	2008-06-28 20:55:48.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Name=KLinkStatus
+ Name[ne]=केडीई लिङ्क स्थिति
+ Name[sk]=KLink status
+Index: kdewebdev-3.5.9/kommander/editor/kmdr-editor.desktop
+===================================================================
+--- kdewebdev-3.5.9.orig/kommander/editor/kmdr-editor.desktop	2008-06-28 20:55:28.000000000 +0200
++++ kdewebdev-3.5.9/kommander/editor/kmdr-editor.desktop	2008-06-28 20:55:29.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ GenericName=Dynamic Dialog Editor
+ GenericName[bg]=Редактор за диалогови прозорци
+ GenericName[ca]=Editor de diàlegs dinàmics

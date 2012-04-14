@@ -1,0 +1,66 @@
+[General]
+Plugins=KFileReplace, CVS Management (Cervisia),XSLT Debugger, KImageMapEditor, Link Checker, Konsole
+SearchPaths=
+
+[CVS Management (Cervisia)]
+Arguments=
+FileName=kde3/libcervisiapart.la
+Icon=cervisia
+Location=
+OutputWindow=Editor View
+Standard=true
+Standard Name=cervisia_kpart
+Type=KPart
+Input=3
+
+[KFileReplace]
+Arguments=
+FileName=kde3/libkfilereplacepart.la
+Icon=kfilereplace
+Input=3
+Location=
+OutputWindow=Editor Tab
+ReadOnly=true
+Standard=false
+Type=KPart
+
+[XSLT Debugger]
+Arguments=
+FileName=kde3/libkxsldbgpart.la
+Icon=xsltproc.png
+Input=0
+Location=
+OutputWindow=Editor Tab
+ReadOnly=true
+Standard=false
+Type=KPart
+
+[KImageMapEditor]
+FileName=kde3/libkimagemapeditor.la
+Icon=kimagemapeditor
+Input=1
+Location=
+OutputWindow=Editor Tab
+ReadOnly=true
+Standard=false
+Type=KPart
+
+[Link Checker]
+FileName=kde3/libklinkstatuspart.la
+Icon=klinkstatus
+Input=1
+Location=
+OutputWindow=Editor Tab
+ReadOnly=true
+Standard=false
+Type=KPart
+
+[Konsole]
+FileName=kde3/libkonsolepart.la
+Icon=konsole
+Input=1
+Location=
+OutputWindow=Separate Toolview
+ReadOnly=true
+Standard=false
+Type=KPart

@@ -1,0 +1,72 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>ConfigResultsDialog</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ConfigResultsDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>233</width>
+            <height>183</height>
+        </rect>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QButtonGroup">
+            <property name="name">
+                <cstring>buttonGroup13</cstring>
+            </property>
+            <property name="title">
+                <string>View</string>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>kcfg_DisplayTreeView</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Tree</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>kcfg_DisplayFlatView</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Flat</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QButtonGroup">
+            <property name="name">
+                <cstring>buttonGroup13_2</cstring>
+            </property>
+            <property name="title">
+                <string>Misc</string>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>kcfg_FollowLastLinkChecked</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Follow Last Link Checked</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+    </vbox>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

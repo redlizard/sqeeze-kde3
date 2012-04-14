@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+     File : test4.xml     
+     Author: Keith Isdale <k_isdale@tpg.com.au>
+     Description: xml data for stylesheet for testing
+     Copyright Reserved Under GPL     
+-->
+<!-- This file does not require translation -->
+<!-- NO TRANSLATION -->
+
+<result>
+  <data/>
+  <extra/>
+</result>
+
+
+
+<!-- initialization code for xemacs -->
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

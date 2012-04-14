@@ -1,0 +1,39 @@
+Quanta Plus (quanta):
+    Current maintainers:
+      Eric Laffoon    <sequitur@kde.org>
+      Andras Mantia   <amantia@kde.org>
+    Original authors:
+      Dmitry Poplavsky     <dima@kde.org>
+      Alexander Yakovlev   <yshurik@kde.org>
+
+    CSS/Frame editor: Luciano Gulmini <e.gulmini@tiscali.it>
+    PHP Debugger: Linus McCabe <Linus@mccabe.nu>
+    VPL part:
+      Nicolas Deschildre <ndeschildre@kdewebdev.org>
+      Paulo Moura Guedes <moura@kdewebdev.org>
+
+    Home page:  http://quanta.sourceforge.net/
+    Download:   http://sourceforge.net/projects/quanta
+    Bug form:   http://bugs.kde.org
+
+Kommander (kommander):
+    Authors:
+	Mark  Britton <consume@optusnet.com.au>
+        Eric Laffoon <sequitur@easystreet.com>
+	Michal Rudolf <mrudolf@kdewebdev.org>
+
+KXSLDbg (kxsldbg):
+    Author: Keith Isdale <k_isdale@tpg.com.au>
+
+KFileReplace:
+    Maintainer:
+	Emiliano Gulmini <emi_barbarossa@yahoo.it>
+        Andras Mantia <amantia@kde.org>
+    Original author:
+	François Dupoux <fdupoux@dupoux.com>
+
+KImageMapEditor:
+    Author: Jan Schäfer <JanSchaefer@gmx.de>
+
+KLinkStatus:
+    Author: Paulo Moura Guedes <pmg@netcabo.pt>

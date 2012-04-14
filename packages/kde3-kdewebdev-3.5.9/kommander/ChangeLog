@@ -1,0 +1,572 @@
+2008-01-20 - Eric Laffoon <sequitur@kde.org>
+    o set new functions only available to new parser such as createWidget to not be shown in the function browser if the old parser is run.
+
+January 2008 - Andras Mantia <amantia@kde.org>
+    o support executing of slots
+    o add "execute" method for PushButton
+    o possibility to pass parameters for ScriptObject added
+    o add "return" command to get back the result of a ScriptObject
+    o add createWidget function for on-the-fly widget creation
+    o add connect/disconnect function for on-the-fly signal/slot connection
+    o add widgetExists
+    o add execBackground
+    o add indexed array functions: array_indexedFromString, array_indexedToString, array_indexedRemoveElements, array_indexedInsertElements
+    o input_color and @Input.color accepts a default color argument
+    o fix "exit" command
+    o make a="Label1"; a.setText("foo") work
+    o make dcopid, pid, parentPid work in the new parser
+    o make TreeWidget.selection work in multi selection mode
+    o add TreeWidget.selectedIndexes
+    o make TreeWidget.setSelection show the selected item
+    o add setCellWidget/cellWidget for Table
+    o add setEditable(bool) for widgets that are editable
+    o add PopupMenu widget
+    o add ToolBox widget
+    o add AboutDialog widget
+    o optionally quote the strings inserted via function browser
+    o use combobox for booleans in the function browser
+    o use multiline insert box in function browser
+    o add highlighting for the new parser
+    o use the new parser by default for new dialogs 
+    o make possible to open more associated editors at once 
+    o fix problem with losing the parser type status in the editor when working with multiple dialogs
+    o @Array.fromString should append the new elements to the array, just like
+      it did before and how array_fromString does.
+    o fix @eval for addition/substraction and handle division by zero
+    o process code written in external script using the old parser 
+    o make it possible to run external script in a ScriptObject
+    o "execute" DCOP call returns a string
+    o support shebang (#!/path_to/kmdr-executor) in the beginning of the .kmdr files. 
+      Running .kmdr files is possible directly if you make them executable.
+    o store Kommander version in the VERSION/_VERSION global variable
+    o the editor does not save the dialog on running
+    o warn if a dialog file is not executable
+    o create backup files every 5 minutes
+    o add initialize/destroy signals to MainWindow
+    o add experimental Kommander KPart
+    o rework the plugin system
+    o bump version to 1.3
+
+Wed Jan 9 21:35:38 2008 - Andras Mantia <amantia@kde.org>
+    o add Table.selection to get back the selection coordinates
+
+Sun Dec 30 00:02:34 2007 - Andras Mantia <amantia@kde.org>
+    o don't do math operations in check only mode
+
+Thu Dec 22 00:38:31 2007 - Andras Mantia <amantia@kde.org>
+    o fix the for loop parsing if end < start
+
+Thu Dec 20 00:38:31 2007 - Andras Mantia <amantia@kde.org>
+    o insert the functions using the syntax of the new parser if #!kommander 
+      is specified in the associated text 
+    o add DatePicker widget
+
+Wed Dec 19 08:39:00 2007 - Eric Laffoon <eric@kdewebdev.org>
+    o fixed the bug in the input text dialog where entering a default value returned the caption.
+
+Sat Dec 15 23:58:45 2007 - Andras Mantia <amantia@kde.org>
+    o return the result of a division in floating form if the result is not an integer.
+      Changed the behavior in both the old and new parser.
+
+Wed Nov 28 13:21:34 2007 - Andras Mantia <amantia@kde.org>
+    o do not set array values when the assignment is in a code path which shouldn't be executed
+
+Tue Nov 20 20:03:34 2007 - Andras Mantia <amantia@kde.org>
+    o show the checked function for RadioButton widgets in the function browser
+
+Fri Oct 19 16:08:32 2007 - Andras Mantia <amantia@kde.org>
+	o make CheckBox.setChecked accept as argument false, "false", true, "true",
+ 	  0 (meaning false), everything else (meaning true)
+
+Sat Oct 6 17:53:47 2007 - Andras Mantia <amantia@kde.org>
+	o make multiplying work correctly for floating point values
+	o do not remove the whole text after undoing the changes in the editor [#147817]
+	o don't crash if opening a file the second time when the first try failed [#141110]
+	o don't close the dialogs with ESC (just like in real applications)
+	o fix ExecButton.setEnabled() [#113624]
+	o use icon instead of "..." in the file selector [#109985]
+	o make @echo really work [#138705]
+	o add DCOP method to get the winID [#111161]
+	o add DCOP method to change the cursor to the wait cursor and back [#109630]
+
+Thu Sep 14 20:01:18 2006 - Michal Rudolf <mrudolf@kdewebdev.org>
+(actually imported from a work branch on Sep 29, 2007 by Andras Mantia <amantia@kde.org>)
+	o function str_findrev works now
+	o fix crash when diving by zero
+  	o make function names case insensitive
+  	o fix dcop() function (external DCOP) in new parser
+	o add missing EOLs to array_values()
+  	o don't open files with no filename given
+  	o fix crash on incorrect syntax in new parser
+  	o fix input_file() function
+  	o add switch/case to new parser
+  	o fix importing tables with empty cells
+  	o Kommander 1.3.0 (development branch) released
+
+Thu Sep 7 20:01:18 2006 - Andras Mantia <amantia@kde.org>
+  	o fix crash on exit in the editor
+
+Tue Sep 5 16:19:40 2006 - Andras Mantia <amantia@kde.org>
+  	o use KTextEditor for the associated text editing
+
+Sun 16 sty 2005 00:44:39 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o add MessageLog to view output of dialogs run from Editor
+	o add @debug command
+
+Tue 11 sty 2005 23:00:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o update and unify version number
+	o Kommander 1.1dev3 released
+
+Sun 09 Jan 2005 15:22:05 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added support for Kommander dialog templates in Editor
+
+Tue 04 Jan 2004 14:30:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o implemented "Save All" files menu command
+	o implemented SingleShot option of Timer widget
+
+Thu 30 Dec 2004 14:00:32 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added setColumnCaption for TreeWidget
+
+Wed 29 Dec 2004 09:58:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added some new function for Table widget: removeRow,
+	  removeColumn, setColumnCaption, setRowCaption
+	o fixed a bug with insertRow/insertColumn (incorrect number
+	  of rows/columns inserted)
+	o added example of using Table widget to examples/tutorial
+
+Mon 20 Dec 2004 22:02:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added basic Table widget
+	o more Editor cleanup - remove obsolete code
+
+Sat 18 Dec 2004 22:17:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o remove obsolete include files and switch Editor to use
+	  KMessageBox instead of QMessageBox
+
+Mon 13 Dec 2004 13:58:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o more flexible error handling: now you can continue, continue
+	  ignoring next error, or stop application
+
+Fri 10 Dec 2004 19:00:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o compilation fix (solved problems with missing kmdrpligins link)
+
+Thu 09 Dec 2004 22:59:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fixed problems with hiding ActionEditor
+
+Thu 02 Dec 2004 21:54:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o bug fixed: accept 0 as false value.
+	o significant speedup of TreeWidget.setText/insertItem for large trees
+
+Sun 28 Nov 2004 19:48:00 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o remove obsolete CustomWidget code
+	o fixed a nasty bug in && evaluation
+
+Sun 21 Nov 2004 18:19:49 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o bug fixed: opening files from command-line
+	o granted addUniqueItem for Combos
+	o use KDE-based tools layout (KDockWidget) in Editor
+
+Fri 19 Nov 2004 13:48:45 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added signal finished(), emitted when Konsole process finishes
+	o remove obsolete signal from ScriptObject
+
+Tue 16 Nov 2004 23:28:16 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o Editor shortcuts can be configured and remembered
+	o Editor Recent files submenu is now KDE based
+	o Editor configuration file is a standard KDE config file
+	o Editor has now Settings menu
+	o some obsolete Editor options were removed
+
+Sun 14 Nov 2004 22:39:38 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o massive cleanup and KDE-ification of Editor
+	o most actions converted to KActions, some were standarized
+	o some obsolete dialogs removed
+	o About dialog changed to use KAboutDialog
+
+Wed 03 Nov 2004 14:28:39 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fix some problems detected by kdetestsscripts
+	o 1.1dev2 released
+
+Tue 02 Nov 2004 07:53:20 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o Signals and slots: disallow unmatched (signal, slot) connections.
+	  Avoid duplicates in senders combo.
+
+Mon 01 Nov 2004 23:29:19 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o Signals and slots improved: slots that don't have any acceptable
+	  signal in current sender are hidden now. For MainWindow dialogs,
+	  actions are displayed together with widgets. Some rare crashes
+	  were fixed. Connect/disconnect button should be properly
+	  enabled/disabled now.
+	o Some tooltips for Function browser added.
+	o In Function Browser, don't add alone comma when optional
+	  parameter is empty.
+	o Added missing %n in i18n() string in Function Browser.
+
+Sun 31 Oct 2004 22:14:13 CET - Michal Rudolf <mrudolf@kdewebdev.org>
+	o Complete rewrite of Signals & slots editor. All connections
+	  are now displayed, it is possible to change both sender and
+	  receiver without closing window. Both slots and signals
+	  are sorted, more slots are filtered.
+
+Thu 28 Oct 2004 15:14:26 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added count() function for getting number of items in widget
+
+Wed 27 Oct 2004 23:58:56 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added <> and != for 'not equal to' condition in expressions
+
+Sun 24 Oct 2004 19:04:03 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added missing setMaximum for Slider
+
+Fri 22 Oct 2004 22:27:05 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added 'no-editor' FileSelector (only a button with configurable
+	  caption)
+	o added warning for unmatched @if and @switch
+
+Tue 19 Oct 2004 23:23:28 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o Konsole now uses TextEdit widget
+	o improved EOL handling in Konsole
+	o compilation fixes
+
+Sat 16 Oct 2004 09:39:48 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fix: recognize floating-point numbers in @String.isNumber
+
+Thu 14 Oct 2004 12:06:05 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added Timer widget
+
+Wed 13 Oct 2004 12:29:13 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added missing 'checked' function for RadioButton
+	o added @String.findRev function for searching string backwards
+
+Tue 12 Oct 2004 14:00:03 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fix: don't add brackets to functions with no parameters
+
+Mon 11 Oct 2004 14:00:03 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o improved 'cancel'
+
+Sat 09 Oct 2004 16:54 PDT - Eric Laffoon <sequitur@kde.org>
+	o Edited specials text and added comment @# to function browser
+	o fixed function browser to support a fourth parameter
+
+Sat 09 Oct 2004 14:00:03 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fix: bug in @File.append
+	o In Function Browser show common widget functions for each widget
+	o scroll content when process output is longer; show hourglass
+	  in Konsole widget when process is running
+	o added new command 'cancel' to cancel script running in Konsole
+
+Tue 05 Oct 2004 11:19:41 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fix: use "\n" as separator in multiselection mode of FileSelector
+	o preliminary version of Konsole widget
+
+Sat 02 Oct 2004 20:38:40 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added 'execute' command to ScriptObject widget
+	o fix: properly report failure when saving file and ask to
+ 	  provide another file name
+
+Fri 01 Oct 2004 22:26:06 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fix: output was not sent to stdout by ExecButton
+
+Sat 28 Aug 2004 19:20:06 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fixed a crash in TreeWidget setText function
+	o added support for multiselection in ListBox (via selection
+	  function)
+
+Tue 24 Aug 2004 11:00:16 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o Function Browser: don't show unnecessary 'widget' parameter
+	o Function Browser: make widget functions default
+	o Kommander Text Editor: focus on script text
+	o re-add new i18n descriptions for some new functions
+	o added new 'checked' function for checkboxes and buttonboxes
+	o bool values returned from DCOP calls are now supported
+
+Wed 18 Jul 2004 18:19:21 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o Kommander 1.0 released together with KDE 3.3
+
+Wed 04 Jul 2004 23:59:21 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added @switch..@case..@end statement
+	o added @if()...@endif statement
+
+Wed 04 Jul 2004 18:20:21 CEST - Eric Laffoon <eric@kdewebdev.org>
+	o fixed missing @ for Kommander functions in function browser
+
+Tue 03 Jul 2004 11:06:26 CEST - Eric Laffoon <eric@kdewebdev.org>
+	o added new background
+
+Mon 02 Aug 2004 23:58:01 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added DCOP-enabled Label and PixmapLabel widgets
+
+Sun 01 Aug 2004 17:32:11 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added support for string comparisons in @expr
+	o added support for floats in @expr
+
+Fri 30 Jul 2004 14:59:12 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added support for math expressions
+	o added @expr(string) function that parses and evaluates string
+
+Wed 28 Jul 2004 00:14:28 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fixed about.ui which caused problems due to some Designer
+	  incompatibility
+	o fixed i18n: tab pages and wizard pages titles were not
+	  translated
+	o added some missing i18n strings
+	o added option to specify i18n catalogue from command-line
+	  (useful for application-related dialogs)
+
+Sat 24 Jul 2004 10:15:10 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o bug fixed: crash with non-existing item in ListBox
+	o bug fixed: blocking button with no script was not unblocked
+	o automatically set tree mode for Tree Widget when adding nestes items
+    	o release 1.0beta1
+
+Fri 23 Jul 2004 19:54:26 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added hourclass cursor when invoking ExecButton script with blocked GUI
+	o added missing i18n strings for *.ui files
+	o changed editor to use included background
+
+Fri 23 Jul 2004 18:34:26 CEST - Eric Laffoon <eric@kdewebdev.org>
+	o added new background and splash
+
+Thu 22 Jul 2004 22:17:49 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o ExecButton now has three modes: no blocking, block only ExecButton,
+	  block whole GUI
+
+Wed 22 Jul 2004 24:10:59 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o optimized Tree Widget
+	o bug fixed: some missing i18n strings
+
+Tue 20 Jul 2004 19:51:32 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o bug fixed: @dcop with more than 4 arguments
+	o bug fixed: in @forEach, @var_count has incorrect value
+	o in @forEach, @var_index has now 1-based index, not 0-based
+	o setMaximum for ProgressBar
+
+Mon 19 Jul 2004 11:47:58 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added ScriptObject - hidden script container
+
+Fri 16 Jul 2004 15:37:41 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added Slider widget
+	o removed some obsolete code from editor
+
+Thu 15 Jul 2004 23:22:33 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added TextBrowser widget for rich text viewing, with clickable
+	  links
+	o in @forEach, not only @var, but @var_index and @var_count are
+	  expanded (first to index of current item, second to item count)
+	o bug fixed: incorrect version number in Editor
+
+Wed 14 Jul 2004 12:22:33 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added @String.args (based on Qt QString("%1").arg()
+	o support parameters in function browser
+
+Tue 13 Jul 2004 22:33:19 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added support for internationalization of Kommander dialogs
+	o added @i18n special for marking strings for translation
+
+Tue 13 Jul 2004 13:33:00 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o function browser: support for nested functions
+	o function browser: properly prefix function groups with @
+	o function browser: add information about obligatory and optional
+	  parameters.
+	o function browser: add clear button
+	o Kommander Text Editor: change buttons order
+
+Tue 13 Jul 2004 01:10:34 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added function browser for editor
+
+Sat 10 Jul 2004 15:51:07 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o forEach(variable, list) function for internal loops
+	o for(variable, start, end, [step]) function for internal loops
+	o Kommander 1.0alpha7 released
+
+Fri 09 Jul 2004 17:39:43 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o TreeWidget optimized - it should be much faster for big trees now
+	o bug fixed: TreeWidget findItem function
+
+Thu 09 Jul 2004 13:27:47 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o StatusBar widget added
+	o ProgressBar widget added
+	o widgets icons updated
+	o removed obsolete ListView widget
+
+Tue 06 Jul 2004 10:12:44 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o bug fixed: calling @dcop with parameterless functions
+	o bug fixed: ListBox.setCurrentItem didn't work
+	o added setCurrentItem for ComboBox
+	o added setCurrentItem/currentItem for TabWidget, remove obsolete
+	  text and setText
+	o bug fixed: itemDepth and itemPath
+	o bug fixed: adding items to TreeWidget failed sometimes
+	o added @String.section(string, substring, index) function, returning
+	  section of a string
+	o added third (optional) index parameter to @String.find
+
+Fri 02 Jul 2004 23:33:46 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o more TreeView methods: itemDepth(index) and itemPath(index)
+	o setText, text and populate work for TreeView
+	o parser cleanup and fixes
+	o setPixmap(iconName, index) method for ListBoxes and TreeViews;
+	  use index = -1 to set pixmaps for all items
+	o Kommander 1.0alpha6 released
+
+Thu 01 Jul 2004 16:03:20 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o add children(QString widget) DCOP call, returning list of
+	  widgets that are direct children of the widget (or all widgets
+	  if widget is null)
+	o added type(QString widget) DCOP call returning class of widget
+	o bug fixed: main dialog wasn't supported in @Widget.method syntax
+	o QStringList is now supported as DCOP return value
+
+Wed 30 Jun 2004 15:01:23 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o TreeView DCOP methods: insertItem(), insertItems(), clear(),
+	  item(), setCurrentItem(), selection(), setSelection(),
+	  removeItem()
+	o TreeView tree support: use / to separate nodes (f. e.
+	  insertItem("Root/Node/Subnode")
+	o TreeView multiple column support: use \t to separate columns
+	  (f. e. insertItem("document.txt\t45kb\t2004-06-30")
+
+Tue 29 Jun 2004 00:44:39 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o all DCOP functions are handled in appropriate widgets
+	o DCOP and specials are now registered together in single class
+	o it is now possible to create new methods for new (plugin) widgets
+	o setVisible() DCOP method added (show/hide widgets)
+	o setText() alias for changeWidgetText
+	o insertItem() alias for addListItem
+	o insertItems() alias for addListItems
+	o setEnabled() alias for enableWidget
+	o setCurrentItem() for setting current item on index base
+	o selection() for getting selected text/text of selected item
+	o setSelection() for setting selected text/text of selected item
+	  (alias for setCurrentListItem() for ListBoxes)
+	o text() DCOP method to get content of widget
+	  (@SomeWidget.text is equivalent to @SomeWidget with default script
+	  set to @widgetText)
+	o clear() DCOP method handles LineEdit, TextEdit and FileSelector now
+	o text()/setText() work for spinbox
+
+Mon 21 Jun 2004 13:36:52 CEST - Eric Laffoon <eric@kdewebdev.org>
+	o added documentation
+
+Sat 19 Jun 2004 00:47:42 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added changeWidgetText support for listboxes and combos
+	o security fix: warning when running from /tmp directory
+	o added @null special
+	o Kommander 1.0alpha5 released
+
+Thu 17 Jun 2004 23:13:18 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added @String.find
+	o added specials descriptions
+	o fix: crash when opening main-window dialog (created in Designer)
+	  in executor
+
+Wed 16 Jun 2004 13:04:30 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added @Array.count
+	o added @Array.read/write
+
+Tue 15 Jun 2004 23:24:52 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added file functions (@File: read, write, append)
+	o added warning for empty @Widget text
+
+Mon 15 Jun 2004 18:32:01 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added string-handling functions (@String: left, right,
+	  contains, left, right, mid, compare, isEmpty, isNumber,
+	  remove, replace, lower, upper)
+
+Mon 14 Jun 2004 10:23:12 CEST - Eric Laffoon <eric@kdewebdev.org>
+	o fix: parentPid bug
+	o fix: execBegin bug
+
+Sat 12 Jun 2004 01:49:07 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added more array functions: @Array.values(), @Array.clear()
+	  and @Array.remove()
+	o rebuild parser to made it more flexible
+	o fix: FileSelector now opens file dialog in current directory
+	o added two new DCOP functions for ListBoxes: findItem()
+	  and addUniqueItem()
+	o ButtonGroup now has 'checked' and 'unchecked' states, it
+	  also supports setChecked()
+	o Kommander 1.0alpha4 released
+
+Thu 10 Jun 2004 00:49:07 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added DCOP information database that translates function
+	  name to function prototype
+	o enhanced parser to handle @<widget>.<DCOP function> syntax
+
+Mon 07 Jun 2004 14:45:53 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added assotiative arrays: @Array.value(), @Array.keys() and
+	  @Array.setValue() specials
+
+Sun 06 Jun 2004 23:13:34 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fix compilation problems on Debian and Slackware
+	o @@ is now interpreted as @
+
+Sat 05 Jun 2004 10:12:05 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added @env(variable) special to get environment variable value
+	o added @dialog(dialog, params) that would call child dialog, setting
+	  _PARENTPID and _PARENTDCOPID variables for it
+	o check for global variable _PARENTPID when getting @parentPid
+	o added _KMDIR and _NAME global variables that return
+	  path/filename of current dialog
+	o @dialog now searches for a dialog in both dialog path
+	  and current path
+	o parser fixes (improved handling of nested specials)
+	o Kommander 1.0alpha3 released
+
+Fri 04 Jun 2004 00:40:59 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o fixed: don't execute Initialization/Executor in Editor
+	o changed DCOP id of Editor to kmdr-editor
+	o version numbers unified
+
+Thu 02 Jun 2004 15:08:32 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o KDE widgets are now used for lists, buttons and combos
+	o added file completion to FileSelector
+
+Fri 28 May 2004 22:40:10 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o support for Kommander comments (in @# <comment> format)
+	o added two new specials: global(var) and setGlobal(var, value)
+	o removed obsolete Preview menu commands
+	o Kommander 1.0alpha2 released
+
+Wed 26 May 2004 23:22:46 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o changeWidgetText for FileSelector class is now handled
+	o added currentItem(QString) DCOP call for lists and combos
+	o added item(QString,int) DCOP call for lists and combos
+
+Wed 26 May 2004 01:10:01 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o parser of specials() rewritten
+	o added optional shebang argument for execBegin()
+	o handling of non-string @dcop() arguments fixed
+	o handling of multiple @dcop() arguments fixed
+	o Makefile.am dependencies for executor cleaned
+	o Kommander 1.0alpha1 released
+
+Thu Apr 27 2004 16:38:36 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added @parentPid evaluated to parent process pid
+	o install Kommander Editor and Executor desktop files
+
+Thu Apr 20 2004 16:38:36 CEST - Michal Rudolf <mrudolf@kdewebdev.org>
+	o added @pid evaluated to current process pid
+	o added @dcopid evaluated to current process DCOP id
+	o rebuilt Kommander Text editor
+	o added support for shebang (#!/bin/sh) for both ExecButton
+	  script and @execBegin scripts
+	o added ChooseWidget dialog
+
+Thu Jan 29 13:48:49 2004 - Andras Mantia <amantia@kde.org>
+        o DCOP methods for modifying the widgets
+
+Sat Nov  1 17:00:03 AEST 2003
+	o New widget plugin system KommanderPlugin and KommanderFactory
+
+Sun 04 May 2003 07:38:42 PM EEST - Andras Mantia <amantia@kde.org>
+	o do not add the .kmdr extension to files ending with .kmdr
+	o remove some warning/error messages polluting the output
+	o flush the stdout buffer after writing to it
+
+Sat Sep 28 23:18:08 EST 2002 - Marc Britton <consume@optushome.com.au>
+	o Cleaned up and reworked file overview window
+	o Removed 'Source File' tab from hierarchy view
+	o Removed more disabled source files
+	o Now searches for templates in custom directory (default $KDEDIR/templates)
+
+Sun Sep 15 15:31:48 EST 2002 - Marc Britton <consume@optushome.com.au>
+        o Initial Creation

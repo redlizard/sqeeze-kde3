@@ -1,0 +1,16 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KXsldbgPart
+Name[de]=KXsldbg-Komponente
+Name[fr]=Module externe KXsldbg
+Name[ja]=KXsldbgPort
+Name[nds]=KXsldbg-Komponent
+Name[pl]=Osadzalny program KPart KXsldbg
+Name[pt_BR]=KXSsldbgPart
+Name[sv]=Kxsldbg-delprogram
+Name[ta]=KXsldbg பகுதி
+Name[tg]=Қисми KXsldbg
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+ServiceTypes=KParts/ReadOnlyPart
+X-KDE-Library=libkxsldbgpart
+Type=Service

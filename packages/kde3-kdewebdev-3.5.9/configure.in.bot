@@ -1,0 +1,8 @@
+if test "$enable_editors" = "yes"; then
+ echo ""
+ echo "WARNING: You have enabled the editor chooser feature!"
+ echo "This feature is highly experimental, and officially only the"
+ echo "Kate part (Advanced Text Editor) is supported!"
+ echo "Some features are not accessible with other editors, and"
+ echo "Quanta may even crash with those!"
+fi

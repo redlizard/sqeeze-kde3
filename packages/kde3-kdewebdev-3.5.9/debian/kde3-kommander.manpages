@@ -1,0 +1,5 @@
+debian/man/extractkmdr.1
+debian/man/kmdr-editor.1
+debian/man/kmdr-executor.1
+debian/man/kmdr-plugins.1
+debian/man/kmdr2po.1

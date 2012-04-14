@@ -1,0 +1,52 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KLINKSTATUS 1 "October 19, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+klinkstatus \- a web link validity checker for KDE
+.SH SYNOPSIS
+.B klinkstatus
+[ \fIgeneric-options\fP ]
+[ \fIURL\fP ]
+.SH DESCRIPTION
+\fBKLinkStatus\fP is a web link validity checker for KDE.  It allows you to
+search internal and external links throughout your web site.  Simply
+point it to a single page and choose the depth to search.
+.PP
+You can also check local files, or files over ftp:, fish: or any other
+KIO protocols.  For performance, links can be checked simultaneously.
+.PP
+This application is part of the official KDE web development module.
+.SH OPTIONS
+For a full summary of options, run \fIklinkstatus \-\-help\fP.
+.SH SEE ALSO
+.BR quanta (1).
+.PP
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/klinkstatus/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/klinkstatus/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdewebdev-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/klinkstatus/\fP.
+.SH AUTHOR
+KLinkStatus was written by Paulo Moura Guedes <moura@kdewebdev.org>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

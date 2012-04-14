@@ -1,0 +1,9 @@
+[General]
+Name = empty
+NickName = Empty DTEP valid for all files
+MimeTypes = all/all
+NumOfPages = 0
+CaseSensitive = false
+Family = 2
+TopLevel = true
+

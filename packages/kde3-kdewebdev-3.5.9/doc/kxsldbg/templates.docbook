@@ -1,0 +1,34 @@
+<sect1 id="templates">
+<title>Working With Templates</title>
+
+<para>
+If the inspector dialog is not showing use the
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Show inspectors</guimenuitem>
+</menuchoice>
+menu item. To work with templates click on the templates tab of dialog
+shown.
+</para>
+
+<para>
+All templates found are listed here. Please note that the export rules of
+&XSLT; apply. So only there may be more than one template with the same
+match and mode details.</para>
+
+<screenshot>
+<screeninfo>The Templates Window</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="templates_window.png" format="PNG"/>
+</imageobject>
+<textobject><phrase>The Templates Window</phrase></textobject>
+</mediaobject>
+</screenshot>
+
+<para>
+Clicking on a template entry in the list shown will cause the cursor in
+the main window to move to the file and line number indicated.
+</para>
+</sect1>
+

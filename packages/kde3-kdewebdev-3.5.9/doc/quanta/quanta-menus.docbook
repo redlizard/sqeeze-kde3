@@ -1,0 +1,2265 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter id="quantas-menus-3-2">
+<chapterinfo>
+<title>The Menubar</title>
+<authorgroup>
+<author>
+<firstname>Robert</firstname>
+<surname>Nickel</surname>
+<affiliation>
+<address><email>robert@artnickel.com</email></address>
+</affiliation>
+</author>
+<author>
+  <firstname>Andr&#225;s</firstname>
+  <surname>Mantia</surname>
+  <affiliation>
+    <address><email>amantia@kde.org</email></address>
+  </affiliation>
+</author>
+
+<othercredit role="reviewer">
+<firstname>Christopher</firstname>
+<surname>Hornbaker</surname>
+<affiliation>
+<address><email>chrishornbaker@earthlink.net</email></address>
+</affiliation>
+<contrib>Reviewer</contrib>
+</othercredit>
+
+<othercredit role="reviewer">
+<firstname>Fabrice</firstname>
+<surname>Mous</surname>
+<affiliation>
+<address><email>fabrice@kde.nl</email></address>
+</affiliation>
+<contrib>Reviewer</contrib>
+</othercredit>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+</chapterinfo>
+
+<title>The Menubar</title>
+
+<para>
+This chapter explains all the various functions that can be found in the
+menubar.
+</para>
+
+<sect1 id="file-menu-3-2">
+<title>The <guimenu>File</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>New</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Create a new, blank file.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Open...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Search the file system to open an existing file.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Open Recent</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Quick list of the last several files you've opened. This list will change
+each time you open a file that is not on it, with the oldest being bumped
+off first.
+</para>
+</listitem>
+
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Save</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Save the active file's changes.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Save As...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Save the active file with another name.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>File</guimenu>
+<guisubmenu>Save as Template</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+This allows you to save code snippets and entire files as a template for
+later use. See the section on <link linkend="templates-3-2">templates</link>.
+If you try to save the selected text/file outside of the local/project
+template dir, then you will receive an error.
+</para>
+<variablelist>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>File</guimenu>
+<guisubmenu>Save as Template</guisubmenu>
+<guisubmenu>Save as Local Template...</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Allows you to save a file as a template within the local scope.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>File</guimenu>
+<guisubmenu>Save as Template</guisubmenu>
+<guisubmenu>Save as Project Template...</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Allows you to save a file as a template within the project scope.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>File</guimenu>
+<guisubmenu>Save as Template</guisubmenu>
+<guisubmenu>Save Selection to Local Template File...</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Allows you to save the selected text (&eg; a code snippet) in a local
+template file.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>File</guimenu>
+<guisubmenu>Save as Template</guisubmenu>
+<guisubmenu>Save Selection to Project Template File...</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Allows you to save the selected text (&eg; a code snippet) in a project
+template file.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>S</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Save All...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Save all modified files in the editor.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>F5</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Reload</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Reloads the current focused document.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Print...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+You can actually print out your documents. Uses the <application>kprinter
+</application> interface.
+</para>
+</listitem>
+</varlistentry>
+<!-- Not shown any more
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>W</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Close</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Close the currently displayed file.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Close All</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Close all open files. Prompts you to save if any files have been modified.
+</para>
+</listitem>
+</varlistentry>
+-->
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Quit</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Exit &quantaplus;
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="edit-menu-3-2">
+<title>The <guimenu>Edit</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Undo</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Undo the last action performed.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>Z</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Redo</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Redo the last action undone.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>X</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Cut</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Cut the current block of text and place its contents on the clipboard.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Copy</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Copy the current block of text to the clipboard.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Paste</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Paste the contents of the clipboard at the current cursor position.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Edit</guimenu>
+<guisubmenu>Paste Special</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Edit</guimenu>
+<guisubmenu>Paste Special</guisubmenu>
+<guimenuitem>Paste HTML Quoted</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Converts the clipboard text &HTML; special characters to &HTML; entities
+before pasting into the text body, so they show up properly when viewed
+and aren't picked up as tags by the client browser.
+</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Edit</guimenu>
+<guisubmenu>Paste Special</guisubmenu>
+<guimenuitem>Paste &URL; Encoded</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Converts the clipboard text into &URL; encoding, which is the correct way
+to include special characters and spaces into &URL;s. Used primarily when
+pasting a &URL; into an anchor tag.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>A</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Select All</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Select all of the text in the current document.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>A</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Deselect</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Unselect all text in the current document.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>B</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Block Selection Mode</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Turn on/off block highlighting. Allows you to select text blocks with your
+keyboard without holding down the shift key.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycap>Insert</keycap>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Overwrite Mode</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Overrides the Insert key.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Find...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+String or regular expression pattern to find in the current document.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycap>F3</keycap>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Find Next</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Repeat the find downward in the document from the current location.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Find Previous</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Repeat the find upward in the document from the current location.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>R</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Replace...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+String or regular expression replacement of text in the current file.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>G</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Go to Line...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Go directly to a specific line number. This is really helpful when your
+&PHP; script is breaking unexpectedly!
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;&Ctrl;<keycap>F</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Find in Files...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Find a string or expression in files in the selected folder. Sort of a
+&GUI; <command>grep</command> or <command>sed</command> with some
+predefined pattern spaces to help you out.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>J</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Expand Abbreviation</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+  Expands the abbreviations. Abbreviations can be defined in the <menuchoice>    
+    <guimenu>Settings</guimenu>
+    <guimenuitem>Configure Quanta...</guimenuitem>
+  </menuchoice> dialog.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Edit</guimenu>
+<guimenuitem>Apply Source Indentation</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+  Reformats the source code accroding to the same rules as the &VPL; part inserts the tags.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect1>
+
+<sect1 id="view-menu-3-2">
+<title>The <guimenu>View</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Tool Views</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Files</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the files tree.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Project</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the project tree.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Templates</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the template tree.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Scripts</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the scripts tree.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Document Structure</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the document structure tree.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Attribute Editor</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the attribute tree.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Documentation</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the documentation tree.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Messages</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the message window. This is the window where you see the
+output of any scripting actions and the debugger.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Problems</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the <guilabel>Problem Reporter</guilabel> at the bottom
+of the main &quantaplus; window. The <guilabel>Problem Reporter</guilabel>
+activates when you switch to the <guilabel>Structure Tree</guilabel>.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Annotations</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Shows the annotation view. Read the <xref linkend="annotations" /> for details.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>Tool Views</guisubmenu>
+<guimenuitem>Show Upload Profile:...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Shows the files on the server for an <link linkend="upload-profiles">upload profile</link>.
+</para>
+</listitem>
+</varlistentry>
+
+
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Shift;<keycap>F9</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Show Icon Border</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle display of the icon border to the left of the main editor window.
+This bar allows for click toggling of bookmarks.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycap>F11</keycap>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Show Line Numbers</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggles the display of line numbers along the side of
+the main editor window.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycap>F10</keycap>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Dynamic Word Wrap</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Toggle on and off reformatting of text to a specific
+width as you type.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>F9</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Source Editor</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Switch to the source of a document to edit.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>F9</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>&VPL; Editor</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Switch to the <guilabel>&VPL; Editor</guilabel> to edit a document.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycap>F9</keycap>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>&VPL; &amp; Source Editors</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Switch to split screen mode to edit a document.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycap>F6</keycap>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Preview</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Preview the current document.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Left Arrow</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Back</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Navigate back one step in the preview.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Right Arrow</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Forward</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Navigate forward one step in the preview after having gone back in the
+preview.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycap>F5</keycap>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Reload Preview</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Reload the preview from disk.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul"><keycap>F12</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu><guisubmenu>External Preview</guisubmenu>
+<guimenuitem>View with &konqueror;</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+View the current file with &konqueror;.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>F12</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu><guisubmenu>External Preview</guisubmenu>
+<guimenuitem>View with Firefox;</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+View the current file with the Mozilla Firefox browser.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Shift;<keycap>F12</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu><guisubmenu>External Preview</guisubmenu>
+<guimenuitem>View with Mozilla</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+View the current file with <trademark class="registered">Mozilla</trademark>.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Shift;<keycap>F6</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu><guisubmenu>External Preview</guisubmenu>
+<guimenuitem>View with &Netscape;</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+View the current file with &Netscape;.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>F6</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu><guisubmenu>External Preview</guisubmenu>
+<guimenuitem>View with Opera</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+View the current file with <application>Opera</application>.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>View</guimenu><guisubmenu>External Preview</guisubmenu>
+<guimenuitem>View with Lynx</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+View the current file with <application>Lynx</application> (a text based
+browser).
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="bookmarks-menu-3-2">
+  <title>The <guimenu>Bookmarks</guimenu> Menu</title>
+  
+  <variablelist>
+    <varlistentry>
+      <term>
+        <menuchoice>
+          <shortcut>
+            <keycombo action="simul">&Ctrl;<keycap>B</keycap></keycombo>
+          </shortcut>
+          <guimenu>Bookmarks</guimenu>
+          <guimenuitem>Set Bookmark</guimenuitem>
+        </menuchoice>
+      </term>
+      <listitem>
+        <para>
+          Sets a bookmark at the current line location in the current file.
+        </para>
+      </listitem>
+    </varlistentry>
+    
+    <varlistentry>
+      <term>
+        <menuchoice>
+          <guimenu>Bookmarks</guimenu>
+          <guimenuitem>Clear All Bookmarks</guimenuitem>
+        </menuchoice>
+      </term>
+      <listitem>
+        <para>
+          Clears all set bookmarks in the current document.
+        </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+  <para>If you have bookmarks in the current file, they will appear in the menu together with a <guilabel>Previous</guilabel> or <guilabel>Next</guilabel> item, depending on the position of the cursor in the document.</para>
+  <para>If you have bookmarks in other opened documents, they will appear in the menu grouped by the file name of the other documents.</para>
+</sect1>
+
+
+<sect1 id="project-menu-3-2">
+<title>The <guimenu>Project</guimenu> Menu</title>
+
+<para>
+How to use projects in &quantaplus; is described in <xref
+linkend="quanta-projects-3-2"/>.
+</para>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>New Project...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Launch the project creation wizard.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Open Project...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Open an existing project file from disk. &quantaplus; projects are saved
+with the .webprj extension.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guisubmenu>Open Recent Project</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Gives you a list of your most recently used projects for quick access.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Close Project</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Close the current project.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Open Project View...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Open a <quote>View</quote>, a specific combination of open files that you
+have previously saved.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Save Project View</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Save the current set of open files as a <quote>View</quote>.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Save Project View As...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Save the current set of open files as a <quote>View</quote> under another
+name.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Delete Project View</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Delete a <quote>View</quote>.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Insert Files...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Presents a dialog that allows you to select files to add to your current
+project. These files will then be copied into the project folder for
+editing.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Insert Folder...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Insert a folder and all of its contents into the current project.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Project</guimenu>
+<guimenuitem>Rescan Project Folder...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Scan the project folder for any new files you may have there. This
+allows you to copy graphics into your project folder or a subfolder
+thereof and then add them to the project.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycap>F8</keycap>
+</shortcut>
+<guimenu>Project</guimenu>
+<guimenuitem>Upload Project...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Upload the files in your project to the hosting server. The list of
+available transports depends on the version of &kde; you are running and
+whether or not you've downloaded extra KIO slaves.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Shift;<keycap>F7</keycap></keycombo>
+</shortcut>
+<guimenu>Project</guimenu>
+<guimenuitem>Project Properties</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Settings affecting the way &quantaplus; manages your project. See the
+<link linkend="quanta-projects-3-2">&quantaplus; projects</link> section for
+details.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="toolbars-menu-3-2">
+<title>The <guimenu>Toolbars</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guisubmenu>Load Toolbars</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guisubmenu>Load Toolbars</guisubmenu>
+<guimenuitem>Load Global Toolbar...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Loads a globally defined toolbar. These are kept in <filename
+class="directory">$<envar>KDEDIR</envar>/share/apps/quanta/toolbars</filename>
+by default.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guisubmenu>Load Toolbars</guisubmenu>
+<guimenuitem>Load Local Toolbar...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Loads a locally defined toolbar. These are kept in <filename
+class="directory">$<envar>HOME</envar>/.kde/share/apps/quanta/toolbars</filename>
+by default.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guisubmenu>Load Toolbars</guisubmenu>
+<guimenuitem>Load Project Toolbar</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>Loads a project toolbar. These are kept in <filename
+class="directory"><replaceable>ProjectDir</replaceable>/toolbars</filename>
+and are only available in this menu if they have been assigned to this
+project.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guisubmenu>Save Toolbars</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Dialog for saving your toolbars. Allows you to pick the type of toolbar;
+Local or Project.
+</para>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guisubmenu>Save Toolbars</guisubmenu>
+<guimenuitem>Save as Local Toolbar...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Save as a local toolbar to
+<filename class="directory">$<envar>HOME</envar>/.kde/share/apps/quanta/toolbars</filename>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guisubmenu>Save Toolbars</guisubmenu>
+<guimenuitem>Save as Project Toolbar...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Save as a project toolbar in
+<filename class="directory"><replaceable>ProjectDir</replaceable>/toolbars</filename>
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guimenuitem>Add User Toolbar...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Brings up a dialog to create a new toolbar. This only creates the name.
+Actions must be added from the
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Actions</guimenuitem>
+</menuchoice>
+menu item. Toolbars are saved via the
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guimenuitem>Save Toolbars</guimenuitem>
+</menuchoice>
+menu or on close unsaved toolbars will prompt for you to save.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guimenuitem>Remove User Toolbar...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Remove a toolbar from usage. This does not remove it from the disk. If
+you've not saved the toolbar you are removing, you will be prompted to
+save it.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guimenuitem>Rename User Toolbar..</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Allows you to rename a toolbar.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guimenuitem>Send Toolbar in E-Mail...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+This is a hook to email your custom toolbar to someone (maybe the
+&quantaplus; team for inclusion in the next release!) for their use. It
+spawns an email window and attaches your toolbar file to it automatically.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>Toolbars</guimenu>
+      <guimenuitem>Send Toolbar in Email...</guimenuitem>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      This is allows you to upload a toolbar to the main resource server. See <xref linkend="sharing-resources" />.
+    </para>
+  </listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guimenuitem>Upload Toolbar...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+  This is allows you to upload toolbars to the main server, from where others can download it.See <xref linkend="sharing-resources" />.
+</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Toolbars</guimenu>
+<guimenuitem>Download Toolbar...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+  This is allows you to download toolbars from the Internet.See <xref linkend="download-resources" />.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="DTD-menu-3-2">
+<sect1info>
+<title>The <guimenu>&DTD;</guimenu> Menu</title>
+<authorgroup>
+<author>
+<firstname>Christopher</firstname>
+<surname>Hornbaker</surname>
+<affiliation>
+<address><email>chrishornbaker@earthlink.net</email></address>
+</affiliation>
+</author>
+</authorgroup>
+</sect1info>
+
+<title>The <guimenu>&DTD;</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>&DTD;</guimenu>
+<guimenuitem>Change the &DTD;...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Pops up a dialog box that allows you to change the current documents &DTD;
+</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>&DTD;</guimenu>
+      <guimenuitem>Edit &DTD; Settings...</guimenuitem>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      Makes possible to change the &descriptionrc; configuration file for a &DTEP;.
+    </para>
+  </listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>&DTD;</guimenu>
+<guimenuitem>Load &amp; Convert &DTD;...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Load a &DTD; that you or someone else made and convert it to &quantaplus;'
+native description format.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>&DTD;</guimenu>
+<guimenuitem>Load &DTD; Entities...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Load/update the entities from a &DTD;. It is useful if you want to update the entities in a &DTEP; without regenerating the whole &DTEP;. 
+In case the &DTEP; is a global one and you do not have write permission to the global KDE directory, the entity loading will fail.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>&DTD;</guimenu>
+<guimenuitem>Load &DTD; Package (&DTEP;)...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Load a your own &DTEP;.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>&DTD;</guimenu>
+<guimenuitem>Send &DTD; Package (&DTEP;) in E-Mail...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Send your &DTEP; to a friend via &kmail;.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>&DTD;</guimenu>
+      <guimenuitem>Upload &DTD; Package (&DTEP;)...</guimenuitem>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      This is allows you to upload a &DTEP;s. See <xref linkend="sharing-resources" />.
+    </para>
+  </listitem>
+</varlistentry>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>&DTD;</guimenu>
+<guimenuitem>Download &DTD; Package (&DTEP;)...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+  This is allows you to download &DTEP;s from the Internet. See <xref linkend="download-resources" />.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="tags-menu-3-2">
+<title>The <guimenu>Tags</guimenu> Menu</title>
+
+<para>
+This menu contains a list of the elements that are in the currently loaded
+toolbars. If you have the Standard (&HTML;) toolbar loaded, the <guimenu>
+Tags</guimenu> menu will contain a submenu <guisubmenu>Standard
+</guisubmenu> which will contain the list of tags/actions on that toolbar.
+</para>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo>
+</shortcut>
+<guimenu>Tags</guimenu>
+<guimenuitem>Edit Current Tag...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Allows you to access the current markup tag settings dialog if one exists.
+This entry is always present, followed by the &DTD; specific submenus.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Tags</guimenu>
+<guimenuitem>Select Current Tag Area</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+This highlights the current tag area. The tag area begins where the mouse
+cursor is placed.
+</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>Tags</guimenu>
+      <guimenuitem>Smart Tag Insertion</guimenuitem>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      Activates/deactivates the smart insertion of tags. Currently it works only in (X)HTML DTDs. Smart insertion means that &quantaplus; will refuse to insert a tag using the toolbar if the tag cannot be present in the current location.
+    </para>
+  </listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="plugins-menu-3-2">
+<title>The <guimenu>Plugins</guimenu> Menu</title>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Plugins</guimenu>
+<guimenuitem><replaceable>Plugin</replaceable></guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+The <menuchoice><guimenu>Plugins</guimenu></menuchoice> menu lists the
+available plugins under the above menu items. Clicking them will activate
+them. Clicking an activated plugin will deactivate it.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+
+<sect1 id="tools-menu-3-2">
+<title>The <guimenu>Tools</guimenu> Menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guisubmenu>Highlight Mode</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Choose the syntax highlighting mode for the current file. The list of
+available highlighting schemes varies depending on your version of &kate;.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guisubmenu>End of Line</guisubmenu>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Select the end of line encoding type. Useful if you have folks using other
+&OS; platforms to develop on. Choose from
+<guimenuitem>Unix</guimenuitem>,
+<guimenuitem>Windows/DOS</guimenuitem> or
+<guimenuitem>Macintosh</guimenuitem>.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>I</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Indent</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Move the selected block of text one tab width to the right.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>I</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Unindent</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Move the selected block of text one tab width to the left.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Clean Indentation</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Removes all indentation.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>D</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Comment</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Comments selected text.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>D</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Uncomment</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Uncomments selected text.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Word Wrap Document</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Wrap the text in the current window to a predefined width.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Spelling...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Check the spelling in the current document.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Document Properties</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Edit specific properties of a currently loaded document when using the
+<guilabel>&VPL; Editor</guilabel>.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Convert Tag &amp; Attribute Case...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Convert all tags and/or attributes character cases to another.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;&Ctrl;<keycap>T</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>HTML Tidy Syntax Checking</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Checks the syntax of the current document against the selected &DTD; using the external <filename>tidy</filename> application.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="window-menu-3-2">
+  <title>The <guimenu>Window</guimenu> Menu</title>
+  <variablelist>
+    <varlistentry>
+      <term>
+        <menuchoice>
+          <guimenu>Window</guimenu>
+          <guimenuitem>Close</guimenuitem>
+        </menuchoice>
+      </term>
+      <listitem>
+        <para>
+          Closes the current tab (document, plugin, preview or documentation).
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <menuchoice>
+          <guimenu>Window</guimenu>
+          <guimenuitem>Close All</guimenuitem>
+        </menuchoice>
+      </term>
+      <listitem>
+        <para>
+          Closes all opened tabs.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <menuchoice>
+          <guimenu>Window</guimenu>
+          <guimenuitem>MDI Mode</guimenuitem>
+        </menuchoice>
+      </term>
+      <listitem>
+        <para>
+          On-the-fly switching between different UI modes. Due to some limitations in the KDE libraries, the switching might take time and cause ugly artifacts. The recommended modes to use
+          are <guilabel>IDEAl Mode</guilabel>, which is the default or
+          <guilabel>Tab Page Mode</guilabel>, which is the same mode that was present in &quantaplus; 3.2 and earlier versions.
+        </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+  <para>Furthermore this menu contains an entry for every opened tab. By selecting such an entry, that selected tab will become the active one.</para>
+</sect1>
+
+<sect1 id="settings-menu-3-2">
+<title>The <guimenu>Settings</guimenu> Menu</title>
+
+<variablelist>
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Toolbars</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        Show or hide the non-user toolbars.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Show/Hide DTD Toolbar</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        Toggle on and off the display of the &DTD; specific toolbar.
+      </para>
+    </listitem>
+  </varlistentry>
+  
+  <varlistentry>
+    <term>
+      <menuchoice>
+        <guimenu>Settings</guimenu>
+        <guimenuitem>Show/Hide Statusbar</guimenuitem>
+      </menuchoice>
+    </term>
+    <listitem>
+      <para>
+        Toggle on and off the display of the status bar at the bottom of the main
+        &quantaplus; window.
+      </para>
+    </listitem>
+  </varlistentry>
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Quanta...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Setup the <link linkend="configure-quanta">behavior</link> of &quantaplus;.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+  <menuchoice>
+    <guimenu>Settings</guimenu>
+    <guimenuitem>Configure Preview...</guimenuitem>
+  </menuchoice>
+</term>
+<listitem>
+  <para>
+    Setup the behavior of the integrated preview. <important><para>The changes made in the dialog have effects on every application using the KHTML part, including the &konqueror; web browser.</para></important> 
+  </para>
+</listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Actions...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+  This is where you define the actions for use on toolbars. See <xref linkend="user-actions" />.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>Settings</guimenu>
+      <guimenuitem>Configure Plugins...</guimenuitem>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      This is where you can define and modify the plugins.
+    </para>
+  </listitem>
+</varlistentry>
+
+<varlistentry>
+  <term>
+    <menuchoice>
+      <guimenu>Settings</guimenu>
+      <guimenuitem>Configure Editor...</guimenuitem>
+    </menuchoice>
+  </term>
+  <listitem>
+    <para>
+      Setup the behavior of the editor window. See the documentation on &kate;
+      for details.
+    </para>
+  </listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Dialog that allows you to add/delete items to/from toolbars and change the
+order the icons appear in.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+Allows you to configure the many editor shortcuts available to
+&quantaplus;.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+
+<sect1 id="help-menu-3-2">
+<title>The <guimenu>Help</guimenu> Menu</title>
+
+<para>
+&quantaplus; contains a standard &kde; <guimenu>Help</guimenu> menu with
+the addition of these items:
+</para>
+
+<variablelist>
+<varlistentry>
+<term>
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>H</keycap></keycombo>
+</shortcut>
+<guimenu>Help</guimenu>
+<guimenuitem>Context Help</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+This should produce help based on the current pointer context. At the time
+of this writing this feature is not implemented.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice>
+<guimenu>Help</guimenu>
+<guimenuitem>Make A Donation</guimenuitem>
+</menuchoice>
+</term>
+<listitem>
+<para>
+&quantaplus; is a high quality product that is freely available, and
+freely licensed, but like any open source project, its developers can
+always use help. If you would like to support &quantaplus; development in a
+financial manner, you can find out how to here.
+</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+<para>
+The standard &kde; help menu items are as follows:
+</para>
+
+&help.menu.documentation;
+
+</sect1>
+</chapter>

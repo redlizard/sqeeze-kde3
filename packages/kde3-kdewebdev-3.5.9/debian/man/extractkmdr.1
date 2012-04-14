@@ -1,0 +1,53 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH EXTRACTKMDR 1 "March 25, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+extractkmdr \- extract message strings from Kommander dialogs
+.SH SYNOPSIS
+.B extractkmdr
+[ \fB\-\-tag=\fP\fIname\fP ... ]
+[ \fB\-\-context=\fP\fIname\fP ]
+\fIfile\fP ...
+.SH DESCRIPTION
+\fBextractkmdr\fP finds all text tags and other message strings within the
+given Kommander dialog (.kmdr) files.  It then writes the corresponding
+\fIi18n()\fP calls to standard output (usually redirected to rc.cpp)
+so that xgettext can parse them.
+.PP
+To create a complete gettext message file (PO-file) from a Kommander
+dialog, the
+.BR kmdr2po (1)
+utility is more convenient.
+.PP
+This utility is part of the KDE web development module.
+.SH OPTIONS
+.TP
+\fB\-\-tag=\fP\fIname\fP
+Extract also the contents of the tag \fIname\fP.
+This option may be used multiple times
+(e.g., \-\-tag=tag_one \-\-tag=tag_two).
+.TP
+\fB\-\-context=\fP\fIname\fP
+Give all i18n() calls the given context: i18n("\fIname\fP", ...).
+.SH SEE ALSO
+.BR kmdr-editor (1),
+.BR kmdr-executor (1),
+.BR kmdr-plugins (1),
+.BR kmdr2po (1).
+.SH AUTHOR
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

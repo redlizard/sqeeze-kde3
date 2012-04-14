@@ -1,0 +1,54 @@
+This package was debianized by Mariusz Przygodzki <dune@home.pl> on
+Sat, 25 Nov 2000 15:35:08 +0100.
+Maintenance was taken over by Ben Burton <bab@debian.org> on
+Sun, 18 Feb 2001 12:00:03 -0600.
+Thanks to Joerg Jaspert and Riku Voipio for originally packaging
+KImageMapEditor.
+
+It was downloaded from: http://www.kde.org/download
+
+Upstream Authors and copyright:
+
+  Quanta Plus: Eric Laffoon <sequitur@kde.org> and
+      Andras Mantia <amantia@kde.org>, with inactive authors
+      Dmitry Poplavsky <dima@kde.org> and Alexander Yakovlev <yshurik@kde.org>
+  KFileReplace: Fran�ois Dupoux <fdupoux@dupoux.com> and
+      Andras Mantia <amantia@kde.org>
+  KImageMapEditor: Jan Sch�fer <janschaefer@users.sourceforge.net>
+  KLinkStatus: Paulo Moura Guedes <moura@kdewebdev.org>
+  Kommander: Marc Britton <consume@optusnet.com.au>,
+      Eric Laffoon <sequitur@kde.org>, Michal Rudolf <mrudolf@kdewebdev.org>,
+      Andras Mantia <amantia@kde.org> and Trolltech
+  KXSLDbg: Keith Isdale <k_isdale@tpg.com.au>
+
+Quanta Plus is not in any way affiliated with any commercial versions of
+Quanta.  The primary coders from the original team left the GPL'd
+version to produce a commercial product.
+
+
+Copyright (c) 2000-2008 The KDE web development module team
+<kdewebdev-site@mail.kdewebdev.org>
+
+License:
+
+  All components of this package are released under the GNU General
+  Public License (GPL), with the following exceptions:
+
+    DocBook documentation: (see below)
+
+  On Debian GNU/Linux systems, the complete text of the GNU General
+  Public License can be found in `/usr/share/common-licenses/GPL'.
+
+  --------------------
+
+  DocBook Documentation:
+
+
+    Permission is granted to copy, distribute and/or modify this
+    document under the terms of the GNU Free Documentation License,
+    Version 1.1 or any later version published by the Free Software
+    Foundation; with no Invariant Sections, with no Front-Cover Texts,
+    and with no Back-Cover Texts.
+
+    A copy of the GNU Free Documentation License (Version 1.2) can be
+    found on Debian systems in  `/usr/share/common-licenses/GFDL-1.2'

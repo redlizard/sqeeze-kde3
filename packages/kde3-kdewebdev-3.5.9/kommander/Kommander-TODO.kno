@@ -1,0 +1,313 @@
+\NewEntry 0 GUI
+
+\NewEntry 1 Widgets
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Widgets available in Kommander</span></p>
+<ul type="disc"><div></div>
+<li>KJanusWidget</li>
+<li>Switch from using Qt widget to their KDE equivalents? - mostly done</li>
+<li>Menu</li>
+<li>KHistoryCombo<br /></li>
+<div></div></ul>
+<p></p>
+<ul type="disc"><div></div></ul>
+</body></html>
+
+\NewEntry 1 Editor
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Layout of Edit Kommander Text dialog<br /><br />Old ideas:</span></p>
+<ul type="disc"><li>better layout</li>
+<li>replace list of widgets with tree of widgets</li>
+<li>replace widget class with widget pixmap in combos</li>
+<li>redesign layout</li>
+<li>cleanup Connections, not it is unusable, may be obsolete</li>
+<li>find in scripts</li>
+<li>list of non-empty scripts for current dialog</li>
+<li>allow using custom Kommander dialog to generate code</li>
+<li>add DCOP per widget display</li>
+<li>DCOP editor (similar to Tag editor in Quanta)<br /></li></ul>
+<p></p>
+</body></html>
+
+\NewEntry 1 Usability
+\Link knowit://Source code
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Various GUI-related features (outdated, KDE3 version will not be changed)</span></p>
+<ul type="disc"><li>clean up popup menus, remove disabled items</li>
+<li>use KDE dialogs, not Qt ones if possible</li>
+<li>some widget information on mouseover</li>
+<li>review of event model</li>
+<li>add more layout-handling commands (center selected widgets horizontally/vertically, fit to window width/height)</li>
+<li>handle middle click</li>
+<li>carefully check defaults, choose most useful ones</li>
+<li>add wizards? (replace current New dialogs with Kommander-based ones?)</li>
+<li>better undo</li>
+<li>add WhatsThis for most items</li>
+<li>detect function name/widget name clash</li>
+<li>improve order of widget icons</li>
+<li>switch to KMDI (arghhhh!)</li></ul>
+</body></html>
+
+\NewEntry 1 Run/debug
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Running/testing inside Editor</span></p>
+<ul type="disc"><li>allow debugging</li>
+<div></div></ul>
+</body></html>
+
+\NewEntry 1 DCOP browser
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Georgia">
+<p><span style="font-weight:600">DCOP browser (preliminary ideas)</span></p>
+<ul type="disc"><li>DCOP browser for both local and external DCOP calls</li>
+<li>easy-to-use application DCOP browser</li>
+<li>use XML describing given application DCOP's</li>
+<li>two flags for a call: hiden and important</li>
+<li>three mode: important (only important calls), default (all except hidden), advanced (all calls)</li>
+<li>use some pattern matching to allow marking whole subtrees or function sets</li>
+<li>add purpose (for example all editor-related functions, all file-management-related functions)</li>
+<li>merge trees for given window (f. e. Editor#2, File#2, Structure#2 etc.)</li>
+<li>standalone application mode</li></ul>
+</body></html>
+
+\NewEntry 1 Other
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Other GUI-related issues</span></p>
+<ul type="disc"><li>cleanup slots/signals/connections interface</li>
+<li>find out why slots are shown only for current tab<br /></li></ul>
+<p><span style="font-weight:600">KDE4 ideas:<br /></span></p>
+<ul type="disc"><li>create a KDevelop plugin for the editor</li>
+<li>use KFormDesigner or the new Qt Designer</li></ul>
+</body></html>
+
+\NewEntry 0 Bugs
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Various bugs to be fixed</span></p>
+<ul type="disc"><li>Charset is sometimes incorrectly converted from/to local charset</li>
+<li>SubDialog crashes now</li>
+<li>Labels do not show up unless you edit their text</li>
+<li>toolbox editing is ugly after group layout is applied. Goes back to normal if the dialog is reloaded.</li>
+<div></div></ul>
+</body></html>
+
+\NewEntry 0 Help
+
+\NewEntry 1 Documentation
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Kommander tutorials, documentation etc.</span></p>
+<ul type="disc"><li>Update new parser docs</li>
+<li>Update docs, at least on website ?</li></ul>
+</body></html>
+
+\NewEntry 1 Examples
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Georgia">
+<p><span style="font-weight:600">Examples to be used with tutorial</span></p>
+<ul type="disc"><li>add a way to comment *.kmdr file</li>
+<li>create examples for tutorial</li>
+<li>clean up examples: reomve obsolete or unclear ones, add some more instructive ones</li></ul>
+</body></html>
+
+\NewEntry 1 Scripts
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Georgia">
+<p><span style="font-weight:600">Kommander scripts that can be useful</span></p>
+<ul type="disc"><li>improve script for Quick Start (Quanta): handle indentation with, quotation character and tag case</li>
+<li>create script for Quick List (Quanta)</li>
+<li>create scripts for common command-line programs to demonstrate power of Kommander (it would be nice if those could be documented somehow)</li>
+<li>create scripts for HTML templates</li></ul>
+<p></p>
+<p></p>
+</body></html>
+
+\NewEntry 0 Language
+
+\NewEntry 1 Syntax
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Georgia">
+<li type="disc"><span style="font-weight:600">Syntax-related problems</span></li>
+<ul type="disc"><li>better handling of lists</li>
+<li>better handling of other structures (trees, arrays etc.)</li>
+<li>add some way to define and use macros/aliases</li></ul>
+<p></p>
+<p></p>
+</body></html>
+
+\NewEntry 1 New functions
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">New functions that could be useful</span></p>
+<ul type="disc"><li>capitalize, substring string handling functions?</li>
+<li>@if (a, b, c)? - or is BASH enough?<br /><span style="font-style:italic">This will be solved by new parser.</span></li>
+<li>add @include and @includelocal commands - to include external script or local (project script); that should make code more readable</li>
+<li>add @call to call local script (no need for external @call, as it is equivalent to @exec<br /><span style="font-style:italic">Naming: use @execlocal for consistency?</span></li>
+<li>add @requireVersion(command, version)  that would detect version of program (presumably script language, like perl), compare it to given minimum and fail if it is not matched</li>
+<li>add function for string conversion (@String.cvs2tab, @Stringcvs2eol ...)</li>
+<li>add @ldcop for calling local DCOP functions</li></ul>
+</body></html>
+
+\NewEntry 1 Script languages
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Using script languages other than Bash</span></p>
+<ul type="disc"><li>detect incorrect path at shebang, allow user to choose correct one and remeber that pair</li>
+<div></div>
+<div></div></ul>
+<p><span style="font-weight:600">If we keep the old parser.<br /><br /></span><br />Make it possible to use any language with Kommander. The idea is to replace Kommander specials with language specific code in a way that it will not break conditions and loops, like now. example:<br />#!/bin/bash<br />array=&quot;1 2 3 4 5&quot;<br />for i in $array do<br />  @Label.setText($i)<br />done<br /><br />This does not work now. The idea is to replace @Widget.method() with a language specific DCOP call.<br />If the language has DCOP bindings, use those bindings to execute the dcop call. If not, use the command line<br />DCOP application. This is slower, but always works. In the above case, Kommander would replace <br />@Label.setText($i) <br />with<br />dcop kmdr-executor-PID KommanderIf setText Label $i<br /><br />Kommander will have description files for each supported language about how to execute DCOP calls.<br />If the language has DCOP bindings, this description tells the syntax of the bindings. If it doesn't have, the description gives a way how to execute external applications. This should always exists, as all languages can execute external applications.<br /><br />In KDE4, of course use DBUS instead of DCOP.<br /><br /></p>
+</body></html>
+
+\NewEntry 1 Aliases
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Georgia">
+<p><span style="font-weight:600">Aliases - easier access to Kommander features</span></p>
+<ul type="disc"><li>add @String.&lt;function&gt;(&lt;args&gt;)  as alias to string-handling function</li>
+<li>add @&lt;widgetName&gt;.&lt;function&gt;(&lt;args&gt;) as alias to dcop @dcopid KommanderIf  &lt;widgetName&gt; &lt;args&gt;</li>
+<li>add aliases to various widgets properties, f. e. text, selectedText, state, items etc.; syntax: @&lt;widgetName&gt;.&lt;attribute&gt;</li></ul>
+</body></html>
+
+\NewEntry 1 Signals
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Georgia">
+<p><span style="font-weight:600">New signals for existing widgets</span></p>
+<ul type="disc"><li>add signals for D&amp;D<br /><span style="font-style:italic">Requires  dragContent and dragType, perhaps dragSource to be set.</span></li>
+<li></li></ul>
+</body></html>
+
+\NewEntry 1 Parser
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Features of new parser</span></p>
+<ul type="disc"><li>add syntax checking</li>
+<li>add debugger</li>
+<li>add step-by-step running</li>
+<li>add code-completion</li>
+<li>add syntax hints</li>
+<li>share code betwen the two parsers (new methods are needed to be added only once)</li></ul>
+</body></html>
+
+\NewEntry 0 1.3 release prep 2008
+
+\NewEntry 1 To Do
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Kommander Release Do list</span></p>
+<ul type="disc"><li><span style="color:#00ff00">Add missing functions in FB</span></li>
+<li>KPart create to go with KPart load</li>
+<li><span style="color:#ff0000">executor version required field/command - enable someone sharing dialogs to have an executing window check if the executor is capable of fully supporting it - Not the self checking Michal suggested, but better than nothing by far</span></li>
+<li><span style="color:#ff0000">ability to identify calling table widget from signal in a script slot - ideally by row and column in table grid </span></li></ul>
+</body></html>
+
+\NewEntry 1 Eric's To Do
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<ul type="disc"><li>Look into project tools, currently ready for 0.7 update</li></ul>
+</body></html>
+
+\NewEntry 1 Supplemental
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<ul type="disc"><li>We need to look at how to emulate KStfuff using HTTP and a Kommander dialog... will require KStuff back end and some PHP scripts</li>
+<li>Samples go into the install for use</li>
+<li>Web site needs docs and tutorials updated</li></ul>
+</body></html>
+
+\NewEntry 1 investigate
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Things to look into</span></p>
+<ul type="disc"><li>Qt database connection?</li>
+<li><span style="color:#ffff00">Code completion? If easy to do, otherwise we recommend users try the Kate completion plugin</span></li>
+<li><span style="color:#ffff00">D&amp;D of text/selection data</span></li>
+<li>simple DCOP functions in editor to enable Kommander based tools to call the editor and open a dialog to edit - otherwise any interfaces can at least make use of D&amp;D from file manager (KPart) views</li>
+<li><span style="color:#ff0000">Additional XML fields in dialog for author name, version of Kommander required, etc... - not required as KAbout would be better</span></li></ul>
+</body></html>
+
+\NewEntry 1 Bugs to squish
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Version 1.3 FIXME list</span></p>
+<ul type="disc"><li>link handling in TextBrowser opens file manager in execute directory even if calling another Kommander dialog. First it opens the file, then konqeror.</li></ul>
+</body></html>
+
+
+\NewEntry 1 Done
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p>New widgets include the DatePicker, Popup Menu and Toolbox. New functions inlcude widget creation, hooking and unhooking signals and slots and full slot access as well as passing and returning parameters in scripts. WooHoo! Take that do list!<br /></p>
+<ul type="disc"><li>fixed dcop functions</li>
+<li>added indexed array functions</li>
+<li>made color slot work in TextEdit</li>
+<li>Enhnaced function browser for easier widget creation</li>
+<li>quote handling in function browser - made user selectable</li></ul>
+<p>See changlog for more complete list</p>
+</body></html>
+
+\NewEntry 1 Won't Do
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p>The Kommander editor is effectively dead for KDE3. Porting is senseless as it is an old Qt Designer hack. Since Designer for Qt 4x is actually designed this time to be easy to extend and modify the first generation of the editor will be scrapped.<br /><br />Other parts of Kommander like the parser should be much more portable.<br /><br /> - creating table widgets means if you need to know the calling widget you need create scripts on the fly for this.</p>
+</body></html>
+
+\CurrentEntry 0 KDE4 prep
+
+\NewEntry 0 Executor
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Executing Kommander scripts</span></p>
+<ul type="disc"><li>detect and handle missing plugin widgets</li>
+<li>cache @pid, @dcopid, @parentPid, perhaps calculate and cache @parentdcopid</li>
+<li>handle multiple dialogs: they could be packaged in single *.tgz file, unpacked and executed internally</li>
+<div></div>
+<div><br /></div></ul>
+</body></html>
+
+\NewEntry 0 Refactoring, other ideas
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Sans Serif">
+<p><span style="font-weight:600">Kommander source code</span></p>
+<ul type="disc"><li>move all widgets into a library (mostly done)</li>
+<li>widgets should contain the code how they are displayed in the editor</li>
+<li>widgets should contain the functions they support. Share only very common functions, like show, execute, etc, otherwise soon it becomes confusing if insertItem expect and int, a string, or and int and a string. </li>
+<li>widgets and plugin should query the plugin manager for available method IDs (and register how many they need) OR on registering do not pass the ID, but get back. This makes sure you don't have plugins/widgets using the same function IDs. </li>
+<li>check if we can live without making specials.h public</li>
+<li>the icons used in the editor should be returned by the widgets itself (partly done)</li>
+<li>check if it is enough to have a public KommanderWidget instead of making KWidgetPlugin as well public</li>
+<li>get back a version number from plugins and from Kommander. This way both the plugins and the executor can decide if they are compatible or not.</li></ul>
+</body></html>
+
+\NewEntry 0 Last changes
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Georgia">
+<p><span style="font-weight:600">Last changes in TODO file</span></p>
+<ul type="disc"><li>remove done items</li></ul>
+<p><span style="color:#0000ff">2004-05-28, 17:35</span></p>
+<ul type="disc"><li>GUI/Widgets: Tree, History Combo, Picture Viewer, Table</li>
+<li>GUI/Other added</li>
+<li>Executor: handle multiple dialogs package</li>
+<li>Language/New functions: string conversion</li>
+<li>Language/Signals added</li></ul>
+<p><span style="color:#0000ff">2004-05-14, 12:44</span></p>
+<ul type="disc"><li>Bugs: added</li>
+<li>Language/New functions, Executor: added i18n</li></ul>
+<p><span style="color:#0000ff">2004-05-08, 23:00</span></p>
+<ul type="disc"><li>Widgets: Menu and popup menu</li>
+<li>added Language:Aliases</li>
+<li>Syntax: remove @dcop, moved aliases to new note, macros</li>
+<li>Editor: Connections</li>
+<li>New functions: @requireVersion</li>
+<li>Executor: detect loop, handle startup parameters, cache</li></ul>
+<p></p>
+</body></html>
+
+\NewEntry 0 Done
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:10pt;font-family:Georgia">
+<li type="disc"><span style="font-weight:600">ChangeLog of Kommander</span></li>
+<li type="disc"><span style="font-style:italic">See ChangeLog file for details and dates</span></li>
+<ul type="disc"><li>added @parentPid evaluated to parent process pid</li>
+<li>added @pid evaluated to current process pid</li>
+<li>added @dcopid evaluated to current process DCOP id</li>
+<li>significantly improved Kommander Text editor usability</li>
+<li>added <span style="font-style:italic">initialization</span> and <span style="font-style:italic">destroy</span> scripts for main dialog</li>
+<li>global variables added (setGlobal and global DCOP calls)</li>
+<li>added support for shebang (#!/bin/sh) for both ExecButton  script and @execBegin scripts</li>
+<li>added command-line parameters (<span style="font-style:italic">kmdr-executor dialog.kmdr VAR=VALUE ARG1 ARG2...)</span></li>
+<li>dialog setting are now stored with full path</li>
+<li>completely rebuilt @dcop() parser: check number of arguments, handle various types etc.</li>
+<li>support for @execBegin(&lt;program-name&gt;)</li>
+<li>avoid infinite loop when trying to run @&lt;widget&gt; inside &lt;widget&gt;:&lt;state&gt;</li>
+<li>handle other values for DCOP (not only <span style="font-style:italic">string</span> and <span style="font-style:italic">int</span>)</li>
+<li>add option to pass shebang as argument of @execBegin, f. e. @execBegin(/usr/bin/perl)</li>
+<li>add Run command to editor</li>
+<li>added global and setGlobal specials</li>
+<li>added warnings for missing specials</li>
+<div></div></ul>
+</body></html>
+
+\NewEntry 0 About this file
+<html><head><meta name="qrichtext" content="1" /></head><body style="font-size:11pt;font-family:helvetica">
+<p>This file should document both what should be done in Kommander and what was done.</p>
+<p>All entries marked with a date without an author were made by Michal Rudolf</p>
+<p>When adding something important, please enter it in ChangeLog or Done and mark it with current date (in yyyy-MM-dd, hh:mm format) and your name.</p>
+</body></html>
+

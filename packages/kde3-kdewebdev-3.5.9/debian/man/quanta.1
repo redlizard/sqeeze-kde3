@@ -1,0 +1,71 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH QUANTA 1 "October 19, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+quanta \- a web development environment for KDE
+.SH SYNOPSIS
+.B quanta
+[ \fIgeneric-options\fP ] [ \fB\-\-unique\fP ]
+[ \fB\-\-nologo\fP ] [ \fIfile\fP ]
+.SH DESCRIPTION
+\fBQuanta Plus\fP is a web development environment for working with HTML
+and associated languages.  It strives to be neutral and transparent
+to all markup languages, while supporting popular web-based scripting
+languages, CSS and other emerging W3C recommendations.
+.PP
+Quanta Plus supports many external components, debuggers and other tools
+for web development, several of which are shipped with the KDE web development
+module.
+.PP
+Quanta Plus is not in any way affiliated with any commercial versions
+of Quanta.  The primary coders from the original team left the GPLed
+version to produce a commercial product.
+.PP
+This application is part of the official KDE web development module.
+.SH OPTIONS
+Below are the quanta-specific options.  For a full summary of options,
+run \fIquanta \-\-help\fP.
+.TP
+\fB\-\-unique\fP
+Run as a one-instance application.
+.TP
+\fB\-\-nologo\fP
+Do not show the logo during startup.
+.SH SEE ALSO
+.BR kimagemapeditor (1),
+.BR klinkstatus (1),
+.BR kmdr-editor (1),
+.BR kmdr-executor (1),
+.BR kxsldbg (1).
+.PP
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/quanta/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/quanta/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdewebdev-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/quanta/\fP.
+.SH AUTHOR
+Quanta was written by Eric Laffoon <sequitur@kde.org>, Andras Mantia
+<amantia@kde.org> and others including inactive authors
+Dmitry Poplavsky <dima@kde.org> and Alexander Yakovlev <yshurik@kde.org>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

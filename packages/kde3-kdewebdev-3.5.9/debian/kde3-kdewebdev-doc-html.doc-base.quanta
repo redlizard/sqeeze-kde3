@@ -1,0 +1,13 @@
+Document: quanta
+Title: Quanta Plus User Manual
+Author: Christopher Hornbaker <chrishornbaker@earthlink.net>,
+ Fabrice Mous <fabrice@kde.nl> and Robert Nickel <robert@artnickel.com>
+Abstract: Quanta Plus is a Web IDE that strives to be neutral and
+ transparent to all markup languages, while supporting popular web-based
+ scripting languages, CSS and other emerging W3C recommendations.
+Section: Web Development
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/quanta/index.html
+Files: /usr/share/doc/kde/HTML/en/quanta/*.html
+

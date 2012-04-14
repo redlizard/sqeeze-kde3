@@ -1,0 +1,1172 @@
+This files contains the changes since Quanta 2.0 until the current 3.5.x series.
+
+Version 3.5.9:
+ - bugfixes:
+      - fix crashes when using XDebug
+      - fix problem with not stopping on breakpoints when using XDebug
+      - do not keep an empty, Untitled document opened when opening new files [#151682]
+      - fix crash when closing a plugin and no other document is opened [#156728]
+      - insert literal character entities if possible [#129520]
+      - make HTML forms work in the internal preview 
+      - fix deadlock in CSS editor when the propery contains ":" [#153221]
+- improvements:
+      - list plugins in the Open With... menu.
+
+Version 3.5.8 (Release date: 07-10-2006)
+ - bugfixes:
+      - fix recursive symlink handling [#145651]
+      - fix add to project when saving a new file into a symlinked directory [#148529]
+      - do not lose CSS selectors after editing inside the dialog if they are
+        repeated [#145413]
+      - avoid crashes in various (random) cases
+      - make the parser as fast as it was in 3.5.6 and before
+      - fix help button in the New Project wizard [#145324]
+      - do not add the same entry over and over to the completion list
+
+Version 3.5.7 (Release date: xx-xx-2006; Started 06-02-2006)
+ - bugfixes:
+      - fix directory creation when certain ftp servers are used [#141232]
+      - fix crash when dropping a document template on an Untitled empty document [#141908]
+      - fix crash after using Close Other Tabs for a tab holding a plugin
+ - improvements:
+      - autocompletion for member variables. Patch by Andrew Lowe
+        <andrew.lowe@manildra.com.au>.
+
+Version 3.5.6 (Release date: 26-01-2006; Started 12-10-2006):
+ - bugfixes:
+      - show Find in Files menu if KFileReplace is installed [related to #132530]
+      - fix various crashes in the debugger [#137483]
+      - fix crash when editing a <style> CSS area
+      - use the correct encoding in the file dialogs [#138343]
+      - don't lose upload profile settings in certain cases
+      - fix symlink handling in Project Rescan, New Project adding files/folders [#138107]
+      - do not set the current project mark to a project that could not be opened [#137186]
+      - allow closing of an untitle editor tab when an image is previewed inside [#134534]
+      - fix problems with the automatic backup system
+
+Version 3.5.5 (Release date: 11-10-2006; Started 01-09-2006):
+ - bugfixes:
+      - do not allow growing of quantarc until it crashes Quanta [#111049]
+      - symlink handling fixes (hopefully won't break anything)
+      - fix Save As problems, possibly #131728
+      - add some more special characters to the list [#130513, #124628]
+      - crash fix in CSS editor [#131849]
+      - don't crash when closing a document in VPL mode [#133082, #126585, #125153]
+      - fix crash when copying to clipboard inside VPL [#130212]
+      - show the correct column number if tabs are used in the document [#133313]
+      - only one upload dialog can be shown at any time [#132535]
+      - do not show Find in Files menu if KFileReplace is not installed [#132530]
+      - allow logging to files outside of project directory [#131782]
+      - don't send closing events for untitled, unmodified documents [#131782]
+      - respect the order of items in the .docrc [#133704]
+      - fix crash when creating project through slow links [#133705]
+      - really abort if a remote directory cannot be created [#117032]
+      - fix automatic updating of closing tags [#132357]
+      - accept float numbers for length values [#130295]
+      - handle correctly the escaped backslashes inside strings [#128819]
+
+ - improvements:
+      - make CSS completion work inside style attributes [#80605]
+      - improve usability of the File Changed dialog [#126058]
+      - improve finding a DTEP for a file [related to #129808]
+
+Version 3.5.4 (Release date: 02-08-2006; Started 24-06-2005):
+ - bugfixes:
+      - make Open File in context menu work for remote projects as well
+      - make possible to remove a shortcut assigned to an action
+      - don't become confused if exitting is cancelled during the toolbar
+        saving process
+      - default to a better place when saving a global toolbar to the local
+        toolbar directory and improve the error message if a toolbar cannot be
+        saved [#130236]
+
+Version 3.5.3 (Release date: 23-05-2006; Started 18-03-2005):
+ - bugfixes:
+      - another round of VPL fixes. Requires KDE 3.5.3 to work properly [#125434]
+      - don't crash when viewing remote files in VPL [#126314]
+      - silently ignore files from a project view that do not exist anymore [#126588 ]
+      - show a correct error message if a file does not exist [#126588 ]
+      - make the img and script tags standard compliant [#125596]
+      - don't loose important spaces when applying source indentation [#125213]
+
+- improvements:
+      - add input button to the Forms toolbar [#125202]
+
+Version 3.5.2 (Release date: 17-03-2006; Started 23-01-2005):
+ - bugfixes:
+        - allow opening of read-only remote files, like from http:// [#120632]
+        - fix insertion of files to the project [#120629]
+        - fix detection of existing shortcuts
+        - ignore special areas inside comments
+        - set the user action tooltips correctly
+        - fix random crashing when editing PHP files [#121280, #122475, #122252, #120983]
+        - fix a crash when using the attribute tree
+        - fix insertion of relative URLs from the attribute tree
+        - fix resolving of relative URLs when there are symlinks around
+        - fix addition of local directories to the project (creates weird project
+          error like #122419)
+        - fix for dtep data of xhtml1.1 [#122272]
+        - fix some bugs in the new project wizard
+        - always reload a file if the user wants it [related to #121329]
+        - fix previewing of noframes area
+        - fix previewing of read-only files
+        - reload project tree for remote projects after rescanning the project folder
+
+  - improvements:
+        - less reparsing of the document while typing is in progress
+        - open dropped files [#102605]
+        - don't try to remove an empty, unmodified buffer, if it is the last
+          opened one [#111599]
+        - remember cursor position for project documents [#101966]
+        - add the standard show/hide menubar action [#113064]
+        - add possibility to limit the number of recent files/projects. No
+          GUI, use "Recent Files Limit" in the [General Options] section [#113309]
+        - show the project name in the window titlebar
+        - mark uploaded files as uploaded even if upload fails later [#111857]
+        - new DCOP methods:
+            - WindowManagerIf::uploadURL(url, profile, markOnly):
+              uploads the url to the place described by profile. If
+              markOnly is true, it only marks as uploaded. If profile is
+              empty, the default profile is used.
+            - QuantaIf::groupElements(groupName):
+              to get a list of the elements of a structure group. Useful to have
+              autocompletion for attribute values, where the values are dynamic
+              based on other tags in the document and are gathered via a dcop call.
+              Example:
+              <attr name="id" type="list" source="dcop"
+                interface="QuantaIf" method="groupElements(QString)"
+                arguments="GroupName">
+            </attr>
+
+
+
+Version 3.5.1 (Release date: 23-01-2006; Started 30-11-2005):
+ - bugfixes:
+        - better handling of quotation marks when editing tags inside a script area [#118693]
+        - don't show the file changed dialog after using save as and save again
+        - crash fixes in VPL [#118686]
+        - don't loose the comment closing character when formatting the XML code [#118453]
+        - insert valid img tag for XHTML documents [#118805]
+        - don't show the Pages tab in DTEP editing dialog more than once [#118840]
+        - set the DTEP of the document to the one selected in the Quick Start dialog [#118814]
+        - don't have two Close actions [#118448]
+        - don't show CSS pseudo-classes in autocompletion for the class attribute [#119373]
+        - avoid deadlock when loading the DTEPs
+        - recognize PHP functions which returns references [#118914]
+
+ - improvements:
+        - add XHTML 1.1 and XHTML 1.0 Basic to the quickstart dialog [#118813]
+        - new DCOP interfaces/methods:
+            - WindowManagerIf::setDtep
+
+
+Version 3.5 (Release date: 29-11-2005; Started 04-03-2004):
+ - bugfixes:
+        - don't crash when Smart Tag Insertion is enabled and some tags are inserted to an
+          emty document
+        - add missing Romanian characters to the Insert Special Character dialog [#107549]
+        - fix layout of mailto dialogs
+        - fix lots of VPL related crashes [#112733, #112853, #108501, #115046]
+        - give to the host field more space in the upload profile dialog [#112778]
+        - remember find options between sessions [#97102]
+        - don't hide the password dialogs behind the main window [#114584]
+        - replace < and > typed in VPL with &lt; and &gt; in source [#115528]
+        - never loose the content of files passed as argument when switching to VPL [#114611]
+
+ - improvements:
+        - md5sum based file changed detection
+        - faster loading of multiple documents at once
+        - possibility to change the icon/text layout of the user toolbars from
+          inside Quanta added
+        - external preview possibility with Firefox added [#106557]
+        - make autoreplacing of accented chars smarter. The characters are replaced only if they cannot
+      	  be encoded in the encoding of the document
+        - escape the quotation marks of the inserted attributes inside a script
+          area if needed
+        - less annoying CSS autocompletion [#109603]
+        - Debugger
+          - The breakpoint list now shows the correct line number
+          - It is now possible to double click on a breakpoint in the breakpoint list to jump
+            to that file and line.
+          - Renamed 'Run' To 'Trace' and 'Leap' to 'Run'
+          - Updated the Gubed plugin to support Gubed version 0.2.x
+
+ - new features:
+        - loading/updating of the entities in a DTEP from a DTD
+
+Version 3.4.3 (Release date: 05-10-2005; Started 01-08-2005):
+ - bugfixes:
+        - fix crash when deleting a file which is part of a project from the tab
+          context menu [#111134]
+        - do not autoclose tag starting with <?, like <?xml
+        - create empty description files for scripts that don't have one
+        - do not allow invocation of the CSS editor in an empty non-CSS document [#109815]
+        - fix many cell-merging related errors in the table editor [#112243]
+        - fix namespace editing in the attribute editor tree
+        - fix lots of table editor bugs
+        - restore automatic conversion of accented chars behavior to pre-3.4.2
+        - save the content entered in a new file in the VPL editor [#111278]
+        - fix loading order of the project view files
+        - replace a leading ~ in an upload profile with the users home folder and avoid a hang
+  - fix lots of VPL related crashes
+  - show DT tags in VPL [#109723]
+
+Version 3.4.2 (Release date: 20-07-2005; Started 01-06-2005):
+ - bugfixes:
+        - entity autocompletion fixes
+        - don't show the name twice in the tooltip of treeview items
+        - show an upload treeview for profiles that have @ in the username
+        - allow CVS actions to be put on toolbars [#106023]
+        - open the files with the right encoding when restoring the last opened files on startup [#104512]
+        - fix the Kommander XML scripts
+        - treat "<" as the end of a tag name. Fixes autoreplacement of opening/closing
+                tags in cases when a PHP area starts directly after a tag name. [#106911]
+
+ - improvements:
+        - make single file/folder upload really quick [#105612]
+        - Paste as HTML Encoded encodes more chars to their corresponding entities [#100547, #100103]
+        - improve the automatic conversion of characters. Only those are converted that cannot be
+   encoded in the encoding of the document
+
+Version 3.4.1 (Release date: 31-05-2005; Started 04-03-2004):
+ - bugfixes:
+        - read/write the correct entry from description.rc in the editor
+        - fill only the attributes with source="selection" with the selection in the
+          tag editing dialog
+        - fix matching of excluded files from a project
+        - don't crash when Selected is pressed and nothing is selected (in the CSS editor) [#101919]
+        - show the correct relative paths in URL autocompletion
+        - fix crash when unsetting breakpoints
+
+ - improvements:
+        - nicer processing of CVS output
+        - read the image sizes for remote images as well
+        - insert an img tag for remote images as well when using D&D
+        - better context sensitiv documentation (needs updated documentation and DTEP
+   packages)
+
+Version 3.4 (Release date: 16-03-2005; Started 20-08-2004):
+  - bugfixes:
+        - Debugger
+          - Added full support for Gubeds conditional breakpoints
+          - Improved path mapping
+          - Fixed bug that objects appeared incorrectly in watch list
+          - Fixed lockup when watching large variables
+          - The debugger docks should now remember their positions
+        - VPL:
+          - enable VPL on KDE 3.3.x
+          - Update cursor position in VPL when return key is pressed. [#94816]
+          - Fix cursor disapearing. [#85292]
+          - Fix crash that happened when using backspace to delete a link.
+          - Normal editing behaviour with selected text. [#94921]
+          - mark the document as modified after the document properties dialog creates
+            a skeleton for VPL
+          - fix "Cannot insert the tag: invalid location" problem [#99340]
+          - restore the correct mouse cursor when the VPL area is left [#98177]
+      - Other bug fixes.
+        - show (again) the full filename in a tooltip
+        - don't crash if the preview widget is closed with a JavaScript command
+          from the code itself [#87533]
+        - possible crash on startup fixed
+        - don't try to autofill a closing tag for non-xml tags [#89212]
+        - when opening a Quanta 3.2 project set the upload status of the files to
+          "When Modified" not to "Never" [#88232]
+        - when adding files to a project, use the upload status of the parent
+          directory for the newly added file
+        - fix the Save As.. behavior (it defaulted to some strange directories,
+          depending on the active treeview, selected directory, etc.)
+        - update the modified status text/icon when using Save All  [#87196]
+        - better, more stable switching between the different MDI modes [#89295]
+        - always find the right action to edit, even if there are more actions
+          with the same
+        - don't change the template description if writing to the .dirinfo file
+          fails (normally for global templates).
+        - fix creation of new template directories (template type was stored
+          incorrectly).
+        - always display the user-readable template type user visible name
+        - don't crash after editing a cell of a newly inserted row/column in the
+          table editor
+        - show the right index of the main cell in case of merged rows in a table
+        - don't crash on column removal form a table
+        - read the tables correctly also if the doctype definition is wrong
+          (for example HTML tables inside XHTML)
+        - fix node tree corruption while parsing scripts inside a tag [#91508]
+        - don't crash when deleting a file using the context menu [#92676]
+        - disable Proceed button in the upload dialog once the upload is started. Fixes
+          various problems like non-responding Quanta after upload and possibly the
+          bug described in #88892.
+        - don't try to add a newly created action to a non-existent All toolbar.
+        - don't crash on exit if the user removed an action
+        - don't crash when previewing a page with frames twices in a row or when
+          downloading a documentation packages from the Welcome screen [#95465]
+        - open the frames in the correct place [#66233]
+        - get the encoding correctly from Quanta in the QuickStart dialog [#96696]
+        - parse multiline quotation strings in PHP correctly
+        - enable full copy/paste from documentation and preview. Until now it worked
+          only with the mouse through the selection. [#92936]
+        - don't show directories that were removed from the project in the upload
+          dialog [#87186]
+        - follow symlinks in the project, project rescan, project upload [#71649, #92522]
+        - don't show the Upload File item in the tab context menu if the current item is not part of a project.
+        - parse PHP statements ending with a one-line comment ( //comment ?>)
+          correctly [#80289, #97437]
+        - correctly select modified files for upload [#94167]
+        - fix a bug in the auto tag updating: do not update non-XML tags [#95743]
+        - don't crash in case of corrupted quantarc
+        - avoid crashes that happen if you close Quanta quickly after it is started
+        - don't crash when pressing CTRL+[SHIFT]+SPACE while a plugin is loaded [#99064]
+        - fix crash when a menu is opened while loading a project with the
+          debugger enabled [#96723]
+        - close the file that was deleted, not something else when using delete from
+          the tab context menu [#98265]
+        - do not close the previous project if the new project dialog was cancelled
+          [#92693]
+        - extra checks added to make it possible to use editors that do not implement the KTextEditor
+          interfaces completely, like Kyzis M3
+        - fix highlighting problems (in some cases the loaded or new documents had the highlighting set to NONE)
+        - avoid crashes on exit (with a general solution)
+        - really show only the possible children in the completion box
+        - speed up the autocompletion of scripts (which in turn helps to not have big delays while typing)
+        - don't add back an action to a toolbar after switching between documents that have different DTEPs if
+          it was removed
+        - deal correctly with toolbars having the same name, but belonging to different DTEPs
+        - workaround a QTable bug, which causes the scrollbar to disappear when entering data in the table editor [#99011]
+
+
+  - behavioral/user interface changes:
+        - Toolbars->Add User Toolbar renamed to New User Toolbar
+        - extended Open With menu in the treeviews, showing the
+          list of applications that can open the current file
+        - don't show the project toolbar when no project is loaded
+        - shortcut changes to avoid conflicts with global shortcuts:
+            Reload: Shift+F5 (was Ctrl+F5)
+            View with Konqueror: F12 (was Ctrl+F6)
+            View with Mozilla: Shift+F12 (was Shift+F6)
+            View with Netscape: Shift+F6 (was Ctrl+Alt+F6)
+            View with Opera: Alt+F6 (was Ctrl+Shift+F6)
+            View with Lynx: None (was Shift+F6)
+        - Warning Messages can be configured on the User Interface page
+        - support bookmarks spanning multiple files [#79297]
+        - Spellchecker configuration from Configure Quanta was removed.
+          You can find it in Configure Editor.
+
+  - enhancements/new features:
+        - VPL:
+          - Undo/Redo.
+          - Copy/Cut/Paste supported in VPL.
+          - Context menu for table actions.
+        - smart tag insertion support in text editing mode as well
+        - New Toolbar menu entry added to the toolbar context menu [#80647]
+        - New Action menu entry added to the toolbar context menu
+        - add command line switch (--resetlayout) to reset the UI to the default mode
+        - new events:
+            - Before project closed
+        - any action can be assigned to an event, not just the user defined
+          script actions
+        - more than one action can be assigned to events
+        - possibility to disable the event actions added (without the need to
+          remove them one by one)
+        - support loading of more than one toolbar at a time
+        - don't ask for toolbar saving if the toolbar names were modified by
+          Quanta to add (1), (2), etc. at the end
+        - disable the Quanta Template page in properties if you don't have
+          writing rights to the directory
+        - show the user-readable template description for every template file,
+          not just the directories.
+        - don't allow to change the template type in the properties of a file as
+          it's valid per-directory.
+        - by default show the groups for all DTEPs present in the document
+        - allow showing the groups for more than one DTEP
+        - support for showing comments for tags when invoking autocompletion.
+          Useful to show version information about the tag.
+        - recognize one-line PHP comments starting with #
+        - autocomplete PHP functions after @
+        - Create New Folder/File item added to project and file treeview context
+          menu [#93189]
+        - allow opening of the same project in two instances if the user really
+          wants to [#94289]
+        - possibility to upload without having to confirm the upload process [#63131]
+        - possibility to add an alias for a top folder [#81131]
+        - download new documentation from a central server added
+        - add useful entries to the context menus invoked at empty areas of the various
+          treeviews
+        - better save on close dialog for multiple files
+        - more supported CVS commands in the context menus:
+            - update to HEAD
+            - update to tag/date
+            - revert
+            - add/remove to/from the repository
+            - show log
+            - add/remove to/from .cvsignore
+        - added possibility to execute CVS commands on the main project directory
+        - view the rendered document source
+        - ask for deleting the file from the servers when it's removed
+          from the project [#60877]
+        - persistent bookmarks support in a project [#65296]
+        - entity support (autocompletion, entity tag type in tagXML, recognition of inline
+          defined entities, extract entities from a DTD file)
+        - support upload of resources (DTEP, toolbar, template, script) to the central server
+        - added dialog to edit a DTEPs configuration (description.rc)
+        - possibility to invoke the tag editing dialog inside PHP added back
+        - PHP class autocompletion improved (autocomplete for $this; class methods; for classes from
+          included files)
+        - make CSS autocompletion less intrussive
+
+Version 3.3.0 (Release date: 18-08-2004; Started 07-05-2004):
+NOTE: Unfortunately I failed to update the changelog regulary, thus some new features and
+bugfixes might not be listed here.
+
+  - bugfixes:
+        - VPL:
+            - (once again) don't lose the comment text from inside a comment [#81162]
+	    - fix a huge memory leakage
+	    - don't crash when opening/creating a new file while VPL is visible [#82754]
+	    - fix insertion of extra spaces around text in some conditions
+	    - fix a nasty bug : put VPL/Source view, go to another file in Source view, the cursor
+	      will be stuck at position 0:0
+	    - don't forget to set the document as modified when in VPL view
+	    - fix the LINK bug : the stylesheet wasn't loaded
+	    - fix the return key bugs (sometimes the breakline is simply not inserted, sometime the
+	      cursor disappear)
+	    - other bugfixes
+        - correctly load the plugins toolbar [#81031]
+        - correctly size the DTD toolbar even when just one toolbar is loaded [#81063]
+        - remove the backup files in every case when the document was saved and
+          don't warn about their presence on the next startup
+        - don't hang when parsing (broken) PHP code, like  <a href="<? foo ?>"">
+        - don't treat text after a special area start tag as part of the special area, if the
+          starting tag is a single tag (like <style type="text/css" />) [#80491]
+        - don't crash when saving files while the structure tree is visible [#79803]
+        - fix a major memory leak, cause of many crashes and instability
+        - <fieldset> is not a single tag [#79926]
+        - don't be confused by quotation marks inside a script area which is inside a tag value
+          (like <a href="<? echo "foo" ?>">) [#80683]
+        - don't crash when closing a project while the preview is visible in the editor area
+        - show the debug toolbar immediately after a debugger is selected
+        - don't show a debug toolbar without actions on it
+        - really reload the project XML from disc when Reload is selected in the project treeview
+           context menu
+        - unconditionally hide the splash screen after 10 seconds and also hide when the user clicks
+	  on it [#80086, #82013]
+        - don't crash when inserting a dot in an empty CSS file [#82143]
+        - make uploading of empty folders possible [#82127]
+        - fix removal of actions containing &
+        - fix toolbar configuration and removal for non-English versions
+        - don't show the file changed dialog when previewing after Save All or Project Upload
+          was called. Fixes also for similar bugs (File Changed dialog appeared when it shouldn't).
+        - don't confuse the user when changing the icon for a remote root directory. Use the icon
+	  associated with root and home folders, not the hardcoded files. [#81130]
+	- enable the Configure Toolbars... and Toolbar items in the toolbar context menu [#80643]
+	- don't crash when a part is removed without noticing us (eg. Konsole is removed from RMB->Close Terminal Emulator)
+	- don't report the missing opening tag for special areas as errors
+	- correctly match the directories for exclude strings like FOO, not just for FOO*
+	- don't crash when the parser returns and empty node. For example it happens in case of empty CSS documents [#83130]
+	- use the global doctype setting for new document if there is no project loaded
+	- disable the autocompletion inside comments [#84660]
+	- make image preview work also for images outside of the project
+	- build the node tree correctly when there is no space between the closing tag and the immediately
+	  following special area
+	- fix autocompletion for simple special areas like <? a ?>
+	- don't use fixed sized dialogs [#86026]
+	- display correctly the index of the main cell in case of merges in the table editor [#86027]
+	- fix layout of the img tag dialog [#85077]
+	- fix meta keyword generation in the QuickStart dialog [#83872]
+	- make save as dialog work with a remote url
+	- fix autocompletion for tag having ampersand in an attribute value [#85710]
+	- honour the command line arguments for the script executor specified in the .info files
+	- don't crash when invoking the CSS editor in an empty CSS file [#86523]
+	- many other crash fixes
+
+  - behavioral/user interface changes:
+        - enable the configure toolbars item in the toolbar context menu [#80643]
+        - rename Edit Toolbar to Configure Toolbars...
+        - KFileReplace is used for "Find in Files"
+	- Remove From Disc (and Project) renamed to Delete in the Project Tree
+	- you cannot open the same project file in two different Quanta instances anymore
+
+  - enhancements/new features:
+	- VPL:
+	    - speedup of VPL
+ 	    - added a icon which represent a comment, and which is used in VPL like the current PHP icon
+	    - added tooltips to the scripts (PHP,...) and comments icons indicating their contents
+        - warn about missing runtime dependencies
+        - make the browser part configuration available from the Settings menu
+        - faster switching between documents
+        - reworked abbreviation support: abbreviation templates are grouped and one group can
+          be valid for more than one DTEP
+        - added possibility to mark project files as uploaded [#81546]
+        - generate nicer file names when sending some resource in email
+        - enable tab reordering with middle mouse button [#80026]
+        - added possibility of ignoring the files listed in .cvsignore [#78183]
+        - faster parsing and tree building
+        - per file and per directory upload status (can be changed from the project treeview
+           context menu):
+             - When Modified: the item selected for upload if it was modified
+             - Never: the item is never selected for upload
+             - Confirm: the item is selected for upload if it was modified, but a second confirmation
+                             is needed by the user.
+          Implements wish #62721.
+        - introduce the concept of separate project root and document-base folders.
+          Document-base folders hold the documents belonging to the actual project.
+          Outside of the document-base folders are project  administrative files, that
+          usually are not uploaded. Files under document-base folders are by default
+          uploaded (if they were modified), while files outside of the document-base
+          folders are not marked to be uploaded, even if they are modified. Exception is
+          the directory which holds the project templates, which is marked to be uploaded.
+          The user can override the default setting both for files/folder inside and outside of
+          a document-base folder. See above.
+          For old projects, the project root is the only document folder. The document-base folder
+          status can be changed from the project treeview context menu.
+          There is a DCOP method to query the root (the document base folder) for a file from
+          inside the project: QString WindowManagerIf::documentFolderForURL(QString url).
+          Implements wish #64742 (in somewhat different way, but the result is the same).
+          The main reasons of document-base folders is to make possible developing for multiple
+          subdomains inside the same project and to make a difference between administrative files
+          and real (user visible) documents.
+        - dragging a tab holding a document puts the document URL in the drag object [#80649]
+        - possibility of as-you-type replacing of accented chars [#23164]
+        - add support for upload profiles [#54366]
+	- create a treeview for each upload profile
+        - move the selection to the current file in the project tree [#62878]
+        - Reload item added to Documentation->Project Documentation context menu
+        - new DCOP interfaces and methods:
+             QString WindowManagerIf::documentFolderForURL(QString url);
+             QString WindowManagerIf::urlWithPreviewPrefix(QString url);
+	- team development support for projects
+	- event action support for projects (email, log, script actions)
+	- support %userarguments (useful for event arguments) and %projectbase for script actions
+	- add possibility to download resources (DTEP, toolbar, script and template packages) from
+	  our main server
+	- create a new toolbar for easier project view usage
+	- basic integrated CVS support (Commit and Update)
+	- improved CSS editor
+	- several treeview enhancements (inline renaming; tooltips - configurable from the quantarc,
+	  ShowToolTips entry; inline editing of descriptions; save and reload the tree state; improved D&D)
+	- support for tgz site templates. Site templates are tgz files that can be extracted
+	  to an user defined directory.
+	- added possibility to configure the preview part (has effect on the whole KHTML, including
+	  Konqueror!)
+
+
+Version 3.3 BE 2 (Release date: 07-05-2004; Started 26-01-2004):
+    - bugfixes:
+        - VPL:
+            - show the parent tag in the tag attribute view when editing text
+            - stop inserting &nbsp; everywhere [#72535]
+            - fix some various crashes [#72532]
+        - correctly close tags with namespaces when entering "</"
+        - make autocompletion work correctly with namespaced tags
+        - don't insert boolean attributes with false as value in the tags
+        - fix XML style tag editing (don't make tags look like <foo /="true">)
+        - make the New Project wizard usable on lower resolutions [#75192]
+        - various parsing fixes
+        - report bugs for "quanta" module, not for "quanta_be"
+        - fix restoration of the toolbar visibility setting [#79082]
+        - hide/show the plugin toolbar as well when Show Toolbar is unchecked/checked [#79082]
+        - don't ask for copying a file to the project if it is under the project directory (happened
+          with symlinked files and projects)
+        - color with bold in the Files Tree the opened files, even if they are under a symlinked
+          directory
+        - don't save the shortcuts as localized strings [#80115]
+        - don't crash when canceling a failed upload
+        - don't hang for 3 minutes if a filtering script action cannot be found
+
+    - behavioral/user interface changes:
+      - expand abbreviation is CTRL-SHIFT-J
+      - some menu items were restructured:
+            - File: Close/Close All moved under Window
+            - Edit: Indent/Unindent/Clean Indentation/Comment/Uncomment/Spelling moved under Tools
+            - View: Tree Views/Show Messages/Show Problem Reporter replaced with Tool Views
+            - Project: Project Options renamed to Project Properties
+            - Plugins: Edit moved to Settings->Configure Plugins
+                            Validate removed (plugins are automatically validates when you configure them)
+            - Tools: List Opened Files replaced with the Window menu
+            - editor context menu: Close/Close Other Tabs/Reload/Upload/Delete File moved to the
+                        tab context menu
+            - new tab context menu containing the above and Close All/Switch To...
+      - some dialogs were restructured:
+            - Configure Quanta: Environment->Show close buttons on tabs moved to User Interface
+                                          Layout renamed to User Interface
+                                          Layout->Window Layout replaced with Reset window layout to the default...
+      - new MDI modes: Toplevel / Childframe / Tab Page (like the old one ) and the new default IDEAl mode
+      - preview, documentation and plugins can appear in a new tab or a separate toolview
+      - "View with..." menus moved under an External Preview submenu
+
+    - new features:
+      - Next / Previous Bookmark actions
+      - add a toolbar for CSS
+      - list the opened files as bold in the treeviews
+      - allow closing of opened files from the treeviews
+      - option to control the visibility of hidden files in the treeviews
+      - add description field for project files
+      - Select Current Tag Area action created
+      - option to control loading of last opened files/project on startup
+      - support for PHP debugger (currently Gubed - http://gubed.sf.net is supported)
+      - new DCOP interfaces and methods:
+        - QuantaIf: selectors() and idSelectors()
+        - SettingsIf: dtep(), encoding(), quotationChar()
+      - Create Folder... menu item added to the project tree context menu
+
+    - enhancements:
+      - improve multiline script autocompletion
+      - improve the problem reporter
+      - warn if there is a closing tag without opening tag in the document
+      - show also the column number in the error reporting dialog
+      - multiline, formatted CSS insertion from the CSS editor dialog
+      - possibility to invoke the CSS editor from the tag dialogs and the attribute editor
+      - CSS autocompletion improvements
+      - list the defined CSS selectors in the autocompletion and tag dialogs for class and
+        id attributes
+      - added some useful templates and template examples
+      - added descriptions for all scripts
+      - added installation script for Gubed PHP debugger
+      - choose the default highlighting of new documents based on the default DTD [#68942]
+      - open documents in Konqueror as new tab. Requires KDE 3.3. [#80659]
+
+Version 3.2.2 (Release data: xx-xx-2004; Started 01-03-2004):
+    - bugfixes:
+        - VPL:
+            - don't lose the comment text from inside a comment
+        - make removal of top folders added with "New Top Folder" possible [#76498, #76573]
+        - never crash when invoking the CSS editor on an empty document
+        - don't crash when invoking the CSS editor after a <style> without the closing </style>
+        - other CSS editor invocation fixes
+        - don't change the tab name if saving under a new name failed (needs KDE 3.2.2 or later)
+        - use the correct quotation and case when inserting a link to a file from the treeviews [#76663]
+        - fix preview when preview prefix is used
+        - don't crash when parsing an included file.[#76478]
+        - give an error message when saving to remote files failed
+
+    - performance:
+        - parse the included files less often
+
+    - behavioral changes:
+        - remove the < and > from the misc. tag
+
+
+Version 3.2.1 (Release date: 09-03-2004; Started 26-01-2004):
+    - bugfixes:
+        - VPL:
+            - put messageBoxes for cut/copy/paste/undo/redo instead of disabling the actions (was confusing)
+            - fix editing in the attribute editor of tags which contain special areas
+        - increase timeout for network operations to 60s [#73173]
+        - don't crash on upload if the current tab holds a plugin [#72912]
+        - don't try to copy the same file twice if it's dropped to the templates tree view
+        - fix crash when clicking on an item of the structure tree which point to an included file
+        - always enable the Open and Open Project buttons
+        - don't let the attribute tree to grow if the tag name is very long
+        - creation of templates directory failed in some cases when using the new project wizard
+        - don't crash the CSS editor on invalid CSS
+        - don't crash when setting table/body/header/footer attributes for newly created tables [#74949]
+        - don't crash the table editor on invalid nested tables
+        - don't crash the table editor when invoked on a table without <tbody>
+        - make the spellchecker actually replace the wrongly spelled words [#75106]
+        - don't switch to the parent node when clicking on a node in the structure tree and Follow Cursor is enabled [#
+        - don't crash when trying to drag the No Project text in the project tree
+        - fix saving of files with fish:// [#74716]
+        - make insertion and renaming in the project tree view work as expected
+        - fix opening of documentation pages with references [#70345]
+        - fix creation of remote projects [#73172]
+        - fix creation of project when the main directory starts with a protocol name
+        - various parsing fixes
+    - performance:
+        - delayed parsing: reparse only if there was no keypress for some time [#63000 and its duplicates]
+        - background parsing: allow user input while parsing [#63000 and its duplicates]
+        - load DTEPs only on demand: improves startup performance, uses less memory.
+    - behavioral changes:
+        - remove unusable menu items from the RMB menus instead of disabling them
+     - enhancements:
+        - improve document type recognition (treat escaped quote marks as normal quotes) [#61873]
+        - improve namespace support in the autocompletion
+
+Version 3.2.0 (Release date: 05-02-2004):
+    - well, mostly the below ones. Check also the KDE 3.2 feature plan.
+
+Version 3.2-CVS-1 (Release Date: xx-xx-200x; Started: 25-11-2002)
+NOTE: Minimum KDE 3.1 is required.
+      [3.2] means that KDE 3.2 (CVS HEAD) is required for the feature to work
+correctly, or to work at all.
+  - bugfixes:
+    - some makefile cleanup, including fixing of --with-kommander option
+    - some fixes for compilation and running under KDE 3.0.x
+    - 0(=disable) for structure tree refreshing frequency was not handled
+      correctly on the next startup of Quanta, slowing it down
+    - autoselect the renamed files in the Upload Project dialog
+    - make the Apply button in Configure Toolbars dialog work as expected
+    - replace > with &gt; when pasting as HTML quoted [#56234]
+    - opening project views or multiple files on startup is much faster
+    - don't close quanta, if the user cancelled the toolbar saving [#59952]
+    - shortcut to Misc. Tag changed to Ctrl-Shift-T [#60616]
+    - don't toggle the KPart plugin action, if the plugin can't be loaded
+    - keep the permissions on upload [#63671]
+
+  - new features:
+    - "Replace selection" for script actions replaces the selection if
+      there was some text selected
+    - new option (Tag Style->Update opening/closing  tags automatically) to
+      automatically change the closing/opening tag  if the opening/closing tag
+      is modified
+    - new options in Parser:
+      - Show empty tag nodes
+      - Show closing tags
+      - Instant update (updates the structure tree as you type)
+    - possibility to define file patterns to be excluded from project added
+      to the Project Options.
+    - "Rename User Toolbar" menu item added
+    - context menus (Rename Toolbar, Remove Toolbar, Edit Toolbar,
+      Remove Action, Edit Action) to user toolbars added [3.2]
+    - abbreviation support added
+    - heuristics to guess the closest matching DTD for the opened document
+      added. Implements wish #53787.
+    - Add New Folder dialog to add local/remote folders to the Files Tree
+    - CSS pseudo DTD added (basic version, only for parsing)
+    - filtering possibility through a script action for templates added
+    - show an error message if the DTD tag files are broken
+    - support opening of linked, included files from the Structure Tree or from
+      the editor RMB menu
+    - upload current file action added
+    - input source setting for KPart plugins
+    - readonly setting for KPart plugins added
+    - entering "/" after "<" fills up the correct closing tag name
+    - parse the included files in pseudo DTD's for structure groups
+    - fix disappearing status bar bug after switching away from a plugin
+    - new Attribute Tree View added. You can view/edit the attributes of a tag
+      here.
+    - new option: set different pre-defined layouts
+    - offer the possibility to Save, Save As, Don't save the modified user
+      toolbars on their removal [#59952]
+    - basic namespace support in autocompletion and the Attribute Tree
+    - frame wizard
+    - DTD for XMLSchema 1.0
+    - DTD for ColdFusion added
+    - autocompletion for some &char; like entities added
+    - Reload current file menu added
+    - autofill mandatory child tags
+    - note with an icon if there is some parsing problem (like using a tag
+      without it's mandatory child elements). Give a description of the problem in the
+      message window.
+    - skip the html tags when spell-checking [#56586] [3.2]
+    - project documentation in the documentation tree
+    - script management facility: a new scrip treeview
+    - a lot of script helping XML development
+    - XSLT debugger: kxsldbg by Keith Isdale
+    - KFileReplace: search & replace in files
+    - new DTD menu with the following new items:
+      - DTD->DTEP converter
+      - Load DTEP
+      - Send DTEP in Email
+    - Reload, Upload and Close Other Tabs added to the context menu
+    - added the possibility of changing the case of tags/attributes
+    - preview the NOFRAMES area of a document
+
+  - usability enhancements:
+    - added KTip dialog on start up and help menu
+    - new Output Window options for KPart plugins:
+        - Editor Tab
+        - Editor Frame
+        - Message Frame
+    - reworked Configure Actions dialog
+    - allow the user to decide about opening of files with unknown type
+    - show the Insert/Overwrite status in the status bar
+    - show detailed descriptions in the special chars combobox
+    - restructured editor context menu
+    - default to the document or project dir when opening a new document
+    - load the global plugins config file after the local one. This is
+      important after an update when the global plugin config file contains
+      new plugins.
+    - warn the users if the plugins are not accessible.
+    - new Quick Start dialog for HTML/XHTML DTD variants
+    - up to 10 times faster project handling
+    - new, more powerful HTML table editor
+  - new DCOP interfaces:
+  - changed behavior:
+    - in the RMB menu of Structure Tree View, the "Parse As" is renamed to
+      "Show Groups For". You can select the DTD to show the groups for.
+    - the "Create new file as" options are removed. The default DTD is used
+      for new and unrecognized files
+    - the "Default DTD" option has been moved from "Parser" to "Environment"
+    - the "Always hide DTD toolbar" option is removed
+    - the old weblint syntax checker is dropped. HTML Tidy is used, but not shipped
+      with Quanta. You can still use the weblint if you download and set up an
+      action for it
+  - synched the File and Grep dialog code with Kate
+  - learning of unknown, user entered tags (and functions)
+  - enhanced structure tree building; more general code
+  - changed description.rc structure
+  - the treeviews look and behave the same as the rest of KDE
+  - using KDevelop 3.0 (Gideon) for developing
+  - sort DTD lists in selection combo boxes
+  - on startup load the files from the default project view and the last opened files
+  - completely new parsing routine (faster, better, nicer)
+  - copyright dates and information updated
+  - updated README
+  - UML diagram file added to repository (quanta_uml.xmi)
+  - TODO file added
+
+
+Version 3.1.4 (Release date: xx-xx-2003)
+  - bugfixes:
+    - resolve symlinks before opening a file [#60860]
+    - don't insert the "<meta http-equiv="Content-Type" content="text/html; charset=..."
+      line when using the Quick Start dialog [#61500]
+    - fix message window handling
+    - fix script action error output handling
+    - honour the "Do not load the modified version from disk." setting in the dirty file
+      dialog
+
+
+Version 3.1.3 (Release date: 29-07-2003)
+  - bugfixes:
+    - fix possible crashes when using plugins
+    - use the project base directory as the working directory for script actions [#36415]
+    - quote also the numbers in the attribute values
+    - show the directory on the remote PC when using Save As for remote files,
+      instead trying to switch to the file on the local disc
+    - don't break the doctype line when changing the DTD
+    - insert valid doctype line when using the Quick Start button
+    - don't crash when trying to edit tags without proper .tag file (like <b>)
+    - enable copying from documentation/preview even if the user uses separate clipboard
+      and selection
+    - warn about existing files on rename [#60187]
+    - encode the subject in a mailto url [#60275]
+
+  - usability enhancements:
+    - default to the project dir when saving a new document [#57654]
+    - don't insert spaces before CSS values (it disturbs some browsers) [#41227]
+    - replace %pid with Quanta's pid in the script action line
+    - replace %input with the selected input source the script action line
+
+Version 3.1.2 (Release date: 12-05-2003)
+  - bugfixes:
+    - fix ocassional crash when pressing Ctrl-H while viewing the documentation
+    - fix user toolbar handling
+    - fix execution of script actions which does not have any argument [#56211]
+    - fix shortcut for Color dialog [#56235]
+    - store the upload options in the project file [#56237]
+    - closing the files (and closing Quanta) isn't slow anymore [#56233]
+    - store and use the spell checking settings [#56561]
+    - fix the Insert/Overwrite mode handling [#56382]
+    - fix the height of the toolbar tab
+    - fix failure of re-opening a file from File->Open Recent
+    - do not crash when accessing the Plugins menu after a plugin was removed, but
+      the Edit dialog was closed with Cancel (thanks to Laurent Montel)
+    - don't use the preview prefix after the project is closed
+    - show the directory selection dialogs in the project options [#56698]
+    - allow selection of empty directories in Rescan/Upload/New project dialogs
+      [#56778]
+    - fix Quanta tagxml DTD
+    - fix the DTD tag files, add warning if they contain syntax errors
+    - use the Attribute Quotation setting
+    - allow opening of empty local files [#57718]
+    - show files with : inside their names correctly in the Project Tree [#56639]
+    - don't close a modified document if saving has failed [#58013]
+    - fix the selection of modified files in the upload dialog. Should be more
+      accurate now.
+    - do not truncate the file after a preview
+ - usability enhancements:
+    - bring up the message output window, when and action/plugin wants to printed
+      some message. Implements wish #55645.
+    - show files with relative path to the current document in "url"
+      autocompletion [#55989]
+    - switch to the first editable widget when the tag editing dialog appears
+  - changed behavior:
+    - <em> and <strong> is inserted instead of <i> and <b> for HTML documents
+  - new DCOP interfaces:
+    - WindowManagerIf::projectURL()
+    - WindowManagerIf::openedURLs()
+  - new features:
+    -DocBook 4.2 DTD added
+
+Version 3.1.1 (Release date: 17-03-2003)
+NOTE: Released together with KDE 3.1.1.
+  - bugfixes:
+    - insert valid DTD definitions [#53274]
+    - Select Tag Area behavior fixed for optional tags
+    - insert non-translated string in CSS code parts
+    - honor the View Default settings from Settings->Configure Editor [#53569]
+    - be less braindead regarding the Show DTD Toolbar setting [#53739]
+    - don't quote the script line more than once in the action configuration dialog
+    - memory leak: editor parts were not deleted when a file was closed
+    - fix insertion of img tags in HTML documents
+    - upload/rescan project/add to new project tree view behavior fixed (really)
+    - fix renaming of file in the Project Tree, when a file with the new name was
+      already present in the project
+    - use the correct encoding for newly created files
+    - be able to select also directories in tag dialogs [#54819]
+    - insert "border-top", "border-right", etc. correctly in CSS
+    - rename only what has to be renamed in the project and enable project saving
+      after a rename
+    - saving of Author and E-Mail project options was broken in some cases
+    - fix numbering of new documents
+    - do not complain about text files being binary ones on a system with broken
+      mimetypes [#54924]
+    - fix session restoration [#53012]
+    - do not save the full path for action icons, only the icon name
+    - crash when deleting an action fixed
+    - insert valid single XML tags from the toolbar
+    - fix running of actions
+    - fix plugin placements and plugin window disappearing after a preview
+    - fix crash when Tag Edit Dialog was requested for an unknown tag action
+    - fix "mainwindow is not resizeable due to large toolbars" bug [#53230]
+    - bring up the file changed dialog, only when the file content has really changed [#55678]
+    - be able to run Quanta in every case by several users on the same machine
+  - usability enhancements:
+    - show the tag attributes (Alt-Down) menu lower than the current line
+    - the dialog layouts are corrected, so they should be usable with
+      every language. Should fix #51438, #53410, #53544, #54910.
+  - changed features:
+    - "Insert in cursor position" for script actions replaces the selection if
+      there was some text selected
+  - new DCOP interfaces:
+    - WindowManagerIf:
+       - currentEditorIfNum(): returns the editor if number for the active
+                               document
+       - currentURL():returns the URL of the active document
+  - new features:
+    - DTD for Quanta tags (DTD definition) added
+    - XHTML 1.0 Strict DTD tags added
+
+Version 3.1 (Release date: 14-01-2003 (?); Started: 29-10-2002)
+  - released together with KDE 3.1
+  - bugfixes:
+    - Selector combo was disabled when inserting a new CSS
+    - Preview Position setting is handled correctly for Right/Bottom.
+    - Show DTD Toolbar setting handling corrected
+    - startup bug with an old quantarc corrected (thanks to Ben Burton)
+    - corrected the handling of the Show Line Number and Show Icon Borders setting
+    - Edit Current Tag menu item re-added to popup menu
+    - Remove Folder From Top was not removing the folders permanently
+    - Fix behavior when using the "--unique" switch (SF #635850)
+    - possible crash when using broken script DTDs fixed
+  - Top Folders show the location of the folder near the name
+  - added a Dynamic Word Wrap item to View menu
+  - README updated
+  - temporary files go into a "quanta" subdir
+  - directory structure changes:
+    - Php and ColdFusion highlighting files moved to Kate
+    - documentation moved to doc/quanta
+    - translation files moved to kde-i18n
+
+Version 3.1-RC-1 (Release date: 28-10-2002; Started 27-09-2002)
+ - bugfixes:
+    - crash when configuring toolbars/action and running plugins fixed [Thanks to Simon Hausmann <hausmann@kde.org>]
+    - some possible startup bugs corrected
+    - annoying closing of files tree view items corrected
+    - annoying switching/flashing of tabs when upload/quit/save all was called removed
+    - annoying menu reordering after toolbars and actions configuration fixed (really)
+    - disappearing cursor fix
+    - remove the invalid files from the recent menu lists correctly
+    - add the projects to the recent project list correctly
+    - possibility to select project default DTD on creation now is possible
+    - Alt-Left and Alt-Right behavior corrected
+    - Insert Files in project bugfix when the selection contained directories [#48959]
+    - script actions located under paths containing spaced were not working correctly
+    - saving of project toolbars corrected
+    - line numbers and icon border setting is valid for all documents and saved correctly
+    - menu shortcuts fixed
+    - config saving on non-English platforms saved
+    - bug fixed when uploading in a non-existent dir structure
+    - no error was displayed if wget was missing [#49463]
+    - frames in preview were not working correctly [#49502]
+    - returning from context help restores the treeviews correctly
+    - Save As->Close->Open was not working correctly [SF #629172]
+    - preview position option is handled
+ - usability enhancements:
+    - faster project loading
+    - faster editing even with autocompletion turned on
+    - faster editing of large files
+    - redesigned project upload dialog
+    - redesigned New Project wizard
+    - adding of non-local directories is possible [requires KDE 3.1 (beta2 is not enough)]
+ - new features:
+    - plugins can be accessed via actions (so you can put them on toolbars)
+    - Kommander script dialog builder/executor tool added to Quanta.
+      Use --without-kommander to disable it's compilation.
+    - the Files and Templates tree view updates itself automatically if the listed
+      directory has changed
+    - extended network transparency:
+        - remote projects
+        - remote files in projects
+        - remote toolbars
+    - new "Rescan Project Directory" dialog
+    - progress indicator in the statusbar for various tasks
+    - project views (a set of files and toolbars):
+        - save / open views
+        - autoload a view on startup (configurable in the project options dialog)
+    - possibility to convert the document to the selected DTD added
+    - new items in the Project Tree View RMB menu
+    - project default language encoding setting added
+    - Clean Indentation menu item re-added
+    - basic DTD tag inheritance added (see the html-frameset directory)
+    - URL information supported in the DTD definition file
+    - Send DTD in E-Mail menu
+ - new DTD's added:
+    - HTML 4.01 Frameset (may not be according to the standard)
+    - HTML 4.01 Strict   (may not be according to the standard)
+    - WML-1-2 (created by  George Moody <george@georgemoody.co.uk>)
+ - updated README file
+ - lots of code cleanup
+ - spellchecker updated to work with KDE 3.1
+ - Files List View disabled for now (it was not working correctly)
+
+Version 3.0 (Release date: 27-09-2002 ; Started at: 12-09-2002)
+ - bugfixes:
+    - menus and toolbars were reordered after Configure Actions & Configure Toolbars
+    - editor options were not saved in some cases
+    - crash when entering "<script" [#47816]
+    - attribute case option is handled correctly
+    - tag case fix in autocompletion box
+    - error message is printed if the "make install" step was not completed
+    - toolbars were not saved and loaded correctly
+    - Save All functionality corrected
+    - save an action's correctly
+ - editor enhancements:
+    - updated "Find in Files" dialog
+    - auto-completion enhancements and fixes:
+        - variable autocompletion for PHP
+ - new features:
+    - Help->Quanta Homepage menu
+    - Help->Make a Donation menu
+    - View->Show DTD Toolbar menu
+    - Environment setting page (instead of File Masks) with:
+        - file masks selection
+        - default encoding selection combo box
+        - always hide DTD toolbar setting
+    - Parse As... menu for Structure Tree View
+    - warning and reload/merge possibility if a document was changed outside of Quanta
+    - new FTP upload dialog
+    - dynamic, DTD dependent toolbars
+    - project default DTD setting
+    - CSS Editor also edits now ;-)
+    - D&D from editor to templates tree saves the dragged selection to a template file
+    - XHTML tags added (in early phase)
+    - XSLT tags added
+    - XML style single tag support (<tag/>)
+    - plugin support (general, and specific like Cervisia)
+    - CVS management support with the Cervisia part
+ - usability changes:
+    - Tags menu instead of the old Insert menu. Holds the actions available on the toolbars.
+    - "Save To Template" instead of "Save As Template" (to avoid confusion)
+ - Italian and Polish translation files added
+
+
+Version 3.0 pr2a  (Release date: 11-09-2002 ; Started at: 10-09-2002):
+ - bugfixes:
+    - CTRL+Space autocompletion: completion box disappeared after the first keystroke
+    - no crash when there is an old local quantaui.rc found
+    - no crash on startup after showing:
+         "A toolbar with the same name already exists.
+          Please rename the loaded toolbar."
+    - Files Tree View sorting error fixed
+    - Files Tree & List View is much faster now
+    - correctly open documents with different encodings
+    - CTRL+Space completion fixes for markup languages
+ - DTD, tag definition changes:
+    - a tag file can have definitions for more than one tag (less files are required)
+    - extended tag file format for script languages
+    - faster parsing routine (with 30-40%)
+ - new options:
+    - auto-close optional tags
+    - auto-close all tags (except single ones)
+    - structure tree refresh frequency setting
+ - items in the autocompletion box are sorted
+
+Version 3.0 pr2 (Release date: 09-09-2002; Started at: 01-08-2002):
+ - bugfixes:
+    - MimeType handling bug
+    - unexpected file deletion bug [#36095]
+    - insertion of closing tag bug
+    - editor toolbar GUI bugfix [#45854]
+    - editing toolbars after deleting an action crashed Quanta. It's fixed now.
+    - Find in File function fixes
+    - editor options related fixes
+    - the behavior of the editor tabs is fixed (same QT bug as in 2.0pr2)
+    - XML commenting fix
+    - fix for external filter "eating" characters [SF #492587]
+    - fix for wrong inserting of tags when indentation with TAB was used [SF #601865]
+    - fixed some possible memory leaks
+    - updated Find in Files dialog [closes SF #584469]
+    - the "File list" dialog box shows the correct relative paths when no project is opened
+    - more closed bugs: #47371
+ - autocompletion enhancements:
+    - new option to enable/disable the auto-completion feature
+    - script languages autocompletion (function names, function argument hints)
+    - CTRL+Space invokes manually the autocompletion
+    - CTRL+SHIFT+Spaces invokes arguments hints for script functions
+    - autocompletion is DTD sensitive
+ - editor enhancements:
+    - printing source documents is now supported
+    - extended file open/save dialog (from Kate) and encoding support
+    - updated "search in files" dialog
+    - Non-braking space insertion is ALT+Space
+    - editor tabs show only the filenames. Names with path are shown in the tooltip.
+    - "File list" dialog box is available via ALT+0 and right mouse menu
+ - DTD, tag definition changes:
+    - the .tag file structure has changed a lot. Check out the documentation.
+    - DTD recognition and DTD switching partially added
+    - new DTD dependent document parsing and structure tree
+    - tag editing is DTD dependent
+ - other changes:
+    - new homepage at the old location: http://quanta.sourceforge.net (Eric Laffoon)
+    - new documentation/help (Robert Nickel)
+    - new CSS creator / editor (Andrea Bergia)
+    - debian dir added to CVS (Ben Burton)
+
+Version 3.0 pr1 (Release date: 27-07-2002; Started at: 23-05-2002):
+ - actions can be assigned to toolbar directly from the Configure Actions dialog
+ - Alt-Down menu re-enable and basic autocompletion added. Thanks to Jason P. Hanley <jphanley@buffalo.edu>.
+ - possibility to save/load/add/remove/customize the toolbars
+ - D&D between Templates Tree View and the editor [Marc Britton <consume@optushome.com.au>]
+ - new pages for the Properties dialog: Quanta directory, Quanta file info. Thanks to <espaceautogere@squat.net>.
+   for the later.
+ - files are not saved anymore during internal preview, syntax checking
+ - preview prefix is used also when viewing with an external browser
+ - new dialog & shortcut for inserting misc. tags
+ - possibility to keep the upload password in the memory
+ - rescan project tree will find the hidden files
+ - support for local, global and project templates
+ - more cleanup of Makefile.am-s (to work with automake 1.5)
+ - new quick table dialog
+ - ported to KDE 3.0
+ - the --with-ktabbar option is removed as it is no longer needed
+ - the internal editor uses KTextEditor interfaces
+ - improved PHP syntax highlighting file (will be also included in KDE 3.1 release)
+
+Version 2.0.1 (Release date: 12-12-2001; Started at: 06-12-2001):
+ - fix for libktexteditor linking errors
+ - fix for a crash when doing syntax check for a correct html
+ - fixed the saving and restoring of the project options
+ - added the DocPath entry to the .desktop file
+ - file preview for file from a subdir is fixed
+ - more fixes for relative paths
+ - removing of invalid files from the recent file lists added
+ - "--nologo" switch added to disable the splash screen during startup
+
+Version 2.0 (Release date: 06-12-2001; Started at: 23-11-2001):
+ - contains the below changes
+
+Changes made since Quanta+ 2.0-PR2 (by Andras Mantia):
+ - rename possibility of files/folders in the project tree view added
+ - mailto inserting dialog added (with KAB support)
+ - CSS syntax highlighting added
+ - tooltips added for the tree views
+ - inserting of empty directories is possible
+ - improved  "New project" wizard
+ - rescan project tree will also find the empty dirs, and remove the missing ones
+ - save project menuitem added
+ - you can select the active opened file also from a list
+ - it's possible to use KDE (e.g. KDevelop) style tabbars. Use the --with-ktabbar switch
+ when you configure Quanta
+ - the behavior of the tabbar is somewhat fixed
+ - handling of directories with spaces in the name is fixed
+ - Open recent project list menu behavior fixed
+ - Show toolbar/statusbar/message output menu behavior fixed
+ - Save All behavior fixed
+ - links/images are inserted with correct relative paths
+ - compilation error fixes (mainly for Solaris)
+ - other possible crash fixes
+
+
+23 Nov. 2001:
+ - Quanta+ project is still alive. Fixing and improving it has started.
+ - We should keep a ChangeLog, so I started it. :) (Andras)

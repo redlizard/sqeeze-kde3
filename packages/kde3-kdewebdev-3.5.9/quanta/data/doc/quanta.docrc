@@ -1,0 +1,10 @@
+# KDE Config File
+[Tree]
+
+Doc dir=../doc
+
+#top level elements
+Top Element=Quanta Plus
+
+Quanta Plus=Welcome
+Welcome=intro.html

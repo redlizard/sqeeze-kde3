@@ -1,0 +1,201 @@
+Source: kdewebdev
+Section: web
+Priority: optional
+Maintainer: @@@MAINTAINER@@@
+Uploaders: @@@UPLOADERS@@@
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5), autotools-dev, gawk, gettext, kdelibs4-dev (>= 4:3.5.8), libcvsservice-dev (>= 4:3.5.8), libreadline5-dev, libxml2-dev, libxslt1-dev, sharutils, texinfo
+Standards-Version: 3.7.3
+Homepage: http://www.kde.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kdewebdev
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kdewebdev
+
+Package: kdewebdev
+Architecture: all
+Section: kde
+Depends: quanta (>= ${source:Version}), kfilereplace (>= ${source:Version}), kimagemapeditor (>= ${source:Version}), klinkstatus (>= ${source:Version}), kommander (>= ${source:Version}), kxsldbg (>= ${source:Version})
+Suggests: kommander-dev (>= ${source:Version}), kdewebdev-doc-html (>= ${source:Version})
+Description: web development apps from the official KDE release
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes a collection of web development applications
+ provided with the official release of KDE.
+
+Package: kdewebdev-doc-html
+Architecture: all
+Section: doc
+Suggests: konqueror | www-browser, kdewebdev
+Replaces: kxsldbg (<< 1:3.3.0), quanta (<< 1:3.3.0)
+Description: KDE web development documentation in HTML format
+ By default the modules provided by KDE only provide their documentation
+ in KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KDE web development documentation converted
+ to HTML format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/quanta/. Documentation is provided for most
+ KDE web development packages.
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: quanta
+Architecture: any
+Section: web
+Depends: ${shlibs:Depends}, kfilereplace (= ${binary:Version}), klinkstatus (= ${binary:Version}), kommander (= ${binary:Version}), quanta-data (>> ${KDE-Version3}), quanta-data (<< ${KDE-Next-Version3}), tidy
+Recommends: cervisia, gnupg, kompare, kxsldbg (= ${binary:Version}), docbook-defguide
+Suggests: gubed, kimagemapeditor (= ${binary:Version}), wget, khelpcenter, php-doc
+Description: web development environment for KDE
+ Quanta Plus is a web development environment for working with HTML
+ and associated languages. It strives to be neutral and transparent
+ to all markup languages, while supporting popular web-based scripting
+ languages, CSS and other emerging W3C recommendations.
+ .
+ Quanta Plus supports many external components, debuggers and other tools
+ for web development, several of which are shipped with the KDE web
+ development module.
+ .
+ Quanta Plus is not in any way affiliated with any commercial versions
+ of Quanta. The primary coders from the original team left the GPL'd
+ version to produce a commercial product.
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: quanta-data
+Architecture: all
+Section: web
+Recommends: quanta (= ${source:Version})
+Replaces: quanta (<< 1:3.2.3)
+Description: data files for Quanta Plus web development environment
+ This package contains architecture-independent data files for Quanta
+ Plus, a web development environment for working with HTML and associated
+ languages.
+ .
+ See the quanta package for further information.
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: kfilereplace
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}
+Suggests: quanta (= ${binary:Version})
+Description: batch search-and-replace component for KDE
+ KFileReplace is an embedded component for KDE that acts as a batch
+ search-and-replace tool. It allows you to replace one expression with
+ another in many files at once.
+ .
+ Note that at the moment KFileReplace does not come as a standalone
+ application. An example of an application that uses the KFileReplace
+ component is Quanta Plus (found in the package quanta).
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: kimagemapeditor
+Architecture: any
+Section: editors
+Depends: ${shlibs:Depends}
+Suggests: quanta (= ${binary:Version})
+Description: HTML image map editor for KDE
+ KImageMapEditor is a tool that allows you to edit image maps in HTML
+ files. As well as providing a standalone application, KImageMapEditor
+ makes itself available as a KPart for embedding into larger applications.
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: klinkstatus
+Architecture: any
+Section: web
+Depends: ${shlibs:Depends}
+Suggests: quanta (= ${binary:Version}), khelpcenter
+Description: web link validity checker for KDE
+ KLinkStatus is KDE's web link validity checker. It allows you to
+ search internal and external links throughout your web site. Simply
+ point it to a single page and choose the depth to search.
+ .
+ You can also check local files, or files over ftp:, fish: or any other
+ KIO protocols. For performance, links can be checked simultaneously.
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: kommander
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, gettext
+Replaces: quanta (<< 1:3.1.0-3)
+Suggests: kommander-dev (= ${binary:Version}), quanta (= ${binary:Version}), khelpcenter
+Description: visual dialog builder and executor tool
+ Kommander is a visual dialog building tool whose primary objective is
+ to create as much functionality as possible without using any scripting
+ language.
+ .
+ More specifically, Kommander is a set of tools that allow you to create
+ dynamic GUI dialogs that generate, based on their state, a piece of
+ text. The piece of text can be a command line to a program, any piece
+ of code, business documents that contain a lot of repetitious or
+ templated text and so on.
+ .
+ The resulting generated text can then be executed as a command line
+ program (hence the name "Kommander"), written to a file, passed to a
+ script for extended processing, and literally anything else you can
+ think of. And you aren't required to write a single line of code!
+ .
+ As well as building dialogs, Kommander may be expanded to create full
+ mainwindow applications.
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: kommander-dev
+Architecture: any
+Section: libdevel
+Depends: kommander (= ${binary:Version}), kdelibs4-dev (>= 4:3.5.8)
+Replaces: kommander (<< 1:3.3.0)
+Description: development files for Kommander
+ This package contains the headers and other development files for
+ building plugins or otherwise extending Kommander.
+ .
+ Kommander is a visual dialog building tool whose primary objective is
+ to create as much functionality as possible without using any scripting
+ language.
+ .
+ See the kommander package for further information.
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: kxsldbg
+Architecture: any
+Section: text
+Depends: ${shlibs:Depends}
+Suggests: quanta (= ${binary:Version}), khelpcenter
+Replaces: quanta (<< 1:3.2.0)
+Description: graphical XSLT debugger for KDE
+ KXSLDbg is a debugger for XSLT scripts. It includes a graphical user
+ interface as well as a text-based debugger. KXSLDbg can be run as a
+ standalone application or as an embedded KDE part.
+ .
+ XSLT is an XML language for defining transformations of XML files from
+ XML to some other arbitrary format, such as XML, HTML, plain text, etc.,
+ using standard XSLT stylesheets.
+ .
+ This package is part of KDE, as a component of the KDE web development module.
+ See the 'kde' and 'kdewebdev' packages for more information.
+
+Package: kdewebdev-dbg
+Section: libdevel
+Architecture: any
+Depends: kdelibs-dbg
+Priority: extra
+Description: debugging symbols for kdewebdev
+ This package contains the debugging symbols associated with kdewebdev.
+ They will automatically be used by gdb for debugging kdewebdev-related
+ issues.

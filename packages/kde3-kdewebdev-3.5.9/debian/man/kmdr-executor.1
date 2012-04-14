@@ -1,0 +1,87 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KMDR-EXECUTOR 1 "March 25, 2005"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+kmdr-executor \- executor for the Kommander visual dialog building tool
+.SH SYNOPSIS
+.B kmdr-executor
+[ \fIgeneric-options\fP ]
+[ \fB\-c\fP \fIcatalog\fP ]
+{ \fB\-\-stdin\fP | \fIfile\fP }
+[ \fIarg\fP ... ]
+.SH DESCRIPTION
+\fBKommander\fP is a visual dialog building tool whose
+primary objective is to create
+as much functionality as possible without using any scripting language.
+.PP
+More specifically, Kommander is a set of tools that allow you to
+create dynamic GUI dialogs
+that generate, based on their state, a piece of text.  The piece of text
+can be a command line to a program, any piece of code, business
+documents that contain a lot of repititious or templated text and so on.
+The resulting generated text can then be executed as a command line
+program (hence the name "Kommander"), written to a file, passed to a
+script for extended processing, and literally anything else you can
+think of.  The best part of it all?  You aren't required to write a single
+line of code!
+.PP
+This executor (\fBkmdr-executor\fP) is used to run a dialog that has
+been created by the
+dialog editor (\fBkmdr-editor\fP).  Either the dialog file (generally
+a \fI.kmdr\fP file) should be passed on
+the command-line, or else the option \-\-stdin should be passed and the
+dialog description should be supplied as XML on standard input.
+Additional arguments for the dialog itself may also be supplied.
+.PP
+This application is part of the official KDE web development module.
+.SH OPTIONS
+Below are the kommander-specific options.
+For a full summary of options, run \fIkmdr-editor \-\-help\fP.
+.TP
+\fB\-c\fP \fIcatalog\fP
+Use the given catalog for translation.
+.TP
+\fB\-\-stdin\fP
+Read the XML dialog description from standard input instead of passing
+a \fI.kmdr\fP file on the command-line.
+.TP
+\fIarg\fP ...
+Additional arguments to be passed on to the dialog itself.
+.SH SEE ALSO
+.BR extractkmdr (1),
+.BR kmdr-editor (1),
+.BR kmdr-plugins (1),
+.BR kmdr2po (1),
+.BR quanta (1).
+.PP
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/kommander/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/kommander/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdewebdev-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/kommander/\fP.
+.SH AUTHOR
+Kommander was written by Marc Britton <consume@optusnet.com.au>,
+Eric Laffoon <sequitur@kde.org>, Michal Rudolf <mrudolf@kdewebdev.org>,
+Andras Mantia <amantia@kde.org> and Trolltech.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

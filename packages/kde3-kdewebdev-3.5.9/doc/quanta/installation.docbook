@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<appendix id="installation-3-2">
+<title>Installation</title>
+
+<sect1 id="acquiring-qunata-3-2">
+<title>Acquiring &quantaplus;</title>
+
+&install.intro.documentation;
+</sect1>
+
+<sect1 id="source-code-building-3-2">
+<title>Building the Source</title>
+
+&install.compile.documentation;
+
+<sect2 id="source-code-building-considerations-3-2">
+<title>Considerations When Building</title>
+
+<para>
+It is reasonable that you would want to customize the location of
+the &quantaplus; files on your system.  To this end,
+<command>autoconf</command> has a number of options
+that can be passed to the <command>configure</command>
+script to control this setup. To get a complete listing of these
+options, type <command>./configure</command>
+<option> --help</option>. These are straight forward and will
+not be covered here.
+</para>
+
+<para>
+If you are having trouble with &quantaplus; running properly, you
+should check your path to ensure that the &kde; 3
+<filename class="directory">bin</filename> folder is in there.
+Also, be sure that you do not have any older versions of &kde; laying
+about that appear in <envar>PATH</envar> before your &kde; 3
+<filename class="directory">bin</filename> folder. The same
+holds true for &Qt;.
+</para>
+
+</sect2>
+</sect1>
+</appendix>

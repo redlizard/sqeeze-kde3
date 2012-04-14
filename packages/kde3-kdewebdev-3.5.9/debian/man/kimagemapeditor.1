@@ -1,0 +1,47 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KIMAGEMAPEDITOR 1 "October 19, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+kimagemapeditor \- an HTML image map editor for KDE
+.SH SYNOPSIS
+.B kimagemapeditor
+[ \fIgeneric-options\fP ]
+[ \fB\-c, \-\-stdout\fP ]
+[ \fIfile\fP ... ]
+.SH DESCRIPTION
+\fBKImageMapEditor\fP is a tool that allows you to edit image maps in
+HTML files.  As well as providing a standalone application,
+KImageMapEditor makes itself available as a KPart for embedding into
+larger applications.
+.PP
+The files passed on the command line may be either HTML files or image
+files.
+.PP
+This application is part of the official KDE web development module.
+.SH OPTIONS
+Below are the kimagemapeditor-specific options.
+For a full summary of options, run \fIkimagemapeditor \-\-help\fP.
+.TP
+\fB\-c, \-\-stdout\fP
+Write the resulting HTML code to standard output when exiting.
+.SH SEE ALSO
+.BR quanta (1).
+.SH AUTHOR
+KImageMapEditor was written by Jan Schafer <janschaefer@users.sourceforge.net>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

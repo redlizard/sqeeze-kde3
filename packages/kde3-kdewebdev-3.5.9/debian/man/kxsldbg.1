@@ -1,0 +1,54 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH KXSLDBG 1 "October 19, 2004"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+kxsldbg \- a graphical XSLT debugger for KDE
+.SH SYNOPSIS
+.B kxsldbg
+[ \fIgeneric-options\fP ]
+.SH DESCRIPTION
+\fBKXSLDbg\fP is a graphical debugger for XSLT scripts.  It provides
+a graphical front-end to the text-based debugger
+.BR xsldbg (1).
+KXSLDbg can be run as a standalone application or as an embedded KDE part.
+.PP
+XSLT is an XML language for defining transformations of XML files from
+XML to some other arbitrary format, such as XML, HTML, plain text, etc.,
+using standard XSLT stylesheets.
+.PP
+This application is part of the official KDE web development module.
+.SH OPTIONS
+For a full summary of options, run \fIkxsldbg \-\-help\fP.
+.SH SEE ALSO
+.BR quanta (1),
+.BR xsldbg (1).
+.PP
+Full user documentation is available through the KDE Help Centre.
+You can also enter the URL
+\fIhelp:/kxsldbg/\fP
+directly into konqueror or you can run
+`\fIkhelpcenter help:/kxsldbg/\fP'
+from the command-line.
+.PP
+If the KDE Help Centre is not installed then you can install the package
+\fIkdewebdev-doc-html\fP and read this documentation in HTML format from
+\fI/usr/share/doc/kde/HTML/en/kxsldbg/\fP.
+.SH AUTHOR
+KXSLDbg was written by Keith Isdale <k_isdale@tpg.com.au>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org>
+for the Debian GNU/Linux system (but may be used by others).

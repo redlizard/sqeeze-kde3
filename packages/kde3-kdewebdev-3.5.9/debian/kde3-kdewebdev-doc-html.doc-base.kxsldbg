@@ -1,0 +1,11 @@
+Document: kxsldbg
+Title: KXsldbg Handbook
+Author: Keith Isdale <k_isdale@tpg.com.au>
+Abstract: KXsldbg provides a graphical user interface front-end to
+ xsldbg, which supports debugging of XSLT scripts.
+Section: Text
+
+Format: HTML
+Index: /usr/share/doc/kde/HTML/en/kxsldbg/index.html
+Files: /usr/share/doc/kde/HTML/en/kxsldbg/*.html
+

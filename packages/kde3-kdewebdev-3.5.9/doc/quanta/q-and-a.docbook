@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter id="faq-3-2">
+<chapterinfo>
+<title>Questions and Answers</title>
+<authorgroup>
+<author>
+<firstname>Eric</firstname>
+<surname>Laffoon</surname>
+<affiliation>
+<address><email>sequitur@kde.org</email></address>
+</affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+</chapterinfo>
+
+<title>Questions and Answers</title>
+
+<qandaset>
+<qandaentry>
+<question>
+<para>
+How can I help &quantaplus; development?
+</para>
+</question>
+<answer>
+<para>
+We would be remiss not to point out that &quantaplus; is being built by
+volunteers. Many people feel they cannot contribute to the open
+source cause for one reason or another. Probably the greatest being a
+feeling they do not have the skills. &quantaplus; has been developed in a
+manner that allows both non-programmers and programmers help extend
+&quantaplus;. There is also the issue of documentation. Software, be it
+proprietary or Free/open source, is only as good as its documentation.
+We are sure there is a place in &quantaplus; where your time will be most
+beneficial.
+</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para>
+Where is &quantaplus; going from here?
+</para>
+</question>
+<answer>
+<para>
+We have released &quantaplus; 3.4 and are now in preparation for the next major
+release. The targeted 4.0 release is a partial rewrite of Quanta to use the 
+features ofered by the KDevelop framework.
+Our objective remains to create the very best web development
+environment. We realize that we will need many more people actively developing
+&quantaplus; to accomplish this, so we are in the process of developing
+enhancements geared toward making it easy for web developers to
+customize, extend, and enhance &quantaplus;. Much of this has been
+accomplished with the 3.4 release. Soon will be asking you, the web
+developers, to contribute your feature enhancements. We will organize
+these so that &quantaplus; web developers can find just the resources,
+extensions, and custom plug-ins they need to be the most reliable,
+professional developers ever!
+</para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</chapter>

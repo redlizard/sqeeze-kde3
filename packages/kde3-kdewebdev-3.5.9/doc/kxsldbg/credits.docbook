@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter id="credits-and-licenses">
+<chapterinfo>
+<authorgroup>
+<author>
+<firstname>Keith</firstname>
+<surname>Isdale</surname>
+<affiliation>
+<address><email>k_isdale@tpg.com.au</email></address>
+</affiliation>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+</chapterinfo>
+<title>Credits and Licenses</title>
+
+<para>&kxsldbg; &copy; 2004 Keith Isdale</para>
+<para>Documentation &copy; 2004 Keith Isdale</para>
+
+
+<itemizedlist>
+<title>Thanks to:</title>
+<listitem>
+<para>
+The writers the <application>libxml</application> and
+<application>libxslt</application>.
+</para>
+</listitem>
+<listitem>
+<para>
+Robert Jacolin for feedback on earlier version of &kxsldbg;.
+</para>
+</listitem>
+<listitem>
+<para>
+Igor Zlatkovic for creating WIN32 binaries of
+<application>libxml/xslt</application> and &xsldbg;.
+</para>
+</listitem>
+</itemizedlist>
+&underFDL;
+&underGPL;
+
+</chapter>

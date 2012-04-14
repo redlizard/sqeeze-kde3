@@ -1,0 +1,286 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>Form3</class>
+<comment>Quanta+ KDE XML Validator is a Kommander front-end for checkXML.</comment>
+<author>Chris Hornbaker</author>
+<widget class="Dialog">
+    <property name="name">
+        <cstring>Form3</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>432</width>
+            <height>153</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Quanta+ KDE XML Validator</string>
+    </property>
+    <property name="associations" stdset="0">
+        <stringlist>
+            <string></string>
+            <string></string>
+            <string></string>
+        </stringlist>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>Layout26</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>0</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QLayoutWidget" row="1" column="0">
+                    <property name="name">
+                        <cstring>Layout7</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <spacer>
+                            <property name="name">
+                                <cstring>Spacer8</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>30</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="ExecButton">
+                            <property name="name">
+                                <cstring>ExecButton2</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>1</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="focusPolicy">
+                                <enum>TabFocus</enum>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Validate</string>
+                            </property>
+                            <property name="on">
+                                <bool>false</bool>
+                            </property>
+                            <property name="default">
+                                <bool>true</bool>
+                            </property>
+                            <property name="associations" stdset="0">
+                                <stringlist>
+                                    <string>if [ !@FileSelector4 ]
+ then
+  CUR=1
+ else
+  CUR=''
+fi
+if [ !$CUR ]
+ then
+  TMP0=`dcop | grep quanta`
+  TMP1=`dcop $TMP0 WindowManagerIf projectURL`
+  DIR=`echo $TMP1 | cut -b6-`
+ else
+  DIR=`echo '@FileSelector4'`
+fi
+cd $DIR
+#meinproc --check --stdout index.docbook
+checkXML index.docbook 2&gt;&amp;1</string>
+                                </stringlist>
+                            </property>
+                        </widget>
+                        <widget class="CloseButton">
+                            <property name="name">
+                                <cstring>CloseButton1</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Close</string>
+                            </property>
+                            <property name="associations" stdset="0">
+                                <stringlist>
+                                    <string></string>
+                                </stringlist>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="GroupBox" row="0" column="0">
+                    <property name="name">
+                        <cstring>ValScript</cstring>
+                    </property>
+                    <property name="title">
+                        <string></string>
+                    </property>
+                    <property name="associations" stdset="0">
+                        <stringlist>
+                            <string></string>
+                        </stringlist>
+                    </property>
+                    <grid>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>11</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <widget class="QLayoutWidget" row="0" column="0" rowspan="1" colspan="3">
+                            <property name="name">
+                                <cstring>Layout10</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed</cstring>
+                                </property>
+                                <property name="margin">
+                                    <number>0</number>
+                                </property>
+                                <property name="spacing">
+                                    <number>6</number>
+                                </property>
+                                <widget class="CheckBox">
+                                    <property name="name">
+                                        <cstring>CheckBox4</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>C&amp;urrent working folder</string>
+                                    </property>
+                                    <property name="autoRepeat">
+                                        <bool>false</bool>
+                                    </property>
+                                    <property name="checked">
+                                        <bool>true</bool>
+                                    </property>
+                                    <property name="associations" stdset="0">
+                                        <stringlist>
+                                            <string></string>
+                                            <string></string>
+                                            <string></string>
+                                        </stringlist>
+                                    </property>
+                                </widget>
+                                <spacer>
+                                    <property name="name">
+                                        <cstring>Spacer9</cstring>
+                                    </property>
+                                    <property name="orientation">
+                                        <enum>Horizontal</enum>
+                                    </property>
+                                    <property name="sizeType">
+                                        <enum>Expanding</enum>
+                                    </property>
+                                    <property name="sizeHint">
+                                        <size>
+                                            <width>30</width>
+                                            <height>0</height>
+                                        </size>
+                                    </property>
+                                </spacer>
+                            </hbox>
+                        </widget>
+                        <widget class="QLabel" row="1" column="0">
+                            <property name="name">
+                                <cstring>TextLabel3</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>Other folder:</string>
+                            </property>
+                        </widget>
+                        <spacer row="1" column="1">
+                            <property name="name">
+                                <cstring>Spacer5</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>89</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="FileSelector" row="1" column="2">
+                            <property name="name">
+                                <cstring>FileSelector4</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="associations" stdset="0">
+                                <stringlist>
+                                    <string>@widgetText</string>
+                                </stringlist>
+                            </property>
+                        </widget>
+                    </grid>
+                </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>CheckBox4</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>FileSelector4</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>CheckBox4</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>TextLabel3</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>CheckBox4</tabstop>
+    <tabstop>ExecButton2</tabstop>
+    <tabstop>CloseButton1</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

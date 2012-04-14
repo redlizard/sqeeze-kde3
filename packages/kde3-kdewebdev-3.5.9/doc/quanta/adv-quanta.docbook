@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<chapter id="advanced-quanta-3-2">
+<chapterinfo>
+<title>Advanced Features</title>
+<authorgroup>
+<author>
+<firstname>Christopher</firstname>
+<surname>Hornbaker</surname>
+<affiliation>
+<address><email>chrishornbaker@earthlink.net</email></address>
+</affiliation>
+
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+</chapterinfo>
+
+<title>Advanced Features</title>
+
+<para>
+This chapter outlines the advanced features of &quantaplus; and how to use
+them.
+</para>
+
+<sect1 id="xml-tools-3-2">
+<title>&XML; Tools</title>
+
+<para>
+The 3.2 release of &quantaplus; brings with it many new &XML; tools and
+features. The tools are unique in their integration within &quantaplus;.
+All of these tools use <application>Kommander</application> as a front-end and
+<application>libxml2</application> and <application>libxslt</application>
+as a back-end. The combination of these makes for fast, efficient,
+productive, and complete tools.
+</para>
+
+<sect2 id="kde-db-3-2">
+<title>&kde; Documentation Tools</title>
+
+<para>
+&quantaplus; supports &kde;'s two main documentation tools:
+<command>meinproc</command> and <command>checkXML</command>.
+</para>
+
+<sect3 id="meinproc-3-2">
+<title><command>meinproc</command></title>
+
+<para>
+Anyone who has worked with &kde; documentation knows
+<command>meinproc</command> and how superb it is. Well, take it up a notch
+with a great graphical interface! No longer resort to a shell; just click
+the icon that resembles a processor and you are done!
+</para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Current Working Folder</guilabel></term>
+<listitem>
+<para>
+This application expects an <filename>index.docbook</filename>
+file to be present in a folder. If <filename>index.docbook</filename>
+is in the current working folder, then simply leave <guilabel>Current Working
+Folder</guilabel> checked. If it is not, then uncheck <guilabel>Current Working Folder</guilabel>
+and enter the folder you wish to process in the <guilabel>Other Folder</guilabel> field.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<note>
+<para>
+Outputted files are placed in the same folder as the sources files.
+All &HTML; files are removed each time
+<command>meinproc</command> is ran.
+</para>
+</note>
+
+</sect3>
+
+<sect3 id="checkxml-3-2">
+<title><command>checkXML</command></title>
+
+<para>
+Again, anyone who has worked with &kde; documentation knows this
+helpful application. Again, &quantaplus; provides a great little graphical
+front-end to this one.
+</para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Current Working Folder</guilabel></term>
+<listitem>
+<para>
+If the currently opened  file is the <filename>index.docbook</filename>
+file, then simply leave <guilabel>Current Working Folder</guilabel> checked.
+If it is not, then uncheck <guilabel>Current Working Folder</guilabel> and
+enter the folder of where <filename>index.docbook</filename> can be found.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<note>
+<title>Output</title>
+<para>
+If there is output, then your file is invalid. Please correct the reported
+errors and try again.
+</para>
+</note>
+</sect3>
+</sect2>
+
+<sect2 id="xmlval-3-2">
+<title>&XML; Validation</title>
+
+<para>
+&quantaplus; has a great &XML; validation tool, which uses a
+<command>xmllint</command> back-end.
+</para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Current File</guilabel></term>
+<listitem>
+<para>
+If the file to be validated is currently focused on in &quantaplus;, then
+simply leave <guilabel>Current File</guilabel> checked. If it is not, then
+uncheck <guilabel>Current File</guilabel> and select the file to be
+validated from the Other File file selector.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Well-formed Checking</guilabel></term>
+<listitem>
+<para>
+If you only wish to know only if the file is well-formed, click the
+<guilabel>Well-formed Checking Only</guilabel> check box.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Definition &URI;</guilabel></term>
+<listitem>
+<para>
+If you are using a &DTD; and it is specified within the &XML; file, then
+select &DTD; (Internal) (default), else select &DTD; (External) and locate
+the &DTD; with the Definition &URI; file selector. Both &W3C; &XML;
+Schema and RelaxNG validation are required to be
+externally defined via the <guilabel>Definition &URI;</guilabel> file selector.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="xsltproc-3-2">
+<title>&XSL; Processing</title>
+
+<para>
+Yep, &quantaplus; has a &XSL; processing tool, too! This uses the
+<command>xsltproc</command> tool provided with
+<application>libxml2</application>.
+</para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Current File</guilabel></term>
+<listitem>
+<para>
+If the file to be processed is currently focused on in &quantaplus;, then
+simply leave <guilabel>Current File</guilabel> checked. If it is not,
+then uncheck <guilabel>Current File</guilabel> and select the file to be
+processed from the <guilabel>Other File</guilabel> selector.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Stylesheet</term>
+<listitem>
+<para>
+Select the &XSL; file that you wish to be used.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Output file name</guilabel></term>
+<listitem>
+<para>
+Enter the name of the file that you want the resulting file to be called.
+File is outputed to your home folder by default.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<note>
+<para>
+This application lacks flexibility. Sorry, we will do better next time.
+</para>
+</note>
+</sect2>
+
+</sect1>
+
+<!-- <sect1 id="kfilereplace-3-2">
+<title>KFileReplace</title>
+
+<para>
+KFileReplace is a terrific new addition to &quantaplus;. It allows one to
+quickly replace strings over multiple files in only a few clicks of the
+mouse. Imagine you have converted all your GIF images to PNG images
+(hasn't everyone done this already?), only the extension has changed, and
+you have the &lt;img /> tag scattered throughout 50 XHTML files. Are you
+going to do a Find &amp; Replace on every file? Surely not when you can do
+them all at the same time! This is only one of the many situations where
+you will find KFileReplace a seriously helpful tool. This section will show
+you how to use this wonderful feature.
+</para>
+
+<sect2 id="using-kfr-3-2">
+<title>Using KFileReplace</title>
+
+<para>
+With all these wonderful features KFileReplace has, surely you are
+incredibly interested in how to use it! Well, make sure your swim suit
+is on tight, because we are about to dive in!
+</para>
+
+<sect3 id="start-kfr-3-2">
+<title>Starting KFileReplace</title>
+
+<para>
+You will find KFileReplace in two places: &quantaplus;' main toolbar and the
+menubar (Plugins -> KFileReplace). It is represented by this icon:
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="kfr-icon.png" format="PNG" />
+</imageobject>
+</inlinemediaobject>.
+By executing it from either location, you will be presented with the New
+Search &amp; Replace Project dialog.
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata fileref="kfr-new-dialog.png" format="PNG" />
+</imageobject>
+<caption><para>KFileReplace's New Search &amp; Replace Project dialog.</para></caption>
+</mediaobject>
+
+</sect3>
+
+<sect3 id="replace-string-kfr-3-2">
+<title>Replacing Strings in Files Over Multiple Folders</title>
+
+
+<para>
+Your boss just gave word that:
+
+<orderedlist numeration="arabic">
+<listitem>
+<para>all image formats will be PNG from now on;</para>
+</listitem>
+<listitem>
+<para>all current images must be converted to PNG;</para>
+</listitem>
+<listitem>
+<para>and it all needs to be done in one hour.</para>
+</listitem>
+</orderedlist>
+
+<quote>One hour!?!?</quote> you think to yourself. <quote>It'll take at
+least 45 minutes to convert the images!</quote> Calm down. Convert
+the images, load up your project, and fire up KFileReplace. Filter for
+only the file types you want to change. Press the <inlinemediaobject>
+<imageobject><imagedata format="PNG" fileref="" /></imageobject>
+</inlinemediaobject> and for, say GIF images, .gif for the string to
+replace and .png for the replacement string.
+</para>
+
+</sect3>
+</sect2>
+</sect1> -->
+
+<sect1 id="kparts-3-2">
+<sect1info>
+<title>Using Plugins</title>
+<authorgroup>
+<author>
+<firstname>Mathieu</firstname>
+<surname>Kooiman</surname>
+<affiliation>
+<address><email>quanta@map-is.nl</email></address>
+</affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+</sect1info>
+
+<title>Using Plugins</title>
+
+<sect2 id="what-is-a-plugin-3-2">
+<title>What is a Plugin?</title>
+
+<para>
+&quantaplus; is able to load plugins, which are KParts. The
+KPart framework is another very powerfull framework of &kde;. A KPart is a
+relatively small, reusable container of functionality. It allows &kde;
+developers to easily build on the work of other programmers. One
+example of this is &quantaplus; itself. The editor &quantaplus; uses is
+the &kate; KPart. The &kate; KPart already had a bunch of functionality that
+&quantaplus; needed, like syntax highlighting. Integrating it into
+&quantaplus; allowed the &quantaplus; developers to focus on what
+&quantaplus; should be able to do, rather than facing the many problems
+that developing a new editor KPart/component from scratch would bring.
+</para>
+
+<para>
+The plugins &quantaplus; loads might have nothing to do with &quantaplus;
+itself. This makes it a very powerful plugin system. You can benefit from
+extra functionality and need not to wait until someone integrates it into
+&quantaplus;! The plugins can be loaded into a number of &GUI; elements.
+More on this below.
+</para>
+
+</sect2>
+
+<sect2 id="plugin-dialog-3-2">
+<title>Understanding the Edit Plugin Dialog</title>
+
+<para>To install a Plugin or KPart we will work from the
+<menuchoice>
+<guimenu>Plugins</guimenu>
+<guimenuitem>Edit</guimenuitem>
+</menuchoice> menu. This will bring up the following dialog:
+</para>
+
+<mediaobject>
+<imageobject>
+<imagedata format="PNG" fileref="plugin-edit.png" />
+</imageobject>
+<caption><para>The Edit Plugin dialog.</para></caption>
+</mediaobject>
+
+<para>
+This dialog lets you manage all defined plugins and lets you add new ones.
+We will describe each &GUI; element in here:
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Search paths</guilabel></term>
+<listitem>
+<para>
+Here you can fill in a search path. When adding a plugin without a
+<guilabel>Location</guilabel>, &quantaplus; will search these paths to
+find the plugin.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Add</guilabel></term>
+<listitem>
+<para>
+This will bring up a dialog which allows you to add a new plugin.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Configure</guilabel></term>
+<listitem>
+<para>
+This will allow you to change the settings of a particular plugin.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Remove</guilabel></term>
+<listitem>
+<para>
+Removes the currently selected plugin.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Refresh</guilabel></term>
+<listitem>
+<para>
+Refreshes the dialog's contents.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</para>
+<para>Read <xref linkend="configure-plugins" /> to learn more about plugins.</para>
+</sect2>
+</sect1>
+<sect1 id="team-members">
+  <title>Team Development</title>
+  <para>Often a project has more than one people working on it and there is some kind of hierarchical relationsship between them. &quantaplus; supports the notion of team members and they are configurable in the 
+<menuchoice>
+<shortcut>
+<keycombo action="simul">&Shift;<keycap>F7</keycap></keycombo>
+</shortcut>
+<guimenu>Project</guimenu>
+<guimenuitem>Project Properties</guimenuitem>
+</menuchoice> dialog.
+  </para>
+  <mediaobject>
+    <imageobject>
+      <imagedata format="PNG" fileref="team-editing.png" />
+    </imageobject>
+    <caption><para>The team member editor dialog</para></caption>
+  </mediaobject>
+  <para>
+    The <guilabel>Name</guilabel>, <guilabel>Email</guilabel> entries are self explaining. <guilabel>Nickname</guilabel> is the nick of the user and acts as an unique identifier.
+  </para>
+  <para><guilabel>Role</guilabel> specifies the role of the member in the project and can be one of the following:
+<itemizedlist>
+<listitem><para>
+<guilabel>Team leader</guilabel>
+</para></listitem>
+<listitem><para>
+<guilabel>Subproject Leader</guilabel>
+</para></listitem>
+<listitem><para>
+<guilabel>Task Leader</guilabel>
+</para></listitem>
+<listitem><para>
+<guilabel>Simple Member</guilabel>
+</para></listitem>
+</itemizedlist>
+</para>
+<para><guilabel>Task</guilabel> is a description of the task assigned to this member.</para>
+<para><guilabel>Subproject</guilabel>: you can select a list of subproject. Subprojects can be configured and created by pressing the <guilabel>Edit subprojects</guilabel> button. Each subproject has a user visible name and a location entry, the later specifying a relative path to a directory under the project tree. This means that a subproject is a directory under the main project. For example the main project can be the website of your company, while a subproject can be the website for the intranet, located under the <filename path="intranet">intranet</filename> folder in the project.</para>
+<para>One member can have more than one role in the project, like both team leader and subproject leader.</para>
+<para>The user should select who is himself from the list of the team members. This is possible by selecting a team member from the list and pressing the <guilabel>Set to Yourself</guilabel> button. The currently selected member (your identity) appears in bold after the <guilabel>You are:</guilabel> text.</para>
+<para>Nicknames and setting yourself is important regarding messaging and annotations. See <xref linkend="annotations"/> to learn more about annotations.</para>
+<para>Aside of keeping track of your team, there is one more benefit of setting up the team members: you can configure an event to inform the team leaders when some action happens. See <xref linkend="event-actions"/> about how to do it.</para>
+</sect1>
+<sect1 id="event-actions">
+  <title>Event Actions</title>
+  <para>Event actions are actions executed when some event happens in the project. An example would be logging when the project was opened and closed, so it can be later reviewed how much one worked on it, or sending a mail when a file is saved, or adding the file to the CVS with the help of a script when the file is added to the project and the list could continue.</para>
+  <para>On the <guilabel>Event Configuration</guilabel> page of the 
+    <menuchoice>
+    <shortcut>
+      <keycombo action="simul">&Shift;<keycap>F7</keycap></keycombo>
+    </shortcut>
+    <guimenu>Project</guimenu>
+    <guimenuitem>Project Properties</guimenuitem>
+  </menuchoice> dialog you can create, edit and delete the event actions.
+</para>
+<mediaobject>
+  <imageobject>
+    <imagedata format="PNG" fileref="event-editing.png" />
+  </imageobject>
+  <caption><para>The event editor dialog</para></caption>
+</mediaobject>
+<para>The entries in the dialog are:</para>
+<variablelist>
+<varlistentry>
+<term><guilabel>Event</guilabel></term>
+<listitem><para>the action is executed when the event selected from the list happens. The event names are self explanatory.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Action</guilabel></term>
+<listitem><para>
+the type of the executed action. The possible choices are
+</para>
+<variablelist>
+<varlistentry>
+<term><guilabel>Non-script action</guilabel></term>
+<listitem><para>an action that is not a user defined script action. See <xref linkend="user-actions" /> for user action.
+</para>
+<para><guilabel>Action name</guilabel> specifies the action to be executed when the event happens.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+  <term><guilabel>Send email</guilabel></term>
+  <listitem><para>an email is sent when the action happens to the recipient selected in the <guilabel>Receiver</guilabel> list. The recipient can be a team or subproject leader. See <xref linkend="team-members" /> for defining such leaders.
+   </para>    
+  </listitem>
+</varlistentry>
+<varlistentry>
+  <term><guilabel>Log event</guilabel></term>
+  <listitem><para>the event is logged in a file. The arguments for this action are:
+    </para>
+    <variablelist>
+	<varlistentry>
+	<term><guilabel>Log file</guilabel></term>
+	<listitem><para>the filename with full path</para></listitem>
+	</varlistentry>
+	<varlistentry>
+	<term>Detail</term>
+	<listitem><para>How much information will the log contain</para></listitem>
+	</varlistentry>
+	<varlistentry>
+	<term><guilabel>Behavior</guilabel></term>
+	<listitem><para>Whether to create/overwrite the existing log file or append the new logged event to it.</para></listitem>
+	</varlistentry>
+     </variablelist>
+  </listitem>
+</varlistentry
+	      >
+<varlistentry>
+<term><guilabel>Script action</guilabel></term>
+<listitem><para>an user defined script action. See <xref linkend="user-actions" /> for user action.
+  </para>
+  <para><guilabel>Action name</guilabel> specifies the action to be executed when the event happens.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</listitem>
+</varlistentry>
+</variablelist>
+<para>The other entries depend on the <guilabel>Action</guilabel> type as they were described.
+</para>
+</sect1>
+
+<sect1 id="annotations">
+<title>Annotations</title>
+<para>Annotations are special comments in the documents. They differ from regular comments by the following things:
+<itemizedlist>
+<listitem><para>
+the information is collected by Quanta and shown in the <guilabel>Annotations</guilabel> toolview. 
+</para></listitem>
+<listitem><para>
+the information can be addressed to a team member
+</para></listitem>
+</itemizedlist>
+</para>
+<para>Entering annotations is simple. You can either use the <guilabel>Annotate</guilabel> entry from the editor context menu or enter the <emphasis>@annotation</emphasis> keyword in a comment area followed by the annotation text.
+<example><title>Annotation example in XML</title><screen>
+&lt;!-- @annotation It is possible  that this code is wrong. --&gt;</screen>
+<screen>
+&lt;!-- @annotation
+ Multiline 
+ annotation. 
+--&gt;</screen></example>
+<example><title>Annotation example in PHP</title><screen>
+/* @annotation 
+Use PHP comments when annotating a PHP area
+*/</screen>
+
+</example>
+</para>
+<para>Annotations can be addressed for a specific member of your team. The syntax in this case is <emphasis>@annotation(nickname)</emphasis> or <emphasis>@annotation(role)</emphasis>, where <emphasis>nickname</emphasis> is the nickname of a team member, while <emphasis>role</emphasis> is a project role from the following items:
+<itemizedlist>
+<listitem><para>
+team leader
+</para></listitem>
+<listitem><para>
+task leader
+</para></listitem>
+<listitem><para>
+subproject leader
+</para></listitem>
+</itemizedlist>
+The task and subproject leaders should be followed by the corresponding task and subproject name, like it is shown in the below examples.
+</para>
+<para>
+<example><title>Make a note to a team member with the nickname <emphasis>eric</emphasis></title>
+<screen>&lt;-- @annotation(eric) Eric, please look at this. Andras --&gt;</screen>
+</example>
+<example><title>Inform the team leader</title>
+<screen>&lt;-- @annotation(team leader) This is very important for the team --&gt;</screen>
+</example>
+<example><title>Inform the <emphasis>PHP</emphasis> subproject leader</title>
+<screen>// @annotation(subproject leader:PHP) What do you think about it?</screen>
+</example>
+</para>
+<para>Nicknames and role names are case insensitive, but spaces around brackets and the <emphasis>:</emphasis> make the annotation invalid.</para>
+<para>More about team members, roles and nicknames can be found in <xref linkend="team-members"/>.</para>
+<para>
+The annotations found in the project can be inspected in the <guilabel>Annotations</guilabel> view. It consists of tree tabs:
+<variablelist>
+<varlistentry>
+<term><guilabel>Current File</guilabel></term>
+<listitem><para>
+The annotation found in the current file.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>For You</guilabel></term>
+<listitem><para>
+Annotations in the project addressed for you. The entries are groupped per file.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>All Files</guilabel></term>
+<listitem><para>
+The annotations found in all the project files, groupe dy files
+</para></listitem>
+</varlistentry>
+</variablelist>
+The annotations are scanned on project and file load for external modifications. This way even is somebody adds an annotation outside of &quantaplus;, it will be recognized. As scanning can take some time, the information dialog about new annotations addressed for you might appear after some seconds of the project loading.
+</para>
+</sect1>
+<!--<sect1 id="cvs-3-2">
+<title>Using CVS</title>
+
+<para>
+&quantaplus; uses Cervisia for CVS. Explain its usage within &quantaplus;.
+</para>
+</sect1> -->
+
+&debugging-quanta;
+</chapter>

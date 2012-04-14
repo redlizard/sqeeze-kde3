@@ -1,0 +1,9 @@
+./admin/configure.in.min
+configure.in.in
+./kfilereplace/configure.in.in
+./kimagemapeditor/configure.in.in
+./klinkstatus/configure.in.in
+./kommander/configure.in.in
+./kxsldbg/configure.in.in
+./quanta/parts/kafka/configure.in.in
+configure.in.bot

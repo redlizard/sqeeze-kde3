@@ -1,0 +1,23 @@
+debian/docrc/*.docrc        /opt/kde3/share/apps/quanta/doc
+debian/icons/quanta.xpm	/opt/kde3/share/pixmaps
+
+debian/tmp/opt/kde3/bin/quanta
+debian/tmp/opt/kde3/lib/kde3/quantadebuggerdbgp.la
+debian/tmp/opt/kde3/lib/kde3/quantadebuggerdbgp.so
+debian/tmp/opt/kde3/lib/kde3/quantadebuggergubed.la
+debian/tmp/opt/kde3/lib/kde3/quantadebuggergubed.so
+debian/tmp/opt/kde3/share/applications/kde/quanta.desktop
+debian/tmp/opt/kde3/share/apps/kafkapart
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/quanta/*.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/quanta/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/quanta/*.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/quanta/*.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/quanta.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/quanta.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/quanta.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/quanta.png
+debian/tmp/opt/kde3/share/mimelnk/application/x-webprj.desktop
+debian/tmp/opt/kde3/share/services/quantadebuggerdbgp.desktop
+debian/tmp/opt/kde3/share/services/quantadebuggergubed.desktop
+debian/tmp/opt/kde3/share/services/quanta_preview_config.desktop
+debian/tmp/opt/kde3/share/servicetypes/quantadebugger.desktop

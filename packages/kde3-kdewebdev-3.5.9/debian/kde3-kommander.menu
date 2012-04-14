@@ -1,0 +1,7 @@
+?package(kommander):\
+    needs="X11"\
+    hints="KDE"\
+    section="Applications/Editors"\
+    title="Kommander Editor"\
+    longtitle="Kommander Editor (Dynamic Dialog Editor)"\
+    command="/opt/kde3/bin/kmdr-editor"

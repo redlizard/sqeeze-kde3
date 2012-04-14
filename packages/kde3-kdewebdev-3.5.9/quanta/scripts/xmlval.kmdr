@@ -1,0 +1,499 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>Form3</class>
+<comment>Quanta+ XML Validator is a Kommander front-end for xmllint.</comment>
+<author>Chris Hornbaker</author>
+<widget class="Dialog">
+    <property name="name">
+        <cstring>Form3</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>439</width>
+            <height>254</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Quanta+ XML Validator</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>11</number>
+        </property>
+        <property name="spacing">
+            <number>6</number>
+        </property>
+        <widget class="GroupBox" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>ValScript</cstring>
+            </property>
+            <property name="title">
+                <string></string>
+            </property>
+            <property name="associations" stdset="0">
+                <stringlist>
+                    <string># get file to be tested location
+@CheckBox4
+if [ !$CUR ]
+ then
+  TMP0=`dcop | grep quanta`
+  TMP1=`dcop $TMP0 WindowManagerIf currentURL`
+  FILE=`echo $TMP1 | cut -b6-`
+ else
+  FILE=`echo '@FileSelector4'`
+fi
+
+# Get validation type info
+@CheckBox3
+if [ !$WF ]
+ then
+  @ComboBox2
+  VALSTR="$VAL @FileSelector5"
+ else
+  VALSTR="$VAL"
+fi
+# Put it all together
+CMDLINE="$VALSTR $FILE"</string>
+                </stringlist>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>11</number>
+                </property>
+                <property name="spacing">
+                    <number>6</number>
+                </property>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>Layout10</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <widget class="CheckBox">
+                            <property name="name">
+                                <cstring>CheckBox4</cstring>
+                            </property>
+                            <property name="text">
+                                <string>C&amp;urrent file</string>
+                            </property>
+                            <property name="autoRepeat">
+                                <bool>false</bool>
+                            </property>
+                            <property name="checked">
+                                <bool>true</bool>
+                            </property>
+                            <property name="associations" stdset="0">
+                                <stringlist>
+                                    <string></string>
+                                    <string></string>
+                                    <string># Check if we're using the current file and make note of it
+if [ !@FileSelector4 ]
+ then
+  CUR=1
+ else
+  CUR=''
+fi</string>
+                                </stringlist>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>Spacer9</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>30</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget" row="1" column="0">
+                    <property name="name">
+                        <cstring>Layout4</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>TextLabel3</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="text">
+                                <string>Other file:</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>Spacer5</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>30</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="FileSelector">
+                            <property name="name">
+                                <cstring>FileSelector4</cstring>
+                            </property>
+                            <property name="enabled">
+                                <bool>false</bool>
+                            </property>
+                            <property name="associations" stdset="0">
+                                <stringlist>
+                                    <string>@widgetText</string>
+                                </stringlist>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget" row="3" column="0">
+                    <property name="name">
+                        <cstring>Layout5</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>TextLabel4</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Validate against:</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>Spacer4</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>30</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="ComboBox">
+                            <item>
+                                <property name="text">
+                                    <string>DTD (Internal)</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>DTD (External)</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>XML Schema</string>
+                                </property>
+                            </item>
+                            <item>
+                                <property name="text">
+                                    <string>RelaxNG Schema</string>
+                                </property>
+                            </item>
+                            <property name="name">
+                                <cstring>ComboBox2</cstring>
+                            </property>
+                            <property name="associations" stdset="0">
+                                <stringlist>
+                                    <string>################################
+# Set up variables
+# W3C XML Schema
+WXS='--schema'
+# RelaxNG Schema
+RNGS='--relaxng'
+# DTD specified in document
+DTD1='--valid'
+# DTD not specified in document and
+# needs loaded from URL
+DTD2='--dtdvalid'
+
+################################
+# Set validation type
+
+case "@widgetText" in
+"XML Schema" )
+	VAL="$WXS"
+;;
+"RelaxNG Schema" )
+	VAL="$RNGS"
+;;
+"DTD (Internal)" )
+	VAL="$DTD1"
+;;
+"DTD (External)" )
+	VAL="$DTD1"
+;;
+* )
+	VAL=""
+;;
+esac</string>
+                                </stringlist>
+                            </property>
+                            <property name="items" stdset="0">
+                                <stringlist>
+                                    <string>DTD</string>
+                                    <string>RelaxNG Schema</string>
+                                    <string>W3C XML Schema</string>
+                                </stringlist>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget" row="2" column="0">
+                    <property name="name">
+                        <cstring>Layout11</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <widget class="CheckBox">
+                            <property name="name">
+                                <cstring>CheckBox3</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Well-formed checking &amp;only</string>
+                            </property>
+                            <property name="associations" stdset="0">
+                                <stringlist>
+                                    <string>@null</string>
+                                    <string></string>
+                                    <string># Are we just checking well-formedness?
+@ComboBox2
+if [ !$VAL ]
+ then
+  WF=1
+ else
+  WF=''
+fi
+</string>
+                                </stringlist>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>Spacer10</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>30</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </hbox>
+                </widget>
+                <widget class="QLayoutWidget" row="4" column="0">
+                    <property name="name">
+                        <cstring>Layout6</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <property name="margin">
+                            <number>0</number>
+                        </property>
+                        <property name="spacing">
+                            <number>6</number>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>TextLabel5</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Definition URI:</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>Spacer3</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>30</width>
+                                    <height>0</height>
+                                </size>
+                            </property>
+                        </spacer>
+                        <widget class="FileSelector">
+                            <property name="name">
+                                <cstring>FileSelector5</cstring>
+                            </property>
+                            <property name="associations" stdset="0">
+                                <stringlist>
+                                    <string>@widgetText</string>
+                                </stringlist>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="ExecButton" row="1" column="1">
+            <property name="name">
+                <cstring>ExecButton2</cstring>
+            </property>
+            <property name="focusPolicy">
+                <enum>TabFocus</enum>
+            </property>
+            <property name="text">
+                <string>&amp;Validate</string>
+            </property>
+            <property name="on">
+                <bool>false</bool>
+            </property>
+            <property name="default">
+                <bool>true</bool>
+            </property>
+            <property name="associations" stdset="0">
+                <stringlist>
+                    <string># Set up the CMDLINE var and run xmllint
+@ValScript
+xmllint $CMDLINE 2&gt;&amp;1
+</string>
+                </stringlist>
+            </property>
+        </widget>
+        <widget class="CloseButton" row="1" column="2">
+            <property name="name">
+                <cstring>CloseButton1</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Close</string>
+            </property>
+        </widget>
+        <spacer row="1" column="0">
+            <property name="name">
+                <cstring>Spacer8</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>228</width>
+                    <height>0</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>CheckBox4</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>FileSelector4</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>CheckBox4</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>TextLabel3</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>CheckBox3</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>TextLabel4</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>CheckBox3</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>ComboBox2</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>CheckBox3</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>TextLabel5</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>CheckBox3</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>FileSelector5</receiver>
+        <slot>setDisabled(bool)</slot>
+    </connection>
+</connections>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

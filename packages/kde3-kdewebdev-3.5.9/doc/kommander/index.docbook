@@ -1,0 +1,121 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kommander "<application>Kommander</application>">
+  <!ENTITY kappname "&kommander;">
+  <!ENTITY package "kdewebdev">
+  <!ENTITY basics SYSTEM "basics.docbook">
+  <!ENTITY commands SYSTEM "commands.docbook">
+  <!ENTITY parser SYSTEM "parser.docbook">
+  <!ENTITY credits SYSTEM "credits.docbook">
+  <!ENTITY dcop-functions SYSTEM "dcop.docbook">
+  <!ENTITY editor SYSTEM "editor.docbook">
+  <!ENTITY extending SYSTEM "extending.docbook">
+  <!ENTITY translating SYSTEM "translating.docbook">
+  <!ENTITY glossary SYSTEM "glossary.docbook">
+  <!ENTITY installation SYSTEM "installation.docbook">
+  <!ENTITY introduction SYSTEM "introduction.docbook">
+  <!ENTITY q-and-a SYSTEM "q-and-a.docbook">
+  <!ENTITY specials SYSTEM "specials.docbook">
+  <!ENTITY tutorials SYSTEM "tutorials.docbook">
+  <!ENTITY widgets SYSTEM "widgets.docbook">
+  <!ENTITY designer "<application>&Qt; Designer</application>">
+  <!ENTITY kmdr-editor "&kommander; Editor">
+  <!ENTITY kmdr-executor "&kommander; Executor">
+  <!ENTITY GIMP "<application>The GIMP</application>">
+  <!ENTITY IDE "<acronym>IDE</acronym>">
+  <!ENTITY PHP "<acronym>PHP</acronym>">
+  <!ENTITY PID "<acronym>PID</acronym>">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE">
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title>The &kommander; Handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Marc</firstname>
+<surname>Britton</surname>
+<affiliation>
+<address><email>consume@optushome.com.au</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>Tamara</firstname>
+<surname>King</surname>
+<affiliation>
+<address><email>tik@acm.org</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>Eric</firstname>
+<surname>Laffoon</surname>
+<affiliation>
+<address><email>eric@kdewebdev.org</email></address>
+</affiliation>
+</author>
+<author>
+<firstname>András</firstname>
+<surname>Manţia</surname>
+<affiliation>
+<address><email>amantia@kde.org</email></address>
+</affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+
+<copyright>
+<year>2008</year>
+<holder>&kommander; Development Team</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (YYYY-MM-DD) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date>2008-02-12</date>
+<releaseinfo>3.2.95</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para>These docs have been partially complete for years, but not always available or easy to find. Since around 2002 little spurts of effort on &kommander; have produced dramtic results. &kommander; is a new approach to development and there have been modifications in approach and features. Consequently much of this documentation is out of date, however still useful due to legacy support. Please refer to our web site at <ulink url="http://kommander.kdewebdev.org">http://kommander.kdewebdev.org</ulink> for up to date information, news on KDE4 development, new tools, plugins, tips and tutorials.</para>
+<para>
+&kommander; is a set of tools that allow you to create dynamic &GUI; windows that has been used as a front end for command line programs, database front ends, simple program extentions and much more. The best part of it all?  You aren't required to write a single line of code! Okay, that was old text... You can actually use the function browser and even with the new parser write almost none of the code. The inherent difference between &kommander; and other &GUI; scripting tools is that &kommander; doesn't care about how the window gets drawn. &kommander; was designed from the GUI down to the language elements and can embrace multiple languages. &kommander; does not use scripting to draw a window on the screen like other &GUI; scripting tools. As Kommander matures it will expose all it's internals to any scripting language people want to enable. We welcome anyone wishing to enhance support for any scripting language.
+</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>Kommander</keyword>
+<keyword>Quanta</keyword>
+</keywordset>
+
+</bookinfo>
+
+&introduction;
+&basics;
+&commands;
+&parser;
+&extending;
+&translating;
+&tutorials;
+&q-and-a;
+&credits;
+&installation;
+&glossary;
+
+</book>

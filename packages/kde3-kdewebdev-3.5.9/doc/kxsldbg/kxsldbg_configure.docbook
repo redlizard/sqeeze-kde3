@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sect1 id="configure">
+<sect1info>
+<authorgroup>
+<author>
+<firstname>Keith</firstname>
+<surname>Isdale</surname>
+<affiliation>
+<address><email>k_isdale@tpg.com.au</email></address>
+</affiliation>
+</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+</sect1info>
+
+<title>Configuring a &kxsldbg; Session</title>
+
+<para>
+You start configuration by clicking
+<menuchoice>
+<guimenu>Debug</guimenu>
+<guimenuitem>Configure</guimenuitem>
+</menuchoice> in the Menubar.
+</para>
+
+<screenshot>
+<screeninfo>The Configuration Dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="configure_window.png" format="PNG" />
+</imageobject>
+<textobject><phrase>The Configuration Dialog</phrase></textobject>
+<caption><para>The Configuration Dialog.</para></caption>
+</mediaobject>
+</screenshot>
+
+<sect2>
+<title>Getting Started</title>
+
+<para>
+To be able to run a stylesheet you need to specify the:
+<itemizedlist mark="bullet">
+<listitem><para>&XSL; source</para></listitem>
+<listitem><para>&XML; data</para></listitem>
+<listitem><para>Output file</para></listitem>
+</itemizedlist>
+</para>
+
+<para> By using the <guibutton>...</guibutton> button to choose file
+desired. The <guilabel>&XSL; source</guilabel> and <guilabel>>&XML; data</guilabel> may refer
+to URI that contains a http://, ftp:// or file://. The <guilabel>Output file</guilabel> 
+must refer to a writable local file.</para>
+<para>
+To follow along with the examples, select the following files in the
+example <filename role="directory">&lt;KDE PREFIX&gt;/share/apps/kxsldbg</filename> folder
+<itemizedlist mark="bullet">
+<listitem><para>&XSL; source: testdoc.xsl</para></listitem>
+<listitem><para>&XML; data: testdoc.xml</para></listitem>
+<listitem><para>Output file: /tmp/xsldbg_output.txt</para></listitem>
+</itemizedlist>
+</para>
+</sect2>
+
+<sect2>
+<title>Working With Options</title>
+
+<para>
+You can select zero or more options from the <guilabel>Options</guilabel> dialog. Each option has a tooltip with a hint on what effect it has.
+</para>
+</sect2>
+
+<sect2>
+<title>Working With Parameters</title>
+
+<para>
+You can add zero or more parameters via the <guilabel>LibXSLT Parameters</guilabel>
+section of dialog. This allows you to provide parameter values to the
+stylesheet.
+</para>
+
+<para>
+For example you could add a enter a <guilabel>Parameter name</guilabel> of <parameter>myparam</parameter>  
+with a <guilabel>Parameter value</guilabel> of <parameter>'Hello World!'</parameter> and click the <guibutton>Add</guibutton> button.
+. To update the value of an existing
+parameter just use the navigate to the value you wish to change with the <guibutton>Prev</guibutton> or <guibutton>Next</guibutton> button, provide a new <guilabel>Parameter value</guilabel> then click the <guibutton>Apply</guibutton>.  
+</para>
+</sect2>
+
+<sect2>
+<title>Apply Changes</title>
+
+<para>
+For the changes you have made to take effect press the <guibutton>Apply</guibutton>
+button. To ignore any changes press the <guibutton>Cancel</guibutton> button.
+</para>
+
+<para>
+You can close the dialog using the <guibutton>X</guibutton> provided at the top right of the window. If you need to change the configuration just re-open the
+configuration dialog as shown before.
+</para>
+</sect2>
+</sect1>
