@@ -1,0 +1,29 @@
+Source: kde3-wv2
+Section: libs
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Isaac Clerencia <isaac@debian.org>, Ana Beatriz Guerrero Lopez <ana@debian.org>
+Build-Depends: debhelper (>> 5.0.31), libglib2.0-dev, libgsf-1-dev (>= 1.14.0), libxml2-dev, zlib1g-dev, pkg-config, quilt
+Standards-Version: 3.7.3
+
+Package: kde3-libwv2-1c2
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}
+Description: a library for accessing Microsoft Word documents
+ The wv2 library allows access to Microsoft Word documents, for the
+ purpose of converting them to other formats.  This library is intended
+ as an eventual replacement for the wv library, used in the package wv.
+
+Package: kde3-libwv2-dev
+Architecture: any
+Section: libdevel
+Depends: kde3-libwv2-1c2 (= ${binary:Version}), libglib2.0-dev, libgsf-1-dev (>= 1.14.0), libstdc++-dev, libxml2-dev
+Description: development files for Microsoft Word access library
+ The wv2 library allows access to Microsoft Word documents, for the
+ purpose of converting them to other formats.  This library is intended
+ as an eventual replacement for the wv library, used in the package wv.
+ .
+ This package contains development files for using libwv2 within your own
+ projects.
+

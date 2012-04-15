@@ -1,0 +1,124 @@
+Index: wv2-0.2.3/src/styles.cpp
+===================================================================
+--- wv2-0.2.3.orig/src/styles.cpp	2007-12-26 06:23:03.000000000 +0100
++++ wv2-0.2.3/src/styles.cpp	2007-12-26 06:36:00.000000000 +0100
+@@ -24,6 +24,7 @@
+ 
+ #include "wvlog.h"
+ #include <algorithm>
++#include <cstring>
+ 
+ namespace wvWare
+ {
+@@ -237,13 +238,7 @@
+     shifterU16 |= unused8_3 << 2;
+     stream->write( shifterU16 );
+     // Attention: I don't know how to write xstzName - XCHAR[]
+-#ifdef __GNUC__
+-#warning "Couldn't generate writing code for STD::xstzName"
+-#endif
+     // Attention: I don't know how to write grupx - U8[]
+-#ifdef __GNUC__
+-#warning "Couldn't generate writing code for STD::grupx"
+-#endif
+ 
+     if ( preservePos )
+         stream->pop();
+Index: wv2-0.2.3/src/word97_generated.cpp
+===================================================================
+--- wv2-0.2.3.orig/src/word97_generated.cpp	2007-12-26 06:23:03.000000000 +0100
++++ wv2-0.2.3/src/word97_generated.cpp	2007-12-26 06:35:41.000000000 +0100
+@@ -8165,9 +8165,6 @@
+ 
+     cb=stream->readU16();
+     // Attention: I don't know how to read grpprl - U8[]
+-#ifdef __GNUC__
+-#warning "Couldn't generate reading code for SEPX::grpprl"
+-#endif
+ 
+     if(preservePos)
+         stream->pop();
+@@ -8181,9 +8178,6 @@
+ 
+     stream->write(cb);
+     // Attention: I don't know how to write grpprl - U8[]
+-#ifdef __GNUC__
+-#warning "Couldn't generate writing code for SEPX::grpprl"
+-#endif
+ 
+     if(preservePos)
+         stream->pop();
+@@ -8202,9 +8196,6 @@
+ 
+ bool operator==(const SEPX &lhs, const SEPX &rhs) {
+     // Attention: I don't know how to compare grpprl - U8[]
+-#ifdef __GNUC__
+-#warning "Can't compare SEPX::grpprl items"
+-#endif
+ 
+     return lhs.cb==rhs.cb;
+ }
+Index: wv2-0.2.3/src/word95_generated.cpp
+===================================================================
+--- wv2-0.2.3.orig/src/word95_generated.cpp	2007-12-26 06:23:03.000000000 +0100
++++ wv2-0.2.3/src/word95_generated.cpp	2007-12-26 06:35:41.000000000 +0100
+@@ -1281,9 +1281,6 @@
+     xaEnd=stream->readU16();
+     yaEnd=stream->readU16();
+     // Attention: I don't know how to read rgpta - U16[]
+-#ifdef __GNUC__
+-#warning "Couldn't generate reading code for DPPOLYLINE::rgpta"
+-#endif
+ 
+     if(preservePos)
+         stream->pop();
+@@ -1325,9 +1322,6 @@
+     stream->write(xaEnd);
+     stream->write(yaEnd);
+     // Attention: I don't know how to write rgpta - U16[]
+-#ifdef __GNUC__
+-#warning "Couldn't generate writing code for DPPOLYLINE::rgpta"
+-#endif
+ 
+     if(preservePos)
+         stream->pop();
+@@ -1369,9 +1363,6 @@
+ 
+ bool operator==(const DPPOLYLINE &lhs, const DPPOLYLINE &rhs) {
+     // Attention: I don't know how to compare rgpta - U16[]
+-#ifdef __GNUC__
+-#warning "Can't compare DPPOLYLINE::rgpta items"
+-#endif
+ 
+     return lhs.dphead==rhs.dphead &&
+            lhs.lnpc==rhs.lnpc &&
+@@ -6768,9 +6759,6 @@
+ 
+     cb=stream->readU8();
+     // Attention: I don't know how to read grpprl - U8[]
+-#ifdef __GNUC__
+-#warning "Couldn't generate reading code for SEPX::grpprl"
+-#endif
+ 
+     if(preservePos)
+         stream->pop();
+@@ -6784,9 +6772,6 @@
+ 
+     stream->write(cb);
+     // Attention: I don't know how to write grpprl - U8[]
+-#ifdef __GNUC__
+-#warning "Couldn't generate writing code for SEPX::grpprl"
+-#endif
+ 
+     if(preservePos)
+         stream->pop();
+@@ -6805,9 +6790,6 @@
+ 
+ bool operator==(const SEPX &lhs, const SEPX &rhs) {
+     // Attention: I don't know how to compare grpprl - U8[]
+-#ifdef __GNUC__
+-#warning "Can't compare SEPX::grpprl items"
+-#endif
+ 
+     return lhs.cb==rhs.cb;
+ }

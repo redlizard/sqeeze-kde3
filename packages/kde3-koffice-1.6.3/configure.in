@@ -1,0 +1,2664 @@
+dnl =======================================================
+dnl FILE: ./admin/configure.in.min
+dnl =======================================================
+
+dnl    This file is part of the KDE libraries/packages
+dnl    Copyright (C) 2001 Stephan Kulow (coolo@kde.org)
+ 
+dnl    This file is free software; you can redistribute it and/or
+dnl    modify it under the terms of the GNU Library General Public
+dnl    License as published by the Free Software Foundation; either
+dnl    version 2 of the License, or (at your option) any later version.
+ 
+dnl    This library is distributed in the hope that it will be useful,
+dnl    but WITHOUT ANY WARRANTY; without even the implied warranty of
+dnl    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+dnl    Library General Public License for more details.
+ 
+dnl    You should have received a copy of the GNU Library General Public License
+dnl    along with this library; see the file COPYING.LIB.  If not, write to
+dnl    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+dnl    Boston, MA 02110-1301, USA.
+
+# Original Author was Kalle@kde.org
+# I lifted it in some mater. (Stephan Kulow)
+# I used much code from Janos Farkas
+
+dnl Process this file with autoconf to produce a configure script.
+
+AC_INIT(acinclude.m4) dnl a source file from your sub dir
+
+dnl This is so we can use kde-common
+AC_CONFIG_AUX_DIR(admin)
+
+dnl This ksh/zsh feature conflicts with `cd blah ; pwd`
+unset CDPATH
+
+dnl Checking host/target/build systems, for make, install etc.
+AC_CANONICAL_SYSTEM 
+dnl Perform program name transformation
+AC_ARG_PROGRAM
+
+dnl Automake doc recommends to do this only here. (Janos)
+AM_INIT_AUTOMAKE(koffice, "1.6.3") dnl searches for some needed programs
+
+KDE_SET_PREFIX
+
+dnl generate the config header
+AM_CONFIG_HEADER(config.h) dnl at the distribution this done
+
+dnl Checks for programs.
+AC_CHECK_COMPILERS
+AC_ENABLE_SHARED(yes)
+AC_ENABLE_STATIC(no)
+KDE_PROG_LIBTOOL
+
+dnl for NLS support. Call them in this order!
+dnl WITH_NLS is for the po files
+AM_KDE_WITH_NLS
+
+KDE_USE_QT(3.3)
+AC_PATH_KDE
+dnl =======================================================
+dnl FILE: configure.in.in
+dnl =======================================================
+
+#MIN_CONFIG(3.3)
+
+# Remember to synchronize the version number with the file koffice/lib/kofficecore/kofficeversion.h
+dnl PACKAGE set before
+
+CXXFLAGS="$CXXFLAGS $KDE_DEFAULT_CXXFLAGS"
+
+AC_CHECK_HEADERS(unistd.h sys/param.h floatingpoint.h paths.h)
+AC_C_BIGENDIAN
+AC_CHECK_KDEMAXPATHLEN
+
+KDE_INIT_DOXYGEN([The KOffice API Reference], [Version $VERSION])
+
+# Check for GraphicsMagick...
+
+have_graphicsmagick=no
+KDE_FIND_PATH(GraphicsMagick-config, GRAPHICS_MAGICK_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find GraphicsMagick anywhere, check http://www.graphicsmagick.org/ for GraphicsMagick >= 1.1.7.])
+])
+
+if test -n "$GRAPHICS_MAGICK_CONFIG"; then
+ vers=`$GRAPHICS_MAGICK_CONFIG --version 2>/dev/null | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" && test "$vers" -ge 1001007;  then
+     LIBGMAGICK_LIBS="`$GRAPHICS_MAGICK_CONFIG --libs`"
+     LIBGMAGICK_LDFLAGS="`$GRAPHICS_MAGICK_CONFIG --ldflags`"
+     LIBGMAGICK_RPATH=
+     for args in $LIBGMAGICK_LIBS; do
+	  case $args in
+	    -L*)
+  	       LIBGMAGICK_RPATH="$LIBMAGICK_RPATH $args"
+ 	       ;;
+          esac
+     done
+     LIBGMAGICK_RPATH=`echo $LIBGMAGICK_RPATH | $SED -e "s/-L/-R/g"`
+     LIBGMAGICK_CPPFLAGS="`$GRAPHICS_MAGICK_CONFIG --cppflags`"
+     AC_DEFINE(HAVE_GMAGICK,1, [GraphicsMagick is available])
+     have_graphicsmagick=yes
+  else
+     AC_MSG_WARN([You need at least GraphicsMagick 1.1.7])
+  fi
+
+fi
+
+if test ! "$USE_RPATH" = "yes"; then
+    LIBGMAGICK_RPATH=
+fi
+
+AC_SUBST(LIBGMAGICK_LIBS)
+AC_SUBST(LIBGMAGICK_LDFLAGS)
+AC_SUBST(LIBGMAGICK_CPPFLAGS)
+AC_SUBST(LIBGMAGICK_RPATH)
+AM_CONDITIONAL(include_graphicsmagick_filter, test "$have_graphicsmagick" = "yes" -a HAVE_GMAGICK)
+
+# End of GraphicsMagick check
+
+# Check for ImageMagick...
+
+have_imagemagick=no
+KDE_FIND_PATH(Magick-config, MAGICK_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find ImageMagick anywhere, check http://www.imagemagick.org/ for ImageMagick >= 5.5.2.])
+])
+
+if test -n "$MAGICK_CONFIG"; then
+  vers=`$MAGICK_CONFIG --version 2>/dev/null | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" && test "$vers" -ge 5005002 
+  then
+     if test "$vers" -ge 6000003
+     then
+        AC_DEFINE(HAVE_MAGICK6, 1, [ImageMagick Version 6])
+     fi
+     if test "$vers" -ge 6001000
+     then
+        AC_DEFINE(HAVE_MAGICK61, 1, [ImageMagick Version 6.1])
+     fi
+     LIBMAGICK_LIBS="`$MAGICK_CONFIG --libs`"
+     LIBMAGICK_LDFLAGS="`$MAGICK_CONFIG --ldflags`"
+     LIBMAGICK_RPATH=
+     for args in $LIBMAGICK_LIBS; do
+	  case $args in
+	    -L*)
+  	       LIBMAGICK_RPATH="$LIBMAGICK_RPATH $args"
+ 	       ;;
+          esac
+     done
+     LIBMAGICK_RPATH=`echo $LIBMAGICK_RPATH | $SED -e "s/-L/-R/g"`
+     LIBMAGICK_CPPFLAGS="`$MAGICK_CONFIG --cppflags`"
+     AC_DEFINE(HAVE_MAGICK,1, [ImageMagick is available])
+     have_imagemagick=yes
+  else
+     AC_MSG_WARN([You need at least ImageMagick 5.5.2])
+  fi
+fi
+
+if test ! "$USE_RPATH" = "yes"; then
+    LIBMAGICK_RPATH=
+fi
+
+AC_SUBST(LIBMAGICK_LIBS)
+AC_SUBST(LIBMAGICK_LDFLAGS)
+AC_SUBST(LIBMAGICK_CPPFLAGS)
+AC_SUBST(LIBMAGICK_RPATH)
+AM_CONDITIONAL(include_imagemagick_filter, test "$have_imagemagick" = "yes" -a HAVE_MAGICK61 -a ! "$have_graphicsmagick" = "yes" -a ! HAVE_GMAGICK)
+
+# End of ImageMagick check
+
+##########################################################################
+# This last check is copied from kdenonbeta/gsf/configure.in.in
+##########################################################################
+# KOFFICE_PKG_CHECK_MODULES(GSTUFF, gtk+-2.0 >= 1.3 glib = 1.3.4, action-if, action-not)
+# defines GSTUFF_LIBS, GSTUFF_CFLAGS, see pkg-config man page
+# also defines GSTUFF_PKG_ERRORS on error
+# Note: This is specially tweaked for karbon's fontconfig check. Please fix
+# it before using it for other tests :-)
+AC_DEFUN([KOFFICE_PKG_CHECK_MODULES], [
+  succeeded=no
+
+  if test -z "$PKG_CONFIG"; then
+    AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
+  fi
+
+  if test "$PKG_CONFIG" = "no" ; then
+     echo "*** The pkg-config script could not be found. Make sure it is"
+     echo "*** in your path, or set the PKG_CONFIG environment variable"
+     echo "*** to the full path to pkg-config."
+     echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
+     echo "***"
+     echo "*** Due to that we can't perform the check for fontconfig..."    # added for karbon (Werner)
+  else
+     PKG_CONFIG_MIN_VERSION=0.9.0
+     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
+        AC_MSG_CHECKING(for $2)
+
+        if $PKG_CONFIG --exists "$2" ; then
+            AC_MSG_RESULT(yes)
+            succeeded=yes
+
+            AC_MSG_CHECKING($1_CFLAGS)
+            $1_CFLAGS=`$PKG_CONFIG --cflags "$2"`
+            AC_MSG_RESULT($$1_CFLAGS)
+
+            AC_MSG_CHECKING($1_LIBS)
+            $1_LIBS=`$PKG_CONFIG --libs "$2"`
+            AC_MSG_RESULT($$1_LIBS)
+        else
+            $1_CFLAGS=""
+            $1_LIBS=""
+            ## If we have a custom action on failure, don't print errors, but 
+            ## do set a variable so people can do so.
+            $1_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "$2"`
+            ifelse([$4], ,echo $$1_PKG_ERRORS,)
+        fi
+
+        AC_SUBST($1_CFLAGS)
+        AC_SUBST($1_LIBS)
+     else
+        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
+        echo "*** See http://www.freedesktop.org/software/pkgconfig"
+     fi
+  fi
+
+  if test $succeeded = yes; then
+     ifelse([$3], , :, [$3])
+#  else                           # removed for karbon (Werner)
+#    ifelse([$4], , AC_MSG_ERROR([Library requirements ($2) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them.]), [$4])
+  fi
+])
+
+# --- Check for KDE 3.2 or 3.3 ---
+
+AC_MSG_CHECKING([for KDE version])
+
+AC_LANG_SAVE
+AC_LANG_CPLUSPLUS
+kdeversion_save_CXXFLAGS="$CXXFLAGS"
+kdeversion_safe_LIBS="$LIBS"
+LIBS="$LIBS $X_EXTRA_LIBS"
+CXXFLAGS="$CXXFLAGS $all_includes"
+
+AC_COMPILE_IFELSE([
+#include <kdeversion.h>
+#if ! ( KDE_IS_VERSION( 3, 2, 90 ) )
+#error KDE 3.2
+#endif
+],
+	need_kde32_compat="no"
+,
+	need_kde32_compat="yes"
+)
+
+AC_COMPILE_IFELSE([
+#include <kdeversion.h>
+#if ! ( KDE_IS_VERSION( 3, 3, 90 ) )
+#error KDE 3.3
+#endif
+],
+	need_kde33_compat="no"
+,
+	need_kde33_compat="yes"
+)
+
+AC_COMPILE_IFELSE([
+#include <kdeversion.h>
+#if ! ( KDE_IS_VERSION( 3, 4, 90 ) )
+#error KDE 3.4
+#endif
+],
+	need_kde34_compat="no"
+,
+	need_kde34_compat="yes"
+)
+
+AC_COMPILE_IFELSE([
+#include <kdeversion.h>
+#if ! ( KDE_IS_VERSION( 3, 5, 2 ) )
+#error KDE 3.5.x (x < 2)
+#endif
+],
+	need_kde351_compat="no"
+,
+	need_kde351_compat="yes"
+)
+CXXFLAGS="$kdeversion_save_CXXFLAGS"
+LIBS="$kdeversion_safe_LIBS"
+AC_LANG_RESTORE
+
+if test "$need_kde32_compat" = "yes"; then
+	AC_MSG_RESULT([KDE 3.2.x])
+else
+	if test "$need_kde33_compat" = "yes"; then
+		AC_MSG_RESULT([KDE 3.3.x])
+	else 
+		if test "$need_kde34_compat" = "yes"; then
+			AC_MSG_RESULT([KDE 3.4.x])
+                else
+                        if test "$need_kde351_compat" = "yes"; then
+                                AC_MSG_RESULT([KDE 3.5.x (x < 2)])
+                        else
+			        AC_MSG_RESULT([KDE 3.5.x (x >=2) or SVN trunk])
+                        fi
+		fi
+	fi
+fi
+
+AM_CONDITIONAL(need_kde32_compatibility, test "$need_kde32_compat" = "yes")
+AM_CONDITIONAL(need_kde33_compatibility, test "$need_kde33_compat" = "yes")
+AM_CONDITIONAL(need_kde34_compatibility, test "$need_kde34_compat" = "yes")
+AM_CONDITIONAL(need_kde351_compatibility, test "$need_kde351_compat" = "yes")
+
+# Keep the old KDE 3.1 test, as long as it is still used
+AM_CONDITIONAL(need_kde31_compatibility, test "supported" = "no")
+
+# --- End KDE 3.2 check ---
+
+# --- OpenEXR check ---
+
+KDE_FIND_PATH(pkg-config, PKGCONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find pkg-config])
+])
+
+AC_MSG_CHECKING([for OpenEXR])
+
+if test -n "$PKGCONFIG"; then
+  vers=`$PKGCONFIG OpenEXR --modversion 2>/dev/null`
+  if test -n "$vers"
+  then
+     OPENEXR_LIBS="`$PKGCONFIG OpenEXR --libs`"
+     OPENEXR_RPATH=
+     for args in $OPENEXR_LIBS; do
+          case $args in
+            -L*)
+               OPENEXR_RPATH="$OPENEXR_RPATH $args"
+               ;;
+          esac
+     done
+     OPENEXR_RPATH=`echo $OPENEXR_RPATH | $SED -e "s/-L/-R/g"`
+     OPENEXR_CFLAGS="`$PKGCONFIG OpenEXR --cflags`"
+
+     AC_DEFINE_UNQUOTED(HAVE_OPENEXR, 1, [Defines if your system has the OpenEXR library])
+  fi
+fi
+
+if test ! "$USE_RPATH" = "yes"; then
+    OPENEXR_RPATH=
+fi
+
+if test -n "$OPENEXR_LIBS"
+then
+  AC_MSG_RESULT([yes])
+else
+  AC_MSG_RESULT([not found])
+fi
+
+AC_SUBST(OPENEXR_LIBS)
+AC_SUBST(OPENEXR_CFLAGS)
+AC_SUBST(OPENEXR_RPATH)
+
+AM_CONDITIONAL(have_openexr, test -n "$OPENEXR_LIBS")
+
+# --- End of OpenEXR check ---
+dnl =======================================================
+dnl FILE: ./example/configure.in.in
+dnl =======================================================
+
+dnl This is here so that example isn't compiled and intalled by default.
+dnl Do NOT put this file in your application, if you want it compiled !
+
+DO_NOT_COMPILE="$DO_NOT_COMPILE example"
+dnl =======================================================
+dnl FILE: ./filters/krita/configure.in.in
+dnl =======================================================
+
+# Check if the tiff lib is available
+AC_FIND_TIFF
+AM_CONDITIONAL(have_tiff, test -n "$LIBTIFF")
+
+AC_FIND_PNG
+AM_CONDITIONAL(have_png, test -n "$LIBPNG")
+
+AC_FIND_JPEG
+AM_CONDITIONAL(have_jpeg, test -n "$LIBJPEG")
+
+#---------------------------------------------------------
+# libexif detection
+# taken from libkexif's configure.in.in
+#---------------------------------------------------------
+
+LIBEXIF=no
+
+#PKG_CHECK_MODULES(LIBEXIF, libexif >= 0.5.7, ,
+#        [ AC_MSG_WARN([libexif >= 0.5.7 not found.])
+#          LIBEXIF=yes ])
+
+
+#PKG_CHECK_MODULES(LIBEXIF06, libexif >= 0.6.9,
+#        AC_DEFINE(HAVE_EXIF06,1,[check for libexif > 0.6]),
+#                AC_MSG_WARN([Using old version of libexif.]))
+
+PKG_CHECK_MODULES(LIBEXIF, libexif >= 0.6.12 , ,
+        [ AC_MSG_WARN([libexif >= 0.6.12 not found.])
+          LIBEXIF=yes ])
+
+AC_SUBST(LIBEXIF_LIBS)
+AC_SUBST(LIBEXIF_CFLAGS)
+
+#---------------------------------------------------------
+# libexif detection
+#---------------------------------------------------------
+AC_MSG_CHECKING([if C++ program with exif can be compiled])
+AC_LANG_SAVE
+AC_LANG_CPLUSPLUS
+ac_save_CXXFLAGS="$CXXFLAGS"
+CXXFLAGS="$CXXFLAGS $LIBEXIF_CFLAGS"
+AC_CACHE_VAL(exif_build,
+[
+    AC_TRY_COMPILE([
+    extern "C" {
+#include <libexif/exif-loader.h>
+#include <libexif/exif-utils.h>
+}
+    ],[
+        ExifLoader *l = exif_loader_new ();
+        exif_loader_write_file (l,"kikoo");
+        return 0;
+    ], exif_build=yes,
+    exif_build=no)
+])
+AC_MSG_RESULT($exif_build)
+if test "$exif_build" = "no"; then
+    LIBEXIF=""
+fi
+CXXFLAGS="$ac_save_CXXFLAGS"
+AC_LANG_RESTORE
+
+                
+AM_CONDITIONAL(have_exif, test -n "$LIBEXIF")
+AM_CONDITIONAL(include_jpeg_filter, test -n "$LIBJPEG" -a -n "$LIBEXIF")
+AM_CONDITIONAL(include_tiff_filter, test -n "$LIBTIFF" -a -n "$LIBEXIF")
+dnl =======================================================
+dnl FILE: ./filters/krita/pdf/configure.in.in
+dnl =======================================================
+
+# Compile the pdf import filter only if Poppler is available
+PKG_CHECK_MODULES(POPPLER, poppler-qt >= 0.5.1, have_poppler=yes, have_poppler=no)
+
+AM_CONDITIONAL(include_PDF, test "x$have_poppler" = xyes) 
+dnl =======================================================
+dnl FILE: ./filters/kword/msword/configure.in.in
+dnl =======================================================
+
+AC_ARG_WITH(libwv2,AC_HELP_STRING([--with-libwv2=DIR],[use libwv2 in DIR]),[
+	if [ test "x$withval" != "xno" ]; then
+		if [ test "x$withval" != "xyes" ]; then
+			WV2_DIR=$withval
+		fi
+		search_for_wv2=yes
+	else
+		search_for_wv2=no
+	fi
+],[	search_for_wv2=yes
+])
+
+if [ test $search_for_wv2 != no ]; then
+	if [ test -n "$WV2_DIR" ]; then
+		KDE_FIND_PATH(wv2-config, WV2_CONFIG, [$WV2_DIR/bin], [
+		  AC_MSG_WARN([Could not find libwv2, check http://www.sourceforge.net/projects/wvware/])
+		])
+	else
+		KDE_FIND_PATH(wv2-config, WV2_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+		  AC_MSG_WARN([Could not find libwv2 anywhere, check http://www.sourceforge.net/projects/wvware/])
+		])
+	fi
+fi
+
+if test -n "$WV2_CONFIG"; then
+  vers=`$WV2_CONFIG --version 2>/dev/null | $SED -e 's/libwv2 //' | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" && test "$vers" -ge 1009
+  then
+     LIBWV2_LIBS="`$WV2_CONFIG --libs`"
+     LIBWV2_RPATH=
+     for args in $LIBWV2_LIBS; do
+	  case $args in
+	    -L*)
+  	       LIBWV2_RPATH="$LIBWV2_RPATH $args"
+ 	       ;;
+          esac
+     done
+     LIBWV2_RPATH=`echo $LIBWV2_RPATH | $SED -e "s/-L/-R/g"`
+     LIBWV2_CFLAGS="`$WV2_CONFIG --cflags`"
+
+     AC_DEFINE_UNQUOTED(HAVE_WV2, 1, [Defines if your system has the wv2 library])
+  else
+     AC_MSG_WARN([You need at least version 0.1.9 of libwv2])
+  fi
+fi
+
+
+AC_SUBST(LIBWV2_LIBS)
+AC_SUBST(LIBWV2_CFLAGS)
+AC_SUBST(LIBWV2_RPATH)
+AM_CONDITIONAL(include_wv2_msword_filter, test -n "$LIBWV2_LIBS")
+dnl =======================================================
+dnl FILE: ./filters/kword/pdf/xpdf/configure.in.in
+dnl =======================================================
+
+
+AC_HEADER_DIRENT
+AC_HEADER_STDC
+AC_CHECK_FUNCS(rewinddir popen mkstemp)
+
+dnl ##### Check for fseeko/ftello or fseek64/ftell64
+dnl The LARGEFILE and FSEEKO macros have to be called in C, not C++, mode.
+AC_SYS_LARGEFILE
+AC_FUNC_FSEEKO
+AC_CHECK_FUNCS(fseek64)
+AC_CHECK_FUNCS(ftell64)
+
+dnl ##### Check for libpaper (Debian).
+KDE_CHECK_HEADERS(paper.h)
+KDE_CHECK_LIB(paper, paperinit, [LIBPAPER="-lpaper"])
+AC_SUBST(LIBPAPER)
+dnl =======================================================
+dnl FILE: ./filters/kword/wordperfect/configure.in.in
+dnl =======================================================
+
+KDE_FIND_PATH(pkg-config, PKGCONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find pkg-config])
+])
+
+if test -n "$PKGCONFIG"; then
+  vers=`$PKGCONFIG libwpd-0.8 --modversion 2>/dev/null`
+  if test -n "$vers"
+  then
+     LIBWPD_LIBS="`$PKGCONFIG libwpd-0.8 --libs`"
+     LIBWPD_RPATH=
+     for args in $LIBWPD_LIBS; do
+          case $args in
+            -L*)
+               LIBWPD_RPATH="$LIBWPD_RPATH $args"
+               ;;
+          esac
+     done
+     LIBWPD_RPATH=`echo $LIBWPD_RPATH | $SED -e "s/-L/-R/g"`
+     LIBWPD_CFLAGS="`$PKGCONFIG libwpd-0.8 --cflags`"
+
+     AC_DEFINE_UNQUOTED(HAVE_WPD, 1, [Defines if your system has the libwpd library])
+  fi
+fi
+
+
+AC_SUBST(LIBWPD_LIBS)
+AC_SUBST(LIBWPD_CFLAGS)
+AC_SUBST(LIBWPD_RPATH)
+
+AM_CONDITIONAL(include_wpd_filter, test -n "$LIBWPD_LIBS")
+
+dnl =======================================================
+dnl FILE: ./filters/xsltfilter/configure.in.in
+dnl =======================================================
+
+
+KDE_FIND_PATH(xml2-config, XML_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libxml2 anywhere, check ftp://xmlsoft.org/ for libxml >= 2.4.8. (we also keep a version of it in kdesupport for CVS users' convience)])
+  HELP_SUBDIR=
+])
+
+if test -n "$XML_CONFIG"; then
+  vers=`$XML_CONFIG --version 2>/dev/null | $SED -e 's/libxml //' | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" && test "$vers" -ge 2004008
+  then
+     LIBXML_LIBS="`$XML_CONFIG --libs`"
+     LIBXML_RPATH=
+     for args in $LIBXML_LIBS; do
+	  case $args in
+	    -L*)
+  	       LIBXML_RPATH="$LIBXML_RPATH $args"
+ 	       ;;
+          esac
+     done
+     LIBXML_RPATH=`echo $LIBXML_RPATH | $SED -e "s/-L/-R/g"`
+     LIBXML_CFLAGS="`$XML_CONFIG --cflags`"
+
+     KDE_FIND_PATH(xmllint, XMLLINT, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [XMLLINT=""])
+     AC_DEFINE_UNQUOTED(XMLLINT, "$XMLLINT", [Defines the executable of xmllint])
+  else
+     AC_MSG_WARN([You need at least libxml 2.4.8])
+     HELP_SUBDIR=
+  fi
+fi
+
+KDE_FIND_PATH(xslt-config, XSLT_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libxslt anywhere, check ftp://xmlsoft.org/ for libxslt >= 1.0.7. (we also keep a version of it in kdesupport for CVS users' convience)])
+  HELP_SUBDIR=
+])
+
+if test -n "$XSLT_CONFIG"; then
+   vers=`$XSLT_CONFIG --version 2>/dev/null | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+   if test -n "$vers" && test "$vers" -ge 1000007; then
+     LIBXSLT_LIBS="`$XSLT_CONFIG --libs`"
+     LIBXSLT_RPATH=
+     for args in $LIBXSLT_LIBS; do
+       case $args in
+        -L*)
+  	  LIBXSLT_RPATH="$LIBXSLT_RPATH $args"
+ 	  ;;
+       esac
+     done
+     LIBXSLT_RPATH=`echo $LIBXSLT_RPATH | $SED -e "s/-L/-R/g"`
+     LIBXSLT_CFLAGS="`$XSLT_CONFIG --cflags`"
+
+   else
+     AC_MSG_WARN([You need at least libxslt 1.0.7])
+     HELP_SUBDIR=
+   fi
+fi
+
+if test ! "$USE_RPATH" = "yes"; then
+    LIBXSLT_RPATH=
+    LIBXML_RPATH=
+fi
+
+AC_SUBST(LIBXSLT_LIBS)
+AC_SUBST(LIBXSLT_CFLAGS)
+AC_SUBST(LIBXSLT_RPATH)
+
+AC_SUBST(LIBXML_LIBS)
+AC_SUBST(LIBXML_CFLAGS)
+AC_SUBST(LIBXML_RPATH)
+
+AM_CONDITIONAL(include_XSLTFILTERS, test -n "$LIBXML_LIBS" -a -n "$LIBXSLT_LIBS")
+dnl =======================================================
+dnl FILE: ./karbon/configure.in.in
+dnl =======================================================
+
+
+KDE_FIND_PATH(freetype-config, FREETYPE_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libfreetype anywhere, check http://www.freetype.org/])
+])
+
+if test -n "$FREETYPE_CONFIG"; then
+  vers=`$FREETYPE_CONFIG --version 2>/dev/null | $SED -e 's/libfreetype //' | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" && test "$vers" -ge 5000000
+  then
+     LIBFREETYPE_LIBS="`$FREETYPE_CONFIG --libs`"
+     LIBFREETYPE_RPATH=
+     for args in $LIBFREETYPE_LIBS; do
+	  case $args in
+	    -L*)
+  	       LIBFREETYPE_RPATH="$LIBFREETYPE_RPATH $args"
+ 	       ;;
+          esac
+     done
+     LIBFREETYPE_RPATH=`echo $LIBFREETYPE_RPATH | $SED -e "s/-L/-R/g"`
+     LIBFREETYPE_CFLAGS="`$FREETYPE_CONFIG --cflags`"
+  else
+     AC_MSG_WARN([You need at least libfreetype 5.0])
+  fi
+fi
+
+AC_SUBST(LIBFREETYPE_LIBS)
+AC_SUBST(LIBFREETYPE_CFLAGS)
+AC_SUBST(LIBFREETYPE_RPATH)
+
+
+KDE_FIND_PATH(libart2-config, LIBART_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libart anywhere, check http://www.levien.com/libart/])
+])
+
+if test -n "$LIBART_CONFIG"; then
+  vers=`$LIBART_CONFIG --version 2>/dev/null | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" && test "$vers" -ge 2003008
+  then
+     LIBART_LIBS="`$LIBART_CONFIG --libs`"
+     LIBART_RPATH=
+     for args in $LIBART_LIBS; do
+	  case $args in
+	    -L*)
+  	       LIBART_RPATH="$LIBART_RPATH $args"
+ 	       ;;
+          esac
+     done
+     LIBART_RPATH=`echo $LIBART_RPATH | $SED -e "s/-L/-R/g"`
+     LIBART_CFLAGS="`$LIBART_CONFIG --cflags`"
+
+     AC_DEFINE_UNQUOTED(HAVE_LIBART, 1, [Defines if your system has the libart library])
+  else
+     AC_MSG_WARN([You need at least libart 2.3.8])
+  fi
+fi
+
+AC_SUBST(LIBART_LIBS)
+AC_SUBST(LIBART_CFLAGS)
+AC_SUBST(LIBART_RPATH)
+
+
+# Check for fontconfig
+KDE_FIND_PATH(fontconfig-config, FONTCONFIG_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/bin /usr/local/bin /opt/local/bin], [
+        KDE_FIND_PATH(pkg-config, PKGCONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/bin /usr/local/bin /opt/local/bin], [
+            AC_MSG_WARN([Could not find neither pkg-config nor fontconfig-config, check http://www.fontconfig.org/ ])
+        ])
+])
+
+if test -n "$PKGCONFIG"; then
+  vers=`$PKGCONFIG fontconfig --modversion 2>/dev/null | $SED -e 's/libfontconfig //' | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" && test "$vers" -ge 1000001
+  then
+     LIBFONTCONFIG_LIBS="`$PKGCONFIG fontconfig --libs`"
+     LIBFONTCONFIG_RPATH=
+     for args in $LIBFONTCONFIG_LIBS; do
+          case $args in
+            -L*)
+               LIBFONTCONFIG_RPATH="$LIBFONTCONFIG_RPATH $args"
+               ;;
+          esac
+     done
+     LIBFONTCONFIG_RPATH=`echo $LIBFONTCONFIG_RPATH | $SED -e "s/-L/-R/g"`
+     LIBFONTCONFIG_CFLAGS="`$PKGCONFIG fontconfig --cflags`"
+
+     AC_DEFINE_UNQUOTED(HAVE_FONTCONFIG, 1, [Defines if your system has the libfontconfig library])
+  fi
+fi
+
+if test -n "$FONTCONFIG_CONFIG"; then
+  vers=`$FONTCONFIG_CONFIG --version 2>/dev/null | $SED -e 's/libfontconfig //' | $AWK 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" && test "$vers" -ge 1000001
+  then
+     LIBFONTCONFIG_LIBS="`$FONTCONFIG_CONFIG --libs`"
+     LIBFONTCONFIG_RPATH=
+     for args in $LIBFONTCONFIG_LIBS; do
+          case $args in
+            -L*)
+               LIBFONTCONFIG_RPATH="$LIBFONTCONFIG_RPATH $args"
+               ;;
+          esac
+     done
+     LIBFONTCONFIG_RPATH=`echo $LIBFONTCONFIG_RPATH | $SED -e "s/-L/-R/g"`
+     LIBFONTCONFIG_CFLAGS="`$FONTCONFIG_CONFIG --cflags`"
+
+     AC_DEFINE_UNQUOTED(HAVE_FONTCONFIG, 1, [Defines if your system has the libfontconfig library])
+  fi
+fi
+
+AC_SUBST(LIBFONTCONFIG_LIBS)
+AC_SUBST(LIBFONTCONFIG_CFLAGS)
+AC_SUBST(LIBFONTCONFIG_RPATH)
+
+if test -z "$LIBART_LIBS"; then
+	DO_NOT_COMPILE="$DO_NOT_COMPILE karbon"
+fi
+
+if test -n "$LIBFREETYPE_LIBS" -a -n "$LIBFONTCONFIG_LIBS"; then
+	AC_DEFINE_UNQUOTED(HAVE_KARBONTEXT, 1, [Defines if your system has the fontconfig and freetype libraries])
+fi
+dnl =======================================================
+dnl FILE: ./kexi/3rdparty/configure.in.in
+dnl =======================================================
+
+dnl This is copied from gpsim-0.21.1/acinclude.m4, which was itself
+dnl copied from the NcFTP distribution. 
+dnl Modified by David Faure <faure@kde.org> for kexi's purposes.
+dnl
+dnl  Original author Mike Gleason mgleason@NcFTP.com
+dnl
+dnl
+AC_DEFUN([kexi_LIB_READLINE], [
+AC_MSG_CHECKING([for Readline library])
+
+kexi_cv_lib_readline=no
+ac_save_LIBS="$LIBS"
+# Note: $LIBCURSES is permitted to be empty.
+for LIBREADLINE in "-lreadline" "-lreadline $LIBCURSES" "-lreadline -ltermcap" "-lreadline -lncurses" "-lreadline -lcurses"
+do
+	LIBS="$ac_save_LIBS $LIBREADLINE"
+	AC_TRY_RUN([
+	/* program */
+#include <stdio.h>
+#include <stdlib.h>
+#include <readline/readline.h>
+ 
+main(int argc, char **argv)
+{
+	/* Note:  don't actually call readline, since it may block;
+	 * We just want to see if it (dynamic) linked in okay.
+	 */
+	if (argc == 0)	/* never true */
+		readline(0);
+	exit(0);
+}
+],[
+	# action if true
+	kexi_cv_lib_readline=yes
+],[
+	# action if false
+	kexi_cv_lib_readline=no
+],[
+	# action if cross compiling
+	kexi_cv_lib_readline=no
+])
+
+	if test "$kexi_cv_lib_readline" = yes ; then break ; fi
+done
+# restore LIBS
+LIBS="$ac_save_LIBS"
+
+if test "$kexi_cv_lib_readline" = no ; then
+	LIBREADLINE=""
+	AC_MSG_RESULT("not found - kexisql will not be compiled")
+else
+	AC_MSG_RESULT($LIBREADLINE)
+	AC_DEFINE(HAVE_READLINE, 1, [define if you have libreadline available])
+fi
+
+AM_CONDITIONAL(have_readline, test "$kexi_cv_lib_readline" = "yes")
+AC_SUBST(LIBREADLINE)
+])
+
+kexi_LIB_READLINE
+dnl =======================================================
+dnl FILE: ./kexi/configure.in.in
+dnl =======================================================
+
+
+#KEXI_VERSION=
+AC_SUBST(LIB_KEXI_KMDI, '-lkmdi')
+AC_SUBST(LIB_KEXI_KMDI_INCLUDES, '')
+
+dnl =======================================================
+dnl FILE: ./kexi/kexidb/drivers/configure.in.in
+dnl =======================================================
+
+dnl ========================================
+dnl checks for MySQL
+dnl taken form KDEDB
+dnl ========================================
+
+AC_ARG_ENABLE(mysql,
+	AC_HELP_STRING([--enable-mysql],[build MySQL-plugin [default=yes]]),
+              mysql_plugin=$enableval, mysql_plugin=yes)
+
+if test "x$mysql_plugin" = "xyes"; then
+  compile_mysql_plugin="yes"
+else
+  compile_mysql_plugin="no"
+fi
+
+AC_ARG_WITH(mysql_includes,
+AC_HELP_STRING([--with-mysql-includes=DIR],[use MySQL-includes installed in this directory]),
+[
+  ac_mysql_incdir=$withval
+], ac_mysql_incdir=
+)
+
+AC_ARG_WITH(mysql_libraries,
+AC_HELP_STRING([--with-mysql-libraries=DIR],[use MySQL-libs installed in this directory ]),
+[
+  ac_mysql_libdir=$withval
+], ac_mysql_libdir=
+)
+
+dnl ==============================================
+dnl check whether MySQL should be compiled
+dnl and where headers and libraries are installed
+dnl if present compile mysql-plugin
+dnl ==============================================
+
+AC_MSG_CHECKING([for MySQL])
+
+if test "$compile_mysql_plugin" = "yes"; then
+  if test -n "$ac_mysql_incdir" -o -n "$ac_mysql_libdir"; then
+dnl *** Configure arguments for includes or libs given    ***
+dnl *** and MySQL not explicitly disabled.                ***
+dnl *** Check that the paths given to configure are valid ***
+    AC_MSG_CHECKING([for MySQL headers])
+    mysql_incdirs="$ac_mysql_incdir /usr/local/include /usr/include"
+    AC_FIND_FILE(mysql/mysql.h, $mysql_incdirs, mysql_incdir)
+    if test -r $mysql_incdir/mysql/mysql.h; then
+      MYSQL_INC=$mysql_incdir
+      AC_MSG_RESULT([$MYSQL_INC])
+      AC_SUBST(MYSQL_INC)
+    else
+      compile_mysql_plugin="no"
+      AC_MSG_RESULT([not found])
+    fi
+
+    AC_MSG_CHECKING([for MySQL libraries])
+    mysql_libdirs="$ac_mysql_libdir /usr/local/lib$kdelibsuff /usr/lib$kdelibsuff"
+    AC_FIND_FILE(mysql/libmysqlclient.so, $mysql_libdirs, mysql_libdir)
+    if test -r $mysql_libdir/mysql/libmysqlclient.so; then
+      MYSQL_LIBS=$mysql_libdir
+      AC_MSG_RESULT([$MYSQL_LIBS])
+      AC_SUBST(MYSQL_LIBS)
+    else
+      compile_mysql_plugin="no"
+      AC_MSG_RESULT([not found])
+    fi
+  else
+dnl *** No configure arguments for includes or libs given ***
+dnl *** and MySQL not explicitly disabled.                ***
+    KDE_FIND_PATH(mysql_config, MYSQL_CONFIG,
+      [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /usr/bin ], [
+      AC_MSG_RESULT([not found])
+    ])
+
+    if test -n "$MYSQL_CONFIG"; then
+      mysql_incdir=`$MYSQL_CONFIG --cflags| $SED -e "s,-I,,g" | cut -d " " -f 1`
+      mysql_libdir=`$MYSQL_CONFIG --libs| $SED -e "s,',,g"`
+      MYSQL_INC=$mysql_incdir
+      MYSQL_LIBS=$mysql_libdir
+      AC_SUBST(MYSQL_INC)
+      AC_SUBST(MYSQL_LIBS)
+      compile_mypsql_plugin="yes"
+      AC_MSG_RESULT([headers $mysql_incdir, libraries $mysql_libdir])
+    else
+      compile_mysql_plugin="no"
+    fi
+  fi
+else
+dnl *** MySQL plugin explicitly disabled.            ***
+dnl *** Show that we are doing as requested.              ***
+  AC_MSG_NOTICE([Not attempting to configure MySQL as requested])
+fi
+
+AM_CONDITIONAL(compile_mysql_plugin, test "$compile_mysql_plugin" = "yes")
+
+dnl ========================================
+dnl Checks for PostgreSQL
+dnl ========================================
+
+dnl ========================================
+dnl libpq
+dnl   Add configure-args
+dnl ========================================
+
+dnl Assume we're building until something fails, unless explicitly disabled
+AC_ARG_ENABLE(pgsql,
+AC_HELP_STRING([--enable-pgsql],[build PostgreSQL-plugin [default=yes]]),
+ pgsql_plugin=$enableval, pgsql_plugin=yes)
+
+if test "x$pgsql_plugin" = "xyes"; then
+  compile_pgsql_plugin="yes"
+else
+  compile_pgsql_plugin="no"
+fi
+
+AC_ARG_WITH(pgsql-includes,
+AC_HELP_STRING([--with-pgsql-includes=DIR],[use PostgreSQL(libpq)-includes installed in this directory ]),
+[
+  ac_pgsql_incdir=$withval
+], ac_pgsql_incdir=
+)
+
+AC_ARG_WITH(pgsql-libraries,
+AC_HELP_STRING([--with-pgsql-libraries=DIR],[use PostgreSQL(libpq)-libraries installed in this directory ]),
+[
+  ac_pgsql_libdir=$withval
+], ac_pgsql_libdir=
+)
+
+
+dnl ========================================
+dnl   header/library directories
+dnl ========================================
+
+if test "$compile_pgsql_plugin" = "yes"; then
+  if test -n "$ac_pgsql_incdir" -o -n "$ac_pgsql_libdir"; then
+dnl *** Configure arguments for includes or libs given    ***
+dnl *** and PostgreSQL not explicitly disabled.           ***
+dnl *** Check that the paths given to configure are valid ***
+    AC_MSG_CHECKING([for PostgreSQL C API headers])
+    pgsql_incdirs="$ac_pgsql_incdir /usr/local/include /usr/include"
+    AC_FIND_FILE(libpq-fe.h, $pgsql_incdirs, pgsql_incdir)
+    if test -r $pgsql_incdir/libpq-fe.h; then
+      PG_INCDIR=$pgsql_incdir
+      AC_MSG_RESULT([$PG_INCDIR])
+      AC_SUBST(PG_INCDIR)
+    else
+      compile_pgsql_plugin="no"
+      AC_MSG_RESULT([not found])
+    fi
+
+    AC_MSG_CHECKING([for PostgreSQL C API libraries])
+    pgsql_libdirs="$ac_pgsql_libdir /usr/local/lib$kdelibsuff /usr/lib$kdelibsuff"
+    AC_FIND_FILE(libpq.so, $pgsql_libdirs, pgsql_libdir)
+    if test -r $pgsql_libdir/libpq.so; then
+      PG_LIBDIR=$pgsql_libdir
+      AC_MSG_RESULT([$PG_LIBDIR])
+      AC_SUBST(PG_LIBDIR)
+    else
+      compile_pgsql_plugin="no"
+      AC_MSG_RESULT([not found])
+    fi
+  else
+dnl *** No configure arguments for includes or libs given ***
+dnl *** and PostgreSQL not explicitly disabled.           ***
+    KDE_FIND_PATH(pg_config, PG_CONFIG,
+      [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /usr/bin ], [
+      AC_MSG_RESULT([not found])
+    ])
+
+    if test -n "$PG_CONFIG"; then
+      pgsql_incdir=`$PG_CONFIG --includedir`
+      pgsql_libdir=`$PG_CONFIG --libdir`
+      PG_INCDIR=$pgsql_incdir
+      PG_LIBDIR=$pgsql_libdir
+      AC_SUBST(PG_LIBDIR)
+      compile_pgsql_plugin="yes"
+      AC_MSG_RESULT([headers $pgsql_incdir, libraries $pgsql_libdir])
+    else
+      compile_pgsql_plugin="no"
+    fi
+  fi
+else
+dnl *** PostgreSQL plugin explicitly disabled.            ***
+dnl *** Show that we are doing as requested.              ***
+  AC_MSG_NOTICE([Not attempting to configure PostgreSQL as requested])
+fi
+
+AM_CONDITIONAL(compile_pgsql_plugin, test "$compile_pgsql_plugin" = "yes")
+
+
+dnl ========================================
+dnl libpqxx checks
+dnl ========================================
+
+AC_ARG_WITH(pqxx-includes,
+AC_HELP_STRING([--with-pqxx-includes=DIR],[use PostgreSQL(libpqxx)-includes installed in this directory ]),
+[
+  ac_pqxx_incdir=$withval
+], ac_pqxx_incdir=
+)
+
+AC_ARG_WITH(pqxx-libraries,
+AC_HELP_STRING([--with-pqxx-libraries=DIR],[use PostgreSQL(libpqxx)-libraries installed in this directory ]),
+[
+  ac_pqxx_libdir=$withval
+], ac_pqxx_libdir=
+)
+
+
+dnl ========================================
+dnl   libpqxx headers
+dnl ========================================
+if test "$compile_pgsql_plugin" = "yes"; then
+  AC_MSG_CHECKING([for PostgreSQL C++ includes])
+  pqxx_incdirs="$ac_pqxx_incdir /usr/local/include /usr/include"
+  AC_FIND_FILE(pqxx/pqxx, $pqxx_incdirs, pqxx_incdir)
+  if test -r $pqxx_incdir/pqxx/pqxx; then
+    PQXX_INCDIR=$pqxx_incdir
+    AC_MSG_RESULT([$PQXX_INCDIR])
+    AC_SUBST(PQXX_INCDIR)
+  else
+    compile_pgsql_plugin="no"
+    AC_MSG_RESULT([not found])
+  fi
+fi
+
+dnl ========================================
+dnl   libpqxx libraries
+dnl ========================================
+if test "$compile_pgsql_plugin" = "yes"; then
+  AC_MSG_CHECKING([for PostgreSQL C++ libraries])
+  pqxx_libdirs="$ac_pqxx_libdir /usr/local/lib$kdelibsuff /usr/lib$kdelibsuff"
+  AC_FIND_FILE(libpqxx.so, $pqxx_libdirs, pqxx_libdir)
+  if test -r $pqxx_libdir/libpqxx.so; then
+    PQXX_LIBDIR=$pqxx_libdir
+    AC_MSG_RESULT([$PQXX_LIBDIR])
+    AC_SUBST(PQXX_LIBDIR)
+  else
+    compile_pgsql_plugin="no"
+    AC_MSG_RESULT([not found])
+  fi
+fi
+
+AM_CONDITIONAL(compile_pgsql_plugin, test "$compile_pgsql_plugin" = "yes")
+dnl =======================================================
+dnl FILE: ./kexi/main/configure.in.in
+dnl =======================================================
+
+
+dnl ======================================
+dnl KNewStuff Configuration
+dnl ======================================
+dnl
+dnl Copyright (C) 2004 Josef Spillner <spillner@kde.org>
+dnl This file is to be used within KDE's build system.
+dnl It defines $(LIB_KNEWSTUFF) if knewstuff has been found,
+dnl and a HAVE_KNEWSTUFF #define statement is added.
+dnl
+
+AC_MSG_CHECKING([for KDE library: knewstuff])
+
+ac_knewstuff_includes=NO ac_knewstuff_libraries=NO
+knewstuff_libraries=""
+knewstuff_includes=""
+
+AC_CACHE_VAL(ac_cv_have_knewstuff,
+[
+AC_FIND_FILE(knewstuff/downloaddialog.h, $kde_incdirs, knewstuff_incdir)
+ac_knewstuff_includes="$knewstuff_incdir"
+
+AC_FIND_FILE(libknewstuff.so, $kde_libdirs, knewstuff_libdir)
+ac_knewstuff_libraries="$knewstuff_libdir"
+
+if test "$ac_knewstuff_includes" = NO || test "$ac_knewstuff_libraries" = NO; then
+  ac_cv_have_knewstuff="have_knewstuff=no"
+  ac_knewstuff_notfound=""
+else
+  have_knewstuff="yes"
+fi
+])
+
+eval "$ac_cv_have_knewstuff"
+
+if test "$have_knewstuff" != yes; then
+  AC_MSG_RESULT([$have_knewstuff])
+else
+  AC_MSG_RESULT([$have_knewstuff (libraries $ac_knewstuff_libraries, headers $ac_knewstuff_includes)])
+
+dnl  AC_DEFINE_UNQUOTED(HAVE_KNEWSTUFF, 1, [Add KNewStuff functionality.])
+  CXXFLAGS="$CXXFLAGS -DHAVE_KNEWSTUFF"
+
+  LIB_KNEWSTUFF='-lknewstuff'
+  AC_SUBST(LIB_KNEWSTUFF)
+fi
+
+AC_CHECK_FILE([kexi/3rdparty/kexifeedbackwizard/lib/kexifeedbackwizard.cpp],
+  have_internal_feedback="yes"
+,
+  have_internal_feedback="no"
+)
+
+AC_MSG_CHECKING([for KDE library: kfeedbackwizard])
+
+ac_kfeedback_includes=NO ac_kfeedback_libraries=NO
+kfeedback_libraries=""
+kfeedback_includes=""
+
+AC_CACHE_VAL(ac_cv_have_kfeedback,
+[
+AC_FIND_FILE(kfeedbackwizard.h, $kde_incdirs, kfeedback_incdir)
+ac_kfeedback_includes="$kfeedback_incdir"
+
+AC_FIND_FILE(libkfeedbackwizard.so, $kde_libdirs, kfeedback_libdir)
+ac_kfeedback_libraries="$kfeedback_libdir"
+
+if test "$ac_kfeedback_includes" = NO || test "$ac_kfeedback_libraries" = NO; then
+  ac_cv_have_kfeedback="have_kfeedback=no"
+  ac_kfeedback_notfound=""
+else
+  have_kfeedback="yes"
+fi
+])
+
+eval "$ac_cv_have_kfeedback"
+
+INC_KFEEDBACK=''
+LIB_KFEEDBACK=''
+if test "$have_kfeedback" != yes; then
+  if test "$have_internal_feedback" = yes; then
+    CXXFLAGS="$CXXFLAGS -DFEEDBACK_CLASS=KexiFeedbackWizard -DFEEDBACK_INCLUDE=\"<kexifeedbackwizard.h>\""
+    use_kexifb="yes"
+    AC_MSG_RESULT([using internal])
+    INC_KFEEDBACK='-I../3rdparty/kexifeedbackwizard/lib'
+    LIB_KFEEDBACK='../3rdparty/kexifeedbackwizard/lib/libkexifeedbackwizard.la'
+  else
+    use_kexifb="no"
+    AC_MSG_RESULT([dont use])
+  fi
+else
+  use_kexifb="no"
+  AC_MSG_RESULT([$have_kfeedback (libraries $ac_kfeedback_libraries, headers $ac_kfeedback_includes)])
+
+dnl  AC_DEFINE_UNQUOTED(HAVE_KFEEDBACK, 1, [Add KNewStuff functionality.])
+  CXXFLAGS="$CXXFLAGS -DFEEDBACK_CLASS=KFeedbackWizard -DFEEDBACK_INCLUDE=\"<kfeedbackwizard.h>\""
+
+  LIB_KFEEDBACK='-lkfeedbackwizard'
+fi
+AC_SUBST(LIB_KFEEDBACK)
+AC_SUBST(INC_KFEEDBACK)
+AM_CONDITIONAL(use_kexifeedback, test "$use_kexifb" = "yes")
+dnl =======================================================
+dnl FILE: ./kexi/migration/configure.in.in
+dnl =======================================================
+
+# KexiMDB isn't built as part of Kexi right now.
+#AC_ARG_ENABLE(keximdb,
+#    AC_HELP_STRING([--enable-keximdb],
+#                   [build KexiMDB (MS Access) plugin [default=no]]),
+#    compile_keximdb_plugin=$enableval, compile_keximdb_plugin=no)
+#
+#AM_CONDITIONAL(compile_keximdb_plugin, test "x$compile_keximdb_plugin" != "xno")
+dnl =======================================================
+dnl FILE: ./kexi/plugins/configure.in.in
+dnl =======================================================
+
+# disabled
+#AC_ARG_ENABLE(kexi-reports,
+#    AC_HELP_STRING([--enable-kexi-reports],
+#                   [build Kexi reports plugin (EXPERIMENTAL) [default=no]]),
+#    compile_kexi_reports_plugin=$enableval, compile_kexi_reports_plugin=no)
+#AM_CONDITIONAL(compile_kexi_reports_plugin, test "x$compile_kexi_reports_plugin" != "xno")
+#
+#if test "$compile_kexi_reports_plugin" == "yes"; then
+#    AC_DEFINE(KEXI_REPORTS_SUPPORT, 1, [build Kexi reports plugin])
+#fi
+
+AC_ARG_ENABLE(kexi-macros,
+    AC_HELP_STRING([--enable-kexi-macros],
+                   [build Kexi macro plugin (EXPERIMENTAL) [default=yes]]),
+    compile_kexi_macros_plugin=$enableval, compile_kexi_macros_plugin=no)
+AM_CONDITIONAL(compile_kexi_macros_plugin, test "x$compile_kexi_macros_plugin" == "xyes")
+
+if test "$compile_kexi_macros_plugin" == "yes"; then
+    AC_DEFINE(KEXI_MACROS_SUPPORT, 1, [build Kexi macros plugin])
+fi
+dnl =======================================================
+dnl FILE: ./kexi/plugins/macros/configure.in.in
+dnl =======================================================
+
+# Check for kunittest
+AC_MSG_CHECKING([for kunittest])
+
+# First we check if the console unittester could be compiled
+have_kunittest_header="no"
+KDE_CHECK_HEADER(kunittest/tester.h, have_kunittest_header="yes", , )
+AM_CONDITIONAL(include_kunittest, test "$have_kunittest_header" = "yes")
+
+# Second we check if the GUI-unittester could be compiled
+have_kunittestgui_header="no"
+KDE_CHECK_HEADER(kunittest/runnergui.h, have_kunittestgui_header="yes", , )
+AM_CONDITIONAL(include_kunittestgui, test "$have_kunittestgui_header" = "yes")
+
+dnl =======================================================
+dnl FILE: ./kivio/configure.in.in
+dnl =======================================================
+
+dnl Do we have Python? 
+KDE_CHECK_PYTHON
+dnl =======================================================
+dnl FILE: ./kpresenter/configure.in.in
+dnl =======================================================
+
+AC_HAVE_DPMS()
+dnl =======================================================
+dnl FILE: ./krita/configure.in.in
+dnl =======================================================
+
+KDE_CHECK_LIB(Xi, XOpenDisplay, [
+	LIB_XINPUTEXT="-lXi"
+	AC_DEFINE(HAVE_XINPUTEXT, 1, [Define if you have the X11 Input Extension])
+	])
+AC_SUBST(LIB_XINPUTEXT)
+
+# Check for lcms
+AC_MSG_CHECKING([for lcms >= 1.15])
+
+have_lcms_header='no'
+KDE_CHECK_HEADER(lcms/lcms.h,have_lcms_header='yes',,)
+if test "$have_lcms_header" = 'yes'
+then
+        AC_DEFINE(LCMS_HEADER, <lcms/lcms.h>, [The correct header])
+
+	echo "#include <lcms/lcms.h>" > conftest.$ac_ext
+	echo "#if LCMS_VERSION < 115" >> conftest.$ac_ext
+	echo "#error Need lcms >= 1.15" >> conftest.$ac_ext
+	echo "#endif" >> conftest.$ac_ext
+	echo "int main() {}" >> conftest.$ac_ext
+
+else
+        # Alternative! Debian does it this way...
+	KDE_CHECK_HEADER(lcms.h,have_lcms_header='yes',,)
+
+    if test "$have_lcms_header" = 'yes'
+    then
+       	AC_DEFINE(LCMS_HEADER, <lcms.h>, [The correct header])
+
+	   echo "#include <lcms.h>" > conftest.$ac_ext
+	   echo "#if LCMS_VERSION < 115" >> conftest.$ac_ext
+	   echo "#error Need lcms >= 1.15" >> conftest.$ac_ext
+	   echo "#endif" >> conftest.$ac_ext
+	   echo "int main() {}" >> conftest.$ac_ext
+    else
+        KDE_CHECK_HEADER(lcms.h,have_lcms_header='yes',,)
+        # and now debian also does it this way... can't they decide for one way of doing stuff ?
+        
+       AC_DEFINE(LCMS_HEADER, <liblcms1/lcms.h>, [The correct header])
+
+       echo "#include <liblcms1/lcms.h>" > conftest.$ac_ext
+       echo "#if LCMS_VERSION < 115" >> conftest.$ac_ext
+       echo "#error Need lcms >= 1.15" >> conftest.$ac_ext
+       echo "#endif" >> conftest.$ac_ext
+       echo "int main() {}" >> conftest.$ac_ext
+
+   fi
+fi
+
+
+ac_link='$LIBTOOL_SHELL --mode=link ${CXX-g++} -o conftest $CXXFLAGS $all_includes $CPPFLAGS $LDFLAGS $all_libraries conftest.$ac_ext -llcms 1>&5'
+
+if AC_TRY_EVAL(ac_link) && test -s conftest; then
+    	AC_MSG_RESULT(yes)
+        HAVELCMS="yes"
+        LCMS_LIBS="-llcms"
+else
+	AC_MSG_RESULT(no)
+	HAVELCMS="no"
+	LCMS_LIBS=""
+        DO_NOT_COMPILE="$DO_NOT_COMPILE krita"
+fi
+
+AC_SUBST(LCMS_LIBS)
+
+# IM 6.1.3 changed the number of arguments to GetMagickInfoList
+
+AC_MSG_CHECKING(if GetMagickInfoList has only 2 arguments)
+CPPFLAGS_TMP="$CPPFLAGS"   # Save preprocessor flags
+CPPFLAGS="$LIBMAGICK_CPPFLAGS"
+
+AC_TRY_COMPILE(
+	[#include <stdio.h>
+	#if HAVE_SYS_TYPES_H
+	#include <sys/types.h>
+	#endif
+	#include "magick/api.h"],
+	[const char *pattern; unsigned long ncolors; (void)GetMagickInfoList(pattern, &ncolors)],
+	magick_info_list='yes',
+	magick_info_list='no')
+
+CPPFLAGS="$CPPFLAGS_TMP"  # Restore preprocessor flags
+
+if test "$magick_info_list" = 'yes'; then
+	AC_MSG_RESULT(yes)
+  AC_DEFINE([HAVE_OLD_GETMAGICKINFOLIST], 1, [GetMagickInfoList has different number of arguments with versions >= 6.1.3])
+else
+	AC_MSG_RESULT(no)
+fi
+
+# Check for kunittest
+AC_MSG_CHECKING([for kunittest])
+
+have_kunittest_header="no"
+KDE_CHECK_HEADER(kunittest/tester.h, have_kunittest_header="yes", , )
+AM_CONDITIONAL(include_kunittest_tests, test "$have_kunittest_header" = "yes")
+
+# --- OpenGL check ---
+
+AC_HAVE_GL( [], [] )
+
+# --- End of OpenGL check ---
+
+# Check for powf.
+
+AC_CHECK_FUNC(powf, [have_powf="yes"], [AC_CHECK_LIB(m, powf, [have_powf="yes"], [have_powf="no"])])
+
+if test "$have_powf" = 'yes'; then
+  AC_DEFINE([HAVE_POWF], 1, [Define to 1 if your system has powf in <maths.h>])
+fi\
+dnl =======================================================
+dnl FILE: ./krita/plugins/configure.in.in
+dnl =======================================================
+
+KDE_CHECK_HEADER(kjsembed/jsproxy_imp.h, have_kjsembed=yes, have_kjsembed=no)
+AM_CONDITIONAL(use_kjsembed, test x$have_kjsembed = xyes)
+dnl =======================================================
+dnl FILE: ./krita/plugins/viewplugins/imagesize/configure.in.in
+dnl =======================================================
+
+AC_CHECK_DECLS([round], [], [], [#include <math.h>])
+dnl =======================================================
+dnl FILE: ./kspread/plugins/calculator/configure.in.in
+dnl =======================================================
+
+AC_CHECK_HEADERS(ieeefp.h)
+
+AC_CHECK_FUNCS(fabsl)
+
+AC_DEFUN([KDE_C_LONG_DOUBLE],
+[
+  AC_CACHE_CHECK(for long double, ac_cv_c_long_double,
+  [
+    AC_TRY_RUN(
+    [
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+int main() {
+/* The Stardent Vistra knows sizeof(long double), but does not support it.  */
+long double foo = 1.0;
+char buffer[10];
+/* On Ultrix 4.3 cc, long double is 4 and double is 8.  */
+int result = (sizeof(long double) < sizeof(double));
+/* the following is needed for a broken printf in glibc2 */
+if (!result) {
+    foo = foo * 3;
+    sprintf(buffer,"%0.0Lf",foo);
+    result = strcmp(buffer, "3");
+/* and now something mean ;-) */
+    foo = powl(fabsl(foo), 1);
+}
+exit(result); }
+    ],
+    ac_cv_c_long_double=yes, ac_cv_c_long_double=no,
+    ac_cv_c_long_double=no
+    )
+  ])
+  if test $ac_cv_c_long_double = yes; then
+    AC_DEFINE(HAVE_LONG_DOUBLE, 1, [Define if you have support for long double in printf])
+  fi
+])
+KDE_C_LONG_DOUBLE
+
+AC_LANG_C
+KDE_CHECK_LIB(m, isinf, [
+  AC_DEFINE_UNQUOTED(HAVE_FUNC_ISINF, 1, [Define if you have isinf])
+])
+dnl =======================================================
+dnl FILE: ./kword/mailmerge/configure.in.in
+dnl =======================================================
+
+dnl only compile the sql plugin if qt was compiled with sql support
+
+
+AC_MSG_CHECKING([for SQL support in QT])
+
+LIBS_SAVE_KWSL="$LIBS"
+CXXFLAGS_SAVE_KWSL="$CXXFLAGS"
+CFLAGS_SAVE_KWSL="$CFLAGS"
+
+AC_LANG_SAVE
+AC_LANG_CPLUSPLUS
+
+LIBS="$all_libraries -lqimgio -lpng -lz $LIBJPEG $LIBQT"
+CXXFLAGS="$CXXFLAGS -I$qt_includes $all_includes"
+
+AC_TRY_COMPILE([
+#include <qglobal.h>
+],
+[
+#ifdef QT_NO_SQL
+#error "No QT-SQL support"
+#endif
+],
+ac_trycompile_kwsl_qtsql=yes,
+ac_trycompile_kwsl_qtsql=no)
+
+CXXFLAGS="$CXXFLAGS_SAVE_KWSL"
+LIBS="$LIBS_SAVE_KWSL"
+AC_LANG_RESTORE
+
+if eval "test \"`echo $ac_trycompile_kwsl_qtsql`\" = yes"; then
+  SQLDIR=sql
+  AC_SUBST(SQLDIR)
+  AC_MSG_RESULT([QT supports SQL - compile qtsqlmailmerge])
+else
+  SQLDIR=
+  AC_SUBST(SQLDIR)
+  AC_MSG_RESULT([QT supports SQL -- qtsqlmailmerge will not be built])
+fi
+
+AM_CONDITIONAL(include_sql, test -n "$SQLDIR")
+dnl =======================================================
+dnl FILE: ./lib/configure.in.in
+dnl =======================================================
+
+AC_SUBST(KWMF_INCLUDES, '-I$(top_srcdir)/lib/kwmf -I$(top_builddir)/lib/kwmf')
+AC_SUBST(KSTORE_INCLUDES, '-I$(top_srcdir)/lib/store -I$(top_builddir)/lib/store')
+AC_SUBST(KOTEXT_INCLUDES, '-I$(top_srcdir)/lib/kotext -I$(top_builddir)/lib/kotext')
+AC_SUBST(KOPAINTER_INCLUDES, '-I$(top_srcdir)/lib/kopainter -I$(top_builddir)/lib/kopainter')
+AC_SUBST(KOPALETTE_INCLUDES, '-I$(top_srcdir)/lib/kopalette -I$(top_builddir)/lib/kopalette')
+AC_SUBST(KOFFICECORE_INCLUDES, '-I$(top_srcdir)/lib/kofficecore -I$(top_builddir)/lib/kofficecore')
+AC_SUBST(KOFFICEUI_INCLUDES, '-I$(top_srcdir)/lib/kofficeui -I$(top_builddir)/lib/kofficeui')
+AC_SUBST(KFORMULA_INCLUDES, '-I$(top_srcdir)/lib/kformula -I$(top_builddir)/lib/kformula')
+dnl those are included with e.g. <koproperty/set.h>
+AC_SUBST(KOPROPERTY_INCLUDES, '-I$(top_srcdir)/lib -I$(top_builddir)/lib')
+AC_SUBST(KROSS_INCLUDES, '-I$(top_srcdir)/lib/kross -I$(top_builddir)/lib/kross')
+AC_SUBST(LIB_KOFFICEUI, '$(top_builddir)/lib/kofficeui/libkofficeui.la')
+AC_SUBST(LIB_KOFFICECORE, '$(top_builddir)/lib/kofficecore/libkofficecore.la')
+AC_SUBST(LIB_KSTORE, '$(top_builddir)/lib/store/libkstore.la')
+AC_SUBST(LIB_KOTEXT, '$(top_builddir)/lib/kotext/libkotext.la')
+AC_SUBST(LIB_KOPAINTER, '$(top_builddir)/lib/kopainter/libkopainter.la')
+AC_SUBST(LIB_KOPALETTE, '$(top_builddir)/lib/kopalette/libkopalette.la')
+AC_SUBST(LIB_KWMF, '$(top_builddir)/lib/kwmf/libkwmf.la')
+AC_SUBST(LIB_KOWMF, '$(top_builddir)/lib/kwmf/libkowmf.la')
+AC_SUBST(LIB_KFORMULA, '$(top_builddir)/lib/kformula/libkformulalib.la')
+AC_SUBST(LIB_KOPROPERTY, '$(top_builddir)/lib/koproperty/libkoproperty.la')
+AC_SUBST(LIB_KROSS_API, '$(top_builddir)/lib/kross/api/libkrossapi.la')
+AC_SUBST(LIB_KROSS_MAIN, '$(top_builddir)/lib/kross/main/libkrossmain.la')
+
+AC_SUBST(interfacedir, '$(top_srcdir)/lib/interfaces')
+AC_SUBST(KOFFICE_LIBS, '$(LIB_KOFFICEUI) $(LIB_KOFFICECORE) $(LIB_KSTORE)')
+AC_SUBST(KOFFICE_INCLUDES, '$(KOFFICEUI_INCLUDES) $(KOFFICECORE_INCLUDES) $(KSTORE_INCLUDES) $(KWMF_INCLUDES) $(KOPALETTE_INCLUDES)')
+
+AC_DEFINE_UNQUOTED(PREFIX,"$prefix",[Define the PREFIX where to install this package])
+
+dnl =======================================================
+dnl FILE: ./lib/kotext/configure.in.in
+dnl =======================================================
+
+   AC_LANG_SAVE
+   AC_LANG_C
+   dnl Check for aspell library
+   KDE_CHECK_HEADERS([kspell2/broker.h])
+   if test "x$ac_cv_header_kspell2_broker_h" = "xyes"; then
+           dnl the header and the lib exist -> ok
+           dnl this is for config.h
+           AC_DEFINE(HAVE_LIBKSPELL2, 1, [If we are going to use libkspell2 for spell-checking])
+           LIBKSPELL2="-lkspell2"
+           AC_MSG_RESULT([found in $ac_kspell2_includes])
+   else
+           LIBKSPELL2=""
+           AC_MSG_RESULT([not found -- spell-checking will be disabled])
+   fi
+   AC_SUBST(LIBKSPELL2)
+   AC_LANG_RESTORE
+dnl =======================================================
+dnl FILE: ./lib/kross/configure.in.in
+dnl =======================================================
+
+AC_ARG_ENABLE(scripting,
+    AC_HELP_STRING([--enable-scripting],
+                   [build scripting library (Kross) [default=yes]]),
+    compile_kross=$enableval, compile_kross=yes)
+AM_CONDITIONAL(compile_kross, test "x$compile_kross" = "xyes")
+
+###############################
+# Check if Python is installed.
+
+if test "x$compile_kross" = "xyes" ; then
+    #KDE_CHECK_PYTHON(2.3)
+    KDE_CHECK_PYTHON
+fi
+
+# Compile the Kross python plugin only if both, $LIBPYTHON and
+# $PYTHONINC, are defined.
+AM_CONDITIONAL(compile_kross_python,
+               test -n "$LIBPYTHON" && test -n "$PYTHONINC")
+
+###############################
+# Check for Ruby
+
+if test "x$compile_kross" = "xyes" ; then
+  AC_CHECK_PROGS([RUBY], [ruby ruby1.8 ruby18], ruby)
+
+  if test -n "$RUBY"; then
+    AC_MSG_CHECKING(for Ruby dirs)
+    RUBY_ARCHDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"archdir"@:>@)'`
+    RUBY_SITEARCHDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"sitearchdir"@:>@)'`
+    RUBY_SITEDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"sitelibdir"@:>@)'`
+    RUBY_INCLUDEDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"rubyincludedir"@:>@)'`
+    RUBY_LIBDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"libdir"@:>@)'`
+    RUBY_LIBRUBYARG=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"LIBRUBYARG_SHARED"@:>@)'`
+    RUBY_ENABLESHARED=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"ENABLE_SHARED"@:>@)'`
+    AC_MSG_RESULT([
+                   archdir $RUBY_ARCHDIR,
+                   sitearchdir $RUBY_SITEARCHDIR,
+                   sitedir $RUBY_SITEDIR,
+                   includedir $RUBY_INCLUDEDIR,
+                   libdir $RUBY_LIBDIR,
+                   librubyarg $RUBY_LIBRUBYARG,
+                   rubysharedenabled $RUBY_ENABLESHARED])
+    AC_SUBST(RUBY_ARCHDIR)
+    AC_SUBST(RUBY_SITEARCHDIR)
+    AC_SUBST(RUBY_SITEDIR)
+    AC_SUBST(RUBY_INCLUDEDIR)
+    AC_SUBST(RUBY_LIBDIR)
+    AC_SUBST(RUBY_LIBRUBYARG)
+    AC_SUBST(RUBY_ENABLESHARED)
+
+    AC_MSG_CHECKING(for Ruby header)
+
+    if test ! -r $RUBY_INCLUDEDIR/ruby.h; then
+      # if $RUBY_INCLUDEDIR is not valid try to use $RUBY_ARCHDIR
+      RUBY_INCLUDEDIR=$RUBY_ARCHDIR
+    fi
+
+    if test ! -r $RUBY_INCLUDEDIR/ruby.h; then
+      RUBY_LIBDIR=""
+      AC_MSG_RESULT([not found])
+    else
+      AC_MSG_RESULT([found]) # header
+
+      AC_MSG_CHECKING(Ruby shared library)
+      if test "x$RUBY_ENABLESHARED" != "xyes" ; then
+        AC_MSG_RESULT([shared library not found])
+        RUBY_LIBDIR="" 
+      else
+        if test -z "$RUBY_LIBRUBYARG" ; then
+          AC_MSG_RESULT([link argument not found])
+          RUBY_LIBDIR="" 
+        else
+          AC_MSG_RESULT([found]) # shared library link arg
+
+          AC_MSG_CHECKING([if C++ program with ruby can be compiled])
+          AC_LANG_SAVE
+          AC_LANG_CPLUSPLUS
+          ac_save_CXXFLAGS="$CXXFLAGS"
+          CXXFLAGS="$CXXFLAGS -I$RUBY_INCLUDEDIR"
+          AC_CACHE_VAL(ruby_build,
+          [
+            AC_TRY_COMPILE([
+                #include <ruby.h>
+                #include <version.h>
+            ],[
+            
+#if(RUBY_VERSION_MAJOR==1 && RUBY_VERSION_MINOR == 8 && RUBY_VERSION_TEENY <= 1)
+#error "need at least ruby 1.8.2\n"
+#endif
+
+                ruby_init();
+                return 0;
+            ], ruby_build=yes,
+            ruby_build=no)
+          ])
+          AC_MSG_RESULT($ruby_build)
+          if test "$ruby_build" = "no"; then
+            RUBY_LIBDIR=""
+          fi
+          CXXFLAGS="$ac_save_CXXFLAGS"
+          AC_LANG_RESTORE
+        fi # have ruby shared lib argument
+      fi # have shared lib
+    fi # have ruby header
+  fi # have ruby
+fi # compiling kross
+
+AM_CONDITIONAL(compile_kross_ruby, test -n "$RUBY_LIBDIR")
+KDE_CREATE_SUBDIRSLIST
+AM_CONDITIONAL(lib_SUBDIR_included, test "x$lib_SUBDIR_included" = xyes)
+AM_CONDITIONAL(interfaces_SUBDIR_included, test "x$interfaces_SUBDIR_included" = xyes)
+AM_CONDITIONAL(autocorrect_SUBDIR_included, test "x$autocorrect_SUBDIR_included" = xyes)
+AM_CONDITIONAL(doc_SUBDIR_included, test "x$doc_SUBDIR_included" = xyes)
+AM_CONDITIONAL(example_SUBDIR_included, test "x$example_SUBDIR_included" = xyes)
+AM_CONDITIONAL(karbon_SUBDIR_included, test "x$karbon_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kchart_SUBDIR_included, test "x$kchart_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kdgantt_SUBDIR_included, test "x$kdgantt_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kformula_SUBDIR_included, test "x$kformula_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kivio_SUBDIR_included, test "x$kivio_SUBDIR_included" = xyes)
+AM_CONDITIONAL(koshell_SUBDIR_included, test "x$koshell_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kounavail_SUBDIR_included, test "x$kounavail_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kpresenter_SUBDIR_included, test "x$kpresenter_SUBDIR_included" = xyes)
+AM_CONDITIONAL(krita_SUBDIR_included, test "x$krita_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kspread_SUBDIR_included, test "x$kspread_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kugar_SUBDIR_included, test "x$kugar_SUBDIR_included" = xyes)
+AM_CONDITIONAL(mimetypes_SUBDIR_included, test "x$mimetypes_SUBDIR_included" = xyes)
+AM_CONDITIONAL(pics_SUBDIR_included, test "x$pics_SUBDIR_included" = xyes)
+AM_CONDITIONAL(plugins_SUBDIR_included, test "x$plugins_SUBDIR_included" = xyes)
+AM_CONDITIONAL(servicetypes_SUBDIR_included, test "x$servicetypes_SUBDIR_included" = xyes)
+AM_CONDITIONAL(templates_SUBDIR_included, test "x$templates_SUBDIR_included" = xyes)
+AM_CONDITIONAL(tools_SUBDIR_included, test "x$tools_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kword_SUBDIR_included, test "x$kword_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kplato_SUBDIR_included, test "x$kplato_SUBDIR_included" = xyes)
+AM_CONDITIONAL(kexi_SUBDIR_included, test "x$kexi_SUBDIR_included" = xyes)
+AM_CONDITIONAL(filters_SUBDIR_included, test "x$filters_SUBDIR_included" = xyes)
+AC_CONFIG_FILES([ Makefile ])
+AC_CONFIG_FILES([ autocorrect/Makefile ])
+AC_CONFIG_FILES([ doc/Makefile ])
+AC_CONFIG_FILES([ doc/karbon/Makefile ])
+AC_CONFIG_FILES([ doc/kchart/Makefile ])
+AC_CONFIG_FILES([ doc/kexi/Makefile ])
+AC_CONFIG_FILES([ doc/kformula/Makefile ])
+AC_CONFIG_FILES([ doc/kivio/Makefile ])
+AC_CONFIG_FILES([ doc/koffice/Makefile ])
+AC_CONFIG_FILES([ doc/koshell/Makefile ])
+AC_CONFIG_FILES([ doc/kplato/Makefile ])
+AC_CONFIG_FILES([ doc/kpresenter/Makefile ])
+AC_CONFIG_FILES([ doc/krita/Makefile ])
+AC_CONFIG_FILES([ doc/kspread/Makefile ])
+AC_CONFIG_FILES([ doc/kugar/Makefile ])
+AC_CONFIG_FILES([ doc/kword/Makefile ])
+AC_CONFIG_FILES([ doc/thesaurus/Makefile ])
+AC_CONFIG_FILES([ example/Makefile ])
+AC_CONFIG_FILES([ filters/Makefile ])
+AC_CONFIG_FILES([ filters/generic_wrapper/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/ai/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/applixgraphics/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/eps/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/kontour/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/msod/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/oodraw/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/png/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/svg/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/wmf/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/xaml/Makefile ])
+AC_CONFIG_FILES([ filters/karbon/xcf/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/bmp/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/jpeg/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/libimageexport/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/mng/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/png/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/svg/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/xbm/Makefile ])
+AC_CONFIG_FILES([ filters/kchart/xpm/Makefile ])
+AC_CONFIG_FILES([ filters/kformula/Makefile ])
+AC_CONFIG_FILES([ filters/kformula/latex/Makefile ])
+AC_CONFIG_FILES([ filters/kformula/mathml/Makefile ])
+AC_CONFIG_FILES([ filters/kformula/png/Makefile ])
+AC_CONFIG_FILES([ filters/kformula/svg/Makefile ])
+AC_CONFIG_FILES([ filters/kivio/Makefile ])
+AC_CONFIG_FILES([ filters/kivio/imageexport/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/bmp/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/jpeg/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/kword/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/libimageexport/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/magicpoint/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/mng/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/ooimpress/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/png/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/powerpoint/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/powerpoint/import/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/powerpoint/libppt/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/svg/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/xbm/Makefile ])
+AC_CONFIG_FILES([ filters/kpresenter/xpm/Makefile ])
+AC_CONFIG_FILES([ filters/krita/Makefile ])
+AC_CONFIG_FILES([ filters/krita/gmagick/Makefile ])
+AC_CONFIG_FILES([ filters/krita/jpeg/Makefile ])
+AC_CONFIG_FILES([ filters/krita/libkisexif/Makefile ])
+AC_CONFIG_FILES([ filters/krita/magick/Makefile ])
+AC_CONFIG_FILES([ filters/krita/openexr/Makefile ])
+AC_CONFIG_FILES([ filters/krita/pdf/Makefile ])
+AC_CONFIG_FILES([ filters/krita/png/Makefile ])
+AC_CONFIG_FILES([ filters/krita/raw/Makefile ])
+AC_CONFIG_FILES([ filters/krita/tiff/Makefile ])
+AC_CONFIG_FILES([ filters/krita/xcf/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/applixspread/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/csv/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/dbase/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/excel/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/excel/import/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/excel/sidewinder/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/gnumeric/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/html/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/kexi/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/latex/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/latex/export/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/libkspreadexport/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/opencalc/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/qpro/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/qpro/libqpro/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/qpro/libqpro/qpro/Makefile ])
+AC_CONFIG_FILES([ filters/kspread/qpro/libqpro/src/Makefile ])
+AC_CONFIG_FILES([ filters/kugar/Makefile ])
+AC_CONFIG_FILES([ filters/kugar/kugarnop/Makefile ])
+AC_CONFIG_FILES([ filters/kword/Makefile ])
+AC_CONFIG_FILES([ filters/kword/abiword/Makefile ])
+AC_CONFIG_FILES([ filters/kword/amipro/Makefile ])
+AC_CONFIG_FILES([ filters/kword/applixword/Makefile ])
+AC_CONFIG_FILES([ filters/kword/ascii/Makefile ])
+AC_CONFIG_FILES([ filters/kword/docbook/Makefile ])
+AC_CONFIG_FILES([ filters/kword/hancomword/Makefile ])
+AC_CONFIG_FILES([ filters/kword/html/Makefile ])
+AC_CONFIG_FILES([ filters/kword/html/export/Makefile ])
+AC_CONFIG_FILES([ filters/kword/html/import/Makefile ])
+AC_CONFIG_FILES([ filters/kword/kword1.3/Makefile ])
+AC_CONFIG_FILES([ filters/kword/kword1.3/import/Makefile ])
+AC_CONFIG_FILES([ filters/kword/latex/Makefile ])
+AC_CONFIG_FILES([ filters/kword/latex/export/Makefile ])
+AC_CONFIG_FILES([ filters/kword/latex/import/Makefile ])
+AC_CONFIG_FILES([ filters/kword/latex/import/generator/Makefile ])
+AC_CONFIG_FILES([ filters/kword/latex/import/parser/Makefile ])
+AC_CONFIG_FILES([ filters/kword/libexport/Makefile ])
+AC_CONFIG_FILES([ filters/kword/msword/Makefile ])
+AC_CONFIG_FILES([ filters/kword/mswrite/Makefile ])
+AC_CONFIG_FILES([ filters/kword/oowriter/Makefile ])
+AC_CONFIG_FILES([ filters/kword/palmdoc/Makefile ])
+AC_CONFIG_FILES([ filters/kword/pdf/Makefile ])
+AC_CONFIG_FILES([ filters/kword/pdf/xpdf/Makefile ])
+AC_CONFIG_FILES([ filters/kword/pdf/xpdf/goo/Makefile ])
+AC_CONFIG_FILES([ filters/kword/pdf/xpdf/xpdf/Makefile ])
+AC_CONFIG_FILES([ filters/kword/rtf/Makefile ])
+AC_CONFIG_FILES([ filters/kword/rtf/export/Makefile ])
+AC_CONFIG_FILES([ filters/kword/rtf/import/Makefile ])
+AC_CONFIG_FILES([ filters/kword/starwriter/Makefile ])
+AC_CONFIG_FILES([ filters/kword/wml/Makefile ])
+AC_CONFIG_FILES([ filters/kword/wordperfect/Makefile ])
+AC_CONFIG_FILES([ filters/kword/wordperfect/export/Makefile ])
+AC_CONFIG_FILES([ filters/kword/wordperfect/import/Makefile ])
+AC_CONFIG_FILES([ filters/libdialogfilter/Makefile ])
+AC_CONFIG_FILES([ filters/liboofilter/Makefile ])
+AC_CONFIG_FILES([ filters/olefilters/Makefile ])
+AC_CONFIG_FILES([ filters/olefilters/lib/Makefile ])
+AC_CONFIG_FILES([ filters/olefilters/powerpoint97/Makefile ])
+AC_CONFIG_FILES([ filters/xsltfilter/Makefile ])
+AC_CONFIG_FILES([ filters/xsltfilter/export/Makefile ])
+AC_CONFIG_FILES([ filters/xsltfilter/export/xsl/Makefile ])
+AC_CONFIG_FILES([ filters/xsltfilter/export/xsl/kword/Makefile ])
+AC_CONFIG_FILES([ filters/xsltfilter/export/xsl/kword/xslfo/Makefile ])
+AC_CONFIG_FILES([ filters/xsltfilter/import/Makefile ])
+AC_CONFIG_FILES([ interfaces/Makefile ])
+AC_CONFIG_FILES([ karbon/Makefile ])
+AC_CONFIG_FILES([ karbon/commands/Makefile ])
+AC_CONFIG_FILES([ karbon/core/Makefile ])
+AC_CONFIG_FILES([ karbon/data/Makefile ])
+AC_CONFIG_FILES([ karbon/dialogs/Makefile ])
+AC_CONFIG_FILES([ karbon/dockers/Makefile ])
+AC_CONFIG_FILES([ karbon/pics/Makefile ])
+AC_CONFIG_FILES([ karbon/plugins/Makefile ])
+AC_CONFIG_FILES([ karbon/plugins/flattenpath/Makefile ])
+AC_CONFIG_FILES([ karbon/plugins/imagetool/Makefile ])
+AC_CONFIG_FILES([ karbon/plugins/insertknots/Makefile ])
+AC_CONFIG_FILES([ karbon/plugins/roundcorners/Makefile ])
+AC_CONFIG_FILES([ karbon/plugins/shadoweffect/Makefile ])
+AC_CONFIG_FILES([ karbon/plugins/whirlpinch/Makefile ])
+AC_CONFIG_FILES([ karbon/plugins/zoomtool/Makefile ])
+AC_CONFIG_FILES([ karbon/render/Makefile ])
+AC_CONFIG_FILES([ karbon/render/xrgbrender/Makefile ])
+AC_CONFIG_FILES([ karbon/shapes/Makefile ])
+AC_CONFIG_FILES([ karbon/templates/Makefile ])
+AC_CONFIG_FILES([ karbon/templates/basic/Makefile ])
+AC_CONFIG_FILES([ karbon/tools/Makefile ])
+AC_CONFIG_FILES([ karbon/visitors/Makefile ])
+AC_CONFIG_FILES([ karbon/widgets/Makefile ])
+AC_CONFIG_FILES([ kchart/Makefile ])
+AC_CONFIG_FILES([ kchart/kdchart/Makefile ])
+AC_CONFIG_FILES([ kchart/pics/Makefile ])
+AC_CONFIG_FILES([ kchart/templates/Makefile ])
+AC_CONFIG_FILES([ kchart/toolbar/Makefile ])
+AC_CONFIG_FILES([ kchart/toolbar/crystalsvg/Makefile ])
+AC_CONFIG_FILES([ kchart/toolbar/locolor/Makefile ])
+AC_CONFIG_FILES([ kdgantt/Makefile ])
+AC_CONFIG_FILES([ kexi/Makefile ])
+AC_CONFIG_FILES([ kexi/3rdparty/Makefile ])
+AC_CONFIG_FILES([ kexi/3rdparty/kexisql/Makefile ])
+AC_CONFIG_FILES([ kexi/3rdparty/kexisql/src/Makefile ])
+AC_CONFIG_FILES([ kexi/3rdparty/kexisql/tool/Makefile ])
+AC_CONFIG_FILES([ kexi/3rdparty/kexisql3/Makefile ])
+AC_CONFIG_FILES([ kexi/3rdparty/kexisql3/src/Makefile ])
+AC_CONFIG_FILES([ kexi/3rdparty/kolibs/Makefile ])
+AC_CONFIG_FILES([ kexi/3rdparty/uuid/Makefile ])
+AC_CONFIG_FILES([ kexi/core/Makefile ])
+AC_CONFIG_FILES([ kexi/data/Makefile ])
+AC_CONFIG_FILES([ kexi/data/kde34compat/Makefile ])
+AC_CONFIG_FILES([ kexi/examples/Makefile ])
+AC_CONFIG_FILES([ kexi/formeditor/Makefile ])
+AC_CONFIG_FILES([ kexi/formeditor/factories/Makefile ])
+AC_CONFIG_FILES([ kexi/formeditor/kdevelop_plugin/Makefile ])
+AC_CONFIG_FILES([ kexi/formeditor/scripting/Makefile ])
+AC_CONFIG_FILES([ kexi/formeditor/test/Makefile ])
+AC_CONFIG_FILES([ kexi/kexidb/Makefile ])
+AC_CONFIG_FILES([ kexi/kexidb/drivers/Makefile ])
+AC_CONFIG_FILES([ kexi/kexidb/drivers/mySQL/Makefile ])
+AC_CONFIG_FILES([ kexi/kexidb/drivers/odbc/Makefile ])
+AC_CONFIG_FILES([ kexi/kexidb/drivers/pqxx/Makefile ])
+AC_CONFIG_FILES([ kexi/kexidb/drivers/sqlite/Makefile ])
+AC_CONFIG_FILES([ kexi/kexidb/drivers/sqlite2/Makefile ])
+AC_CONFIG_FILES([ kexi/kexidb/parser/Makefile ])
+AC_CONFIG_FILES([ kexi/kexiutils/Makefile ])
+AC_CONFIG_FILES([ kexi/main/Makefile ])
+AC_CONFIG_FILES([ kexi/main/printing/Makefile ])
+AC_CONFIG_FILES([ kexi/main/startup/Makefile ])
+AC_CONFIG_FILES([ kexi/migration/Makefile ])
+AC_CONFIG_FILES([ kexi/migration/mysql/Makefile ])
+AC_CONFIG_FILES([ kexi/migration/pqxx/Makefile ])
+AC_CONFIG_FILES([ kexi/migration/txt/Makefile ])
+AC_CONFIG_FILES([ kexi/pics/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/forms/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/forms/widgets/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/importexport/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/importexport/csv/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/macros/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/macros/kexiactions/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/macros/kexipart/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/macros/lib/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/macros/tests/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/migration/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/queries/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/relations/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/reports/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/kexiapp/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/kexidb/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/kexiscripting/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/scripts/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/scripts/copycenter/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/scripts/exportxhtml/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/scripts/importxhtml/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/scripts/projectdocumentor/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/scripts/python/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/scripting/scripts/python/kexiapp/Makefile ])
+AC_CONFIG_FILES([ kexi/plugins/tables/Makefile ])
+AC_CONFIG_FILES([ kexi/tests/Makefile ])
+AC_CONFIG_FILES([ kexi/tests/altertable/Makefile ])
+AC_CONFIG_FILES([ kexi/tests/newapi/Makefile ])
+AC_CONFIG_FILES([ kexi/tests/parser/Makefile ])
+AC_CONFIG_FILES([ kexi/tests/startup/Makefile ])
+AC_CONFIG_FILES([ kexi/tests/tableview/Makefile ])
+AC_CONFIG_FILES([ kexi/tests/widgets/Makefile ])
+AC_CONFIG_FILES([ kexi/tools/Makefile ])
+AC_CONFIG_FILES([ kexi/tools/add_column/Makefile ])
+AC_CONFIG_FILES([ kexi/tools/delete_column/Makefile ])
+AC_CONFIG_FILES([ kexi/widget/Makefile ])
+AC_CONFIG_FILES([ kexi/widget/relations/Makefile ])
+AC_CONFIG_FILES([ kexi/widget/tableview/Makefile ])
+AC_CONFIG_FILES([ kexi/widget/utils/Makefile ])
+AC_CONFIG_FILES([ kformula/Makefile ])
+AC_CONFIG_FILES([ kformula/pics/Makefile ])
+AC_CONFIG_FILES([ kivio/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/config/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/kiviosdk/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/pics/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Assorted/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Circuit/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Cisco/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Civil/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Contact/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Electric/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Jigsaw/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/MSE/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Network/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Pneumatic/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/SDL/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Dia/Sybase/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Flowcharting/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Flowcharting/BasicFlowcharting/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Flowcharting/Extended/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Flowcharting/Logic/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Geographic/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Geographic/Flags/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Geographic/Maps/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Hardware/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Hardware/Computer/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Hardware/Miscellaneous/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Miscellaneous/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Miscellaneous/Arrows/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Miscellaneous/Buildings/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Miscellaneous/ER/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Miscellaneous/NassiShneiderman/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Miscellaneous/People/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/Miscellaneous/Transport/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/UML/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/UML/ActivityDiagrams/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/stencils/UML/ClassDiagrams/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/tiles/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/tools/Makefile ])
+AC_CONFIG_FILES([ kivio/kiviopart/ui/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kivioconnectortool/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kivioconnectortool/straight_connector/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kivioselecttool/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kivioselecttool/select_pics/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kiviosmlconnector/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kiviosmlconnector/sml_connector/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kiviotargettool/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kiviotexttool/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kiviozoomtool/Makefile ])
+AC_CONFIG_FILES([ kivio/plugins/kiviozoomtool/zoom_pics/Makefile ])
+AC_CONFIG_FILES([ kivio/templates/Makefile ])
+AC_CONFIG_FILES([ kivio/templates/basic/Makefile ])
+AC_CONFIG_FILES([ koshell/Makefile ])
+AC_CONFIG_FILES([ kounavail/Makefile ])
+AC_CONFIG_FILES([ kplato/Makefile ])
+AC_CONFIG_FILES([ kplato/pics/Makefile ])
+AC_CONFIG_FILES([ kplato/reports/Makefile ])
+AC_CONFIG_FILES([ kplato/templates/Makefile ])
+AC_CONFIG_FILES([ kplato/templates/Simple/Makefile ])
+AC_CONFIG_FILES([ kplato/tests/Makefile ])
+AC_CONFIG_FILES([ kplato/toolbar/Makefile ])
+AC_CONFIG_FILES([ kpresenter/Makefile ])
+AC_CONFIG_FILES([ kpresenter/autoformEdit/Makefile ])
+AC_CONFIG_FILES([ kpresenter/autoforms/Makefile ])
+AC_CONFIG_FILES([ kpresenter/autoforms/Arrows/Makefile ])
+AC_CONFIG_FILES([ kpresenter/autoforms/Connections/Makefile ])
+AC_CONFIG_FILES([ kpresenter/dtd/Makefile ])
+AC_CONFIG_FILES([ kpresenter/pics/Makefile ])
+AC_CONFIG_FILES([ kpresenter/pics/rotate/Makefile ])
+AC_CONFIG_FILES([ kpresenter/slideshow/Makefile ])
+AC_CONFIG_FILES([ kpresenter/templates/Makefile ])
+AC_CONFIG_FILES([ kpresenter/templates/A4/Makefile ])
+AC_CONFIG_FILES([ kpresenter/templates/Screen/Makefile ])
+AC_CONFIG_FILES([ kpresenter/templates/Screenpresentations/Makefile ])
+AC_CONFIG_FILES([ kpresenter/templates/common_icon/Makefile ])
+AC_CONFIG_FILES([ kpresenter/templates/legal/Makefile ])
+AC_CONFIG_FILES([ kpresenter/templates/letter/Makefile ])
+AC_CONFIG_FILES([ kpresenter/toolbar/Makefile ])
+AC_CONFIG_FILES([ krita/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/cmyk_u16/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/cmyk_u8/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/cmyk_u8/templates/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/gray_u16/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/gray_u8/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/gray_u8/templates/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/gray_u8/tests/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/lms_f32/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_f16half/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_f16half/tests/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_f32/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_f32/tests/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_u16/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_u16/tests/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_u8/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_u8/templates/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/rgb_u8/tests/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/wet/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/wetsticky/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/wetsticky/brushop/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/ycbcr_u16/Makefile ])
+AC_CONFIG_FILES([ krita/colorspaces/ycbcr_u8/Makefile ])
+AC_CONFIG_FILES([ krita/core/Makefile ])
+AC_CONFIG_FILES([ krita/core/tests/Makefile ])
+AC_CONFIG_FILES([ krita/core/tiles/Makefile ])
+AC_CONFIG_FILES([ krita/core/tiles/tests/Makefile ])
+AC_CONFIG_FILES([ krita/data/Makefile ])
+AC_CONFIG_FILES([ krita/data/brushes/Makefile ])
+AC_CONFIG_FILES([ krita/data/gradients/Makefile ])
+AC_CONFIG_FILES([ krita/data/images/Makefile ])
+AC_CONFIG_FILES([ krita/data/palettes/Makefile ])
+AC_CONFIG_FILES([ krita/data/patterns/Makefile ])
+AC_CONFIG_FILES([ krita/data/profiles/Makefile ])
+AC_CONFIG_FILES([ krita/dtd/Makefile ])
+AC_CONFIG_FILES([ krita/kritacolor/Makefile ])
+AC_CONFIG_FILES([ krita/kritacolor/colorspaces/Makefile ])
+AC_CONFIG_FILES([ krita/kritacolor/tests/Makefile ])
+AC_CONFIG_FILES([ krita/pics/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/blur/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/bumpmap/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/cimg/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/colorify/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/colors/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/colorsfilters/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/convolutionfilters/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/cubismfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/embossfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/example/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/fastcolortransfer/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/imageenhancement/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/lenscorrectionfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/levelfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/noisefilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/oilpaintfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/pixelizefilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/raindropsfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/randompickfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/roundcorners/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/smalltilesfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/sobelfilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/threadtest/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/unsharp/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/filters/wavefilter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/paintops/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/paintops/defaultpaintops/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/defaulttools/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/selectiontools/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_crop/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_curves/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_filter/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_perspectivegrid/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_perspectivetransform/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_polygon/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_polyline/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_selectsimilar/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_star/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/tools/tool_transform/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/colorrange/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/colorspaceconversion/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/dropshadow/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/filtersgallery/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/histogram/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/histogram_docker/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/history_docker/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/imagesize/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/modify_selection/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/performancetest/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/rotateimage/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/screenshot/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/scripting/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/scripting/kritacore/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/scripting/kritascripting/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/scripting/samples/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/scripting/samples/python/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/scripting/samples/ruby/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/selectopaque/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/separate_channels/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/shearimage/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/substrate/Makefile ])
+AC_CONFIG_FILES([ krita/plugins/viewplugins/variations/Makefile ])
+AC_CONFIG_FILES([ krita/sdk/Makefile ])
+AC_CONFIG_FILES([ krita/ui/Makefile ])
+AC_CONFIG_FILES([ kspread/Makefile ])
+AC_CONFIG_FILES([ kspread/dialogs/Makefile ])
+AC_CONFIG_FILES([ kspread/dtd/Makefile ])
+AC_CONFIG_FILES([ kspread/extensions/Makefile ])
+AC_CONFIG_FILES([ kspread/pics/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/calculator/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/calculator/pics/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/insertcalendar/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/scripting/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/scripting/kspreadcore/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/scripting/scripts/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/scripting/scripts/exporthtml/Makefile ])
+AC_CONFIG_FILES([ kspread/plugins/scripting/scripts/scripteditor/Makefile ])
+AC_CONFIG_FILES([ kspread/sheetstyles/Makefile ])
+AC_CONFIG_FILES([ kspread/templates/Makefile ])
+AC_CONFIG_FILES([ kspread/templates/Business/Makefile ])
+AC_CONFIG_FILES([ kspread/templates/General/Makefile ])
+AC_CONFIG_FILES([ kspread/templates/HomeFamily/Makefile ])
+AC_CONFIG_FILES([ kspread/tests/Makefile ])
+AC_CONFIG_FILES([ kspread/toolbar/Makefile ])
+AC_CONFIG_FILES([ kspread/toolbar/crystalsvg/Makefile ])
+AC_CONFIG_FILES([ kugar/Makefile ])
+AC_CONFIG_FILES([ kugar/kudesigner/Makefile ])
+AC_CONFIG_FILES([ kugar/kudesigner/pics/Makefile ])
+AC_CONFIG_FILES([ kugar/kudesigner/templates/Makefile ])
+AC_CONFIG_FILES([ kugar/kudesigner/templates/General/Makefile ])
+AC_CONFIG_FILES([ kugar/kudesigner/toolbar/Makefile ])
+AC_CONFIG_FILES([ kugar/kudesigner_lib/Makefile ])
+AC_CONFIG_FILES([ kugar/lib/Makefile ])
+AC_CONFIG_FILES([ kugar/part/Makefile ])
+AC_CONFIG_FILES([ kugar/samples/Makefile ])
+AC_CONFIG_FILES([ kword/Makefile ])
+AC_CONFIG_FILES([ kword/data/Makefile ])
+AC_CONFIG_FILES([ kword/dtd/Makefile ])
+AC_CONFIG_FILES([ kword/expression/Makefile ])
+AC_CONFIG_FILES([ kword/horizontalline/Makefile ])
+AC_CONFIG_FILES([ kword/mailmerge/Makefile ])
+AC_CONFIG_FILES([ kword/mailmerge/kabc/Makefile ])
+AC_CONFIG_FILES([ kword/mailmerge/kspread/Makefile ])
+AC_CONFIG_FILES([ kword/mailmerge/sql/Makefile ])
+AC_CONFIG_FILES([ kword/pics/Makefile ])
+AC_CONFIG_FILES([ kword/templates/Makefile ])
+AC_CONFIG_FILES([ kword/templates/CardsAndLabels/Makefile ])
+AC_CONFIG_FILES([ kword/templates/Envelopes/Makefile ])
+AC_CONFIG_FILES([ kword/templates/Wordprocessing/Makefile ])
+AC_CONFIG_FILES([ kword/tests/Makefile ])
+AC_CONFIG_FILES([ kword/toolbar/Makefile ])
+AC_CONFIG_FILES([ lib/Makefile ])
+AC_CONFIG_FILES([ lib/kformula/Makefile ])
+AC_CONFIG_FILES([ lib/kformula/config/Makefile ])
+AC_CONFIG_FILES([ lib/kformula/dtd/Makefile ])
+AC_CONFIG_FILES([ lib/kformula/fonts/Makefile ])
+AC_CONFIG_FILES([ lib/kformula/pics/Makefile ])
+AC_CONFIG_FILES([ lib/kformula/pics/crystalsvg/Makefile ])
+AC_CONFIG_FILES([ lib/kofficecore/Makefile ])
+AC_CONFIG_FILES([ lib/kofficecore/tests/Makefile ])
+AC_CONFIG_FILES([ lib/kofficeui/Makefile ])
+AC_CONFIG_FILES([ lib/kofficeui/pics/Makefile ])
+AC_CONFIG_FILES([ lib/kofficeui/tests/Makefile ])
+AC_CONFIG_FILES([ lib/kopainter/Makefile ])
+AC_CONFIG_FILES([ lib/kopalette/Makefile ])
+AC_CONFIG_FILES([ lib/koproperty/Makefile ])
+AC_CONFIG_FILES([ lib/koproperty/editors/Makefile ])
+AC_CONFIG_FILES([ lib/koproperty/test/Makefile ])
+AC_CONFIG_FILES([ lib/kotext/Makefile ])
+AC_CONFIG_FILES([ lib/kotext/kohyphen/Makefile ])
+AC_CONFIG_FILES([ lib/kotext/kohyphen/hyphdicts/Makefile ])
+AC_CONFIG_FILES([ lib/kotext/tests/Makefile ])
+AC_CONFIG_FILES([ lib/kross/Makefile ])
+AC_CONFIG_FILES([ lib/kross/api/Makefile ])
+AC_CONFIG_FILES([ lib/kross/main/Makefile ])
+AC_CONFIG_FILES([ lib/kross/python/Makefile ])
+AC_CONFIG_FILES([ lib/kross/python/cxx/Makefile ])
+AC_CONFIG_FILES([ lib/kross/python/scripts/Makefile ])
+AC_CONFIG_FILES([ lib/kross/python/scripts/RestrictedPython/Makefile ])
+AC_CONFIG_FILES([ lib/kross/ruby/Makefile ])
+AC_CONFIG_FILES([ lib/kross/runner/Makefile ])
+AC_CONFIG_FILES([ lib/kross/test/Makefile ])
+AC_CONFIG_FILES([ lib/kwmf/Makefile ])
+AC_CONFIG_FILES([ lib/store/Makefile ])
+AC_CONFIG_FILES([ lib/store/tests/Makefile ])
+AC_CONFIG_FILES([ mimetypes/Makefile ])
+AC_CONFIG_FILES([ mimetypes/kde33/Makefile ])
+AC_CONFIG_FILES([ mimetypes/kde351/Makefile ])
+AC_CONFIG_FILES([ pics/Makefile ])
+AC_CONFIG_FILES([ pics/crystalsvg/Makefile ])
+AC_CONFIG_FILES([ plugins/Makefile ])
+AC_CONFIG_FILES([ plugins/scan/Makefile ])
+AC_CONFIG_FILES([ servicetypes/Makefile ])
+AC_CONFIG_FILES([ templates/Makefile ])
+AC_CONFIG_FILES([ tools/Makefile ])
+AC_CONFIG_FILES([ tools/converter/Makefile ])
+AC_CONFIG_FILES([ tools/kfile-plugins/Makefile ])
+AC_CONFIG_FILES([ tools/kfile-plugins/abiword/Makefile ])
+AC_CONFIG_FILES([ tools/kfile-plugins/gnumeric/Makefile ])
+AC_CONFIG_FILES([ tools/kfile-plugins/koffice/Makefile ])
+AC_CONFIG_FILES([ tools/kfile-plugins/ooo/Makefile ])
+AC_CONFIG_FILES([ tools/kthesaurus/Makefile ])
+AC_CONFIG_FILES([ tools/quickprint/Makefile ])
+AC_CONFIG_FILES([ tools/spell/Makefile ])
+AC_CONFIG_FILES([ tools/thesaurus/Makefile ])
+AC_CONFIG_FILES([ tools/thumbnail/Makefile ])
+AC_MSG_CHECKING([for filters to be compiled])
+
+if test -s $srcdir/inst-apps ; then
+    SUBDIRLIST=`cat $srcdir/inst-apps`
+else
+    SUBDIRLIST=`cat $srcdir/subdirs`
+fi
+
+# fallback (KDE_CREATE_SUBDIRLIST has this fallback, so I have put it here too.)
+if test -z "$SUBDIRLIST" ; then
+    SUBDIRLIST=`ls -1 $srcdir`
+fi
+
+# first check which main apllication we could compile
+for args in $SUBDIRLIST ; do
+    case $args in
+        kword) COMPILE_FILTER_KWORD="$args " ;;
+        kspread) COMPILE_FILTER_KSPREAD="$args " ;;
+        kchart) COMPILE_FILTER_KCHART="$args " ;;
+        karbon) COMPILE_FILTER_KARBON="$args " ;;
+        kpresenter) COMPILE_FILTER_KPRESENTER="$args " ;;
+        kformula) COMPILE_FILTER_KFORMULA="$args " ;;
+        kugar) COMPILE_FILTER_KUGAR="$args " ;;
+        krita) COMPILE_FILTER_KRITA="$args " ;;
+	kivio) COMPILE_FILTER_KIVIO="$args " ;;
+	kexi) COMPILE_FILTER_KEXI="$args " ;;
+    esac
+done
+
+# now remove the applications the user has asked not to compile
+for args in $DO_NOT_COMPILE ; do
+    case $args in
+        kword) COMPILE_FILTER_KWORD= ;;
+        kspread) COMPILE_FILTER_KSPREAD= ;;
+        kchart) COMPILE_FILTER_KCHART= ;;
+        karbon) COMPILE_FILTER_KARBON= ;;
+        kpresenter) COMPILE_FILTER_KPRESENTER= ;;
+        kformula) COMPILE_FILTER_KFORMULA= ;;
+        kugar) COMPILE_FILTER_KUGAR= ;;
+        krita) COMPILE_FILTER_KRITA= ;;
+	kivio) COMPILE_FILTER_KIVIO= ;;
+	kexi) COMPILE_FILTER_KEXI= ;;
+    esac
+done
+
+USERFEEDBACKCOMPILE="$COMPILE_FILTER_KWORD$COMPILE_FILTER_KSPREAD$COMPILE_FILTER_KCHART$COMPILE_FILTER_KARBON$COMPILE_FILTER_KPRESENTER$COMPILE_FILTER_KFORMULA$COMPILE_FILTER_KUGAR"
+AC_MSG_RESULT([$USERFEEDBACKCOMPILE])
+
+AM_CONDITIONAL(compile_filter_KWORD, test -n "$COMPILE_FILTER_KWORD")
+AM_CONDITIONAL(compile_filter_KSPREAD, test -n "$COMPILE_FILTER_KSPREAD")
+AM_CONDITIONAL(compile_filter_KCHART, test -n "$COMPILE_FILTER_KCHART")
+AM_CONDITIONAL(compile_filter_KARBON, test -n "$COMPILE_FILTER_KARBON")
+AM_CONDITIONAL(compile_filter_KPRESENTER, test -n "$COMPILE_FILTER_KPRESENTER")
+AM_CONDITIONAL(compile_filter_KFORMULA, test -n "$COMPILE_FILTER_KFORMULA")
+AM_CONDITIONAL(compile_filter_KUGAR, test -n "$COMPILE_FILTER_KUGAR")
+AM_CONDITIONAL(compile_filter_KRITA, test -n "$COMPILE_FILTER_KRITA")
+AM_CONDITIONAL(compile_filter_KIVIO, test -n "$COMPILE_FILTER_KIVIO")
+AM_CONDITIONAL(compile_filter_KEXI, test -n "$COMPILE_FILTER_KEXI")
+if test -s $srcdir/inst-apps ; then
+    SUBDIRLIST=`cat $srcdir/inst-apps`
+else
+    SUBDIRLIST=`cat $srcdir/subdirs`
+fi
+
+# fallback (KDE_CREATE_SUBDIRLIST has this fallback, so I have put it here too.)
+if test -z "$SUBDIRLIST" ; then
+    SUBDIRLIST=`ls -1 $srcdir`
+fi
+
+# first check which main apllication we could compile
+for args in $SUBDIRLIST ; do
+    case $args in
+        kugar) COMPILE_PLUGIN_KUGAR="$args " ;;
+    esac
+done
+
+# now remove the applications the user has asked not to compile
+for args in $DO_NOT_COMPILE ; do
+    case $args in
+        kugar) COMPILE_PLUGIN_KUGAR= ;;
+    esac
+done
+
+AM_CONDITIONAL(compile_plugin_KUGAR, test -n "$COMPILE_PLUGIN_KUGAR")
+if test -s $srcdir/inst-apps ; then
+    SUBDIRLIST=`cat $srcdir/inst-apps`
+else
+    SUBDIRLIST=`cat $srcdir/subdirs`
+fi
+
+# fallback (KDE_CREATE_SUBDIRLIST has this fallback, so I have put it here too.)
+if test -z "$SUBDIRLIST" ; then
+    SUBDIRLIST=`ls -1 $srcdir`
+fi
+
+AC_MSG_CHECKING([whether only Kexi is being built])
+KEXI_ONLY=yes
+for args in $SUBDIRLIST ; do
+    case $args in
+        lib) ;;
+        kexi) ;;
+        *) if test -d $srcdir/$args ; then 
+             KEXI_ONLY=no
+           fi
+           ;;
+    esac
+done
+AC_MSG_RESULT([$KEXI_ONLY])
+AM_CONDITIONAL(compile_kexionly, test "$KEXI_ONLY" = "yes" )
+
+AC_MSG_CHECKING([whether kopainter should be compiled])
+
+# first check which main application we could compile
+for args in $SUBDIRLIST ; do
+    case $args in
+        krita) COMPILE_LIB_FOR_KRITA="$args " ;;
+        karbon) COMPILE_LIB_FOR_KARBON="$args " ;;
+        kivio) COMPILE_LIB_FOR_KIVIO="$args " ;;
+    esac
+done
+
+# now remove the applications the user has asked not to compile
+COMPILE_LIB_FOR_KPRESENTER="#"
+for args in $DO_NOT_COMPILE ; do
+    case $args in
+        krita) COMPILE_LIB_FOR_KRITA= ;;
+        karbon) COMPILE_LIB_FOR_KARBON= ;;
+        kivio) COMPILE_LIB_FOR_KIVIO= ;;
+	kpresenter) COMPILE_LIB_FOR_KPRESENTER= ;;
+    esac
+done
+
+if test -n "$COMPILE_LIB_FOR_KRITA$COMPILE_LIB_FOR_KARBON$COMPILE_LIB_FOR_KIVIO$COMPILE_LIB_FOR_KPRESENTER" ; then
+    USERFEEDBACKCOMPILELIB="yes"
+else
+    USERFEEDBACKCOMPILELIB="no"
+fi
+
+AC_MSG_RESULT([$USERFEEDBACKCOMPILELIB])
+
+AM_CONDITIONAL(compile_lib_KOPAINTER, test "$USERFEEDBACKCOMPILELIB" = "yes" )
+
+AC_OUTPUT
+if test -z "$LIBGMAGICK_LIBS" -a -z "$LIBMAGICK_LIBS"; then
+  echo ""
+  echo "You're missing GraphicsMagick (>=1.1.7). krita's GraphicsMagick import/export"
+  echo "filter will not be compiled. You can download GraphicsMagick from"
+  echo "http://www.graphicsmagick.org/. The GraphicsMagick filter allows krita to"
+  echo "read and write XCF, PSD, GIF, BMP, and many other image formats."
+  echo ""
+  echo "If you have problems compiling GraphicsMagick, please try configuring it using"
+  echo "the --without-magick-plus-plus flag, the C++ API isn't needed for krita."
+  echo ""
+  all_tests=bad
+  AC_DEFINE([include_imagemagick_filter],"",[don't use magick filter])
+fi
+
+if test -z "$LIBGMAGICK_LIBS" -a ! -z "$LIBMAGICK_LIBS"; then
+
+  echo ""
+  echo "You're missing GraphicsMagick (>=1.1.7). krita's GraphicsMagick import/export"
+  echo "filter will not be compiled. But ImageMagick was found, which mean that krita"
+  echo "will be able to read and write XCF, PSD, GIF, BMP, and many other image formats."
+  echo "But the ImageMagick filter is deprecated and we strongly advise you to install"
+  echo "GraphicsMagick either from your distribution or from http://www.graphicsmagick.org/"
+fi
+if test -z "$LIBJPEG" -o -z "$LIBEXIF"; then
+  echo ""
+  echo "You're missing libjpeg or libexif 0.6.12 or later (binaries and/or headers)."
+  echo "krita won't be able to import/export jpeg"
+  echo ""
+  all_tests=bad
+fi
+# ImageMagick is deprecated, we don't care anymore if it's not here
+#
+#if test -z "$LIBMAGICK_LIBS"; then
+#  echo ""
+#  echo "You're missing ImageMagick (>=6.1.0). krita's ImageMagick import/export"
+#  echo "filter will not be compiled. You can download ImageMagick from"
+#  echo "http://www.imagemagick.org/. The ImageMagick filter allows krita to"
+#  echo "read and write XCF, PSD, GIF, BMP, and many other image formats."
+#  echo ""
+#  echo "If you have problems compiling ImageMagick, please try configuring it using"
+#  echo "the --without-magick-plus-plus flag, the C++ API isn't needed for krita."
+#  echo ""
+#  all_tests=bad
+#fi
+
+if test -z "$OPENEXR_LIBS"; then
+  echo ""
+  echo "You're missing the OpenEXR library. Krita's OpenEXR import/export filter will "
+  echo "not be compiled. You can download OpenEXR from http://www.openexr.com or "
+  echo "install it from an appropriate binary package."
+  echo ""
+  all_tests=bad
+fi
+
+if test -z "$POPPLER_LIBS"; then
+  echo ""
+  echo "You're missing libpoppler 0.5.1 or later (binaries and/or headers)."
+  echo "krita won't be able to import pdf"
+  echo "note that the qt-binding of libpoppler is required"
+  echo ""
+fi
+if test -z "$LIBPNG";  then
+  echo ""
+  echo "You're missing libpng (binaries and/or headers), krita won't be able"
+  echo "to import/export png"
+  echo ""
+  all_tests=bad
+fi
+
+if test -z "$LIBTIFF"; then
+  echo ""
+  echo "You're missing libtiff (binaries and/or headers), krita won't be able"
+  echo "to import/export tiff"
+  echo ""
+  all_tests=bad
+fi
+if test -z "$LIBWV2_LIBS"; then
+  echo ""
+  echo "You're missing libwv2 0.1.9 or newer. KWord's MS Word filter will not be"
+  echo "compiled. You can download wv2 using anonymous CVS from the Sourceforge"
+  echo "repository (http://sourceforge.net/cvs/?group_id=10501) or get a"
+  echo "tarball at http://sourceforge.net/projects/wvware/"
+#  echo "The MS Word filter won't be compiled due to experimental changes."
+  echo ""
+  all_tests=bad
+fi
+if test -z "$LIBWPD_LIBS"; then
+  echo ""
+  echo "You're missing libwpd 0.8 or newer. KWord's WordPerfect import filter will "
+  echo "not be compiled. You can download libwpd from http://libwpd.sf.net or "
+  echo "install it from appropriate binary package."
+  echo ""
+  all_tests=bad
+fi
+if test -z "$LIBXML_LIBS"; then
+  echo ""
+  echo "You're missing libxml2 (at least version 2.4.8)."
+  echo "The XSLT filters will not be compiled."
+  echo "Please download libxml2 from http://xmlsoft.org ."
+  echo ""
+  all_tests=bad
+fi
+
+if test -z "$LIBXSLT_LIBS"; then
+  echo ""
+  echo "You're missing libxslt (at least version 1.0.7)."
+  echo "The XSLT filters will not be compiled."
+# TODO: URL is not exacly right anymore
+  echo "Please download libxml2 from http://xmlsoft.org ."
+  echo ""
+  all_tests=bad
+fi
+
+if test -z "$LIBART_LIBS"; then
+  echo ""
+  echo "You're missing libart 2.3.8. karbon will not be compiled."
+  echo "You can download libart from"
+  echo "http://svg.kde.org/download.html"
+  echo ""
+  all_tests=bad
+else
+  if test -z "$LIBFONTCONFIG_LIBS"; then
+    echo ""
+    echo "You're missing fontconfig 1.0.1 or newer. karbon will not have text support."
+    echo "You can download fontconfig from http://fontconfig.org/"
+    echo ""
+    all_tests=bad
+  fi
+
+  if test -z "$LIBFREETYPE_LIBS"; then
+    echo ""
+    echo "You're missing libfreetype 5.0 or newer. karbon will not have text support."
+    echo "You can download libfreetype from http://www.freetype.org/"
+    echo ""
+    all_tests=bad
+  fi
+fi
+if test -z "$MYSQL_INC" -o -z "$MYSQL_LIBS"; then
+
+  echo "----------------------------------------------------------------------"
+
+  echo "  + The MySQL development files were not found."
+  cat <<EOS
+  These are required for MySQL support in Kexi.
+
+  If you want MySQL support in Kexi, you need to install the MySQL development
+  files, ensure that mysql-config is in your path,  and run this configure script
+  again, and finally run make; make install.  
+  If you don't need MySQL support, you can simply run make; make install now.
+EOS
+   all_tests=bad
+fi
+
+if test -z "$PG_INCDIR" -o -z "$PG_LIBDIR" -o \
+        -z "$PQXX_INCDIR" -o -z "$PQXX_LIBDIR"; then
+
+  echo "----------------------------------------------------------------------"
+
+# LIBPQ messages
+  if test -z "$PG_INCDIR"; then
+    echo "  + The PostgreSQL C-API (libpq) headers were not found."
+  fi
+
+  if test -z "$PG_LIBDIR"; then
+    echo "  + The PostgreSQL C-API (libpq) libraries were not found."
+  fi
+
+  if test -z "$PG_INCDIR" -a -z "$PG_LIBDIR" ; then
+      pglib_parts_missing="HEADER or the libpq LIBRARY"
+  elif test -z "$PG_INCDIR" ; then
+      pglib_parts_missing="HEADER"
+  elif test -z "$PG_LIBDIR" ; then
+      pglib_parts_missing="LIBRARY"
+  fi
+
+  if test -z "$PG_INCDIR" -o -z "$PG_LIBDIR" ; then
+    cat <<EOS
+    Could not find the libpq $pglib_parts_missing files.
+    These are required by the libpqxx C++ library, which is used by
+    Kexi's PostgreSQL drivers.
+
+    The PostgreSQL C-API usually ship with PostgreSQL, but if you've
+    installed from a distros package then these files may be part of
+    a package called postgresql-devel or libpq-devel"
+
+EOS
+  fi
+
+# LIBPQXX messages
+  if test -z "$PQXX_INCDIR"; then
+    echo "  + The PostgreSQL C++ API (libpqxx) headers were not found."
+  fi
+
+  if test -z "$PQXX_LIBDIR"; then
+    echo "  + The PostgreSQL C++ API (libpqxx) shared libraries were not found."
+  fi
+
+  if test -z "$PQXX_INCDIR" -a -z "$PQXX_LIBDIR" ; then
+      pqxx_parts_missing="HEADER or the libpqxx LIBRARY"
+  elif test -z "$PQXX_INCDIR" ; then
+      pqxx_parts_missing="HEADER"
+  elif test -z "$PQXX_LIBDIR" ; then
+      pqxx_parts_missing="LIBRARY"
+  fi
+
+  if test -z "$PQXX_INCDIR" -o -z "$PQXX_LIBDIR" ; then
+  cat <<EOS
+    Could not find the libpqxx $pqxx_parts_missing files.
+    These are required by Kexi's PostgreSQL drivers.
+
+    Note: Kexi requires the SHARED libpqxx.so library files.
+          If you build pqxx library on your own, don't forget to use the
+          --enable-shared option when you run libpqxx's configure script.
+          This is necessary to compile the SHARED .so library, and
+          not the STATIC libpqxx.a.
+
+    The PostgreSQL C++ API can be downloaded from pqxx.tk or
+    http://gborg.postgresql.org/project/libpqxx/projdisplay.php
+    Grab the latest version (>=2)
+
+EOS
+  fi
+
+# SUMMARY messages
+  cat <<EOS
+  These warnings are not critical, but without installing the files
+  listed above Kexi will be compiled without PostgreSQL support.
+
+  If you want PostgreSQL support in Kexi, you need to install the files
+  listed above, then run this configure script again, and finally run
+  make; make install.  If you don't, simply run make; make install now.
+EOS
+
+  all_tests=bad
+  echo "----------------------------------------------------------------------"
+fi
+if test -z "$LCMS_LIBS"; then
+  echo ""
+  echo "LittleCMS is missing, Krita will not be built."
+  echo ""
+  echo "If you want to compile Krita you should install:"
+  echo "  * lcms 1.15 or newer (http://www.littlecms.com/)"
+  echo ""
+  all_tests=bad
+else
+  if test -z "$GLLIB"; then
+    echo ""
+    echo "You're missing OpenGL libraries. krita will"
+    echo "not be able to use OpenGL for hardware"
+    echo "accelerated rendering."
+    echo ""
+  fi
+fi
+
+
+if test -z "$LIBKSPELL2"; then
+   echo ""
+   echo "You don't use kdelibs CVS (kspell2 not found). Spell-checking disabled."
+   echo ""
+   all_tests=bad
+fi
+if test -z "$RUBY_LIBDIR" -a "x$compile_kross" = "xyes" ; then
+  echo ""
+  echo "Ruby development files were not found, or Ruby <= 1.8.1 was found,"
+  echo "Ruby scripting support for KOffice will not be built. If you don't"
+  echo "need Ruby scripting, you can ignore this message."
+  echo ""
+fi
+
+if test -z "$LIBPYTHON" -a -z "$PYTHONINC" -a $"x$compile_kross" = "xyes"; then
+  echo ""
+  echo "Python developement files were not found, Python scripting support for"
+  echo "KOffice will not be built. If you don't need Python scripting, you"
+  echo "can ignore this message"
+  echo ""
+fi
+
+# Check if KDE_SET_PREFIX was called, and --prefix was passed to configure
+if test -n "$kde_libs_prefix" -a -n "$given_prefix"; then
+  # And if so, warn when they don't match
+  if test "$kde_libs_prefix" != "$given_prefix"; then
+    # And if kde doesn't know about the prefix yet
+    echo ":"`kde-config --path exe`":" | grep ":$given_prefix/bin/:" 2>&1 >/dev/null
+    if test $? -ne 0; then
+      echo ""
+      echo "Warning: you chose to install this package in $given_prefix,"
+      echo "but KDE was found in $kde_libs_prefix."
+      echo "For this to work, you will need to tell KDE about the new prefix, by ensuring"
+      echo "that KDEDIRS contains it, e.g. export KDEDIRS=$given_prefix:$kde_libs_prefix"
+      echo "Then restart KDE."
+      echo ""
+    fi
+  fi
+fi
+
+if test x$GXX = "xyes" -a x$kde_have_gcc_visibility = "xyes" -a x$kde_cv_val_qt_gcc_visibility_patched = "xno"; then
+  echo ""
+  echo "Your GCC supports symbol visibility, but the patch for Qt supporting visibility"
+  echo "was not included. Therefore, GCC symbol visibility support remains disabled."
+  echo ""
+  echo "For better performance, consider including the Qt visibility supporting patch"
+  echo "located at:"
+  echo ""
+  echo "http://bugs.kde.org/show_bug.cgi?id=109386"
+  echo ""
+  echo "and recompile all of Qt and KDE. Note, this is entirely optional and"
+  echo "everything will continue to work just fine without it."
+  echo ""
+fi
+
+if test "$all_tests" = "bad"; then
+  if test ! "$cache_file" = "/dev/null"; then
+    echo ""
+    echo "Please remove the file $cache_file after changing your setup"
+    echo "so that configure will find the changes next time."
+    echo ""
+  fi
+else
+  echo ""
+  echo "Good - your configure finished. Start make now"
+  echo ""
+fi

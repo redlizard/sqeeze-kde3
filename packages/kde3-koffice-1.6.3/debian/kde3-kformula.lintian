@@ -1,0 +1,4 @@
+kformula: no-shlibs-control-file usr/lib/libkdeinit_kformula.so
+kformula: postinst-must-call-ldconfig usr/lib/libkdeinit_kformula.so
+kformula: postrm-should-call-ldconfig usr/lib/libkdeinit_kformula.so
+kformula: package-name-doesnt-match-sonames libkdeinit-kformula

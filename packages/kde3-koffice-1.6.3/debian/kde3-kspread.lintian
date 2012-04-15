@@ -1,0 +1,7 @@
+kspread: shlib-missing-in-control-file libkdeinit_kspread.so for usr/lib/libkdeinit_kspread.so
+kspread: executable-not-elf-or-script ./usr/share/apps/kspread/scripts/scripteditor/ScriptEditor.rc
+kspread: executable-not-elf-or-script ./usr/share/apps/kspread/scripts/exporthtml/ExportHtml.rc
+kspread: executable-not-elf-or-script ./usr/share/apps/kspread/scripts/exporthtml/ExportHtml.py
+kspread: executable-not-elf-or-script ./usr/share/apps/kspread/scripts/scripteditor/ScriptEditor.py
+kspread: package-name-doesnt-match-sonames libkdeinit-kspread libkspreadcommon0
+

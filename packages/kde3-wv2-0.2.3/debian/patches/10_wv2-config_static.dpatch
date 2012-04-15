@@ -1,0 +1,53 @@
+--- wv2-0.2.2.orig/wv2-config.in
++++ wv2-0.2.2.patched/wv2-config.in
+@@ -13,6 +13,7 @@
+ 	[--exec-prefix[=DIR]]
+ 	[--version]
+ 	[--libs]
++	[--static]
+ 	[--cflags]
+ Libraries/Headers:
+ 	wv2
+@@ -58,6 +59,9 @@
+     --libs)
+       echo_libs=yes
+       ;;
++    --static)
++      echo_static_libs=yes
++      ;;
+     wv2)
+       lib_wv2=yes
+       ;;
+@@ -76,7 +80,8 @@
+ 	echo $exec_prefix
+ fi
+ 
+-wv2_libs="-lwv2 @WV_LDFLAGS@"
++wv2_static_libs="-lwv2 @WV_LDFLAGS@"
++wv2_libs="-lwv2"
+ 
+ if test "$echo_cflags" = "yes"; then
+ 	includes="@WV_CFLAGS@"
+@@ -86,6 +91,22 @@
+ 	echo $includes
+ fi
+ 
++if test "$echo_static_libs" = "yes"; then
++	libdirs=-L@libdir@
++	my_wv2_static_libs=
++	for i in $wv2_static_libs ; do
++		if test "x$i" != "x-L@libdir@" ; then
++			if test -z "$my_wv2_static_libs" ; then
++				my_wv2_static_libs="$i"
++			else
++				my_wv2_static_libs="$my_wv2_static_libs $i"
++			fi
++		fi
++	done
++
++	echo $libdirs $my_wv2_static_libs
++fi      
++
+ if test "$echo_libs" = "yes"; then
+ 	libdirs=-L@libdir@
+ 	my_wv2_libs=

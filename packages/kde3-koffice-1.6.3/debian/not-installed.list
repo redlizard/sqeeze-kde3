@@ -1,0 +1,29 @@
+The following files are not installed in any binary package.
+This is deliberate.
+
+We do not install these files because we are not sure about
+the licesing.
+/usr/share/apps/krita/profiles/Adobe.icm
+/usr/share/apps/krita/profiles/Apple.icm
+/usr/share/apps/krita/profiles/CIE.icm
+/usr/share/apps/krita/profiles/CMY.icm
+/usr/share/apps/krita/profiles/ColorMatch.icm
+/usr/share/apps/krita/profiles/NTSC.icm
+/usr/share/apps/krita/profiles/PAL.icm
+/usr/share/apps/krita/profiles/SMPTE-C.icm
+/usr/share/apps/krita/profiles/WideGamut.icm
+/usr/share/apps/krita/profiles/cmyk.icm
+/usr/share/apps/krita/profiles/lcmslabi.icm
+/usr/share/apps/krita/profiles/lcmsxyzi.icm
+/usr/share/apps/krita/profiles/monoscnr.icm
+/usr/share/apps/krita/profiles/sRGB.icm
+/usr/share/apps/krita/profiles/srgb_color_space_profile.icm
+/usr/share/apps/krita/profiles/srgbspac.icm
+/usr/share/apps/krita/profiles/tifflab8spac.icm
+/usr/share/apps/krita/profiles/ycc601.icm
+/usr/share/apps/krita/profiles/ycc709.icm
+
+
+Polish translations:?
+/usr/share/locale/pl/LC_MESSAGES/kexi_add_column_gui_transl_pl.sh
+/usr/share/locale/pl/LC_MESSAGES/kexi_delete_column_gui_transl_pl.sh

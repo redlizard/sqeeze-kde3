@@ -1,0 +1,4 @@
+koshell: no-shlibs-control-file usr/lib/libkdeinit_koshell.so
+koshell: postinst-must-call-ldconfig usr/lib/libkdeinit_koshell.so
+koshell: postrm-should-call-ldconfig usr/lib/libkdeinit_koshell.so
+koshell: package-name-doesnt-match-sonames libkdeinit-koshell

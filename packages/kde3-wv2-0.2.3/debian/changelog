@@ -1,0 +1,126 @@
+kde3-wv2 (0.2.3-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Sat, 14 Apr 2012 23:48:26 +0000
+
+wv2 (0.2.3-2) unstable; urgency=low
+
+  * Update Standards-Version to 3.7.3.
+  * Update uploaders.
+  * Move patch system to quilt.
+  * Add gcc_4.3_fixes to fix problems with GCC 4.3. This patch adds a missing
+    include and hack away the #warning stuff.  (Closes: #441614)
+  * Replace  ${source:Version}) with (= ${binary:Version}) to make package 
+    binNMUable.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Wed, 26 Dec 2007 08:32:36 +0100
+
+wv2 (0.2.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+  +++ Changes by Christopher Martin:
+
+  * Drop the libwv2.la file from libwv2-dev, at the request of
+    J.H.M. Dassen (Ray). (Closes: #374332)
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 18 Jun 2006 15:28:58 -0400
+
+wv2 (0.2.2-6) unstable; urgency=medium
+
+  +++ Changes by Christopher Martin:
+
+  * Add a patch which fixes CVE-2006-2197, missing boundary checks which could
+    allow the execution of arbitrary code. Urgency medium.
+
+  * Revamp patch system; should make further updates easier.
+
+  * Set Uploaders to the standard Qt/KDE team list.
+
+  +++ Changes by Pierre Habouzit:
+
+  * Add -DNDEBUG in the CFLAGS (no more horribly verbose debug output on
+    stderr; see wvlog.h). (Closes: #329109)
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 17 Jun 2006 19:00:35 -0400
+
+wv2 (0.2.2-5) unstable; urgency=low
+
+  * wv2-config: introduce a "--static" option to provide options suitable
+    for static linking and have "--libs" output just "-lwv2", closes: #342889
+  * Update libtool (required to fix FTBFS in GNU/k*BSD), closes: #311988
+
+ -- Isaac Clerencia <isaac@debian.org>  Mon, 12 Dec 2005 08:36:00 +0100
+
+wv2 (0.2.2-4) unstable; urgency=low
+
+  +++ Changes by Isaac Clerencia:
+
+  * Rebuild against new libgsf-1-dev, making libwv2-1c2 installable in sid
+    again, closes: #338712
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 12 Nov 2005 11:27:27 +0100
+
+wv2 (0.2.2-3) unstable; urgency=low
+
+  * Changed maintainer to the Debian Qt/KDE group (in coordination with
+    koffice, which has also changed maintainer to the Debian Qt/KDE group).
+
+ -- Ben Burton <bab@debian.org>  Sun, 16 Oct 2005 02:07:54 +1000
+
+wv2 (0.2.2-2) unstable; urgency=low
+
+  * C++ ABI transition (g++-3.3 -> g++-4.0).
+  * Library package renamed from libwv2-1 to libwv2-1c2.
+  * Build-depends on c++abi2-dev, since the binaries do not depend on libstdc++.
+  * Made libwv2-dev depend on libstdc++-dev since it imports libstdc++ headers.
+  * Removed -pedantic from compilation flags to avoid HUGE_VAL error (#319553).
+  * Bumped standards-version to 3.6.2.1 (no changes required).
+
+ -- Ben Burton <bab@debian.org>  Sat, 23 Jul 2005 10:20:38 +1000
+
+wv2 (0.2.2-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+  * Builds under gcc 3.4 (closes: #274051).
+
+ -- Ben Burton <bab@debian.org>  Thu, 14 Oct 2004 19:08:15 +1000
+
+wv2 (0.2.1-2) unstable; urgency=low
+
+  * Build-depends on zlib1g-dev, which no longer seems to be provided by
+    libxml2-dev (closes: #242971).
+
+ -- Ben Burton <bab@debian.org>  Sun, 11 Apr 2004 07:36:57 +1000
+
+wv2 (0.2.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ben Burton <bab@debian.org>  Sun,  7 Dec 2003 20:37:52 +1100
+
+wv2 (0.1.9-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bumped standards-version to 3.6.1.
+
+ -- Ben Burton <bab@debian.org>  Mon, 29 Sep 2003 10:57:45 +1000
+
+wv2 (0.1.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bumped standards-version to 3.6.0.
+
+ -- Ben Burton <bab@debian.org>  Fri,  8 Aug 2003 08:58:07 +1000
+
+wv2 (0.0.9-1) unstable; urgency=low
+
+  * Initial Release (closes: #196455).
+  * Patched olestorage.cpp for type correctness with newer versions of
+    libgfs-1.
+  * Using AM_MAINTAINER_MODE.
+  * Updated config.{sub,guess}.
+
+ -- Ben Burton <bab@debian.org>  Sat,  7 Jun 2003 15:30:53 +1000
+

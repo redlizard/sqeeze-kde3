@@ -1,0 +1,5 @@
+# There is no -dev package.
+kchart: non-dev-pkg-with-shlib-symlink usr/lib/libkdchart.so.0.0.0 usr/lib/libkdchart.so
+kchart: shlib-missing-in-control-file libkdeinit_kchart.so for usr/lib/libkdeinit_kchart.so
+kchart: package-name-doesnt-match-sonames libkchartcommon2 libkchartimageexport4 libkdchart0 libkdeinit-kchart
+

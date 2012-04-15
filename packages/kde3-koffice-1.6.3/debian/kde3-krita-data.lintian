@@ -1,0 +1,17 @@
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/torturepainting/torture-painting.rb
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/reshapehisto/reshapehisto.rc
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/changecs/changecs.rc
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/randompaint/randompaint.rb
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/filterstest/filterstest.rb
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/invertpython/invert.py
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/invertpython/invertpython.rc
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/torturefilters/torture-filters.rc
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/reshapehisto/reshapehisto.py
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/invertruby/invertruby.rc
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/filterstest/filterstest.rc
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/torturepainting/torture-painting.rc
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/torturefilters/torture-filters.rb
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/changecs/changecs.rb
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/invertruby/invert.rb
+krita-data: executable-not-elf-or-script ./usr/share/apps/krita/scripts/randompaint/randompaint.rc
+krita-data: desktop-command-not-in-package /usr/share/applications/kde/krita.desktop krita

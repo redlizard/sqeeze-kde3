@@ -1,0 +1,55 @@
+.TH WV2-CONFIG 1 "June 2003"
+.SH NAME
+wv2-config - script to get information about the installed version of wv2
+.SH SYNOPSIS
+.B wv2-config
+[\fB\-\-prefix\fP[=\fIDIR\fP]]
+[\fB\-\-exec\-prefix\fP[=\fIDIR\fP]]
+[\fB\-\-version\fP]
+[\fB\-\-libs\fP]
+[\fB\-\-cflags\fP]
+.SH DESCRIPTION
+.PP
+\fIwv2-config\fP is used to determine
+the compiler and linker flags that should be used to compile
+and link programs that use \fIwv2\fP.
+.SH OPTIONS
+\fIwv2-config\fP accepts the following options.
+.TP
+\fB\-\-prefix\fP=\fIDIR\fP
+If specified, use DIR instead of the installation prefix that \fIwv2\fP
+was built with when computing the output for the \-\-cflags and
+\-\-libs options. This option is also used for the exec prefix
+if \-\-exec\-prefix is not specified.  This option must be specified
+before any \-\-libs or \-\-cflags options.
+If no DIR is specified then the current installation prefix will be
+written to standard output.
+.TP
+\fB\-\-exec\-prefix\fP=\fIDIR\fP
+If specified, use DIR instead of the installation exec prefix that
+\fIwv2\fP was built with when computing the output for the \-\-cflags
+and \-\-libs options.  This option must be specified before any
+\-\-libs or \-\-cflags options.
+If no DIR is specified then the current installation exec prefix will be
+written to standard output.
+.TP
+.B \-\-version
+Print the currently installed version of \fIwv2\fP on standard output.
+.TP
+.B \-\-libs
+Print the linker flags that are necessary to link a program against
+\fIwv2\fP.
+.TP
+.B \-\-cflags
+Print the compiler flags that are necessary to compile a program that
+uses \fIwv2\fP.
+.SH SEE ALSO
+Some documentation regarding the design of the \fIwv2\fP library is available
+in \fI/usr/share/doc/libwv2-dev/design/\fP .
+.SH AUTHOR
+The \fIwv2\fP library was written by
+Shaheed Haque <srhaque@iee.org>, Werner Trobin <trobin@kde.org> and
+David Faure <faure@kde.org>.
+.br
+This manual page was prepared by Ben Burton <bab@debian.org> for the
+Debian GNU/Linux system, but may be used by others.

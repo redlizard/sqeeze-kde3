@@ -1,0 +1,12 @@
+diff -Nur koffice-1.4.88/karbon/Makefile.am koffice-1.4.88.new/karbon/Makefile.am
+--- koffice-1.4.88/karbon/Makefile.am	2006-01-13 11:36:40.000000000 +0100
++++ koffice-1.4.88.new/karbon/Makefile.am	2006-01-17 10:49:39.000000000 +0100
+@@ -16,7 +16,7 @@
+ 
+ libkarboncommon_la_SOURCES = karbon_factory.cc 	karbon_resourceserver.cc 	karbon_part.cc 	karbon_part_iface.cc 	karbon_part_iface.skel 	karbon_view.cc 	karbon_view_iface.cc 	karbon_view_iface.skel karbon_drag.cpp karbon_grid_data.cpp karbon_tool_registry.cc karbon_tool_factory.cc	vtoolcontroller.cc vtool.cc
+ 
+-libkarboncommon_la_LDFLAGS = $(KDE_RPATH) $(LIBFREETYPE_RPATH) -no-undefined
++libkarboncommon_la_LDFLAGS = $(KDE_RPATH) $(LIBFREETYPE_RPATH) $(LIBMAGICK_LDFLAGS) -no-undefined
+ libkarboncommon_la_LIBADD = $(LIB_KOFFICECORE) $(LIB_KOFFICEUI) $(LIB_KOPALETTE) $(LIB_KOPAINTER) $(LIB_KOTEXT) \
+ 	dockers/libkarbondockers.la \
+ 	widgets/libkarbonwidgets.la \

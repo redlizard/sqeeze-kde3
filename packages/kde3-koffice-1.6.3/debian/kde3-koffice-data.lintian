@@ -1,0 +1,11 @@
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/gui.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/RCompile.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/MutatingWalker.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/PrintCollector.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/Limits.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/Eval.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/RestrictionMutator.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/SelectCompiler.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/__init__.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/Utilities.py
+koffice-data: executable-not-elf-or-script ./usr/share/apps/kross/python/RestrictedPython/Guards.py

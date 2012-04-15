@@ -1,0 +1,9 @@
+?package(krita):\
+	needs="x11"\
+	section="Applications/Graphics"\
+	hints="KDE,Bitmap"\
+	title="Krita"\
+	longtitle="Krita (Image Manipulation)"\
+	icon="/opt/kde3/share/pixmaps/krita.xpm"\
+	command="/opt/kde3/bin/krita"
+

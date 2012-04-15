@@ -1,0 +1,4 @@
+kivio: shlib-missing-in-control-file libkdeinit_kivio.so for usr/lib/libkdeinit_kivio.so
+kivio: menu-icon-missing /usr/share/pixmaps/kivio.xpm
+kivio: package-name-doesnt-match-sonames libkdeinit-kivio libkiviocommon0
+

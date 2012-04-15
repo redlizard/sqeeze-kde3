@@ -1,0 +1,4 @@
+kugar: shlib-missing-in-control-file libkdeinit_kudesigner.so for usr/lib/libkdeinit_kudesigner.so
+kugar: shlib-missing-in-control-file libkdeinit_kugar.so for usr/lib/libkdeinit_kugar.so
+kugar: shlib-missing-in-control-file libkudesignercore.so for usr/lib/libkudesignercore.so
+kugar: package-name-doesnt-match-sonames libkdeinit-kudesigner libkdeinit-kugar libkudesignercore libkugarlib1

@@ -1,0 +1,4 @@
+gcc_4.3_fixes
+05_relibtoolize.dpatch
+10_wv2-config_static.dpatch
+50_autogen.dpatch

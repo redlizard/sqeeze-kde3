@@ -1,0 +1,9 @@
+?package(kchart):\
+	needs="x11"\
+	section="Applications/Office"\
+	hints="KDE,Graphs"\
+	title="KChart"\
+	longtitle="KChart (Charting)"\
+	icon="/opt/kde3/share/pixmaps/kchart.xpm"\
+	command="/opt/kde3/bin/kchart"
+

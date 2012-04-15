@@ -1,0 +1,5 @@
+kthesaurus: no-shlibs-control-file usr/lib/libkdeinit_kthesaurus.so
+kthesaurus: postinst-must-call-ldconfig usr/lib/libkdeinit_kthesaurus.so
+kthesaurus: postrm-should-call-ldconfig usr/lib/libkdeinit_kthesaurus.so
+kthesaurus: package-name-doesnt-match-sonames libkdeinit-kthesaurus
+

@@ -1,0 +1,105 @@
+--- koffice-1.6.3.orig/kexi/tools/add_column/kexi_add_column
++++ koffice-1.6.3/kexi/tools/add_column/kexi_add_column
+@@ -18,7 +18,7 @@
+ #   Boston, MA 02111-1307, USA.
+ #
+ 
+-function usage {
++usage {
+ 	echo "This script adds a new empty column to a table in a .kexi (SQLite 3)
+ 	database file without removing data from the table.
+ 
+@@ -39,14 +39,14 @@
+  $0 db.kexi cars photo BLOB Photo"
+ }
+ 
+-function exit_with_error {
++exit_with_error {
+ 	rm -f "$temp_db"
+ 	echo $*
+ 	echo "Error."
+ 	exit 1
+ }
+ 
+-function check {
++check {
+ 	[ -n "$*" ] && exit_with_error "$*"
+ }
+ 
+--- koffice-1.6.3.orig/kexi/tools/add_column/kexi_add_column_gui
++++ koffice-1.6.3/kexi/tools/add_column/kexi_add_column_gui
+@@ -20,7 +20,7 @@
+ 
+ basedir=`dirname "$0"`
+ 
+-function setup_messages {
++setup_messages {
+ 	lang=`grep Language= ~/.kde/share/config/kdeglobals | head -n 1 | \
+ 		sed -e 's/Language=\(.*\):.*/\1/'`
+ 	if [ -z "$lang" ] ; then lang="en" ; fi
+--- koffice-1.6.3.orig/kexi/tools/delete_column/kexi_delete_column
++++ koffice-1.6.3/kexi/tools/delete_column/kexi_delete_column
+@@ -18,7 +18,7 @@
+ #   Boston, MA 02111-1307, USA.
+ #
+ 
+-function usage {
++usage {
+ 	echo "This script deletes a single table column from a .kexi (SQLite 3)
+ database file without removing data from the table.
+ 
+@@ -35,14 +35,14 @@
+  $0 db.kexi products price"
+ }
+ 
+-function exit_with_error {
++exit_with_error {
+ 	rm -f "$temp_db"
+ 	echo $*
+ 	echo "Error."
+ 	exit 1
+ }
+ 
+-function check {
++check {
+ 	[ -n "$*" ] && exit_with_error "$*"
+ }
+ 
+@@ -62,7 +62,7 @@
+ 
+ # 1. alter the table physically
+ 
+-function prepare_new_create_table_statement {
++prepare_new_create_table_statement {
+ 	# possible problems: typename ( number , number ) may contain ","
+ 	
+ 	schema=`echo ".schema '$table_name';" | $ksqlite "$database_name" | \
+@@ -79,7 +79,7 @@
+ 	IFS=" "
+ }
+ 
+-function get_sql_column_names {
++get_sql_column_names {
+ 	names=`$ksqlite_header "$temp_db" "SELECT * FROM '$temp_table_name' LIMIT 1;" | \
+ 		head -n 1 || exit_with_error`
+ 	IFS="|"
+--- koffice-1.6.3.orig/kexi/tools/delete_column/kexi_delete_column_gui
++++ koffice-1.6.3/kexi/tools/delete_column/kexi_delete_column_gui
+@@ -20,7 +20,7 @@
+ 
+ basedir=`dirname "$0"`
+ 
+-function setup_messages {
++setup_messages {
+ 	lang=`grep Language= ~/.kde/share/config/kdeglobals | head -n 1 | \
+ 		sed -e 's/Language=\(.*\):.*/\1/'`
+ 	if [ -z "$lang" ] ; then lang="en" ; fi
+@@ -69,7 +69,7 @@
+ 	echo -n " $f $f off" >> $command_file
+ done
+ 
+-column_name=`source $command_file || exit 1`
++column_name=`. $command_file || exit 1`
+ rm -f $command_file
+ 
+ # call the command line tool

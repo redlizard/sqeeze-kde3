@@ -1,0 +1,59 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include debian/cdbs/debian-qt-kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_KDE_APIDOX := yes
+
+DEB_DH_STRIP_ARGS  := --dbg-package=kde3-koffice-dbg
+
+PACKAGES_WITH_LIBS := kde3-karbon kde3-kchart kde3-kivio kde3-kofficekde3--kde3-libs kde3-krita kde3-kspread kde3-kugar kde3-kthesaurus
+
+DEB_INSTALL_CHANGELOGS_kde3-karbon := karbon/CHANGES
+DEB_INSTALL_CHANGELOGS_kde3-kchart := kchart/CHANGES
+DEB_INSTALL_CHANGELOGS_kde3-kexi := kexi/CHANGES
+DEB_INSTALL_CHANGELOGS_kde3-kivio := kivio/CHANGES
+DEB_INSTALL_CHANGELOGS_kde3-kpresenter := kpresenter/CHANGES
+DEB_INSTALL_CHANGELOGS_kde3-kspread:= kspread/CHANGES
+DEB_INSTALL_CHANGELOGS_kde3-kugar := kugar/CHANGES
+DEB_INSTALL_CHANGELOGS_kde3-kword := kword/CHANGES
+DEB_INSTALL_CHANGELOGS_kde3-koffice-libs := lib/CHANGES
+
+DEB_COMPRESS_EXCLUDE := .ksp .kwd .kwt .docbook
+
+install/kde3-krita-data::
+	install -m 755 -d debian/kde3-krita-data/opt/kde3/share/apps/krita/profiles/
+	uudecode -o debian/kde3-krita-data/opt/kde3/share/apps/krita/profiles/fogra27l.icm debian/fogra27l.icm.uu
+
+common-binary-post-install-arch::
+	for pkg in `dh_listpackages`; do \
+		if test -d debian/$$pkg/usr/share/doc/kde3-kde/HTML/en/$$pkg; then \
+		dh_link -p$$pkg usr/share/doc/kde3-kde/HTML/en/$$pkg \
+		usr/share/doc/$$pkg/html; \
+		fi; \
+		dh_installmime -p$$pkg; \
+	done
+	mv debian/kde3-kugar/usr/share/doc/kde3-kugar/examples/kde3-kugar.examples.README \
+		debian/kde3-kugar/usr/share/doc/kde3-kugar/examples/README.examples
+	mv debian/kde3-kpresenter/opt/kde3/share/man/pl/man1/kprconverter.1 \
+		debian/kde3-kpresenter/opt/kde3/share/man/man1/kprconverter.pl.1
+	rm -rf debian/kpresenter/opt/kde3/share/man/pl
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done

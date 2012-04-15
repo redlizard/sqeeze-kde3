@@ -1,0 +1,320 @@
+Source: koffice
+Section: kde
+Priority: optional
+Maintainer: @@@MAINTAINER@@@
+Uploaders: @@@UPLOADERS@@@
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5), autotools-dev, binutils (>= 2.14.90.0.7), docbook-to-man, gawk, gettext, flex, kdelibs4-dev (>= 4:3.4.3), libaspell-dev, libfontconfig1-dev, libgraphicsmagick1-dev, libopenexr-dev, libpaper-dev, libreadline5-dev, libtiff4-dev, libwv2-dev (>= 0.2.2-4), libxml2-dev, libxslt1-dev, python-dev, ruby (>= 1.8.0), ruby1.8-dev, libwpd8-dev, libpqxx-dev, libmysqlclient15-dev, sharutils, bzip2, libpoppler-qt-dev
+Build-Depends-Indep: doxygen, qt3-doc, graphviz, gsfonts-x11, kdelibs4-doc
+Standards-Version: 3.7.3
+Homepage: http://www.koffice.org
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/koffice
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/koffice
+
+Package: koffice
+Architecture: all
+Section: kde
+Depends: karbon (>= ${source:Version}), kchart (>= ${source:Version}), kexi (>= ${source:Version}), kformula (>= ${source:Version}), kivio (>= ${source:Version}), koshell (>= ${source:Version}), kplato (>= ${source:Version}), kpresenter (>= ${source:Version}), krita (>= ${source:Version}), kspread (>= ${source:Version}), kugar (>= ${source:Version}), kword (>= ${source:Version}), kthesaurus (>= ${source:Version})
+Suggests: koffice-i18n, koffice-dev (>= ${source:Version}), koffice-doc (>= ${source:Version}), koffice-doc-html (= ${source:Version})
+Description: KDE Office Suite
+ KOffice is an integrated office suite for KDE, the K Desktop
+ Environment.  It offers a word processor, spreadsheet, presentation
+ program, graphics tools and more.
+ .
+ This package provides all the components of KOffice.
+
+Package: koffice-doc
+Section: doc
+Architecture: all
+Description: developer documentation for the KDE Office Suite
+ This package contains documentation for the KDE Office Suite, of
+ use more for developers creating applications than regular users.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: koffice-doc-html
+Architecture: all
+Section: doc
+Suggests: konqueror | www-browser, koffice
+Replaces: koffice-libs (<< 1:1.1.0-0), koshell (<< 1:1.1.0-0), kpresenter (<< 1:1.1.0-0), kspread (<< 1:1.1.0-0), kugar (<< 1:1.1.0-0), kword (<< 1:1.1.0-0)
+Description: KDE Office Suite documentation in HTML format
+ KOffice is an integrated office suite for KDE, the K Desktop
+ Environment.  It offers a word processor, spreadsheet, presentation
+ program, graphics tools and more.
+ .
+ By default the KOffice applications only provide their documentation in
+ KDE docbook format, which can only be read by Konqueror or KHelpCenter.
+ This package provides all of the KOffice documentation converted to HTML
+ format so it can be read with any web browser.
+ .
+ The documentation will be installed into the usual directories
+ /usr/share/doc/kde/HTML/<language>/<app>/, for instance
+ /usr/share/doc/kde/HTML/en/kword/.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: karbon
+Architecture: any
+Section: graphics
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3})
+Replaces: koffice-libs (<< 1:1.2.90-0)
+Description: a vector graphics application for the KDE Office Suite
+ Karbon is a vector graphics application.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kchart
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3})
+Recommends: khelpcenter | koffice-doc-html (= ${source:Version})
+Replaces: koffice-libs (<< 1:1.1-20010404-0)
+Description: a chart drawing program for the KDE Office Suite
+ KChart is a chart drawing application.  It can be used to embed charts
+ into KOffice documents.  KChart is easy to use and highly configurable.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kexi
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3})
+Replaces: kexi-postgresql-driver (<< 1:1.4.88-1), kexi-mysql-driver (<< 1:1.4.88-1)
+Suggests: kexi-mdb-plugin
+Description: integrated database environment for the KDE Office Suite
+ Kexi is an integrated data management application. It can be used for
+ creating database schemas, inserting data, performing queries, and
+ processing data. Forms can be created to provide a custom interface to
+ your data. All database objects - tables, queries and forms - are stored
+ in the database, making it easy to share data and design.
+ .
+ Kexi is considered as a long awaited Open Source competitor for MS Access,
+ Filemaker and Oracle Forms. Its development is motivated by the lack of
+ Rapid Application Development (RAD) tools for database systems that are
+ sufficiently powerful, inexpensive, open standards driven and portable
+ across many operating systems and hardware platforms.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kformula
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3}), kcontrol
+Recommends: khelpcenter | koffice-doc-html (= ${source:Version})
+Replaces: koffice-libs (<< 1:1.1-20010404-0)
+Description: a formula editor for the KDE Office Suite
+ KFormula is a formula editor that provides the basic input facilities
+ and the support functionality expected of a KOffice application.
+ .
+ Features include easy Greek letter insertion, intelligent cursor
+ movement, advanced syntax highlighting, multi-level undo support,
+ LaTeX export and MathML import.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kivio
+Architecture: any
+Section: graphics
+Depends: ${shlibs:Depends}, kivio-data (>> 1:1.4.90.2-1), kivio-data (>> ${KDE-Version3}), kivio-data (<< ${KDE-Next-Version3}), koffice-libs (<< ${KDE-Next-Version3})
+Replaces: koffice-libs (<< 1:1.1-20010404-0)
+Description: a flowcharting program for the KDE Office Suite
+ Kivio is a flowcharting program that offers basic flowcharting abilities,
+ but with a twist.  Objects are scriptable, and a backend plugin system
+ offers the ability to make objects do just about anything.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kivio-data
+Architecture: all
+Section: graphics
+Replaces: kivio (<< 1:1.4.90.2-2)
+Description: data files for Kivio flowcharting program
+ This package contains architecture-independent data files for Kivio,
+ the flowcharting program shipped with the KDE Office Suite.
+ .
+ See the kivio package for further information.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: koshell
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3})
+Recommends: koffice, khelpcenter | koffice-doc-html (= ${source:Version})
+Replaces: koffice-libs (<< 1:1.1-20010404-0)
+Description: the KDE Office Suite workspace
+ The KOffice workspace is a desktop with easy one-click launchers for
+ KOffice applications.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kplato
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3})
+Recommends: khelpcenter | koffice-doc-html (= ${source:Version})
+Description: an integrated project management and planning tool
+ KPlato is a project management application, allowing for the planning and
+ scheduling of projects. It is in the very early stages of development.
+ .
+ This package is part of the KDE Office Suite.
+
+
+Package: kpresenter
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, ${perl:Depends}, kpresenter-data (>> ${KDE-Version3}), kpresenter-data (<< ${KDE-Next-Version3}), koffice-libs (<< ${KDE-Next-Version3})
+Recommends: libkscan1, khelpcenter | koffice-doc-html (= ${source:Version})
+Replaces: koffice-libs (<< 1:1.1-20010404-0)
+Description: a presentation program for the KDE Office Suite
+ KPresenter is a fully-featured presentation program.  Presentations can
+ be edited directly within KPresenter, and many advanced features for
+ screen presentations are available.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kpresenter-data
+Architecture: all
+Section: kde
+Replaces: kpresenter (<< 1:1.4.90.2-2)
+Description: data files for KPresenter presentation program
+ This package contains architecture-independent data files for KPresenter,
+ the presentation program shipped with the KDE Office Suite.
+ .
+ See the kpresenter package for further information.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: krita
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, krita-data (>> ${KDE-Version3}), krita-data (<< ${KDE-Next-Version3}), koffice-libs (<< ${KDE-Next-Version3})
+Recommends: dcraw, khelpcenter | koffice-doc-html (= ${source:Version})
+Description: a pixel-based image manipulation program for the KDE Office Suite
+ Krita is a painting and image editing application for KOffice. Krita contains
+ both ease-of-use and fun features like guided painting.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: krita-data
+Architecture: all
+Section: kde
+Replaces: krita (<< 1:1.4.90.2-2)
+Description: data files for Krita painting program
+ This package contains architecture-independent data files for Krita,
+ the painting program shipped with the KDE Office Suite.
+ .
+ See the krita package for further information.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kspread
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3})
+Recommends: khelpcenter | koffice-doc-html (= ${source:Version})
+Replaces: koffice-libs (<< 1:1.2.90-0)
+Description: a spreadsheet for the KDE Office Suite
+ KSpread is a powerful spreadsheet application.  It is scriptable and
+ provides both table-oriented sheets and support for complex mathematical
+ formulae and statistics.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kugar
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3})
+Recommends: khelpcenter | koffice-doc-html (= ${source:Version})
+Replaces: koffice-libs (<< 1:1.1-20010404-0)
+Description: a business report maker for the KDE Office Suite
+ Kugar is a tool for generating business quality reports that can
+ be viewed and printed.  It includes a standalone report viewer and a
+ KPart report viewer.  The latter means that any KDE application can
+ embed the report viewing functionality and that reports can be viewed
+ using the Konqueror browser.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kword
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, kword-data (>> ${KDE-Version3}), kword-data (<< ${KDE-Next-Version3}), koffice-libs (<< ${KDE-Next-Version3})
+Recommends: libkscan1, khelpcenter | koffice-doc-html (= ${source:Version})
+Replaces: koffice-libs (<< 1:1.2.90-0)
+Description: a word processor for the KDE Office Suite
+ KWord is a FrameMaker-like word processing and desktop publishing
+ application.  KWord is capable of creating demanding and professional
+ looking documents.  It can be used for desktop publishing, but also for
+ "normal" word processing, like writing letters, reports and so on.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kword-data
+Architecture: all
+Section: kde
+Replaces: kword (<< 1:1.4.90.2-2)
+Description: data files for KWord word processor
+ This package contains architecture-independent data files for KWord,
+ the word processor shipped with the KDE Office Suite.
+ .
+ See the kword package for further information.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: kthesaurus
+Architecture: any
+Section: kde
+Depends: ${shlibs:Depends}, koffice-libs (<< ${KDE-Next-Version3})
+Recommends: khelpcenter | koffice-doc-html (= ${source:Version})
+Replaces: koffice-libs (<< 1:1.4.2-7), koffice-data (<< 1:1.4.2-7)
+Description: thesaurus for the KDE Office Suite
+ KThesaurus lists words related to a given term and offers a user interface
+ to WordNet, a powerful lexical reference system. By default, only the English
+ language is supported.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: koffice-libs
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends}, koffice-data (>> ${KDE-Version3}), koffice-data (<< ${KDE-Next-Version3}), kghostview
+Recommends: kghostview (>= 4:3.0.1-0), latex-xft-fonts, ruby, python
+Suggests: wordnet, texlive-base
+Replaces: koffice (<< 2.1-beta2-1), kword (<< 1:1.2.90-0), kpresenter (<< 1:1.4.2-1)
+Description: common libraries and binaries for the KDE Office Suite
+ This package provides the libraries and binaries that are shared amongst
+ the various components of KOffice.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: koffice-data
+Architecture: all
+Section: libs
+Recommends: khelpcenter | koffice-doc-html
+Replaces: koffice-libs (<< 1:1.2.90-0), kugar (<< 1:1.2.90-0), kexi (<< 1:1.4.88-1)
+Description: common shared data for the KDE Office Suite
+ This package provides the architecture-independent data that is shared
+ amongst the various components of KOffice.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: koffice-dev
+Architecture: any
+Section: libdevel
+Depends: koffice-libs (= ${binary:Version}), karbon (= ${binary:Version}), kchart (= ${binary:Version}), kexi (= ${binary:Version}), kformula (= ${binary:Version}), kivio (= ${binary:Version}), koshell (= ${binary:Version}), kplato (= ${binary:Version}), kpresenter (= ${binary:Version}), krita (= ${binary:Version}), kspread (= ${binary:Version}), kthesaurus (= ${binary:Version}), kugar (= ${binary:Version}), kword (= ${binary:Version}), kdelibs4-dev
+Replaces: koffice-libs (<< 1:1.4.2-7), karbon (<< 1:1.4.2-7), kchart (<< 1:1.4.2-7), kformula (<< 1:1.4.2-7), kivio (<< 1:1.4.2-7), koshell (<< 1:1.4.2-7), kpresenter (<< 1:1.4.2-7), krita (<< 1:1.4.2-7), kspread (<< 1:1.4.2-7), kugar (<< 1:1.4.2-7), kword (<< 1:1.4.2-7)
+Description: common libraries for KOffice (development files)
+ This package provides the development files for the libraries that are
+ shared amongst the various components of KOffice.
+ .
+ This package is part of the KDE Office Suite.
+
+Package: koffice-dbg
+Section: libdevel
+Architecture: any
+Priority: extra
+Depends: koffice-libs (= ${binary:Version})
+Description: debugging symbols for koffice
+ This package contains the debugging symbols associated with koffice.
+ They will automatically be used by gdb for debugging koffice-related
+ issues.

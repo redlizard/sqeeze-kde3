@@ -1,0 +1,2 @@
+karbon: shlib-missing-in-control-file libkdeinit_karbon.so for usr/lib/libkdeinit_karbon.so
+karbon: package-name-doesnt-match-sonames libkarboncommon0 libkdeinit-karbon

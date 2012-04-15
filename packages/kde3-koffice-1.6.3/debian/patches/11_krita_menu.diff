@@ -1,0 +1,13 @@
+Index: koffice-1.6.3/krita/krita.desktop
+===================================================================
+--- koffice-1.6.3.orig/krita/krita.desktop	2007-05-30 23:41:33.000000000 +0200
++++ koffice-1.6.3/krita/krita.desktop	2008-06-30 02:08:57.000000000 +0200
+@@ -82,7 +82,7 @@
+ MimeType=application/x-krita
+ Type=Application
+ Icon=krita
+-Categories=Qt;KDE;Office;Graphics;
++Categories=Qt;KDE;Graphics;
+ X-KDE-NativeMimeType=application/x-krita
+ X-KDE-StartupNotify=true
+ X-DCOP-ServiceType=Multi

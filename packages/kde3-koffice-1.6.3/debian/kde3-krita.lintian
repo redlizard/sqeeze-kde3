@@ -1,0 +1,4 @@
+krita: shlib-missing-in-control-file libkdeinit_krita.so for usr/lib/libkdeinit_krita.so
+krita: menu-icon-missing /usr/share/pixmaps/krita.xpm
+krita: package-name-doesnt-match-sonames libkdeinit-krita libkrita-cmyk-u16-0 libkrita-gray-u16-0 libkrita-lms-f32-0 libkrita-rgb-f16half0 libkrita-rgb-f32-0 libkrita-rgb-u16-0 libkrita-ycbcr-u16-0 libkrita-ycbcr-u8-0 libkritacolor1 libkritacommon1 libkritagrayscale0 libkritaimage1 libkritargb0 libkritascripting0 libkritaui1
+

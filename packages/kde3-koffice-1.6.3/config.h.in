@@ -1,0 +1,396 @@
+/* config.h.in.  Generated from configure.in by autoheader.  */
+
+/* Define to 1 if you have the <Carbon/Carbon.h> header file. */
+#undef HAVE_CARBON_CARBON_H
+
+/* Define if you have the CoreAudio API */
+#undef HAVE_COREAUDIO
+
+/* Define to 1 if you have the <crt_externs.h> header file. */
+#undef HAVE_CRT_EXTERNS_H
+
+/* Defines if your system has the crypt function */
+#undef HAVE_CRYPT
+
+/* Define to 1 if you have the declaration of `round', and to 0 if you don't.
+   */
+#undef HAVE_DECL_ROUND
+
+/* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_DIRENT_H
+
+/* Define to 1 if you have the <dlfcn.h> header file. */
+#undef HAVE_DLFCN_H
+
+/* Define if you have DPMS support */
+#undef HAVE_DPMS
+
+/* Define if you have the DPMSCapable prototype in <X11/extensions/dpms.h> */
+#undef HAVE_DPMSCAPABLE_PROTO
+
+/* Define if you have the DPMSInfo prototype in <X11/extensions/dpms.h> */
+#undef HAVE_DPMSINFO_PROTO
+
+/* Define to 1 if you have the `fabsl' function. */
+#undef HAVE_FABSL
+
+/* Define to 1 if you have the <floatingpoint.h> header file. */
+#undef HAVE_FLOATINGPOINT_H
+
+/* Defines if your system has the libfontconfig library */
+#undef HAVE_FONTCONFIG
+
+/* Define to 1 if you have the `fseek64' function. */
+#undef HAVE_FSEEK64
+
+/* Define to 1 if fseeko (and presumably ftello) exists and is declared. */
+#undef HAVE_FSEEKO
+
+/* Define to 1 if you have the `ftell64' function. */
+#undef HAVE_FTELL64
+
+/* Define if you have isinf */
+#undef HAVE_FUNC_ISINF
+
+/* Defines if you have GL (Mesa, OpenGL, ...) */
+#undef HAVE_GL
+
+/* GraphicsMagick is available */
+#undef HAVE_GMAGICK
+
+/* Define to 1 if you have the <ieeefp.h> header file. */
+#undef HAVE_IEEEFP_H
+
+/* Define to 1 if you have the <inttypes.h> header file. */
+#undef HAVE_INTTYPES_H
+
+/* Defines if your system has the fontconfig and freetype libraries */
+#undef HAVE_KARBONTEXT
+
+/* Define to 1 if you have the <kspell2/broker.h> header file. */
+#undef HAVE_KSPELL2_BROKER_H
+
+/* Defines if your system has the libart library */
+#undef HAVE_LIBART
+
+/* Define if you have libjpeg */
+#undef HAVE_LIBJPEG
+
+/* If we are going to use libkspell2 for spell-checking */
+#undef HAVE_LIBKSPELL2
+
+/* Define if you have libpng */
+#undef HAVE_LIBPNG
+
+/* Define if you have a working libpthread (will enable threaded code) */
+#undef HAVE_LIBPTHREAD
+
+/* Define if you have libtiff */
+#undef HAVE_LIBTIFF
+
+/* Define if you have libz */
+#undef HAVE_LIBZ
+
+/* Define if you have support for long double in printf */
+#undef HAVE_LONG_DOUBLE
+
+/* ImageMagick is available */
+#undef HAVE_MAGICK
+
+/* ImageMagick Version 6 */
+#undef HAVE_MAGICK6
+
+/* ImageMagick Version 6.1 */
+#undef HAVE_MAGICK61
+
+/* Define to 1 if you have the <memory.h> header file. */
+#undef HAVE_MEMORY_H
+
+/* Define to 1 if you have the `mkstemp' function. */
+#undef HAVE_MKSTEMP
+
+/* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
+#undef HAVE_NDIR_H
+
+/* Define if your system needs _NSGetEnviron to set up the environment */
+#undef HAVE_NSGETENVIRON
+
+/* GetMagickInfoList has different number of arguments with versions >= 6.1.3
+   */
+#undef HAVE_OLD_GETMAGICKINFOLIST
+
+/* Defines if your system has the OpenEXR library */
+#undef HAVE_OPENEXR
+
+/* Define to 1 if you have the <paper.h> header file. */
+#undef HAVE_PAPER_H
+
+/* Define to 1 if you have the <paths.h> header file. */
+#undef HAVE_PATHS_H
+
+/* Define to 1 if you have the `popen' function. */
+#undef HAVE_POPEN
+
+/* Define to 1 if your system has powf in <maths.h> */
+#undef HAVE_POWF
+
+/* Define if you have the development files for python */
+#undef HAVE_PYTHON
+
+/* define if you have libreadline available */
+#undef HAVE_READLINE
+
+/* Define if you have res_init */
+#undef HAVE_RES_INIT
+
+/* Define if you have the res_init prototype */
+#undef HAVE_RES_INIT_PROTO
+
+/* Define to 1 if you have the `rewinddir' function. */
+#undef HAVE_REWINDDIR
+
+/* Define if you have a STL implementation by SGI */
+#undef HAVE_SGI_STL
+
+/* Define to 1 if you have the `snprintf' function. */
+#undef HAVE_SNPRINTF
+
+/* Define to 1 if you have the <stdint.h> header file. */
+#undef HAVE_STDINT_H
+
+/* Define to 1 if you have the <stdlib.h> header file. */
+#undef HAVE_STDLIB_H
+
+/* Define to 1 if you have the <strings.h> header file. */
+#undef HAVE_STRINGS_H
+
+/* Define to 1 if you have the <string.h> header file. */
+#undef HAVE_STRING_H
+
+/* Define if you have strlcat */
+#undef HAVE_STRLCAT
+
+/* Define if you have the strlcat prototype */
+#undef HAVE_STRLCAT_PROTO
+
+/* Define if you have strlcpy */
+#undef HAVE_STRLCPY
+
+/* Define if you have the strlcpy prototype */
+#undef HAVE_STRLCPY_PROTO
+
+/* Define to 1 if you have the <sys/bitypes.h> header file. */
+#undef HAVE_SYS_BITYPES_H
+
+/* Define to 1 if you have the <sys/dir.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_SYS_DIR_H
+
+/* Define to 1 if you have the <sys/ndir.h> header file, and it defines `DIR'.
+   */
+#undef HAVE_SYS_NDIR_H
+
+/* Define to 1 if you have the <sys/param.h> header file. */
+#undef HAVE_SYS_PARAM_H
+
+/* Define to 1 if you have the <sys/stat.h> header file. */
+#undef HAVE_SYS_STAT_H
+
+/* Define to 1 if you have the <sys/types.h> header file. */
+#undef HAVE_SYS_TYPES_H
+
+/* Define to 1 if you have the <unistd.h> header file. */
+#undef HAVE_UNISTD_H
+
+/* Define to 1 if you have the `vsnprintf' function. */
+#undef HAVE_VSNPRINTF
+
+/* Defines if your system has the libwpd library */
+#undef HAVE_WPD
+
+/* Defines if your system has the wv2 library */
+#undef HAVE_WV2
+
+/* Define if you have the X11 Input Extension */
+#undef HAVE_XINPUTEXT
+
+/* Suffix for lib directories */
+#undef KDELIBSUFF
+
+/* Define a safe value for MAXPATHLEN */
+#undef KDEMAXPATHLEN
+
+/* build Kexi macros plugin */
+#undef KEXI_MACROS_SUPPORT
+
+/* The correct header */
+#undef LCMS_HEADER
+
+/* Name of package */
+#undef PACKAGE
+
+/* Define to the address where bug reports for this package should be sent. */
+#undef PACKAGE_BUGREPORT
+
+/* Define to the full name of this package. */
+#undef PACKAGE_NAME
+
+/* Define to the full name and version of this package. */
+#undef PACKAGE_STRING
+
+/* Define to the one symbol short name of this package. */
+#undef PACKAGE_TARNAME
+
+/* Define to the version of this package. */
+#undef PACKAGE_VERSION
+
+/* Define the PREFIX where to install this package */
+#undef PREFIX
+
+/* The size of `char *', as computed by sizeof. */
+#undef SIZEOF_CHAR_P
+
+/* The size of `int', as computed by sizeof. */
+#undef SIZEOF_INT
+
+/* The size of `long', as computed by sizeof. */
+#undef SIZEOF_LONG
+
+/* The size of `short', as computed by sizeof. */
+#undef SIZEOF_SHORT
+
+/* The size of `size_t', as computed by sizeof. */
+#undef SIZEOF_SIZE_T
+
+/* The size of `unsigned long', as computed by sizeof. */
+#undef SIZEOF_UNSIGNED_LONG
+
+/* Define to 1 if you have the ANSI C header files. */
+#undef STDC_HEADERS
+
+/* Version number of package */
+#undef VERSION
+
+/* Defined if compiling without arts */
+#undef WITHOUT_ARTS
+
+/* Define to 1 if your processor stores words with the most significant byte
+   first (like Motorola and SPARC, unlike Intel and VAX). */
+#undef WORDS_BIGENDIAN
+
+/* Defines the executable of xmllint */
+#undef XMLLINT
+
+/*
+ * jpeg.h needs HAVE_BOOLEAN, when the system uses boolean in system
+ * headers and I'm too lazy to write a configure test as long as only
+ * unixware is related
+ */
+#ifdef _UNIXWARE
+#define HAVE_BOOLEAN
+#endif
+
+
+
+/*
+ * AIX defines FD_SET in terms of bzero, but fails to include <strings.h>
+ * that defines bzero.
+ */
+
+#if defined(_AIX)
+#include <strings.h>
+#endif
+
+
+
+#if defined(HAVE_NSGETENVIRON) && defined(HAVE_CRT_EXTERNS_H)
+# include <sys/time.h>
+# include <crt_externs.h>
+# define environ (*_NSGetEnviron())
+#endif
+
+
+/* Number of bits in a file offset, on hosts where this is settable. */
+#undef _FILE_OFFSET_BITS
+
+
+#if !defined(HAVE_RES_INIT_PROTO)
+#ifdef __cplusplus
+extern "C" {
+#endif
+int res_init(void);
+#ifdef __cplusplus
+}
+#endif
+#endif
+
+
+
+#if !defined(HAVE_STRLCAT_PROTO)
+#ifdef __cplusplus
+extern "C" {
+#endif
+unsigned long strlcat(char*, const char*, unsigned long);
+#ifdef __cplusplus
+}
+#endif
+#endif
+
+
+
+#if !defined(HAVE_STRLCPY_PROTO)
+#ifdef __cplusplus
+extern "C" {
+#endif
+unsigned long strlcpy(char*, const char*, unsigned long);
+#ifdef __cplusplus
+}
+#endif
+#endif
+
+
+/* Define to 1 to make fseeko visible on some hosts (e.g. glibc 2.2). */
+#undef _LARGEFILE_SOURCE
+
+/* Define for large files, on AIX-style hosts. */
+#undef _LARGE_FILES
+
+
+/*
+ * On HP-UX, the declaration of vsnprintf() is needed every time !
+ */
+
+#if !defined(HAVE_VSNPRINTF) || defined(hpux)
+#if __STDC__
+#include <stdarg.h>
+#include <stdlib.h>
+#else
+#include <varargs.h>
+#endif
+#ifdef __cplusplus
+extern "C"
+#endif
+int vsnprintf(char *str, size_t n, char const *fmt, va_list ap);
+#ifdef __cplusplus
+extern "C"
+#endif
+int snprintf(char *str, size_t n, char const *fmt, ...);
+#endif
+
+
+
+#if defined(__SVR4) && !defined(__svr4__)
+#define __svr4__ 1
+#endif
+
+
+/* don't use magick filter */
+#undef include_imagemagick_filter
+
+/* type to use in place of socklen_t if not defined */
+#undef kde_socklen_t
+
+/* type to use in place of socklen_t if not defined (deprecated, use
+   kde_socklen_t) */
+#undef ksize_t

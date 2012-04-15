@@ -1,0 +1,24 @@
+diff -Nur koffice-1.6.0/krita/colorspaces/cmyk_u16/kis_cmyk_u16_colorspace.h koffice-1.6.0.new/krita/colorspaces/cmyk_u16/kis_cmyk_u16_colorspace.h
+--- koffice-1.6.0/krita/colorspaces/cmyk_u16/kis_cmyk_u16_colorspace.h	2006-10-07 15:35:29.000000000 +0200
++++ koffice-1.6.0.new/krita/colorspaces/cmyk_u16/kis_cmyk_u16_colorspace.h	2006-10-23 08:11:25.000000000 +0200
+@@ -117,7 +117,7 @@
+ 
+     virtual KisColorSpace *createColorSpace(KisColorSpaceFactoryRegistry * parent, KisProfile *p) { return new KisCmykU16ColorSpace(parent, p); };
+ 
+-    virtual QString defaultProfile() { return "Adobe CMYK"; };
++    virtual QString defaultProfile() { return "Offset printing, according to ISO/DIS 12647-2:2004, OFCOM, paper type 1 or 2 = coated art, 115 g/m2, screen ruling 60 cm-1, positive-acting plates"; };
+ };
+ 
+ #endif // KIS_STRATEGY_COLORSPACE_CMYK_U16_H_
+diff -Nur koffice-1.6.0/krita/colorspaces/cmyk_u8/kis_cmyk_colorspace.h koffice-1.6.0.new/krita/colorspaces/cmyk_u8/kis_cmyk_colorspace.h
+--- koffice-1.6.0/krita/colorspaces/cmyk_u8/kis_cmyk_colorspace.h	2006-10-07 15:35:23.000000000 +0200
++++ koffice-1.6.0.new/krita/colorspaces/cmyk_u8/kis_cmyk_colorspace.h	2006-10-23 08:11:07.000000000 +0200
+@@ -120,7 +120,7 @@
+ 
+     virtual KisColorSpace *createColorSpace(KisColorSpaceFactoryRegistry * parent, KisProfile *p) { return new KisCmykColorSpace(parent, p); };
+ 
+-    virtual QString defaultProfile() { return "Adobe CMYK"; }; //  Do not i18n -- this is from a data file
++    virtual QString defaultProfile() { return "Offset printing, according to ISO/DIS 12647-2:2004, OFCOM, paper type 1 or 2 = coated art, 115 g/m2, screen ruling 60 cm-1, positive-acting plates"; }; //  Do not i18n -- this is from a data file
+ };
+ 
+ #endif // KIS_STRATEGY_COLORSPACE_CMYK_H_

@@ -1,0 +1,45 @@
+Patch by Aurelien Jarno.
+The problem is due to missing includes and appears when:
+ g++ 4.3 is used
+ --enable-final is not used
+
+Currently this concerns arm and armel.
+
+Index: koffice-1.6.3/filters/kword/wordperfect/import/TextRunStyle.cxx
+===================================================================
+--- koffice-1.6.3.orig/filters/kword/wordperfect/import/TextRunStyle.cxx	2007-05-30 23:39:02.000000000 +0200
++++ koffice-1.6.3/filters/kword/wordperfect/import/TextRunStyle.cxx	2008-06-30 02:10:05.000000000 +0200
+@@ -33,6 +33,8 @@
+ #include "WriterProperties.hxx"
+ #include "DocumentElement.hxx"
+ 
++#include <cstring>
++
+ #ifdef _MSC_VER
+ #include <minmax.h>
+ #endif
+Index: koffice-1.6.3/filters/kword/wordperfect/import/TableStyle.cxx
+===================================================================
+--- koffice-1.6.3.orig/filters/kword/wordperfect/import/TableStyle.cxx	2007-05-30 23:39:02.000000000 +0200
++++ koffice-1.6.3/filters/kword/wordperfect/import/TableStyle.cxx	2008-06-30 02:10:05.000000000 +0200
+@@ -27,6 +27,7 @@
+ /* "This product is not manufactured, approved, or supported by 
+  * Corel Corporation or Corel Corporation Limited."
+  */
++#include <cstring>
+ #include <math.h>
+ #include "FilterInternal.hxx"
+ #include "TableStyle.hxx"
+Index: koffice-1.6.3/kexi/kexidb/drivers/pqxx/pqxxcursor.cpp
+===================================================================
+--- koffice-1.6.3.orig/kexi/kexidb/drivers/pqxx/pqxxcursor.cpp	2007-05-30 23:35:49.000000000 +0200
++++ koffice-1.6.3/kexi/kexidb/drivers/pqxx/pqxxcursor.cpp	2008-06-30 02:10:05.000000000 +0200
+@@ -27,6 +27,8 @@
+ #include <klocale.h>
+ #include <kdebug.h>
+ 
++#include <cstdlib>
++
+ using namespace KexiDB;
+ 
+ 

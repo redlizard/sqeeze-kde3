@@ -1,0 +1,4 @@
+application/x-krita; krita %s;test=test "$DISPLAY" != ""; priority=7
+image/png; krita %s;test=test "$DISPLAY" != ""; priority=2
+image/jpeg; krita %s;test=test "$DISPLAY" != ""; priority=2
+image/gif; krita %s;test=test "$DISPLAY" != ""; priority=2

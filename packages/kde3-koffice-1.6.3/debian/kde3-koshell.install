@@ -1,0 +1,19 @@
+debian/kde3-koshell.xpm opt/kde3/share/pixmaps
+debian/tmp/opt/kde3/bin/koshell
+debian/tmp/opt/kde3/lib/kde3/koshell.la
+debian/tmp/opt/kde3/lib/kde3/koshell.so
+debian/tmp/opt/kde3/lib/libkdeinit_koshell.so
+debian/tmp/opt/kde3/share/applications/kde/koshell.desktop
+debian/tmp/opt/kde3/share/apps/koshell/koshellui.rc
+debian/tmp/opt/kde3/share/config.kcfg/koshell.kcfg
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/koshell/*.bz2
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/koshell/common
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/koshell/*.docbook
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/koshell/*.png
+debian/tmp/opt/kde3/share/icons/hicolor/128x128/apps/koshell.png
+debian/tmp/opt/kde3/share/icons/hicolor/16x16/apps/koshell.png
+debian/tmp/opt/kde3/share/icons/hicolor/22x22/apps/koshell.png
+debian/tmp/opt/kde3/share/icons/hicolor/32x32/apps/koshell.png
+debian/tmp/opt/kde3/share/icons/hicolor/48x48/apps/koshell.png
+debian/tmp/opt/kde3/share/icons/hicolor/64x64/apps/koshell.png
+debian/tmp/opt/kde3/share/icons/hicolor/scalable/apps/koshell.svgz

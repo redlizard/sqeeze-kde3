@@ -1,0 +1,4 @@
+kpresenter: script-with-language-extension usr/bin/kprconverter.pl
+kpresenter: shlib-missing-in-control-file libkdeinit_kpresenter.so for usr/lib/libkdeinit_kpresenter.so
+kpresenter: menu-icon-missing /usr/share/pixmaps/kpresenter.xpm
+kpresenter: package-name-doesnt-match-sonames libkdeinit-kpresenter libkpresenterimageexport4 libkpresenterprivate4

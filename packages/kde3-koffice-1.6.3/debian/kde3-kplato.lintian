@@ -1,0 +1,4 @@
+kplato: no-shlibs-control-file usr/lib/libkdeinit_kplato.so
+kplato: postinst-must-call-ldconfig usr/lib/libkdeinit_kplato.so
+kplato: postrm-should-call-ldconfig usr/lib/libkdeinit_kplato.so
+kplato: package-name-doesnt-match-sonames libkdeinit-kplato

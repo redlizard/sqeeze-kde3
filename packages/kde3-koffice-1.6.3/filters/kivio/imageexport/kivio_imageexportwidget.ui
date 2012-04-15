@@ -1,0 +1,203 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>Kivio::ImageExportWidget</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>Kivio::ImageExportWidget</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>296</width>
+            <height>132</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <spacer row="5" column="1">
+            <property name="name">
+                <cstring>spacer3</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>40</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>m_pageLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Page:</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>m_exportAreaLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Area to export:</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="3" column="0">
+            <property name="name">
+                <cstring>m_DPILabel</cstring>
+            </property>
+            <property name="text">
+                <string>Bitmap DPI:</string>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Set the resolution of the resulting bitmap image</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="4" column="0">
+            <property name="name">
+                <cstring>m_marginLabel</cstring>
+            </property>
+            <property name="text">
+                <string>Margin (Pixels):</string>
+            </property>
+        </widget>
+        <spacer row="3" column="2">
+            <property name="name">
+                <cstring>spacer7</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>60</width>
+                    <height>21</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QSpinBox" row="4" column="1">
+            <property name="name">
+                <cstring>m_marginSpinBox</cstring>
+            </property>
+        </widget>
+        <spacer row="4" column="2">
+            <property name="name">
+                <cstring>spacer4_2_2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>70</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <widget class="QComboBox" row="3" column="1">
+            <item>
+                <property name="text">
+                    <string>72</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>96</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>150</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>300</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>600</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>720</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>1200</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>m_DPIcomboBox</cstring>
+            </property>
+            <property name="editable">
+                <bool>true</bool>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>Set the resolution of the resulting bitmap image</string>
+            </property>
+        </widget>
+        <widget class="Line" row="2" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>line1</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>HLine</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+        </widget>
+        <widget class="KComboBox" row="1" column="1" rowspan="1" colspan="2">
+            <item>
+                <property name="text">
+                    <string>Objects on Page</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>Complete Page</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>m_exportAreaCombo</cstring>
+            </property>
+        </widget>
+        <widget class="KComboBox" row="0" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>m_pageCombo</cstring>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<customwidgets>
+</customwidgets>
+<layoutdefaults spacing="6" margin="11"/>
+<layoutfunctions spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
+<includehints>
+    <includehint>kcombobox.h</includehint>
+    <includehint>kcombobox.h</includehint>
+</includehints>
+</UI>
