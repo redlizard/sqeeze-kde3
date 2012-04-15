@@ -1,5 +1,5 @@
-usr/share/man/man1/fileshareset.1.gz usr/share/man/man1/filesharelist.1.gz
-usr/share/man/man1/kshell.1.gz usr/share/man/man1/kdeinit_wrapper.1.gz
-usr/share/man/man1/kstartupconfig.1.gz usr/share/man/man1/kdostartupconfig.1.gz
-usr/share/man/man1/kioexec.1.gz usr/share/man/man1/kfmexec.1.gz
-usr/share/man/man1/kshell.1.gz usr/share/man/man1/kwrapper.1.gz
+opt/kde3/share/man/man1/fileshareset.1.gz opt/kde3/share/man/man1/filesharelist.1.gz
+opt/kde3/share/man/man1/kshell.1.gz opt/kde3/share/man/man1/kdeinit_wrapper.1.gz
+opt/kde3/share/man/man1/kstartupconfig.1.gz opt/kde3/share/man/man1/kdostartupconfig.1.gz
+opt/kde3/share/man/man1/kioexec.1.gz opt/kde3/share/man/man1/kfmexec.1.gz
+opt/kde3/share/man/man1/kshell.1.gz opt/kde3/share/man/man1/kwrapper.1.gz
