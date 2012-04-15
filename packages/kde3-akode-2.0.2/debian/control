@@ -3,7 +3,7 @@ Section: sound
 Priority: optional
 Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Nacho Barrientos Arias <nacho@debian.org>, Sune Vuorela <debian@pusling.com>
-Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5.0.31), autotools-dev, gawk, libflac-dev (>= 1.1.4-1), libmad0-dev, libogg-dev, libvorbis-dev, libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libsamplerate0-dev, libspeex-dev, libjack0.100.0-dev
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5.0.31), autotools-dev, gawk, libflac-dev (>= 1.1.4-1), libmad0-dev, libogg-dev, libvorbis-dev, libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libsamplerate0-dev, libspeex-dev, libjack-jackd2-dev
 Standards-Version: 3.7.3
 Homepage: http://www.carewolf.com/akode
 
