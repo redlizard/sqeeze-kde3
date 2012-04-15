@@ -3,7 +3,7 @@ Section: games
 Priority: optional
 Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
 Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Daniel Schepler <schepler@debian.org>, Sune Vuorela <debian@pusling.com>
-Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5), autotools-dev, gawk, gettext, kde3-kdelibs4-dev (>= 4:3.5.8), automake1.10, libtool, groff-base, sharutils
+Build-Depends: cdbs (>= 0.4.39-0.1), debhelper (>= 5), autotools-dev, gawk, gettext, kde3-kdelibs4-dev (>= 4:3.5.8), automake, libtool, groff-base, sharutils
 Build-Depends-Indep: doxygen, graphviz, gsfonts-x11, qt3-doc, kde3-kdelibs4-doc
 Standards-Version: 3.7.3
 Homepage: http://games.kde.org
