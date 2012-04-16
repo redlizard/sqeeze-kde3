@@ -1,0 +1,522 @@
+# translation of yakuake.po to Hungarian
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Yakuake\n"
+"POT-Creation-Date: 2007-11-11 09:37+0100\n"
+"PO-Revision-Date: 2007-12-12 11:11+0100\n"
+"Last-Translator: Szoldán Albert <szoldan.albert@pentaschool.hu>\n"
+"Language-Team: german <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/main.cpp:24
+msgid "A Quake-style terminal emulator based on KDE Konsole technology. "
+msgstr "Egy Quake-stilusú terminálemulátor KDE Konzol technológiai alapokon."
+
+#: src/main.cpp:29
+msgid "Yakuake"
+msgstr "Yakuake"
+
+#: src/main.cpp:32
+msgid "Maintainer"
+msgstr "Karbantartó"
+
+#: src/main.cpp:33
+msgid "Project Founder (Inactive)"
+msgstr "Adomány a projektnek (Inaktiv)"
+
+#: src/main.cpp:41
+msgid "Plastik skin"
+msgstr ""
+
+#: src/main.cpp:42
+msgid "Auto-open on pointer touching screen edge"
+msgstr ""
+
+#: src/general_settings.cpp:35 src/main_window.cpp:825
+#, c-format
+msgid "Screen %1"
+msgstr "Képernyő %1"
+
+#: src/tab_bar.cpp:152
+msgid "The tab bar allows you to switch between sessions."
+msgstr "A mappasáv segítségével lehet a munkamenetek között váltani."
+
+#: src/main_window.cpp:84 src/tab_bar.cpp:157
+msgid "New Session"
+msgstr "Új munkamenet"
+
+#: src/tab_bar.cpp:158
+msgid "Adds a new session. Press and hold to select session type from menu."
+msgstr "Új munkamenet hozzáadása. Tartsd nyomva a munkamenet típust a menüben."
+
+#: src/main_window.cpp:170 src/tab_bar.cpp:162
+msgid "Close Session"
+msgstr "Munkamenet bezárása"
+
+#: src/tab_bar.cpp:163
+msgid "Closes the active session."
+msgstr "Aktív munkamenet bezárása."
+
+#: src/skin_list_item.cpp:33
+#, c-format
+msgid "by %1"
+msgstr "Készítő: %1"
+
+#: src/title_bar.cpp:25
+msgid "The title bar displays the session title if available."
+msgstr "A címsáv megjeleníti a munkamenet nevét, ha van ilyen."
+
+#: src/title_bar.cpp:100
+msgid "Keep open when focus is lost"
+msgstr "Fókusz elhagyásakor tartsd nyitva"
+
+#: src/title_bar.cpp:103
+msgid "Open Menu"
+msgstr "Menü megnyitása"
+
+#: src/main_window.cpp:70
+msgid "Open/Retract Yakuake"
+msgstr "Yakuake megnyitása/bezárása"
+
+#: src/main_window.cpp:71
+msgid "Slides the Yakuake window in and out"
+msgstr "Yakuake ablak animálása"
+
+#: src/main_window.cpp:88
+msgid "Two Terminals, Horizontal"
+msgstr "Két terminál vizszintesen"
+
+#: src/main_window.cpp:92
+msgid "Two Terminals, Vertical"
+msgstr "Két terminál függőlegesen"
+
+#: src/main_window.cpp:96
+msgid "Four Terminals, Quad"
+msgstr "Négy terminál elosztva"
+
+#: src/main_window.cpp:100
+msgid "Go to Next Terminal"
+msgstr "Ugrás a következő terminálra"
+
+#: src/main_window.cpp:104
+msgid "Go to Previous Terminal"
+msgstr "Ugrás az elöző terminálra"
+
+#: src/main_window.cpp:112
+msgid "Paste Selection"
+msgstr "Kijelölés beillesztése"
+
+#: src/main_window.cpp:116
+msgid "Rename Session..."
+msgstr "Munkamenet átnevezése ..."
+
+#: src/main_window.cpp:120
+msgid "Increase Width"
+msgstr "Szélesség növelése"
+
+#: src/main_window.cpp:123
+msgid "Decrease Width"
+msgstr "Szélesség csökkentése"
+
+#: src/main_window.cpp:126
+msgid "Increase Height"
+msgstr "Magasság növelése"
+
+#: src/main_window.cpp:129
+msgid "Decrease Height"
+msgstr "Magasság csökkentése"
+
+#: src/main_window.cpp:133
+msgid "Configure Global Shortcuts..."
+msgstr "Globális gyorsbillentyűk beállítása..."
+
+#: src/main_window.cpp:155
+msgid "Go to Next Session"
+msgstr "Ugrás a következő munkamenetre"
+
+#: src/main_window.cpp:158
+msgid "Go to Previous Session"
+msgstr "Ugrás az előző munkamenetre"
+
+#: src/main_window.cpp:162
+msgid "Move Session Left"
+msgstr "Munkamenet mozgatása balra"
+
+#: src/main_window.cpp:166
+msgid "Move Session Right"
+msgstr "Munkamenet mozgatása jobbra"
+
+#: src/main_window.cpp:175
+msgid "Split Terminal Horizontally"
+msgstr "Terminál felosztása vizszintesen"
+
+#: src/main_window.cpp:180
+msgid "Split Terminal Vertically"
+msgstr "Terminál felosztása függőlegesen"
+
+#: src/main_window.cpp:185
+msgid "Close Terminal"
+msgstr "Terminál bezárása"
+
+#: src/main_window.cpp:195
+#, c-format
+msgid "Switch to Session %1"
+msgstr "Váltás erre a munkamenetre %1"
+
+#: src/main_window.cpp:223
+msgid ""
+"Application successfully started!\n"
+"Press %1 to use it..."
+msgstr ""
+"A program sikeresen elindult\n"
+"Nyomja le a %1 -t a használatához ..."
+
+#: src/main_window.cpp:281
+msgid ""
+"You have multiple open sessions. These will be killed if you continue.\n"
+"\n"
+"Are you sure you want to quit?"
+msgstr ""
+"Több munkamenet van megnyitva. Ha folytatja, akkor ezek a munkamenetek "
+"megszakadnak.\n"
+"\n"
+"Biztos ki szeretne lépni?"
+
+#: src/main_window.cpp:282
+msgid "Really Quit?"
+msgstr "Biztos kilép?"
+
+#: src/main_window.cpp:284
+msgid "C&lose Session"
+msgstr "Munkamenet be&zárása"
+
+#: src/main_window.cpp:327
+msgid "Yakuake Notification"
+msgstr "Yakuake értesítés"
+
+#: src/main_window.cpp:776
+msgid "Quick Options"
+msgstr "Gyors beállítás"
+
+#: src/main_window.cpp:784
+msgid "Open on screen"
+msgstr "Megnyitás munkamenetben"
+
+#: src/main_window.cpp:796
+msgid "Keep open on focus change"
+msgstr "Nyitvatartás fókusz változáskor"
+
+#: src/main_window.cpp:798
+msgid "Settings"
+msgstr "Beállítások"
+
+#. i18n: file ./src/general_settings_ui.ui line 451
+#: rc.cpp:129 src/main_window.cpp:822
+#, no-c-format
+msgid "At mouse location"
+msgstr "Az egér helyzeténél"
+
+#: src/main_window.cpp:1207
+msgid "General"
+msgstr "Általános"
+
+#: src/main_window.cpp:1211
+msgid "Skins"
+msgstr "Megjelenés (bőrök)"
+
+#: src/main_window.cpp:1227
+msgid "First Run"
+msgstr "Első Futtatás"
+
+#: src/skin_settings.cpp:124
+msgid "Unnamed"
+msgstr "Névtelen"
+
+#: src/skin_settings.cpp:125
+msgid "Unknown"
+msgstr "Ismeretlen"
+
+#: src/skin_settings.cpp:177
+msgid "*.tar.gz *.tar.bz2 *.tar *.zip|Yakuake Skins"
+msgstr "*.tar.gz *.tar.bz2 *.tar *.zip|Yakuake bőrök"
+
+#: src/skin_settings.cpp:178
+msgid "Select Skin Archive"
+msgstr "\"Bőr\" fájl kiválasztása"
+
+#: src/skin_settings.cpp:186
+msgid "Failed to Download Skin"
+msgstr "Nem sikerült a \"bőrt\" letölteni."
+
+#: src/skin_settings.cpp:206
+msgid "The installer was given a directory, not a file."
+msgstr "A telepítéshez egy könyvtárt választott ki, nem egy fájlt."
+
+#: src/skin_settings.cpp:239
+msgid ""
+"Unable to locate required files in the skin archive.\n"
+"\n"
+" The archive appears to be invalid."
+msgstr ""
+"Nem találom az adott helyen a \"bőr\"-nek szükséges fájlokat.\n"
+"\n"
+"A \"bőr\" fájl hibás."
+
+#: src/skin_settings.cpp:242
+msgid "Unable to list the skin archive contents."
+msgstr "Nem tudom olvasni a \"bőr\" fájl összetevőit."
+
+#: src/skin_settings.cpp:265
+msgid ""
+"This skin appears to be already installed and you lack the required permissions "
+"to overwrite it."
+msgstr ""
+"Ez a \"Bőr\"  már telepítve van és a felülíráshoz nincs beállítva jogosultság."
+
+#: src/skin_settings.cpp:272
+msgid "This skin appears to be already installed. Do you want to overwrite it?"
+msgstr "Ez a \"bőr\" már telepítve van. Felül szeretné írni?"
+
+#: src/skin_settings.cpp:273
+msgid "Skin Already Exists"
+msgstr "Ilyen bőr már létezik"
+
+#: src/skin_settings.cpp:274
+msgid "Reinstall Skin"
+msgstr "Bőr újratelepítése"
+
+#: src/skin_settings.cpp:296
+msgid "Could Not Delete Skin"
+msgstr "Nem lehet a bőrt törölni"
+
+#: src/skin_settings.cpp:319
+msgid "The skin archive file could not be opened."
+msgstr "A tömörített bőr fájlt nem lehet megnyitni."
+
+#: src/skin_settings.cpp:325
+msgid "Cannot Install Skin"
+msgstr "Nem lehet bőrt telepíteni"
+
+#: src/skin_settings.cpp:350
+msgid "Do you want to remove \"%1\" by %2?"
+msgstr "Biztos törli a \"%1\" nevű bőrt, amit %2 készített?"
+
+#. i18n: file ./src/skin_settings_ui.ui line 35
+#: rc.cpp:37 src/skin_settings.cpp:351
+#, no-c-format
+msgid "Remove Skin"
+msgstr "Bőr eltávolítása"
+
+#: src/tabbed_widget.cpp:106
+#, c-format
+msgid ""
+"_n: Shell\n"
+"Shell No. %n"
+msgstr "Konzol %n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Szoldán Albert"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "szoldan.albert@pentaschool.hu"
+
+#. i18n: file ./src/skin_settings_ui.ui line 43
+#: rc.cpp:40
+#, no-c-format
+msgid "Install Skin..."
+msgstr "Bőr telepítése ..."
+
+#. i18n: file ./src/skin_settings_ui.ui line 62
+#: rc.cpp:43
+#, no-c-format
+msgid "Skin background color:"
+msgstr ""
+
+#. i18n: file ./src/skin_settings_ui.ui line 76
+#: rc.cpp:47
+#, no-c-format
+msgid ""
+"This controls the color of the surface that translucent skin elements are "
+"composited upon. This setting is only available if Yakuake is run outside of "
+"KDE and translucency is unavailable."
+msgstr ""
+
+#. i18n: file ./src/skin_settings_ui.ui line 101
+#: rc.cpp:50
+#, no-c-format
+msgid "Skin"
+msgstr "Bőr"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 43
+#: rc.cpp:53
+#, no-c-format
+msgid "<b>Welcome to Yakuake</b>"
+msgstr "<b>Üdvözlöm a Yakuake-ban</b>"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 65
+#: rc.cpp:56
+#, no-c-format
+msgid "You can change the shortcut later at any time via the menu."
+msgstr "Később bármikor megváltoztathatók a gyorsbillentyűk a menüben."
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 93
+#: rc.cpp:59
+#, no-c-format
+msgid "None"
+msgstr "Nincs"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 118
+#: rc.cpp:62
+#, no-c-format
+msgid ""
+"Before using the application, you might want to change the keyboard shortcut "
+"used to open and close the Yakuake window:"
+msgstr ""
+"Mielőtt elkezdi használni ezt a programot, lehetőség van arra, hogy a Yakuake-t "
+"megnyitó/bezáró gyorsbillentyűt megváltoztassa. Kattintson az alábbi gombra, "
+"majd nyomja le a kívánt billentyűkombinációt:"
+
+#. i18n: file ./src/general_settings_ui.ui line 46
+#: rc.cpp:68
+#, no-c-format
+msgid "Show notification popup at application startup"
+msgstr "Előugró értesítőablak megjelenítése a program indításakor"
+
+#. i18n: file ./src/general_settings_ui.ui line 54
+#: rc.cpp:71
+#, no-c-format
+msgid "Confirm quit when closing more than one session"
+msgstr "Megerősítés kérése egynél több munkamenet bezárásakor"
+
+#. i18n: file ./src/general_settings_ui.ui line 62
+#: rc.cpp:74
+#, no-c-format
+msgid "Show the tab bar"
+msgstr "Mappasáv megjelenítése"
+
+#. i18n: file ./src/general_settings_ui.ui line 107
+#: rc.cpp:77
+#, fuzzy, no-c-format
+msgid "Keep window above other windows"
+msgstr "Ablak nyitvatartása fókusz változásakor"
+
+#. i18n: file ./src/general_settings_ui.ui line 110
+#: rc.cpp:80
+#, fuzzy, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to keep on top of other "
+"windows even when it loses focus."
+msgstr ""
+"Engedélyezze ezt a beállítást, ha azt akarja, hogy a Yakuake ablak nyitva "
+"maradjon, amikor elveszti a fókuszt."
+
+#. i18n: file ./src/general_settings_ui.ui line 118
+#: rc.cpp:83
+#, no-c-format
+msgid "Keep window open on focus change"
+msgstr "Ablak nyitvatartása fókusz változásakor"
+
+#. i18n: file ./src/general_settings_ui.ui line 124
+#: rc.cpp:87
+#, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to stay open when it loses "
+"focus."
+msgstr ""
+"Engedélyezze ezt a beállítást, ha azt akarja, hogy a Yakuake ablak nyitva "
+"maradjon, amikor elveszti a fókuszt."
+
+#. i18n: file ./src/general_settings_ui.ui line 135
+#: rc.cpp:90
+#, no-c-format
+msgid "Use Open/Retract action to focus window"
+msgstr "Legyen aktív az ablak a Megnyit/Bezár gomb használatakor"
+
+#. i18n: file ./src/general_settings_ui.ui line 138
+#: rc.cpp:93
+#, no-c-format
+msgid ""
+"Enable this option if you want the Open/Retract shortcut to focus the Yakuake "
+"window when it is already open but lacks focus. Disable this option to have the "
+"Open/Retract shortcut retract the Yakuake window regardless of whether or not "
+"it has focus."
+msgstr ""
+"Engedélyezze ezt az opciót, ha szeretné, hogy a Megnyit/Bezár gyorsbilentyű "
+"lenyomásakor ne a program legyen fókuszban (aktív)."
+
+#. i18n: file ./src/general_settings_ui.ui line 149
+#: rc.cpp:96
+#, no-c-format
+msgid "Automatically open when pointer touches screen edge"
+msgstr ""
+
+#. i18n: file ./src/general_settings_ui.ui line 152
+#: rc.cpp:99
+#, fuzzy, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to open when the mouse "
+"pointer touches the top edge of the screen."
+msgstr ""
+"Engedélyezze ezt a beállítást, ha azt akarja, hogy a Yakuake ablak nyitva "
+"maradjon, amikor elveszti a fókuszt."
+
+#. i18n: file ./src/general_settings_ui.ui line 162
+#: rc.cpp:102
+#, no-c-format
+msgid "Size and Animation"
+msgstr "Méret és animáció"
+
+#. i18n: file ./src/general_settings_ui.ui line 173
+#: rc.cpp:105
+#, no-c-format
+msgid "Width:"
+msgstr "Szélesség:"
+
+#. i18n: file ./src/general_settings_ui.ui line 181
+#: rc.cpp:108
+#, no-c-format
+msgid "Height:"
+msgstr "Magasság:"
+
+#. i18n: file ./src/general_settings_ui.ui line 189
+#: rc.cpp:111
+#, no-c-format
+msgid "Speed:"
+msgstr "Sebesség:"
+
+#. i18n: file ./src/general_settings_ui.ui line 276
+#: rc.cpp:114
+#, no-c-format
+msgid ""
+"This setting controls the approximate duration of the sliding animation when "
+"the Yakuake window is opening or retracting."
+msgstr ""
+"Ez a beállítás megközelítöleg megadja, hogy mennyi ideig tartson a becsúszó "
+"animáció, amikor a Yakuake ablakot megnyitja vagy bezárja."
+
+#. i18n: file ./src/general_settings_ui.ui line 361
+#: rc.cpp:117
+#, no-c-format
+msgid "Position"
+msgstr "Pozició"
+
+#. i18n: file ./src/general_settings_ui.ui line 445
+#: rc.cpp:126
+#, no-c-format
+msgid "Open on screen:"
+msgstr "Megnyitás képernyőn:"
+
+#. i18n: file ./src/general_settings_ui.ui line 456
+#: rc.cpp:132
+#, no-c-format
+msgid "Screen 1"
+msgstr "Képernyő 1"

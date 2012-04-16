@@ -1,0 +1,8 @@
+?package(yakuake):\
+	needs="X11"\
+	section="Applications/Terminal Emulators"\
+	title="YaKuake"\
+	icon32x32="/opt/kde3/share/pixmaps/yakuake.xpm"\
+	icon16x16="/opt/kde3/share/pixmaps/yakuake-16.xpm"\
+	command="/opt/kde3/bin/yakuake"
+

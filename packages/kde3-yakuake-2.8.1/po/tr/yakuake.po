@@ -1,0 +1,528 @@
+# translation of yakuake.po to
+#
+# İsmail Dönmez <ismail@pardus.org.tr>, 2006.
+# Can Coşkuner <fethicanc@gmail.com>, 2007.
+# Serdar Soytetir <tulliana@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: yakuake\n"
+"POT-Creation-Date: 2007-11-11 09:37+0100\n"
+"PO-Revision-Date: 2007-05-15 14:20+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team:  <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/main.cpp:24
+msgid "A Quake-style terminal emulator based on KDE Konsole technology. "
+msgstr ""
+"KDE Konsole teknolojisi üzerine kurulmuş Quake benzeri bir terminal emülatörü. "
+
+#: src/main.cpp:29
+msgid "Yakuake"
+msgstr "Yakuake"
+
+#: src/main.cpp:32
+msgid "Maintainer"
+msgstr "Geliştirici"
+
+#: src/main.cpp:33
+msgid "Project Founder (Inactive)"
+msgstr "Proje Kurucusu (İnaktif)"
+
+#: src/main.cpp:41
+msgid "Plastik skin"
+msgstr ""
+
+#: src/main.cpp:42
+msgid "Auto-open on pointer touching screen edge"
+msgstr ""
+
+#: src/general_settings.cpp:35 src/main_window.cpp:825
+#, c-format
+msgid "Screen %1"
+msgstr "Ekran %1"
+
+#: src/tab_bar.cpp:152
+msgid "The tab bar allows you to switch between sessions."
+msgstr "Tab çubuğu oturumlar arasında geçiş yapmanızı sağlar."
+
+#: src/main_window.cpp:84 src/tab_bar.cpp:157
+msgid "New Session"
+msgstr "Yeni oturum"
+
+#: src/tab_bar.cpp:158
+msgid "Adds a new session. Press and hold to select session type from menu."
+msgstr ""
+"Yeni oturum ekler. Tıklayın ve menüden oturum türünü seçmek için basılı tutun."
+
+#: src/main_window.cpp:170 src/tab_bar.cpp:162
+msgid "Close Session"
+msgstr "Oturumu kapat"
+
+#: src/tab_bar.cpp:163
+msgid "Closes the active session."
+msgstr "Etkin oturumu kapatır."
+
+#: src/skin_list_item.cpp:33
+#, c-format
+msgid "by %1"
+msgstr "%1 ile"
+
+#: src/title_bar.cpp:25
+msgid "The title bar displays the session title if available."
+msgstr "Başlık çubuğu eğer var ise oturumun başlığını gösterir."
+
+#: src/title_bar.cpp:100
+msgid "Keep open when focus is lost"
+msgstr "Odaktan çıktığında açık tut"
+
+#: src/title_bar.cpp:103
+msgid "Open Menu"
+msgstr "Menüyü Aç"
+
+#: src/main_window.cpp:70
+msgid "Open/Retract Yakuake"
+msgstr "Yakuake'yi Aç/Geri çek"
+
+#: src/main_window.cpp:71
+msgid "Slides the Yakuake window in and out"
+msgstr "Yakuake penceresini aşağıya ve yukarıya kaydırır"
+
+#: src/main_window.cpp:88
+msgid "Two Terminals, Horizontal"
+msgstr "İki Terminal, Yatay"
+
+#: src/main_window.cpp:92
+msgid "Two Terminals, Vertical"
+msgstr "İki Terminal, Dikey"
+
+#: src/main_window.cpp:96
+msgid "Four Terminals, Quad"
+msgstr "Dört Terminal, Dörtlü"
+
+#: src/main_window.cpp:100
+msgid "Go to Next Terminal"
+msgstr "Bir Sonraki Oturuma Geç"
+
+#: src/main_window.cpp:104
+msgid "Go to Previous Terminal"
+msgstr "Önceki Oturuma Geç"
+
+#: src/main_window.cpp:112
+msgid "Paste Selection"
+msgstr "Seçimi Yapıştır"
+
+#: src/main_window.cpp:116
+msgid "Rename Session..."
+msgstr "Oturumun Adını Değiştir..."
+
+#: src/main_window.cpp:120
+msgid "Increase Width"
+msgstr "Terminal Genişliği"
+
+#: src/main_window.cpp:123
+msgid "Decrease Width"
+msgstr "Genişliği azalt"
+
+#: src/main_window.cpp:126
+msgid "Increase Height"
+msgstr "Yüksekliği arttır"
+
+#: src/main_window.cpp:129
+msgid "Decrease Height"
+msgstr "Yüksekliği azalt"
+
+#: src/main_window.cpp:133
+msgid "Configure Global Shortcuts..."
+msgstr "Genel kısayolları ayarla..."
+
+#: src/main_window.cpp:155
+msgid "Go to Next Session"
+msgstr "Bir Sonraki Oturuma Geç"
+
+#: src/main_window.cpp:158
+msgid "Go to Previous Session"
+msgstr "Önceki Oturuma Geç"
+
+#: src/main_window.cpp:162
+msgid "Move Session Left"
+msgstr "Oturumu sola taşı"
+
+#: src/main_window.cpp:166
+msgid "Move Session Right"
+msgstr "Oturumu sağa taşı"
+
+#: src/main_window.cpp:175
+msgid "Split Terminal Horizontally"
+msgstr "Terminali Yatay Ayır"
+
+#: src/main_window.cpp:180
+msgid "Split Terminal Vertically"
+msgstr "Terminali Dikey Ayır"
+
+#: src/main_window.cpp:185
+msgid "Close Terminal"
+msgstr "Oturumu Kapat"
+
+#: src/main_window.cpp:195
+#, c-format
+msgid "Switch to Session %1"
+msgstr "Oturum %1'e geç"
+
+#: src/main_window.cpp:223
+msgid ""
+"Application successfully started!\n"
+"Press %1 to use it..."
+msgstr "Yakuake başarıyla başlatıldı. Kullanmak için %1 tuşuna basın..."
+
+#: src/main_window.cpp:281
+msgid ""
+"You have multiple open sessions. These will be killed if you continue.\n"
+"\n"
+"Are you sure you want to quit?"
+msgstr ""
+"Birden fazla oturum açık. Eğer devam ederseniz bunlar kapatılacak. \n"
+"\n"
+"Gerçekten çıkmak istiyor musunuz?"
+
+#: src/main_window.cpp:282
+msgid "Really Quit?"
+msgstr "Gerçekten çıkmak istiyor musunuz?"
+
+#: src/main_window.cpp:284
+msgid "C&lose Session"
+msgstr "Oturumu &Kapat"
+
+#: src/main_window.cpp:327
+msgid "Yakuake Notification"
+msgstr "Yakuake Uyarı"
+
+#: src/main_window.cpp:776
+msgid "Quick Options"
+msgstr "Çabuk Seçenekler"
+
+#: src/main_window.cpp:784
+msgid "Open on screen"
+msgstr "Ekranda aç"
+
+#: src/main_window.cpp:796
+msgid "Keep open on focus change"
+msgstr "Odak değiştiğinde açık tut"
+
+#: src/main_window.cpp:798
+msgid "Settings"
+msgstr "Ayarlar"
+
+#. i18n: file ./src/general_settings_ui.ui line 451
+#: rc.cpp:129 src/main_window.cpp:822
+#, no-c-format
+msgid "At mouse location"
+msgstr "Fare konumunda"
+
+#: src/main_window.cpp:1207
+msgid "General"
+msgstr "Genel"
+
+#: src/main_window.cpp:1211
+msgid "Skins"
+msgstr "Temalar"
+
+#: src/main_window.cpp:1227
+msgid "First Run"
+msgstr "İlk Çalıştırma"
+
+#: src/skin_settings.cpp:124
+msgid "Unnamed"
+msgstr "İsimsiz"
+
+#: src/skin_settings.cpp:125
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: src/skin_settings.cpp:177
+msgid "*.tar.gz *.tar.bz2 *.tar *.zip|Yakuake Skins"
+msgstr "*.tar.gz *.tar.bz2 *.tar *.zip|Yakuake Temaları"
+
+#: src/skin_settings.cpp:178
+msgid "Select Skin Archive"
+msgstr "Tema Arşivini Seç"
+
+#: src/skin_settings.cpp:186
+msgid "Failed to Download Skin"
+msgstr "Tema İndirme Başarısız"
+
+#: src/skin_settings.cpp:206
+msgid "The installer was given a directory, not a file."
+msgstr "Yükleyiciye dosya değil, dizin verildi."
+
+#: src/skin_settings.cpp:239
+msgid ""
+"Unable to locate required files in the skin archive.\n"
+"\n"
+" The archive appears to be invalid."
+msgstr ""
+"Tema arşivinde gerekli dosyalar bulunamadı.\n"
+"\n"
+" Arşiv geçersiz görünüyor."
+
+#: src/skin_settings.cpp:242
+msgid "Unable to list the skin archive contents."
+msgstr "Tema arşivi listelenemiyor."
+
+#: src/skin_settings.cpp:265
+msgid ""
+"This skin appears to be already installed and you lack the required permissions "
+"to overwrite it."
+msgstr ""
+"Bu tema zaten yüklü. Üzerine tekrar yazabilmek için gerekli yetkiye ihtiyacınız "
+"var."
+
+#: src/skin_settings.cpp:272
+msgid "This skin appears to be already installed. Do you want to overwrite it?"
+msgstr "Bu tema zaten yüklü. Üzerine yazmak iste misiniz?"
+
+#: src/skin_settings.cpp:273
+msgid "Skin Already Exists"
+msgstr "Tema Zaten Mevcut"
+
+#: src/skin_settings.cpp:274
+msgid "Reinstall Skin"
+msgstr "Temayı Tekrar Yükle"
+
+#: src/skin_settings.cpp:296
+msgid "Could Not Delete Skin"
+msgstr "Tema Silinemedi"
+
+#: src/skin_settings.cpp:319
+msgid "The skin archive file could not be opened."
+msgstr "Tema arşiv dosyası açılamadı."
+
+#: src/skin_settings.cpp:325
+msgid "Cannot Install Skin"
+msgstr "Tema Yüklenemiyor"
+
+#: src/skin_settings.cpp:350
+msgid "Do you want to remove \"%1\" by %2?"
+msgstr "%2 tarafından yapılan \"%1\"'i silmek istiyor musunuz?"
+
+#. i18n: file ./src/skin_settings_ui.ui line 35
+#: rc.cpp:37 src/skin_settings.cpp:351
+#, no-c-format
+msgid "Remove Skin"
+msgstr "Temayı Sil"
+
+#: src/tabbed_widget.cpp:106
+#, c-format
+msgid ""
+"_n: Shell\n"
+"Shell No. %n"
+msgstr "Kabuk No. %n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "İsmail Dönmez, Can Coşkuner"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "ismail@pardus.org.tr, fethicanc@gmail.com"
+
+#. i18n: file ./src/skin_settings_ui.ui line 43
+#: rc.cpp:40
+#, no-c-format
+msgid "Install Skin..."
+msgstr "Tema Yükle..."
+
+#. i18n: file ./src/skin_settings_ui.ui line 62
+#: rc.cpp:43
+#, no-c-format
+msgid "Skin background color:"
+msgstr ""
+
+#. i18n: file ./src/skin_settings_ui.ui line 76
+#: rc.cpp:47
+#, no-c-format
+msgid ""
+"This controls the color of the surface that translucent skin elements are "
+"composited upon. This setting is only available if Yakuake is run outside of "
+"KDE and translucency is unavailable."
+msgstr ""
+
+#. i18n: file ./src/skin_settings_ui.ui line 101
+#: rc.cpp:50
+#, no-c-format
+msgid "Skin"
+msgstr "Tema"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 43
+#: rc.cpp:53
+#, no-c-format
+msgid "<b>Welcome to Yakuake</b>"
+msgstr "<b>Yakuake'ye Hoş Geldiniz</b>"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 65
+#: rc.cpp:56
+#, no-c-format
+msgid "You can change the shortcut later at any time via the menu."
+msgstr "Kısayolu daha sonra menüyü kullanarak da değiştirebilirsiniz."
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 93
+#: rc.cpp:59
+#, no-c-format
+msgid "None"
+msgstr "Hiçbiri"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 118
+#: rc.cpp:62
+#, no-c-format
+msgid ""
+"Before using the application, you might want to change the keyboard shortcut "
+"used to open and close the Yakuake window:"
+msgstr ""
+"Uygulamayı kullanmadan önce Yakuake penceresini açıp kapatmak için gerekli olan "
+"klavye kısayollarını değiştirmek isteyebilirsiniz:"
+
+#. i18n: file ./src/general_settings_ui.ui line 46
+#: rc.cpp:68
+#, no-c-format
+msgid "Show notification popup at application startup"
+msgstr "Uygulama başlangıcında uyarı penceresini göster"
+
+#. i18n: file ./src/general_settings_ui.ui line 54
+#: rc.cpp:71
+#, no-c-format
+msgid "Confirm quit when closing more than one session"
+msgstr "Birden çok oturumu kapatırken onay iste"
+
+#. i18n: file ./src/general_settings_ui.ui line 62
+#: rc.cpp:74
+#, no-c-format
+msgid "Show the tab bar"
+msgstr "Sekme barını göster"
+
+#. i18n: file ./src/general_settings_ui.ui line 107
+#: rc.cpp:77
+#, fuzzy, no-c-format
+msgid "Keep window above other windows"
+msgstr "Odak değiştiğinde pencereyi açık tut"
+
+#. i18n: file ./src/general_settings_ui.ui line 110
+#: rc.cpp:80
+#, fuzzy, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to keep on top of other "
+"windows even when it loses focus."
+msgstr ""
+"Yakuake penceresinin odaktan çıktığında da açık kalmasını istiyorsanız bu "
+"seçeneği işaretleyin."
+
+#. i18n: file ./src/general_settings_ui.ui line 118
+#: rc.cpp:83
+#, no-c-format
+msgid "Keep window open on focus change"
+msgstr "Odak değiştiğinde pencereyi açık tut"
+
+#. i18n: file ./src/general_settings_ui.ui line 124
+#: rc.cpp:87
+#, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to stay open when it loses "
+"focus."
+msgstr ""
+"Yakuake penceresinin odaktan çıktığında da açık kalmasını istiyorsanız bu "
+"seçeneği işaretleyin."
+
+#. i18n: file ./src/general_settings_ui.ui line 135
+#: rc.cpp:90
+#, no-c-format
+msgid "Use Open/Retract action to focus window"
+msgstr "Pencereyi odaklamak için Aç/Geri Çek eylemini kullan"
+
+#. i18n: file ./src/general_settings_ui.ui line 138
+#: rc.cpp:93
+#, no-c-format
+msgid ""
+"Enable this option if you want the Open/Retract shortcut to focus the Yakuake "
+"window when it is already open but lacks focus. Disable this option to have the "
+"Open/Retract shortcut retract the Yakuake window regardless of whether or not "
+"it has focus."
+msgstr ""
+"Yakuake penceresi açık ve odaklanmamışken pencerenin odaklanması için Aç "
+"/Vazgeç kısayollarını kullanabilmek için bu seçeneği etkinleştirin. Yakuake "
+"penceresinin odaklanmış olup olmadığına bakmadan Aç /Vazgeç kısayolunu "
+"kullanmak için bu seçeneği pasifleştirin."
+
+#. i18n: file ./src/general_settings_ui.ui line 149
+#: rc.cpp:96
+#, no-c-format
+msgid "Automatically open when pointer touches screen edge"
+msgstr ""
+
+#. i18n: file ./src/general_settings_ui.ui line 152
+#: rc.cpp:99
+#, fuzzy, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to open when the mouse "
+"pointer touches the top edge of the screen."
+msgstr ""
+"Yakuake penceresinin odaktan çıktığında da açık kalmasını istiyorsanız bu "
+"seçeneği işaretleyin."
+
+#. i18n: file ./src/general_settings_ui.ui line 162
+#: rc.cpp:102
+#, no-c-format
+msgid "Size and Animation"
+msgstr "Boyut ve Animasyon"
+
+#. i18n: file ./src/general_settings_ui.ui line 173
+#: rc.cpp:105
+#, no-c-format
+msgid "Width:"
+msgstr "Genişlik:"
+
+#. i18n: file ./src/general_settings_ui.ui line 181
+#: rc.cpp:108
+#, no-c-format
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#. i18n: file ./src/general_settings_ui.ui line 189
+#: rc.cpp:111
+#, no-c-format
+msgid "Speed:"
+msgstr "Hız:"
+
+#. i18n: file ./src/general_settings_ui.ui line 276
+#: rc.cpp:114
+#, no-c-format
+msgid ""
+"This setting controls the approximate duration of the sliding animation when "
+"the Yakuake window is opening or retracting."
+msgstr ""
+"Bu ayar Yakuake penceresinin açılma veya geri çekilme animasyon süresini "
+"ayarlar."
+
+#. i18n: file ./src/general_settings_ui.ui line 361
+#: rc.cpp:117
+#, no-c-format
+msgid "Position"
+msgstr "Pozisyon"
+
+#. i18n: file ./src/general_settings_ui.ui line 445
+#: rc.cpp:126
+#, no-c-format
+msgid "Open on screen:"
+msgstr "Ekranda aç:"
+
+#. i18n: file ./src/general_settings_ui.ui line 456
+#: rc.cpp:132
+#, no-c-format
+msgid "Screen 1"
+msgstr "Ekran %1"

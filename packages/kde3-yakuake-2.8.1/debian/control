@@ -1,0 +1,20 @@
+Source: kde3-yakuake
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: cdbs, debhelper (>= 5), quilt, kde3-kdelibs4-dev, automake1.10, libtool
+Standards-Version: 3.7.3
+Homepage: http://extragear.kde.org/apps/yakuake/
+
+Package: kde3-yakuake
+Architecture: any
+Depends: ${shlibs:Depends}, kde3-konsole
+Description: a Quake-style terminal emulator based on KDE Konsole technology
+ YaKuake is inspired from the terminal in the Quake game: when you press a key 
+ (by default F12, but that can be changed) a terminal window slides down from 
+ the top of the screen. Press the key again, and the terminal slides back. 
+ .
+ It is faster than a keyboard shortcut because it is already loaded into memory 
+ and as such is very useful to anyone who frequently finds themselves switching 
+ in and out of terminal sessions.
+

@@ -1,0 +1,533 @@
+# translation of yakuake.po to Brazilian Portuguese
+# Diniz Bortolotto <diniz.bb@gmail.com>, 2006, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: yakuake\n"
+"POT-Creation-Date: 2007-11-11 09:37+0100\n"
+"PO-Revision-Date: 2007-07-28 15:14-0300\n"
+"Last-Translator: Diniz Bortolotto <diniz.bb@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: Yakuake Konsole Quake\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n > 1);\n"
+
+#: src/main.cpp:24
+msgid "A Quake-style terminal emulator based on KDE Konsole technology. "
+msgstr ""
+"Um emulador de terminal no estilo do Quake, baseado na tecnologia do Konsole do "
+"KDE. "
+
+#: src/main.cpp:29
+msgid "Yakuake"
+msgstr "Yakuake"
+
+#: src/main.cpp:32
+msgid "Maintainer"
+msgstr "Mantenedor"
+
+#: src/main.cpp:33
+msgid "Project Founder (Inactive)"
+msgstr "Criador do Projeto (Inativo)"
+
+#: src/main.cpp:41
+msgid "Plastik skin"
+msgstr ""
+
+#: src/main.cpp:42
+msgid "Auto-open on pointer touching screen edge"
+msgstr ""
+
+#: src/general_settings.cpp:35 src/main_window.cpp:825
+#, c-format
+msgid "Screen %1"
+msgstr "Tela %1"
+
+#: src/tab_bar.cpp:152
+msgid "The tab bar allows you to switch between sessions."
+msgstr "A barra de abas permite que você alterne entre sessões."
+
+#: src/main_window.cpp:84 src/tab_bar.cpp:157
+msgid "New Session"
+msgstr "Nova Sessão"
+
+#: src/tab_bar.cpp:158
+msgid "Adds a new session. Press and hold to select session type from menu."
+msgstr ""
+"Adiciona uma nova sessão. Pressione e mantenha para selecionar o tipo de sessão "
+"do menu."
+
+#: src/main_window.cpp:170 src/tab_bar.cpp:162
+msgid "Close Session"
+msgstr "Fechar a Sessão"
+
+#: src/tab_bar.cpp:163
+msgid "Closes the active session."
+msgstr "Fechar a sessão ativa."
+
+#: src/skin_list_item.cpp:33
+#, c-format
+msgid "by %1"
+msgstr "por %1"
+
+#: src/title_bar.cpp:25
+msgid "The title bar displays the session title if available."
+msgstr "A barra de título mostra o título da sessão se disponível."
+
+#: src/title_bar.cpp:100
+msgid "Keep open when focus is lost"
+msgstr "Manter aberta quando o foco é perdido"
+
+#: src/title_bar.cpp:103
+msgid "Open Menu"
+msgstr "Abrir o Menu"
+
+#: src/main_window.cpp:70
+msgid "Open/Retract Yakuake"
+msgstr "Abrir/Retrair o Yakuake"
+
+#: src/main_window.cpp:71
+msgid "Slides the Yakuake window in and out"
+msgstr "Desliza a janela do Yakuake para cima e para baixo"
+
+#: src/main_window.cpp:88
+msgid "Two Terminals, Horizontal"
+msgstr "Dois Terminais, Horizontal"
+
+#: src/main_window.cpp:92
+msgid "Two Terminals, Vertical"
+msgstr "Dois Terminais, Vertical"
+
+#: src/main_window.cpp:96
+msgid "Four Terminals, Quad"
+msgstr "Quatro Terminais, Quádruplo"
+
+#: src/main_window.cpp:100
+msgid "Go to Next Terminal"
+msgstr "Ir para o Próximo Terminal"
+
+#: src/main_window.cpp:104
+msgid "Go to Previous Terminal"
+msgstr "Ir para o Terminal Anterior"
+
+#: src/main_window.cpp:112
+msgid "Paste Selection"
+msgstr "Colar Seleção"
+
+#: src/main_window.cpp:116
+msgid "Rename Session..."
+msgstr "Renomear Sessão..."
+
+#: src/main_window.cpp:120
+msgid "Increase Width"
+msgstr "Aumentar Largura"
+
+#: src/main_window.cpp:123
+msgid "Decrease Width"
+msgstr "Diminuir Largura"
+
+#: src/main_window.cpp:126
+msgid "Increase Height"
+msgstr "Aumentar Altura"
+
+#: src/main_window.cpp:129
+msgid "Decrease Height"
+msgstr "Diminuir Altura"
+
+#: src/main_window.cpp:133
+msgid "Configure Global Shortcuts..."
+msgstr "Configurar Atalhos Globais..."
+
+#: src/main_window.cpp:155
+msgid "Go to Next Session"
+msgstr "Ir para a Próxima Sessão"
+
+#: src/main_window.cpp:158
+msgid "Go to Previous Session"
+msgstr "Ir para a Sessão Anterior"
+
+#: src/main_window.cpp:162
+msgid "Move Session Left"
+msgstr "Mover a Sessão para a Esquerda"
+
+#: src/main_window.cpp:166
+msgid "Move Session Right"
+msgstr "Mover a Sessão para a Direita"
+
+#: src/main_window.cpp:175
+msgid "Split Terminal Horizontally"
+msgstr "Dividir o Terminal Horizontalmente"
+
+#: src/main_window.cpp:180
+msgid "Split Terminal Vertically"
+msgstr "Dividir o Terminal Verticalmente"
+
+#: src/main_window.cpp:185
+msgid "Close Terminal"
+msgstr "Fechar o Terminal"
+
+#: src/main_window.cpp:195
+#, c-format
+msgid "Switch to Session %1"
+msgstr "Mudar para a Sessão %1"
+
+#: src/main_window.cpp:223
+msgid ""
+"Application successfully started!\n"
+"Press %1 to use it..."
+msgstr ""
+"O aplicativo foi iniciado com sucesso!\n"
+"Pressione %1 para usá-lo..."
+
+#: src/main_window.cpp:281
+msgid ""
+"You have multiple open sessions. These will be killed if you continue.\n"
+"\n"
+"Are you sure you want to quit?"
+msgstr ""
+"Você tem várias sessões abertas. Estas serão terminadas se você continuar.\n"
+"\n"
+"Deseja mesmo sair?"
+
+#: src/main_window.cpp:282
+msgid "Really Quit?"
+msgstr "Deseja Realmente Sair?"
+
+#: src/main_window.cpp:284
+msgid "C&lose Session"
+msgstr "Fe&char a Sessão"
+
+#: src/main_window.cpp:327
+msgid "Yakuake Notification"
+msgstr "Notificação do Yakuake"
+
+#: src/main_window.cpp:776
+msgid "Quick Options"
+msgstr "Opções Rápidas"
+
+#: src/main_window.cpp:784
+msgid "Open on screen"
+msgstr "Abrir na tela"
+
+#: src/main_window.cpp:796
+msgid "Keep open on focus change"
+msgstr "Manter aberta na mudança de foco"
+
+#: src/main_window.cpp:798
+msgid "Settings"
+msgstr "Configurações"
+
+#. i18n: file ./src/general_settings_ui.ui line 451
+#: rc.cpp:129 src/main_window.cpp:822
+#, no-c-format
+msgid "At mouse location"
+msgstr "Na posição do mouse"
+
+#: src/main_window.cpp:1207
+msgid "General"
+msgstr "Geral"
+
+#: src/main_window.cpp:1211
+msgid "Skins"
+msgstr "Aparências"
+
+#: src/main_window.cpp:1227
+msgid "First Run"
+msgstr "Primeira Execução"
+
+#: src/skin_settings.cpp:124
+msgid "Unnamed"
+msgstr "Sem nome"
+
+#: src/skin_settings.cpp:125
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: src/skin_settings.cpp:177
+msgid "*.tar.gz *.tar.bz2 *.tar *.zip|Yakuake Skins"
+msgstr "*.tar.gz *.tar.bz2 *.tar *.zip|Aparências do Yakuake"
+
+#: src/skin_settings.cpp:178
+msgid "Select Skin Archive"
+msgstr "Selecionar o Pacote de Aparência"
+
+#: src/skin_settings.cpp:186
+msgid "Failed to Download Skin"
+msgstr "Não Foi Possível Obter a Aparência"
+
+#: src/skin_settings.cpp:206
+msgid "The installer was given a directory, not a file."
+msgstr "Foi indicado um diretório para o instalador, não um arquivo."
+
+#: src/skin_settings.cpp:239
+msgid ""
+"Unable to locate required files in the skin archive.\n"
+"\n"
+" The archive appears to be invalid."
+msgstr ""
+"Não é possível localizar os arquivos necessários do pacote de aparência.\n"
+"\n"
+" O pacote parece ser inválido."
+
+#: src/skin_settings.cpp:242
+msgid "Unable to list the skin archive contents."
+msgstr "Não é possível apresentar o conteúdo do pacote de aparência."
+
+#: src/skin_settings.cpp:265
+msgid ""
+"This skin appears to be already installed and you lack the required permissions "
+"to overwrite it."
+msgstr ""
+"Esta aparência parece já estar instalada e você não tem as permissões "
+"necessárias para substituí-la."
+
+#: src/skin_settings.cpp:272
+msgid "This skin appears to be already installed. Do you want to overwrite it?"
+msgstr "Esta aparência parece já estar instalada. Você quer substituí-la?"
+
+#: src/skin_settings.cpp:273
+msgid "Skin Already Exists"
+msgstr "A Aparência Já Existe"
+
+#: src/skin_settings.cpp:274
+msgid "Reinstall Skin"
+msgstr "Reinstalar a Aparência"
+
+#: src/skin_settings.cpp:296
+msgid "Could Not Delete Skin"
+msgstr "Não Foi Possível Remover a Aparência"
+
+#: src/skin_settings.cpp:319
+msgid "The skin archive file could not be opened."
+msgstr "O pacote de aparência não pôde ser aberto."
+
+#: src/skin_settings.cpp:325
+msgid "Cannot Install Skin"
+msgstr "Não é Possível Instalar a Aparência"
+
+#: src/skin_settings.cpp:350
+msgid "Do you want to remove \"%1\" by %2?"
+msgstr "Você quer remover \"%1\" de %2?"
+
+#. i18n: file ./src/skin_settings_ui.ui line 35
+#: rc.cpp:37 src/skin_settings.cpp:351
+#, no-c-format
+msgid "Remove Skin"
+msgstr "Remover Aparência"
+
+#: src/tabbed_widget.cpp:106
+#, c-format
+msgid ""
+"_n: Shell\n"
+"Shell No. %n"
+msgstr ""
+"Console\n"
+"Console No. %n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Diniz Bortolotto, Christian Tosta"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "diniz.bb@gmail.com, bugzilla@ekaaty.com.br"
+
+#. i18n: file ./src/skin_settings_ui.ui line 43
+#: rc.cpp:40
+#, no-c-format
+msgid "Install Skin..."
+msgstr "Instalar a Aparência..."
+
+#. i18n: file ./src/skin_settings_ui.ui line 62
+#: rc.cpp:43
+#, no-c-format
+msgid "Skin background color:"
+msgstr ""
+
+#. i18n: file ./src/skin_settings_ui.ui line 76
+#: rc.cpp:47
+#, no-c-format
+msgid ""
+"This controls the color of the surface that translucent skin elements are "
+"composited upon. This setting is only available if Yakuake is run outside of "
+"KDE and translucency is unavailable."
+msgstr ""
+
+#. i18n: file ./src/skin_settings_ui.ui line 101
+#: rc.cpp:50
+#, no-c-format
+msgid "Skin"
+msgstr "Aparência"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 43
+#: rc.cpp:53
+#, no-c-format
+msgid "<b>Welcome to Yakuake</b>"
+msgstr "<b>Bem-vindo ao Yakuake</b>"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 65
+#: rc.cpp:56
+#, no-c-format
+msgid "You can change the shortcut later at any time via the menu."
+msgstr ""
+"Você pode alterar o atalho a qualquer momento mais tarde através do menu."
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 93
+#: rc.cpp:59
+#, no-c-format
+msgid "None"
+msgstr "Nenhuma"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 118
+#: rc.cpp:62
+#, no-c-format
+msgid ""
+"Before using the application, you might want to change the keyboard shortcut "
+"used to open and close the Yakuake window:"
+msgstr ""
+"Antes de usar o aplicativo, talvez você queira trocar o atalho de teclado usado "
+"para abrir e fechar a janela do Yakuake:"
+
+#. i18n: file ./src/general_settings_ui.ui line 46
+#: rc.cpp:68
+#, no-c-format
+msgid "Show notification popup at application startup"
+msgstr "Mostrar a mensagem de notificação na inicialização do aplicativo"
+
+#. i18n: file ./src/general_settings_ui.ui line 54
+#: rc.cpp:71
+#, no-c-format
+msgid "Confirm quit when closing more than one session"
+msgstr "Confirmar a saída quando estiver fechando mais de uma sessão"
+
+#. i18n: file ./src/general_settings_ui.ui line 62
+#: rc.cpp:74
+#, no-c-format
+msgid "Show the tab bar"
+msgstr "Mostrar a barra de abas"
+
+#. i18n: file ./src/general_settings_ui.ui line 107
+#: rc.cpp:77
+#, fuzzy, no-c-format
+msgid "Keep window above other windows"
+msgstr "Manter a janela aberta na mudança de foco"
+
+#. i18n: file ./src/general_settings_ui.ui line 110
+#: rc.cpp:80
+#, fuzzy, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to keep on top of other "
+"windows even when it loses focus."
+msgstr ""
+"Ative esta opção se você quer que a janela do Yakuake permaneça aberta quando "
+"ela perde o foco."
+
+#. i18n: file ./src/general_settings_ui.ui line 118
+#: rc.cpp:83
+#, no-c-format
+msgid "Keep window open on focus change"
+msgstr "Manter a janela aberta na mudança de foco"
+
+#. i18n: file ./src/general_settings_ui.ui line 124
+#: rc.cpp:87
+#, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to stay open when it loses "
+"focus."
+msgstr ""
+"Ative esta opção se você quer que a janela do Yakuake permaneça aberta quando "
+"ela perde o foco."
+
+#. i18n: file ./src/general_settings_ui.ui line 135
+#: rc.cpp:90
+#, no-c-format
+msgid "Use Open/Retract action to focus window"
+msgstr "Usar a ação Abrir/Retrair para pôr a janela em primeiro plano"
+
+#. i18n: file ./src/general_settings_ui.ui line 138
+#: rc.cpp:93
+#, no-c-format
+msgid ""
+"Enable this option if you want the Open/Retract shortcut to focus the Yakuake "
+"window when it is already open but lacks focus. Disable this option to have the "
+"Open/Retract shortcut retract the Yakuake window regardless of whether or not "
+"it has focus."
+msgstr ""
+"Ative esta opção se quiser que o atalho para Abrir/Retrair coloque a janela do "
+"Yakuake em primeiro plano quando já estiver aberta mas não estiver em primeiro "
+"plano. Desative esta opção para que o atalho para Abrir/Retrair retraia a "
+"janela, independentemente de estar ou não em primeiro plano."
+
+#. i18n: file ./src/general_settings_ui.ui line 149
+#: rc.cpp:96
+#, no-c-format
+msgid "Automatically open when pointer touches screen edge"
+msgstr ""
+
+#. i18n: file ./src/general_settings_ui.ui line 152
+#: rc.cpp:99
+#, fuzzy, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to open when the mouse "
+"pointer touches the top edge of the screen."
+msgstr ""
+"Ative esta opção se você quer que a janela do Yakuake permaneça aberta quando "
+"ela perde o foco."
+
+#. i18n: file ./src/general_settings_ui.ui line 162
+#: rc.cpp:102
+#, no-c-format
+msgid "Size and Animation"
+msgstr "Tamanho e Animação"
+
+#. i18n: file ./src/general_settings_ui.ui line 173
+#: rc.cpp:105
+#, no-c-format
+msgid "Width:"
+msgstr "Largura:"
+
+#. i18n: file ./src/general_settings_ui.ui line 181
+#: rc.cpp:108
+#, no-c-format
+msgid "Height:"
+msgstr "Altura:"
+
+#. i18n: file ./src/general_settings_ui.ui line 189
+#: rc.cpp:111
+#, no-c-format
+msgid "Speed:"
+msgstr "Velocidade:"
+
+#. i18n: file ./src/general_settings_ui.ui line 276
+#: rc.cpp:114
+#, no-c-format
+msgid ""
+"This setting controls the approximate duration of the sliding animation when "
+"the Yakuake window is opening or retracting."
+msgstr ""
+"Esta opção controla a duração aproximada da animação deslizante quando a janela "
+"do Yakuake está abrindo ou retraindo."
+
+#. i18n: file ./src/general_settings_ui.ui line 361
+#: rc.cpp:117
+#, no-c-format
+msgid "Position"
+msgstr "Posição"
+
+#. i18n: file ./src/general_settings_ui.ui line 445
+#: rc.cpp:126
+#, no-c-format
+msgid "Open on screen:"
+msgstr "Abrir na tela:"
+
+#. i18n: file ./src/general_settings_ui.ui line 456
+#: rc.cpp:132
+#, no-c-format
+msgid "Screen 1"
+msgstr "Tela 1"

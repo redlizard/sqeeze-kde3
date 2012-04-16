@@ -1,0 +1,529 @@
+# translation of yakuake.po to Polish
+# translation of yakuake.po to
+#
+# Eike Hein <sho@eikehein.com>, 2006.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2006.
+# Frederik Schwarzer <schwarzerf@gmail.com>, 2007.
+# Tomasz Argasiński <targasinski@o2.pl>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: yakuake\n"
+"POT-Creation-Date: 2007-11-11 09:37+0100\n"
+"PO-Revision-Date: 2007-12-09 00:40+0100\n"
+"Last-Translator: Tomasz Argasiński <targasinski@o2.pl>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/main.cpp:24
+msgid "A Quake-style terminal emulator based on KDE Konsole technology. "
+msgstr ""
+"Emulator terminala w stylu konsoli Quake oparty o technologię KDE Konsole."
+
+#: src/main.cpp:29
+msgid "Yakuake"
+msgstr "Yakuake"
+
+#: src/main.cpp:32
+msgid "Maintainer"
+msgstr "Opiekun"
+
+#: src/main.cpp:33
+msgid "Project Founder (Inactive)"
+msgstr "Założyciel projektu (nieaktywny)"
+
+#: src/main.cpp:41
+msgid "Plastik skin"
+msgstr ""
+
+#: src/main.cpp:42
+msgid "Auto-open on pointer touching screen edge"
+msgstr ""
+
+#: src/general_settings.cpp:35 src/main_window.cpp:825
+#, c-format
+msgid "Screen %1"
+msgstr "Ekran %1"
+
+#: src/tab_bar.cpp:152
+msgid "The tab bar allows you to switch between sessions."
+msgstr "Pasek kart pozwala na przełączanie się pomiędzy sesjami."
+
+#: src/main_window.cpp:84 src/tab_bar.cpp:157
+msgid "New Session"
+msgstr "Nowa sesja"
+
+#: src/tab_bar.cpp:158
+msgid "Adds a new session. Press and hold to select session type from menu."
+msgstr "Dodaje nową sesję. Wciśnij i przytrzymaj aby wybrać typ sesji z menu."
+
+#: src/main_window.cpp:170 src/tab_bar.cpp:162
+msgid "Close Session"
+msgstr "Zamknij sesję"
+
+#: src/tab_bar.cpp:163
+msgid "Closes the active session."
+msgstr "Zamyka aktywną sesję."
+
+#: src/skin_list_item.cpp:33
+#, c-format
+msgid "by %1"
+msgstr "Autor: %1"
+
+#: src/title_bar.cpp:25
+msgid "The title bar displays the session title if available."
+msgstr "Pasek tytułu wyświetla nazwę sesji gdy dostepna."
+
+#: src/title_bar.cpp:100
+msgid "Keep open when focus is lost"
+msgstr "Pozostaw otwarty po utracie ogniska."
+
+#: src/title_bar.cpp:103
+msgid "Open Menu"
+msgstr "Otwórz menu"
+
+#: src/main_window.cpp:70
+msgid "Open/Retract Yakuake"
+msgstr "Otwórz/schowaj Yakuake"
+
+#: src/main_window.cpp:71
+msgid "Slides the Yakuake window in and out"
+msgstr "Wysuwa i wycofuje okno Yakuake."
+
+#: src/main_window.cpp:88
+msgid "Two Terminals, Horizontal"
+msgstr "Dwa terminale, poziomo"
+
+#: src/main_window.cpp:92
+msgid "Two Terminals, Vertical"
+msgstr "Dwa terminale, pionowo"
+
+#: src/main_window.cpp:96
+msgid "Four Terminals, Quad"
+msgstr "Cztery terminale"
+
+#: src/main_window.cpp:100
+msgid "Go to Next Terminal"
+msgstr "Przejdź do następnego terminala"
+
+#: src/main_window.cpp:104
+msgid "Go to Previous Terminal"
+msgstr "Przejdź do poprzedniego terminala"
+
+#: src/main_window.cpp:112
+msgid "Paste Selection"
+msgstr "Wklej zaznaczenie"
+
+#: src/main_window.cpp:116
+msgid "Rename Session..."
+msgstr "Zmień nazwę sesji..."
+
+#: src/main_window.cpp:120
+msgid "Increase Width"
+msgstr "Zwiększ szerokość"
+
+#: src/main_window.cpp:123
+msgid "Decrease Width"
+msgstr "Zmniejsz szerokość"
+
+#: src/main_window.cpp:126
+msgid "Increase Height"
+msgstr "Zwiększ wysokość"
+
+#: src/main_window.cpp:129
+msgid "Decrease Height"
+msgstr "Zmniejsz wysokość"
+
+#: src/main_window.cpp:133
+msgid "Configure Global Shortcuts..."
+msgstr "Konfiguracja skrótów globalnych"
+
+#: src/main_window.cpp:155
+msgid "Go to Next Session"
+msgstr "Przejdź do następnej sesji"
+
+#: src/main_window.cpp:158
+msgid "Go to Previous Session"
+msgstr "Przejdź do poprzedniej sesji"
+
+#: src/main_window.cpp:162
+msgid "Move Session Left"
+msgstr "Przesuń sesję w lewo"
+
+#: src/main_window.cpp:166
+msgid "Move Session Right"
+msgstr "Przesuń sesję w prawo"
+
+#: src/main_window.cpp:175
+msgid "Split Terminal Horizontally"
+msgstr "Podziel terminal w poziomie"
+
+#: src/main_window.cpp:180
+msgid "Split Terminal Vertically"
+msgstr "Podziel terminal w pionie"
+
+#: src/main_window.cpp:185
+msgid "Close Terminal"
+msgstr "Zamknij terminal"
+
+#: src/main_window.cpp:195
+#, c-format
+msgid "Switch to Session %1"
+msgstr "Przełącz do sesji %1"
+
+#: src/main_window.cpp:223
+msgid ""
+"Application successfully started!\n"
+"Press %1 to use it..."
+msgstr "Program został uruchomiony!<br>Wciśnij %1 aby go użyć..."
+
+#: src/main_window.cpp:281
+msgid ""
+"You have multiple open sessions. These will be killed if you continue.\n"
+"\n"
+"Are you sure you want to quit?"
+msgstr ""
+"Masz kilka otwartych sesji. i wszystkie zostaną zamknięte."
+"<br> "
+"<br> Czy na pewno chcesz zakończyć?"
+
+#: src/main_window.cpp:282
+msgid "Really Quit?"
+msgstr "Czy na pewno chcesz zakończyć?"
+
+#: src/main_window.cpp:284
+msgid "C&lose Session"
+msgstr "&Zamknij sesję"
+
+#: src/main_window.cpp:327
+msgid "Yakuake Notification"
+msgstr "Powiadomienie Yakuake"
+
+#: src/main_window.cpp:776
+msgid "Quick Options"
+msgstr "Szybkie opcje"
+
+#: src/main_window.cpp:784
+msgid "Open on screen"
+msgstr "Otwórz na ekranie"
+
+#: src/main_window.cpp:796
+msgid "Keep open on focus change"
+msgstr "Utrzymuj otwarte przy zmianie skupienia"
+
+#: src/main_window.cpp:798
+msgid "Settings"
+msgstr "Ustawienia"
+
+#. i18n: file ./src/general_settings_ui.ui line 451
+#: rc.cpp:129 src/main_window.cpp:822
+#, no-c-format
+msgid "At mouse location"
+msgstr "W lokalizacji myszy"
+
+#: src/main_window.cpp:1207
+msgid "General"
+msgstr "Ogólne"
+
+#: src/main_window.cpp:1211
+msgid "Skins"
+msgstr "Motywy"
+
+#: src/main_window.cpp:1227
+msgid "First Run"
+msgstr "Pierwsze uruchomienie"
+
+#: src/skin_settings.cpp:124
+msgid "Unnamed"
+msgstr "Nienazwany"
+
+#: src/skin_settings.cpp:125
+msgid "Unknown"
+msgstr "Nieznany"
+
+#: src/skin_settings.cpp:177
+msgid "*.tar.gz *.tar.bz2 *.tar *.zip|Yakuake Skins"
+msgstr "*.tar.gz *.tar.bz2 *.tar *.zip|motywy Yakuake"
+
+#: src/skin_settings.cpp:178
+msgid "Select Skin Archive"
+msgstr "Wybierz archiwum z motywem"
+
+#: src/skin_settings.cpp:186
+msgid "Failed to Download Skin"
+msgstr "Pobieranie motywu nie powidło się"
+
+#: src/skin_settings.cpp:206
+msgid "The installer was given a directory, not a file."
+msgstr "Instalator otrzymał folder, nie plik."
+
+#: src/skin_settings.cpp:239
+msgid ""
+"Unable to locate required files in the skin archive.\n"
+"\n"
+" The archive appears to be invalid."
+msgstr ""
+"Nie udało się odnaleźć wymaganych plików w archiwum z motywem.\n"
+" \n"
+"Archiwum może być nieprawidłowe."
+
+#: src/skin_settings.cpp:242
+msgid "Unable to list the skin archive contents."
+msgstr "Nie udało się wylistować zawartości archiwum z motywem."
+
+#: src/skin_settings.cpp:265
+msgid ""
+"This skin appears to be already installed and you lack the required permissions "
+"to overwrite it."
+msgstr ""
+"Ten motyw jest już zainstalowany i nie posiadasz wymaganych uprawnień do "
+"nadpisania go."
+
+#: src/skin_settings.cpp:272
+msgid "This skin appears to be already installed. Do you want to overwrite it?"
+msgstr "Ten motyw jest już zainstalowany. Czy chcesz go nadpisać?"
+
+#: src/skin_settings.cpp:273
+msgid "Skin Already Exists"
+msgstr "Motyw już istnieje"
+
+#: src/skin_settings.cpp:274
+msgid "Reinstall Skin"
+msgstr "Ponownie zainstaluj motyw"
+
+#: src/skin_settings.cpp:296
+msgid "Could Not Delete Skin"
+msgstr "Nie można usunąć motywu."
+
+#: src/skin_settings.cpp:319
+msgid "The skin archive file could not be opened."
+msgstr "Nie można otworzyć archiwum z motywem."
+
+#: src/skin_settings.cpp:325
+msgid "Cannot Install Skin"
+msgstr "Nie można zainstalować motywu"
+
+#: src/skin_settings.cpp:350
+msgid "Do you want to remove \"%1\" by %2?"
+msgstr "Czy chcesz usunąć  \"%1\" z %2?"
+
+#. i18n: file ./src/skin_settings_ui.ui line 35
+#: rc.cpp:37 src/skin_settings.cpp:351
+#, no-c-format
+msgid "Remove Skin"
+msgstr "Usuń motyw"
+
+#: src/tabbed_widget.cpp:106
+#, c-format
+msgid ""
+"_n: Shell\n"
+"Shell No. %n"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Tomasz Argasiński"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "targasinski@o2.pl"
+
+#. i18n: file ./src/skin_settings_ui.ui line 43
+#: rc.cpp:40
+#, no-c-format
+msgid "Install Skin..."
+msgstr "Zainstaluj motyw..."
+
+#. i18n: file ./src/skin_settings_ui.ui line 62
+#: rc.cpp:43
+#, no-c-format
+msgid "Skin background color:"
+msgstr ""
+
+#. i18n: file ./src/skin_settings_ui.ui line 76
+#: rc.cpp:47
+#, no-c-format
+msgid ""
+"This controls the color of the surface that translucent skin elements are "
+"composited upon. This setting is only available if Yakuake is run outside of "
+"KDE and translucency is unavailable."
+msgstr ""
+
+#. i18n: file ./src/skin_settings_ui.ui line 101
+#: rc.cpp:50
+#, no-c-format
+msgid "Skin"
+msgstr "Motyw"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 43
+#: rc.cpp:53
+#, no-c-format
+msgid "<b>Welcome to Yakuake</b>"
+msgstr "<b>Witaj w programie Yakuake</b>"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 65
+#: rc.cpp:56
+#, no-c-format
+msgid "You can change the shortcut later at any time via the menu."
+msgstr "Możesz zmienić ten skrót w każdej chwili poprzez menu."
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 93
+#: rc.cpp:59
+#, no-c-format
+msgid "None"
+msgstr "Żaden"
+
+#. i18n: file ./src/first_run_dialog_ui.ui line 118
+#: rc.cpp:62
+#, no-c-format
+msgid ""
+"Before using the application, you might want to change the keyboard shortcut "
+"used to open and close the Yakuake window:"
+msgstr ""
+"Zanim zaczniesz używać tego programu możesz chcieć zmienić skrót klawiaturowy "
+"służący do otwierania i zamykania okna Yakuake:"
+
+#. i18n: file ./src/general_settings_ui.ui line 46
+#: rc.cpp:68
+#, no-c-format
+msgid "Show notification popup at application startup"
+msgstr "Pokaż powiadomienie po uruchomieniu programu."
+
+#. i18n: file ./src/general_settings_ui.ui line 54
+#: rc.cpp:71
+#, no-c-format
+msgid "Confirm quit when closing more than one session"
+msgstr "Potwierdź zamknięcie przy zamykaniu więcej niż jednej sesji."
+
+#. i18n: file ./src/general_settings_ui.ui line 62
+#: rc.cpp:74
+#, no-c-format
+msgid "Show the tab bar"
+msgstr "Pokaż pasek kart"
+
+#. i18n: file ./src/general_settings_ui.ui line 107
+#: rc.cpp:77
+#, fuzzy, no-c-format
+msgid "Keep window above other windows"
+msgstr "Zawsze na wierzchu"
+
+#. i18n: file ./src/general_settings_ui.ui line 110
+#: rc.cpp:80
+#, fuzzy, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to keep on top of other "
+"windows even when it loses focus."
+msgstr ""
+"Zaznacz tę opcję, gdy chcesz aby okno Yakuake pozostało otwarte po utracie "
+"skupienia."
+
+#. i18n: file ./src/general_settings_ui.ui line 118
+#: rc.cpp:83
+#, no-c-format
+msgid "Keep window open on focus change"
+msgstr "Zawsze na wierzchu"
+
+#. i18n: file ./src/general_settings_ui.ui line 124
+#: rc.cpp:87
+#, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to stay open when it loses "
+"focus."
+msgstr ""
+"Zaznacz tę opcję, gdy chcesz aby okno Yakuake pozostało otwarte po utracie "
+"skupienia."
+
+#. i18n: file ./src/general_settings_ui.ui line 135
+#: rc.cpp:90
+#, no-c-format
+msgid "Use Open/Retract action to focus window"
+msgstr "Okno uzyskuje skupienie podczas otwierania/chowania"
+
+#. i18n: file ./src/general_settings_ui.ui line 138
+#: rc.cpp:93
+#, no-c-format
+msgid ""
+"Enable this option if you want the Open/Retract shortcut to focus the Yakuake "
+"window when it is already open but lacks focus. Disable this option to have the "
+"Open/Retract shortcut retract the Yakuake window regardless of whether or not "
+"it has focus."
+msgstr ""
+"Włącz tę opcję, jeżeli chcesz, aby skrót otwórz/schowaj przywracał skupienie "
+"oknu Yakuake, gdy jest otwarte, lecz brak mu skupienia. Wyłącz tę opcję, aby "
+"skrót otwórz/schowaj chował okno Yakuake bez względu na to, czy okno Yakuake "
+"posiada skupienie, czy nie."
+
+#. i18n: file ./src/general_settings_ui.ui line 149
+#: rc.cpp:96
+#, no-c-format
+msgid "Automatically open when pointer touches screen edge"
+msgstr ""
+
+#. i18n: file ./src/general_settings_ui.ui line 152
+#: rc.cpp:99
+#, fuzzy, no-c-format
+msgid ""
+"Enable this option if you want the Yakuake window to open when the mouse "
+"pointer touches the top edge of the screen."
+msgstr ""
+"Zaznacz tę opcję, gdy chcesz aby okno Yakuake pozostało otwarte po utracie "
+"skupienia."
+
+#. i18n: file ./src/general_settings_ui.ui line 162
+#: rc.cpp:102
+#, no-c-format
+msgid "Size and Animation"
+msgstr "Rozmiar i animacja"
+
+#. i18n: file ./src/general_settings_ui.ui line 173
+#: rc.cpp:105
+#, no-c-format
+msgid "Width:"
+msgstr "Szerokość:"
+
+#. i18n: file ./src/general_settings_ui.ui line 181
+#: rc.cpp:108
+#, no-c-format
+msgid "Height:"
+msgstr "Wysokość:"
+
+#. i18n: file ./src/general_settings_ui.ui line 189
+#: rc.cpp:111
+#, no-c-format
+msgid "Speed:"
+msgstr "Szybkość:"
+
+#. i18n: file ./src/general_settings_ui.ui line 276
+#: rc.cpp:114
+#, no-c-format
+msgid ""
+"This setting controls the approximate duration of the sliding animation when "
+"the Yakuake window is opening or retracting."
+msgstr ""
+"To ustawienie kontroluje czas trwania animacji przesuwania podczas wysuwania i "
+"chowania okna Yakuake."
+
+#. i18n: file ./src/general_settings_ui.ui line 361
+#: rc.cpp:117
+#, no-c-format
+msgid "Position"
+msgstr "Pozycja"
+
+#. i18n: file ./src/general_settings_ui.ui line 445
+#: rc.cpp:126
+#, no-c-format
+msgid "Open on screen:"
+msgstr "Otwórz na ekranie:"
+
+#. i18n: file ./src/general_settings_ui.ui line 456
+#: rc.cpp:132
+#, no-c-format
+msgid "Screen 1"
+msgstr "Ekran 1"
