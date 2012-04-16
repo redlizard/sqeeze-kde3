@@ -1,0 +1,119 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+I18N_DIR_PREFIX := kde-i18n
+I18N_VERSION := $(shell cat debian/changelog | head -n1 | sed 's/.*(\([[:digit:]]\+:\)\?\(.\+\)-.\+).*/\2/')
+I18N_DIR_PAT := $(I18N_DIR_PREFIX)-%-$(I18N_VERSION)
+I18N_DIRS := $(subst .tar.bz2,,$(wildcard $(I18N_DIR_PREFIX)-*-$(I18N_VERSION).tar.bz2))
+I18N_PATCHES := $(wildcard debian/patches/*.diff)
+
+# Stamps and support variables
+cur_lang = $(word 2,$(subst __, ,$@))
+cur_lang_dir = $(patsubst %,$(I18N_DIR_PREFIX)-%-$(I18N_VERSION),$(cur_lang))
+cur_lang_patch = $(patsubst %,debian/patches/%.diff,$(cur_lang))
+cur_pkg = $(I18N_DIR_PREFIX)-$(cur_lang)
+
+STAMP_EXTRACT := $(patsubst $(I18N_DIR_PAT),debian/stamp__%__extract,$(I18N_DIRS))
+STAMP_PATCH := $(patsubst debian/patches/%.diff,debian/stamp__%__patch,$(I18N_PATCHES))
+STAMP_BUILD := $(patsubst $(I18N_DIR_PAT),debian/stamp__%__build,$(I18N_DIRS))
+I18N_INSTALL := $(patsubst $(I18N_DIR_PAT),install__%,$(I18N_DIRS))
+
+
+-include debian/debiandirs
+
+debian/debiandirs: scripts/admin/debianrules
+	perl -w scripts/admin/debianrules echodirs > debian/debiandirs
+
+
+patch: $(STAMP_PATCH)
+
+$(STAMP_PATCH):
+	# Applying patch for the '$(cur_lang)' language ...
+	cd $(cur_lang_dir) && patch --set-utc -p1 < "$(CURDIR)/$(cur_lang_patch)" > $(CURDIR)/$@_log
+	mv $@_log $@
+
+
+build::
+	dh_testdir
+
+build:: $(STAMP_EXTRACT) patch $(STAMP_BUILD)
+
+$(STAMP_EXTRACT):
+	tar xfj $(cur_lang_dir).tar.bz2
+	@touch $@
+
+$(STAMP_BUILD):
+	# Building the '$(cur_lang)' language ...
+	cd $(cur_lang_dir) && ./configure $(configkde) && $(MAKE)
+	touch $@
+
+
+install::
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+
+install:: $(I18N_INSTALL)
+	# copying the non 2 letter languages into the correct directory
+	mkdir debian/kde-i18n-engb
+	cp -aR debian/kde-i18n-en_GB/* debian/kde-i18n-engb/
+	mkdir debian/kde-i18n-ptbr
+	cp -aR debian/kde-i18n-pt_BR/* debian/kde-i18n-ptbr/
+	mkdir debian/kde-i18n-srlatin
+	cp -aR debian/kde-i18n-sr@Latn/* debian/kde-i18n-srlatin/
+	mkdir debian/kde-i18n-zhcn
+	cp -aR debian/kde-i18n-zh_CN/* debian/kde-i18n-zhcn/
+	mkdir debian/kde-i18n-zhtw
+	cp -aR debian/kde-i18n-zh_TW/* debian/kde-i18n-zhtw/
+
+$(I18N_INSTALL):
+	cd $(cur_lang_dir) && $(MAKE) install DESTDIR=$(CURDIR)/debian/$(cur_pkg)
+
+
+clean: debian-clean
+debian-clean:
+	dh_testdir
+	# delete unpacked bzip2 languages
+	rm -rf $(I18N_DIR_PREFIX)-*-$(I18N_VERSION)/ debian/kde-i18n-*
+	rm -f debian/stamp__*
+	dh_clean
+
+
+binary-arch: build
+	dh_testroot
+	dh_testdir
+
+
+binary-indep: build install
+	dh_testroot
+	dh_testdir
+	dh_installdocs
+	dh_installmenu
+	dh_installchangelogs
+	dh_strip
+	dh_compress -X.docbook -X.css -X-license -X.dcl -X.bz2
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+
+# Below here is fairly generic really
+binary: binary-indep binary-arch
+
+.PHONY: binary binary-arch binary-indep clean patch build install $(I18N_INSTALL)
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+
+

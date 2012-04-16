@@ -1,0 +1,10 @@
+export kde_prefix=/opt/kde3
+export sysconfdir=/etc
+export kde_includedir=/opt/kde3/include/kde
+export infodir=/opt/kde3/share/info
+export mandir=/opt/kde3/share/man
+export qtdir=/usr/share/qt3
+export kde_cgidir=/usr/lib/cgi-bin
+export kde_confdir=/etc/kde3
+export kde_htmldir=/usr/share/doc/kde3-kde/HTML
+configkde=--disable-debug --disable-rpath --prefix=$(kde_prefix) --sysconfdir=$(sysconfdir) --includedir=$(kde_includedir) --infodir=$(infodir) --mandir=$(mandir) --with-qt-dir=$(qtdir)

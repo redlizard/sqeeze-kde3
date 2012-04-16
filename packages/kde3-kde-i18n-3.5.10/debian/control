@@ -1,0 +1,862 @@
+Source: kde3-kde-i18n
+Build-Depends: autoconf, debhelper (>= 5), kde3-kdelibs4-dev (>= 4:3.5.9), gawk, gettext, bzip2
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>
+Standards-Version: 3.7.3
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/kde-i18n
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/trunk/packages/kde-i18n
+
+Package: kde3-kde-i18n-af
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Afrikaans (af) internationalized (i18n) files for KDE
+ This package contains the Afrikaans internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-ar
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Arabic (ar) internationalized (i18n) files for KDE
+ This package contains the Arabic internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-az
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Azerbaijani (az) internationalized (i18n) files for KDE
+ This package contains the Azerbaijani internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-be
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Belarusian (be) internationalized (i18n) files for KDE
+ This package contains the Belarusian internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-bg
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Bulgarian (bg) internationalized (i18n) files for KDE
+ This package contains the Bulgarian internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-bn
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Bengali (bn) internationalized (i18n) files for KDE
+ This package contains the Bengali internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-br
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Breton (br) internationalized (i18n) files for KDE
+ This package contains the Breton internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-bs
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Bosnian (bs) internationalized (i18n) files for KDE
+ This package contains the Bosnian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-ca
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Catalan (ca) internationalized (i18n) files for KDE
+ This package contains the Catalan internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-cs
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Czech (cs) internationalized (i18n) files for KDE
+ This package contains the Czech internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-csb
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Kashubian (csb) internationalized (i18n) files for KDE
+ This package contains the Kashubian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-cy
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Welsh (cy) internationalized (i18n) files for KDE
+ This package contains the Welsh internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-da
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Danish (da) internationalized (i18n) files for KDE
+ This package contains the Danish internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-de
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: German (de) internationalized (i18n) files for KDE
+ This package contains the German internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-el
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Greek (el) internationalized (i18n) files for KDE
+ This package contains the greek internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-engb
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: British English (en_GB) internationalized (i18n) files for KDE
+ This package contains the British English (en_GB) internationalized
+ (i18n) files for all KDE core applications.
+
+Package: kde3-kde-i18n-eo
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Esperanto (eo) internationalized (i18n) files for KDE
+ This package contains the Esperanto (eo) internationalized
+ (i18n) files for all KDE core applications.
+
+Package: kde3-kde-i18n-es
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Spanish (es) internationalized (i18n) files for KDE
+ This package contains the Spanish internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-et
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Estonian (et) internationalized (i18n) files for KDE
+ This package contains the Estonian internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-eu
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Basque (eu) internationalized (i18n) files for KDE
+ This package contains the Basque internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-fa
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Farsi (Persian) (fa) internationalized (i18n) files for KDE
+ This package contains the Farsi (Persian) internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-fi
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Finnish (fi) internationalized (i18n) files for KDE
+ This package contains the Finnish internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-fr
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: French (fr) internationalized (i18n) files for KDE
+ This package contains the French internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-fy
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Frisian (fy) internationalized (i18n) files for KDE
+ This package contains the Frisian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-ga
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Irish Gaelic (ga) internationalized (i18n) files for KDE
+ This package contains the Irish Gaelic internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-gl
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Galician (gl) internationalized (i18n) files for KDE
+ This package contains the Galician internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-he
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Hebrew (he) internationalized (i18n) files for KDE
+ This package contains the Hebrew internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-hi
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Hindi (hi) internationalized (i18n) files for KDE
+ This package contains the Hindi internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-hr
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Croatian (hr) internationalized (i18n) files for KDE
+ This package contains the Croatian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-hu
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Hungarian (hu) internationalized (i18n) files for KDE
+ This package contains the Hungarian internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-is
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Icelandic (is) internationalized (i18n) files for KDE
+ This package contains the Icelandic internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-it
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Italian (it) internationalized (i18n) files for KDE
+ This package contains the Italian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-ja
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Japanese (ja) internationalized (i18n) files for KDE
+ This package contains the Japanese internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-kk
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Kazakh (kk) internationalized (i18n) files for KDE
+ This package contains the Kazakh internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-km
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Khmer (km) internationalized (i18n) files for KDE
+ This package contains the Khmer internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-ko
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Korean (ko) internationalized (i18n) files for KDE
+ This package contains the Korean internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-lt
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Lithuanian (lt) internationalized (i18n) files for KDE
+ This package contains the Lithuanian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-lv
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Latvian (lv) internationalized (i18n) files for KDE
+ This package contains the Latvian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-mk
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Macedonian (mk) internationalized (i18n) files for KDE
+ This package contains the Macedonian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-mn
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Mongolian (mn) internationalized (i18n) files for KDE
+ This package contains the Mongolian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-ms
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Malay (ms) internationalized (i18n) files for KDE
+ This package contains the Malay internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-nb
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n, kde-i18n-no
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n, kde-i18n-no
+Provides: kde-i18n, kde-i18n-no
+Description: Norwegian Bookmal (nb) internationalized (i18n) files for KDE
+ This package contains the Norwegian Bookmal internationalized (i18n)
+ files for all KDE core applications.
+
+Package: kde3-kde-i18n-nds
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Low Saxon (nds) internationalized (i18n) files for KDE
+ This package contains the Low Saxon internationalized (i18n)
+ files for all KDE core applications.
+
+Package: kde3-kde-i18n-nl
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Dutch (nl) internationalized (i18n) files for KDE
+ This package contains the Dutch internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-nn
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n, kde-i18n-nony
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n, kde-i18n-nony
+Provides: kde-i18n, kde-i18n-nony
+Description: Norwegian Nynorsk (nn) internationalized (i18n) files for KDE
+ This package contains the Norwegian Nynorsk (nn) internationalized (i18n)
+ files for all KDE core applications.
+
+Package: kde3-kde-i18n-pa
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Punjabi (pa) internationalized (i18n) files for KDE
+ This package contains the Punjabi (pa) internationalized (i18n)
+ files for all KDE core applications.
+
+Package: kde3-kde-i18n-pl
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Polish (pl) internationalized (i18n) files for KDE
+ This package contains the Polish internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-pt
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Portuguese (pt) internationalized (i18n) files for KDE
+ This package contains the Portuguese internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-ptbr
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Brazilian Portuguese (pt_BR) internationalized (i18n) files for KDE
+ This package contains the Brazilian Portuguese internationalized
+ (i18n) files for all KDE core applications.
+
+Package: kde3-kde-i18n-ro
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Romanian (ro) internationalized (i18n) files for KDE
+ This package contains the Romanian internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-ru
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Russian (ru) internationalized (i18n) files for KDE
+ This package contains the Russian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-rw
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Kinyarwanda (rw) internationalized (i18n) files for KDE
+ This package contains the Kinyarwanda internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-se
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Northern Sami (se) internationalized (i18n) files for KDE
+ This package contains the Northern Sami internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-sk
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Slovak (sk) internationalized (i18n) files for KDE
+ This package contains the Slovak internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-sl
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Slovenian (sl) internationalized (i18n) files for KDE
+ This package contains the Slovenian internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-sr
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Serbian (sr) internationalized (i18n) files for KDE
+ This package contains the Serbian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-ss
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Swati (ss) internationalized (i18n) files for KDE
+ This package contains the Swati internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-srlatin
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Latin Serbian (sr@Latn) internationalized (i18n) files for KDE
+ This package contains the latin Serbian internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-sv
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Swedish (sv) internationalized (i18n) files for KDE
+ This package contains the Swedish internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-ta
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Tamil (ta) internationalized (i18n) files for KDE
+ This package contains the Tamil internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-te
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Telugu (te) internationalized (i18n) files for KDE
+ This package contains the Telugu internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-tg
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Tajik (tg) internationalized (i18n) files for KDE
+ This package contains the Tajik internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-th
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Thai (th) internationalized (i18n) files for KDE
+ This package contains the Thai internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-tr
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Turkish (tr) internationalized (i18n) files for KDE
+ This package contains the Turkish internationalized (i18n) files for
+ all KDE core applications.
+
+Package: kde3-kde-i18n-uk
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Ukrainian (uk) internationalized (i18n) files for KDE
+ This package contains the Ukrainian internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-uz
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Uzbek (uz) internationalized (i18n) files for KDE
+ This package contains the Uzbek internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-uzcyrillic
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Cyrillic Uzbek (uz@cyrillic) internationalized (i18n) files for KDE
+ This package contains the cyrillic Uzbek internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-vi
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Vietnamese (vi) internationalized (i18n) files for KDE
+ This package contains the Vietnamese internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-wa
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n
+Provides: kde-i18n
+Description: Walloon (wa) internationalized (i18n) files for KDE
+ This package contains the Walloon internationalized (i18n) files
+ for all KDE core applications.
+
+Package: kde3-kde-i18n-zhcn
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n, kde-i18n-zhcngb2312
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n, kde-i18n-zhcngb2312
+Provides: kde-i18n
+Description: Chinese Simplified (zh_CN) internationalized (i18n) files for KDE
+ This package contains the Chinese Simplified internationalized (i18n)
+ files for all KDE core applications.
+
+Package: kde3-kde-i18n-zhtw
+Architecture: all
+Section: kde
+Depends: kde3-kdelibs4c2a (>= 4:3.5.9-1)
+Replaces: kdebase-i18n, kde-i18n, kde-i18n-zhcngb2312
+Suggests: kde3-kde
+Conflicts: kdebase-i18n, akregator-i18n, kde-i18n-zhcngb2312
+Provides: kde-i18n
+Description: Chinese Traditional (zh_TW) internationalized (i18n) files for KDE
+ This package contains the Chinese Traditional internationalized (i18n)
+ files for all KDE core applications.
+
