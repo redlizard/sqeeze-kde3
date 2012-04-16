@@ -1,0 +1,60 @@
+Source: kde3-meta-kde
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>, Sune Vuorela <debian@pusling.com>, Fathi Boudra <fabo@debian.org>, Armin Berres <trigger+debian@space-based.de>
+Build-Depends: debhelper (>= 6)
+Standards-Version: 3.7.3
+Homepage: http://www.kde.org
+
+Package: kde3-kde
+Architecture: all
+Section: kde
+Priority: optional
+Depends: kde3-kde-core (>= 5:47), kde3-kde-core (>= 5:47), kde3-kdeedu (>= 4:3.5.5), kde3-kdegames (>= 4:3.5.5), kde3-kdetoys (>= 4:3.5.5), kde3-kdeaccessibility (>= 4:3.5.5), kde3-kdeaddons (>= 4:3.5.5), kde3-kdeadmin (>= 4:3.5.5), kde3-kdeartwork (>= 4:3.5.5), kde3-kdegraphics (>= 4:3.5.5), kde3-kdemultimedia (>= 4:3.5.5), kde3-kdenetwork (>= 4:3.5.5), kde3-kdepim (>= 4:3.5.5), kde3-kdeutils (>= 4:3.5.5), kde3-kdewebdev (>= 4:3.5.5)
+Suggests: kde-i18n (>= 4:3.5.5), x-window-system-core
+Description: the K Desktop Environment official modules
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes all the official modules released with KDE that
+ are not specific to development. In addition to the core KDE modules, this
+ includes multimedia, networking, personal information manager (PIM),
+ graphics, education, games, web development, system administration tools,
+ and other artwork and utilities.
+
+Package: kde3-kde-core
+Architecture: all
+Section: kde
+Priority: optional
+Depends: kde3-arts (>= 1.5.5), kde3-kdebase (>= 4:3.5.5), kde3-kdelibs (>= 4:3.5.5)
+Suggests: kde-i18n (>= 4:3.5.5)
+Description: the K Desktop Environment core modules
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes the core official modules released with KDE. This
+ includes just the basic desktop (browser, file manager, text editor, control
+ center, panel, etc.) and important libraries and data, in addition to the
+ aRts soundserver.
+
+Package: kde3-kde-devel
+Architecture: all
+Section: kde
+Priority: optional
+Depends: kde3-kde-core (>= 5:48), kde3-kdesdk (>= 4:3.5.5), kde3-libartsc0-dev (>= 1.5.5), kde3-libarts1-dev (>= 1.5.5), kde3-kdelibs4-dev (>= 4:3.5.5), kde3-kdebase-dev (>= 4:3.5.5), kde3-libkonq4-dev (>= 4:3.5.5), qt3-designer
+Suggests: kde-i18n (>= 4:3.5.5), kdbg, kde3-kdevelop (>= 4:3.3.5), kprof
+Description: the K Desktop Environment development files and modules
+ KDE (the K Desktop Environment) is a powerful Open Source graphical
+ desktop environment for Unix workstations. It combines ease of use,
+ contemporary functionality, and outstanding graphical design with the
+ technological superiority of the Unix operating system.
+ .
+ This metapackage includes official KDE modules that are useful to developers,
+ including KDE's software development kit (SDK), Qt3's designer tool, and all
+ core KDE header and development packages.
+
