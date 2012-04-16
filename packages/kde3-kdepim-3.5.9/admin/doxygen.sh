@@ -137,7 +137,7 @@ if test -z "$DOXDATA" || test ! -d "$DOXDATA" ; then
 	if test -n "$DOXDATA" ; then
 		echo "* \$DOXDATA is '$DOXDATA' which does not name a directory"
 	fi
-	DOXDATA="$top_srcdir/doc/common"
+	DOXDATA=/usr/share/doc/kde3-kde/HTML/en/common
 fi
 
 if test ! -d "$DOXDATA" ; then

@@ -21,7 +21,7 @@ Description: akode plugin for aRts
 Package: kde3-libakode-dev
 Section: libdevel
 Architecture: any
-Depends: kde3-libakode2 (= ${binary:Version}), libflac-dev (>= 1.1.4-1), libmad0-dev, libogg-dev, libvorbis-dev, ${alsa-dev}, libsamplerate0-dev, libspeex-dev, libjack0.100.0-dev
+Depends: kde3-libakode2 (= ${binary:Version}), libflac-dev (>= 1.1.4-1), libmad0-dev, libogg-dev, libvorbis-dev, ${alsa-dev}, libsamplerate0-dev, libspeex-dev, libjack-jackd2-dev
 Description: development files for akode
  aKode is a new multithreaded audio library that provides aRts with
  plugins to play a variety of formats: Ogg Vorbis, Musepack (MPC),

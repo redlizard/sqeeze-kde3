@@ -126,3 +126,4 @@ $(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
 			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
 		fi; \
 	done
+

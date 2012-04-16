@@ -3,7 +3,7 @@ Section: libs
 Priority: optional
 Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
 Uploaders: Adeodato Simó <dato@net.com.org.es>, Ana Beatriz Guerrero Lopez <ana@debian.org>, Fathi Boudra <fabo@debian.org>, Modestas Vainius <modestas@vainius.eu>
-Build-Depends: cdbs (>= 0.4.48), debhelper (>= 6), autotools-dev, docbook-to-man, gawk, gettext, sharutils, texinfo, libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libaudio-dev, libaudiofile-dev, libesd0-dev, libglib2.0-dev, libjack0.100.0-dev, libmad0-dev, libogg-dev, libqt3-mt-dev (>= 3:3.3.7), libvorbis-dev
+Build-Depends: cdbs (>= 0.4.48), debhelper (>= 6), autotools-dev, docbook-to-man, gawk, gettext, sharutils, texinfo, libasound2-dev [!kfreebsd-i386 !kfreebsd-amd64 !hurd-i386], libaudio-dev, libaudiofile-dev, libesd0-dev, libglib2.0-dev, libjack-jackd2-dev, libmad0-dev, libogg-dev, libqt3-mt-dev (>= 3:3.3.7), libvorbis-dev
 Build-Conflicts: libmas-dev
 Standards-Version: 3.7.3
 Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/trunk/packages/arts
@@ -47,7 +47,7 @@ Description: aRts sound system core components
 Package: kde3-libarts1-dev
 Architecture: any
 Section: libdevel
-Depends: kde3-libarts1c2a (= ${binary:Version}), kde3-libartsc0-dev (= ${binary:Version}), ${libasound2-dev}, libaudio-dev, libaudiofile-dev, libesd0-dev, libglib2.0-dev, libjack0.100.0-dev, libmad0-dev, libogg-dev, libqt3-mt-dev (>= 3:3.3.5), libvorbis-dev
+Depends: kde3-libarts1c2a (= ${binary:Version}), kde3-libartsc0-dev (= ${binary:Version}), ${libasound2-dev}, libaudio-dev, libaudiofile-dev, libesd0-dev, libglib2.0-dev, libjack-jackd2-dev, libmad0-dev, libogg-dev, libqt3-mt-dev (>= 3:3.3.5), libvorbis-dev
 Description: development files for the aRts sound system core components
  This package contains the header files needed to build applications that
  use the aRts sound system.
