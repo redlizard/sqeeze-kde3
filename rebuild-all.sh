@@ -7,9 +7,10 @@ if [ "$EUID" -ne 0 ]; then
 	exit 1
 fi
 
-targetdir=`realpath "$1"`
-test -d $targetdir
+mkdir -p output
+targetdir=`realpath output`
 
+mkdir -p stamp
 stampdir=`realpath stamp`
 
 packagesdir=`realpath packages`
@@ -40,13 +41,23 @@ kdewebdev
 koffice
 meta-kde
 kde-i18n
+
 yakuake
+
+kde-icons-crystal
+kde-icons-crystalproject
+kde-icons-gorilla
+kde-icons-kneu
+kde-icons-korilla
+kde-icons-noia
+kde-icons-nuovext
+kde-icons-nuvola
 "
 
 dist=squeeze
 comp=kde3
 arch=amd64
-mirror='http://mirrors.nl.kernel.org/debian/'
+mirror='http://ftp.surfnet.nl/os/Linux/distr/debian/'
 
 
 chrootrun()
@@ -57,7 +68,7 @@ chrootrun()
 buildrepo()
 {
 	pwd=`pwd`
-	cd $repopath
+	cd $1
 	mkdir -p dists/$dist/$comp/source
 	mkdir -p dists/$dist/$comp/binary-$arch
 	
@@ -99,45 +110,32 @@ buildrepo()
 	cd $pwd
 }
 
-dir=`mktemp -d`
-echo "Building in directory $dir"
 
 aptget="DEBIAN_FRONTEND=noninteractive apt-get -y --allow-unauthenticated"
 
-if [ -n "$2" -a -e "$2" ]; then
-	echo "Copying initial distribution from $2"
-	cp -a "$2" $dir/squeeze
-	cd $dir
-else
-	pwd=`pwd`
-	cd $dir
-	echo "Constructing initial distribution"
-	debootstrap squeeze squeeze $mirror
-	mkdir squeeze/apt-repo
+if [ ! -d squeeze-base ]; then
+	echo "Constructing base distribution"
+	debootstrap squeeze squeeze-base $mirror
+	mkdir squeeze-base/apt-repo
 	
-	repopath=`realpath squeeze/apt-repo`
+	echo "#!/bin/dash" > squeeze-base/usr/sbin/invoke-rc.d
+	chmod 755 squeeze-base/usr/sbin/invoke-rc.d
 	
-	
-	chrootrun squeeze "$aptget install build-essential dpkg-dev cdbs debhelper quilt joe locales"
-	echo en_US.UTF-8 UTF-8 >> squeeze/etc/locale.gen
-	chrootrun squeeze locale-gen
-	mkdir -p squeeze/apt-repo/pool
-	buildrepo
-	echo "deb $mirror squeeze main" > squeeze/etc/apt/sources.list
-	echo "deb file:///apt-repo/ squeeze kde3" >> squeeze/etc/apt/sources.list
-	echo "deb-src file:///apt-repo/ squeeze kde3" >> squeeze/etc/apt/sources.list
-	chrootrun squeeze "$aptget update"
-	
-	if [ -n "$2" ]; then
-		cd $pwd
-		echo "Copying initial distribution to $2"
-		cp -a $dir/squeeze "$2"
-		cd $dir
-	fi
+	chrootrun squeeze-base "$aptget install build-essential dpkg-dev cdbs debhelper quilt joe locales"
+	echo en_US.UTF-8 UTF-8 >> squeeze-base/etc/locale.gen
+	chrootrun squeeze-base locale-gen
+	mkdir -p squeeze-base/apt-repo/pool
+	buildrepo squeeze-base/apt-repo
+	echo "deb $mirror squeeze main" > squeeze-base/etc/apt/sources.list
+	echo "deb file:///apt-repo/ squeeze kde3" >> squeeze-base/etc/apt/sources.list
+	echo "deb-src file:///apt-repo/ squeeze kde3" >> squeeze-base/etc/apt/sources.list
+	chrootrun squeeze-base "$aptget update"
+	chrootrun squeeze-base "$aptget clean"
 fi
 
-repopath=`realpath squeeze/apt-repo`
-for file in `ls $targetdir`; do cp $targetdir/$file $repopath/pool; done
+dir=`mktemp -d build-XXXXXXXXXX`
+echo "Building in directory $dir"
+cd $dir
 
 for package in $packages; do
 	fullpackage=`ls -F $packagesdir | grep / | tr '/' ' ' | grep kde3-$package-`
@@ -146,18 +144,19 @@ for package in $packages; do
 	
 	if [ ! -f $stampdir/$fullpackage ]; then
 		echo "Building source package $fullpackage..."
-		cp -a squeeze $package
+		cp -a ../squeeze-base $package
+		
 		mkdir $package/build-source-package
 		cp -a $packagesdir/$fullpackage $package/build-source-package
 		chrootrun $package "cd build-source-package/$fullpackage && dpkg-buildpackage -S -us -uc -d"
-		cd $dir
-		cp $package/build-source-package/kde3-${package}_* $repopath/pool
 		cp $package/build-source-package/kde3-${package}_* $targetdir
 		rm -rf $package/build-source-package
-		buildrepo
 		
+		echo "Preparing build dependencies for package $fullpackage..."
 		rm -rf $package/apt-repo
-		cp -a squeeze/apt-repo $package
+		mkdir -p $package/apt-repo/pool
+		for file in `ls $targetdir`; do ln $targetdir/$file $package/apt-repo/pool; done
+		buildrepo $package/apt-repo
 		
 		echo "Installing build dependencies for package $fullpackage..."
 		mkdir $package/build-binary-package
@@ -167,9 +166,7 @@ for package in $packages; do
 		
 		echo "Building binary package $fullpackage for architecture $arch..."
 		chrootrun $package "cd build-binary-package/$fullpackage && dpkg-buildpackage -us -uc"
-		cp $package/build-binary-package/*.deb $repopath/pool
 		cp $package/build-binary-package/*.deb $targetdir
-		buildrepo
 		
 		echo "Package $fullpackage built successfully"
 		rm -rf $package
@@ -178,5 +175,5 @@ for package in $packages; do
 	fi
 done
 
-cd .
+cd ..
 rm -rf $dir
