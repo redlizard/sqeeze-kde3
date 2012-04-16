@@ -1,0 +1,20 @@
+Source: kde3-kde-icons-nuovext
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.7.3
+Homepage: http://nuovext.pwsp.net/
+
+Package: kde3-kde-icons-nuovext
+Section: kde
+Architecture: all
+Depends: 
+Recommends: kde3-kdebase
+Description: nuoveXT icon theme for KDE
+ nuoveXT is a complete icon set for KDE. It consists of high quality icons
+ which can be used as individual icons for X desktops or as a complete
+ icon set for KDE3.
+ . 
+ It is currently one of the most popular icon sets from kde-look.org.
+

@@ -1,0 +1,17 @@
+Source: kde3-kde-icons-nuvola
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.7.3
+
+Package: kde3-kde-icons-nuvola
+Section: kde
+Architecture: all
+Recommends: kde3-kdebase
+Description: Nuvola icon theme for KDE3
+ Nuvola is a very beautiful icon theme for KDE and one of the most popular 
+ according to kde-look.org.
+ .
+ If you like plastik and crystal, you should give nuvola a try!
+

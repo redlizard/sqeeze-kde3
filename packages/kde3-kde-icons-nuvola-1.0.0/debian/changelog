@@ -1,0 +1,49 @@
+kde3-kde-icons-nuvola (1.0.0-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 16 Apr 2012 21:15:13 +0200
+
+kde-icons-nuvola (1.0.0-3) unstable; urgency=low
+
+  * Bumped standards version
+  * Fixed spelling error in description
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 26 Mar 2008 15:54:46 +0100
+
+kde-icons-nuvola (1.0.0-2) unstable; urgency=low
+
+  * Bumpted standards version
+    + Changed Build-depends-indep to Build-depends
+    
+  * Updated maintainer field
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 18 Oct 2006 19:03:55 +0200
+
+kde-icons-nuvola (1.0.0-1) unstable; urgency=low
+
+  * Major Cleanup
+    + Fixed handling of upstream tarbal (pretend to be a new upstream version,
+      to commit the change)
+    + Cleanup rules
+
+ -- Bastian Venthur <mail@venthur.de>  Tue, 18 Oct 2005 09:56:54 +0200
+
+kde-icons-nuvola (1.0-2) unstable; urgency=low
+
+  * Applied temporary workaround until upstream fixes the problem.
+    
+    Closes: #331226 (Some Nuvola icons interfere with klaptopdaemon)
+    	thanks Christopher Martin
+
+  * Updated copyright file to new postal address of the Free Software
+    Foundation
+
+ -- Bastian Venthur <mail@venthur.de>  Thu, 13 Oct 2005 15:35:49 +0200
+
+kde-icons-nuvola (1.0-1) unstable; urgency=low
+
+  * Initial release Closes: #325922
+
+ -- Bastian Venthur <mail@venthur.de>  Wed, 31 Aug 2005 21:54:16 +0200
+

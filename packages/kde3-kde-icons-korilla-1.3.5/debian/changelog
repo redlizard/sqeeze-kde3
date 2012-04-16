@@ -1,0 +1,13 @@
+kde3-kde-icons-korilla (1.3.5-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 16 Apr 2012 21:10:29 +0200
+
+kde-icons-korilla (1.3.5-1) unstable; urgency=low
+
+  * Initial release Closes: #348101 
+  * Removed some non-free and some unused bits from the tarball
+
+ -- Sune Vuorela <debian@pusling.com>  Tue, 20 Sep 2005 10:21:25 +0000
+

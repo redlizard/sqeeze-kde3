@@ -1,0 +1,19 @@
+kde3-kde-icons-kneu (0.2-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 16 Apr 2012 21:12:00 +0200
+
+kde-icons-kneu (0.2-1) unstable; urgency=low
+
+  * Changed the package name from kde-icon-theme-kneu to kde-icons-kneu
+    to follow the naming scheme of other KDE icon themes. Closes: #411629.
+
+ -- Andre Luiz Rodrigues Ferreira <andrelrf@ossystems.com.br>  Tue, 14 Aug 2007 22:53:04 -0500
+
+kneu (0.2-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Andre Luiz Rodrigues Ferreira <andrelrf@ossystems.com.br>  Mon,  8 Jan 2007 15:11:24 -0200
+

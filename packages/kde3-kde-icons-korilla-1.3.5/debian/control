@@ -1,0 +1,13 @@
+Source: kde3-kde-icons-korilla
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.7.2
+
+Package: kde3-kde-icons-korilla
+Architecture: all
+Recommends: kde3-kdebase
+Description: Blue version of the gorilla icons for kde
+ Kool gorilla icon set for kde. Brings monkey spirit to your desktop
+

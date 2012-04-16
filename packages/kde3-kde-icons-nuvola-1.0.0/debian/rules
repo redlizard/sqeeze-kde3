@@ -1,0 +1,62 @@
+#!/usr/bin/make -f
+
+package=kde3-kde-icons-nuvola
+INSTDIR=/opt/kde3/share/icons/nuvola
+
+build:
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean
+
+binary-indep:
+	dh_clean
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+	dh_installchangelogs
+	dh_installdocs
+
+	dh_install 
+	
+	#
+	# temp. workaround for #331226 (Some Nuvola icons interfere with klaptopdaemon)
+	#
+	find $(CURDIR)/debian/$(package)/$(INSTDIR) -name laptop_charge* 	-exec rm \{\} \;
+	find $(CURDIR)/debian/$(package)/$(INSTDIR) -name laptop_nocharge* 	-exec rm \{\} \;
+	find $(CURDIR)/debian/$(package)/$(INSTDIR) -name laptop_nobattery* 	-exec rm \{\} \;
+	
+	find $(CURDIR)/debian/$(package)/opt/kde3/share/icons -type f -exec chmod 644 {} \;
+	find $(CURDIR)/debian/$(package)/opt/kde3/share/icons -type d -exec chmod 755 {} \;
+	
+	dh_fixperms
+	dh_compress
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary-arch:
+
+binary: binary-indep binary-arch
+
+.PHONY: binary binary-arch binary-indep clean build
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done
+

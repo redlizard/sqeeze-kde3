@@ -1,0 +1,32 @@
+This package was debianized by Bastian Venthur <mail@venthur.de> on
+Tue,  9 Aug 2005 21:58:54 +0200.
+
+You can fetch it from http://sa-ki.deviantart.com
+
+Copyright Holder (C) 2005 and current upstream maintainer is 
+Alexandre Moore <alexandre.moore@gmail.com>
+
+License: All but the SuSe icon are GPL. The SuSe icon is BSD (see below). 
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
+
+On debian-systems a copy of this license can be found at:
+"/usr/share/common-licenses/GPL-2"
+
+
+The SuSe icon:
+    The SuSE icon added to the package (apps/suse.png) is under BSD license by 
+    tkdesign-studio.com provided on kde-look.org. 
+

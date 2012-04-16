@@ -1,0 +1,23 @@
+kde3-kde-icons-noia (1.0-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 16 Apr 2012 21:12:13 +0200
+
+kde-icons-noia (1.0-2) unstable; urgency=low
+
+  * Fixed copy/paste errors in copyright file (Closes: #212144).
+
+ -- Morten Hustveit <morten@debian.org>  Mon, 22 Sep 2003 14:13:20 +0200
+
+kde-icons-noia (1.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Morten Hustveit <morten@debian.org>  Fri, 19 Sep 2003 15:44:58 +0200
+
+kde-icons-noia (0.95-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Morten Hustveit <morten@debian.org>  Fri,  4 Apr 2003 12:26:56 +0200

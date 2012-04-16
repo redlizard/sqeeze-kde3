@@ -1,0 +1,70 @@
+kde3-kde-icons-nuovext (1.6.dfsg.1-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 16 Apr 2012 21:14:17 +0200
+
+kde-icons-nuovext (1.6.dfsg.1-3) unstable; urgency=low
+
+  * Bumped standards version
+  * Added Homepage field
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 26 Mar 2008 15:44:10 +0100
+
+kde-icons-nuovext (1.6.dfsg.1-2) unstable; urgency=low
+
+  * Updated maintainer field 
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 18 Oct 2006 19:12:13 +0200
+
+kde-icons-nuovext (1.6.dfsg.1-1) unstable; urgency=high
+
+  * Removed non-free ubuntu-icons. Thanks Philippe Cloutier for the hint.
+
+  * Bumped standards-version (no changes).
+
+ -- Bastian Venthur <mail@venthur.de>  Tue, 26 Sep 2006 14:14:43 +0200
+
+kde-icons-nuovext (1.6-1) unstable; urgency=low
+
+  * New upstream release
+    - Due many requests upstream switched back to GPL
+    - New amaroK and kmail icons
+    - Added some missing icons in apps
+
+  * Changes from 1.1 to 1.5 (which was not in the archive due unfree license)
+    - many new icons
+    - new action icons
+
+  * Fixed some typos control
+
+ -- Bastian Venthur <mail@venthur.de>  Sun, 11 Dec 2005 11:08:56 +0100
+
+kde-icons-nuovext (1.1.0-1) unstable; urgency=low
+
+  * Major cleanup
+    - corrected handling of upstream tarball, this forced me to "increase" the
+      upstream version from 1.1 to 1.1.0 in order to get the old, crappy 
+      orig.tar.bz out of the archive
+    - use dirs, docs instead of creating and copying manually
+    - change target dir to /usr/share/icons/nuovext
+    - use dh_install instead of manually copying
+
+  * Corrected copyright.debian
+    - Not all icons are GPL, the SuSe icon is BSD
+    - removed upstream's readme
+
+ -- Bastian Venthur <mail@venthur.de>  Mon, 17 Oct 2005 11:41:58 +0200
+
+kde-icons-nuovext (1.1-2) unstable; urgency=low
+
+  * Moved upstream docs to correct location (Closes: #324505) 
+
+ -- Bastian Venthur <mail@venthur.de>  Mon, 22 Aug 2005 16:49:45 +0200
+
+kde-icons-nuovext (1.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #322225)
+
+ -- Bastian Venthur <mail@venthur.de>  Tue,  9 Aug 2005 21:58:54 +0200
+

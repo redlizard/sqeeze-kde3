@@ -1,0 +1,32 @@
+kde3-kde-icons-crystal (3.7-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 16 Apr 2012 20:58:04 +0200
+
+kde-icons-crystal (3.7-2) unstable; urgency=low
+
+  * Switched 32x32/konsole.png with 32x32/konsole2.png (Closes: #187526)
+  * Removed .xvpics directories
+  * Compressed changelog
+
+ -- Morten Hustveit <morten@debian.org>  Fri,  4 Apr 2003 11:17:35 +0200
+
+kde-icons-crystal (3.7-1) unstable; urgency=low
+
+  * New icons
+
+ -- Morten Hustveit <mortehu@ifi.uio.no>  Tue, 25 Jun 2002 22:01:07 +0200
+
+kde-icons-crystal (3.5) unstable; urgency=low
+
+  * Color correction on all icons
+  * 25 new 16x16 icons
+
+ -- Morten Hustveit <mortehu@ifi.uio.no>  Tue, 18 Jun 2002 12:22:48 +0200
+
+kde-icons-crystal (3.1-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Morten Hustveit <mortehu@ifi.uio.no>  Sun,  2 Jun 2002 21:37:04 +0200

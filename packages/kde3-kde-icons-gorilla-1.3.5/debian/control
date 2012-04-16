@@ -1,0 +1,13 @@
+Source: kde3-kde-icons-gorilla
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.7.2
+
+Package: kde3-kde-icons-gorilla
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Yellowish gorilla icons for kde
+ Gorilla icon set for kde. Brings monkey spirit to your desktop
+

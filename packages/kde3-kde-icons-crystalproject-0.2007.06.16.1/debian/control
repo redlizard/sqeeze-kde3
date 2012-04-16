@@ -1,0 +1,20 @@
+Source: kde3-kde-icons-crystalproject
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.7.3
+Section: kde
+Homepage: http://www.everaldo.com/crystal/
+
+Package: kde3-kde-icons-crystalproject
+Provides: kde-icons-crystalclear
+Section: kde
+Architecture: all
+Recommends: kde3-kdebase
+Description: Everaldo's "Crystal Project" icon theme for KDE
+ This is the Crystal Project icon theme by Everaldo. It is formerly known as
+ Crystal Clear and was renamed to Crystal Project in June 2007.
+ .
+ Unlike kde-icons-crystal -- which is in fact Everaldo's "Crystal SVG" icon 
+ theme from 2003, -- this package does not contain graphics in SVG format.
+

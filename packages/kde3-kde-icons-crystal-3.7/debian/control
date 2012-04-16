@@ -1,0 +1,18 @@
+Source: kde3-kde-icons-crystal
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends-Indep: debhelper
+Standards-Version: 3.5.9.0
+
+Package: kde3-kde-icons-crystal
+Architecture: all
+Section: kde
+Recommends: kde3-kdebase (>> 4:2.1-final-0)
+Description: Crystal icon theme for KDE
+ The Conectiva Crystal icon theme is the standard icon theme of Conectiva
+ Linux 8.
+ .
+ The creator of this collection, Everaldo Coelho <everaldo@conectiva.com.br>, 
+ accepts contributions.
+

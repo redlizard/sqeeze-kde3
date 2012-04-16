@@ -1,0 +1,54 @@
+kde3-kde-icons-crystalproject (0.2007.06.16.1-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 16 Apr 2012 21:05:38 +0200
+
+kde-icons-crystalproject (0.2007.06.16.1-2) unstable; urgency=low
+
+  * Bumped standards version
+  * Added Homepage field
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 26 Mar 2008 15:31:13 +0100
+
+kde-icons-crystalproject (0.2007.06.16.1-1) unstable; urgency=low
+
+  * Upstream renamed Crystal Clear to Crystal Project, so do I
+
+ -- Bastian Venthur <venthur@debian.org>  Mon, 23 Jul 2007 17:59:50 +0200
+
+kde-icons-crystalclear (0.2007.06.16-1) unstable; urgency=low
+
+  New upstream release (after 2 years)
+
+  * Hundreds of new icons
+  * Improved design style
+  * Support for 24x24 icons
+  * Support of the most known KDE games
+  * A lot of new things
+
+ -- Bastian Venthur <venthur@debian.org>  Sun, 24 Jun 2007 20:08:17 +0200
+
+kde-icons-crystalclear (0.0.20050623.dfsg.1-2) unstable; urgency=low
+
+  * Updated maintainer field 
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 18 Oct 2006 19:24:28 +0200
+
+kde-icons-crystalclear (0.0.20050623.dfsg.1-1) unstable; urgency=high
+
+  * Removed non-free Firefox icon (Closes: #389499)
+    - Introduced dfsg-version scheme since I needed to alter upstreams
+      orig-tarball.
+    - See README.Debian-source for further information.
+    
+  * Bumped standards-version (no changes)
+
+ -- Bastian Venthur <mail@venthur.de>  Tue, 26 Sep 2006 12:41:59 +0200
+ 
+kde-icons-crystalclear (0.0.20050623-1) unstable; urgency=low
+
+  * Initial release Closes: #322161
+
+ -- Bastian Venthur <mail@venthur.de>  Tue,  9 Aug 2005 14:49:13 +0200
+

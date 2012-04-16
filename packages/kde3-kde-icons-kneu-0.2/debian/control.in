@@ -1,0 +1,17 @@
+Source: kde-icons-kneu
+Section: kde
+Priority: optional
+Maintainer: Debian-BR Team Maintainers <debian-devel-portuguese@lists.debian.org>
+Uploaders: @DEBIAN_BR_TEAM@
+Build-Depends: debhelper (>= 5), cdbs
+Standards-Version: 3.7.2
+
+Package: kde-icons-kneu
+Architecture: all
+Conflicts: kde-icon-theme-kneu
+Replaces: kde-icon-theme-kneu
+Depends: kdebase
+Description: kNeu KDE icon theme
+ kNeu is an icon theme for KDE Desktop, based entirely on Silvestre
+ Herrera's DLG Neu Icon Set.  It intends to be some cartoonish, but
+ not stupid. Quiet, but not silent. Shiny, but not scandalous.

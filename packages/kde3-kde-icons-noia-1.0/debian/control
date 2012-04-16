@@ -1,0 +1,16 @@
+Source: kde3-kde-icons-noia
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends-Indep: debhelper, imagemagick
+Standards-Version: 3.5.9.0
+
+Package: kde3-kde-icons-noia
+Architecture: all
+Section: kde
+Recommends: kde3-kdebase (>= 4:3.0)
+Description: Noia icon theme for KDE 3
+ The Noia icon theme is a complete icon set with only original icons.
+ It can be used as individual icons for X desktops, or as a complete
+ icon set for KDE 3.
+
