@@ -3,6 +3,8 @@
 #  DEFAULT KDE STARTUP SCRIPT ( KDE-3.5.9 )
 #
 
+export PATH=/opt/kde3/bin:$PATH
+
 # When the X server dies we get a HUP signal from xinit. We must ignore it
 # because we still need to do some cleanup.
 trap 'echo GOT SIGHUP' HUP
