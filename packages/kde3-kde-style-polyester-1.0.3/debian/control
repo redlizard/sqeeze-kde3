@@ -1,0 +1,17 @@
+Source: kde3-kde-style-polyester
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 5.0.0), automake1.9, autoconf, libtool, kde3-kdelibs4-dev (>= 4:3.2), kde3-kdebase-dev (>= 4:3.2), librsvg2-bin, quilt (>>0.40)
+Standards-Version: 3.7.3
+Homepage: http://www.kde-look.org/content/show.php?content=27968
+
+Package: kde3-kde-style-polyester
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Polyester widget style and kwin decoration for KDE3
+ Widget style and kwin decoration both aim to maintain a good balance between
+ eyecandy and simplicity. Widget style is based on Plastik, window decoration
+ is based on Smoothblend.
+

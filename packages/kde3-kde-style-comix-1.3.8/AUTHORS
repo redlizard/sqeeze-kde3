@@ -1,0 +1,35 @@
+Jens Luetkens <j.luetkens@limitland.de>
+
+This style is based on the skeleton of the excellent
+KDE "Plastik" style (c) 2003 by Sandro Giessl.
+
+   based on the KDE style "Plastik":
+
+   Copyright (C) 2003 Sandro Giessl <ceebx@users.sourceforge.net>
+
+   based on the KDE style "dotNET":
+
+   Copyright (C) 2001-2002, Chris Lee <clee@kde.org>
+							Carsten Pfeiffer <pfeiffer@kde.org>
+							Karol Szwed <gallium@kde.org>
+   Drawing routines completely reimplemented from KDE3 HighColor, which was
+   originally based on some stuff from the KDE2 HighColor.
+
+   based on drawing routines of the style "Keramik":
+
+   Copyright (c) 2002 Malte Starostik <malte@kde.org>
+			 (c) 2002,2003 Maksim Orlovich <mo002j@mail.rochester.edu>
+   based on the KDE3 HighColor Style
+   Copyright (C) 2001-2002 Karol Szwed	  <gallium@kde.org>
+			 (C) 2001-2002 Fredrik Höglund  <fredrik@kde.org>
+   Drawing routines adapted from the KDE2 HCStyle,
+   Copyright (C) 2000 Daniel M. Duley	   <mosfet@kde.org>
+			 (C) 2000 Dirk Mueller		  <mueller@kde.org>
+			 (C) 2001 Martijn Klingens	  <klingens@kde.org>
+   Progressbar code based on KStyle,
+   Copyright (C) 2001-2002 Karol Szwed <gallium@kde.org>
+
+The window decoration is also derived from the "Plastik" and "Knifty"
+code skeleton by Sandro Giessl. I am afraid i do not have any copyright 
+history for this, for it is taken from the KDE CVS tree. Big Thanks to 
+Sandro anyhow.

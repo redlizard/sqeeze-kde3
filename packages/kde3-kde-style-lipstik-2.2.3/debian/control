@@ -1,0 +1,17 @@
+Source: kde3-kde-style-lipstik
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0), kde3-kdelibs4-dev (>= 4:3.2), automake1.9, dpatch
+Standards-Version: 3.7.3
+
+Package: kde3-kde-style-lipstik
+Section: kde
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Lipstik style for KDE3
+ Based on the plastik style, Lipstik is a purified style with many options to
+ tune your desktop look.
+ .
+ Lipstik also provides Lipstik-color-schemes
+

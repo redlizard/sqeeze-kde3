@@ -1,0 +1,146 @@
+2006-04-28: v. 1.3.8
+- kwin: title update fix
+- kwin: window shading fix (Debian bug report 364459)
+- kwin: inactive sunken buttons
+
+2006-02-07: v. 1.3.7
+- style: combobox fix (kdevelop crashing)
+
+2005-12-05: v. 1.3.6
+- style: tabs fix
+
+2005-12-05: v. 1.3.5
+- kwin: min width set to 200 px
+- kwin: title update fix
+- style: 2 px in tabs drawing
+- style: frame fullscreen fix (kaffeine)
+- colorscheme button color changed
+
+2005-07-03: v. 1.3.4
+- tabs cycling fixed
+
+2005-05-30: v. 1.3.3
+- flat color menubar item
+
+2005-05-01: v. 1.3.2
+- another colorscheme Makefile fix
+
+2005-05-01: v. 1.3.1
+- colorscheme Makefile fix
+
+2005-03-xx: v. 1.3
+- kwin: code cleanup and optimization
+- kwin: doble click icon closes window
+- kwin: sunken buttons
+- kwin: expanded title box option
+- kwin: colorscheme and code for inactive windows
+- kwin: caption buffer
+- kwin: title separator
+
+- style: konqueror inactive split view statusbar background
+- style: editable combobox fix
+- style: tabs hover removed 
+- style: sharper gradients for "square" buttons
+- style: color option bugfix (if OpenOffice.org is still crashing,
+         try to install comix-1.3 in the root kde environment to 
+		 be used by GTK-Qt Theme engine)
+- style: code cleanup and optimization (7x speed improvement)
+- style: menu item hover option
+- style: kickerMode styled panels for Qt > 3.3
+
+2005-03-11: v. 1.2.4
+- crash with GTK-QT Theme Engine (gentoo bug# 84681)
+
+2005-01-24: v.1.2.3
+- desktop background image fix
+
+2005-01-23 v. 1.2.2
+- kicker background bug fixed
+- kwin configdialog.ui version fix
+
+2005-01-20: v. 1.2.1
+- kde 3.3 fix (Abilities)
+
+2005-01-20: v. 1.2
+- added Comix window decoration
+- added Comix colorscheme
+- html LineEdit fix :-P
+
+2004-11-27: v. 1.1.7
+- scollbar background fixed/improved
+- transparent menus
+
+2004-11-27: v. 1.1.6
+- LineEdit fix
+- reverse layout
+- header section fixes
+- toolbar item separator option
+
+2004-10-24: v. 1.1.5
+- qt3.2 rubberband compiler error
+
+2004-10-23: v. 1.1.4
+- speed imporvement (4x, way to go)
+- - contour drawing routine
+- - no more painter save() and restore()
+- rubberband fix
+- vertical dock separators fix
+
+2004-10-09: v. 1.1.3
+- toolbar label fix
+
+2004-10-08: v. 1.1.2
+- scrollbar style option
+- button surface highlight option
+- toolbar widgets background
+
+2004-10-03: v. 1.1.1
+- slider highlight surface
+- combobox and radiomark fixes
+- kicker mode fixes
+- kalarm spinwidgets patch
+
+2004-09-23: v. 1.1
+- konsole tab fixed
+- konsole tab color option
+- default button fixed
+- window frame (MDI) fixed
+- dock window fixes
+- GTK-QT and tabs crash fixed
+
+2004-09-14: v. 1.0
+- disabled editable comboboxes fixed
+- tabWidgets fixed
+- small ProgressBars fixed
+- konqueror sidebar fixed
+- KColorButtons
+- hover SpinWidgets
+- hover Sliders
+- sunken and toggled button surface color
+- tab focus indicator
+- MenuButton Indicator fixed
+- readonly LineEdits fixed
+
+2004-09-13: v. 0.1.4
+- crash bug fix (remove file /tmp/ttt after installation)
+- slight improvement of panels frames
+
+2004-09-10: v. 0.1.3
+- slider fixes
+- hide focus rect option
+
+2004-09-09: v. 0.1.2
+- tab icon shift fix
+- progressbar content
+- more combobox fixes
+- scrollbar background color enhancement
+
+2004-09-07: v. 0.1.1
+- editable combobox popup fixed
+- scrollbar width extended by 2 pixel
+- combobox metrics fixed
+- tab bar center option
+
+2004-09-06: v. 0.1
+- initial release
+

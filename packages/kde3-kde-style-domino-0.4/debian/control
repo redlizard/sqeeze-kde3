@@ -1,0 +1,15 @@
+Source: kde3-kde-style-domino
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 6), cdbs, kde3-kdebase-dev, libqt3-mt-dev
+Standards-Version: 3.7.3
+Homepage: http://kde-look.org/content/show.php?content=42804
+
+Package: kde3-kde-style-domino
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Domino widget style and kwin decoration for KDE3
+ Domino is a style with a soft look. It allows to fine adjust the shininess
+ of the widgets by customizable color gradients.
+

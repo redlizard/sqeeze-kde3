@@ -1,0 +1,245 @@
+%define version	1.0.3
+%define name	polyester
+%define prefix	%(kde-config --prefix)
+
+Name: %{name}
+Version: %{version}
+Release: 1
+Vendor: notmart@gmail.com
+Url: http://kdelook.org/content/show.php?content=27968
+License: GPL
+Summary: A glossy kde theme
+Group: System/GUI/KDE
+Packager: Marco Martin <notmart@gmail.com>
+BuildRoot:  %{_tmppath}/%{name}-root 
+Source: %{name}-%{version}.tar.bz2
+
+%description
+Widget style + kwin decoration both aimed to be a good balance between eye candy and simplicity
+
+%prep
+%setup
+
+
+%build
+./configure --enable-final --disable-debug --prefix=%{prefix}
+make
+
+%install
+rm -rf %{buildroot}
+%makeinstall
+
+%clean
+rm -rf %{buildroot}
+
+%post -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+%files
+%defattr(0644, root, root)
+%{prefix}/lib/kde3/kwin3_polyester.la
+%{prefix}/lib/kde3/kwin3_polyester.so
+%{prefix}/lib/kde3/kwin_polyester_config.la
+%{prefix}/lib/kde3/kwin_polyester_config.so
+%{prefix}/share/apps/kwin/polyester.desktop
+%{prefix}/lib/kde3/kstyle_polyester_config.la
+%{prefix}/lib/kde3/kstyle_polyester_config.so
+%{prefix}/lib/kde3/plugins/styles/polyester.la
+%{prefix}/lib/kde3/plugins/styles/polyester.so
+%{prefix}/share/apps/kstyle/themes/polyester.themerc
+%{prefix}/share/apps/kdisplay/color-schemes/PolyesterBlue.kcsrc
+%{prefix}/share/apps/kdisplay/color-schemes/PolyesterEmerald.kcsrc
+%{prefix}/share/apps/kdisplay/color-schemes/PolyesterOrangeJuice.kcsrc
+%{prefix}/share/locale/it/LC_MESSAGES/polyester.mo
+%{prefix}/share/locale/pl/LC_MESSAGES/polyester.mo
+%changelog
+
+*Wed Jan 16 2008 notmart@gmail.com
+Polyester 1.0.3:
+-Polish translation by Tomek Argasiński
+-Italian translation
+
+*Thu Aug 21 2007 notmart@gmail.com
+Polyester 1.0.2:
+-corrected a bug in the configuration dialog (centered tabbars)
+
+*Fri May 10 2007 notmart@gmail.com
+Polyester 1.0.1:
+-corrected a build problem with automake 2.6+
+widget:
+ -better management of the menu stripe width
+ -another hack for gtk-qt: the menu stripe is always off (yeah, it's a broken solution but it was managed too bad...)
+ -when both toolbar separators and menubar emphasis with border are turned on don't draw an extra line under the menubar
+deco:
+ -when the focus policy is set to "focus follows mouse" the bad flickering should be done (need some testing)
+ -corrected a bug that caused the windows not being completely painted when kcompmgr is activated
+
+*Mon Dec 18 2006 notmart@gmail.com
+widget:
+ -With colored scrollbars option turned off, the scrollbar handle has colored extremities on mouse over (similar to the Ubuntu theme)
+ -In the configuration dialog "Menus and toolbars" was misleading, now it's "Advanced"
+ -nice circles instead of asterisks in password lineedits. Idea from Daniel Molkentin http://daniel.molkentin.de/blog/index.php?/archives/59-Password-shadowing-Pimp-My-Plastique.html (will probably be the default in KDE 3.6 btw)
+ -default button highlight when animations are disabled
+ -alphablending (yes, fake of course:)) at the corners of the popup menus
+ -corrected a bug in the sliders aspect
+deco:
+ -titlebar buttons icons have a cleaner aspect
+
+*Mon Nov 29 2006 notmart@gmail.com
+widget:
+ -less (and bigger) dots on QSplitters
+ -button like menuitems works with transparent menus
+ -menu stripe works with transparent menus
+ -entirely redesigned the configuration dialog (should be more usable)
+ -a lot of code cleanups in the configuration code
+ -light gradient in the progressbar blank area
+ -corrected an ugly rendering bug in the QGridView headers
+ -corrected a rendering bug in the slider with reverse layout
+ -minor cosmetic changes to the following widgets:
+   -scrollbars
+   -sliders
+   -default buttons contour
+   -spinboxes
+   -inactive tabs
+   -better mouse over highlight with checkboxes and radiobuttons
+   -border of buttons and other 3d widgets
+
+deco:
+ -option to make rectangular titlebar buttons (at the moment is the default)
+ -antialiased titlebar buttons border
+ -redesigned the configuration dialog to be similar to the style configuration
+ -added svg sources of the titlebar buttons icons so it's easier to make modifications
+ -some code cleanups
+ +drawing of titlebar buttons follows the global contrast settings
+
+both
+ -modified default color schemes and added a new disturbing orange one
+
+*Sun Oct 01 2006 notmart@gmail.com
+Polyester 1.0_beta2:
+widget:
+ -Nicer animation on buttons when the mouse cursor leaves them
+ -Shadowed text of buttons and menubar configurable separately
+ -Fixed a bug in the rendering of scrollbar handles
+ -Don't render dots on scrollbar handle when the handle is too little
+ -Optimization: lot useless loops in the animation code (i.e. deactivating the QTimer when is not needed :))
+
+deco:
+ -More Fitts' law friendly: titlebar buttons works also when the mouse cursor is at the top edge of the screen
+ -No longer draws the round border if the window is maximized
+ -Uses 16x16 icons in titlebar where available instead of scaling down bigger icons
+
+*Thu Aug 17 2006 notmart@gmail.com
+Polyester 1.0_beta1:
+widget:
+ -Corrected a bug in the rendering of checked menubar items
+ -Added a cute animation to the default botton text that makes it always readable
+ -Rounded focus rectangle where it's possible
+ -Corrected a bug that made displaying the menubar in Opera browser with incorrect colors
+ -Configuration option to disable the coloring of the sorted header in listviews
+ -Less dots in scrollbar slider
+ -More contrast in button borders
+ -Some changes under the hood that make some elements like headers, scrollbars and tabbars to look a little bit more clean
+ -Corrected a little bug in the animation of toolbar buttons
+
+deco:
+ -Titlebar button icons have a sharper shape
+ -More smooth buttons animations
+ -Button animations styles "colorize" and "fade out" should work better regardless what the buttons color is.
+
+*Mon Jun 19 2006 notmart@gmail.com
+Polyester 0.9.3:
+Mainly a bugfix release:
+ -text tab coloring works again
+ -no more that ugly white border around the selected tab
+ -scrollbar size configurable
+ -the border around the menubar emphasis can be deactivated
+ -selected tab highlight configurable
+
+*Mon May 23 2006 notmart@gmail.com
+Polyester 0.9.2:
+widget:
+ -bottom tabbars follows style settings
+ -little change on the look of the scrollbars
+ -little change on the look of highlighted buttons and tabbars
+ -bugfix: icons on listview headers are shown again
+ -bugfix: menu stripe on the right side when layout is reversed
+ -usability fix: only highlight listview headers when there is something to sort (still not perfect i.e. kmail)
+ -the use shadows option now applies a shadow on the text of menubar, buttons and tabs
+ -when colored scrollbars is off, also the sliders are not colored
+deco:
+ -tool windows (like OpenOffice stylist) with smaller titlebar and never rounded
+ -if the window title is too large it's faded out with a nice gradient (similar to the taskbar)
+ -added flat buttons style
+ -drawing of the titlebar should be a lot faster
+ -a little bit less broken with composite enabled
+both:
+ -configuration dialogs more friendly with low screen resolutions
+
+*Fri Mar 31 2006 notmart@gmail.com
+Polyester 0.9:
+widget:
+ -The coloring algorithm of the sliders now it's fixed (Thanks to Yogesh M.)
+ -Slighty changed the look of the sliders
+ -Changed contour color of scrollbar slider
+ -Scrollbar slider highlighting on mouse hover
+ -Sunken scrollbar slider when it's dragged
+ -Scrollbar style always in Windows style in gtk apps that uses gtk-qt (this fixes a bug into Firefox and Thunderbird)
+ -Highlighting of buttons works again on gtk-qt and Openoffice even if the animations are anabled
+ -highlighting listview and table headers on mouse over
+ -colored the header of the sorted field in listviews
+ -Little usability feature: the label of the leftmost header in a listview is moved in order to be kept always visible (this is similar to iTunes behaviour)
+ -Added configuration option to render all the buttons text lowercase (Thanks to Federico M.)
+deco:
+ -mousewheel over titlebar should work again and compile on older versions of kde (Thanks to Fabio R.)
+ -hopefully fixed a paint bug in glass style titlebar
+ -titlebar button style can be configured in: "Gradients", "glass" and "Reverse gradients" look and feel
+
+*Thu Mar 23 2006 notmart@gmail.com
+Polyester 0.8.8:
+ Mainly a bugfix release: fixed some issues of sliders drawing (no, it's still not perfect) and a bug into the rendering of scrollbar buttons.
+ The only new feature is that now the look of the titlebar can be configured as "gradients" or "glass"
+*Tue Mar 07 2006 notmart@gmail.com
+Polyester 0.8.5:
+widget:
+ -Buttons with more flat and light borders (configurable)
+ -New button style available: Flat
+ -New option for disabling the frames around statusbar items
+ -Stripe on a side of menus (configurable)
+ -Colored left part of horizontal sliders and bottom part of vertical sliders
+ -New Polyester Blue color scheme (now quite similar, but not identical to the default Suse scheme)
+ -(Hopefully) fixed some build errors
+deco:
+ -Configurable light button borders (same as the widget style)
+ -Adjusted the proportions of some button icons
+*Wed Mar 01 2006 notmart@gmail.com
+Polyester 0.8:
+widget:
+ -rewritten configuration dialog (now based on QT Designer)
+ -new configuration options:
+  -menu items spacing
+  -Menubar emphasis color
+  -Highlighted menu items can be configured to be button-like or not
+    (when menus are semitransparent active menu items are never button-like
+     due to a limitation into the procedure that renders the contours,
+     I fear it can't be fixed until qt4)
+ -Modified active menubar items look
+ -some micro-enhancements to scrollbars
+ -animated highlight on all animated widgets
+ -different look of checkable menu items
+deco:
+ -little fix of the positioning of titlebar buttons when "round corners" is not used
+
+* Mon Feb 20 2006 notmart@gmail.com
+Mainly a bugfix release:
+ widget:
+ -fixed an issue that made some rubbish to be displayed around the popup menu items
+ -fixed a bug into the custom menuitems drawing code that prevented displaying of keyboard shortcuts
+ -changed a little bit the pushbutton animation
+ deco:
+ -fixed a little bug of the drawing code of inactive titlebars
+* Fri Jan 12 2006 notmart@gmail.com
+-some little code cleanups-menubar text shadow configurable
+-as requested the look has been made a little bit similar to http://kdelook.org/content/show.php?content=33522 (but not identical)
+-active menu item more button-like-new option (default off) "menubar emphasis" that makes the menubar more glass-like
+-litte modification of the titlebar border
+-titlebar buttons with more contrast-when a dark color is chosen for the titlebar buttons, their icons become white

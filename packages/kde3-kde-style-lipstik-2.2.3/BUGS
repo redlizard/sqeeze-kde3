@@ -1,0 +1,19 @@
+#1 : On really small buttons, the focus rectangle looks strange. (Not only my fault, though, 
+     same happens in almost every style I've tried.) Ill try to come up with something else 
+     for the focus indication.
+
+#2 : When you first select this style, some apps, like kicker, wont refresh all the settings. 
+     This is not really a bug in Lipstik, but it happens.
+     (Workaround : restart KDE, or just kicker by pressing ALT+F2 and 
+     type "dcop kicker Panel restart".
+
+#3 : Looking for a way to make the menu titles have the "unflatten" look even when the taskbar
+     is set to flat... (Dont know yet... Maybe qtcast for the menu class?)
+     UPDATE: Well, since the style is designed with KDE 3.5 in mind, and my flat kicker
+             buttons hack for older KDE versions is gone, the menu titles wont get the flat
+	     look, since that was a side-effect of this hack.
+     
+#4 : Find a way to highlight the kicker taskbar buttons when in flat mode... What is that about?
+     I can't remember :)
+
+#5 : Toolbar gradients quite suck ;)

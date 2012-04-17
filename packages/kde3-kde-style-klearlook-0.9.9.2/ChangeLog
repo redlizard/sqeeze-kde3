@@ -1,0 +1,294 @@
+0.23.1
+------
+1. Compile fix.
+
+0.23
+----
+ 1. GTK: Fix colouring of check/radios.
+ 2. GTK: Fix bonobo toolbars - e.g. on nautilus 2.4.
+ 3. GTK: Draw handles on GNOME panel 2.4.
+ 4. GTK: Fix arrows going white when kde exports colours.
+ 5. GTK: Fix for some menu items in Gaim.
+ 6. GTK: Fix V1 style check/radios sometimes having the selected colour as
+         background
+ 7. GTK: Fix anti-aliasing on rounded radios when using gradient but no border.
+ 8. GTK2: Fix for rendering of toggle buttons in lists/cells - patch from
+          Alfons Hoogervorst
+ 9. ALL: Draw "pressed" background on all checked menu items, not just those with
+         icons.
+10. ALL: Highlight splitters on mouse-over
+11. ALL: New V4 (default) style, with the following:
+         Flatter gradient
+         Font colour used to border default buttons
+         No bold text on default button
+         Raised gradient (like buttons) for progress and menu bar selections
+         Rounded menubar selections
+         No border on splitters, use dots instead
+12. KDE: Polish application palette, so that all frames, etc. use the theme.
+13. KDE: Align kicker's handles better with the little arrows.
+14. KDE: Support mouse over for kicker taskbar buttons >= 3.4
+15. KDE: Mouse over for spin widgets.
+16. KDE: Increase toolbar button size - match GTK better.
+
+0.22
+----
+1. KDE: Remove scrollbar groove flicker.
+2. KDE: Remove editable combo-box flicker.
+3. ALL: New check/radio list code.
+4. KDE: Custom checklist controller.
+5. ALL: List view expanders - +/- (V1/V2), or arrows (V3)
+6. KDE: List view lines - none, dotted (V1/V2), solid (V3)
+        (GTK does not (?) support lines between elements - so this setting will
+         not affect GTK apps)
+7. KDE: Dark (V1/V2) or light (V3) list view lines. (Ditto)
+
+0.21
+----
+1. ALL: Adjust contrast settings to make lower-contrast the default.
+2. ALL: Toolbar and menubar borders: none, light, and dark (previous default)
+3: ALL: V3 now uses "light" toolbar/menubar borders.
+4. KDE: Don't AA radiobuttons on HTML pages.
+5. KDE: Squared-off splitters.
+6. GTK: Fix base/prelight colour.
+7. GTK: gcc 3.4 compile fix - thanks to Adam Gorzkiewicz
+8. KDE: Make tabs more GTK like.
+9: KDE: More GTK-like positioning of pushbutton icons - looks *much* nicer :-)
+
+0.20
+----
+1. GTK: Compile fix when compiled with KDE<3.2
+2. KDE: Slightly thinner menuitems.
+3. GTK: Match KDE's menuitem size better.
+4. GTK: Allow checks and radios to be re-coloured.
+5. ALL: Better AA for the edges of checks and radios - not perfect tho.
+6. GTK: If $HOME is not set, then try to ascertain from passwd entry.
+7. KDE: 5 pixel border around pushbutton contents.
+
+0.19
+----
+ 1. KDE: Fix for KDE not setting autoDefault() property of button - assume all
+         buttons can be default, leaving space for indicator.
+ 2. ALL: Optional triangle as default button indicator.
+ 3. GTK: Match KDE's export gtkrc colours.
+ 4. GTK2: Fix check/radio highlight so that it is not overridden by KDE's
+          export colours setting.
+ 5. ALL: Add option to enable/disable highlighting of check/radio labels.
+ 6: ALL: V3 - disable check/radio label highlight.
+ 7: ALL: V3 - use triangle as default button indicator.
+ 8: KDE: Fix menu button icon on konqueror's sidebar.
+ 9: ALL: Allow setting of slider thumbs: raised, sunken, or none.
+10: ALL: Allow setting of handles: raised or sunken.
+11: ALL: V3 - use sunken handles.
+12: KDE: Fix for korn.
+13: KDE: Fix for titlebutton on floating Qt windows - e.g. docks.
+14: KDE: Fix for amaroK - buttons in player window were too large!
+
+0.18
+----
+1. KDE: Fix for colouring of kicker's task buttons - i.e. these should have highlight
+        colour when an app is opened in the background.
+2. KDE: Use ::qt_cast<type *>(widget) as opposed to widget->inherits("type") whenever
+        possible.
+3. GTK2: Compile fix.
+
+0.17.2
+------
+1. GTK: Compile fix when compiled with KDE<3.2
+
+0.17.1
+------
+1. KDE: Use Qt 3.1 for ui file - so that will compile with Qt3.2, etc...
+        (Using 3.1 as I only have 3.1 and 3.3 installed...)
+
+0.17
+----
+1.  GTK: Compile fix - used C++ syntax in C code, oops...
+2.  GTK2: Make focus rects more like KDE's
+3.  KDE: Allow combo-boxes and scrollbars to be recoloured.
+4:  ALL: If compiled with KDE3.2 then there is only 1 style "QtCurve", and
+         only 1 set of GTK gtkrc files installed. Variation (V1, V2, V3, or
+         custom) can then be selected via KControl.
+
+         (NOTE: When upgrading from KDE3.1, you may wish to uninstall the
+         previous QtCurve release - to remove the old V2 and V3 config files)
+5:  ALL: Better non-bordered gradient radio/checks.
+6:  ALL: Option to use non gradient progress/menu bar indicator.
+7:  GTK: Don't shade paned widgets!
+8:  ALL: V1 has flat progress bar and menuitems - i.e. no gradient effect.
+9:  ALL: If no borders are selected and gradient selected, then use thin border
+         for progress bar and menuitems.
+10: KDE: Better AA'ing of edges of round buttons.
+11: GTK: Fix for background colour of selected text, thanks to David Rodríguez García
+12: ALL: Use KDE's contrast setting.
+13: KDE: Implement tri-state checkmarks.
+14: ALL: Better bottom/right tab gradients.
+15: KDE: (Qt>=3.2) the text/icon of a selected bottom tab moves down 1 pixel.
+16: KDE: (Qt>=3.2) Only highlight text/check label if mouse is over sensitive area.
+17: KDE: Mimic GTK's scrollbar highlighting. i.e. only highlight slider if mouse is
+         over slider area, and likewise for the buttons.
+18: KDE: When kicker is set to transparent (may need to restart kicker), use "harsh"
+         rounded buttons in round mode. (i.e. don't AA the corners)
+19: KDE: Modified button size code - KDE3.2's kcalc is smaller now!
+20: KDE: Don't flatten combo box arrow area when selected - more GTK like.
+21: KDE: Highlight clickable listview headers on mouse over - more GTK like.
+22: GTK: HScrollBar fix.
+23: KDE: More Gtk like shading of buttons - i.e. always dark when pressed.
+24: ALL: Slight change to look of combo-box.
+25: KDE: Fix for tabwidgets in konqueror, etc.
+
+0.16
+----
+1: ALL: Use "button text" colour for default button indicator, apart from when in
+        rounded mode (i.e. V3)
+2: ALL: V3 - Embolden font of default button.
+3: ALL: V3 - Lighter background for disabled check/radios.
+4: ALL: V3 - Correct AA colour for radio indicator.
+5: KDE: Draw triangular tabs the same as rounded - prevous versions defaulted to
+        KStyle.
+6: KDE: Add 10pix (2*10) border to non-default buttons.
+7: KDE: Implement masks for checks and radios - helps with khtml.
+
+0.15
+----
+1.  KDE: Smaller, more Gtk-like toolbar separators.
+2.  ALL: When drawing rounded, use background colour for corner pixels.
+3.  ALL: V2, use a shade of the button colour for the default indicator.
+4.  ALL: V3, as for V2 above, but "round" the indicator.
+5.  KDE: When compiled for Qt 3.2, only highlight pixmap and text on mouse over
+         for radio and checkboxes - as these are the only sensitive parts. (Qt < 3.2
+         the whole widget is sensitive - and this can expand past text.)
+6.  KDE: Fix bottom tabs - i.e. movement of text/icon. (Qt >= 3.2 !)
+7.  GTK: Fix bottom tabs on V1
+8.  ALL: More rounded buttons, etc.
+9:  ALL: Rounded indicator boxes in rounded mode.
+10: ALL: Better radio buttons.
+11: KDE: Use rounded buttons for Kicker taskbar as well - looks OK now buttons are more
+         rounded.
+12: GTK: Fix gradient rendering bug - seemed to affect GTK1 glade buttons. (When a partial
+         button had to be re-drawn, the whole button was re-drawn instead - clearing out the
+         text!)
+13: GTK: Use "check" for check and radio's in menus - more Qt like.
+14: ALL: V3 - Gradient radio's and checks.
+
+0.14
+----
+1. GTK2: Set slider width to 16 pixels to better match KDE.
+2. GTK: Draw border around toolbar buttons 1 pixel smaller - saves overlap with frame.
+3. GTK: Better tabs - GIMP 1.3's tab icons should now move. (GIMP's tabs are shaded
+        tho, hmm...)
+4. ALL: V3 style uses "pyramid" (i.e. non "V" like) arrows.
+5. KDE: Fix for menubar background if button colour != background colour.
+6. KDE: Fix for background of "Location:" on konqueror.
+7. GTK: Better lsitview headers - smaller, more KDE like.
+8. GTK: Reduce differences in V1, V2, and V3 gtkrc files to the bare minimum - ready
+        for only 1 (KControl) configurable style.
+9. GTK1: Fix (hack really) for range grooves. For some reason these were not being
+         drawn when first displayed. Works ok for ranges - but scrollbar grooves are still
+         messed up! The redraw only happens after you leave the widget!
+
+0.13
+----
+1. ALL: New V3 style - has rounded buttons, and uses gradient effect on buttons, tabs,
+        scrollbars, etc. 
+2. ALL: Code clean-up.
+
+0.12
+----
+1. KDE: Don't have flat buttons - i.e in printmgr, and kscd.
+2. KDE: Default frame width of 1.
+3. KDE: Fix mouse-over for some toolbar buttons - the on/off type. Affects most KDE styles,
+        but a real KDE fix should be in KDE3.2
+4. GTK2: Fix bug where V2 style options were being ignored.
+5. GTK2 and KDE: When highlight a depressed button, use a lighter
+                 shade of the depressed colour - and not the standard
+                 highlight colour.
+6. GTK: Active tab bar text is 1 pixel higher - a la KDE.
+7. KDE: Fix for borded bottom tabs.
+
+0.11
+----
+1. GTK2: Fix possible memory corruption.
+2. ALL: Square off splitter - more consistent.
+3. GTK2: Fix for 2.2.x combo-boxes.
+
+0.10
+----
+1. GTK2: Better match of menubar height with KDE.
+2. GTK:  Fix up/down/left/right arrows.
+
+0.09
+----
+1. GTK2: Fix scrollbars for 2.2.x - scrolled 1 pixel too much.
+2. GTK1: Fix lower spinbutton height. This was OK, so maybe its a Gtk
+         change. But from which version? I'm at 1.2.10
+
+0.08
+----
+1. GTK: Better menu selection.
+
+0.07
+----
+1. KDE: Reduce min-size of combo-boxes.
+2. GTK: Fixes for sodipodi - works with V1, not too good wrt V2...
+3. GTK2: Fix for GTK2.2 font setting.
+
+0.06
+----
+1. GTK: Make combo-boxes thinner.
+2. GTK: Allow ussage of GTK1 font substitution file, either 
+        /etc/X11/qt_gtk_fnt2fntrc or ~/.qt/gtk_fnt2fntrc, and format:
+
+        <replace from> <with>
+
+        e.g.
+
+        Arial=Helvetica
+
+        This would cause GTK1 apps to use Helvetica, even if KDE/KControl
+        has specified Arial. Idea (& patch) supplied by Adrian Schroeter.
+
+0.05
+----
+1.  ALL: Don't draw lines on scrollbars if less than 20 pixels.
+2.  GTK1: Allow to specify x and y thickness's in gtkrc file - as
+          happens in GTK2. Fixes bug with small menu entries.
+3.  GTK2: Remove 1 pixel border from menus - more consistent with GTK1,
+          and KDE - not for V2.
+4.  GTK: More KDE-like menu bar entries.
+5.  GTK: Re-do weight ranges - would mean 48 is accecpted as "Normal"
+6.  ALL: Now 2 styles:
+             QtCurve      No borders around buttons, menus, and tab bars
+             QtCurve V2   Has borders - more like original B???/FreeCurve
+7.  ALL: Number of lines on toolbar handles is now 2, and 4 for scrollbars
+         and sliders.
+8.  ALL: Dark scrollbar, slider, and progress background - window colour
+9.  GTK1: Fix for slider background.
+10. GTK2: Fix error with overlapping check/radio highlight on frame.
+11. GTK2: Fix spinbuttons.
+
+0.04
+----
+1.  KDE: Draw box around checked checkable menu item pixmaps.
+2.  KDE: Only use small arrows on spinbuttons, and only if size is
+         too small for larger.
+3.  KDE: Set min button size to 54 and not 70.
+4.  ALL: Remove progress bar border.
+
+0.03
+----
+1.  KDE: Don't highlight disabled menu items - mimics GTK behaviour.
+2.  KDE: Progress bar background now matches GTK's.
+3.  GTK: Progress bar gradient is now the same as menu bar items - as
+         was KDE.
+4.  GTK: Progress bar contents now have 1 pixel border like KDE.
+5.  GTK: Better spinbutton boxes.
+6.  KDE: More GTK like spinbuttons.
+
+0.02
+----
+1.  Use gtk-config and pkg-config to determine install location for
+    GTK 1 and 2 files.
+
+0.01
+----
+Initial release.

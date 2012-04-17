@@ -1,0 +1,18 @@
+kde3-kde-style-klearlook (0.9.9.2-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Tue, 17 Apr 2012 12:41:25 +0200
+
+kde-style-klearlook (0.9.9.2-2) unstable; urgency=low
+
+  * QA Upload.
+  * Set debhelper compatibility to 5.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Wed, 25 Oct 2006 02:23:17 +1000
+
+kde-style-klearlook (0.9.9.2-1) unstable; urgency=low
+
+  * Initial release Closes: #369848
+
+ -- Matej Cepl <matej@ceplovi.cz>  Thu,  1 Jun 2006 11:27:53 -0400

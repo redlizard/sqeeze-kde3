@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Clearlooks
+activeBackground=131,161,205
+activeBlend=131,161,205
+activeForeground=255,255,255
+activeTitleBtnBg=131,161,205
+alternateBackground=237,244,249
+background=238,234,230
+buttonBackground=238,234,230
+buttonForeground=0,0,0
+contrast=7
+foreground=0,0,0
+frame=198,221,241
+handle=194,218,237
+inactiveBackground=238,239,242
+inactiveBlend=238,238,246
+inactiveForeground=151,151,151
+inactiveFrame=209,227,239
+inactiveHandle=209,227,239
+inactiveTitleBtnBg=238,234,230
+linkColor=0,0,238
+selectBackground=76,133,190
+selectForeground=255,255,255
+shadeSortColumn=true
+visitedLinkColor=82,24,139
+windowBackground=255,255,255
+windowForeground=0,0,0

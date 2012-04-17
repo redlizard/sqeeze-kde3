@@ -1,0 +1,7 @@
+[Misc]
+Name=Domino
+Comment=A style with customizable color gradients
+Comment[de]=Ein Stil mit anpassbaren Farbverläufen
+ConfigPage=kstyle_domino_config
+[KDE]
+WidgetStyle=Domino

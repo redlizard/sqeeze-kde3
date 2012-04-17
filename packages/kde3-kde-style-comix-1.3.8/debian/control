@@ -1,0 +1,20 @@
+Source: kde3-kde-style-comix
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0), autotools-dev, kde3-kdebase-dev
+Standards-Version: 3.6.2
+
+Package: kde3-kde-style-comix
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: kwin-style-comix
+Description: Comix flat style for KDE
+ Another flat style for KDE with outlined tabs, scrollbars and text-areas
+ It is highly configurable through kcontrol, where outline color among 
+ other things can be set.
+ .
+ Contains both a widget style and a window decoration.
+ .
+ Style homepage: http://www.kde-look.org/content/show.php?content=16028
+

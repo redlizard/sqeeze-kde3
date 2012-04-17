@@ -1,0 +1,35 @@
+--- kde-style-polyester-1.0.3.orig/client/config/Makefile.am
++++ kde-style-polyester-1.0.3/client/config/Makefile.am
+@@ -11,4 +11,4 @@
+ kde_module_LTLIBRARIES = kwin_polyester_config.la
+ kwin_polyester_config_la_SOURCES = configdialog.ui polyesterconfig.cc
+ kwin_polyester_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kwin_polyester_config_la_LIBADD = $(LIB_KDEUI)
++kwin_polyester_config_la_LIBADD = -lqt-mt -lkdecore
+--- kde-style-polyester-1.0.3.orig/client/Makefile.am
++++ kde-style-polyester-1.0.3/client/Makefile.am
+@@ -16,4 +16,4 @@
+ kde_module_LTLIBRARIES = kwin3_polyester.la
+ kwin3_polyester_la_SOURCES = polyester.cc shadow.cpp ../style/misc.cpp
+ kwin3_polyester_la_LIBADD = $(kde_libraries)/libkdecorations.la
+-kwin3_polyester_la_LDFLAGS = -module $(all_libraries) $(KDE_PLUGIN) -lkdecore
++kwin3_polyester_la_LDFLAGS = -module $(all_libraries) $(KDE_PLUGIN) -lkdecore -lqt-mt -lkdefx
+--- kde-style-polyester-1.0.3.orig/style/config/Makefile.am
++++ kde-style-polyester-1.0.3/style/config/Makefile.am
+@@ -5,7 +5,7 @@
+ noinst_HEADERS = polyesterconf.h
+ kde_module_LTLIBRARIES = kstyle_polyester_config.la
+ kstyle_polyester_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kstyle_polyester_config_la_LIBADD  = $(LIB_KDEUI)
++kstyle_polyester_config_la_LIBADD  = $(LIB_KDEUI) -lqt-mt -lkdecore
+ kstyle_polyester_config_la_SOURCES = polyesterconf.cpp configdialog.ui
+ 
+ messages:
+--- kde-style-polyester-1.0.3.orig/style/Makefile.am
++++ kde-style-polyester-1.0.3/style/Makefile.am
+@@ -18,4 +18,4 @@
+ kde_style_LTLIBRARIES = polyester.la
+ polyester_la_SOURCES = polyester.cpp misc.cpp
+ polyester_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-polyester_la_LIBADD = -lkdefx
++polyester_la_LIBADD = -lkdefx -lqt-mt

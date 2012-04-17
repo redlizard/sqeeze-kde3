@@ -1,0 +1,7 @@
+[Misc]
+Name=Comix
+ConfigPage=kstyle_comix_config
+Comment=bold outlines
+Comment[xx]=xxbold outlines
+[KDE]
+WidgetStyle=Comix

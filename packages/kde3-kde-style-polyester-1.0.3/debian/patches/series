@@ -1,0 +1,3 @@
+02_use_librsvg_instead_of_inkscape.diff
+03_GCC4.3_FTBFS_fix.diff
+04_makefile_fixes.diff

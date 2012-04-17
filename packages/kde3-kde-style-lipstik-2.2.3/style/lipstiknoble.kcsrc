@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Lipstik Noble
+activeBackground=74,121,205
+activeBlend=62,145,235
+activeForeground=255,255,255
+activeTitleBtnBg=238,238,230
+alternateBackground=238,246,255
+background=235,233,233
+buttonBackground=246,244,244
+buttonForeground=0,0,0
+contrast=5
+foreground=0,0,0
+frame=238,238,230
+handle=238,238,230
+inactiveBackground=235,233,233
+inactiveBlend=143,159,180
+inactiveForeground=255,255,255
+inactiveFrame=238,238,230
+inactiveHandle=238,238,230
+inactiveTitleBtnBg=238,238,230
+linkColor=0,0,192
+selectBackground=81,134,225
+selectForeground=255,255,255
+shadeSortColumn=true
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0

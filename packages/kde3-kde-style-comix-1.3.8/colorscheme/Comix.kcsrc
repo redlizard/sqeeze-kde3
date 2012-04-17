@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Comix
+activeBackground=153,184,200
+activeBlend=112,128,144
+activeForeground=255,255,255
+activeTitleBtnBg=195,195,195
+alternateBackground=238,246,255
+background=239,239,239
+buttonBackground=246,227,156
+buttonForeground=34,45,51
+contrast=3
+foreground=34,34,34
+frame=136,135,135
+handle=239,239,239
+inactiveBackground=164,172,176
+inactiveBlend=102,108,114
+inactiveForeground=219,219,219
+inactiveFrame=136,135,135
+inactiveHandle=239,239,239
+inactiveTitleBtnBg=195,195,195
+linkColor=0,128,192
+selectBackground=246,246,198
+selectForeground=85,85,85
+shadeSortColumn=true
+visitedLinkColor=128,28,128
+windowBackground=255,255,255
+windowForeground=34,34,34

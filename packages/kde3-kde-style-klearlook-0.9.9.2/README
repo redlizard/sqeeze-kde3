@@ -1,0 +1,111 @@
+QtCurve KDE, GTK1, and GTK2 style
+
+Craig Drummond (Craig.Drummond@lycos.co.uk)
+
+==================================================================================
+
+About
+-----
+
+This is a set of widget styles for KDE, GTK1, and GTK2 based apps. The underlying
+code is based upon Blue/FreeCurve - however, *extensive* modifications have been
+made.
+
+
+Installation
+------------
+
+./configure
+make
+make install       (MAy need to be root for this step)
+
+For KDE:
+   Use KControl, go to the Look'N'Feel section, enter the Style sub-section,
+   and choose "QtCurve"
+
+For GTK1:
+   Copy
+        /usr/share/themes/QtCurve/gtk/gtkrc
+   ...to either
+        /etc/gtk/gtkrc           To enable this theme for *all* users
+   ...or ~/.gtkrc                To enbale for just yourself.
+
+   Alternatively, edit ~/.gtkrc so that it looks like:
+       include "/usr/share/themes/QtCurve/gtk/gtkrc"
+
+For GTK2:
+   Copy
+        /usr/share/themes/QtCurve/gtk-2.0/gtkrc
+   ...to either
+        /etc/gtk-2.0/gtkrc       To enable this theme for *all* users
+   ...or ~/.gtkrc-2.0            To enbale for just yourself.
+
+   Alternatively, edit ~/.gtkrc-2.0 so that it looks like:
+       include "/usr/share/themes/QtCurve/gtk-2.0/gtkrc"
+
+
+Font Sizes
+----------
+
+Using Mandrake 9.0 I came accross a curious situation where a 12pt font was a
+different size in a KDE app (which uses Xft to draw fonts), and a GTK1 app (which
+uses plain X to draw fonts). I finally tracked this down to the fact that Mandrake
+was hard-coding a 90dpi resolution for Xft - wherease standard X defaults to 75dpi.
+To remedy this I had to remove the following line:
+
+    Xft.dpi: 90
+
+...from both /etc/X11/Xresources and /etc/X11/xdm/Xresources
+
+Then when the X server was restarted, both Xft and X apps then used the *same*
+resolution - resulting in consistency between GTK1, GTK2, and KDE/Qt applications.
+(NOTE: You may need to change the used font siszes in KControl/fonts)
+
+If you want to use a higher than 75 dpi resolution, I suggest you edit /etc/X11/xdm/Xservers
+and set it to someting like (for 100dpi)
+
+:0 local /bin/nice -n -10 /usr/X11R6/bin/X -deferglyphs 16 -dpi 100
+
+
+...this way *both* Xft and X apps will then use the new resolution!
+
+
+
+Fonts
+-----
+
+QtCurve reads its font settings from ~/.qt/qtrc. For GTK1 apps, if you are having problems
+with font encodings, set the QT_GTK_ENC to your required encoding. e.g.
+
+           export QT_GTK_ENC=iso8859-2
+
+(For compatibility with Geramik, QTPIXMAP_GTK_ENC may also be used...)
+
+You may also tell QtCurve to use an alternative font for GTK1 apps. For instance if you are
+using "Verdana" for KDE apps, but this looks bad in GTK1 apps (as they use a different font
+mechanism), you can tell QtCurve to substitute Helvetic for this. To do this, edit either
+/etc/X11/qt_gtk_fnt2fntrc, or $HOME/.qt/gtk_fnt2fntrc and add lines such as:
+
+Arial=Helvetica
+Verdana=Helvetica
+
+...etc.
+
+Blue/FreeCurve
+--------------
+
+The following is a list of some of the changes in this theme:
+
+    Use KDE colours/fonts
+    Better check and radio buttons - consistant between Qt, Gtk1, and Gtk2
+    Pushbuttons now depress
+    Comboboxes - fixed arrow size, and remove line from underneath arrow
+    New sliders
+    Draw box around splitter
+    Better KDE progress bar
+    More consistent spinboxes
+    Removed slashes - replaced with horiz/vert lines
+    New toolbar/menu bar handles.
+
+...and a *lot* more. Basically this theme hardly looks like Blue/FreeCurve anymore. With the
+possible exception of progressbars, and slected menu-items.

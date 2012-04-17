@@ -1,0 +1,93 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>ConfigDialog</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ConfigDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>541</width>
+            <height>167</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Config Dialog</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>titleAlign</cstring>
+            </property>
+            <property name="title">
+                <string>Title &amp;Alignment</string>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>AlignLeft</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Left</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>AlignHCenter</cstring>
+                    </property>
+                    <property name="text">
+                        <string>C&amp;enter</string>
+                    </property>
+                </widget>
+                <widget class="QRadioButton">
+                    <property name="name">
+                        <cstring>AlignRight</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Right</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QCheckBox" row="1" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>titleExpand</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Use expanded title box</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>Check this option if you want the title box expanded.</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox" row="2" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>windowSeparator</cstring>
+            </property>
+            <property name="text">
+                <string>Draw window caption separator</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>Check this option if you want a separator between window caption and content.</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<tabstops>
+    <tabstop>AlignLeft</tabstop>
+    <tabstop>AlignHCenter</tabstop>
+    <tabstop>AlignRight</tabstop>
+    <tabstop>titleExpand</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

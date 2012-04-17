@@ -1,0 +1,25 @@
+Source: kde3-kde-style-qtcurve
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 5), autotools-dev, kde3-kdelibs4-dev, automake1.9
+Standards-Version: 3.7.2
+
+Package: kde3-kde-style-qtcurve
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: gtk2-engines-qtcurve
+Description: This is a set of widget styles for KDE3 based apps
+ This package together with gtk2-engines-qtcurve aim to provide a unified look
+ and feel on the desktop when using KDE and Gnome applications.
+ .
+ This package is most useful when installed together with 
+ gtk2-engines-qtcurve.
+
+Package: kde3-qtcurve
+Architecture: any
+Depends: kde3-kde-style-qtcurve, gtk2-engines-qtcurve
+Description: This is a set of widget styles for KDE3 and Gtk2 based apps
+ This is an empty dummy package which will drag the packages 
+ kde-style-qtcurve and gtk2-engines-qtcurve in your system.
+

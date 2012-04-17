@@ -1,0 +1,39 @@
+#ABOUT
+This is Lipstik, a fast and clean KDE 3 style based on Plastik.
+
+It contains the following features :
+
+ Two widget gradients styles (Lipstik and Plastik's original),
+ A unique Menu Stripe style,
+ Many options to configure the active menu highlighting,
+ Configurable Sliders handles size,
+ Configurable Scrollbar handles width,
+ Different Toolbar handles for a less cluttered look,
+ More Mouse Hover effects,
+ Better focus rectangle,
+ Highly configurable colors,
+ Many options to configure the Scrollbar buttons disposition,
+ No more status bar frames...
+ 
+...and many other enhancements!
+
+#CREDITS
+This is based on the work of Sandro Giessl <ceebx@users.sourceforge.net> and 
+the author of kerastik from which I ripped the automake,configure,etc. 
+Im not quite sure yet but the author of kerastik seems to be "intirruphay".
+Please "intirruphay" tell me more so I can credit you for your work.
+
+#WHY?
+Well, I first distributed this "hack" on kde-look.org as a replacement for plastik, but
+some people convinced me to release it as a fully separated package.
+
+#WHY??
+Plastik looks good, I just wanted something different for Christmas.
+
+#NO, REALLY, WHY???
+I want peace in the world, and this is how Im gonna achieve this.
+
+#HOW DO I INSTALL THIS STYLE?
+PLEASE LOOK AT THE FILE CALLED "INSTALL" ...
+
+Have fun!

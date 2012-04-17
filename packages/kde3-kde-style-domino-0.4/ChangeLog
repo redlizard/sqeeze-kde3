@@ -1,0 +1,39 @@
+
+0.4
+* new option for indented / non indented menu items
+* new option for highlighted tool button icons on mouse over
+* the button look for tool(bar) buttons is now optional
+* new rubberband options
+* smaller tabWidget margins
+* respects Gwenview's / Kicker's taskbar applet / Konversation's own mousewheel handling for scrollviews
+* clipped popup menu edges, for a better look with KWin's shadows (Beryl seems not to support it).
+* fixes pixmaps on PowerPC architecture
+* fixes functionality of some popup QToolButtons and adapts their look and behavior to KToolBarButtons
+* the content of popup menus with a side pixmap is visible again (Amarok, Digikam)
+* adapts KMenu's section header style
+* fixes Kickoff's tab icon alignment
+* fixes possible crash with enabled text effect
+* lets apps using their own label colors on tabs (if they're not defaulting to a fixed color like konsole)
+* decoration: option "dark window frame" draws a darker frame
+* decoration: borders are hidden when in maximized mode and moving / resizing of maximized windows is not allowed.
+
+
+0.3
+* decoration buttons on inactive windows are now visible if the mouse is over the titlebar
+* a new thinner contour for the buttons (raised and sunken)
+* different button contour colors for mousehover, pressed and default states
+* mouseclick on LineEdits hides the cursor
+* disabled toolButtons in non KDE applications are now drawn grayed out and with 50 % reduced transparency
+* buttons respect background pixmaps
+* text effect option
+* animated progressbar
+* configurable groupbox background color
+* configurable selected popupmenu item color
+* deactivatable popupmenu gradient
+* faster smooth scrolling
+* it's now possible to switch tabs with the mousewheel
+* colors can now be drag between the tabs in the configurations dialog
+* disables popupmenu (fake) transparency (they are cheap and broken)
+* some speed improvements, especially the groupbox
+* fixes mousewheel not switching desktops
+* fixes diverse crashes

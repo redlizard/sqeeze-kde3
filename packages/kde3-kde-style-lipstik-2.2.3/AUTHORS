@@ -1,0 +1,52 @@
+----- LIPSTIK
+Maintainer:
+  Patrice Trembay <tremblaypatrice AT yahoo DOT fr>
+  on kde-[look/apps].org : PaT
+  http://www.poplix.info/lipstik (Online March 2006)
+
+There is some code in lipstik based on the following sources :
+ Thanks to all these authors!
+
+ - Comix style for KDE (Jens Luetkens)
+ - PlastikQ style for KDE (Martin Beck)
+ - Krisp style for KDE (Keith Meehl)
+ - Ballistik (thanks to Florian Merz)
+ - Kerastik (thanks to Victor Perez Q)
+ - DotNET (thanks to Chris Lee)
+ - Polyester (thanks Marco Martin)
+ - and many other sources of inspiration (qtcurvem, keramik, tiblit, etc.)!
+
+----- PLASTIK
+Maintainer:
+  Sandro Giessl <ceebx AT users DOT sourceforge DOT net>
+
+Patch: smaller rounded edges for listview headers:
+  Vincent Wagelaar <vincent AT ricardis DOT tudelft DOT nl>
+
+Patch: for tool buttons (fix for korns KornButton; tool buttons of qt apps
+       behave like tool buttons of kde apps.)
+  Bernardo Hung <deciare AT gta DOT igs DOT net>
+
+Widget Style:
+---------------------------------------------------------------------------
+"Plastik" is based on the excellent clean code of the kde style "dotNET";
+Some code adopted from the "Keramik" kde style. Thanks!
+--- original dotNET Credits: ----------------------------------------------
+ Copyright (C) 2001-2002, Chris Lee <clee@kde.org>
+                          Carsten Pfeiffer <pfeiffer@kde.org>
+                          Karol Szwed <gallium@kde.org>
+ Drawing routines completely reimplemented from KDE3 HighColor, which was
+ originally based on some stuff from the KDE2 HighColor.
+--- original Keramik Credits: ---------------------------------------------
+ Copyright (c) 2002 Malte Starostik <malte@kde.org>
+           (c) 2002,2003 Maksim Orlovich <mo002j@mail.rochester.edu>
+ based on the KDE3 HighColor Style
+ Copyright (C) 2001-2002 Karol Szwed      <gallium@kde.org>
+           (C) 2001-2002 Fredrik Hoeglund  <fredrik@kde.org>
+ Drawing routines adapted from the KDE2 HCStyle,
+ Copyright (C) 2000 Daniel M. Duley       <mosfet@kde.org>
+           (C) 2000 Dirk Mueller          <mueller@kde.org>
+           (C) 2001 Martijn Klingens      <klingens@kde.org>
+ Progressbar code based on KStyle,
+ Copyright (C) 2001-2002 Karol Szwed <gallium@kde.org>
+---------------------------------------------------------------------------

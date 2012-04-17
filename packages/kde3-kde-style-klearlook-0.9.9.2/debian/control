@@ -1,0 +1,17 @@
+Source: kde3-kde-style-klearlook
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 5), autotools-dev, kde3-kdelibs4-dev
+Standards-Version: 3.7.2
+
+Package: kde3-kde-style-klearlook
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Clone of GNOME's Clearlooks theme for KDE
+ Klearlook is a widget style for KDE that is based off the
+ QtCurve style. As its name suggests, it is intended to be a KDE
+ replica of the GTK theme "Clearlooks". 
+ .
+  Homepage: http://kde-look.org/content/show.php?content=31717
+

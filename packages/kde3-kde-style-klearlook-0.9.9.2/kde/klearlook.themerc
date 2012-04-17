@@ -1,0 +1,6 @@
+[Misc]
+Name=Klearlook
+Comment=Configurable style...
+ConfigPage=kstyle_klearlook_config
+[KDE]
+WidgetStyle=Klearlook

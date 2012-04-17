@@ -1,0 +1,238 @@
+---01/10/2007---
+2.2.3 : For my PC-BSD friends...
+ --Add a configurable active tab highlight color.
+ --PC-BSD rocks! Try it!
+
+---17/02/2007---
+2.2.2 : After one year...
+ --Just a repackaging of the special Debian version.
+ --Updated the spec file for Fedora Core 6, thanks to Pramod Venugopal.
+ --Lipstik now has a home page (http://poplix.homelinux.com/lipstik).
+
+...I have a new version (2.3) locally but it will need some more testing
+   before I release it; Lipstik is still not dead after all ;)
+
+---28/02/2006---
+2.2.1 : Quick bug fix release.
+ --Trying things to get the build to work with GCC 4.1...
+ --Disabled by default the toolbar gradients (will need more work before it looks good...)
+
+---08/02/2006---
+2.2 : Sanity.
+I think the last release was not that good. Let me make it up to you with this one. Enjoy!
+ --Added the possibility to configure the spacing for menus from 0 (like Lipstik < 2.0) to 8 pixels. The default is 6.
+   (It replaces the space-saving menu option).
+ --While at it, bring back the toolbar item spacing from the dead, but this time working correctly and defaulted to off.
+   You can configure it from 0 to 6 pixels.
+ --Added a gradient option for toolbars.
+ --Replaced the boring "Alternative menu gradients" by "Button-like menu gradients". It renders the selected menu entry
+   like a button. (Inspiration comes from the incredible QtCurve.)
+ --Now, last release was just crazy with regards to default options. Sanitize it all.
+ --Updated the build system so it will be more compatible with more distros. If it breaks for you, e-mail me.
+ --Hopefully fixed a couple of building bugs with the myriad of GCC compilers out there.
+ --Fixed a couple of rendering bugs (especially with toolbar/dock handles).
+ --Tweaked Lipstik Noble color-scheme a bit.
+ --NOTE: If you switch "Plastik gradients" on and wonder why the toolbar gradients look inverted, uncheck the
+	 "Invert gradients" in the Toolbars configuration group. (By the way, try it, Lipstik looks best this way, and 
+	 with the Noble color scheme too :).
+ 
+---24/01/2006---
+2.1.1 : Never released finally...
+
+---10/12/2005---
+2.1 : Are we there yet?
+Some small fixes, a new option and hopefully, the last release this year :)
+ --Fix for the toolbar separator not being the right color.
+ --Added an option to "compress" menus. (Space saving menus).
+ --The default checkmarks/radiobuttons color is now the highlighting color.
+
+---08/12/2005---
+2.0 : Done.
+Here we go. The final major Lipstik release. 
+I tried to include many of the suggestions I received over time, most of them really good ideas! Thanks to all of you!
+See ya soon!
+
+ --Finally found a way to make Mouse Hover Highlighting work on TabBar buttons. (Yay!!!)
+ --Fixed the bug where you would choose a custom color in the config panel and it would not take effect 
+   immediately. (Yay!!!)
+ --A nice suggestion from morteoh: add more breathing room between menu items (vertical space). Menus now look
+   a lot less crammed and cluttered.
+ --Added the option to use a flat menu stripe.
+ --Small speed optimisations for mouse hover highlighting and in general.
+ --Fixed the disabled ticks (dont draw them colored if they are disabled!).
+ --Dont draw icon+pressed background for checked menu items with icons, draw the usual checkmark+pressed background only.
+ --Ligthened up the panels and box frames a bit, so they react more to contrast changes.
+ --Fix to get lighter separators, forgotten in the rewrite.
+ --Rewrote the INSTALL file so it is up to date.
+ --Fixed the SlackBuild script (and added a slack-desc file).
+ --Many other fixes...
+
+...Stay tuned, something completely new is coming in the next year, its gonna rok... ;)
+
+---06/12/2005---
+1.99.1 : Quick Fix.
+ --My computer's clock was set in the future! Some of you may have had troubles building. This will fix it.
+ --Fix for the "alternative menu gradient" not being consistent between plastik and lipstik style gradients.
+ --Fix for the scrollbars buttons gradient painting.
+ --Added my SlackBuild script while at it.
+
+---06/12/2005---
+1.99 : The Road to 2.0.
+Exactly one year after the Beta1 of Lipstik 1.0, here comes the Beta1 of Lipstik 2.0.
+A new tradition is born... A new Lipstik every christmas!
+The style still looks the same, but refined. Also, many options have been added and many
+bugs have been fixed. The performance should also be a bit better.
+
+Here's the Changelog:
+ --Complete rewrite. Resync with KDE 3.5 plastik sources.
+ --Added the possibility the configure the width of the scrollbars. (Small/Normal/Medium)
+ --Added active tab highlighting (configurable).
+ --Added a new experimental menu gradient style.
+ --Added a new configurable checkmark style. (The original "X" or a "V"/tick).
+ --The whole style should behave better with dark color schemes.
+ --The menu bar coloring is now configurable.
+ --Finer dots and better highlighting of the dots.
+ --Konqueror's sidebar tabs are now flat.
+ --Fixed the Sharper Menu Gradients option so it actually does something visible.
+ --Fixed kicker applet handles appearance.
+ --The default Menu Stripe color will now be taken from the window decoration background color (lightened up a bit).
+ --Fixed the "inactive menu item focus rectangle". Wow, try to figure what this is...
+ --Better focus rectangle by making it alphablended with the background.
+ --The style should play better with transparent menus. (No menu stripe though)
+ --Added a new color scheme (Lipstik Noble).
+ --And many more things I cant remember now...
+
+This a beta release, but it should be at least as good as Lipstik 1.3. Please test and report problems!
+Note: Since this style is designed with KDE 3.5 in mind, the flat taskbar buttons hack for older
+      KDEs is gone. If you still run an older KDE and absolutely want to get the flat taskbar buttons,
+      use Lipstik 1.3.
+ 
+---01/08/2005---
+1.3 : Bug-fixing mode.
+Thanks to many reports, I fixed many bugs in Lipstik...
+ --Fixed 3 bugs related to Radio buttons and Custom Menu Items, thanks to Sébastien Laoût.
+ --Fixed 2 bugs related to uninitialized variables.
+ --Fixed a bug related to larger spaces between toolbar items; since I dont want to lose
+   that feature, Ive added the option to enable/disable it in the config panel. (disabled by default).
+   Thanks to Gabor for the report.
+ --Fixed 3 compiler warnings about unused function members.
+ --Changed the "application menu mouse highlighting" from a rectangle to a gradient.
+   I think it fits better with the way the rest of the menus are displayed, and it is more consistent.
+   (and as a side-effect, it fixes Firefox menus with gtk-qt). This was suggested sometimes ago, I dont
+   remember by who...
+ --Added a spec file for rpm building, thanks to William Flynn.
+ --Not visible, but a big cleanup of the code in preparation for Lipstik 2.0
+
+---23/06/2005---
+1.2 : Solstice Edition.
+The "Lipstik is not dead" release. After almost 6 months (!!!) since the last release, here comes
+Lisptik 1.2, with cool new features and an even more clean look.
+ --The status bar in active konqueror views is white; that is ugly. Paint it like the rest.
+ --Lighter item and toolbars separators.
+ --Those who tried KDE 3.5 in SVN know how cool the taskbar looks. This is now available
+   for KDE 3.4!
+ --The column headers (like in listviews) were too busy. There is now an option to flatten them.
+ --Make the "splitters" highlighting look consistent with the rest of the style.
+ --Space the items on toolbars a little bit.
+ --Some changes to the defaults. (Nothing big.)
+
+---24/12/2004---
+1.1 : Christmas Edition :-)
+Just a little something for xmas.
+ --New menu stripe style, looks better I think.
+ --The new menu stripe solves the menus-in-gimp-look-like-crap bug.
+ --The menu stripe will now display the same gradient even if "Inverted gradients (plastik style)" is selected.
+ --The "Sharper menu gradients" option will now display a lot more sharper menu gradients. :)
+
+---16/12/2004---
+1.0 : Merry Christmas!
+No big changes, just small adjustments. This is lipstik 1.0. I hope to have time to
+code new features in 2005.
+ --Small bug with column headers fixed.
+ --Added the option to enable/disable the new style focus rectangle. (disabled by default)
+
+---12/12/2004---
+1.0 beta2 : Small tweaks...
+I dont have much time these days to work on lipstik, but here is a small update.
+ --You can now choose the slider hanlde size. (Small (as in plastik), Medium (like previous 
+   lipstik versions) and large (good for dragging in kmplayer).
+ --Dont show top and right borders on column headers.
+ --Better help in the INSTALL file.
+
+---6/12/2004---
+1.0 beta1 : Reaching the "Susan" stage :-)
+ --Completely redone the configuration panel.
+ --Fixed the position of dots on horizontal dockwindow.
+ --Toolbar handle mouseover highlighting.
+ --Popupmenu arrows are now using the button text color when normal, and highlight text color when selected.
+ --Arrow color on "colored combobox" is now the highlighted text color. (matching plastikq's behaviour)
+ --Adjusted arrow position on combobox handle.
+
+---3/12/2004---
+0.91 : Please test!
+There were some bugs in 0.90, they are fixed. Also there are some new features...
+ --Fixed dots everywhere. (scrollbars, toolbar handles, kicker applet handles, sliders, etc.)
+ --Scrollbars and sliders mouseover highlighting.
+ --Fixed the menu stripe. Color is now the same for enabled and disabled menu items. 
+ --Added an option to specify a custom menu stripe color. (Default is button color)
+ --Added an option to draw the scrollbar grooves.
+ --Better config panel layout.
+ --Fixed vertical slider handle.
+ --Some small updates to the Lisptik White color scheme.
+ --Many other smaller fixes I cant remember now...
+ 
+---1/12/2004---
+0.90 : Plastik wars! ;-)
+So many changes, I might forget some... If everything goes well, the 1.0 release will happen soon!
+ --There are now four types of scrollbars to choose from (KDE,Windows,Next,Platinum).
+ --Brand new configuration panel, with many new options, and a friendlier UI.
+ --Configurable highlighting : PlastikQ style combobox handle, kicker taskbar active button, focus rectangle...
+ --Configurable menu style : Dotnet/krisp-style stripe, sharper gradients...
+ --You can switch the status bar frame and the toolbar handles on and off.
+ --The toolbar handle looks better now. (lined up dots)
+ --Some other minor fixes...
+
+---29/11/2004---
+0.7 : Almost done!
+ --The vertical scrollbars are colored a bit more lighter, so they wont look weird anymore. (well, less weird)
+ --Only highlight the top and bottom of the active taskbar button. (more subtle)
+ --Fixed the "pressed button" gradients by... removing the gradients.
+ --Added 2 color schemes : Lipstik Standard, Lipstik White. (If you think you have a good color scheme for 
+   lipstik, please send it to me, I will include one or two submissions in the next release)
+ 
+---29/11/2004---
+0.6 : YALU :)
+ --The scrollbars arrows are now centered. (thanks tubatodd)
+ --Sync with plastik latest changes. (some fixes)
+ --There is now an option to display the "normal" plastik gradients. (look for "Reverse gradients (plastik style))
+ --Some other minor layout tweaks.
+
+---28/11/2004---
+0.5 : Almost there...
+ --The dots in the scrollbars are now centered. (thanks to Osho for reminding me)
+ --Scrollbar grooves are now filled with a solid color; I think it gives a better (faster?) indication of where we are,
+   and as a side-effect, it gives a cleaner look.
+ --Applied the latest fix from plastik cvs head version. (even less cpu usage for animated progress bars)
+ --The "default button" contour is now the highlight color; again it gives a faster indication of what is the default
+   button when you want to press Enter.
+
+---26/11/2004---
+0.4 : Its getting better.
+ --Gradients are now consistent between normal and sunken buttons.
+ --Modified highlighting a little.
+ --Sharper contrast for dots (toolbar handle, scroolbar handle, etc.)
+ --Changed the slider to have dots instead of lines, to be more consistent with the rest of the style.
+
+---26/11/2004---
+0.3 : Tuning.
+ --New focus rectangle (please tell what you think, its not definitive)
+ --Applied the fix for the listview branch display that is part of Andrunko "Improving KDE" patches.
+
+---25/11/2004---
+0.2 : Big changes...
+ --Now based on the latest plastik sources from kde cvs head, so you get, for free, all the latest fixes. (Less CPU usage,more options,etc.)
+ --Fixed the look of the scrollbars (both vertical and horizontal).
+ --Tweaked the toolbar handle a little bit.
+
+---25/11/2004---
+0.1 : Initial release.

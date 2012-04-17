@@ -1,0 +1,20 @@
+TODO:
+- I'm thinking of adding an option for shadows around widgets... We'll see.
+- Smooth scrolling in the QScrollViews is very nice.
+
+DONE:
+- How can I make the sunken taskbar button show the inverted gradient, like the rest of the style? [FIXED IN 0.4]
+- Maybe develop a better effect for focus rect. [FIXED IN 0.3 / RE-FIXED in 1.99]
+    **After some rude comments on kde-look I decided to put back the normal effect as default
+      for now, until I find a better way to do it.
+    UPDATE: Its back, but better, I hope.
+- Maybe put an option to use the normal plastik gradients, for people who like the normal plastik look, but also like
+  all the other fixes. [DONE IN 0.6]
+- Better gradient for the vertical scrollbar (looks weird right now) [FIXED IN 0.7 / LESS WEIRD]
+- Can I port the Mouse Over Highlight of the slider and scrollbar from MotifPlus to Lipstik? [DONE IN 0.91]
+- Menu arrows highlighting. [DONE IN 1.0 beta1]
+- Config panel fits on a 800x600 resolution. [DONE IN 1.0 beta1]
+- Dockwindow handle mouseover highlight. [DONE in 1.99]
+- Maybe i should put an option to show a tick instead of a cross in checkboxes. [DONE in 1.99]
+- Maybe some highlighting of the active tab? (Blue line at the top?) [DONE in 1.99]
+- Is there a way to "highlight on mouseover" the tab buttons (new tab, close tab)? [DONE in 2.0]

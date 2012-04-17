@@ -1,0 +1,7 @@
+[Misc]
+Name=Lipstik
+ConfigPage=kstyle_lipstik_config
+Comment=A purified style
+Comment[fr]=Un style pure
+[KDE]
+WidgetStyle=Lipstik

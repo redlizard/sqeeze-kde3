@@ -1,0 +1,86 @@
+----- First of all:
+
+If possible, and available, try a package built specifically for your 
+distribution...
+
+
+----- Building from sources:
+
+First make sure that you have both the QT and KDE development headers 
+installed. (qt and kdelibs devel)
+
+Then unpack the sources somewhere you have writing rights.
+
+In a terminal (konsole, xterm, eterm, etc.), type :
+
+    ./configure
+
+    make
+
+    (Then, as root):
+    make install
+
+--
+
+If any of these steps fail, do:
+    
+    make -f Makefile.dist
+
+It may help you build it. If it still fails, mail me.
+
+
+----- Bad configure = build failure...
+
+You might need to give 'configure' the path to your kde
+installation. eg: /usr, /opt/kde.
+
+    ./configure --prefix=/opt/kde
+
+--
+
+You can find your KDE base directory by typing kde-config --prefix
+
+--
+
+-------------------------------------------------------------------------------
+
+----- Debian notes: 
+
+You may need to append this to the configure line:
+    --prefix=/usr 
+
+And maybe this one:
+    --with-qt-includes=/usr/include/qt3
+
+
+----- Mandrake/Mandriva notes:
+
+Mandrake 10.0 uses KDE 3.2. I never tested lipstik against KDE 3.2 but it "should" work with
+some tweaking (see Debian notes).
+I dont have Mandrake around so I cant give more specific help for now, stay tuned.
+
+Mandriva (Mandrake's new name) is using more recent KDE releases. Lipstik should work
+out of the box there.
+
+
+----- moc troubles???
+
+Some people have reported that building fails with errors related to .moc files.
+ eg:
+    lipstikconf.cpp:479:27: lipstikconf.moc: No such file or directory
+
+If this happens to you, dont panic.
+In the source dir, there are style and style/config subdirs:
+ 
+ In the style dir do:
+    moc -o lipstik.moc lipstik.h
+
+ And then in the style/config subdir do
+    moc -o lipstikconf.moc lipstikconf.h
+
+Then run make again, it should work.
+
+
+----- Lipstik's build system sucks...
+
+It should suck less now... maybe...

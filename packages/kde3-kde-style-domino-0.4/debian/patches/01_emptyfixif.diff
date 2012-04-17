@@ -1,0 +1,11 @@
+--- /domino/domino.cpp	2007-07-19 02:44:53.000000000 +0200
++++ /domino/domino.cpp	2007-11-20 22:23:01.000000000 +0100
+@@ -7776,7 +7776,7 @@ void DominoStyle::dominoDrawItem( QPaint
+ 					p->setClipping(false);
+ 			}
+ 			
+-			if(axi);
++			if(axi)
+ 				XDestroyImage(axi);
+ 			if(xi)
+ 				XDestroyImage(xi);

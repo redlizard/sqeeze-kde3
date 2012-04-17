@@ -1,0 +1,129 @@
+QtCurve KDE, GTK1, and GTK2 style
+
+(C) Craig Drummond (Craig.Drummond@lycos.co.uk), 2003 - 2006
+
+==================================================================================
+
+About
+-----
+
+This is a customisable widget engine for KDE, GTK1, and GTK2 based apps. The engine
+features a variety of config options, and comes with set of predefined styles.
+
+
+Installation
+------------
+
+./configure
+make
+make install       (May need to be root for this step)
+
+For KDE:
+   Use KControl, go to the Appearance section, enter the Style sub-section,
+   and choose "QtCurve"
+
+For GTK1:
+   Copy
+        /usr/share/themes/QtCurve/gtk/gtkrc
+   ...to either
+        /etc/gtk/gtkrc           To enable this theme for *all* users
+   ...or ~/.gtkrc                To enbale for just yourself.
+
+   Alternatively, edit ~/.gtkrc so that it looks like:
+       include "/usr/share/themes/QtCurve/gtk/gtkrc"
+
+For GTK2:
+   Copy
+        /usr/share/themes/QtCurve/gtk-2.0/gtkrc
+   ...to either
+        /etc/gtk-2.0/gtkrc       To enable this theme for *all* users
+   ...or ~/.gtkrc-2.0            To enbale for just yourself.
+
+   Alternatively, edit ~/.gtkrc-2.0 so that it looks like:
+       include "/usr/share/themes/QtCurve/gtk-2.0/gtkrc"
+
+
+Default Settings
+----------------
+
+QtCurve reads $XDG_CONFIG_HOME/qtcurvestylerc to determine the settings to use. Any
+settings not specified here will be set to the default. The "default" settings are
+obtained via the following:
+
+    1. Values read from /etc/qt4/qtcurvestylerc
+    2. Values read from /etc/qt3/qtcurvestylerc if /etc/qt4/qtcurvestylerc does
+       not exit
+    3. Values read from /etc/qt/qtcurvestylerc if /etc/qt3/qtcurvestylerc and
+       /etc/qt4/qtcurvestylerc do not exit
+    4. Any values not specified in the above, will use hard-coded defaults.
+
+Therefore, to make "Shiny Glass" the default style, simply copy Glass2.qtcurve to
+/etc/qt/qtcurvestylerc. Or, use QtCurve's config dialog to modify the style, and then
+use the "Export" to save to /etc/qt/qtcurvestylerc This will the become the "default"
+QtCurve settings for all users.
+
+
+Parentless Dialogs
+------------------
+
+Being the picky person that I am, it *really* irks me when apps create modal dialogs, but
+dont specify a parent. These dialogs then get their own taskbar entry (causing needless
+taskbar flicker), and can therefore be minimised separate to the main app - causing the
+main app to appear "frozen". Apps that have this behaviour are; kaffeine (almost all dialogs),
+kate, and some koffice apps. GIMP also tends to suffer from having a *lot* of dialogs, each
+getting a pager and taskbar entry.
+
+QtCurve contains a hack to try and solve this problem. For the KDE3 and Gtk2 variants, when
+performing the configure step, pass the --enable-parentless-dialogs-fix parameter. Note that
+this works 100% for me, but it might brake some apps.
+
+I know that I should really file bug reports against the affected apps, but there are so many
+of them. (And, indeed I have filed one against kaffeine, but have had no response.)
+
+
+Font Sizes
+----------
+
+Using Mandrake 9.0 I came accross a curious situation where a 12pt font was a
+different size in a KDE app (which uses Xft to draw fonts), and a GTK1 app (which
+uses plain X to draw fonts). I finally tracked this down to the fact that Mandrake
+was hard-coding a 90dpi resolution for Xft - wherease standard X defaults to 75dpi.
+To remedy this I had to remove the following line:
+
+    Xft.dpi: 90
+
+...from both /etc/X11/Xresources and /etc/X11/xdm/Xresources
+
+Then when the X server was restarted, both Xft and X apps then used the *same*
+resolution - resulting in consistency between GTK1, GTK2, and KDE/Qt applications.
+(NOTE: You may need to change the used font siszes in KControl/fonts)
+
+If you want to use a higher than 75 dpi resolution, I suggest you edit /etc/X11/xdm/Xservers
+and set it to someting like (for 100dpi)
+
+:0 local /bin/nice -n -10 /usr/X11R6/bin/X -deferglyphs 16 -dpi 100
+
+
+...this way *both* Xft and X apps will then use the new resolution!
+
+
+Gtk1 Fonts
+----------
+
+QtCurve reads its font settings from ~/.qt/qtrc. For GTK1 apps, if you are having problems
+with font encodings, set the QT_GTK_ENC to your required encoding. e.g.
+
+           export QT_GTK_ENC=iso8859-2
+
+(For compatibility with Geramik, QTPIXMAP_GTK_ENC may also be used...)
+
+You may also tell QtCurve to use an alternative font for GTK1 apps. For instance if you are
+using "Verdana" for KDE apps, but this looks bad in GTK1 apps (as they use a different font
+mechanism), you can tell QtCurve to substitute Helvetic for this. To do this, edit either
+/etc/X11/qt_gtk_fnt2fntrc, or $HOME/.qt/gtk_fnt2fntrc and add lines such as:
+
+Arial=Helvetica
+Verdana=Helvetica
+
+...etc.
+

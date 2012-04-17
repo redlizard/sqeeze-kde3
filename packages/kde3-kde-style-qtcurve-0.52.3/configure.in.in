@@ -1,0 +1,9 @@
+#MIN_CONFIG
+AM_INIT_AUTOMAKE(QtCurve-KDE3, 0.52.3)
+CXXFLAGS="$CXXFLAGS -DQT_CLEAN_NAMESPACE  -DQT_NO_ASCII_CAST"
+AC_CHECK_FUNCS(setenv unsetenv)
+AC_CHECK_BOOL
+AC_PREFIX_DEFAULT([`kde-config --prefix`])
+
+# KDECONFIG comes from KDE's configure stuff...
+KDE_VERSION=`$KDECONFIG --version | grep KDE | awk -F: '{print $2}' | awk -F' ' '{print $1}' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`

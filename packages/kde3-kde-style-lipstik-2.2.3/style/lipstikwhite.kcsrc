@@ -1,0 +1,26 @@
+[Color Scheme]
+Name=Lipstik White
+activeBackground=58,128,234
+activeBlend=107,145,184
+activeForeground=255,255,255
+activeTitleBtnBg=127,158,200
+alternateBackground=237,244,249
+background=238,239,242
+buttonBackground=247,250,255
+buttonForeground=0,0,0
+contrast=7
+foreground=0,0,0
+frame=239,239,239
+handle=239,239,239
+inactiveBackground=238,239,242
+inactiveBlend=157,170,186
+inactiveForeground=255,255,255
+inactiveFrame=239,239,239
+inactiveHandle=239,239,239
+inactiveTitleBtnBg=167,181,199
+linkColor=0,0,238
+selectBackground=100,154,255
+selectForeground=255,255,255
+visitedLinkColor=82,24,139
+windowBackground=255,255,255
+windowForeground=0,0,0

@@ -1,0 +1,534 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>KlearlookConfigBase</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>KlearlookConfigBase</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>601</width>
+            <height>639</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout5</cstring>
+            </property>
+            <vbox>
+            <property name="name">
+                    <cstring>unnamed</cstring>
+            </property>
+                <widget class="QLayoutWidget">
+                <property name="name">
+                        <cstring>layout4</cstring>
+                </property>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>Klearlook</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Klearlook KDE Style</string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignCenter</set>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>versionLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>ver</string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignCenter</set>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel2_2</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Jörg C. König &lt;jck@gmx.org&gt;</string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignCenter</set>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel1</cstring>
+                            </property>
+                            <property name="text">
+                                <string>(Based on QtCurve by Graig Drummond)</string>
+                            </property>
+                            <property name="alignment">
+                                <set>AlignCenter</set>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                    <widget class="QGroupBox">
+                        <property name="name">
+                            <cstring>optionsFrame</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Options:</string>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout6</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1_4</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Menubar and toolbar border level:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>None</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Light</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Dark</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>toolbarBordersWidget</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1_2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Slider thumbs:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>Raised</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Sunken</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>None</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>sliderThumbsCombo</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Handles:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>Raised</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Sunken</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>handlesCombo</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1_6</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Progress bars and selected menu items:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>Flat</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Raised</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Sunken</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>pmCombo</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1_7</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>General appearance:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>Flat</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Gradient</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Light gradient</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>appearanceCombo</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>vArrowWidget</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>'V' style arrows</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>crLabelHighlightWidget</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Highlight the background of check and radio button labels</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>borderSplitterWidget</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Draw border around splitters</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>menuIcons</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>7</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="text">
+                                            <string>Show menu icons</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>roundWidget</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>1</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="text">
+                                            <string>Rounded buttons, etc.</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>borderWidget</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>0</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="text">
+                                            <string>Border buttons, menus, etc.</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>darkMenubarWidget</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Darker menubar background</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                <cstring>layout5</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1_8</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>5</hsizetype>
+                                                <vsizetype>5</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                        <property name="text">
+                                            <string>Popup menu background highlight level:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QSpinBox">
+                                        <property name="name">
+                                            <cstring>popupmenuHighlightLevelWidget</cstring>
+                                        </property>
+                                        <property name="buttonSymbols">
+                                            <enum>PlusMinus</enum>
+                                        </property>
+                                        <property name="maxValue">
+                                            <number>50</number>
+                                        </property>
+                                        <property name="minValue">
+                                            <number>-50</number>
+                                        </property>
+                                        <property name="value">
+                                            <number>6</number>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QFrame">
+                                <property name="name">
+                                    <cstring>frame5_2</cstring>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Raised</enum>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>0</number>
+                                </property>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <property name="margin">
+                                        <number>0</number>
+                                    </property>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>textLabel1_3</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Indicate the default button with:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="0" column="1">
+                                        <property name="name">
+                                            <cstring>emboldenWidget</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Bold text, and</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox" row="0" column="2">
+                                        <item>
+                                            <property name="text">
+                                                <string>Border Indicator</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Corner Indicator</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Font colour border</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>No Indicator</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>defaultIndicatorCombo</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>3</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>0</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                            <widget class="QFrame">
+                                <property name="name">
+                                    <cstring>frame6</cstring>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>StyledPanel</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Raised</enum>
+                                </property>
+                                <property name="lineWidth">
+                                    <number>0</number>
+                                </property>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <property name="margin">
+                                        <number>0</number>
+                                    </property>
+                                    <widget class="QLabel" row="0" column="0">
+                                        <property name="name">
+                                            <cstring>textLabel1_5</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>List views:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox" row="0" column="1">
+                                        <item>
+                                            <property name="text">
+                                                <string>+/- Expanders</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Arrow Expanders</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>lvExpanderCombo</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QComboBox" row="0" column="2">
+                                        <item>
+                                            <property name="text">
+                                                <string>No lines</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Dotted lines</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>Solid lines</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>lvLinesCombo</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox" row="0" column="3">
+                                        <property name="name">
+                                            <cstring>lvDarkWidget</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Dark lines</string>
+                                        </property>
+                                    </widget>
+                                </grid>
+                            </widget>
+                        </vbox>
+                    </widget>
+                </vbox>
+            </widget>
+    </vbox>
+</widget>
+<tabstops>
+    <tabstop>borderWidget</tabstop>
+    <tabstop>roundWidget</tabstop>
+    <tabstop>toolbarBordersWidget</tabstop>
+    <tabstop>sliderThumbsCombo</tabstop>
+    <tabstop>handlesCombo</tabstop>
+    <tabstop>pmCombo</tabstop>
+    <tabstop>appearanceCombo</tabstop>
+    <tabstop>vArrowWidget</tabstop>
+    <tabstop>crLabelHighlightWidget</tabstop>
+    <tabstop>borderSplitterWidget</tabstop>
+    <tabstop>emboldenWidget</tabstop>
+    <tabstop>defaultIndicatorCombo</tabstop>
+    <tabstop>lvExpanderCombo</tabstop>
+    <tabstop>lvLinesCombo</tabstop>
+    <tabstop>lvDarkWidget</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">../version.h</include>
+</includes>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

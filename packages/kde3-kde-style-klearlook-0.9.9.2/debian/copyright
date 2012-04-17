@@ -1,0 +1,34 @@
+This package was debianized by Matej Cepl <matej@ceplovi.cz> on
+Thu,  1 Jun 2006 11:27:53 -0400.
+
+It was downloaded from
+http://www.kde-look.org/content/download.php?content=31717
+(files in admin/ directory are not part of the original author's work, but
+rather standard files from autoconf & co. packages; many of them are covered by
+LGPL).
+File Clearlooks.kcsrc was downloaded from
+http://www.kde-look.org/content/show.php?content=37009
+
+Copyright Holder: Joerg Koenig <jck (at) gmx.org> 2005-2006
+Copyright Holder of Clearlooks.kcsrc: Hugo Alves Lobo
+<hugoalveslobo (at) sapo.pt>, 2005-2006
+
+License:
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+

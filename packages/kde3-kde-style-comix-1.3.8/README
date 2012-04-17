@@ -1,0 +1,14 @@
+Comix
+=======
+Another flat style and windeco for KDE 3.2.
+
+Installation
+-----------------
+tar -xjf comix.tar.bz2
+cd comix
+./configure --prefix=<your prefix> [--disable-debug] [--enable-final]
+make
+and finally as root:
+make install
+
+See TODO for a list of known issues.

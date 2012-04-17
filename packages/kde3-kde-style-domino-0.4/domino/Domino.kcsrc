@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Domino
+activeBackground=149,155,162
+activeBlend=149,155,162
+activeForeground=40,40,40
+activeTitleBtnBg=154,161,168
+alternateBackground=230,230,230
+background=149,155,162
+buttonBackground=149,155,162
+buttonForeground=0,0,0
+contrast=0
+foreground=0,0,0
+frame=149,155,162
+handle=149,155,162
+inactiveBackground=149,155,162
+inactiveBlend=149,155,162
+inactiveForeground=40,40,40
+inactiveFrame=149,155,162
+inactiveHandle=149,155,162
+inactiveTitleBtnBg=123,128,134
+linkColor=10,95,137
+selectBackground=162,168,223
+selectForeground=0,0,0
+shadeSortColumn=false
+visitedLinkColor=137,10,137
+windowBackground=237,237,237
+windowForeground=0,0,0

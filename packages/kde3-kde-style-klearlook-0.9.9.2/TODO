@@ -1,0 +1,21 @@
+KDE: Combo box has a lighter grey when disabled
+GTK1: Mozilla - tab bar seems to let tabs overlap? This also affects Geramik,
+      think the problem is with Mozilla.
+KDE: Slight re-draw error on tabs if width of all tabs= width of tab bar -- but
+     all KDE themes seem to suffer from this.
+KDE: Mising white pixel when last tab is selected, if its added then the above 
+     suffers even more!
+KDE: V3 Combobox list needs to be rounded in rounded mode - missing pixels, etc.
+     Also take into account scrollbar pos? i.e. draw line 1 pixel less on right?
+ALL: AA selected/gradient radios - in high contrast looks very sharp
+ALL: GTK/KDE have different disabled text behaviour when contrast setting changed!
+
+--new--
+
+KDE: Fix OO.o menubar.
+GTK: Slightly differnt menu colour?
+GTK: Implement kde settings stuff from GtkQt and the qt gtk engine.
+ALL: Make highlight factor a configurable value
+KDE: spinbox buttons need to hightlight just button that mouse is over!
+KDE: Konqueror's sidebar - whats going on with 1st button? (look's like its an unthemed seperarator)
+

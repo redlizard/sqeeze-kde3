@@ -1,0 +1,10 @@
+--- polyester/client/polyester.cc	2007-04-18 00:02:37.000000000 +0000
++++ polyester/client/polyester.cc	2007-04-18 00:02:48.000000000 +0000
+@@ -33,6 +33,7 @@
+ #include <qapplication.h>
+ #include <qsettings.h>
+ #include <math.h>
++#include <cstdlib>
+ 
+ #include "polyester.h"
+ #include "buttons.h"
