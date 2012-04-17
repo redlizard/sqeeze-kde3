@@ -21,6 +21,7 @@ dbus-qt3
 imlib
 libxxf86misc
 wv2
+
 kdelibs
 kdebase
 kdepim
@@ -52,6 +53,12 @@ kde-icons-korilla
 kde-icons-noia
 kde-icons-nuovext
 kde-icons-nuvola
+kde-style-comix
+kde-style-domino
+kde-style-klearlook
+kde-style-lipstik
+kde-style-polyester
+kde-style-qtcurve
 "
 
 dist=squeeze
@@ -121,7 +128,7 @@ if [ ! -d squeeze-base ]; then
 	echo "#!/bin/dash" > squeeze-base/usr/sbin/invoke-rc.d
 	chmod 755 squeeze-base/usr/sbin/invoke-rc.d
 	
-	chrootrun squeeze-base "$aptget install build-essential dpkg-dev cdbs debhelper quilt joe locales"
+	chrootrun squeeze-base "$aptget install build-essential dpkg-dev cdbs debhelper quilt dpatch joe locales"
 	echo en_US.UTF-8 UTF-8 >> squeeze-base/etc/locale.gen
 	chrootrun squeeze-base locale-gen
 	mkdir -p squeeze-base/apt-repo/pool
@@ -134,6 +141,8 @@ if [ ! -d squeeze-base ]; then
 fi
 
 dir=`mktemp -d build-XXXXXXXXXX`
+#mount -t tmpfs tmpfs $dir
+chmod 755 $dir
 echo "Building in directory $dir"
 cd $dir
 
@@ -156,6 +165,7 @@ for package in $packages; do
 		rm -rf $package/apt-repo
 		mkdir -p $package/apt-repo/pool
 		for file in `ls $targetdir`; do ln $targetdir/$file $package/apt-repo/pool; done
+		#for file in `ls $targetdir`; do cp $targetdir/$file $package/apt-repo/pool; done
 		buildrepo $package/apt-repo
 		
 		echo "Installing build dependencies for package $fullpackage..."
@@ -163,6 +173,7 @@ for package in $packages; do
 		chrootrun $package "$aptget update"
 		chrootrun $package "$aptget build-dep kde3-$package"
 		chrootrun $package "cd build-binary-package && apt-get source kde3-$package"
+		chrootrun $package "$aptget clean"
 		
 		echo "Building binary package $fullpackage for architecture $arch..."
 		chrootrun $package "cd build-binary-package/$fullpackage && dpkg-buildpackage -us -uc"
@@ -176,4 +187,5 @@ for package in $packages; do
 done
 
 cd ..
-rm -rf $dir
+#umount $dir
+rmdir $dir
