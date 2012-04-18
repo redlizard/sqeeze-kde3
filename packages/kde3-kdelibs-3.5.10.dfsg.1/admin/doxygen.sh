@@ -81,8 +81,7 @@ else
 fi
 
 
-
-### Sanity check and guess QTDOCDIR.
+QTDOCDIR=/usr/share/qt3/doc/html
 if test -z "$QTDOCDIR" ; then
 	if test -z "$QTDIR" ; then
 		for i in /usr/X11R6/share/doc/qt/html
@@ -137,7 +136,7 @@ if test -z "$DOXDATA" || test ! -d "$DOXDATA" ; then
 	if test -n "$DOXDATA" ; then
 		echo "* \$DOXDATA is '$DOXDATA' which does not name a directory"
 	fi
-	DOXDATA="/usr/share/doc/kde3-kde/HTML/en/common"
+	DOXDATA="$top_srcdir/doc/common"
 fi
 
 if test ! -d "$DOXDATA" ; then

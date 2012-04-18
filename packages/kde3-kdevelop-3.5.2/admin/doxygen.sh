@@ -82,7 +82,7 @@ fi
 
 
 
-### Sanity check and guess QTDOCDIR.
+QTDOCDIR=/usr/share/qt3/doc/html
 if test -z "$QTDOCDIR" ; then
 	if test -z "$QTDIR" ; then
 		for i in /usr/X11R6/share/doc/qt/html
