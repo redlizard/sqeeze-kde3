@@ -1,0 +1,18 @@
+----- KNOWN BUGS ---------------------------------------------------------------
+
+The mouseover effect does not always react as programmed. It is activated 
+when it should not or it remains activated after the mouse has left the 
+widget. Apparently Qt does not always detect that the mouse leaves a widget. 
+The only way around is to let the mouse cursor enter and leave the widget area 
+again until Qt dectects it.
+
+The mouseover effect on toolbox tabs can be activated on all tabs in some 
+occasions --when it shouldn't. I think it happens during some massive redraw 
+but I haven't be able been to reproduce this bug at will.
+
+The taskbar buttons work as expected only when they are set to behave like 
+toolbuttons i.e. the option "Show button" in Taskbar must be set to "on mouse 
+hover and click". I haven't been able to do any better yet.
+
+OpenOffice 2 does not support the "arrowless" scrollbars and there are some 
+widgets which are incorrectly drawn --no mouseover effect, wrong colors, etc.

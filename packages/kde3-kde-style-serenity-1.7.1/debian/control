@@ -1,0 +1,27 @@
+Source: kde3-kde-style-serenity
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 5), autotools-dev, kde3-kdebase-dev, automake1.9, autoconf, libtool, quilt
+Standards-Version: 3.7.2
+
+Package: kde3-kde-style-serenity
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: kde3-kwin-style-serenity
+Description: serenity widget style for KDE
+ widget style without too many lines to avoid "recursive frames effect".
+ Serenity is based off lipstik engine
+
+Package: kde3-kwin-style-serenity
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: kde3-kde-style-serenity
+Description: plasmoid inspired window decoration for KDE
+ highly configurable window decoration with many different 
+ icons and good possibility to configure the menu bar as well.
+ .
+ This package also ships some colorschemes
+ .
+ This is a window decoration, not a style.
+

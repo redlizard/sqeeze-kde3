@@ -1,0 +1,8 @@
+[Misc]
+Name=Serenity
+ConfigPage=kstyle_serenity_config
+Comment=A simple serene style
+Comment[fr]=Un style simple et serin
+
+[KDE]
+WidgetStyle=Serenity

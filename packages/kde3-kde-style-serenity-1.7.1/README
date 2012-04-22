@@ -1,0 +1,36 @@
+----- README -------------------------------------------------------------------
+
+Serenity is a theme for KDE 3.2+ with a widget style and a window decoration.
+It provides a whole lot of options for the Serenity to become yours.
+
+The first goal of Serenity is to make disappear as many lines as possible. I 
+couldn't remove all of them because when you erase certain lines, one app will 
+look better but another one will definitively need them for its GUI to be 
+useable. That's why sometimes I had to take a road in between and that some 
+lines are only less visible.
+
+I don't use dark colorschemes but I kinda like them so Serenity works well with 
+them. However, you should avoid very dark colors. Despite its own improved 
+brightness routines, Serenity still doesn't cope well with them.
+
+In general, you should avoid extreme colors (white or black) for anything 
+but the text. To produce its 3D effects, Serenity needs enlightened and 
+darkened versions of the background colors. The problem is that brighter than 
+white and darker than black are colors that exist only in the laundry soap 
+commercials, not in the real world.   
+
+I provide a lot of colorschemes --including dark ones-- that will be 
+automatically installed. Just try them. Note that all these colorschemes use 
+the same color for the window, standard, selected and button text. Apart from 
+the fact that not inverted text is more legible, this is so because a style 
+cannot always freely choose the color of a text that will be drawn. This should 
+avoid you any problem of ledgibility. Note also that the majority of the blacks 
+in the colorschemes are not exactly black but slightly tinted. I chose them so 
+because Serenity often mixes two colors to produce a new one and pretty much 
+anything mixed with a pure black becomes grey. A slight tint improves this 
+unpleasant effect. Any way, for the best result, use a global tint.
+
+Well, I hope Serenity is something never seen before. Enjoy it!
+
+Remi Villatel <maxilys@tele2.fr>
+

@@ -1,0 +1,5 @@
+./opt/kde3/lib/kde3/kwin3_serenity.la
+./opt/kde3/lib/kde3/kwin_serenity_config.la
+./opt/kde3/lib/kde3/kwin_serenity_config.so
+./opt/kde3/lib/kde3/kwin3_serenity.so
+./opt/kde3/share/apps/kwin/serenity.desktop

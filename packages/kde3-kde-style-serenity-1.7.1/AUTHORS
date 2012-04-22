@@ -1,0 +1,14 @@
+----- Serenity -----------------------------------------------------------------
+
+Maintainer:
+	Remi Villatel <maxilys@tele2.fr>
+
+The Serenity style started its life as a patch of Lipstik style from 
+Patrice Tremblay and evolved from there on with code inspiration taken 
+from the sources of Plastik, DotNet, QtCurve, HighContrast, Keramic, 
+and probably some others. Thanks to their respective authors. I also 
+took some inspiration from the sources of KDE 3.5 and Qt 3. Thanks to 
+the KDE developers and all my gratitude gets to the Trolls of Trolltech 
+who made all this possible.
+
+The Serenity window decoration was based on my previous work: Powder.

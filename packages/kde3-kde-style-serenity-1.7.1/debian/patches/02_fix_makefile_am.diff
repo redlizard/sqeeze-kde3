@@ -1,0 +1,47 @@
+--- kde-style-serenity-1.7.1/decoration/config/Makefile.am
++++ kde-style-serenity-1.7.1/decoration/config/Makefile.am
+@@ -3,7 +3,7 @@
+ kde_module_LTLIBRARIES       = kwin_serenity_config.la
+ 
+ kwin_serenity_config_la_SOURCES = serenityconfig.cpp configdialog.ui
+-kwin_serenity_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
++kwin_serenity_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module $(LIB_QT) $(LIB_KDECORE)
+ kwin_serenity_config_la_LIBADD  = $(LIB_KDEUI)
+ 
+ METASOURCES                  = AUTO
+--- kde-style-serenity-1.7.1/decoration/Makefile.am
++++ kde-style-serenity-1.7.1/decoration/Makefile.am
+@@ -14,7 +14,7 @@
+ kde_module_LTLIBRARIES = kwin3_serenity.la
+ 
+ kwin3_serenity_la_LIBADD = $(LIB_KDEUI) $(kde_libraries)/libkdecorations.la
+-kwin3_serenity_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
++kwin3_serenity_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module $(LIB_QT) $(LIB_KDECORE)
+ kwin3_serenity_la_METASOURCES = AUTO
+ 
+ DISTCLEANFILES = $(kwin_serenity_la_METASOURCES)
+--- kde-style-serenity-1.7.1/style/config/Makefile.am
++++ kde-style-serenity-1.7.1/style/config/Makefile.am
+@@ -5,7 +5,7 @@
+ noinst_HEADERS = serenityconf.h
+ kde_module_LTLIBRARIES = kstyle_serenity_config.la
+ kstyle_serenity_config_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-kstyle_serenity_config_la_LIBADD  = $(LIB_KDEUI)
++kstyle_serenity_config_la_LIBADD  = $(LIB_KDEUI) $(LIB_QT) $(LIB_KDECORE)
+ kstyle_serenity_config_la_SOURCES = serenityconf.cpp configdialog.ui
+ 
+ messages:
+--- kde-style-serenity-1.7.1/style/Makefile.am
++++ kde-style-serenity-1.7.1/style/Makefile.am
+@@ -13,9 +13,9 @@
+ 
+ EXTRA_DIST = $(stylerc_DATA)
+ 
+-noinst_HEADERS = serenity.h misc.h
++noinst_HEADERS = serenity.h
+ 
+ kde_style_LTLIBRARIES = serenity.la
+ serenity_la_SOURCES = serenity.cpp
+ serenity_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
+-serenity_la_LIBADD = -lkdefx -lkutils $(LIB_KDEUI)
++serenity_la_LIBADD = -lkdefx -lkutils $(LIB_KDEUI) $(LIB_QT)

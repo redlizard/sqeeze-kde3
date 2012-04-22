@@ -1,0 +1,35 @@
+----- WARNING ------------------------------------------------------------------
+
+The style option "Wider entries in menubar" enables a HACK --i.e. a trick-- of 
+which the effects CAN NOT BE TOTALLY REVERSED on the running applications.
+
+In clear, when activated, the menubar HACK enlarges the entries and removes the 
+spaces in between them. If you activate then deactivate it, only the spaces in 
+between the entries will be restored but the entries in the menubar of the 
+applications on which ones you already saw the effects of the hack will NOT 
+become narrower.
+
+To totally disable it, you must DEACTIVATE IT in the configuration dialog THEN 
+RESTART KDE.
+
+--------------------------------------------------------------------------------
+
+This HACK is HARMLESS, there is *virtually* no way it can make your KDE crash. 
+It has been working on my system for a long time without a single problem but 
+it does really strange things to the menubar entries, things that a style 
+shouldn't do --even in my own opinion.
+
+I could have made it totally reversible but I didn't because it would have 
+meant activating another hack to reverse its effects. The way it's written 
+assures you that Serenity does not-so-clean things *only* when the hack is 
+activated.
+
+Try it, if you like what it does, keep it. Otherwise, disable it and restart 
+your KDE.
+
+NOTE: If you know an application that changes the labels of a menu entry during 
+its execution, for example, to add a number or whatever, please REPORT to me. 
+I don't know any and that's the only situation where this hack may cause some 
+*cosmetic* problems... or worst.
+
+<maxilys@tele2.fr>

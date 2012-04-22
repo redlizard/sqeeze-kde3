@@ -1,0 +1,152 @@
+----- ChangeLog ----------------------------------------------------------------
+1.7.1:
+	- Bugfix for KDM.
+	- Textbox focus highlight activated by default for the login.
+
+1.7:
+	- The character used in the password entry boxes in now a big dot 
+	instead of the asterisk.
+	- Scrollbars and sliders do not sink under a mouse click any more.
+	- Tabbar improved with new gradients and new colors. Four styles are 
+	now available for both the active and inactive tabs.
+	- Tabs are a bit less busy. They now only change of color under the 
+	mouse.
+	- Menubar slightly changed with new gradients and new colors. Six 
+	styles are now available.
+	- Gradient menubars are now a bit less busy too.
+	- Textboxes (which include also editable comboboxes and spinwidgets) 
+	can now be highlighted when they have the focus. (That's more visible 
+	than only the blinking cursor.)
+	- The popup sub-menu delay can now be raised up to 1 sec. (That gives 
+	you the time to *feel* you have to click to let a sub-menu appear.)
+	- Serenity now has its own brightness routines so that you can have 
+	white buttons. (Still doesn't work perfectly with black buttons.) 
+
+1.6:
+	- A new tree view style is available: "Modern". (Button-less expanders,
+	no branches, and expanded branches look like dotted lists.)
+	- The slider handles now totally match the look of the arrowless 
+	scrollbar handles --including the little arrows.
+	- Progress bars slightly re-designed with now three shades of color.
+	- Major internal re-factory that increases the speed of all the button 
+	and frame drawings, plus some more improvements in the bitmaps handling 
+	to gain even more speed.
+	- Focus rectangles fixed so that they don't leave traces when you move 
+	an icon in Konqueror's window.
+	- The rubberband can now be made more visible with the highlight color 
+	(that must not be dark or it ruins the effect).
+	- Zen style improved, much smoother.
+	- The active toolbox tabs respect the tab style (again).
+	- Configuration dialog re-designed --just to look nicer.
+	- To get rid of the greys, a new global tint can be defined to colorize 
+	everything but the texts.
+	- The inactive tabs can now be solid (again) to make them more visible.
+
+1.5:
+	- Some more frames have disappeared.
+	- Fixed the menubar in KControl colors module (wrong color) and in 
+	Opera (holes through the window).
+	- The branches in the tree views can now be made less visible or 
+	totally invisible.
+	- The mouseover color can be made purer so that all hovered widgets get 
+	approximatively the same color.
+	- The active tab can no longer have a button look, only a gradient or 
+	flat look. The active tabs also got subtly improved.
+	- The inactive tabs can now be separated instead of joined. In both 
+	cases they now use a gradient to be "lighter".
+	- The panel resizers/splitters can now be made less visible or totally 
+	invisible unless hovered.
+	- A fourth very discreet menu groove has appeared.
+	- The framing of the sub-menu arrows can now be deactivated. In that 
+	case, the arrows are bigger.
+	- Serenity's own gradient routines got accelerated.
+	- The configuration dialog now always acknowledges all changes. (The 
+	"Apply" button wasn't always enabled after a change.)
+	- The configuration dialog has been totally re-designed to hold all the 
+	new options.
+	- The colors of the scrollbar can now be changed. You can choose in 
+	between three colorschemes: "Window backgroung" (as before), "Standard 
+	background" (usually lighter), and "Button".
+	- The design of the sliders (as in KMix) can now be made wider to look 
+	like the scrollbars, with the handle inside the groove.
+
+1.4:
+	- Memory leak fixed.
+	- Progress bars slightly changed.
+
+1.3.0:
+	- The menu groove can be deactivated again, or else you can choose 
+	another very discreet groove.
+	- The toolbars handles can be deactivated again too.
+	- Serenity now takes care of the tooltips. They are now readable even 
+	with white text and their background color can be selected within 
+	certain limits.
+	- Konqueror file tips also follow the design of the tooltips but the 
+	colors won't be respected (yet) with white text.
+
+1.3:
+	- The Zen style has now smoother borders.
+	- Some more widgets got supported: The panel resizers in e.g. KNode and 
+	Kopete, the tiny panel buttons in KNode, the tiny menu buttons in the 
+	Kicker panels.
+	- The panel resizers have been re-designed to be more visible.
+	- The scrollbars now respect a little more any (unofficial) CSS-defined 
+	colorscheme on HTML pages, especially the groove doesn't always keep 
+	its default color.
+	- The drawing of the tiny surface with zen gradients has been fixed.
+	- Menubar usability hack: The entries can be wider, without any space 
+	in between them. (See 'WARNING'.)
+	- No more tiny tree expanders, they are now as big as possible.
+	- New totally flat column headers with little separators.
+	- Serenity configuration totally re-worked. Attention: Some of your 
+	current settings will be reset to default values.
+	- There are also a few less options: The toolbar handles are always 
+	visible, as well as the menubar groove, the serene groupboxes can't be 
+	deactivated any more and the separators are always solid.
+
+1.2:
+	- The number of gradient styles is now only 3: "Serene" (diagonal), 
+	"Zen" (pseudo-3D) and "Flat".
+	- The progress bars now use colors matching with the window background.
+	- The drawing of the tabs has been fixed --especially the bottom tabs-- 
+	and the (selectable) gradients are more "serene".
+	- The toolbox tabs have been simplified and they follow the settings of 
+	the regular tabs (when selected).
+	- The separators in the tab bars and in the scrollbars have been 
+	improved.
+	- The drawing of the radiobuttons has been fixed. (Minor color error.)
+	- A new colorscheme: "Caloris Planitia".
+
+1.1:
+	- The spinwidget arrows are deactivated when they can't be used i.e. 
+	when the spinwidget has reached its minimal or maximal value.
+	- A click on a label with a shortcut activates the related widget. 
+	(Experimental feature. It works but don't rely on it.) 
+	- Popup sub-menus can be accelerated (to open almost immediately) or 
+	slowed down (so that they don't open unless you actually keep the mouse 
+	cursor over the entry or click it).
+	- Four new serene colorschemes have been added.
+	- The KMultiTabBarButtons which used a wrong button type are fixed.
+	- The incorrectly thick focus rectangle of the QToolButtons is fixed.
+	- Tab warnings restored. You can still deactivate them, or have either 
+	bold or italic text, or else have the application default color.
+	- Serenity now uses its own (faster) gradient routines.
+	- The progress bars got new --less flashy-- colors.
+	- They can also become flat to be even more "serene".
+
+1.0:
+	- The menu autoclose feature is reactivated i.e. you can click the 
+	entry of an opened menu to close it.
+	- Various styles are now available for the active tabs: Either 
+	button-alike (as previously) or a vertical gradient. In both cases, 
+	they can use the highlight color or not. Or else you can make them 
+	absolutely flat.
+	- Tabs can now be centered.
+	- QToolButtons fixed. (Only K3B & Kaffeine, AFAIK)
+	- A new scrollbar style is available: Arrowless i.e. without arrow 
+	buttons at each end of the scrollbar.
+	- The separators --including in popup menus-- can be either solid or 
+	with vanishing ends.
+	- A few color changes, especially in order that only the buttons use 
+	the defined button color.
+	- Some code optimizations.

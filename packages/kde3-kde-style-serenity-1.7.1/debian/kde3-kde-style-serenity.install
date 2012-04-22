@@ -1,0 +1,6 @@
+./opt/kde3/lib/kde3/kstyle_serenity_config.so
+./opt/kde3/lib/kde3/plugins/styles/serenity.la
+./opt/kde3/lib/kde3/plugins/styles/serenity.so
+./opt/kde3/lib/kde3/kstyle_serenity_config.la
+./opt/kde3/share/apps/kstyle/themes/serenity.themerc
+./opt/kde3/share/apps/kdisplay/color-schemes/*	

@@ -1,0 +1,32 @@
+----- INSTALL ------------------------------------------------------------------
+
+Basic Installation from the console:
+
+	$ cd path/to/serenity-1.7
+
+	$ ./configure --disable-debug --prefix=`kde-config --prefix`
+
+	$ make
+
+	$ su
+
+	(as root)
+	# make install
+
+If configure fails, check that you have both
+the Qt and KDE development headers installed.
+
+If they are installed but not found, try:
+
+	$ ./configure --help
+
+There are a lot of options to tell the configuration 
+script where things are, especially: 
+
+--includedir=DIR		(KDE includes)
+
+--with-qt-dir=DIR		(the root of Qt)
+--with-qt-includes=DIR  	(the Qt includes)
+--with-qt-libraries=DIR 	(the Qt library)
+
+ 
