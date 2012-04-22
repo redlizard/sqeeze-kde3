@@ -28,6 +28,7 @@ Section: libs
 Architecture: all
 Depends: hicolor-icon-theme
 Replaces: libdjvulibre1
+Conflicts: kdelibs-data
 Description: core shared data for all KDE applications
  This package contains all the architecture independent data files
  commonly used by KDE applications. You need these data files to run
@@ -41,6 +42,7 @@ Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, kde3-kdelibs-data, menu-xdg, perl, x11-xserver-utils, xauth
 Suggests: fam, perl-suid, ghostscript
+Conflicts: kdelibs4c2a
 Description: core libraries and binaries for all KDE applications
  This package contains all the shared libraries and common core binaries
  used by all KDE applications. You need these libraries and binaries to
