@@ -1,0 +1,128 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>ConfigDialog</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ConfigDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>541</width>
+            <height>194</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Config Dialog</string>
+    </property>
+    <hbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget">
+            <property name="name">
+                <cstring>layout1</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QButtonGroup" row="0" column="0" rowspan="1" colspan="5">
+                    <property name="name">
+                        <cstring>titleAlign</cstring>
+                    </property>
+                    <property name="title">
+                        <string>Title &amp;Alignment</string>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>AlignLeft</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Left</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>AlignHCenter</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Center</string>
+                            </property>
+                        </widget>
+                        <widget class="QRadioButton">
+                            <property name="name">
+                                <cstring>AlignRight</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Right</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <widget class="QCheckBox" row="3" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>highContrastButtons</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Use high contrast hovered buttons</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox" row="1" column="0" rowspan="1" colspan="5">
+                    <property name="name">
+                        <cstring>designatedTitlebarColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Use the &amp;designated title bar color for the title bar</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+D</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Check this option if the title bar should obtain its color from the title bar color setting instead of the window background color.</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox" row="2" column="0" rowspan="1" colspan="4">
+                    <property name="name">
+                        <cstring>bordersBlendColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Use title blend color for window borders</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Check this option if the borders should obtain their color from the title blend color setting instead of the window background color.</string>
+                    </property>
+                </widget>
+                <widget class="QCheckBox" row="4" column="0" rowspan="1" colspan="5">
+                    <property name="name">
+                        <cstring>titleShadow</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Use shadowed &amp;text</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+T</string>
+                    </property>
+                    <property name="whatsThis" stdset="0">
+                        <string>Check this option if you want the titlebar text to have a 3D look with a shadow behind it.</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+    </hbox>
+</widget>
+<tabstops>
+    <tabstop>AlignLeft</tabstop>
+    <tabstop>AlignHCenter</tabstop>
+    <tabstop>AlignRight</tabstop>
+    <tabstop>designatedTitlebarColor</tabstop>
+    <tabstop>bordersBlendColor</tabstop>
+    <tabstop>highContrastButtons</tabstop>
+    <tabstop>titleShadow</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

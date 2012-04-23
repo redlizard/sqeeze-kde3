@@ -1,0 +1,23 @@
+-- README ----------------------------------------------------------------------
+
+Powder is a window decoration for KDE 3.x based on my previous original 
+Porcelain windec engine.
+
+I got inspired by some plasmoids mockups I saw once. Unfortunately, this 
+windec has no transparency like the plasmoid had/have/will have. What I 
+really wanted to implement for this windec was a transluent frame under 
+the buttons and the title, and all around, but X.org doesn't allow such 
+effect... yet.
+
+About the colors: Powder only uses the title text color, the titlebar 
+background and the window background. All other colors are calculated 
+according to the contrast setting of the config dialog and --of course-- 
+the defined glow colors. Just check the provided colorschemes and you'll 
+see.
+
+To have the old button icons, just replace the new "powderclient/pixmaps.cpp" 
+with "powderclient/pixmaps.cpp.OLD".
+
+Well, I hope Powder is something never seen before. Enjoy it! ;-)
+
+Remi Villatel maxilys@tele2.fr

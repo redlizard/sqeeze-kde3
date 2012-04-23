@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Powder::GreenLemon
+activeBackground=16,80,0
+activeBlend=232,255,200
+activeForeground=255,255,255
+activeTitleBtnBg=0,0,0
+alternateBackground=240,255,208
+background=232,255,200
+buttonBackground=255,255,232
+buttonForeground=0,0,0
+contrast=5
+foreground=0,0,0
+frame=0,0,0
+handle=0,0,0
+inactiveBackground=64,128,0
+inactiveBlend=232,255,200
+inactiveForeground=192,208,176
+inactiveFrame=144,144,144
+inactiveHandle=144,144,144
+inactiveTitleBtnBg=144,144,144
+linkColor=0,0,192
+selectBackground=0,64,0
+selectForeground=255,255,255
+shadeSortColumn=true
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0

@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Powder::Ashes
+activeBackground=64,64,64
+activeBlend=208,208,208
+activeForeground=255,255,255
+activeTitleBtnBg=0,0,0
+alternateBackground=224,224,224
+background=208,208,208
+buttonBackground=240,240,240
+buttonForeground=0,0,0
+contrast=4
+foreground=0,0,0
+frame=0,0,0
+handle=0,0,0
+inactiveBackground=128,128,128
+inactiveBlend=208,208,208
+inactiveForeground=216,216,216
+inactiveFrame=144,144,144
+inactiveHandle=144,144,144
+inactiveTitleBtnBg=144,144,144
+linkColor=0,0,192
+selectBackground=48,48,48
+selectForeground=255,255,255
+shadeSortColumn=true
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0

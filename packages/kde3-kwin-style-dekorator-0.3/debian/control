@@ -1,0 +1,22 @@
+Source: kde3-kwin-style-dekorator
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 5), autotools-dev, kde3-kdebase-dev
+Standards-Version: 3.7.2
+
+Package: kde3-kwin-style-dekorator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: windows decoration for kde using user-supplied PNG files
+ Make your own window decoration easy witheKorator.
+ Dekorator uses your own made images for buttons, borders
+ and so on, so go ahead and be creative.
+ Provides an example called uglyTheme to show the possibilities of 
+ deKorator
+ .
+ Themes can be created by the user in a drawing program or be 
+ downloaded from http://www.kde-look.org/index.php?xcontentmode=21
+ .
+ This is a window decoration, not a style
+

@@ -1,0 +1,13 @@
+"Knifty" is a neat native KWin window decoration for KDE 3.x
+based on the nice KWin theming HOWTO by David Johnson. Also
+I've "stolen" some code from the excellent "MKUltra"/"Web"
+KWin decos and the KDE CVS KDesktop ShadowEngine class by
+Laur Ivan. ;-) Thankyou all!
+
+You can find info about installing in the INSTALL file; the
+license is the GNU GPL (see COPYING for details).
+
+If you have any suggestions/wishes please contact me.
+Sandro Giessl <ceebx@users.sourceforge.net>
+
+have fun. :-)

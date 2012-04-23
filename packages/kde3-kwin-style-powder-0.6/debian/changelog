@@ -1,0 +1,42 @@
+kde3-kwin-style-powder (0.6-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 02:25:50 +0200
+
+kwin-style-powder (0.6-2) unstable; urgency=low
+
+  * Does not pass lintian. Upstream did not run make distclean, which makes
+    lintian complain: 
+    kwin-style-powder source: configure-generated-file-in-source config.status
+    kwin-style-powder source: configure-generated-file-in-source config.log
+    Upstream will fix this in next release
+  * Package name changed due to debian kde naming policy
+  * First debian release Closes: #338554
+
+ -- Sune Vuorela <debian@pusling.com>  Tue, 15 Nov 2005 03:20:12 +0000
+
+kwin-decor-powder (0.6-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Sune Vuorela <debian@pusling.com>  Sun,  6 Nov 2005 17:38:12 +0000
+
+kwin-decor-powder (0.5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Sune Vuorela <debian@pusling.com>  Sun, 23 Oct 2005 20:36:15 +0000
+
+kwin-decor-powder (0.4.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Sune Vuorela <debian@pusling.com>  Sat, 22 Oct 2005 20:37:31 +0000
+
+kwin-decor-powder (0.2-1) unstable; urgency=low
+
+  * Initial release 
+
+ -- Sune Vuorela <debian@pusling.com>  Thu, 13 Oct 2005 20:42:27 +0000
+

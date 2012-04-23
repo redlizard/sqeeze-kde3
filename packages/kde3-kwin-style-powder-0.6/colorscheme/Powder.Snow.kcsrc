@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Powder::Snow
+activeBackground=240,248,255
+activeBlend=248,248,248
+activeForeground=0,0,0
+activeTitleBtnBg=0,0,0
+alternateBackground=224,240,255
+background=248,248,248
+buttonBackground=240,248,255
+buttonForeground=0,0,0
+contrast=5
+foreground=0,0,0
+frame=0,0,0
+handle=0,0,0
+inactiveBackground=240,240,240
+inactiveBlend=248,248,248
+inactiveForeground=128,128,128
+inactiveFrame=144,144,144
+inactiveHandle=144,144,144
+inactiveTitleBtnBg=144,144,144
+linkColor=0,0,192
+selectBackground=0,0,80
+selectForeground=255,255,255
+shadeSortColumn=true
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0

@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Powder::Sky
+activeBackground=0,32,96
+activeBlend=176,208,240
+activeForeground=255,255,255
+activeTitleBtnBg=0,0,0
+alternateBackground=200,232,255
+background=176,208,240
+buttonBackground=232,248,255
+buttonForeground=0,0,0
+contrast=5
+foreground=0,0,0
+frame=0,0,0
+handle=0,0,0
+inactiveBackground=0,80,144
+inactiveBlend=176,208,240
+inactiveForeground=176,192,208
+inactiveFrame=144,144,144
+inactiveHandle=144,144,144
+inactiveTitleBtnBg=144,144,144
+linkColor=0,0,192
+selectBackground=0,0,96
+selectForeground=255,255,255
+shadeSortColumn=true
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0

@@ -1,0 +1,21 @@
+-- INSTALL -----------------------------------
+
+Basic Installation from the console:
+
+	$ cd path/to/powder-0.6
+
+	$ ./configure --prefix=`kde-config --prefix`
+
+	$ make
+
+	(as root)
+	# make install
+
+If configure fails, check that you have both
+the Qt and KDE development headers installed.
+
+Debian note: You may need to append
+--with-qt-includes=/usr/include/qt3
+to the configure line.
+
+----------------------------------------------

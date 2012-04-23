@@ -1,0 +1,8 @@
+TODO:
+- dynamic resizing of the button icons?
+- more spectacular indication of button states (hover, pressed etc.)
+- ship a decent color theme?
+- some more configuration options?
+- bugfixes (are there any bugs? please report! ;) )
+- fix shadow bug which seems to appear since kde 3.1.3.
+- ...

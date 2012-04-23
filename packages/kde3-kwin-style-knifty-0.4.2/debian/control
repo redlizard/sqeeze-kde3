@@ -1,0 +1,15 @@
+Source: kde3-kwin-style-knifty
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 5), autotools-dev, kde3-kdebase-dev
+Standards-Version: 3.7.2
+
+Package: kde3-kwin-style-knifty
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: knifty window decoration for KDE
+ Nice kde Window decoration with thin border
+ .
+ Homepage : http://www.kde-look.org/content/show.php?content=8841
+

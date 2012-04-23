@@ -1,0 +1,17 @@
+Basic Installation (from the console):
+  - Step 1
+      $ ./configure --prefix=PREFIX
+  - Step 2
+      $ make
+  - Step 3 (as root)
+      # make install
+
+where PREFIX is the path to your kde
+installation eg: /usr, /opt/kde
+
+If configure fails, check that you have both
+the QT and KDE development headers installed.
+
+Debian note: You may need to append
+--with-qt-includes=/usr/include/qt3
+to the configure line.

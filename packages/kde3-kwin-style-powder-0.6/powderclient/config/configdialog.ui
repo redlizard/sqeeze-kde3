@@ -1,0 +1,1237 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ConfigDialog</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ConfigDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>570</width>
+            <height>350</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Config Dialog</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed1</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>unnamed2</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed5</cstring>
+                </property>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>unnamed6</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="title">
+                        <string>Framing</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignHCenter</set>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed7</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed11</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed12</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed13</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>C&amp;orner radius:</string>
+                                    </property>
+                                    <property name="buddy" stdset="0">
+                                        <cstring>m_cornerRadius</cstring>
+                                    </property>
+                                    <property name="accel" stdset="0">
+                                        <string>Alt+R</string>
+                                    </property>
+                                </widget>
+                                <widget class="QSpinBox">
+                                    <property name="name">
+                                        <cstring>m_cornerRadius</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="buttonSymbols">
+                                        <enum>UpDownArrows</enum>
+                                    </property>
+                                    <property name="maxValue">
+                                        <number>6</number>
+                                    </property>
+                                    <property name="minValue">
+                                        <number>1</number>
+                                    </property>
+                                    <property name="value">
+                                        <number>6</number>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+			<widget class="QLayoutWidget">
+				<property name="name">
+					<cstring>unnamed14</cstring>
+				</property>
+				<hbox>
+					<property name="name">
+						<cstring>unnamed15</cstring>
+					</property>
+					<widget class="QCheckBox">
+						<property name="name">
+							<cstring>m_maxCorner</cstring>
+						</property>
+						<property name="text">
+							<string>&amp;Also if maximized</string>
+						</property>
+						<property name="accel">
+							<string>Alt+I</string>
+						</property>
+					</widget>
+				</hbox>
+			</widget>
+			<widget class="QLayoutWidget">
+				<property name="name">
+					<cstring>noname21</cstring>
+				</property>
+				<hbox>
+					<property name="name">
+						<cstring>noname22</cstring>
+					</property>
+					<widget class="QLabel">
+						<property name="name">
+							<cstring>noname23</cstring>
+						</property>
+						<property name="text">
+							<string>&amp;Lightning:</string>
+						</property>
+						<property name="buddy" stdset="0">
+							<cstring>m_lightPos</cstring>
+						</property>
+						<property name="accel" stdset="0">
+							<string>Alt+L</string>
+						</property>
+					</widget>
+					<widget class="QComboBox">
+						<item>
+							<property name="text">
+								<string>Top left</string>
+							</property>
+						</item>
+						<item>
+							<property name="text">
+								<string>From top</string>
+							</property>
+						</item>
+						<property name="name">
+							<cstring>m_lightPos</cstring>
+						</property>
+						<property name="sizePolicy">
+							<sizepolicy>
+								<hsizetype>0</hsizetype>
+								<vsizetype>0</vsizetype>
+								<horstretch>0</horstretch>
+								<verstretch>0</verstretch>
+							</sizepolicy>
+						</property>
+					</widget>
+				</hbox>
+			</widget>
+			<widget class="QLayoutWidget">
+				<property name="name">
+					<cstring>unnamed16</cstring>
+				</property>
+				<hbox>
+					<property name="name">
+						<cstring>unnamed17</cstring>
+					</property>
+					<widget class="QLabel">
+						<property name="name">
+							<cstring>unnamed18</cstring>
+						</property>
+						<property name="text">
+							<string>Con&amp;trast:</string>
+						</property>
+						<property name="buddy" stdset="0">
+							<cstring>m_gradientContrast</cstring>
+						</property>
+						<property name="accel" stdset="0">
+							<string>Alt+O</string>
+						</property>
+					</widget>
+					<widget class="QSpinBox">
+						<property name="name">
+							<cstring>m_gradientContrast</cstring>
+						</property>
+						<property name="sizePolicy">
+							<sizepolicy>
+								<hsizetype>0</hsizetype>
+								<vsizetype>0</vsizetype>
+								<horstretch>0</horstretch>
+								<verstretch>0</verstretch>
+							</sizepolicy>
+						</property>
+						<property name="buttonSymbols">
+							<enum>UpDownArrows</enum>
+						</property>
+						<property name="maxValue">
+							<number>10</number>
+						</property>
+						<property name="minValue">
+							<number>0</number>
+						</property>
+						<property name="value">
+							<number>5</number>
+						</property>
+					</widget>
+				</hbox>
+			</widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer2</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>20</width>
+                                    <height>10</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </vbox>
+                </widget>
+		<widget class="QGroupBox">
+			<property name="name">
+				<cstring>sansnom1</cstring>
+			</property>
+			<property name="sizePolicy">
+				<sizepolicy>
+					<hsizetype>5</hsizetype>
+					<vsizetype>5</vsizetype>
+					<horstretch>0</horstretch>
+					<verstretch>0</verstretch>
+				</sizepolicy>
+			</property>
+			<property name="title">
+				<string>Titlebar</string>
+			</property>
+			<property name="alignment">
+				<set>AlignHCenter</set>
+			</property>
+			<vbox>
+				<property name="name">
+					<cstring>sansnom2</cstring>
+				</property>
+				<widget class="QLayoutWidget">
+					<property name="name">
+						<cstring>sansnom3</cstring>
+					</property>
+					<hbox>
+						<property name="name">
+							<cstring>sansnom4</cstring>
+						</property>
+						<widget class="QLabel">
+							<property name="name">
+								<cstring>sansnom5</cstring>
+							</property>
+							<property name="text">
+								<string>&amp;Button size:</string>
+							</property>
+							<property name="buddy" stdset="0">
+								<cstring>m_titleSize</cstring>
+							</property>
+							<property name="accel" stdset="0">
+								<string>Alt+T</string>
+							</property>
+						</widget>
+						<widget class="QSpinBox">
+							<property name="name">
+								<cstring>m_titleSize</cstring>
+							</property>
+							<property name="sizePolicy">
+								<sizepolicy>
+									<hsizetype>0</hsizetype>
+									<vsizetype>0</vsizetype>
+									<horstretch>0</horstretch>
+									<verstretch>0</verstretch>
+								</sizepolicy>
+							</property>
+							<property name="buttonSymbols">
+								<enum>UpDownArrows</enum>
+							</property>
+							<property name="maxValue">
+								<number>36</number>
+							</property>
+							<property name="minValue">
+								<number>18</number>
+							</property>
+							<property name="value">
+								<number>18</number>
+							</property>
+						</widget>
+					</hbox>
+				</widget>
+				<widget class="QLayoutWidget">
+					<property name="name">
+						<cstring>sansnom6</cstring>
+					</property>
+					<hbox>
+						<property name="name">
+							<cstring>sansnom7</cstring>
+						</property>
+						<widget class="QCheckBox">
+							<property name="name">
+								<cstring>m_centerTitle</cstring>
+							</property>
+							<property name="text">
+								<string>Ce&amp;nter title text</string>
+							</property>
+							<property name="accel">
+								<string>Alt+N</string>
+							</property>
+						</widget>
+					</hbox>
+				</widget>
+				<widget class="QLayoutWidget">
+					<property name="name">
+						<cstring>sansnom8</cstring>
+					</property>
+					<hbox>
+						<property name="name">
+							<cstring>sansnom9</cstring>
+						</property>
+						<widget class="QCheckBox">
+							<property name="name">
+								<cstring>m_styledMenu</cstring>
+							</property>
+							<property name="text">
+								<string>&amp;Styled menu icon</string>
+							</property>
+							<property name="accel">
+								<string>Alt+I</string>
+							</property>
+						</widget>
+					</hbox>
+				</widget>
+				<widget class="QLayoutWidget">
+					<property name="name">
+						<cstring>sansnom10</cstring>
+					</property>
+					<hbox>
+						<property name="name">
+							<cstring>sansnom11</cstring>
+						</property>
+						<widget class="QLabel">
+							<property name="name">
+								<cstring>sansnom12</cstring>
+							</property>
+							<property name="text">
+								<string>&amp;Hover style:</string>
+							</property>
+							<property name="buddy" stdset="0">
+								<cstring>m_hoverStyle</cstring>
+							</property>
+							<property name="accel" stdset="0">
+								<string>Alt+Y</string>
+							</property>
+						</widget>
+						<widget class="QComboBox">
+							<item>
+								<property name="text">
+									<string>Regular</string>
+								</property>
+							</item>
+							<item>
+								<property name="text">
+									<string>Inverted</string>
+								</property>
+							</item>
+							<property name="name">
+								<cstring>m_hoverStyle</cstring>
+							</property>
+							<property name="sizePolicy">
+								<sizepolicy>
+									<hsizetype>0</hsizetype>
+									<vsizetype>0</vsizetype>
+									<horstretch>0</horstretch>
+									<verstretch>0</verstretch>
+								</sizepolicy>
+							</property>
+						</widget>
+					</hbox>
+				</widget>
+				<spacer>
+					<property name="name">
+						<cstring>spacer3</cstring>
+					</property>
+					<property name="orientation">
+						<enum>Vertical</enum>
+					</property>
+					<property name="sizeType">
+						<enum>Expanding</enum>
+					</property>
+					<property name="sizeHint">
+						<size>
+							<width>20</width>
+							<height>10</height>
+						</size>
+					</property>
+				</spacer>
+			</vbox>
+		</widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>unnamed24</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="title">
+                        <string>Button glow</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignHCenter</set>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed25</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed26</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed27</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed28</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Closer:</string>
+                                    </property>
+                                    <property name="buddy" stdset="0">
+                                        <cstring>m_closerGlow</cstring>
+                                    </property>
+                                    <property name="accel" stdset="0">
+                                        <string>Alt+Y</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 1</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 2</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 3</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 4</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 5</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 6</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 7</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>m_closerGlow</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed29</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed30</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed31</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>&amp;Menu:</string>
+                                    </property>
+                                    <property name="buddy" stdset="0">
+                                        <cstring>m_menuGlow</cstring>
+                                    </property>
+                                    <property name="accel" stdset="0">
+                                        <string>Alt+Y</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 1</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 2</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 3</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 4</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 5</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 6</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 7</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>m_menuGlow</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed32</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed33</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed34</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Ma&amp;x:</string>
+                                    </property>
+                                    <property name="buddy" stdset="0">
+                                        <cstring>m_maxGlow</cstring>
+                                    </property>
+                                    <property name="accel" stdset="0">
+                                        <string>Alt+Y</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 1</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 2</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 3</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 4</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 5</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 6</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 7</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>m_maxGlow</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed35</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed36</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed37</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Min:</string>
+                                    </property>
+                                    <property name="buddy" stdset="0">
+                                        <cstring>m_minGlow</cstring>
+                                    </property>
+                                    <property name="accel" stdset="0">
+                                        <string>Alt+Y</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 1</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 2</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 3</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 4</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 5</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 6</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 7</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>m_minGlow</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed38</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed39</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed40</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Stic&amp;ky:</string>
+                                    </property>
+                                    <property name="buddy" stdset="0">
+                                        <cstring>m_stickyGlow</cstring>
+                                    </property>
+                                    <property name="accel" stdset="0">
+                                        <string>Alt+Y</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 1</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 2</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 3</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 4</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 5</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 6</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 7</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>m_stickyGlow</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed41</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed42</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed43</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>A/&amp;B:</string>
+                                    </property>
+                                    <property name="buddy" stdset="0">
+                                        <cstring>m_abbeGlow</cstring>
+                                    </property>
+                                    <property name="accel" stdset="0">
+                                        <string>Alt+Y</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 1</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 2</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 3</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 4</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 5</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 6</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 7</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>m_abbeGlow</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Above/Below</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed44</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed45</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed46</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>Help:</string>
+                                    </property>
+                                    <property name="buddy" stdset="0">
+                                        <cstring>m_helpGlow</cstring>
+                                    </property>
+                                    <property name="accel" stdset="0">
+                                        <string>Alt+Y</string>
+                                    </property>
+                                </widget>
+                                <widget class="QComboBox">
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 1</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 2</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 3</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 4</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 5</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 6</string>
+                                        </property>
+                                    </item>
+                                    <item>
+                                        <property name="text">
+                                            <string>Color 7</string>
+                                        </property>
+                                    </item>
+                                    <property name="name">
+                                        <cstring>m_helpGlow</cstring>
+                                    </property>
+                                    <property name="sizePolicy">
+                                        <sizepolicy>
+                                            <hsizetype>0</hsizetype>
+                                            <vsizetype>0</vsizetype>
+                                            <horstretch>0</horstretch>
+                                            <verstretch>0</verstretch>
+                                        </sizepolicy>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                    </vbox>
+                </widget>
+                <widget class="QGroupBox">
+                    <property name="name">
+                        <cstring>unnamed47</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>5</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="title">
+                        <string>Color list</string>
+                    </property>
+                    <property name="alignment">
+                        <set>AlignHCenter</set>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed48</cstring>
+                        </property>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed49</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed50</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed51</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>1:</string>
+                                    </property>
+                                </widget>
+                                <widget class="KColorButton">
+                                    <property name="name">
+                                        <cstring>listColor0</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="color">
+                                        <color>
+                                            <red>255</red>
+                                            <green>0</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Color 1</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed52</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed53</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed54</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>2:</string>
+                                    </property>
+                                </widget>
+                                <widget class="KColorButton">
+                                    <property name="name">
+                                        <cstring>listColor1</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="color">
+                                        <color>
+                                            <red>0</red>
+                                            <green>255</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Color 2</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed55</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed56</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed57</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>3:</string>
+                                    </property>
+                                </widget>
+                                <widget class="KColorButton">
+                                    <property name="name">
+                                        <cstring>listColor2</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="color">
+                                        <color>
+                                            <red>0</red>
+                                            <green>192</green>
+                                            <blue>255</blue>
+                                        </color>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Color 3</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed58</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed59</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed60</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>4:</string>
+                                    </property>
+                                </widget>
+                                <widget class="KColorButton">
+                                    <property name="name">
+                                        <cstring>listColor3</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="color">
+                                        <color>
+                                            <red>255</red>
+                                            <green>160</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Color 4</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed61</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed62</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed63</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>5:</string>
+                                    </property>
+                                </widget>
+                                <widget class="KColorButton">
+                                    <property name="name">
+                                        <cstring>listColor4</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="color">
+                                        <color>
+                                            <red>255</red>
+                                            <green>0</green>
+                                            <blue>255</blue>
+                                        </color>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Color 5</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed64</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed65</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed66</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>6:</string>
+                                    </property>
+                                </widget>
+                                <widget class="KColorButton">
+                                    <property name="name">
+                                        <cstring>listColor5</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="color">
+                                        <color>
+                                            <red>255</red>
+                                            <green>255</green>
+                                            <blue>0</blue>
+                                        </color>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Color 6</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                        <widget class="QLayoutWidget">
+                            <property name="name">
+                                <cstring>unnamed67</cstring>
+                            </property>
+                            <hbox>
+                                <property name="name">
+                                    <cstring>unnamed68</cstring>
+                                </property>
+                                <widget class="QLabel">
+                                    <property name="name">
+                                        <cstring>unnamed69</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string>7:</string>
+                                    </property>
+                                </widget>
+                                <widget class="KColorButton">
+                                    <property name="name">
+                                        <cstring>listColor6</cstring>
+                                    </property>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                    <property name="color">
+                                        <color>
+                                            <red>0</red>
+                                            <green>0</green>
+                                            <blue>255</blue>
+                                        </color>
+                                    </property>
+                                    <property name="toolTip" stdset="0">
+                                        <string>Color 7</string>
+                                    </property>
+                                </widget>
+                            </hbox>
+                        </widget>
+                    </vbox>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="4" margin="4"/>
+<includehints>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+</includehints>
+</UI>

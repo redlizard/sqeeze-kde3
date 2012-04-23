@@ -1,0 +1,28 @@
+-- ChangeLog ---------------------------------
+0.6:
+	- Double click on menu button now close the window.
+
+	- On request, the windows can keep their rounds corners even when 
+	maximized.
+
+	- Config dialog re-worked. There's room for some more options.
+
+0.5:
+	- Shaded windows are now more compact and better looking.
+
+	- The buttons glow the same way on active and inactive windows.
+	That's also better looking.
+
+0.4:
+	- KeepAbove and KeepBelow now have a different icon when activated.
+
+	- Button icons slightly changed.
+
+0.3:
+	- KeepAbove and KeepBelow buttons are now working although --since 
+	nobody complained-- nobody uses them.
+
+	- Inverted glow effect is now working. Much better on a bright
+	titlebar with dark text. (Try it with the colorscheme Powder::Snow!)
+
+	- Two different lightnings: Top left --as previously-- and from top.

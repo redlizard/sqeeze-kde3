@@ -1,0 +1,20 @@
+0.4.2
+- Fix compile for gcc 3.4.x
+- Make titlebar buttons only react on left-click, if they have one function
+  only. (Bug #58220)
+- Set the correct state for OnAllDesktop/Maximize buttons in the initialization. 
+- Some minor cleanups...
+0.4.1
+- Update to recent API changes in KWin CVS.
+0.4.0
+- Ported to the KDE 3.2 window decoration API (thank
+  you Michael Pyne!).
+- Cleaned up the configuration dialog:
+  - Removed the "shrink borders" setting. (use KWin's
+    "allow moving and resizing of maximized windows"
+    setting.)
+  - Removed the "border size" setting. (Configurable
+    globally in KWin now.)
+  - Removed the "titlebar height" setting. (Overlapping
+    with the font size setting & quite limited space for
+    the config dialog :) )

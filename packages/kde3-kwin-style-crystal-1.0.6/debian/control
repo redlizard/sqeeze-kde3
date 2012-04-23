@@ -1,0 +1,20 @@
+Source: kde3-kwin-style-crystal
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0), autotools-dev, kde3-kdebase-dev
+Standards-Version: 3.7.2
+
+Package: kde3-kwin-style-crystal
+Architecture: any
+Conflicts: crystal
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: semi transparant window decoration for KDE
+ Crystal offers you pseudo transparent titlebar, buttons and borders
+ transparent, so you can see more of your lovely background image
+ Transparancy and buttons can be costumized to match your wishes.
+ Offers rounded corners as well
+ .
+ And it is of course nice to look at. Upstream says:
+ "- Don't forget to breathe, while drooling."
+

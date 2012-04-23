@@ -1,0 +1,12 @@
+kde3-kwin-style-knifty (0.4.2-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 02:15:00 +0200
+
+kwin-style-knifty (0.4.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #396468)
+
+ -- Emmanuel Bouthenot <kolter@openics.org>  Tue, 31 Oct 2006 18:24:42 +0100
+

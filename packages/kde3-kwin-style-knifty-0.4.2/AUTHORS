@@ -1,0 +1,11 @@
+Maintainer:
+  Sandro Giessl <ceebx AT users DOT sourceforge DOT net>
+
+Port of Knifty to the KDE 3.2 window decoration API:
+  Michael Pyne <pynm0001 AT comcast DOT net>
+
+Code improvements, some very useful feedback:
+  André Goddard Rosa <goddard AT brfree DOT com DOT br>
+
+Config option for high contrast hovered buttons:
+  Thomas Lübking <thomas DOT luebking AT web DOT de>

@@ -1,0 +1,36 @@
+This package was debianized by Emmanuel Bouthenot <kolter@openics.org> on
+Tue, 31 Oct 2006 18:24:42 +0100.
+
+It was downloaded from http://www.kde-look.org/content/show.php?content=8841
+
+Upstream Author: Sandro Giessl <ceebx@users.sourceforge.net>
+
+Copyright: 2003, Sandro Giessl <ceebx@users.sourceforge.net>
+
+Others Copyrights:
+ - client/shadow.h and client/shadow.cpp :
+	+ 2003, Laur Ivan <laurivan@eircom.net>
+	+ 2003, Bernardo Hung <deciare@gta.igs.net> (shadow algorithm)
+	+ 2003, Tim Jansen <tim@tjansen.de> (API updates and fixes)
+
+License:
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+The Debian packaging is (C) 2006, Emmanuel Bouthenot <kolter@openics.org> and
+is licensed under the GPL, see above.

@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Powder::Lotus
+activeBackground=80,0,64
+activeBlend=192,240,176
+activeForeground=255,255,255
+activeTitleBtnBg=0,0,0
+alternateBackground=224,255,208
+background=192,240,176
+buttonBackground=248,224,248
+buttonForeground=0,0,0
+contrast=5
+foreground=0,0,0
+frame=0,0,0
+handle=0,0,0
+inactiveBackground=128,80,112
+inactiveBlend=192,240,176
+inactiveForeground=240,192,224
+inactiveFrame=144,144,144
+inactiveHandle=144,144,144
+inactiveTitleBtnBg=144,144,144
+linkColor=0,0,192
+selectBackground=64,0,64
+selectForeground=255,255,255
+shadeSortColumn=true
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0

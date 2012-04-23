@@ -1,0 +1,12 @@
+kde3-kwin-style-dekorator (0.3-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 02:09:25 +0200
+
+kwin-style-dekorator (0.3-1) unstable; urgency=low
+
+  * Initial release (Closes: #374869)
+
+ -- Sune Vuorela <debian@pusling.com>  Wed, 21 Jun 2006 20:04:02 +0200
+

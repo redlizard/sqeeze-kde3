@@ -1,0 +1,31 @@
+kde3-kwin-style-crystal (1.0.6-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 02:03:01 +0200
+
+kwin-style-crystal (1.0.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated linker flags to link only necessary libraries
+
+ -- Hai Zaar <haizaar@haizaar.com>  Wed,  9 Jul 2008 12:08:31 +0300
+
+kwin-style-crystal (1.0.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Sune Vuorela <debian@pusling.com>  Thu, 12 Oct 2006 09:56:35 +0200
+
+kwin-style-crystal (1.0.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Sune Vuorela <debian@pusling.com>  Thu, 28 Sep 2006 15:46:15 +0200
+
+kwin-style-crystal (1.0.0-1) unstable; urgency=low
+
+  * Initial release Closes: #364360
+
+ -- Sune Vuorela <debian@pusling.com>  Wed,  5 Apr 2006 21:07:23 +0000
+

@@ -59,6 +59,11 @@ kde-style-klearlook
 kde-style-lipstik
 kde-style-polyester
 kde-style-qtcurve
+kde-style-serenity
+kwin-style-crystal
+kwin-style-dekorator
+kwin-style-knifty
+kwin-style-powder
 "
 
 dist=squeeze
@@ -141,7 +146,7 @@ if [ ! -d squeeze-base ]; then
 fi
 
 dir=`mktemp -d build-XXXXXXXXXX`
-#mount -t tmpfs tmpfs $dir
+mount -t tmpfs tmpfs $dir
 chmod 755 $dir
 echo "Building in directory $dir"
 cd $dir
@@ -164,8 +169,8 @@ for package in $packages; do
 		echo "Preparing build dependencies for package $fullpackage..."
 		rm -rf $package/apt-repo
 		mkdir -p $package/apt-repo/pool
-		for file in `ls $targetdir`; do ln $targetdir/$file $package/apt-repo/pool; done
-		#for file in `ls $targetdir`; do cp $targetdir/$file $package/apt-repo/pool; done
+		#for file in `ls $targetdir`; do ln $targetdir/$file $package/apt-repo/pool; done
+		for file in `ls $targetdir`; do cp $targetdir/$file $package/apt-repo/pool; done
 		buildrepo $package/apt-repo
 		
 		echo "Installing build dependencies for package $fullpackage..."
@@ -187,5 +192,5 @@ for package in $packages; do
 done
 
 cd ..
-#umount $dir
+umount $dir
 rmdir $dir

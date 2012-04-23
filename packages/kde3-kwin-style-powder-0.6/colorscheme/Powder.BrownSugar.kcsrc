@@ -1,0 +1,27 @@
+[Color Scheme]
+Name=Powder::BrownSugar
+activeBackground=91,50,2
+activeBlend=235,226,210
+activeForeground=255,255,255
+activeTitleBtnBg=203,162,114
+alternateBackground=243,234,218
+background=235,226,210
+buttonBackground=255,224,192
+buttonForeground=0,0,0
+contrast=5
+foreground=0,0,0
+frame=91,50,2
+handle=91,50,2
+inactiveBackground=171,130,82
+inactiveBlend=235,226,210
+inactiveForeground=213,192,168
+inactiveFrame=171,130,82
+inactiveHandle=171,130,82
+inactiveTitleBtnBg=235,194,146
+linkColor=0,0,192
+selectBackground=75,66,50
+selectForeground=255,255,255
+shadeSortColumn=true
+visitedLinkColor=128,0,128
+windowBackground=255,255,255
+windowForeground=0,0,0

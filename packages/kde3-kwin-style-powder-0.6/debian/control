@@ -1,0 +1,18 @@
+Source: kde3-kwin-style-powder
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0), kde3-kdebase-dev
+Standards-Version: 3.6.2
+
+Package: kde3-kwin-style-powder
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Powder plasmaoid window decoration for kde
+ A plasmoid inspired window decoration for kde with 'glowing' buttons.
+ With larger borders for easy size-changin.
+ optionally changing menu-button with a button matches the
+ window-buttons.
+ .
+ This is a window decoration, not a style.
+
