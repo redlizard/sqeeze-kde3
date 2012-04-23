@@ -1,0 +1,8 @@
+?package(kdbg):\
+	needs="x11"\
+	section="Applications/Programming"\
+	hints="KDE,Debuggers"\
+	title="KDbg"\
+	longtitle="KDbg (graphical debugger interface)"\
+	command="/usr/bin/kdbg"\
+	icon="/usr/share/pixmaps/kdbg.xpm"

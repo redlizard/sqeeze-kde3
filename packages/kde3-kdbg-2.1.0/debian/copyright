@@ -1,0 +1,27 @@
+This package was debianized by Mariusz Przygodzki <dune@home.pl> on
+Wed,  6 Dec 2000 22:38:22 +0100.
+Maintenance was taken over by Ben Burton <bab@debian.org> on
+Sat, 17 Feb 2001 11:05:10 -0600.
+Maintenance was taken over by Ana Beatriz Guerrero López
+<ana@ekaia.org> on Tue, 30 Aug 2005 19:12:38 +0200
+
+It was downloaded from http://sourceforge.net/projects/kdbg/.
+
+Upstream Author: Johannes Sixt <Johannes.Sixt@telecom.at>,
+                 with help from many others
+
+Copyright:
+
+  (c) 1998-2007 Johannes Sixt
+
+  You are free to distribute this software under the terms of
+  the GNU General Public License.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL-2'.
+
+The Debian packaging is 
+(C) 2000 Mariusz Przygodzki <dune@home.pl> 
+(C) 2001-2005 Ben Burton <bab@debian.org>
+(C) 2005-2007 Ana Beatriz Guerrero López <ana@ekaia.org>
+and is licensed under the GPL, see above.
