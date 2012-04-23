@@ -1,0 +1,8 @@
+[GdmGreeterTheme]
+Author=Stephan Spies
+Copyright=GPL
+Description="true nature" theme for kdm Foto by norlies.de
+Encoding=UTF-8
+Greeter=trueNature.xml
+Name=True Nature
+Screenshot=screenshot.png

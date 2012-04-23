@@ -1,0 +1,51 @@
+kde3-kwin-decor-suse2 (0.4-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 03:35:16 +0200
+
+kwin-decor-suse2 (0.4-1) unstable; urgency=low
+  
+  * New upstream release
+
+ -- Adrian Neumaier <adrian@firehand.org>  Sun, 12 Nov 2006 20:14:21 +0100
+
+kwin-decor-suse2 (0.3.5-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Adrian Neumaier <adrian@firehand.org>  Sun,  4 Jun 2006 13:39:09 +0200
+
+kwin-decor-suse2 (0.3.4-3) unstable; urgency=low
+
+  * Bumped standards to 3.7.2, no changes required
+
+ -- Adrian Neumaier <adrian@firehand.org>  Sat,  3 Jun 2006 21:14:21 +0200 
+
+kwin-decor-suse2 (0.3.4-2) unstable; urgency=low
+
+  * Added watch file
+  * Fix spelling in debian/control (closes: #364194)
+
+ -- Adrian Neumaier <adrian@firehand.org>  Sat, 22 Apr 2006 15:27:32 +0200
+
+kwin-decor-suse2 (0.3.4-1) unstable; urgency=low
+
+  * New upstream release
+    - This release needs KDE 3.5.x
+
+ -- Adrian Neumaier <adrian@firehand.org>  Fri, 10 Mar 2006 17:53:54 +0100
+
+kwin-decor-suse2 (0.3.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Bumped standards to 3.6.2.1, no changes required
+  * updated admin/ to KDE 3.5 (closes: #343956)
+
+ -- Adrian Neumaier <adrian@firehand.org>  Fri, 19 Dec 2005 19:27:03 +0100
+
+kwin-decor-suse2 (0.3-1) unstable; urgency=low
+
+  * Initial release (closes: #329117).
+
+ -- Adrian Neumaier <adrian@firehand.org>  Mon, 19 Sep 2005 19:56:34 +0200

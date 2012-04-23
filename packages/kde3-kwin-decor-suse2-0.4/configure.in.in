@@ -1,0 +1,8 @@
+#MIN_CONFIG(3.3.0)
+
+AM_INIT_AUTOMAKE(kwin_SUSE2, 0.4)
+AC_C_BIGENDIAN
+AC_CHECK_KDEMAXPATHLEN
+KDE_CHECK_HEADER(kcommondecoration.h,, AC_MSG_ERROR([
+Required header kcommondecoration.h is missing! (either you need KDE >= 3.5.0 or you are missing the kdebase devel package)]))
+

@@ -1,0 +1,20 @@
+Source: kde3-kwin-decor-suse2
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0), kde3-kdelibs4-dev (>= 4:3.5.0), kde3-kdebase-dev (>= 4:3.5.0), cdbs
+Standards-Version: 3.7.2
+
+Package: kde3-kwin-style-suse2
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: KDE window decoration from SUSE 9.3
+ This the the SUSE 9.3 KDE Window decoration extracted from SUSE.
+ .
+ It features in addition to the original theme several new button
+ styles and a changeable titlebar image.
+ .
+ A color scheme for KDE is provided too.
+ .
+ Homepage: http://www.gerdfleischer.de/kwin-decor-suse2/
+

@@ -1,0 +1,31 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=kcmshell kdmtheme
+Icon=kdmconfig
+Type=Application
+
+X-KDE-ModuleType=Library
+X-KDE-Library=kdmtheme
+X-KDE-RootOnly=true
+X-KDE-HasReadOnlyMode=true
+X-KDE-ParentApp=kcontrol
+X-Keywords=kdmtheme
+
+Comment=kdmtheme - KDM Theme Manager
+Comment[es]=kdmtheme - Manejador del tema de KDM
+Comment[sv]=kdmtheme - Temahanterare för KDM
+Comment[id]=kdmtheme - Pengatur Tema KDM
+Comment[ms]=kdmtheme - Pengatur Tema KDM
+Comment[fr]=kdmtheme - Gestionnaire de thèmes KDM
+Comment[it]=kdmtheme - Gestore di temi KDM
+Comment[jp]=kdmtheme - KDM テーママネージャー
+Name=KDM Theme Manager
+Name[es]=Manejador del tema de KDM
+Name[sv]=Temahanterare för KDM
+Name[id]=Pengatur Tema KDM
+Name[ms]=Pengatur Tema KDM
+Name[fr]=Gestionnaire de thèmes KDM
+Name[it]=Gestore di temi KDM
+Name[jp]=KDM テーママネージャー
+
+Categories=Qt;KDE;X-KDE-settings-system;

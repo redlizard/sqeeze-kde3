@@ -1,0 +1,13 @@
+This is the KWinDecoration extracted from SUSE 9.3/10.0.
+
+I just changed the title bar icon to the debian logo ;-).
+Meanwhile there are some additional options to change the logo,
+titlealignment, sharp/round edges etc..
+
+It is called SUSE2 in the KDE control center.
+You should also adapt your colorscheme,
+there's provided an example as SUSE2.
+
+Have a lot of fun!
+
+Gerd Fleischer <gerdfleischer@web.de>

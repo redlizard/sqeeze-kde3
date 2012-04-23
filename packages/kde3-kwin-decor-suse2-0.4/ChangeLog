@@ -1,0 +1,121 @@
+0.4
+-add new titlebar style (Dirk Mueller)
+-revert behavior for maximized windows to kde standards (Dirk Mueller)
+-add option to select titlebar style
+
+0.3.5
+-better antialias for inner round edges
+-use custom colors for lipstik button colors also
+-#define => enum ButtonStatus
+-insert 3 spaces in default button layout before close button
+-tune translation a bit
+-make some methods const
+-disable overridden options
+
+0.3.4
+-dont be smart on config changes - fixes wrong button colors when colors change
+-fix icon shadows when toolwindows are exactly 4px smaller than normal
+-fix drawing with sharp edges
+-simplify cache for lipstik button pixmaps
+-updated admin/ to svn from branches/KDE/3.5 (3.5.1)
+-draw bottom spacer also when maximized + shaded + moving is not allowed
+-ported to kcommondecoration (KDE 3.5)
+
+0.3.3
+-make use of the mousewheel (needs KDE 3.5+)
+
+0.3.2
+-no changes to rc1
+
+0.3.2rc1
+-unified hovering of menubutton (fade to white)
+-updated admin/ to KDE 3.5
+
+0.3.2beta1
+-turned double to float in shadowengine (minor speedup for captionchanges with shadow?)
+-option for red closebutton icon
+-options for custom button background, icon colors and shadow
+-added some documentation in INSTALL
+
+0.3.1
+-improved centering of icons for larger button sizes
+-make icons a bit smaller relative to button size
+-readded debian/
+-spinbox to adjust button icon size
+-spinbox to adjust titlebar height
+
+0.3.1rc1
+-cache button icons (copied/inspired from kdebase/plastik KDE 3.5, Sandro Giessl)
+-turn static to "normal" members from handler
+-Handler()-function (replaces SUSE2Handler::)
+-redesigned configdialog
+-updated german translation
+
+0.3.1beta1
+-tweak to have the buttons icons always centered (from kdebase/plastik KDE 3.5)
+-draw buttons icons instead of xpms (sharper, better scalable) (from kdebase/plastik KDE 3.5, Sandro Giessl)
+-option to use titlefonts settings (color, shadow) for buttons
+
+0.3
+-removed debian/ on request by Adrian Neumaier, the potential Debianmaintainer
+-added TODO
+-updated FSF address
+
+0.3rc1 (0.2.92)
+-2 additional new slightly different buttons
+ there are now 5 buttons:
+ -Plastik and Lipstik flat are simple gradients and just differ
+  in the direction of the gradient
+ -Lipstik and Plastik 3D should be more 3D and can have their own colors
+ -Lipstik bright is almost like Lipstik flat with modified top and bottom edges
+-updated german translation
+
+0.3beta1 (0.2.91)
+-highlighting/animation for the new buttons
+-other "pressed" look to be more like the original Plastik/Lipstikbuttons
+
+0.3alpha1 (0.2.90)
+-slightly improved image selection
+-added buttons that should look like Lipstik and Plastik 3D buttons
+
+0.2.1
+-fixed ebuild script
+-updated german translation
+-option to select the titlebar icon from the config dialog
+ (note that this does not check the size of the image or whatever and never will)
+-applied small fix from SUSE that fixes imagedistorsion when the caption changes
+
+0.2
+-renamed to SUSE2 so it can be installed in parallel on SUSE distros
+-i18n
+
+0.1.5
+-fix wrong look of titlebar if maximized + not checked
+ "allow moving and resizing of maximized windows"
+-performance optimization for "mixed corners" mode
+ (don't paint twice if resizeEvent)
+
+0.1.4
+-added gentoo ebuild (Thanks to Aaron Rusnak)
+-removed some dead and noncrystal code
+-option for "sharp" corners
+-use gradient bottom color for windowframe
+
+0.1.3
+-added ubuntu icon
+-added/enabled some config options
+ (almost copied (back) from plastik)
+
+0.1.2
+-made it compile with KDE 3.3.0+
+
+0.1.1
+-added spec file - this works for SUSE, I can't test this on other
+ distros. Please adapt it and send me your changes.
+-changed the titlebar image and handling a bit to make it easier to adapt
+
+0.1
+-extracted from kdebase3-SUSE source package
+-changed titlebar icon to debian logo
+-added colorscheme
+

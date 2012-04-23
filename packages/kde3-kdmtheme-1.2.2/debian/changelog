@@ -1,0 +1,52 @@
+kde3-kdmtheme (1.2.2-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 02:36:20 +0200
+
+kdmtheme (1.2.2-1) unstable; urgency=low
+
+  * New upstream release:
+    * actually saves theme changes (Closes: #447683)
+    * does not crash kcontrol when opened as user (Closes: #435946)
+  * Update e-mail addresses.
+  * Bump Standards-Version to 3.7.3.
+  * Use Homepage field.
+
+  [ Kel Modderman ]
+  * Refresh debian/patches/10_kdmtheme-override-warning.diff to apply against
+    new upstream release.
+
+  [ Fathi Boudra ]
+  * Build with --as-needed linker flag.
+
+ -- Fathi Boudra <fabo@debian.org>  Sat, 22 Dec 2007 15:36:15 +0100
+
+kdmtheme (1.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update kdmtheme override warning patch.
+  * Add patch to replace deprecated qlist.h include.
+  * Add Build-Depends: quilt, automake1.7.
+  * Update copyright file.
+  * Update watch file.
+
+ -- Fathi Boudra <fboudra@free.fr>  Wed, 03 Oct 2007 12:17:40 +0200
+
+kdmtheme (1.1.2-2) unstable; urgency=low
+
+  [ Mark Purcell ]
+  * Add debian/rules get-orig-source target for http://buildserver.net.
+
+  [ Fathi Boudra ]
+  * Add a patch to warn users about kdm override files introduced with
+    desktop-base. Thanks to Sune Vuorela.
+
+ -- Fathi Boudra <fboudra@free.fr>  Wed, 31 Jan 2007 21:11:45 +0100
+
+kdmtheme (1.1.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #380661)
+
+ -- Fathi Boudra <fboudra@free.fr>  Mon, 31 Jul 2006 18:33:26 +0200
+

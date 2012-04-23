@@ -1,0 +1,10 @@
+[Desktop Entry]
+Icon=
+
+[GdmGreeterTheme]
+Author=Mihael Simonic, based on "Krystal KDE Theme" by John007
+Description=KDE Debian Theme
+Encoding=UTF-8
+Greeter=debian.xml
+Name=Debian
+Screenshot=screenshot.jpg

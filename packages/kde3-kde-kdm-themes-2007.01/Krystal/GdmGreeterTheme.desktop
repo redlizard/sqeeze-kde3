@@ -1,0 +1,11 @@
+[Desktop Entry]
+Icon=
+
+[GdmGreeterTheme]
+Author=john007, based on "Simple KDE Theme" by Qwertz
+Copyright=(c) 2005, Qwertz, modified by john007
+Description=KDE Krystal Theme
+Encoding=UTF-8
+Greeter=krystal.xml
+Name=Krystal
+Screenshot=screenshot.jpg

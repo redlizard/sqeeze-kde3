@@ -1,0 +1,519 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-31 16:20+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: SUSE2client.cpp:69
+msgid "SUSE2 (Version %1)"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 16
+#: rc.cpp:3
+#, no-c-format
+msgid "Config Dialog"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 34
+#: rc.cpp:6
+#, no-c-format
+msgid "Ge&neral"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 45
+#: rc.cpp:9
+#, no-c-format
+msgid "Title Alignment"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 56
+#: rc.cpp:12
+#, no-c-format
+msgid "&Left"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 59
+#: rc.cpp:15
+#, no-c-format
+msgid "Alt+L"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 62
+#: rc.cpp:18
+#, no-c-format
+msgid "Align the title left."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 70
+#: rc.cpp:21
+#, no-c-format
+msgid "&Center"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 73
+#. i18n: file config/configdialog.ui line 526
+#. i18n: file config/configdialog.ui line 812
+#: rc.cpp:24 rc.cpp:180 rc.cpp:242
+#, no-c-format
+msgid "Alt+C"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 76
+#: rc.cpp:27
+#, no-c-format
+msgid "Center the title."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 84
+#: rc.cpp:30
+#, no-c-format
+msgid "&Right"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 87
+#. i18n: file config/configdialog.ui line 512
+#: rc.cpp:33 rc.cpp:171
+#, no-c-format
+msgid "Alt+R"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 90
+#: rc.cpp:36
+#, no-c-format
+msgid "Align the title right."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 100
+#: rc.cpp:39
+#, no-c-format
+msgid "Round Top Corners"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 111
+#: rc.cpp:42
+#, no-c-format
+msgid "Alwa&ys"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 114
+#: rc.cpp:45
+#, no-c-format
+msgid "Alt+Y"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 117
+#: rc.cpp:48
+#, no-c-format
+msgid "Always draw round window top corners."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 125
+#: rc.cpp:51
+#, no-c-format
+msgid "Not maximi&zed"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 128
+#: rc.cpp:54
+#, no-c-format
+msgid "Alt+Z"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 131
+#: rc.cpp:57
+#, no-c-format
+msgid "Draw round top corners if the window is not maximized."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 139
+#: rc.cpp:60
+#, no-c-format
+msgid "Ne&ver"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 142
+#: rc.cpp:63
+#, no-c-format
+msgid "Alt+V"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 145
+#: rc.cpp:66
+#, no-c-format
+msgid "Never draw round window top corners."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 155
+#: rc.cpp:69
+#, no-c-format
+msgid "Close &windows by double clicking the menu button"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 158
+#. i18n: file config/configdialog.ui line 663
+#: rc.cpp:72 rc.cpp:217
+#, no-c-format
+msgid "Alt+W"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 161
+#: rc.cpp:75
+#, no-c-format
+msgid ""
+"Check this option if you want windows to be closed when you double click the "
+"menu button, similar to Microsoft Windows."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 169
+#: rc.cpp:78
+#, no-c-format
+msgid "Use shadowed &text"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 172
+#. i18n: file config/configdialog.ui line 843
+#: rc.cpp:81 rc.cpp:251
+#, no-c-format
+msgid "Alt+T"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 175
+#: rc.cpp:84
+#, no-c-format
+msgid ""
+"Check this option if you want the titlebar text to have a 3D look with a "
+"shadow behind it."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 191
+#. i18n: file config/configdialog.ui line 778
+#: rc.cpp:87 rc.cpp:233
+#, no-c-format
+msgid " px"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 197
+#: rc.cpp:90
+#, no-c-format
+msgid "Here you can set some additional space for the titlebar height."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 213
+#: rc.cpp:93
+#, no-c-format
+msgid "additional space for title height"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 256
+#: rc.cpp:96
+#, no-c-format
+msgid "Titlebarstyle:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 262
+#: rc.cpp:99
+#, no-c-format
+msgid "Toplight"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 267
+#: rc.cpp:102
+#, no-c-format
+msgid "Balanced"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 274
+#: rc.cpp:105
+#, no-c-format
+msgid "Select the titlebar style."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 303
+#: rc.cpp:108
+#, no-c-format
+msgid "Bu&ttons"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 330
+#: rc.cpp:111
+#, no-c-format
+msgid "Buttontype:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 336
+#: rc.cpp:114
+#, no-c-format
+msgid "Plastik flat"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 341
+#: rc.cpp:117
+#, no-c-format
+msgid "Lipstik flat"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 346
+#: rc.cpp:120
+#, no-c-format
+msgid "Plastik 3D"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 351
+#: rc.cpp:123
+#, no-c-format
+msgid "Lipstik 3D"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 356
+#: rc.cpp:126
+#, no-c-format
+msgid "Lipstik bright"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 363
+#: rc.cpp:129
+#, no-c-format
+msgid "Select the buttontype."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 407
+#: rc.cpp:132
+#, no-c-format
+msgid "Custom colors for button bac&kground"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 410
+#: rc.cpp:135
+#, no-c-format
+msgid "Alt+K"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 413
+#: rc.cpp:138
+#, no-c-format
+msgid ""
+"Allow custom colors for the button background. The colors for the "
+"buttonbackground from the colorscheme are used then."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 421
+#: rc.cpp:141
+#, no-c-format
+msgid "&Use titlefont settings for button icons"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 424
+#: rc.cpp:144
+#, no-c-format
+msgid "Alt+U"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 427
+#: rc.cpp:147
+#, no-c-format
+msgid ""
+"Use the titlefont settings (color, shadow) for the button icons. Overrides "
+"the custom color settings."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 435
+#: rc.cpp:150
+#, no-c-format
+msgid "A&nimate buttons"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 438
+#: rc.cpp:153
+#, no-c-format
+msgid "Alt+N"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 441
+#: rc.cpp:156
+#, no-c-format
+msgid ""
+"Check this option if you want the buttons to fade in when the mouse pointer "
+"hovers over them and fade out again when it moves away."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 465
+#: rc.cpp:159
+#, no-c-format
+msgid "Iconsize:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 473
+#: rc.cpp:162
+#, no-c-format
+msgid " %"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 482
+#: rc.cpp:165
+#, no-c-format
+msgid ""
+"Here you can set the size of the button icons relative to the button size."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 509
+#: rc.cpp:168
+#, no-c-format
+msgid "&Red closebutton icon"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 515
+#: rc.cpp:174
+#, no-c-format
+msgid ""
+"Paint the icon of the closebutton in red (this overrides all other "
+"colorsettings)."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 523
+#: rc.cpp:177
+#, no-c-format
+msgid "&Custom icon colors"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 529
+#: rc.cpp:183
+#, no-c-format
+msgid "Allow custom colors for the button icons."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 570
+#: rc.cpp:186
+#, no-c-format
+msgid "Active:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 578
+#: rc.cpp:189
+#, no-c-format
+msgid "Active down:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 586
+#: rc.cpp:192
+#, no-c-format
+msgid "Inactive:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 594
+#: rc.cpp:195
+#, no-c-format
+msgid "Inactive down:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 615
+#: rc.cpp:199
+#, no-c-format
+msgid "Color for the icon of the active button."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 626
+#: rc.cpp:203
+#, no-c-format
+msgid "Color for the icon of the active button when pressed."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 637
+#: rc.cpp:207
+#, no-c-format
+msgid "Color for the icon of the inactive button."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 648
+#: rc.cpp:211
+#, no-c-format
+msgid "Color for the icon of the inactive button when pressed."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 660
+#: rc.cpp:214
+#, no-c-format
+msgid "Shado&w for icons"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 666
+#: rc.cpp:220
+#, no-c-format
+msgid ""
+"Check this if you want to have shadows for the button icons on active "
+"windows."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 676
+#: rc.cpp:223
+#, no-c-format
+msgid "&Logo"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 712
+#: rc.cpp:226
+#, no-c-format
+msgid "Logo preview:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 762
+#: rc.cpp:230
+#, no-c-format
+msgid "Offset from title:"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 784
+#: rc.cpp:236
+#, no-c-format
+msgid "Set the offset of the logo from the titletext."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 809
+#: rc.cpp:239
+#, no-c-format
+msgid "Sele&ct Image"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 815
+#: rc.cpp:245
+#, no-c-format
+msgid "Select the titlebar logo image."
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 840
+#: rc.cpp:248
+#, no-c-format
+msgid "Show &titlebar logo"
+msgstr ""
+
+#. i18n: file config/configdialog.ui line 846
+#: rc.cpp:254
+#, no-c-format
+msgid "Check this if you want to see the titlebar logo in the titlebar."
+msgstr ""
+
+#: config/config.cpp:261
+msgid "Select Logo Image"
+msgstr ""

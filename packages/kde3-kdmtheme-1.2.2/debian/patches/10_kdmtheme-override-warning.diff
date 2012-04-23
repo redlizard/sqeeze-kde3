@@ -1,0 +1,24 @@
+--- a/src/kdmtheme.cpp
++++ b/src/kdmtheme.cpp
+@@ -186,6 +186,21 @@
+ void KDMThemeWidget::toggleUseTheme(bool useTheme) {
+ 	setReadOnly( useTheme );
+ 	emit changed(true);
++
++	if (useTheme && getuid() == 0)
++	{
++		QDir dir("/etc/default/kdm.d/")  ;
++		dir.setFilter(QDir::Files);
++		if (dir.count())
++		{
++			KMessageBox::information(this,
++			                         "Override files found, selected theme will not have effect.\n"
++			                         "Please see /usr/share/doc/kdm/README.Debian for more informations",
++			                         NULL,
++			                         "kdmtheme-overrides-found",
++			                         0);
++		}
++	}
+ }
+ 
+ void KDMThemeWidget::setReadOnly(bool ro)

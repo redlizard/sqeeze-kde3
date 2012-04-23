@@ -1,0 +1,62 @@
+#!/usr/bin/make -f
+
+INSTDIR=$(CURDIR)/debian/kde3-kde-kdm-themes/opt/kde3/share/apps/kdm/themes/
+
+
+
+build: 
+
+clean:
+	dh_testdir
+	dh_testroot
+	dh_clean 
+
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_clean
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs
+	dh_installdocs
+	dh_installdirs
+
+	cp -r $(CURDIR)/Krystal $(INSTDIR)
+	cp -r $(CURDIR)/"Linux Passion" $(INSTDIR)
+	cp -r $(CURDIR)/Debian $(INSTDIR)
+	cp -r $(CURDIR)/true-nature $(INSTDIR)
+
+	find $(INSTDIR) -type f -exec chmod 644 {} \;
+	find $(INSTDIR) -type d -exec chmod 755 {} \;
+	
+	dh_fixperms
+	dh_compress
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+
+# Build architecture-dependent files here.
+binary-arch: build install
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done
+

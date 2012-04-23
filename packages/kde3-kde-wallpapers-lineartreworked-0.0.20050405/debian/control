@@ -1,0 +1,19 @@
+Source: kde3-kde-wallpapers-lineartreworked
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.7.3
+
+Package: kde3-kde-wallpapers-lineartreworked
+Architecture: all
+Depends: 
+Suggests: kde3-kdebase
+Description: Some reworks of the lineart background that comes with KDE 3.4
+ This package contains 16 different reworks of the popular "lineart"
+ wallpaper which comes with KDE 3.4.
+ .
+ These wallpapers come in three different colors: blue, red, green and
+ are stored in the scalable vector graphics format (.sgf), so you can use
+ them in any resolution without quality loss.
+

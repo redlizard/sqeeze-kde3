@@ -1,0 +1,879 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>ConfigDialog</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ConfigDialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>535</width>
+            <height>277</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Config Dialog</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tabWidget2</cstring>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Ge&amp;neral</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QButtonGroup" row="0" column="0">
+                        <property name="name">
+                            <cstring>titleAlign</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Title Alignment</string>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>AlignLeft</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Left</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+L</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Align the title left.</string>
+                                </property>
+                            </widget>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>AlignHCenter</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Center</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+C</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Center the title.</string>
+                                </property>
+                            </widget>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>AlignRight</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&amp;Right</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+R</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Align the title right.</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QButtonGroup" row="1" column="0">
+                        <property name="name">
+                            <cstring>roundCorners</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Round Top Corners</string>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>RoundAlways</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Alwa&amp;ys</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+Y</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Always draw round window top corners.</string>
+                                </property>
+                            </widget>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>NotMaximized</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Not maximi&amp;zed</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+Z</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Draw round top corners if the window is not maximized.</string>
+                                </property>
+                            </widget>
+                            <widget class="QRadioButton">
+                                <property name="name">
+                                    <cstring>RoundNever</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Ne&amp;ver</string>
+                                </property>
+                                <property name="accel">
+                                    <string>Alt+V</string>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Never draw round window top corners.</string>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QCheckBox" row="2" column="0">
+                        <property name="name">
+                            <cstring>menuClose</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Close &amp;windows by double clicking the menu button</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+W</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Check this option if you want windows to be closed when you double click the menu button, similar to Microsoft Windows.</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="3" column="0">
+                        <property name="name">
+                            <cstring>titleShadow</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Use shadowed &amp;text</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+T</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Check this option if you want the titlebar text to have a 3D look with a shadow behind it.</string>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="4" column="0">
+                        <property name="name">
+                            <cstring>layout6</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="KIntSpinBox">
+                                <property name="name">
+                                    <cstring>addSpace</cstring>
+                                </property>
+                                <property name="suffix">
+                                    <string> px</string>
+                                </property>
+                                <property name="maxValue">
+                                    <number>20</number>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Here you can set some additional space for the titlebar height.</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel1_4</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>additional space for title height</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer8</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>71</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="5" column="0">
+                        <property name="name">
+                            <cstring>layout7</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel1_5</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Titlebarstyle:</string>
+                                </property>
+                            </widget>
+                            <widget class="QComboBox">
+                                <item>
+                                    <property name="text">
+                                        <string>Toplight</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Balanced</string>
+                                    </property>
+                                </item>
+                                <property name="name">
+                                    <cstring>titlebarStyle</cstring>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Select the titlebar style.</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer9</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>301</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Bu&amp;ttons</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="0" column="0">
+                        <property name="name">
+                            <cstring>layout5</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel1_2</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Buttontype:</string>
+                                </property>
+                            </widget>
+                            <widget class="QComboBox">
+                                <item>
+                                    <property name="text">
+                                        <string>Plastik flat</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Lipstik flat</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Plastik 3D</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Lipstik 3D</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Lipstik bright</string>
+                                    </property>
+                                </item>
+                                <property name="name">
+                                    <cstring>buttonType</cstring>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Select the buttontype.</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer5</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>41</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
+                    </widget>
+                    <spacer row="6" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>spacer12</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>350</width>
+                                <height>16</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QCheckBox" row="1" column="0">
+                        <property name="name">
+                            <cstring>customColors</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Custom colors for button bac&amp;kground</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+K</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Allow custom colors for the button background. The colors for the buttonbackground from the colorscheme are used then.</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="2" column="0">
+                        <property name="name">
+                            <cstring>useTitleProps</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Use titlefont settings for button icons</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+U</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Use the titlefont settings (color, shadow) for the button icons. Overrides the custom color settings.</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="3" column="0">
+                        <property name="name">
+                            <cstring>animateButtons</cstring>
+                        </property>
+                        <property name="text">
+                            <string>A&amp;nimate buttons</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+N</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Check this option if you want the buttons to fade in when the mouse pointer hovers over them and fade out again when it moves away.</string>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="5" column="0">
+                        <property name="name">
+                            <cstring>layout5</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel1_3</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>0</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Iconsize:</string>
+                                </property>
+                            </widget>
+                            <widget class="KIntSpinBox">
+                                <property name="name">
+                                    <cstring>iconSize</cstring>
+                                </property>
+                                <property name="suffix">
+                                    <string> %</string>
+                                </property>
+                                <property name="maxValue">
+                                    <number>80</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>20</number>
+                                </property>
+                                <property name="whatsThis" stdset="0">
+                                    <string>Here you can set the size of the button icons relative to the button size.</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer7</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>171</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
+                    </widget>
+                    <widget class="QCheckBox" row="4" column="0">
+                        <property name="name">
+                            <cstring>redCloseButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Red closebutton icon</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+R</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Paint the icon of the closebutton in red (this overrides all other colorsettings).</string>
+                        </property>
+                    </widget>
+                    <widget class="QCheckBox" row="0" column="1">
+                        <property name="name">
+                            <cstring>customIconColors</cstring>
+                        </property>
+                        <property name="text">
+                            <string>&amp;Custom icon colors</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+C</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Allow custom colors for the button icons.</string>
+                        </property>
+                    </widget>
+                    <spacer row="1" column="2" rowspan="4" colspan="1">
+                        <property name="name">
+                            <cstring>spacer11_2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>16</width>
+                                <height>120</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QLayoutWidget" row="1" column="1" rowspan="4" colspan="1">
+                        <property name="name">
+                            <cstring>layout13</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout11</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>activeLbl</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>activeDownLbl</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Active down:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>inactiveLbl</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Inactive:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>inactiveDownLbl</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Inactive down:</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout12</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="KColorButton">
+                                        <property name="name">
+                                            <cstring>activeFgColor</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="whatsThis" stdset="0">
+                                            <string>Color for the icon of the active button.</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="KColorButton">
+                                        <property name="name">
+                                            <cstring>activeBgColor</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="whatsThis" stdset="0">
+                                            <string>Color for the icon of the active button when pressed.</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="KColorButton">
+                                        <property name="name">
+                                            <cstring>inactiveFgColor</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="whatsThis" stdset="0">
+                                            <string>Color for the icon of the inactive button.</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="KColorButton">
+                                        <property name="name">
+                                            <cstring>inactiveBgColor</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="whatsThis" stdset="0">
+                                            <string>Color for the icon of the inactive button when pressed.</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QCheckBox" row="5" column="1">
+                        <property name="name">
+                            <cstring>iconShadow</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Shado&amp;w for icons</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+W</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Check this if you want to have shadows for the button icons on active windows.</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>&amp;Logo</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <spacer row="3" column="1" rowspan="1" colspan="4">
+                        <property name="name">
+                            <cstring>spacer13</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>MinimumExpanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>330</width>
+                                <height>41</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>textLabel1</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>1</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="text">
+                            <string>Logo preview:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="2" column="1" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>logoImage</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>1</hsizetype>
+                                <vsizetype>1</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>20</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>120</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                        <property name="frameShape">
+                            <enum>GroupBoxPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                            <enum>Plain</enum>
+                        </property>
+                        <property name="text">
+                            <string></string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>textLabel2</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>1</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="text">
+                            <string>Offset from title:</string>
+                        </property>
+                    </widget>
+                    <widget class="KIntSpinBox" row="1" column="2">
+                        <property name="name">
+                            <cstring>titleBarLogoOffset</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>1</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="suffix">
+                            <string> px</string>
+                        </property>
+                        <property name="minValue">
+                            <number>0</number>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Set the offset of the logo from the titletext.</string>
+                        </property>
+                    </widget>
+                    <spacer row="1" column="3" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>spacer6</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>336</width>
+                                <height>21</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QPushButton" row="2" column="3">
+                        <property name="name">
+                            <cstring>selectButton</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Sele&amp;ct Image</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+C</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Select the titlebar logo image.</string>
+                        </property>
+                    </widget>
+                    <spacer row="2" column="4">
+                        <property name="name">
+                            <cstring>spacer3_2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>MinimumExpanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>220</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QCheckBox" row="0" column="0" rowspan="1" colspan="5">
+                        <property name="name">
+                            <cstring>titleBarLogo</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Show &amp;titlebar logo</string>
+                        </property>
+                        <property name="accel">
+                            <string>Alt+T</string>
+                        </property>
+                        <property name="whatsThis" stdset="0">
+                            <string>Check this if you want to see the titlebar logo in the titlebar.</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<tabstops>
+    <tabstop>AlignLeft</tabstop>
+    <tabstop>AlignHCenter</tabstop>
+    <tabstop>AlignRight</tabstop>
+    <tabstop>RoundAlways</tabstop>
+    <tabstop>NotMaximized</tabstop>
+    <tabstop>RoundNever</tabstop>
+    <tabstop>titleShadow</tabstop>
+    <tabstop>animateButtons</tabstop>
+    <tabstop>buttonType</tabstop>
+    <tabstop>menuClose</tabstop>
+    <tabstop>titleBarLogo</tabstop>
+    <tabstop>titleBarLogoOffset</tabstop>
+    <tabstop>selectButton</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>knuminput.h</includehint>
+    <includehint>knuminput.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>knuminput.h</includehint>
+</includehints>
+</UI>

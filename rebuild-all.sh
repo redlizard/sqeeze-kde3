@@ -43,8 +43,6 @@ koffice
 meta-kde
 kde-i18n
 
-yakuake
-
 kde-icons-crystal
 kde-icons-crystalproject
 kde-icons-gorilla
@@ -64,6 +62,12 @@ kwin-style-crystal
 kwin-style-dekorator
 kwin-style-knifty
 kwin-style-powder
+kdmtheme
+kde-kdm-themes
+kde-wallpapers-lineartreworked
+kwin-decor-suse2
+
+yakuake
 "
 
 dist=squeeze

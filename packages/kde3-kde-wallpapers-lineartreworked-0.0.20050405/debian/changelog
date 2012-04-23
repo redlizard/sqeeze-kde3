@@ -1,0 +1,26 @@
+kde3-kde-wallpapers-lineartreworked (0.0.20050405-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 03:33:40 +0200
+
+kde-wallpapers-lineartreworked (0.0.20050405-3) unstable; urgency=low
+
+  * Bumped standards version
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 26 Mar 2008 16:17:35 +0100
+
+kde-wallpapers-lineartreworked (0.0.20050405-2) unstable; urgency=low
+
+  * Fixed typo in description (Closes: #367210)
+  * Bumped standards version (no changes)
+  * Changed maintainer field to new email address
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 18 Oct 2006 09:17:31 +0200
+
+kde-wallpapers-lineartreworked (0.0.20050405-1) unstable; urgency=low
+
+  * Initial release Closes: #322319
+
+ -- Bastian Venthur <mail@venthur.de>  Wed, 10 Aug 2005 10:16:37 +0200
+

@@ -1,0 +1,33 @@
+kde3-kde-kdm-themes (2007.01-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 03:31:58 +0200
+
+kde-kdm-themes (2007.01-2) unstable; urgency=low
+
+  * Bumped standards version
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 26 Mar 2008 15:59:38 +0100
+
+kde-kdm-themes (2007.01-1) unstable; urgency=low
+
+  * Added two popular themes:
+    - Debian, a theme like the Krystal theme with a Debian Logo
+    - True Nature, a greenish theme with a snake
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 17 Jan 2007 13:24:39 +0100
+
+kde-kdm-themes (3.4-2) unstable; urgency=low
+
+  * Bumped standards version (no changes)
+  * Updated maintainer field
+
+ -- Bastian Venthur <venthur@debian.org>  Wed, 18 Oct 2006 18:48:05 +0200
+
+kde-kdm-themes (3.4-1) unstable; urgency=low
+
+  * Initial release Closes: #322335
+
+ -- Bastian Venthur <mail@venthur.de>  Tue,  6 Sep 2005 23:12:08 +0200
+

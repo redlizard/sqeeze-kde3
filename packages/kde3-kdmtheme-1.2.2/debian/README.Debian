@@ -1,0 +1,7 @@
+kdmtheme for Debian
+-------------------
+
+kdmtheme is a KDE Control Module (KCM). To run it, open KDE Control Center and
+go to System Administration to find KDM Theme Manager.
+
+ -- Fathi Boudra <fabo@debian.org>, Mon, 31 Jul 2006 18:33:26 +0200

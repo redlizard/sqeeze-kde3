@@ -1,0 +1,17 @@
+kdm-theme-krystal for Debian
+----------------------------
+
+* how to enable themes:
+    Currently KDM-themes are not enabled by default in debian!
+    Make shure, that there is a "UseTheme=True" line in the 
+    [X-*-Greeter]-stanza in your /etc/kde3/kdm/kdmrc!
+
+* how to change themes:
+    If enabled, KDM uses its circles theme by default, to change this, just
+    change the 
+    "Theme=/usr/share/apps/kdm/themes/circles" line to
+    "Theme=/usr/share/apps/kdm/themes/Krystal"!
+
+NOTE: You have to restart KDM after you've made changes to the kdmrc!
+
+ -- Bastian Venthur <mail@venthur.de>, Wed, 10 Aug 2005 12:28:49 +0200

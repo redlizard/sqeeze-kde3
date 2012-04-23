@@ -1,0 +1,20 @@
+Source: kde3-kde-kdm-themes
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.7.3
+
+Package: kde3-kde-kdm-themes
+Architecture: all
+Depends: kde3-kdm
+Description: Themes for the K Display Manager
+ This package contains popular themes for KDM, namely:
+  - Debian    
+  - Krystal
+  - Linux Passion
+  - True Nature
+ .
+ NOTE: KDM-themes are not enabled by default in Debian -- please read the
+ README.debian for further infos howto enable them.
+
