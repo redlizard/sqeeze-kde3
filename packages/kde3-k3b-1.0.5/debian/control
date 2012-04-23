@@ -1,0 +1,76 @@
+Source: kde3-k3b
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Francois Marier <francois@debian.org>, Fathi Boudra <fabo@debian.org>
+Build-Depends: debhelper (>= 6), cdbs, kde3-kdelibs4-dev (>= 3.5.0), libflac++-dev (>= 1.1.2), flac, kde3-libdbus-qt-1-dev, libhal-dev (>= 0.5.5.1), libhal-storage-dev (>= 0.5.5.1), libpopt-dev, kde3-libmpcdec-dev, libtag1-dev (>= 1.4-3), libmusicbrainz4-dev (>= 2.1.1-4.1), libmad0-dev, chrpath, libavformat-dev, libavcodec-dev, libdvdread-dev
+Standards-Version: 3.8.0
+Homepage: http://www.k3b.org
+Vcs-Svn: svn://svn.debian.org/pkg-kde/kde-extras/k3b/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/kde-extras/k3b/trunk/
+
+Package: kde3-k3b
+Architecture: any
+Depends: ${shlibs:Depends}, wodim | cdrskin, cdparanoia (>= 3a9.8), genisoimage, kde3-kdelibs-data (>= 4:3.1.4-2), cdrdao (>= 1.1.7-5), kde3-k3b-data (= ${source:Version}), kde3-libk3b3 (= ${binary:Version})
+Recommends: vcdimager (>= 0.7), dvd+rw-tools, kde3-kdebase-kio-plugins, kde3-kcontrol, kde3-libk3b3-extracodecs
+Suggests: k3b-i18n, normalize-audio, toolame, sox, movixmaker-2
+Description: A sophisticated KDE CD burning application 
+ K3b is a GUI frontend to the CD recording programs cdrdao and cdrecord.
+ Its aim is to provide a very user friendly interface to all the tasks
+ that come with cd recording.
+ .
+ It can be used to copy CDs and burn:
+  - audio CDs (from wav, mp3 or ogg vorbis files)
+  - data CDs and DVDs
+  - mixed-mode CDs (CD-Extra support)
+  - VCDs (1.1, 2.0 and SVCD)
+  - ISO files (Joliet/Rockridge and El Torito support)
+  - eMovix CDs
+
+Package: kde3-k3b-data
+Architecture: all
+Description: A sophisticated KDE CD burning application - data files
+ K3b is a GUI frontend to the CD recording programs cdrdao and cdrecord.
+ Its aim is to provide a very user friendly interface to all the tasks
+ that come with cd recording.
+ .
+ This package contains the required data files common to all architectures.
+
+Package: kde3-libk3b-dev
+Conflicts: libk3bcore-dev, libk3bplugin-dev, libk3btools-dev, libk3bproject-dev, k3blibs-dev, k3blibs
+Section: libdevel
+Architecture: any
+Depends: kde3-libk3b3 (= ${binary:Version})
+Description: The KDE cd burning application library - development files
+ K3b is a GUI frontend to the cd recording programs cdrdao and cdrecord.
+ Its aim is to provide a very user friendly interface to all the tasks
+ that come with cd recording and a lot more.
+ .
+ This package contains development files.
+
+Package: kde3-libk3b3
+Section: libs
+Architecture: any
+Conflicts: libk3bcore, libk3bplugin, libk3btools, libk3bproject, k3blibs, libk3b2
+Depends: ${shlibs:Depends}
+Replaces: libk3b2
+Description: The KDE cd burning application library - runtime files
+ K3b is a GUI frontend to the cd recording programs cdrdao and cdrecord.
+ Its aim is to provide a very user friendly interface to all the tasks
+ that come with cd recording and a lot more.
+ .
+ This package contains runtime libraries.
+
+Package: kde3-libk3b3-extracodecs
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Conflicts: libk3b2-mp3
+Replaces: libk3b2-mp3, libk3b2-extracodecs
+Description: The KDE cd burning application library - extra decoders
+ K3b is a GUI frontend to the cd recording programs cdrdao and cdrecord.
+ Its aim is to provide a very user friendly interface to all the tasks
+ that come with cd recording and a lot more.
+ .
+ This package contains runtime libraries for the MP3 and FFMPEG decoder plugin.
+

@@ -1,0 +1,11 @@
+--- k3b-1.0rc1/libk3b/core/k3bdefaultexternalprograms.cpp	2006-12-11 16:36:12.000000000 +0000
++++ k3b-1.0rc1-copy/libk3b/core/k3bdefaultexternalprograms.cpp	2006-12-12 14:54:33.000000000 +0000
+@@ -870,7 +870,7 @@ bool K3bDvdformatProgram::scan( const QS
+   if( vp.start( KProcess::Block, KProcess::AllOutput ) ) {
+     // different locales make searching for the +- char difficult
+     // so we simply ignore it.
+-    int pos = out.output().find( QRegExp("DVD.*RW(/-RAM)? format utility") );
++    int pos = out.output().find( QRegExp("DVD.*RAM format utility") );
+     if( pos < 0 )
+       return false;
+ 

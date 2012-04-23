@@ -1,0 +1,9 @@
+diff -ru k3b-1.0.5.orig/src/k3b.desktop k3b-1.0.5/src/k3b.desktop
+--- k3b-1.0.5.orig/src/k3b.desktop	2008-05-27 10:24:04.000000000 +0200
++++ k3b-1.0.5/src/k3b.desktop	2008-06-09 15:06:02.000000000 +0200
+@@ -1,5 +1,4 @@
+ [Desktop Entry]
+-Encoding=UTF-8
+ Type=Application
+ Exec=k3b %U
+ Icon=k3b

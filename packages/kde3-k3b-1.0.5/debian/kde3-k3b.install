@@ -1,0 +1,5 @@
+debian/tmp/opt/kde3/bin/*
+debian/tmp/opt/kde3/share/applications/*
+debian/k3b.xpm opt/kde3/share/pixmaps/
+debian/tmp/opt/kde3/lib/kde3/kfile_k3b.so
+debian/tmp/opt/kde3/lib/kde3/kfile_k3b.la

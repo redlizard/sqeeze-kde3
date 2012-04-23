@@ -1,0 +1,27 @@
+kde3-libmpcdec (1.2.2-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Mon, 23 Apr 2012 22:47:59 +0200
+
+libmpcdec (1.2.2-1) unstable; urgency=low
+
+  * New upstream version. (Closes: #342708)
+  * libmpcdec-dev: Include src/sample.cpp. (Closes: #343580)
+
+ -- Joe Wreschnig <piman@debian.org>  Fri, 16 Dec 2005 04:52:16 -0600
+
+libmpcdec (1.2.1-1) unstable; urgency=low
+
+  * New upstream version.
+  * Standards-Version 3.6.2.
+
+ -- Joe Wreschnig <piman@debian.org>  Sat, 03 Sep 2005 14:37:02 -0500
+
+libmpcdec (1.2-1) unstable; urgency=low
+
+  * Initial upload. (Closes: #292105)
+  * Upstream assures a stable API/ABI from now on (see
+    http://www.musepack.net/forum/viewtopic.php?t=202)
+
+ -- Joe Wreschnig <piman@debian.org>  Sat, 07 May 2005 17:29:29 -0500

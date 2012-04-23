@@ -1,0 +1,3 @@
+opt/kde3/include/*
+opt/kde3/lib/*.la
+opt/kde3/lib/*.so

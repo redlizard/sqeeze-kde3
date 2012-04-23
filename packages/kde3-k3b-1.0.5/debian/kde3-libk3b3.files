@@ -1,0 +1,3 @@
+opt/kde3/lib/*.so.*
+opt/kde3/lib/libk3baudio*.{so,la}
+opt/kde3/lib/kde3/*

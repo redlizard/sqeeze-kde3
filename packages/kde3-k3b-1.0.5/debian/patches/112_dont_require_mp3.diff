@@ -1,0 +1,19 @@
+diff -Nur k3b-1.0.3/src/k3bsystemproblemdialog.cpp k3b-1.0.3.new/src/k3bsystemproblemdialog.cpp
+--- k3b-1.0.3/src/k3bsystemproblemdialog.cpp	2007-08-06 15:34:51.000000000 +0100
++++ k3b-1.0.3.new/src/k3bsystemproblemdialog.cpp	2007-08-06 15:36:09.000000000 +0100
+@@ -502,6 +502,7 @@
+   // Way too many users are complaining about K3b not being able to decode mp3 files. So just warn them about
+   // the legal restrictions with many distros
+   //
++/*
+   QPtrList<K3bPlugin> plugins = k3bcore->pluginManager()->plugins( "AudioDecoder" );
+   bool haveMp3Decoder = false;
+   for( QPtrListIterator<K3bPlugin> it( plugins ); *it; ++it ) {
+@@ -522,6 +523,7 @@
+ 					      "or kubuntu-restricted-extras."),
+ 					 false ) );
+   }
++*/
+ 
+ #ifdef HAVE_ICONV_H
+   char* codec = nl_langinfo( CODESET );

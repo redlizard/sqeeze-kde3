@@ -1,0 +1,14 @@
+diff -Nur k3b-1.0.1/src/k3b.desktop k3b-1.0.1.new/src/k3b.desktop
+--- k3b-1.0.1/src/k3b.desktop	2007-06-29 00:58:21.000000000 +0200
++++ k3b-1.0.1.new/src/k3b.desktop	2007-06-29 01:16:32.000000000 +0200
+@@ -109,8 +109,8 @@
+ Name[ar]= K3b
+ Name[bn]=কে-থ্রি-বি
+ Name[hi]=के3बी
+-MimeType=application/x-k3b
++MimeType=application/x-k3b;application/x-iso;application/x-cue
+ X-KDE-StartupNotify=true
+-X-KDE-NativeMimeType=application/x-k3b;application/x-iso
++X-KDE-NativeMimeType=application/x-k3b;application/x-iso;application/x-cue
+ Categories=KDE;Application;AudioVideo;DiscBurning;
+ X-DCOP-ServiceType=Unique

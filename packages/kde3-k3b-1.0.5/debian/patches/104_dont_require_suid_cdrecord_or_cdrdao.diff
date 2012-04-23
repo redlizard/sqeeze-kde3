@@ -1,0 +1,42 @@
+diff -Nur k3b-1.0.1/src/k3bsystemproblemdialog.cpp k3b-1.0.1.new/src/k3bsystemproblemdialog.cpp
+--- k3b-1.0.1/src/k3bsystemproblemdialog.cpp	2007-04-18 17:43:19.000000000 +0200
++++ k3b-1.0.1.new/src/k3bsystemproblemdialog.cpp	2007-06-29 02:22:53.000000000 +0200
+@@ -202,7 +202,8 @@
+ 					   i18n("Install a more recent version of the cdrtools."),
+ 					   false ) );
+       }
+-    
++
++/*    
+ #ifdef Q_OS_LINUX
+ 
+       //
+@@ -237,8 +238,8 @@
+ 					   true ) );
+ #endif // CDRECORD_SUID_ROOT_CHECK
+ #endif
++*/
+     }
+-
+     if( !k3bcore->externalBinManager()->foundBin( "cdrdao" ) ) {
+       problems.append( K3bSystemProblem( K3bSystemProblem::CRITICAL,
+ 					 i18n("Unable to find %1 executable").arg("cdrdao"),
+@@ -246,6 +247,7 @@
+ 					 i18n("Install the cdrdao package."),
+ 					 false ) );
+     }
++/*
+     else {
+ #ifdef Q_OS_LINUX
+ #ifdef CDRECORD_SUID_ROOT_CHECK
+@@ -260,9 +262,9 @@
+ #endif // CDRECORD_SUID_ROOT_CHECK
+ #endif
+     }
++*/
+   }
+ 
+-
+   if( !k3bcore->deviceManager()->dvdWriter().isEmpty() ) {
+     if( !k3bcore->externalBinManager()->foundBin( "growisofs" ) ) {
+       problems.append( K3bSystemProblem( K3bSystemProblem::CRITICAL,

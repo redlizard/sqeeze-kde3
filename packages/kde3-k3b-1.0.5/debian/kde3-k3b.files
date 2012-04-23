@@ -1,0 +1,6 @@
+opt/kde3/share/applications/*
+opt/kde3/share/mimelnk/*
+opt/kde3/share/pixmaps/*
+opt/kde3/share/services/*
+opt/kde3/bin/*
+etc/*
