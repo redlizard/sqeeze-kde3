@@ -1,0 +1,81 @@
+# translation of fr.po to
+# This file is put in the public domain.
+#
+# Anthony Mercatante <tonio@ubuntu.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-01 16:13+0200\n"
+"PO-Revision-Date: 2007-06-01 16:18+0200\n"
+"Last-Translator: Anthony Mercatante <tonio@ubuntu.com>\n"
+"Language-Team:  <fr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: main.cpp:27 main.cpp:44
+msgid "KdeSudo"
+msgstr "KdeSudo"
+
+#: main.cpp:33
+msgid "sets a runas user"
+msgstr "Spécifie l'utilisateur cible"
+
+#: main.cpp:34 main.cpp:36
+msgid "The command to execute"
+msgstr "Commande à exécuter"
+
+#: main.cpp:35
+msgid "The comment that should be displayed in the dialog"
+msgstr "Commentaire à afficher dans la boite de dialogue"
+
+#: main.cpp:72
+msgid ""
+"No command arguments supplied!\n"
+"Usage: kdesudo [-u <runas>] <command>\n"
+"KdeSudo will now exit..."
+msgstr ""
+"Aucune commande spécifiée en argument!\n"
+"Utilisation: kdesudo [-u <runas>] <command>\n"
+"KdeSudo va maintenant se fermer..."
+
+#: kdesudo.cpp:28
+msgid ""
+"<b>%1</b> needs administrative privileges. Please enter your password for "
+"verification."
+msgstr "<b>%1</b> a besoin des droits d'administration. Merci de saisir votre mot de passe pour vérification."
+
+#: kdesudo.cpp:72
+msgid "Wrong password, try again!"
+msgstr "Mot de passe erroné, veuillez réessayer!"
+
+#: kdesudo.cpp:77
+msgid "Command not found!"
+msgstr "Commande inexistante!"
+
+#: kdesudo.cpp:83
+msgid "Your username is unknown to sudo!"
+msgstr "Votre nom d'utilisateur est inconnu de sudo!"
+
+#: kdesudo.cpp:89
+msgid "Your user is not allowed to run the specified command!"
+msgstr "Vous n'avez pas le droit d'exécuter la commande spécifiée!"
+
+#: kdesudo.cpp:95 kdesudo.cpp:101
+msgid "Your user is not allowed to run sudo on this host!"
+msgstr "Vous n'avez pas le droit d'exécuter sudo sud l'hôte spécifié!"
+
+#: _translatorinfo.cpp:1 _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Anthony Mercatante"
+
+#: _translatorinfo.cpp:3 _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "tonio@ubuntu.com"
+

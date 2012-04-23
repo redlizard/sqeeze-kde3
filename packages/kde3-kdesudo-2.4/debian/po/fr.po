@@ -1,0 +1,39 @@
+# Translation of kdesudo debconf templates to French
+# Copyright (C) 2007 Christian Perrier <bubulle@debian.org>
+# This file is distributed under the same license as the kdesudo package.
+#
+# Christian Perrier <bubulle@debian.org>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesudo\n"
+"Report-Msgid-Bugs-To: kdesudo@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-23 08:15+0100\n"
+"PO-Revision-Date: 2008-01-01 10:34+0100\n"
+"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid "Use KdeSudo in place of KdeSu?"
+msgstr "Faut-il utiliser KdeSudo à la place de KdeSu ?"
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid "KdeSudo is a drop-in replacement for KdeSu."
+msgstr "KdeSudo est entièrement compatible avec KdeSu."
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid ""
+"Please choose whether KdeSudo should be the default front-end for gaining "
+"elevated privileges under KDE."
+msgstr ""
+"Veuillez choisir s'il doit être utilisé par défaut comme interface "
+"permettant d'obtenir des privilèges plus importants sous KDE."

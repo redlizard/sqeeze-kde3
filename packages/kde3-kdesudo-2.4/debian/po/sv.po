@@ -1,0 +1,40 @@
+# translation of kdesudo_sv.po to Swedish
+# Copyright (C) 2008
+# This file is distributed under the same license as the kdesudo package.
+#
+# Martin Ågren <martin.agren@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesudo_sv\n"
+"Report-Msgid-Bugs-To: kdesudo@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-29 20:48+0100\n"
+"PO-Revision-Date: 2008-09-13 16:52+0200\n"
+"Last-Translator: Martin Ågren <martin.agren@gmail.com>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid "Use KdeSudo in place of KdeSu?"
+msgstr "Vill du använda KdeSudo istället för KdeSu?"
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid "KdeSudo is a drop-in replacement for KdeSu."
+msgstr "KdeSudo är en direkt ersättning för KdeSu."
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid ""
+"Please choose whether KdeSudo should be the default front-end for gaining "
+"elevated privileges under KDE."
+msgstr ""
+"Välj huruvida KdeSudo ska användas som standardgränssnitt för att få utökade "
+"behörigheter i KDE."

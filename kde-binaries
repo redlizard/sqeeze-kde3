@@ -774,3 +774,5 @@ kile-i18n-zhcn
 libwv2-1c2
 libwv2-dev
 kdbg
+libmpcdec-dev
+libmpcdec3

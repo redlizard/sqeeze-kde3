@@ -1,0 +1,101 @@
+kde3-kdesudo (2.4-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Tue, 24 Apr 2012 00:39:11 +0200
+
+kdesudo (2.4-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix pending l10n bugs. Debconf translations:
+    - Spanish. Closes: #481657
+    - Turkish. Closes: #488505
+    - Basque. Closes: #498688
+    - Swedish. Closes: #498815
+
+ -- Christian Perrier <bubulle@debian.org>  Fri, 19 Sep 2008 07:54:15 +0200
+
+kdesudo (2.4-1) unstable; urgency=low
+
+  * New upstream release
+  * Add gcc 4.3 fixes, thanks to Cyril Brulebois (Closes: 462699)
+  * Relibtoolize on the fly
+
+ -- Sune Vuorela <debian@pusling.com>  Sun, 09 Mar 2008 20:01:47 +0100
+
+kdesudo (2.0-2) unstable; urgency=low
+
+  * The "thanks to the translators"-release
+  * Add vietnamese debconf translation. Thanks Clytie Siddall (Closes: 459007)
+  * Add galician debconf translation. Thanks Jacobo Tarrio (Closes: 458536)
+  * Add korean debconf translation. Thanks Sunjae Park (Closes: 458587)
+  * Add russian debconf translation. Thanks Yuri Kozlov (Closes: 459307)
+  * Add french debconf translation. Thanks Christian Perrier (Closes: 459530)
+  * Add dutch debconf translation. Thanks Bart Cornelis (Closes: 459702)
+  * Add german debconf translation. Thanks Helge Kreutzmann (Closes: 460423)
+  * Add po-debconf to build-depends. lintian says it is missing. Parts are
+    used in clean target
+  * Remove unimportant warning from postrm script
+
+
+ -- Sune Vuorela <debian@pusling.com>  Sat, 26 Jan 2008 15:01:07 +0100
+
+kdesudo (2.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Update description and debconf template. Thanks Christian Perrier.
+    (Closes: 457479). This upload doesn't prevent a upload mid january.
+  * Add portuguese debconf translations. Thanks Miguel Figueiredo.
+    (Closes: 457574)
+  * Add italian debconf translations. Thanks Luca Monducci. (Closes: 458194)
+  * Add finnish debconf translations. Thanks Esko Arajarvi. (Closes: 458175)
+  * Add czech debconf translations. Thanks Miroslav Kure. (Closes: 457679)
+  * Add danish debconf translation. Thanks to me.
+  * Bump standards
+
+ -- Sune Vuorela <debian@pusling.com>  Sat, 29 Dec 2007 21:15:33 +0100
+
+kdesudo (1.4-1) unstable; urgency=low
+
+  * Steal package from Ubuntu.
+  * Initial upload to Debian. (Closes: #452659)
+  * Put me as maintainer.
+  * Use new homepage field.
+  * Remove kubuntu patch.
+  * Do debconf-stuff to ask wether using kdesudo as kdesu instead of
+    the Ubuntu way of unconditionally doing it. Heavily inspired by dash
+    packaging.
+  * Build with -Wl,--as-needed to shut up dpkg-shlibdeps.
+
+ -- Sune Vuorela <debian@pusling.com>  Sat, 24 Nov 2007 13:04:21 +0100
+
+kdesudo (1.4-0ubuntu1) hardy; urgency=low
+
+  * New upstream release
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Tue, 20 Nov 2007 12:46:56 +0100
+
+kdesudo (1.3-0ubuntu1) hardy; urgency=low
+
+  * New upstream release. Closes LP: #163417
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 19 Nov 2007 20:36:49 +0100
+
+kdesudo (1.2-0ubuntu2) hardy; urgency=low
+
+  * Reupload as the build farm should now be fixed
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Mon, 12 Nov 2007 12:22:07 +0100
+
+kdesudo (1.2-0ubuntu1) hardy; urgency=low
+
+  * New upstream release, fixes the user's $HOME usage
+    potential corrupting files issue
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Sat, 10 Nov 2007 12:58:57 +0100
+
+kdesudo (1.1-0ubuntu1) gutsy; urgency=low
+
+  * Initial release
+
+ -- Anthony Mercatante <tonio@ubuntu.com>  Fri, 01 Jun 2007 01:04:36 +0200

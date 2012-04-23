@@ -1,0 +1,37 @@
+# Translation of kdesudo debconf templates to German
+# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2008.
+# This file is distributed under the same license as the kdesudo package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesudo 1.4-2\n"
+"Report-Msgid-Bugs-To: kdesudo@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-23 08:15+0100\n"
+"PO-Revision-Date: 2008-01-09 12:48+0100\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
+"Language-Team: de <debian-l10n-german@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid "Use KdeSudo in place of KdeSu?"
+msgstr "Verwende KdeSudo anstelle von KdeSu?"
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid "KdeSudo is a drop-in replacement for KdeSu."
+msgstr "KdeSudo kann KdeSu direkt ersetzen."
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid ""
+"Please choose whether KdeSudo should be the default front-end for gaining "
+"elevated privileges under KDE."
+msgstr ""
+"Bitte wählen Sie aus, ob KdeSudo die standardmäßige Oberfläche sein soll, um "
+"unter KDE erhöhte Privilegien zu erhalten."

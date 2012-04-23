@@ -1,0 +1,21 @@
+Index: b/kdesudo/kdesudo.cpp
+===================================================================
+--- a/kdesudo/kdesudo.cpp
++++ b/kdesudo/kdesudo.cpp
+@@ -35,13 +35,15 @@
+ #include <kdebug.h>
+ #include <ktempfile.h>
+ 
+-#include <iostream.h>
++#include <iostream>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <signal.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ 
++using namespace std;
++
+ KdeSudo::KdeSudo(QWidget *parent, const char *name,const QString& icon, const QString& generic, bool withIgnoreButton)
+ 	: KPasswordDialog(KPasswordDialog::Password, false, (withIgnoreButton ? User1: false), icon, parent, name)
+ {

@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# This file is put in the public domain.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-06-01 16:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: main.cpp:27 main.cpp:44
+msgid "KdeSudo"
+msgstr ""
+
+#: main.cpp:33
+msgid "sets a runas user"
+msgstr ""
+
+#: main.cpp:34 main.cpp:36
+msgid "The command to execute"
+msgstr ""
+
+#: main.cpp:35
+msgid "The comment that should be displayed in the dialog"
+msgstr ""
+
+#: main.cpp:72
+msgid ""
+"No command arguments supplied!\n"
+"Usage: kdesudo [-u <runas>] <command>\n"
+"KdeSudo will now exit..."
+msgstr ""
+
+#: kdesudo.cpp:28
+msgid ""
+"<b>%1</b> needs administrative privileges. Please enter your password for "
+"verification."
+msgstr ""
+
+#: kdesudo.cpp:72
+msgid "Wrong password, try again!"
+msgstr ""
+
+#: kdesudo.cpp:77
+msgid "Command not found!"
+msgstr ""
+
+#: kdesudo.cpp:83
+msgid "Your username is unknown to sudo!"
+msgstr ""
+
+#: kdesudo.cpp:89
+msgid "Your user is not allowed to run the specified command!"
+msgstr ""
+
+#: kdesudo.cpp:95 kdesudo.cpp:101
+msgid "Your user is not allowed to run sudo on this host!"
+msgstr ""
+
+#: _translatorinfo.cpp:1 _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3 _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""

@@ -1,0 +1,59 @@
+#!/bin/sh
+set -e 
+
+case "$1" in
+	configure)
+
+	debconf=
+	if [ -f /usr/share/debconf/confmodule ]; then
+		. /usr/share/debconf/confmodule
+		debconf=yes
+	fi
+
+	if [ $debconf ]; then
+		db_get kde3-kdesudo/kdesu
+		case "$RET" in
+		true)
+			if ! dpkg-divert --list /opt/kde3/bin/kdesu | grep -q /opt/kde3/bin/kdesu
+			then
+				dpkg-divert --package kdesudo --divert /opt/kde3/bin/kdesu.kde --rename /opt/kde3/bin/kdesu
+				dpkg-divert --package kdesudo --divert /opt/kde3/share/man/man1/kdesu.1.gz.kde --rename /opt/kde3/share/man/man1/kdesu.1.gz
+				ln -s kdesudo /opt/kde3/bin/kdesu
+				ln -s kdesudo.1.gz /opt/kde3/share/man/man1/kdesu.1.gz
+			fi
+		;;
+		false)
+			if dpkg-divert --list /opt/kde3/bin/kdesu | grep -q "by kdesu"
+			then
+				if [ -L /opt/kde3/bin/kdesu ]
+				then
+					if [ "$(readlink -f /opt/kde3/bin/kdesu)" = "/opt/kde3/bin/kdesudo" ]
+					then
+						rm /opt/kde3/bin/kdesu
+						rm /opt/kde3/share/man/man1/kdesu.1.gz
+					fi
+				fi
+				if [ ! -e /opt/kde3/bin/kdesu ]
+				then
+					dpkg-divert --package kdesudo --rename --remove /opt/kde3/bin/kdesu
+					dpkg-divert --package kdesudo --rename --remove /opt/kde3/share/man/man1/kdesu.1.gz
+				fi
+			fi
+
+		;;
+		esac
+	fi
+	;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+#DEBHELPER#
+
+exit 0

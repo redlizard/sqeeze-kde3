@@ -1,0 +1,40 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+  remove)
+        div=$(dpkg-divert --list $1)
+        if dpkg-divert --list /opt/kde3/bin/kdesu | grep -q "by kdesudo" 
+	then
+		if [ -L /opt/kde3/bin/kdesu ]
+		then
+			if [ "$(readlink -f /opt/kde3/bin/kdesu)" = "/usr/bin/kdesudo" ]
+			then
+				rm /opt/kde3/bin/kdesu
+				rm /opt/kde3/share/man/man1/kdesu.1.gz
+			fi
+		fi
+		if [ ! -e /opt/kde3/bin/kdesu ]
+		then
+                	dpkg-divert --package kdesudo --rename --remove /opt/kde3/bin/kdesu
+			dpkg-divert --package kdesudo --rename --remove /opt/kde3/share/man/man1/kdesu.1.gz
+		fi
+		
+        fi
+    ;;
+  purge)
+	if [ -e /usr/share/debconf/confmodule ]
+	then
+		. /usr/share/debconf/confmodule
+		db_purge
+	fi
+    ;;
+  *) 
+     exit 0
+  ;;
+esac
+
+#DEBHELPER#
+
+exit 0

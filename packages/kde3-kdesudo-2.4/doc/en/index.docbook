@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1-Based Variant V1.0//EN" "dtd/kdex.dtd" [
+  <!ENTITY kdesudo '<application>kdesudo</application>'>
+  <!ENTITY kappname "&kdesudo;">
+  <!ENTITY package "kdebase">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<book lang="&language;">
+<bookinfo>
+
+<title>The &kdesudo; handbook</title>
+
+<authorgroup>
+<author>
+<firstname>Robert</firstname>
+<surname>Gruber</surname>
+<affiliation>
+<address><email>rgruber@users.sourceforge.net</email></address>
+</affiliation>
+</author>
+
+</authorgroup>
+
+<copyright>
+<year>2003</year>
+<holder>Robert Gruber</holder>
+</copyright>
+
+<legalnotice>&FDLNotice;</legalnotice>
+
+<date>2002-03-29</date>
+<releaseinfo>1.00.00</releaseinfo>
+
+
+<abstract><para>&kdesudo; is a graphical front end for the
+<command>sudo</command> command.</para></abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>sudo</keyword>
+<keyword>password</keyword>
+<keyword>root</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title>Introduction</title>
+
+<para>Welcome to &kdesudo;! &kdesudo; is a graphical front end for the
+<command>su</command> command for the K Desktop Environment.
+It allows you to run a program as different user if the sys admin allows
+it. &kdesudo; is an unprivileged program; it uses
+the system's <command>sudo</command> command.</para>
+
+<para>This program is meant to be started from the command line or
+from <filename>.desktop</filename> files.</para>
+
+</chapter>
+
+<chapter id="using-kdesu">
+<title>Using &kdesudo;</title>
+
+<para>Usage of &kdesudo; is easy. The syntax is like this:</para>
+
+    <cmdsynopsis>
+      <command>kdesudo</command>
+      <arg>-u <replaceable>RUNAS</replaceable></arg>
+      <arg>COMMAND</arg>
+    </cmdsynopsis>
+
+<para>The command line options are explained below.</para>
+
+<variablelist>
+
+<varlistentry>
+<term><option>COMMAND</option></term>
+<listitem><para>This is the command that <command>sudo</command> will execute.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>-u <replaceable>RUNAS</replaceable></option></term>
+<listitem><para>This option allow to run COMMAND as a different user which
+is specified at RUNAS</para></listitem>
+</varlistentry>
+
+</variablelist>
+
+</chapter>
+
+<chapter id="Author">
+<title>Author</title>
+
+<para>&kdesudo;</para>
+
+<para>Copyright 2003 Robert Gruber</para>
+
+<para>The author can be reached through email at
+<email>rgruber@users.sourceforge.net</email>.  Please report any bugs you
+find to me so that I can fix them. If you have a suggestion, feel free
+to contact me.</para>
+
+&underFDL;
+&underGPL;
+
+</chapter>
+
+<appendix id="installation">
+<title>Installation</title>
+
+<sect1 id="downloading">
+<title>Downloading</title>
+
+&install.intro.documentation;
+
+</sect1>
+
+<sect1 id="compiling">
+<title>Compiling</title>
+
+&install.compile.documentation;
+
+</sect1>
+</appendix>
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+End:
+-->
+

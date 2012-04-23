@@ -1,0 +1,17 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# debian-l10n-english@lists.debian.org for advice.
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
+Template: kde3-kdesudo/kdesu
+Type: boolean
+Default: false
+_Description: Use KdeSudo in place of KdeSu?
+ KdeSudo is a drop-in replacement for KdeSu.
+ .
+ Please choose whether KdeSudo should be the default front-end for
+ gaining elevated privileges under KDE.

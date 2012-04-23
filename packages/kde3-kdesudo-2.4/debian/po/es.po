@@ -1,0 +1,50 @@
+# Spanish messages for KdeSudo
+# Copyright (C) 2003-2007 Software in the Public Interest, Inc.
+# This file is distributed under the same license as KdeSudo
+# Initial translation
+#        Luis San Martin <luis@debianchile.cl>, 2008
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+# #
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesudo\n"
+"Report-Msgid-Bugs-To: kdesudo@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-29 20:48+0100\n"
+"PO-Revision-Date: 2008-05-13 11:27+0200\n"
+"Last-Translator: Luis San Martin Rojas <luis@debianchile.cl>\n"
+"Language-Team:  Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid "Use KdeSudo in place of KdeSu?"
+msgstr "¿Desea usar KdeSudo en lugar de KdeSu?"
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid "KdeSudo is a drop-in replacement for KdeSu."
+msgstr "KdeSudo es un reemplazo idéntico de KdeSu."
+
+#. Type: boolean
+#. Description
+#: ../kde3-kdesudo.templates:2001
+msgid ""
+"Please choose whether KdeSudo should be the default front-end for gaining "
+"elevated privileges under KDE."
+msgstr ""
+"Por favor escoja si desea que KdeSudo sea el interfaz predeterminado para "
+"obtenerpermisos de superusuario en KDE."

@@ -71,6 +71,8 @@ kwin-decor-suse2
 amarok
 k3b
 katapult
+kdbg
+kdesudo
 yakuake
 "
 
