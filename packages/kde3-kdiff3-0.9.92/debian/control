@@ -1,0 +1,26 @@
+Source: kde3-kdiff3
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: debhelper (>= 4.0.0), kde3-kdelibs4-dev, kde3-libkonq4-dev, libqt3-mt-dev, docbook-to-man, automake1.9, autotools-dev
+Standards-Version: 3.7.2
+
+Package: kde3-kdiff3
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: kde3-kdiff3-doc
+Description: compares and merges 2 or 3 files or directories
+ KDiff3 compares two or three input files and shows the differences
+ line by line and character by character. It provides an automatic
+ merge facility and an integrated editor for comfortable solving of
+ merge conflicts. KDiff3 allows recursive directory comparison and
+ merging as well.
+
+Package: kde3-kdiff3-doc
+Architecture: all
+Recommends: kde3-kdiff3
+Description: documentation for kdiff3
+ KDiff3 compares two or three input files and shows the differences
+ line by line and character by character. This package contains the 
+ HTML documentation.
+

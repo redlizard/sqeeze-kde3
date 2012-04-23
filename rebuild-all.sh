@@ -72,6 +72,7 @@ amarok
 k3b
 katapult
 kdbg
+kdiff3
 kdesudo
 yakuake
 "

@@ -1,0 +1,6 @@
+# As version numbering of KDiff3 has changed from 0.93, 0.931, ... to 0.9.50, 0.9.60,
+# we have to dump the former ones. They would be considered to have a higher version
+# number by uscan. Addition: Ignore a x.y.zz-QT version as well.
+
+version=3
+http://sf.net/kdiff3/kdiff3-(.\..\...)\.tar.gz debian uupdate

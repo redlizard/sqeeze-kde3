@@ -1,0 +1,121 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+
+# These are used for cross-compiling and for saving the configure script
+# from having to guess our platform (since we know it already)
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+
+CFLAGS = -Wall -g
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	INSTALL_PROGRAM += -s
+endif
+
+config.status: configure
+	dh_testdir
+	KDEDIR=/opt/kde3 CFLAGS="$(CFLAGS)" ./configure --disable-rpath --prefix=/opt/kde3 --with-qt-includes=/usr/include/qt3 --host=$(DEB_HOST_GNU_TYPE) --build=$(DEB_BUILD_GNU_TYPE) --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info
+
+
+build: build-stamp
+
+build-stamp:  config.status
+	dh_testdir
+
+	$(MAKE) LDFLAGS="-lqt-mt -lkdecore -lkdeui" LIBS=""
+	/usr/bin/docbook-to-man debian/kdiff3.sgml > doc/en/kdiff3.1
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	-$(MAKE) clean
+	rm -f build-stamp
+	rm -f po/*.gmo
+	rm -f src/*.loT
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp \
+		kde_htmldir=/usr/share/doc/kde/HTML
+	rm -rf $(CURDIR)/debian/tmp/usr/share/doc/kde3-kde/HTML/kdiff3
+	# that's not where we want to have a man page
+	rm -rf $(CURDIR)/debian/tmp/usr/share/doc/kde-kde/HTML/en/kdiff3/kdiff3.1
+	# move HTML help /usr/share/doc/kdiff3/html/
+	mkdir --parents $(CURDIR)/debian/tmp/usr/share/doc/kde3-kdiff3-doc/html/
+	mv $(CURDIR)/debian/tmp/usr/share/doc/kde/HTML/en/kdiff3/*.html $(CURDIR)/debian/tmp/usr/share/doc/kde3-kdiff3-doc/html/
+	# move kdiff3.desktop to freedesktop.org conforming place
+	mkdir --parents $(CURDIR)/debian/tmp/opt/kde3/share/applications/kde/
+	mv $(CURDIR)/debian/tmp/opt/kde3/share/applnk/Development/kdiff3.desktop $(CURDIR)/debian/tmp/opt/kde3/share/applications/kde/
+	mv $(CURDIR)/debian/tmp/usr/share/doc/kde $(CURDIR)/debian/tmp/usr/share/doc/kde3-kde
+
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -i ChangeLog
+	dh_installdocs -i
+	dh_install -i --sourcedir=$(CURDIR)/debian/tmp
+	dh_link -i
+	dh_compress -i -X.docbook
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -a ChangeLog
+	dh_installdocs -a
+	dh_install -a --sourcedir=$(CURDIR)/debian/tmp
+#	dh_installexamples
+#	dh_installman $(CURDIR)/doc/en/kdiff3.1
+	dh_desktop -a
+	dh_strip -a
+	dh_compress -a -X.docbook
+	dh_fixperms -a
+	dh_installdeb -a
+	dh_shlibdeps -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done
+
