@@ -1,0 +1,22 @@
+debian/tmp/opt/kde3/share/apps/amarok/*
+debian/tmp/opt/kde3/share/apps/profiles/*
+debian/tmp/opt/kde3/share/doc/*
+debian/tmp/opt/kde3/share/icons/*
+debian/tmp/opt/kde3/share/locale/*
+debian/tmp/opt/kde3/share/config.kcfg/amarok.kcfg
+debian/tmp/opt/kde3/share/services/amarok_void-engine_plugin.desktop
+debian/tmp/opt/kde3/share/services/amarok_generic-mediadevice.desktop
+debian/tmp/opt/kde3/share/services/amarok_ifp-mediadevice.desktop
+debian/tmp/opt/kde3/share/services/amarok_ipod-mediadevice.desktop
+debian/tmp/opt/kde3/share/services/amarok_njb-mediadevice.desktop
+debian/tmp/opt/kde3/share/services/amarok_smb-device.desktop
+debian/tmp/opt/kde3/share/services/amarok_massstorage-device.desktop
+debian/tmp/opt/kde3/share/services/amarok_nfs-device.desktop
+debian/tmp/opt/kde3/share/services/amarok_daap-mediadevice.desktop
+debian/tmp/opt/kde3/share/services/amarok_riokarma-mediadevice.desktop
+debian/tmp/opt/kde3/share/services/amarok_mtp-mediadevice.desktop
+debian/tmp/opt/kde3/bin/amarok_proxy.rb
+debian/tmp/opt/kde3/bin/amarok_daapserver.rb
+debian/tmp/etc/*
+
+debian/play_audiocd /opt/kde3/share/apps/amarok/

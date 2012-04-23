@@ -67,6 +67,7 @@ kde-kdm-themes
 kde-wallpapers-lineartreworked
 kwin-decor-suse2
 
+amarok
 yakuake
 "
 

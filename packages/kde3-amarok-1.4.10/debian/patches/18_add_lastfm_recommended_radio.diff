@@ -1,0 +1,71 @@
+--- a/amarok/src/playlistbrowser.cpp
++++ b/amarok/src/playlistbrowser.cpp
+@@ -566,6 +566,10 @@
+     last = new LastFmEntry( m_lastfmCategory, tagsFolder, url, i18n( "Neighbor Radio" ) );
+     last->setKept( false );
+ 
++    url = KURL::fromPathOrURL( QString("lastfm://user/%1/recommended/100").arg( user ) );
++    last = new LastFmEntry( m_lastfmCategory, last, url, i18n( "Recommended Radio" ) );
++    last->setKept( false );
++
+     if( subscriber )
+     {
+         url = KURL::fromPathOrURL( QString("lastfm://user/%1/personal").arg( user ) );
+--- a/amarok/src/playlistwindow.h
++++ b/amarok/src/playlistwindow.h
+@@ -80,6 +80,8 @@
+         void addLastfmPersonal();
+         void playLastfmNeighbor();
+         void addLastfmNeighbor();
++        void playLastfmRecommended();
++        void addLastfmRecommended();
+         void playLastfmCustom();
+         void addLastfmCustom();
+         void playLastfmGlobaltag( int );
+--- a/amarok/src/playlistwindow.cpp
++++ b/amarok/src/playlistwindow.cpp
+@@ -176,6 +176,7 @@
+     QPopupMenu* playLastfmMenu = playLastfm->popupMenu();
+     playLastfmMenu->insertItem( i18n( "Personal Radio" ), this, SLOT( playLastfmPersonal() ) );
+     playLastfmMenu->insertItem( i18n( "Neighbor Radio" ), this, SLOT( playLastfmNeighbor() ) );
++    playLastfmMenu->insertItem( i18n( "Recommended Radio" ), this, SLOT( playLastfmRecommended() ) );
+     playLastfmMenu->insertItem( i18n( "Custom Station" ), this, SLOT( playLastfmCustom() ) );
+     playLastfmMenu->insertItem( i18n( "Global Tag Radio" ), playTagRadioMenu );
+ 
+@@ -183,6 +184,7 @@
+     QPopupMenu* addLastfmMenu = addLastfm->popupMenu();
+     addLastfmMenu->insertItem( i18n( "Personal Radio" ), this, SLOT( addLastfmPersonal() ) );
+     addLastfmMenu->insertItem( i18n( "Neighbor Radio" ), this, SLOT( addLastfmNeighbor() ) );
++    addLastfmMenu->insertItem( i18n( "Recommended Radio" ), this, SLOT( addLastfmRecommended() ) );
+     addLastfmMenu->insertItem( i18n( "Custom Station" ), this, SLOT( addLastfmCustom() ) );
+     addLastfmMenu->insertItem( i18n( "Global Tag Radio" ), addTagRadioMenu );
+ 
+@@ -944,6 +946,28 @@
+ }
+ 
+ 
++void PlaylistWindow::playLastfmRecommended() //SLOT
++{
++    if( !LastFm::Controller::checkCredentials() ) return;
++
++    const KURL url( QString( "lastfm://user/%1/recommended/100" )
++                    .arg( AmarokConfig::scrobblerUsername() ) );
++
++    Playlist::instance()->insertMedia( url, Playlist::Append|Playlist::DirectPlay );
++}
++
++
++void PlaylistWindow::addLastfmRecommended() //SLOT
++{
++    if( !LastFm::Controller::checkCredentials() ) return;
++
++    const KURL url( QString( "lastfm://user/%1/recommended/100" )
++                    .arg( AmarokConfig::scrobblerUsername() ) );
++
++    Playlist::instance()->insertMedia( url );
++}
++
++
+ void PlaylistWindow::playLastfmCustom() //SLOT
+ {
+     const QString token = LastFm::Controller::createCustomStation();

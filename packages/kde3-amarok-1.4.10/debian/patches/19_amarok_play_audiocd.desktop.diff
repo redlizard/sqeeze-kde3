@@ -1,0 +1,8 @@
+--- a/amarok/src/amarok_play_audiocd.desktop	2008-07-26 14:11:55.000000000 +0300
++++ b/amarok/src/amarok_play_audiocd.desktop	2008-07-26 14:12:20.000000000 +0300
+@@ -50,4 +50,4 @@
+ Name[zh_CN]=用 Amarok 播放音频 CD
+ Name[zh_TW]=以 Amarok 播放音樂 CD
+ Icon=amarok
+-Exec=amarok --cdplay %u
++Exec=/usr/share/apps/amarok/play_audiocd %u

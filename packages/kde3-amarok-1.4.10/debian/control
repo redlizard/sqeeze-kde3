@@ -1,0 +1,104 @@
+Source: kde3-amarok
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Ana Beatriz Guerrero Lopez <ana@debian.org>
+Dm-Upload-Allowed: yes
+Build-Depends: cdbs, debhelper (>= 5.0.0), quilt, bzip2, automake, libtool, kde3-kdelibs4-dev, kde3-kdebase-dev, libxine-dev, kde3-libdbus-qt-1-dev, libtag1-dev, libsqlite3-dev, libtunepimp-dev, libmysqlclient15-dev, libpq-dev, libvisual-0.4-dev, libsdl1.2-dev, libifp-dev, libusb-dev, libgpod-nogtk-dev (>= 0.4.2), libnjb-dev, libkarma-dev, libmtp-dev, ruby, ruby1.8-dev
+Standards-Version: 3.7.3
+Vcs-Svn: svn://svn.debian.org/svn/pkg-kde/kde-extras/amarok/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-kde/kde-extras/amarok/trunk/
+Homepage: http://amarok.kde.org
+
+Package: kde3-amarok
+Architecture: any
+Depends: kde3-amarok-common (= ${source:Version}), kde3-amarok-engine-xine (= ${binary:Version}) | kde3-amarok-engine-yauap (= ${binary:Version}), unzip, ${shlibs:Depends}
+Recommends: kde3-amarok-konqsidebar, kde3-kdemultimedia-kio-plugins
+Conflicts: amarok-engine
+Suggests: kde3-amarok-engines, moodbar, libvisual-0.4-plugins, kde3-konqueror | www-browser
+Description: versatile and easy to use audio player for KDE
+ Amarok tries to be a little different, providing a simple drag and drop
+ interface that really makes playlist handling easy.
+ .
+ Features include:
+   - rapid playlist creation, with drag and drop from a directory view
+   - nice playlist browser for your existing playlists (PLS or M3U formats)
+   - collection-indexing support, for smart browsing and playlist creation
+   - possibility of accessing media via kioslaves, allowing you to play
+     via smb:// or fish:// (normal streams are of course supported)
+   - inline ID3 tag editing, capable of retrieving tags via MusicBrainz
+   - album cover support: automatically displays album covers from the
+     filesystem, or downloaded on the fly
+   - miscellaneous audio effects, including crossfading
+   - easy bindable global shortcuts, rich DCOP interface
+   - On-Screen Display (OSD), on track change or at keypress
+   - iPod and iRiver support
+   - Last.fm stream playing support
+   - Track "mood" display (requires moodbar package installed)
+ .
+ Support for libvisual visualization plugins is also compiled in (you need 
+ to have libvisual-0.4-plugins installed to be able to use it).
+
+Package: kde3-amarok-common
+Architecture: all
+Depends: ruby
+Recommends: kde3-amarok (>= ${source:Version})
+Suggests: kde3-libqt0-ruby1.8, python, python-qt3, python-dbus, libdbus-glib
+Description: architecture independent files for Amarok
+ This package contains architecture independent files needed for Amarok to run
+ properly. It also provides Amarok documentation. Therefore, unless you have
+ 'amarok' package installed, you will hardly find this package useful.
+ .
+ You need to install Python if you intend to use Zeroconf support, WebControl
+ and/or playlist2html scripts. You will also need python-qt3 for the
+ WebControl script.
+
+Package: kde3-amarok-konqsidebar
+Architecture: any
+Depends: kde3-amarok (= ${binary:Version}), kde3-konqueror (>= 4:3.0.0), kde3-konqueror (<< 4:3.90.0), ${shlibs:Depends}
+Description: Amarok sidebar for konqueror 3.x.x
+ This package contains the Amarok sidebar plugin for konqueror from KDE 3
+ series. The sidebar provides a convenient way for a user to control amarok
+ directly from the running konqueror instance.
+
+Package: kde3-amarok-engines
+Architecture: all
+Depends: kde3-amarok-engine-xine (>= ${source:Version}), kde3-amarok-engine-yauap (>= ${source:Version})
+Description: output engines for the Amarok music player
+ This package serves merely as a reference point if you want to install
+ all available Amarok engines. It depends on those Amarok engines that
+ generally can be used by most users. You can safely remove this metapackage
+ as you can remove the amarok-engine-$engine packages that you don't use.
+
+Package: kde3-amarok-engine-xine
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: kde3-amarok (= ${binary:Version})
+Conflicts: amarok-xine
+Replaces: amarok-xine
+Description: Xine engine for the Amarok audio player
+ This package provides the xine engine for Amarok. Xine is capable of
+ playing most of media formats and usually does not require any 
+ additional configuration therefore this engine is default and recommended.
+
+Package: kde3-amarok-engine-yauap
+Architecture: any
+Depends: yauap, ${shlibs:Depends}
+Recommends: kde3-amarok (= ${binary:Version})
+Description: Yauap engine for the Amarok audio player
+ This package includes Amarok yauap engine, which provides a frontend
+ to Yauap Commandline Audio Player. DBus is used as a means of communication
+ between the engine and Yauap. Please note that some extra Amarok features 
+ (like visualizations) might not be available while using this engine.
+
+Package: kde3-amarok-dbg
+Priority: extra
+Architecture: any
+Depends: kde3-amarok (= ${binary:Version})
+Recommends: kde3-kdelibs-dbg
+Description: debugging symbols for Amarok
+ This package provides debugging symbols for all binary packages built from
+ amarok source package. It's highly recommended to have this package installed
+ before reporting any Amarok crashes to either Amarok developers or Debian
+ package maintainers.
+

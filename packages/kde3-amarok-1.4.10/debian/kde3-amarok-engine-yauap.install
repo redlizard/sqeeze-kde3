@@ -1,0 +1,3 @@
+debian/tmp/opt/kde3/share/services/amarok_yauap-engine_plugin.desktop
+debian/tmp/opt/kde3/lib/kde3/libamarok_yauap-engine_plugin.la
+debian/tmp/opt/kde3/lib/kde3/libamarok_yauap-engine_plugin.so

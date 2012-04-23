@@ -1,0 +1,4 @@
+amarok-common: script-with-language-extension opt/kde3/bin/amarok_daapserver.rb
+amarok-common: script-with-language-extension opt/kde3/bin/amarok_proxy.rb
+amarok-common: binary-without-manpage opt/kde3/bin/amarok_daapserver.rb
+amarok-common: binary-without-manpage opt/kde3/bin/amarok_proxy.rb

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+DEVICE=$@
+
+if [ -n "$DEVICE" ]; then
+	if [ ${DEVICE#audiocd} != "$DEVICE" ]; then
+		# E.g. audiocd:/?device=/dev/hdc
+		exec amarok --cdplay "${DEVICE#*=}"
+	elif [ "${DEVICE#/dev/}" != "$DEVICE" ] || [ "${DEVICE#media:}" != "$DEVICE" ] || [ "${DEVICE#system:}" != "$DEVICE" ]; then
+		# Device in /dev or media/system URL (amarok will convert those)
+		exec amarok --cdplay "$DEVICE"
+	elif [ ${DEVICE#/} != "$DEVICE" ]; then
+		# Some mountpoint probably (this is rare, but might happen)
+		exec amarok --cdplay "`dcop kded mediamanager fullList | grep -B1 $DEVICE | head -n1`"
+	else
+		exec amarok --cdplay /dev/cdrom
+	fi
+else
+	exec amarok --cdplay /dev/cdrom
+fi

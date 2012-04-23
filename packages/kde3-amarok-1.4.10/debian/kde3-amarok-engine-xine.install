@@ -1,0 +1,4 @@
+debian/tmp/opt/kde3/share/services/amarok_xine-engine.desktop
+debian/tmp/opt/kde3/share/config.kcfg/xinecfg.kcfg
+debian/tmp/opt/kde3/lib/kde3/libamarok_xine-engine.so
+debian/tmp/opt/kde3/lib/kde3/libamarok_xine-engine.la

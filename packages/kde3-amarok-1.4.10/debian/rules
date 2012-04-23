@@ -1,0 +1,93 @@
+#!/usr/bin/make -f
+
+### CDBS INCLUDES
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/kde.mk
+include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+
+### VARIABLES
+# Exempt amarok engines from being handled as proper public libraries
+# by dh_makeshlibs
+DEB_DH_MAKESHLIBS_ARGS_ALL = -Xlibamarok_\\w*-engine
+
+DEB_CONFIGURE_EXTRA_FLAGS  :=	--without-included-sqlite \
+				--disable-final \
+				--without-akode \
+				--without-gstreamer10 \
+				--with-ifp      \
+				--with-libgpod  \
+				--with-libnjb   \
+				--with-libmtp   \
+				--with-libkarma \
+				--enable-mysql  \
+				--enable-postgresql \
+				--with-yauap
+
+# Ship upstream README in amarok docs
+DEB_INSTALL_DOCS_ALL =
+DEB_INSTALL_DOCS_kde3-amarok = $(DEB_SRCDIR)/README
+
+# Amarok engines should not auto-depend on amarok. 
+# Appropriate relationships are set manually in the control file.
+DEB_DH_SHLIBDEPS_ARGS_kde3-amarok-engine-xine = -- -xamarok
+DEB_DH_SHLIBDEPS_ARGS_kde3-amarok-engine-yauap = -- -xamarok
+
+post-patches:: debian/stamp-automake
+debian/stamp-automake:
+	touch $@
+
+# Install ${curpkg}.install as lintian overrides
+$(patsubst %,binary-install/%,$(DEB_PACKAGES))::
+	if test -e debian/$(cdbs_curpkg).lintian; then \
+		install -p -D -m644 debian/$(cdbs_curpkg).lintian \
+		    debian/$(cdbs_curpkg)/usr/share/lintian/overrides/$(cdbs_curpkg); \
+	fi
+
+clean::
+	rm -f debian/stamp-automake*
+
+binary-fixup/kde3-amarok-common::
+	# Fix permissions of some amarok scripts
+	chmod a+x  \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/gnome_media_keys/gnome_media_keys.py \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/lyrics_astraweb/lyrics_astraweb.rb \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/playlist2html/Playlist.py \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/ruby_debug/debug.rb \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/templates/python_qt_template.py \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/templates/ruby_qt_template.rb \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/webcontrol/Playlist.py \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/webcontrol/RequestHandler.py \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/play_audiocd
+
+binary-post-install/kde3-amarok-common::
+	# Remove excess COPYING files from script directories
+	rm -f \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/lyrics_astraweb/COPYING \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/lyrics_lyrc/COPYING \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/score_default/COPYING \
+	    debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/scripts/score_impulsive/COPYING
+	# Remove Mac OSX resource fork file
+	rm -f debian/$(cdbs_curpkg)/opt/kde3/share/apps/amarok/ruby_lib/rubygems/._gem_commands.rb
+
+### POST-INSTALL HACKING
+common-binary-post-install-arch::
+	# Check for not installed files
+	dh_install --no-act --list-missing
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done
+

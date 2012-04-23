@@ -1,0 +1,6 @@
+./admin/configure.in.min
+configure.in.in
+./.pc/97_automake_cleanup.diff/amarok/configure.in.in
+./amarok/configure.in.bot
+./amarok/configure.in.in
+configure.in.bot
