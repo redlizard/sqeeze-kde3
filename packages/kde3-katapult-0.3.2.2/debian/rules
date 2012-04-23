@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/kde.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+
+export KUBUNTU_DESKTOP_POT=extragear-utils_katapult
+
+cleanbuilddir/kde3-katapult::
+	rm -f katapult.1
+
+build/kde3-katapult::
+	docbook2x-man debian/katapult.1.docbook
+
+DEB_INSTALL_MANPAGES_kde3-katapult = katapult.1
+
+install/kde3-katapult::
+	rm -f $(CURDIR)/debian/kde3-katapult/usr/lib/libkatapult*.so
+	rm -f $(CURDIR)/debian/kde3-katapult/usr/lib/libkatapult*.la
+	dh_install $(DEB_SRCDIR)/debian/lintian usr/share/lintian/overrides/kde3-katapult
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done
+

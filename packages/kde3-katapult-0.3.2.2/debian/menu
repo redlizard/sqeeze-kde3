@@ -1,0 +1,3 @@
+?package(katapult):needs="X11" section="Applications/File Management"\
+  title="Katapult" command="katapult"
+

@@ -1,0 +1,20 @@
+Source: kde3-katapult
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Build-Depends: cdbs (>= 0.4.46ubuntu5), debhelper (>= 5.0.0), kde3-kdelibs4-dev (>= 3.3), docbook2x, libxi-dev, autoconf, automake1.9, sharutils
+Standards-Version: 3.8.0
+Homepage: http://katapult.kde.org/
+Dm-Upload-Allowed: yes
+
+Package: kde3-katapult
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: item launcher for KDE
+ Katapult is an application, which analyses text-based queries
+ to launch items, such as bookmarks, directories or programs.
+ .
+ The application is currently in an early stage of development but 
+ the launchable item list can be extended by a plugin system, and
+ the look and feel can be skinned.
+

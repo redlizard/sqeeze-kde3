@@ -1,0 +1,8 @@
+katapult: desktop-file-in-wrong-dir usr/share/servicetypes/katapultdisplay.desktop
+katapult: desktop-file-in-wrong-dir usr/share/servicetypes/katapultcatalog.desktop
+katapult: desktop-file-in-wrong-dir usr/share/services/katapult_programcatalog.desktop
+katapult: desktop-file-in-wrong-dir usr/share/services/katapult_bookmarkcatalog.desktop
+katapult: desktop-file-in-wrong-dir usr/share/services/katapult_documentcatalog.desktop
+katapult: desktop-file-in-wrong-dir usr/share/services/katapult_glassdisplay.desktop
+katapult binary: package-name-doesnt-match-sonames libkatapultdisplay0 libkatapultcatalog0 libkatapult0
+

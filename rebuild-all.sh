@@ -19,6 +19,7 @@ akode
 arts
 dbus-qt3
 imlib
+libmpcdec
 libxxf86misc
 wv2
 
@@ -68,6 +69,8 @@ kde-wallpapers-lineartreworked
 kwin-decor-suse2
 
 amarok
+k3b
+katapult
 yakuake
 "
 
