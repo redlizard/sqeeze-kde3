@@ -1,0 +1,2058 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2008-03-13 22:44+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+
+#: commentwidget.cpp:55
+msgid "Co&mment:"
+msgstr ""
+
+#: commentwidget.cpp:64
+msgid "&Use @Comment for comment instead of plain text"
+msgstr ""
+
+#: commentwidget.cpp:82
+msgid "Edit BibTeX Comment"
+msgstr ""
+
+#: documentlistview.cpp:124
+msgid "Updating"
+msgstr ""
+
+#: documentlistview.cpp:124
+msgid "Updating main view"
+msgstr ""
+
+#: documentlistview.cpp:256
+msgid "Show Columns"
+msgstr ""
+
+#: documentlistview.cpp:262 documentlistview.cpp:785 settingsediting.cpp:52
+msgid "Element Type"
+msgstr ""
+
+#: documentlistview.cpp:446
+msgid "Paste text as..."
+msgstr ""
+
+#: documentlistview.cpp:786 settingsediting.cpp:53
+msgid "Entry Id"
+msgstr ""
+
+#: documentlistviewitem.cpp:114 kbibtex_part.cpp:451
+msgid "Comment"
+msgstr ""
+
+#: documentlistviewitem.cpp:124 kbibtex_part.cpp:452 macrowidget.cpp:93
+msgid "Macro"
+msgstr ""
+
+#: documentlistviewitem.cpp:138 kbibtex_part.cpp:450 preamblewidget.cpp:78
+msgid "Preamble"
+msgstr ""
+
+#: documentsourceview.cpp:359
+msgid ""
+"Could not find text '%1' in the document.\n"
+"Start from the beginning?"
+msgstr ""
+
+#: documentsourceview.cpp:359
+msgid "Find text in source view"
+msgstr ""
+
+#: documentsourceview.cpp:359
+msgid "Restart search"
+msgstr ""
+
+#: documentwidget.cpp:123
+msgid "L&ist view"
+msgstr ""
+
+#: documentwidget.cpp:145
+msgid "So&urce view"
+msgstr ""
+
+#: documentwidget.cpp:177
+msgid "<qt>Loading file <b>%1</b></qt>"
+msgstr ""
+
+#: documentwidget.cpp:283
+msgid "<qt>Writing file <b>%1</b></qt>"
+msgstr ""
+
+#: documentwidget.cpp:372
+msgid ""
+"To export a BibTeX document to the Rich Text Format (RTF) you need to have "
+"installed the program latex2rtf."
+msgstr ""
+
+#: documentwidget.cpp:388
+msgid ""
+"Embedding files into the PDF file is enabled, but the required file "
+"'embedfile.sty' was not found. Embedding files will be disabled."
+msgstr ""
+
+#: documentwidget.cpp:388
+msgid "Embedding files disabled"
+msgstr ""
+
+#: documentwidget.cpp:438
+#, c-format
+msgid ""
+"_: May only contain ASCII characters, in case of doubt keep English form\n"
+"NewMacro%1"
+msgstr ""
+
+#: documentwidget.cpp:456
+msgid "Put your comment here..."
+msgstr ""
+
+#: documentwidget.cpp:510
+#, c-format
+msgid ""
+"_: May only contain ASCII characters, in case of doubt keep English form\n"
+"NewString%1"
+msgstr ""
+
+#: documentwidget.cpp:511
+msgid "No text yet"
+msgstr ""
+
+#: documentwidget.cpp:515
+msgid "@comment{ Put your comment here... }"
+msgstr ""
+
+#: documentwidget.cpp:519
+msgid "@preamble{\"Put your preamble here using double quotes...\"}"
+msgstr ""
+
+#: documentwidget.cpp:535
+msgid "REQUIRED"
+msgstr ""
+
+#: documentwidget.cpp:535
+msgid "optional"
+msgstr ""
+
+#: documentwidget.cpp:577
+#, c-format
+msgid ""
+"_n: This BibTeX file contains 1 element.\n"
+"This BibTeX file contains %n elements."
+msgstr ""
+
+#: documentwidget.cpp:577
+msgid "File Statistics"
+msgstr ""
+
+#: documentwidget.cpp:760 documentwidget.cpp:769
+msgid "%1 ... %2"
+msgstr ""
+
+#: documentwidget.cpp:781
+msgid "New keyword:"
+msgstr ""
+
+#: documentwidget.cpp:957
+msgid "Cannot establish a link to LyX"
+msgstr ""
+
+#: documentwidget.cpp:957
+msgid "Cannot establish a link to LyX using the pipe '%1'"
+msgstr ""
+
+#: documentwidget.cpp:957
+msgid ""
+"\n"
+"Maybe LyX is not running?"
+msgstr ""
+
+#: documentwidget.cpp:957
+msgid "Error communicating with LyX"
+msgstr ""
+
+#: documentwidget.cpp:1197 documentwidget.cpp:1202
+#, c-format
+msgid ""
+"_: May only contain ASCII characters, in case of doubt keep English form\n"
+"NewEntry%1"
+msgstr ""
+
+#: documentwidget.cpp:1279
+msgid "The file '%1' does not contain a known type of bibliography."
+msgstr ""
+
+#: documentwidget.cpp:1279
+msgid "Unknown file format"
+msgstr ""
+
+#: documentwidget.cpp:1334
+msgid "No preview available"
+msgstr ""
+
+#: documentwidget.cpp:1433
+msgid ""
+"File '%1' has been modified. Reload file to import changes or ignore changes?"
+msgstr ""
+
+#: documentwidget.cpp:1433
+msgid "Reload file?"
+msgstr ""
+
+#: documentwidget.cpp:1433
+msgid "Ignore"
+msgstr ""
+
+#: entrywidget.cpp:62
+msgid "Edit BibTeX Entry"
+msgstr ""
+
+#: entrywidget.cpp:123
+msgid ""
+"The current entry has been modified. Do you want do discard your changes?"
+msgstr ""
+
+#: entrywidget.cpp:123
+msgid "Discard changes"
+msgstr ""
+
+#: entrywidget.cpp:274
+msgid "E&ntry Type:"
+msgstr ""
+
+#: entrywidget.cpp:284
+msgid "&Identifier"
+msgstr ""
+
+#: entrywidget.cpp:301
+msgid "Use the default id suggestion to set the entry id"
+msgstr ""
+
+#: entrywidget.cpp:302
+msgid ""
+"Use the default id suggestion to set the entry id.\n"
+"You can edit and select the default id suggestion in the configuration "
+"dialog."
+msgstr ""
+
+#: entrywidget.cpp:310 settingsediting.cpp:82
+msgid "Enable all &fields for editing"
+msgstr ""
+
+#: entrywidget.cpp:317
+msgid "Message"
+msgstr ""
+
+#: entrywidget.cpp:341 entrywidgettitle.cpp:116 entrywidgettitle.cpp:118
+#: idsuggestions.cpp:327 idsuggestionswidget.cpp:184
+#: idsuggestionswidget.cpp:466 settings.cpp:611 webquery.cpp:285
+msgid "Title"
+msgstr ""
+
+#: entrywidget.cpp:342
+msgid "Author/Editor"
+msgstr ""
+
+#: entrywidget.cpp:343
+msgid "Publication"
+msgstr ""
+
+#: entrywidget.cpp:344 kbibtex_part.cpp:445
+msgid "Misc"
+msgstr ""
+
+#: entrywidget.cpp:345 settings.cpp:589 settingskeyword.cpp:148
+msgid "Keywords"
+msgstr ""
+
+#: entrywidget.cpp:346
+msgid "External"
+msgstr ""
+
+#: entrywidget.cpp:347
+msgid "User Defined"
+msgstr ""
+
+#: entrywidget.cpp:348
+msgid "Other Fields"
+msgstr ""
+
+#: entrywidget.cpp:351
+msgid "Source"
+msgstr ""
+
+#: entrywidget.cpp:394
+msgid "Please supply more fields to use the default id"
+msgstr ""
+
+#: entrywidget.cpp:402
+msgid "Using '%1' as entry id"
+msgstr ""
+
+#: entrywidget.cpp:407
+msgid "An entry has to have an identifier"
+msgstr ""
+
+#: entrywidget.cpp:409
+#, c-format
+msgid "The identifier contains invalid characters at position %1"
+msgstr ""
+
+#: entrywidget.cpp:419
+msgid "The identifier contains non-ascii characters, first one is '%1'"
+msgstr ""
+
+#: entrywidget.cpp:443
+msgid "Require either 'Editor', 'Organization', or 'Key'"
+msgstr ""
+
+#: entrywidget.cpp:452
+msgid ""
+"Cross referenced entry '%1' must contain either 'Editor', 'Key', or 'Book "
+"Title'"
+msgstr ""
+
+#: entrywidget.cpp:462
+msgid "Cross referenced entry '%1' must contain 'Volume'"
+msgstr ""
+
+#: entrywidget.cpp:465
+msgid ""
+"Cross referenced entry '%1' must contain either 'Editor', 'Key', or 'Series'"
+msgstr ""
+
+#: entrywidget.cpp:489
+msgid "No suggestions available"
+msgstr ""
+
+#: entrywidgetauthor.cpp:83
+msgid "The fields 'Author' or 'Editor' are required, but both are missing"
+msgstr ""
+
+#: entrywidgetauthor.cpp:98 entrywidgetauthor.cpp:100
+#: idsuggestionswidget.cpp:111 idsuggestionswidget.cpp:464 settings.cpp:563
+#: settingssearchurl.cpp:132 webquery.cpp:284
+msgid "Author"
+msgstr ""
+
+#: entrywidgetauthor.cpp:100
+msgid ""
+"_: May only contain ASCII characters, in case of doubt keep English form\n"
+"NewAuthor"
+msgstr ""
+
+#: entrywidgetauthor.cpp:105 entrywidgetauthor.cpp:107 settings.cpp:575
+msgid "Editor"
+msgstr ""
+
+#: entrywidgetauthor.cpp:107
+msgid ""
+"_: May only contain ASCII characters, in case of doubt keep English form\n"
+"NewEditor"
+msgstr ""
+
+#: entrywidgetexternal.cpp:184 entrywidgetexternal.cpp:186
+#: entrywidgetexternal.cpp:196 settings.cpp:615 settingssearchurl.cpp:133
+msgid "URL"
+msgstr ""
+
+#: entrywidgetexternal.cpp:196 entrywidgetexternal.cpp:229
+#, c-format
+msgid "Open %1"
+msgstr ""
+
+#: entrywidgetexternal.cpp:199 entrywidgetexternal.cpp:203 settings.cpp:571
+msgid "DOI"
+msgstr ""
+
+#: entrywidgetexternal.cpp:200
+msgid "Digital Object Identifier"
+msgstr ""
+
+#: entrywidgetexternal.cpp:214
+msgid "Open DOI"
+msgstr ""
+
+#: entrywidgetexternal.cpp:217 entrywidgetexternal.cpp:219
+#: entrywidgetexternal.cpp:229 settings.cpp:591
+msgid "Local File"
+msgstr ""
+
+#: entrywidgetexternal.cpp:235
+msgid "&Browse..."
+msgstr ""
+
+#: entrywidgetexternal.cpp:236
+msgid "Browse for a local file"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:56
+msgid "Global"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:61
+msgid "In this file only"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:167
+msgid ""
+"The keyword '%1' does already exist in the list of keywords.\n"
+"The old name has been restored."
+msgstr ""
+
+#: entrywidgetkeyword.cpp:167
+msgid "Renaming keyword failed"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:192
+#, c-format
+msgid ""
+"_: May only contain ASCII characters, in case of doubt keep English form\n"
+"NewKeyword%1"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:229
+msgid "Keyword"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:230
+msgid "Origin"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:237 settingskeyword.cpp:152
+msgid ""
+"_: keyword\n"
+"New"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:240
+msgid "Add a new keyword to the list"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:244 settingskeyword.cpp:155
+msgid ""
+"_: keyword\n"
+"Edit"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:246
+msgid "Edit the selected keyword"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:251
+msgid ""
+"_: keyword\n"
+"Toggle &global"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:253
+msgid "Add or remove the selected keyword to or from the global list"
+msgstr ""
+
+#: entrywidgetkeyword.cpp:258
+msgid ""
+"There is no need to delete keywords. Simply uncheck unwanted keywords and "
+"make them non-global.\n"
+"Global keywords can also be edited in the settings dialog."
+msgstr ""
+
+#: entrywidgetmisc.cpp:135 entrywidgetmisc.cpp:137 settings.cpp:613
+#: settingsuserdefinedinput.cpp:172
+msgid "Type"
+msgstr ""
+
+#: entrywidgetmisc.cpp:142 entrywidgetmisc.cpp:144 entrywidgetother.cpp:145
+#: settings.cpp:587
+msgid "Key"
+msgstr ""
+
+#: entrywidgetmisc.cpp:149 entrywidgetmisc.cpp:151 settings.cpp:597
+msgid "Note"
+msgstr ""
+
+#: entrywidgetmisc.cpp:156 entrywidgetmisc.cpp:158 settings.cpp:561
+msgid "Annote"
+msgstr ""
+
+#: entrywidgetmisc.cpp:163 entrywidgetmisc.cpp:165 settings.cpp:557
+msgid "Abstract"
+msgstr ""
+
+#: entrywidgetother.cpp:123
+msgid "Name of the user-defined field"
+msgstr ""
+
+#: entrywidgetother.cpp:124
+msgid ""
+"The name of the user-defined field. Should only contain letters and numbers."
+msgstr ""
+
+#: entrywidgetother.cpp:125
+msgid "&Name:"
+msgstr ""
+
+#: entrywidgetother.cpp:129 entrywidgetother.cpp:192
+msgid "&Add"
+msgstr ""
+
+#: entrywidgetother.cpp:133 entrywidgetother.cpp:146
+msgid "Value"
+msgstr ""
+
+#: entrywidgetother.cpp:135
+msgid "Content of the user-defined field"
+msgstr ""
+
+#: entrywidgetother.cpp:136
+msgid "The content of the user-defined field. May contain any text."
+msgstr ""
+
+#: entrywidgetother.cpp:137
+msgid "&Content:"
+msgstr ""
+
+#: entrywidgetother.cpp:151
+msgid "&List:"
+msgstr ""
+
+#: entrywidgetother.cpp:160
+msgid "Op&en"
+msgstr ""
+
+#: entrywidgetpublication.cpp:304
+msgid "The fields 'Chapter' or 'Pages' are required, but both are missing"
+msgstr ""
+
+#: entrywidgetpublication.cpp:321
+msgid "The field 'Journal' refers to a not existing entry"
+msgstr ""
+
+#: entrywidgetpublication.cpp:388
+#, c-format
+msgid "http://en.wikipedia.org/w/index.php?title=Special:Booksources&isbn=%1"
+msgstr ""
+
+#: entrywidgetpublication.cpp:400 entrywidgetpublication.cpp:402
+#: settings.cpp:585
+msgid "Journal"
+msgstr ""
+
+#: entrywidgetpublication.cpp:407 entrywidgetpublication.cpp:409
+#: settings.cpp:617
+msgid "Volume"
+msgstr ""
+
+#: entrywidgetpublication.cpp:414 entrywidgetpublication.cpp:416
+#: settings.cpp:599
+msgid "Number"
+msgstr ""
+
+#: entrywidgetpublication.cpp:421 entrywidgetpublication.cpp:430
+#: settings.cpp:595
+msgid "Month"
+msgstr ""
+
+#: entrywidgetpublication.cpp:435 entrywidgetpublication.cpp:437
+#: idsuggestionswidget.cpp:257 idsuggestionswidget.cpp:465 settings.cpp:619
+#: webquery.cpp:283
+msgid "Year"
+msgstr ""
+
+#: entrywidgetpublication.cpp:442 entrywidgetpublication.cpp:444
+#: settings.cpp:603
+msgid "Pages"
+msgstr ""
+
+#: entrywidgetpublication.cpp:449 entrywidgetpublication.cpp:451
+#: settings.cpp:573
+msgid "Edition"
+msgstr ""
+
+#: entrywidgetpublication.cpp:456 entrywidgetpublication.cpp:458
+#: settings.cpp:567
+msgid "Chapter"
+msgstr ""
+
+#: entrywidgetpublication.cpp:463 entrywidgetpublication.cpp:465
+msgid "Cross Reference"
+msgstr ""
+
+#: entrywidgetpublication.cpp:471 entrywidgetpublication.cpp:473
+#: settings.cpp:601
+msgid "Organization"
+msgstr ""
+
+#: entrywidgetpublication.cpp:478 entrywidgetpublication.cpp:480
+#: settings.cpp:605
+msgid "Publisher"
+msgstr ""
+
+#: entrywidgetpublication.cpp:485 entrywidgetpublication.cpp:487
+#: settings.cpp:609
+msgid "School"
+msgstr ""
+
+#: entrywidgetpublication.cpp:492 entrywidgetpublication.cpp:494
+#: settings.cpp:579
+msgid "Institution"
+msgstr ""
+
+#: entrywidgetpublication.cpp:499 entrywidgetpublication.cpp:501
+#: settings.cpp:593
+msgid "Location"
+msgstr ""
+
+#: entrywidgetpublication.cpp:506 entrywidgetpublication.cpp:508
+#: settings.cpp:559
+msgid "Address"
+msgstr ""
+
+#: entrywidgetpublication.cpp:513 entrywidgetpublication.cpp:522
+#: settings.cpp:581
+msgid "ISBN"
+msgstr ""
+
+#: entrywidgetpublication.cpp:520
+msgid "Lookup ISBN number in Wikipedia"
+msgstr ""
+
+#: entrywidgetpublication.cpp:528 entrywidgetpublication.cpp:530
+#: settings.cpp:583
+msgid "ISSN"
+msgstr ""
+
+#: entrywidgetpublication.cpp:535 entrywidgetpublication.cpp:537
+#: settings.cpp:577
+msgid "How Published"
+msgstr ""
+
+#: entrywidgettab.cpp:65
+msgid "The field '%1' is required, but missing"
+msgstr ""
+
+#: entrywidgettab.cpp:71
+msgid "Using cross referenced entry '%1' for field '%2'"
+msgstr ""
+
+#: entrywidgettab.cpp:79
+msgid "The field '%1' contains string keys with invalid characters"
+msgstr ""
+
+#: entrywidgettab.cpp:87
+msgid "The field '%1' contains some unknown error"
+msgstr ""
+
+#: entrywidgettitle.cpp:122 entrywidgettitle.cpp:124 settings.cpp:565
+msgid "Book Title"
+msgstr ""
+
+#: entrywidgettitle.cpp:128 entrywidgettitle.cpp:130 settings.cpp:607
+msgid "Series"
+msgstr ""
+
+#: entrywidgetuserdefined.cpp:137
+msgid "Please use the settings dialog to add user-defined fields here."
+msgstr ""
+
+#: fieldlineedit.cpp:91 fieldlineedit.cpp:92 fieldlineedit.cpp:96
+#: fieldlineedit.cpp:97 fieldlistview.cpp:100 fieldlistview.cpp:101
+msgid "BibTeX field '%1'"
+msgstr ""
+
+#: fieldlineedit.cpp:226
+msgid "Set '%1' to be a string key"
+msgstr ""
+
+#: fieldlineedit.cpp:237
+msgid "Edit '%1' as a concatenated value"
+msgstr ""
+
+#: fieldlineedit.cpp:322 fieldlineedit.cpp:325
+msgid "Concatenated value"
+msgstr ""
+
+#: fieldlistview.cpp:321
+msgid "Add new '%1' item (Ctrl+A)"
+msgstr ""
+
+#: fieldlistview.cpp:327
+msgid "Edit current '%1' item (F2)"
+msgstr ""
+
+#: fieldlistview.cpp:333
+msgid "Delete current '%1' item (Del)"
+msgstr ""
+
+#: fieldlistview.cpp:335 idsuggestionswidget.cpp:59 valuewidget.cpp:242
+msgid "Up"
+msgstr ""
+
+#: fieldlistview.cpp:339
+msgid "Move current '%1' item up (Ctrl+Up)"
+msgstr ""
+
+#: fieldlistview.cpp:341 idsuggestionswidget.cpp:60 valuewidget.cpp:247
+msgid "Down"
+msgstr ""
+
+#: fieldlistview.cpp:345
+msgid "Move current '%1' item down (Ctrl+Down)"
+msgstr ""
+
+#: fieldlistview.cpp:347
+msgid "Complex..."
+msgstr ""
+
+#: fieldlistview.cpp:351
+msgid "Edit current '%1' item as a concatenated string (Ctrl+Alt+C)"
+msgstr ""
+
+#: fieldlistview.cpp:353
+msgid "... and others (et al.)"
+msgstr ""
+
+#: idsuggestions.cpp:313
+msgid "First author only"
+msgstr ""
+
+#: idsuggestions.cpp:315
+msgid "All authors"
+msgstr ""
+
+#: idsuggestions.cpp:317
+#, c-format
+msgid ""
+"_n: , but only first letter of each last name\n"
+", but only first %n letters of each last name"
+msgstr ""
+
+#: idsuggestions.cpp:318 idsuggestions.cpp:330
+msgid ", in upper case"
+msgstr ""
+
+#: idsuggestions.cpp:319 idsuggestions.cpp:331
+msgid ", in lower case"
+msgstr ""
+
+#: idsuggestions.cpp:320 idsuggestions.cpp:332
+msgid ", with '%1' in between"
+msgstr ""
+
+#: idsuggestions.cpp:322
+msgid "Year (2 digits)"
+msgstr ""
+
+#: idsuggestions.cpp:323
+msgid "Year (4 digits)"
+msgstr ""
+
+#: idsuggestions.cpp:329
+#, c-format
+msgid ""
+"_n: , but only first letter of each word\n"
+", but only first %n letters of each word"
+msgstr ""
+
+#: idsuggestions.cpp:333
+msgid ", small words removed"
+msgstr ""
+
+#: idsuggestions.cpp:335
+msgid "Text: '%1'"
+msgstr ""
+
+#: idsuggestionswidget.cpp:124
+msgid "Use first author only"
+msgstr ""
+
+#: idsuggestionswidget.cpp:131 idsuggestionswidget.cpp:204
+msgid "Casing:"
+msgstr ""
+
+#: idsuggestionswidget.cpp:136 idsuggestionswidget.cpp:209
+msgid "No change"
+msgstr ""
+
+#: idsuggestionswidget.cpp:137 idsuggestionswidget.cpp:210
+msgid "Lower case"
+msgstr ""
+
+#: idsuggestionswidget.cpp:138 idsuggestionswidget.cpp:211
+msgid "Upper case"
+msgstr ""
+
+#: idsuggestionswidget.cpp:147 idsuggestionswidget.cpp:220
+msgid "Only first letters:"
+msgstr ""
+
+#: idsuggestionswidget.cpp:154 idsuggestionswidget.cpp:156
+msgid "Complete name"
+msgstr ""
+
+#: idsuggestionswidget.cpp:159
+msgid "Text between authors:"
+msgstr ""
+
+#: idsuggestionswidget.cpp:197
+msgid "Remove small words"
+msgstr ""
+
+#: idsuggestionswidget.cpp:227 idsuggestionswidget.cpp:229
+msgid "Complete title"
+msgstr ""
+
+#: idsuggestionswidget.cpp:232
+msgid "Text between words:"
+msgstr ""
+
+#: idsuggestionswidget.cpp:270
+msgid "Year:"
+msgstr ""
+
+#: idsuggestionswidget.cpp:275
+msgid "2 digits"
+msgstr ""
+
+#: idsuggestionswidget.cpp:276
+msgid "4 digits"
+msgstr ""
+
+#: idsuggestionswidget.cpp:291 idsuggestionswidget.cpp:467 valuewidget.cpp:211
+msgid "Text"
+msgstr ""
+
+#: idsuggestionswidget.cpp:304
+msgid "Text in between:"
+msgstr ""
+
+#: idsuggestionswidget.cpp:367
+msgid "Edit Id Suggestions"
+msgstr ""
+
+#: idsuggestionswidget.cpp:547
+msgid "<qt>Example:<br/><b>%1</b></qt>"
+msgstr ""
+
+#: kbibtex_part.cpp:156
+msgid ""
+"The document '%1' has been modified.\n"
+"Do you want to save your changes or discard them?"
+msgstr ""
+
+#: kbibtex_part.cpp:158
+msgid "Close Document"
+msgstr ""
+
+#: kbibtex_part.cpp:226 kbibtex_part.cpp:319 kbibtexshell.cpp:318
+msgid "BibTeX (*.bib)"
+msgstr ""
+
+#: kbibtex_part.cpp:226 kbibtex_part.cpp:251 kbibtex_part.cpp:319
+#: kbibtexshell.cpp:318
+msgid "Reference Manager (*.ris)"
+msgstr ""
+
+#: kbibtex_part.cpp:228 kbibtex_part.cpp:253 kbibtex_part.cpp:321
+#: kbibtexshell.cpp:320
+msgid "EndNote (Refer format) (*.ref *.refer *.rfr *.txt)"
+msgstr ""
+
+#: kbibtex_part.cpp:228 kbibtex_part.cpp:253 kbibtex_part.cpp:321
+#: kbibtexshell.cpp:320
+msgid "ISI Web of Knowledge (*.isi *.cgi)"
+msgstr ""
+
+#: kbibtex_part.cpp:235 kbibtex_part.cpp:259
+msgid ""
+"A file named '%1' already exists. Are you sure you want to overwrite it?"
+msgstr ""
+
+#: kbibtex_part.cpp:235 kbibtex_part.cpp:259
+msgid "Overwrite"
+msgstr ""
+
+#: kbibtex_part.cpp:251
+msgid "Portable Document File (*.pdf)"
+msgstr ""
+
+#: kbibtex_part.cpp:251
+msgid "PostScript (*.ps)"
+msgstr ""
+
+#: kbibtex_part.cpp:255
+msgid "eXtended Markup Language (*.xml)"
+msgstr ""
+
+#: kbibtex_part.cpp:255
+msgid "Hypertext Markup Langage (*.html)"
+msgstr ""
+
+#: kbibtex_part.cpp:255
+msgid "Rich Text Format (*.rtf)"
+msgstr ""
+
+#: kbibtex_part.cpp:286
+msgid "Exporting"
+msgstr ""
+
+#: kbibtex_part.cpp:297
+msgid "File could not be exported in '%1'."
+msgstr ""
+
+#: kbibtex_part.cpp:297
+msgid ""
+"\n"
+"\n"
+"See the following error log for details."
+msgstr ""
+
+#: kbibtex_part.cpp:297 kbibtex_part.cpp:300
+msgid "Exporting failed"
+msgstr ""
+
+#: kbibtex_part.cpp:300
+msgid "File could not be exported to '%1'."
+msgstr ""
+
+#: kbibtex_part.cpp:319 kbibtexshell.cpp:318
+msgid "Supported Bibliographies"
+msgstr ""
+
+#: kbibtex_part.cpp:336 kbibtexshell.cpp:337
+msgid ""
+"The given file could not be read, check if it exists or if it is readable "
+"for the current user."
+msgstr ""
+
+#: kbibtex_part.cpp:351
+msgid "The given file could not be merged."
+msgstr ""
+
+#: kbibtex_part.cpp:380
+msgid "Save the current file"
+msgstr ""
+
+#: kbibtex_part.cpp:381
+msgid "Save the current file under a new filename"
+msgstr ""
+
+#: kbibtex_part.cpp:383
+msgid "Statistics..."
+msgstr ""
+
+#: kbibtex_part.cpp:384
+msgid "Export..."
+msgstr ""
+
+#: kbibtex_part.cpp:385
+msgid "Export to a different file format"
+msgstr ""
+
+#: kbibtex_part.cpp:386
+msgid "Merge..."
+msgstr ""
+
+#: kbibtex_part.cpp:387
+msgid "Merge BibTeX entries from another file"
+msgstr ""
+
+#: kbibtex_part.cpp:390
+msgid "Cut the selected BibTeX elements to the clipboard"
+msgstr ""
+
+#: kbibtex_part.cpp:393
+msgid "Copy the selected BibTeX elements to the clipboard"
+msgstr ""
+
+#: kbibtex_part.cpp:397
+msgid "Copy &Reference"
+msgstr ""
+
+#: kbibtex_part.cpp:398
+msgid "Copy a reference of the selected BibTeX elements to the clipboard"
+msgstr ""
+
+#: kbibtex_part.cpp:401
+msgid "Paste BibTeX elements from the clipboard"
+msgstr ""
+
+#: kbibtex_part.cpp:403
+msgid "Select all BibTeX elements"
+msgstr ""
+
+#: kbibtex_part.cpp:404
+msgid "Send Reference to &LyX"
+msgstr ""
+
+#: kbibtex_part.cpp:405
+msgid "Send a reference of the selected BibTeX elements to LyX"
+msgstr ""
+
+#: kbibtex_part.cpp:408
+msgid "Find text"
+msgstr ""
+
+#: kbibtex_part.cpp:410
+msgid "Find next occurrence"
+msgstr ""
+
+#: kbibtex_part.cpp:414
+msgid "Search Online Databases"
+msgstr ""
+
+#: kbibtex_part.cpp:415
+msgid "Search online databases to import bibliography data"
+msgstr ""
+
+#: kbibtex_part.cpp:417
+msgid "Search Document Online"
+msgstr ""
+
+#: kbibtex_part.cpp:418
+msgid "Search websites for the selected BibTeX element"
+msgstr ""
+
+#: kbibtex_part.cpp:422
+msgid "&Show Columns"
+msgstr ""
+
+#: kbibtex_part.cpp:423
+msgid "Select columns to show in the main list"
+msgstr ""
+
+#: kbibtex_part.cpp:424
+msgid "View Document"
+msgstr ""
+
+#: kbibtex_part.cpp:425
+msgid "View the documents associated with this BibTeX entry"
+msgstr ""
+
+#: kbibtex_part.cpp:427
+msgid "Assign Keywords"
+msgstr ""
+
+#: kbibtex_part.cpp:428
+msgid "Assign keywords to this entry"
+msgstr ""
+
+#: kbibtex_part.cpp:432
+msgid "Configure KBibTeX"
+msgstr ""
+
+#: kbibtex_part.cpp:433
+msgid "Configure Source View..."
+msgstr ""
+
+#: kbibtex_part.cpp:434
+msgid "Configure the Source Editor"
+msgstr ""
+
+#: kbibtex_part.cpp:436
+msgid "Article"
+msgstr ""
+
+#: kbibtex_part.cpp:436
+msgid "Add an article to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:437
+msgid "Book"
+msgstr ""
+
+#: kbibtex_part.cpp:437
+msgid "Add a book to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:438
+msgid "Booklet"
+msgstr ""
+
+#: kbibtex_part.cpp:438
+msgid "Add a booklet to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:439
+msgid "Electronic (IEEE)"
+msgstr ""
+
+#: kbibtex_part.cpp:439
+msgid "Add an electronic reference (IEEE) to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:440
+msgid "InBook"
+msgstr ""
+
+#: kbibtex_part.cpp:440
+msgid "Add a part of a book to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:441
+msgid "InCollection"
+msgstr ""
+
+#: kbibtex_part.cpp:441
+msgid "Add a publication which is part of some collection to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:442
+msgid "InProceedings"
+msgstr ""
+
+#: kbibtex_part.cpp:442
+msgid "Add a publication which is part of some proceedings to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:443
+msgid "Manual"
+msgstr ""
+
+#: kbibtex_part.cpp:443
+msgid "Add a manual to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:444
+msgid "MastersThesis"
+msgstr ""
+
+#: kbibtex_part.cpp:444
+msgid "Add a master or diploma thesis to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:445
+msgid "Add a not specified document or reference to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:446
+msgid "PhDThesis"
+msgstr ""
+
+#: kbibtex_part.cpp:446
+msgid "Add a PhD thesis to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:447
+msgid "Proceedings"
+msgstr ""
+
+#: kbibtex_part.cpp:447
+msgid "Add some proceedings to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:448
+msgid "TechReport"
+msgstr ""
+
+#: kbibtex_part.cpp:448
+msgid "Add a technical report to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:449
+msgid "Unpublished"
+msgstr ""
+
+#: kbibtex_part.cpp:449
+msgid "Add an unpublished document to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:450
+msgid "Add a preamble to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:451
+msgid "Add a comment to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:452
+msgid "Add a macro to the BibTeX file"
+msgstr ""
+
+#: kbibtex_part.cpp:455
+msgid "Edit the selected BibTeX element"
+msgstr ""
+
+#: kbibtex_part.cpp:458
+msgid "Delete the selected BibTeX elements"
+msgstr ""
+
+#: kbibtex_part.cpp:461
+msgid "Show &Comments"
+msgstr ""
+
+#: kbibtex_part.cpp:462
+msgid "Show the comments of a BibTeX document"
+msgstr ""
+
+#: kbibtex_part.cpp:463
+msgid "Show &Macros"
+msgstr ""
+
+#: kbibtex_part.cpp:464
+msgid "Show the macros of a BibTeX document"
+msgstr ""
+
+#: kbibtex_part.cpp:466
+msgid "Accept input from other programs"
+msgstr ""
+
+#. i18n: file kbibtex_part.rc line 26
+#: kbibtex_part.cpp:482 rc.cpp:9 rc.cpp:18 rc.cpp:21 rc.cpp:39 rc.cpp:48
+#: rc.cpp:51
+#, no-c-format
+msgid "&New"
+msgstr ""
+
+#: kbibtex_part.cpp:483
+msgid "Add a new element to this BibTeX document"
+msgstr ""
+
+#: kbibtex_part.cpp:566
+msgid ""
+"Some other KBibTeX instance is using the pipe.\n"
+"If this assumption is wrong, please delete '%1'."
+msgstr ""
+
+#: kbibtex_part.cpp:566
+msgid "Pipe already in use"
+msgstr ""
+
+#: kbibtex_part.cpp:595
+msgid "Could not create pipe at '%1'."
+msgstr ""
+
+#: kbibtex_part.cpp:595
+msgid "Error creating pipe"
+msgstr ""
+
+#: kbibtex_part.cpp:639
+msgid ""
+"The KBibTeX part has problems to initialize itself. Only limited "
+"functionality will be available."
+msgstr ""
+
+#: kbibtex_part.cpp:639
+msgid "KBibTeX Part"
+msgstr ""
+
+#: kbibtex_part.cpp:686
+msgid "KBibTeXPart"
+msgstr ""
+
+#: kbibtexshell.cpp:77
+msgid "Could not find our part!"
+msgstr ""
+
+#: kbibtexshell.cpp:145
+msgid ""
+"Click to open a file\n"
+"Click and hold to open a recent file"
+msgstr ""
+
+#: kbibtexshell.cpp:182
+msgid "Create a new window for a new BibTeX file"
+msgstr ""
+
+#: kbibtexshell.cpp:184
+msgid "Open an existing BibTeX file"
+msgstr ""
+
+#: kbibtexshell.cpp:187
+msgid ""
+"This lists files which you have opened recently, and allows you to easily "
+"open them again."
+msgstr ""
+
+#: kbibtexshell.cpp:191
+msgid "Close this KBibTeX window"
+msgstr ""
+
+#: kbibtexshell.cpp:196
+msgid "Show or hide the window's status bar"
+msgstr ""
+
+#: kbibtexshell.cpp:198
+msgid "Configure key bindings for KBibTeX"
+msgstr ""
+
+#: kbibtexshell.cpp:199
+msgid "Configure the tool bar for KBibTeX"
+msgstr ""
+
+#: kbibtexshell.cpp:355 main.cpp:95
+msgid "Could not open file '%1'."
+msgstr ""
+
+#: macrowidget.cpp:39
+msgid "Edit BibTeX Macro"
+msgstr ""
+
+#: macrowidget.cpp:84
+msgid "Macro &id:"
+msgstr ""
+
+#: macrowidget.cpp:91
+msgid "Macro &value:"
+msgstr ""
+
+#: main.cpp:40
+msgid "A BibTeX editor for KDE"
+msgstr ""
+
+#: main.cpp:46
+msgid "Document to open."
+msgstr ""
+
+#: main.cpp:111
+msgid "KBibTeX"
+msgstr ""
+
+#: main.cpp:114
+msgid "NAME OF TRANSLATORS"
+msgstr ""
+
+#: main.cpp:114
+msgid "EMAIL OF TRANSLATORS"
+msgstr ""
+
+#: mergeentries.cpp:57
+msgid "Merge BibTeX elements"
+msgstr ""
+
+#: mergeentries.cpp:64
+msgid "Original element:"
+msgstr ""
+
+#: mergeentries.cpp:71
+msgid "Inserted element:"
+msgstr ""
+
+#: mergeentries.cpp:81
+msgid "Keep Original"
+msgstr ""
+
+#: mergeentries.cpp:84
+msgid "Use Inserted"
+msgstr ""
+
+#: mergeentries.cpp:87
+msgid "Rename Inserted"
+msgstr ""
+
+#: mergeentries.cpp:90
+msgid "Merge"
+msgstr ""
+
+#: mergeentries.cpp:235 mergeentries.cpp:259
+msgid ""
+"_: May only contain ASCII characters, in case of doubt keep English form\n"
+"_new"
+msgstr ""
+
+#: preamblewidget.cpp:33
+msgid "Edit BibTeX Preamble"
+msgstr ""
+
+#: preamblewidget.cpp:76
+msgid "&Preamble:"
+msgstr ""
+
+#. i18n: file kbibtex_part.rc line 25
+#: rc.cpp:6 rc.cpp:36
+#, no-c-format
+msgid "E&lement"
+msgstr ""
+
+#. i18n: file kbibtex_part.rc line 62
+#: rc.cpp:15 rc.cpp:27 rc.cpp:45 rc.cpp:57
+#, no-c-format
+msgid "Se&ttings"
+msgstr ""
+
+#: searchbar.cpp:92
+msgid "Add a new BibTeX entry, comment or macro to this file"
+msgstr ""
+
+#: searchbar.cpp:97
+msgid "Add a new BibTeX entry from an online database"
+msgstr ""
+
+#: searchbar.cpp:105
+msgid "Erase current search pattern"
+msgstr ""
+
+#: searchbar.cpp:108
+msgid "&Search:"
+msgstr ""
+
+#: searchbar.cpp:121
+msgid "Exact"
+msgstr ""
+
+#: searchbar.cpp:122
+msgid "Every word"
+msgstr ""
+
+#: searchbar.cpp:123
+msgid "Any word"
+msgstr ""
+
+#: searchbar.cpp:126
+msgid "Restrict to:"
+msgstr ""
+
+#: searchbar.cpp:133
+msgid "All fields"
+msgstr ""
+
+#: settings.cpp:55
+msgid "Could not determine filename for XSLT file"
+msgstr ""
+
+#: settings.cpp:55
+msgid "Initialization failed"
+msgstr ""
+
+#: settings.cpp:569
+msgid "Crossref"
+msgstr ""
+
+#: settings.cpp:621
+msgid "Unknown"
+msgstr ""
+
+#: settingsdlg.cpp:39
+msgid "&Editing"
+msgstr ""
+
+#: settingsdlg.cpp:45
+msgid "&File Open&&Save"
+msgstr ""
+
+#: settingsdlg.cpp:51
+msgid "&Search URLs"
+msgstr ""
+
+#: settingsdlg.cpp:57
+msgid "Global &Keywords"
+msgstr ""
+
+#: settingsdlg.cpp:63 settingsidsuggestions.cpp:284
+msgid "Id Suggestions"
+msgstr ""
+
+#: settingsdlg.cpp:69
+msgid "User Defined Fields"
+msgstr ""
+
+#: settingsediting.cpp:48
+msgid "Main List"
+msgstr ""
+
+#: settingsediting.cpp:50
+msgid "&Sorting:"
+msgstr ""
+
+#: settingsediting.cpp:62
+msgid "So&rting order:"
+msgstr ""
+
+#: settingsediting.cpp:64
+msgid "Ascending"
+msgstr ""
+
+#: settingsediting.cpp:65
+msgid "Descending"
+msgstr ""
+
+#: settingsediting.cpp:68
+msgid "&Double click action:"
+msgstr ""
+
+#: settingsediting.cpp:70
+msgid "Edit element"
+msgstr ""
+
+#: settingsediting.cpp:71
+msgid "Open document"
+msgstr ""
+
+#: settingsediting.cpp:74
+msgid "On dragging with mouse:"
+msgstr ""
+
+#: settingsediting.cpp:76
+msgid "Copy reference (\\cite{...})"
+msgstr ""
+
+#: settingsediting.cpp:77
+msgid "Copy BibTeX text (@article{...})"
+msgstr ""
+
+#: settingsediting.cpp:80
+msgid "Entry Editing"
+msgstr ""
+
+#: settingsediting.cpp:84
+msgid "Search Bar"
+msgstr ""
+
+#: settingsediting.cpp:86
+msgid "Reset field filter when changing filter text"
+msgstr ""
+
+#: settingsediting.cpp:88
+msgid "Presentation"
+msgstr ""
+
+#: settingsediting.cpp:90
+msgid "Use special &font"
+msgstr ""
+
+#: settingsediting.cpp:92
+msgid "Author and editor names:"
+msgstr ""
+
+#: settingsediting.cpp:95
+msgid "John Doe"
+msgstr ""
+
+#: settingsediting.cpp:96
+msgid "Doe, John"
+msgstr ""
+
+#: settingsediting.cpp:97
+msgid "Show names as 'John Doe' instead of 'Doe, John'"
+msgstr ""
+
+#: settingsediting.cpp:98
+msgid ""
+"Show names as 'John Doe' instead of 'Doe, John'.\n"
+"\n"
+"Takes only effect after the next start of KBibTeX."
+msgstr ""
+
+#: settingsediting.cpp:100
+msgid "Document Search Path"
+msgstr ""
+
+#: settingsediting.cpp:102
+msgid ""
+"Default search path for documents (e.g. PDF files) associated with an BibTeX "
+"entry:"
+msgstr ""
+
+#: settingsfileio.cpp:47
+msgid "English|German|French|Spanish|Swedish"
+msgstr ""
+
+#: settingsfileio.cpp:52
+msgid ""
+"plain|achemso (American Chemical Society)|alpha|unsrt|abbrv|acm (Association "
+"of Computing Machinery)|apacite|apalike|authordate|ieeetr|natbib|siam"
+msgstr ""
+
+#: settingsfileio.cpp:53
+msgid "LaTeX|UTF-8"
+msgstr ""
+
+#: settingsfileio.cpp:174
+msgid "XSLT Stylesheet"
+msgstr ""
+
+#: settingsfileio.cpp:198
+msgid "No exporter available"
+msgstr ""
+
+#: settingsfileio.cpp:214
+msgid "BibTeX Import and Export"
+msgstr ""
+
+#: settingsfileio.cpp:216
+msgid "&Encoding:"
+msgstr ""
+
+#: settingsfileio.cpp:219
+msgid "Text &delimiters:"
+msgstr ""
+
+#: settingsfileio.cpp:222
+msgid "Keyword casing:"
+msgstr ""
+
+#: settingsfileio.cpp:225
+msgid "Protect title's casing:"
+msgstr ""
+
+#: settingsfileio.cpp:226
+msgid "Put curly brackets around"
+msgstr ""
+
+#: settingsfileio.cpp:227
+msgid "Put curly brackets around title and other selected fields."
+msgstr ""
+
+#: settingsfileio.cpp:228
+msgid ""
+"Put curly brackets around title and other selected fields to protect them "
+"from case changes in certain BibTeX styles."
+msgstr ""
+
+#: settingsfileio.cpp:230
+msgid "PDF, PostScript and Rich Text Format Export"
+msgstr ""
+
+#: settingsfileio.cpp:232
+msgid ""
+"Select the layout of the resulting PDF, PostScript or Rich Text Format "
+"document when exporting a BibTeX file."
+msgstr ""
+
+#: settingsfileio.cpp:233
+msgid "&Language:"
+msgstr ""
+
+#: settingsfileio.cpp:236
+msgid "&Biblography style:"
+msgstr ""
+
+#: settingsfileio.cpp:240
+msgid "PDF Export"
+msgstr ""
+
+#: settingsfileio.cpp:242
+msgid "Embed local files into PDF if possible"
+msgstr ""
+
+#: settingsfileio.cpp:243
+msgid ""
+"<qt>If checked, KBibTeX tries to embed all referenced files for the BibTeX "
+"entries into the exported PDF file.<br/>This requires that you have "
+"installed <tt>embedfile.sty</tt>.</qt>"
+msgstr ""
+
+#: settingsfileio.cpp:245
+msgid "Export Systems"
+msgstr ""
+
+#: settingsfileio.cpp:247
+msgid "HTML:"
+msgstr ""
+
+#: settingsidsuggestions.cpp:89
+#, c-format
+msgid ""
+"\n"
+"Example: %1"
+msgstr ""
+
+#: settingsidsuggestions.cpp:291
+msgid ""
+"_: id suggestion\n"
+"New"
+msgstr ""
+
+#: settingsidsuggestions.cpp:295
+msgid ""
+"_: id suggestion\n"
+"Edit"
+msgstr ""
+
+#: settingsidsuggestions.cpp:299
+msgid ""
+"_: id suggestion\n"
+"Delete"
+msgstr ""
+
+#: settingsidsuggestions.cpp:303
+msgid ""
+"_: id suggestion\n"
+"Up"
+msgstr ""
+
+#: settingsidsuggestions.cpp:307
+msgid ""
+"_: id suggestion\n"
+"Down"
+msgstr ""
+
+#: settingsidsuggestions.cpp:311
+msgid "Toogle default"
+msgstr ""
+
+#: settingsidsuggestions.cpp:316
+msgid "Use default id suggestion when editing new entries"
+msgstr ""
+
+#: settingskeyword.cpp:83
+msgid "New Keyword"
+msgstr ""
+
+#: settingskeyword.cpp:131
+#, c-format
+msgid ""
+"_n: 1 keyword has been imported.\n"
+"%n keywords have been imported."
+msgstr ""
+
+#: settingskeyword.cpp:131
+msgid "Keywords imported"
+msgstr ""
+
+#: settingskeyword.cpp:158
+msgid ""
+"_: keyword\n"
+"Delete"
+msgstr ""
+
+#: settingskeyword.cpp:162
+msgid ""
+"_: keyword\n"
+"Import"
+msgstr ""
+
+#: settingssearchurl.cpp:108
+msgid ""
+"The list of URLs will be checked and known entries will be replaced by the "
+"program standards. Search entries you have defined by yourself will be kept "
+"most likely."
+msgstr ""
+
+#: settingssearchurl.cpp:108
+msgid "Reset list of URLs"
+msgstr ""
+
+#: settingssearchurl.cpp:108
+msgid "Reset"
+msgstr ""
+
+#: settingssearchurl.cpp:131
+msgid "Description"
+msgstr ""
+
+#: settingssearchurl.cpp:138
+msgid ""
+"_: search url\n"
+"New"
+msgstr ""
+
+#: settingssearchurl.cpp:142
+msgid ""
+"_: search url\n"
+"Edit"
+msgstr ""
+
+#: settingssearchurl.cpp:146
+msgid ""
+"_: search url\n"
+"Delete"
+msgstr ""
+
+#: settingssearchurl.cpp:150
+msgid ""
+"_: search url\n"
+"Reset"
+msgstr ""
+
+#: settingssearchurl.cpp:168
+msgid "New URL"
+msgstr ""
+
+#: settingssearchurl.cpp:168
+msgid "Edit URL"
+msgstr ""
+
+#: settingssearchurl.cpp:171
+msgid "Description:"
+msgstr ""
+
+#: settingssearchurl.cpp:176
+msgid "URL:"
+msgstr ""
+
+#: settingssearchurl.cpp:182
+msgid "Within the URL, '%1' will be replaced by the search term."
+msgstr ""
+
+#: settingssearchurl.cpp:183
+msgid "Include Author:"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:62 settingsuserdefinedinput.cpp:74
+#: settingsuserdefinedinput.cpp:228 settingsuserdefinedinput.cpp:237
+#: settingsuserdefinedinput.cpp:247 settingsuserdefinedinput.cpp:253
+msgid "Single line"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:74 settingsuserdefinedinput.cpp:229
+#: settingsuserdefinedinput.cpp:247 settingsuserdefinedinput.cpp:253
+msgid "Multiple lines"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:168
+msgid "Name"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:170
+msgid "Label"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:180
+msgid ""
+"_: user-defined input\n"
+"New"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:183
+msgid ""
+"_: user-defined input\n"
+"Edit"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:186
+msgid ""
+"_: user-defined input\n"
+"Delete"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:189
+msgid ""
+"_: user-defined input\n"
+"Up"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:193
+msgid ""
+"_: user-defined input\n"
+"Down"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:209
+msgid "New Field"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:209
+msgid "Edit Field"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:212
+msgid "Name:"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:217
+msgid "Label:"
+msgstr ""
+
+#: settingsuserdefinedinput.cpp:223
+msgid "Input Type:"
+msgstr ""
+
+#: sidebar.cpp:110
+msgid "Toggle between showing all fields or only important fields"
+msgstr ""
+
+#: sidebar.cpp:114
+msgid "Filter this sidebar for a given field"
+msgstr ""
+
+#: sidebar.cpp:117
+msgid "#"
+msgstr ""
+
+#: sidebar.cpp:118
+msgid "Items"
+msgstr ""
+
+#: sidebar.cpp:124
+msgid "Rename all occurrences"
+msgstr ""
+
+#: valuewidget.cpp:39
+msgid "Edit field '%1'"
+msgstr ""
+
+#: valuewidget.cpp:137
+#, c-format
+msgid ""
+"_: May only contain ASCII characters, in case of doubt keep English form\n"
+"NewValue%1"
+msgstr ""
+
+#: valuewidget.cpp:205
+msgid "Checked entries are string keys, unchecked entries are quoted text."
+msgstr ""
+
+#: valuewidget.cpp:232
+msgid "Toggle"
+msgstr ""
+
+#: webquery.cpp:136
+msgid "&Import"
+msgstr ""
+
+#: webquery.cpp:136
+msgid "Import selected items"
+msgstr ""
+
+#: webquery.cpp:175
+#, c-format
+msgid "Search %1"
+msgstr ""
+
+#: webquery.cpp:189
+msgid "Searching"
+msgstr ""
+
+#: webquery.cpp:189 webquery.cpp:192
+#, c-format
+msgid "Searching %1"
+msgstr ""
+
+#: webquery.cpp:247
+msgid "&Engine:"
+msgstr ""
+
+#: webquery.cpp:258
+msgid "Search &term:"
+msgstr ""
+
+#: webquery.cpp:269
+msgid "&Number of results:"
+msgstr ""
+
+#: webquery.cpp:277
+msgid "&Search"
+msgstr ""
+
+#: webquery.cpp:294
+msgid "Import all hits"
+msgstr ""
+
+#: webqueryamatex.cpp:47
+msgid "Amatex"
+msgstr ""
+
+#: webqueryamatex.cpp:52
+msgid "About Amatex"
+msgstr ""
+
+#: webqueryamatex.cpp:109 webquerybibsonomy.cpp:98 webquerycitebase.cpp:99
+#: webquerydblp.cpp:136 webquerygooglescholar.cpp:98 webquerypubmed.cpp:123
+#: webquerypubmed.cpp:135 webqueryspireshep.cpp:99 webqueryzmath.cpp:98
+msgid "Querying database '%1' failed."
+msgstr ""
+
+#: webqueryarxiv.cpp:49
+msgid "arXiv"
+msgstr ""
+
+#: webqueryarxiv.cpp:54
+msgid "arXiv is an archive for electronic preprints"
+msgstr ""
+
+#: webquerybibsonomy.cpp:47
+msgid "BibSonomy"
+msgstr ""
+
+#: webquerybibsonomy.cpp:52
+msgid "BibSonomy - A social bookmark and publication sharing system"
+msgstr ""
+
+#: webquerycitebase.cpp:47
+msgid "Citebase"
+msgstr ""
+
+#: webquerycitebase.cpp:52
+msgid "Citebase Search is a semi-autonomous citation index"
+msgstr ""
+
+#: webquerydblp.cpp:48
+msgid "DBLP"
+msgstr ""
+
+#: webquerydblp.cpp:53
+msgid "DBLP - Copyright"
+msgstr ""
+
+#: webquerygooglescholar.cpp:48
+msgid "Google Scholar"
+msgstr ""
+
+#: webquerygooglescholar.cpp:53
+msgid "About Google Scholar"
+msgstr ""
+
+#: webquerypubmed.cpp:53
+msgid "NCBI (PubMed)"
+msgstr ""
+
+#: webquerypubmed.cpp:58
+msgid "NCBI's Disclaimer and Copyright"
+msgstr ""
+
+#: webqueryspireshep.cpp:34
+msgid "DESY (Germany)"
+msgstr ""
+
+#: webqueryspireshep.cpp:34
+msgid "FNAL (U.S.A.)"
+msgstr ""
+
+#: webqueryspireshep.cpp:34
+msgid "IHEP (Russia)"
+msgstr ""
+
+#: webqueryspireshep.cpp:34
+msgid "Durham U (U.K.)"
+msgstr ""
+
+#: webqueryspireshep.cpp:34
+msgid "SLAC (U.S.A.)"
+msgstr ""
+
+#: webqueryspireshep.cpp:34
+msgid "YITP (Japan)"
+msgstr ""
+
+#: webqueryspireshep.cpp:34
+msgid "LIPI (Indonesia)"
+msgstr ""
+
+#: webqueryspireshep.cpp:49
+msgid "SPIRES-HEP"
+msgstr ""
+
+#: webqueryspireshep.cpp:54
+msgid "SPIRES-HEP Search"
+msgstr ""
+
+#: webqueryzmath.cpp:49
+msgid "Zentralblatt MATH"
+msgstr ""
+
+#: webqueryzmath.cpp:54
+msgid "About Zentralblatt MATH"
+msgstr ""

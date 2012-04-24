@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=KBibTeXPart
+Name[et]=KBibTeX komponent
+Name[hi]=KBibTeXपार्ट
+Name[sv]=KBibTeX-del
+Name[ta]=KBibTeXபாகம்
+Name[xx]=xxKBibTeXPartxx
+Name[pl]=Moduł KBibTeX
+Name[pt_BR]=Parte do KBibTeX
+Name[de]=Einbettungsfähige Komponente von KBibTeX
+MimeType=text/x-bibtex;application/x-endnote-library;
+ServiceTypes=KParts/ReadOnlyPart,KParts/ReadWritePart
+X-KDE-Library=libkbibtexpart
+Type=Service

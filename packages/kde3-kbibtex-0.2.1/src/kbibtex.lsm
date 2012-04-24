@@ -1,0 +1,15 @@
+Begin3
+Title:          KBibTeX -- A BibTeX editor for KDE
+Version:        0.2.1
+Entered-date:
+Description:    A KDE program to create and edit BibTeX files for LaTeX
+Keywords:       KDE BibTeX
+Author:         Thomas Fischer <fischer@unix-ag.uni-kl.de>
+Maintained-by:  Thomas Fischer <fischer@unix-ag.uni-kl.de>
+Home-page:      http://www.unix-ag.uni-kl.de/~fischer/kbibtex/
+Alternate-site:
+Primary-site:   www.unix-ag.uni-kl.de /~fischer/kbibtex/download
+                620kB  kbibtex-0.2.1.tar.bz2
+Platform:       Linux. Needs KDE 3.x
+Copying-policy: GPL	
+End

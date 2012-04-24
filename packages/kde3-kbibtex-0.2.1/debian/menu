@@ -1,0 +1,2 @@
+?package(kbibtex):needs="X11" section="Applications/Editors"\
+  title="KBiBTeX" command="/opt/kde3/bin/kbibtex"

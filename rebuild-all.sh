@@ -71,12 +71,12 @@ kwin-decor-suse2
 amarok
 k3b
 katapult
+kbibtex
 kdbg
 kdesudo
 kdiff3
 kile
 konversation
-ktorrent
 yakuake
 "
 

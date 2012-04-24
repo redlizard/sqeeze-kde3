@@ -1,0 +1,9 @@
+Please goto this address for more information:
+
+  http://www.unix-ag.uni-kl.de/~fischer/kbibtex/
+
+
+Note: To compile KBibTeX from source, you will need some
+devel packages from your distribution. Names may differ,
+but you need at least devel packages from Qt and KDE.
+

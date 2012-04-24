@@ -1,0 +1,155 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="kbibtex_part" version="1">
+<MenuBar>
+  <Menu name="file">
+    <Action name="file_merge"/>
+    <Action name="file_save"/>
+    <Action name="file_save_as"/>
+    <Action name="file_export"/>
+    <Separator/>
+    <Action name="file_statistics"/>
+  </Menu>
+  <Menu name="edit"><text>&amp;Edit</text>
+    <Action name="edit_undo" />
+    <Separator/>
+    <Action name="edit_cut"/>
+    <Action name="edit_copy"/>
+    <Action name="edit_copyref"/>
+    <Action name="edit_paste"/>
+    <Separator/>
+    <Action name="edit_select_all"/>
+    <Separator/>
+    <Action name="edit_find"/>
+    <Action name="edit_find_next"/>
+  </Menu>
+  <Menu name="element"><text>E&amp;lement</text>
+    <Menu name="element_new"><text>&amp;New</text>
+      <Action name="element_new_entry_article" />
+      <Action name="element_new_entry_book" />
+      <Action name="element_new_entry_booklet" />
+      <Action name="element_new_entry_electronic" />
+      <Action name="element_new_entry_inbook" />
+      <Action name="element_new_entry_incollection" />
+      <Action name="element_new_entry_inproceedings" />
+      <Action name="element_new_entry_manual" />
+      <Action name="element_new_entry_mastersthesis" />
+      <Action name="element_new_entry_misc" />
+      <Action name="element_new_entry_phdthesis" />
+      <Action name="element_new_entry_proceedings" />
+      <Action name="element_new_entry_techreport" />
+      <Action name="element_new_entry_unpublished" />
+      <Separator/>
+      <Action name="element_new_preamble" />
+      <Action name="element_new_comment" />
+      <Action name="element_new_macro" />
+    </Menu>
+    <Action name="element_edit" />
+    <Action name="element_delete" />
+    <Separator/>
+    <Action name="search_document_online"/>
+    <Action name="view_document"/>
+    <Action name="assign_keywords"/>
+    <Separator/>
+    <Action name="element_sendtolyx"/>
+    <Separator/>
+    <Action name="search_onlinedatabases"/>
+  </Menu>
+  <Menu name="view"><text>&amp;View</text>
+    <Action name="view_showmacros" />
+    <Action name="view_showcomments" />
+    <Action name="view_showcolumns" />
+  </Menu>
+  <Menu name="settings"><text>Se&amp;ttings</text>
+    <Action name="show_statusbar" append="show_merge"/>
+    <!-- <Action name="useinpipe" /> -->
+    <Action name="options_configure" />
+    <Action name="options_configure_editor" />
+  </Menu>
+</MenuBar>
+<ToolBar name="mainToolBar">
+  <Action name="file_save"/>
+</ToolBar>
+<Menu name="popup_bibtexlist">
+  <Menu name="element_new"><text>&amp;New</text>
+    <Action name="element_new_entry_article" />
+    <Action name="element_new_entry_book" />
+    <Action name="element_new_entry_booklet" />
+    <Action name="element_new_entry_electronic" />
+    <Action name="element_new_entry_inbook" />
+    <Action name="element_new_entry_incollection" />
+    <Action name="element_new_entry_inproceedings" />
+    <Action name="element_new_entry_manual" />
+    <Action name="element_new_entry_mastersthesis" />
+    <Action name="element_new_entry_misc" />
+    <Action name="element_new_entry_phdthesis" />
+    <Action name="element_new_entry_proceedings" />
+    <Action name="element_new_entry_techreport" />
+    <Action name="element_new_entry_unpublished" />
+    <Separator/>
+    <Action name="element_new_preamble" />
+    <Action name="element_new_comment" />
+    <Action name="element_new_macro" />
+  </Menu>
+  <Action name="element_edit" />
+  <Action name="element_delete" />
+  <Separator/>
+  <Action name="search_document_online"/>
+  <Action name="view_document"/>
+  <Action name="assign_keywords"/>
+  <Separator/>
+  <Action name="element_sendtolyx"/>
+  <Separator/>
+  <Action name="edit_cut"/>
+  <Action name="edit_copy"/>
+  <Action name="edit_copyref"/>
+  <Action name="edit_paste"/>
+</Menu>
+<Menu name="popup_newelements">
+  <Action name="element_new_entry_article" />
+  <Action name="element_new_entry_book" />
+  <Action name="element_new_entry_booklet" />
+  <Action name="element_new_entry_electronic" />
+  <Action name="element_new_entry_inbook" />
+  <Action name="element_new_entry_incollection" />
+  <Action name="element_new_entry_inproceedings" />
+  <Action name="element_new_entry_manual" />
+  <Action name="element_new_entry_mastersthesis" />
+  <Action name="element_new_entry_misc" />
+  <Action name="element_new_entry_phdthesis" />
+  <Action name="element_new_entry_proceedings" />
+  <Action name="element_new_entry_techreport" />
+  <Action name="element_new_entry_unpublished" />
+  <Separator/>
+  <Action name="element_new_preamble" />
+  <Action name="element_new_comment" />
+  <Action name="element_new_macro" />
+</Menu>
+<Menu name="ktexteditor_popup" noMerge="1">
+  <Menu name="element_new"><text>&amp;New</text>
+    <Action name="element_new_entry_article" />
+    <Action name="element_new_entry_book" />
+    <Action name="element_new_entry_booklet" />
+    <Action name="element_new_entry_electronic" />
+    <Action name="element_new_entry_inbook" />
+    <Action name="element_new_entry_incollection" />
+    <Action name="element_new_entry_inproceedings" />
+    <Action name="element_new_entry_manual" />
+    <Action name="element_new_entry_mastersthesis" />
+    <Action name="element_new_entry_misc" />
+    <Action name="element_new_entry_phdthesis" />
+    <Action name="element_new_entry_proceedings" />
+    <Action name="element_new_entry_techreport" />
+    <Action name="element_new_entry_unpublished" />
+    <Separator/>
+    <Action name="element_new_preamble" />
+    <Action name="element_new_comment" />
+    <Action name="element_new_macro" />
+  </Menu>
+  <Separator/>
+  <Action name="edit_undo" />
+  <Separator/>
+  <Action name="edit_cut" />
+  <Action name="edit_copy" />
+  <Action name="edit_paste" />
+</Menu>
+</kpartgui>

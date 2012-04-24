@@ -1,0 +1,66 @@
+2005-Aug-05
+Warnings during compilation fixed/removed.
+
+2005-Aug-04
+Toolbar and read-only mode handling for embedding into e.g. Konqueror improved.
+
+2005-Aug-02
+Instead of a find dialog a search widget as part of the toolbar is used.
+
+2005-July-31
+UI Bugfixes regarding saving files.
+
+2005-July-22
+Bugfixes and UI Improvements. The entry widget's warning list has been improved.
+
+2005-July-15
+Bugfixes and UI improvements. The entry widget has a list, where warnings about missing fields will be shown (currently alpha).
+
+2005-July-02
+New application icon. When closing the application, user gets asked if he wants to save the modified file.
+
+2005-June-30
+Some bugfixes due to reports by Christian Nolte and Ingo Stierand.
+
+2005-June-18
+Even more bugfixes. Network-transparent saving of files should work by now.
+
+2005-June-06
+More bugfixes. Internal changes (refactoring).
+
+2005-May-31
+More bugfixes for PDF and PostScript export.
+
+2005-May-29
+Bugfixes for PDF and PostScript export.
+
+2005-May-21
+KBibTeX 20050521 has been released. Preferences dialog for settings and exporting as PDF or PostScript has been added.
+
+2005-May-08
+KBibTeX 20050508 has been released. Last minute bugfix.
+
+2005-May-07
+KBibTeX 20050507 has been released. Some bugs fixed (user fields, searching) and drag&drop to rearrange BibTeX elements added.
+
+2005-Apr-12
+KBibTeX 20050412 has been released. Entries have a colored source view and you can search on Google Scholar for papers.
+
+2005-Mar-24
+KBibTeX 20050324 has been released. Various bug fixes in BibTeX file parsing and encoding fixed.
+
+2005-Mar-16
+KBibTeX 20050316 has been released. Crash during reading unclean files fixed. RPMs für SuSE 9.2 updated.
+
+2005-Mar-16
+KBibTeX 20050315 has been released. Searching for paper titles in Google and CiteSeer added. RPMs für SuSE 9.2 updated.
+
+2005-Mar-14
+RPMs for SuSE 9.2 have been released. You may try to use the source rpm to build rpm files for your favorite rpm-based distribution. Packages for other distributions are welcome.
+
+2005-Mar-05
+KBibTeX 20050305 has been released. Now you can search inside you BibTeX files.
+
+2005-Feb-28
+KBibTeX 20050228 has been released. New features, bugs and fixes.
+

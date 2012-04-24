@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+  <!ENTITY kbibtex "<application>KBibTeX</application>" >
+  <!ENTITY kappname "&kbibtex;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE"><!-- change language only here -->
+]>
+
+<book lang="&language;">
+<title>The KBibTeX Handbook</title>
+
+<bookinfo>
+<authorgroup>
+<author><personname><firstname>Thomas</firstname><surname>Fischer</surname></personname>
+<email>fischer@unix-ag.uni-kl.de</email></author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<copyright>
+<year>2005</year>
+<holder>Thomas Fischer</holder>
+</copyright>
+
+<legalnotice>&GPLNotice;</legalnotice>
+
+<date>2005-11-26</date>
+<releaseinfo>0.00.01</releaseinfo>
+
+<abstract>
+<para>&kbibtex; is a BibTeX editor for &kde; 3.3 and above.</para>
+
+<para>This handbook documents &kbibtex; Version 0.2.x</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KBibTeX</keyword>
+</keywordset>
+
+</bookinfo>
+
+
+<chapter id="introduction">
+<title>Introduction</title>
+
+<para>
+Welcome to &kbibtex;, a BibTeX editor for &kde; version 3.3 and
+above. &kbibtex; allows you to create, edit and export bibliography
+documents. Supported formats include BibTeX and, limited, EndNote.
+</para>
+
+<para>
+&kbibtex; offers the user a simple, yet powerful interface to edit
+and maintain bibliography databases.
+</para>
+
+<section id="helpwanted">
+<title>Help Wanted</title>
+
+<para>
+Currently, this help is only a stub. If you are interested
+in writing a more comprehensive help documentation, please contact
+Thomas Fischer (Project Manager).
+</para>
+
+</section>
+
+</chapter>
+
+<chapter id="credits">
+
+<title>Credits and License</title>
+
+<para>
+&kbibtex; Program copyright 2004, 2005 by the &kbibtex; developer team.
+</para>
+
+<variablelist>
+<title>The &kbibtex; team:</title>
+<varlistentry>
+<term>Thomas Fischer <email>fischer@unix-ag.uni-kl.de</email></term>
+<listitem><para>Project Manager &amp; Core Developer</para></listitem>
+</varlistentry>
+</variablelist>
+
+<para>Documentation copyright 2005 Thomas Fischer
+<email>fischer@unix-ag.uni-kl.de</email></para>
+
+&underGPL;               <!-- GPL License -->
+
+</chapter>
+
+
+</book>
+
+<!--
+Local Variables:
+mode: sgml
+sgml-namecase-general: t
+sgml-namecase-entity: nil
+sgml-general-insert-case: lower
+sgml-minimize-attributes: nil
+sgml-omittag: nil
+End:
+-->
