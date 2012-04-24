@@ -1,0 +1,5981 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY kappname "&konversation;">
+  <!ENTITY package "kdeextragear-2">
+  <!ENTITY irc "<acronym
+>IRC</acronym
+>">
+  <!ENTITY CTCP "<acronym
+>CTCP</acronym
+>">
+  <!ENTITY nickname "<acronym
+>nickname</acronym
+>">
+  <!ENTITY Nickname "<acronym
+>Nickname</acronym
+>">
+  <!ENTITY led "<acronym
+>LED</acronym
+>">
+  <!ENTITY osd "<acronym
+>OSD</acronym
+>">
+  <!ENTITY url "<acronym
+>URL</acronym
+>">
+  <!ENTITY mime "<acronym
+>MIME</acronym
+>">
+  <!ENTITY konviwebsite "http://konversation.kde.org">
+  <!ENTITY % imageobjectco.module "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE"
+> <!-- ONLY If you are writing non-English
+                                     original documentation, change
+                                     the language here -->
+
+  <!-- Do not define any other entities; instead, use the entities
+       from entities/general.entities and $LANG/user.entities. -->
+]>
+
+
+<!-- ................................................................ -->
+
+<!-- The language must NOT be changed here. -->
+<!-- If you are writing original documentation in a language other -->
+<!-- than English, change the language above ONLY, not here -->
+<book lang="&language;">
+
+<!-- This header contains all of the meta-information for the document such
+as Authors, publish date, the abstract, and Keywords -->
+
+<bookinfo>
+<title
+>&konversation;i käsiraamat</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Gary</firstname
+> <othername
+>R.</othername
+> <surname
+>Cramblitt</surname
+> </personname
+> <email
+>garycramblitt@comcast.net</email
+> </author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+> <surname
+>Laane</surname
+> <affiliation
+><address
+><email
+>bald@starman.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+
+<!-- Note to Translators:
+	This document contains a number of screen images with callouts.  Because the stylesheets do not currently
+	support merging callout images with screen images, the "areaspec" elements herein are dummy entries
+	used to satisfy the "callout" elements.
+
+	-grc
+-->
+
+<copyright>
+<year
+>2003-2005</year>
+<holder
+>Gary R. Cramblitt</holder>
+</copyright>
+
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (YYYY-MM-DD) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date
+>2005-05-23</date>
+<releaseinfo
+>0.18</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&konversation; on K Töölaua Keskkonna kasutajasõbralik &irc; klient. </para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeextragear-2</keyword>
+<keyword
+>Konversation</keyword>
+<keyword
+>irc</keyword>
+<keyword
+>interneti retranslatsioonivestlus</keyword>
+<keyword
+>vestlus</keyword>
+<keyword
+>side</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labelled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<!-- CODE SNIPPETS
+The following are useful snippets for cross-referencing to sections of this document.
+If using the snippets plugin, copy them to your snippets.
+Please keep synced with id attributes.
+
+See <link linkend="irc-basics"
+>If you haven't used &irc; before...</link
+> for more information
+See <link linkend="identity"
+>Setting your identity</link
+> for more information
+See <link linkend="identity-away"
+>Setting your identity</link
+> for more information
+See <link linkend="identity-advanced"
+>Setting your identity</link
+> for more information
+See <link linkend="serverlist"
+>Defining new networks, servers and auto join channels</link
+> for more information
+See <link linkend="serverlist-addnetwork"
+>Defining new networks, servers and auto join channels</link
+> for more information
+See <link linkend="serverlist-addserver"
+>Defining new networks, servers and auto join channels</link
+> for more information
+See <link linkend="serverlist-addchannel"
+>Defining new networks, servers and auto join channels</link
+> for more information
+See <link linkend="list-channels"
+>Listing available channels</link
+> for more information
+See <link linkend="channel-screen-tour"
+>A tour of the main screen</link
+> for more information
+See <link linkend="quickconnect"
+>Quick Connect</link
+> for more information
+See <link linkend="irc-cmds"
+>Frequently-used &irc; commands</link
+> for more information
+See <link linkend="query"
+>Private conversations (queries)</link
+> for more information
+See <link linkend="cfg-notifications"
+>Setting notifications</link
+> for more information
+See <link linkend="nicksonline"
+>Monitoring who is online</link
+> for more information
+See <link linkend="highlighting"
+>Message highlighting</link
+> for more information
+See <link linkend="cfg-osd"
+>Configuring On Screen Display (&osd;)</link
+> for more information
+See <link linkend="color-msgs"
+>Sending colorful messages</link
+> for more information
+See <link linkend="nickthemes"
+>Configuring &nickname; themes</link
+> for more information.
+See <link linkend="quick-buttons"
+>Configuring Quick Buttons</link
+> for more information
+See <link linkend="dcc"
+>Sending and receiving files</link
+> for more information
+See <link linkend="linkaddressbook"
+>Integrating with &kaddressbook;</link
+> for more information
+See <link linkend="urlcatcher"
+>Capturing &URL;s from messages.</link
+> for more information
+See <link linkend="webbrowser"
+>Setting your preferred web browser.</link
+> for more information
+See <link linkend="rememberlines"
+>Marking Channel and Query Logs</link
+> for more information
+See <link linkend="logging"
+>Logging</link
+> for more information
+See <link linkend="konvi-cmds"
+>&konversation; commands</link
+> for more information
+See <link linkend="scripting"
+>Scripting</link
+> for more information
+See <link linkend="kapp-mainwindow"
+>The main &konversation; window</link
+> for more information
+See <link linkend="getting-kapp"
+>How to obtain &konversation;</link
+> for more information
+See <link linkend="requirements"
+>Requirements</link
+> for more information
+
+-->
+
+<chapter id="introduction">
+<title
+>Sissejuhatus</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+
+<para
+>&konversation; on &irc; klient &kde; töökeskkonnale (versioon 3.2 või uuem). See pakub järgmisi võimalusi: </para>
+
+<para>
+<itemizedlist>
+<listitem
+><para
+>SSL toetus.</para
+></listitem>
+<listitem
+><para
+>Kasutajasõbralik kaartidega liides.</para
+></listitem>
+<listitem
+><para
+>Kohandatavad kiirnupud sagedamini kasutatavatele käskudele.</para
+></listitem>
+<listitem
+><para
+>Automaatne taasühendumine ja taasliitumine.</para
+></listitem>
+<listitem
+><para
+>Failide saatmine ja saamine (DCC).</para
+></listitem>
+<listitem
+><para
+>Võimalus jälgida, millises olekus on teised kasutajad.</para
+></listitem>
+<listitem
+><para
+>Visuaalsed ja helilised märguanded paljudele sündmustele, näiteks sõnumitele, kus esineb sinu hüüdnimi või kui hüüdnimi, mis on sinu jälgitavate hüüdnimede nimekirjas, tuleb võrku või lahkub võrgust. </para
+></listitem>
+<listitem
+><para
+>Kohandatav sõnumite esiletõstmine hüüdnime või regulaaravaldise alusel.</para
+></listitem>
+<listitem
+><para
+>Võimalus hüüdnime automaatselt lõpetada.</para
+></listitem>
+<listitem
+><para
+>Kõigi &URL;-ide hankimine sõnumist ja nende salvestamine.</para
+></listitem>
+<listitem
+><para
+>Sõnumite esitamine ekraanil isegi rakenduse minimeerimisel.</para
+></listitem>
+<listitem
+><para
+>Võimalus panna hüüdnimesid ignoreeritavate nimekirja.</para
+></listitem>
+<listitem
+><para
+>Automaatne logimine ja logide haldamise võimalused.</para
+></listitem>
+<listitem
+><para
+>Ridade märkimine logifailides.</para
+></listitem>
+<listitem
+><para
+>Skriptide kasutamine.</para
+></listitem>
+<listitem
+><para
+>Põimimine &aadressiraamat;uga.</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>&konversation;i veebilehekülg on <ulink url="&konviwebsite;"
+>&konviwebsite;</ulink
+>. &konversation;i kohta käivaid küsimusi ja vastuseid saab esitada <ulink url="http://lists.sourceforge.net/mailman/listinfo/konversation-users"
+>&konversation;-Users</ulink
+> meililistis. Palun liitu sellega, kui soovid teada saada uutest võimalustest või anda teada vigadest jne. Ainult uutest väljalasetest saab teada, kui liituda meililistiga <ulink url="http://lists.sourceforge.net/mailman/listinfo/konversation-announce"
+>&konversation;-Announce</ulink
+>. See on üsna väikese mahuga list, kus antakse ainult teada uutest väljalasetest või parandustest. </para>
+
+<para
+>&konversation;i arendajatega saab enamasti ühendust &irc; vahendusel <ulink url="irc://irc.kde.org/%23konversation"
+>irc.kde.org kanalil #konversation</ulink
+>. </para>
+
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>&konversation;i kasutamine</title>
+
+<!-- =================================================================== -->
+
+<sect1 id="irc-basics">
+<title
+>Kui sa ei ole varem &irc;-d kasutanud...</title>
+
+<para
+>Hästi lihtsalt öelduna on &irc; Interneti ametlike standarditega kindlaks määratud vestlusprotokoll, mis võib endale nõuda päris palju tunde sinu elust. &irc; kasutamiseks tuleb ühenduda serveriga ja seejärel kanaliga (see on umbes sama, mis jututuba) või siis alustada eravestlust.</para>
+
+<para
+>Serveri ja kanaliga ühendumiseks ava &konversation;. Ilmub <guilabel
+>serverite nimekiri</guilabel
+>.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Serverite nimekiri</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-first-serverlist-1" coords="1 1"/>
+				<area id="pt-first-serverlist-2" coords="1 1"/>
+				<area id="pt-first-serverlist-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="first_serverlist_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Serverite nimekiri</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-first-serverlist-1"
+><para
+>Siin on kirjas seadistatud &irc; <guilabel
+>võrgud</guilabel
+>. &irc; võrk kujutab endast koostööd tegevate serverite kogumit. Sul tuleb võtta ühendust ainult ühe võrku kuuluva serveriga ning sa oled kohe ühendatud terve &irc; võrguga. Ühendumise järel võtab &konversation; automaatselt ühendust kõigi näidatud <guilabel
+>kanal</guilabel
+>itega. &konversation;i esmakordsel käivitamisel ootab sind juba ees <userinput
+><replaceable
+>Freenode</replaceable
+></userinput
+>'i võrk ja <userinput
+><replaceable
+>#kde</replaceable
+></userinput
+> kanal. Valimiseks klõpsa võrgule.</para
+></callout>
+<callout arearefs="pt-first-serverlist-2"
+><para
+>Siia klõpsates on võimalik määrata uus <guilabel
+>võrk</guilabel
+>, sealhulgas server, millega ühendus luuakse, ning <guilabel
+>kanalid</guilabel
+>, millega ühenduse loomise järel automaatselt liitutakse. Täpsemalt räägib sellest osa <link linkend="serverlist"
+>Uute võrkude, serverite ja automaatselt liituvate kanalite määramine</link
+>.</para
+></callout>
+<callout arearefs="pt-first-serverlist-3"
+><para
+>Klõpsa siia valitud &irc; võrgu ja kanaliga ühendumiseks.</para
+></callout>
+</calloutlist>
+</para>
+
+<note>
+<para
+>Kui klõpsad nupule <guibutton
+>Ühenda</guibutton
+> &konversation;i esmakordsel käivitamisel, näed järgmist teadet, mis ütleb, et sinu vaikimisi <guilabel
+>identiteet</guilabel
+> ei ole korrektselt määratud.</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Kontrolli identiteeti</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="checkidentities.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Kontrolli identiteeti</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>&konversation; hangib esmakordsel käivitamisel info kasutaja kohta operatsioonisüsteemist ja täidab saadud infoga vaikimisi identiteedi. Kui operatsioonisüsteemi info kasutaja kohta pole täielik (puudub näiteks tegelik nimi), näed mainitud teadet. Probleemi lahendamiseks klõpsa nupule <guibutton
+>OK</guibutton
+> ja uuri lähemalt <link linkend="identity"
+>Identiteedi määramine</link
+>.</para>
+</note>
+
+<para
+>Ilmub <interface
+>peaaken</interface
+>, mis näitab serverilt kliendile saadetavaid teateid (kui &konversation; serveriga ühendust ei saa, uuri osa <link linkend="faq"
+>Küsimused ja vastused</link
+>). Kui serveri teated on üle ekraani jooksnud, liitub &konversation; valitud kanali või kanalitega. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Kanal.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-first-channel-1" coords="1 1"/>
+				<area id="pt-first-channel-2" coords="1 1"/>
+				<area id="pt-first-channel-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="first_channel_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Kanal</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-first-channel-1"
+><para
+>Seda nimetatakse <interface
+>sisendreaks</interface
+>. Sõnumi saatmiseks kõigile kanalil viibijatele kirjuta siia ona sõnum ja vajuta klahvi &Enter;. Nagu kõigil teistelgi, ilmub sinu sõnum ülal pidevalt edasiliikuvasse kanaliaknasse. Igale sõnumile eelneb selle kirjutamise aeg ja kasutaja hüüdnimi.</para
+></callout>
+
+<callout arearefs="pt-first-channel-2"
+><para
+>Võimalik on liituda mitme serveri ja kanaliga. Iga server, kanal, kanalite nimekiri või üldse mis tahes ekraan saab omaette kaardi. Kõigi saadaolevate kanalite nägemiseks vaata <link linkend="list-channels"
+>saadaolevate kanalite nimekirja</link
+>. Kanaliga ühinemiseks kirjuta sisendreale <userinput
+><command
+>/join</command
+> <replaceable
+>#kanalinimi</replaceable
+></userinput
+> (pane tähele, et <userinput
+>#</userinput
+> on kindlasti vajalik). Käsu <userinput
+><command
+>/join</command
+></userinput
+> asemel võib anda ka lühema <userinput
+><command
+>/j</command
+></userinput
+>. Kanalilt lahkumiseks kirjuta <userinput
+><command
+>/part</command
+></userinput
+>. Mõnele muule serverile või kanalile lülitumiseks klõpsa vastavat kaarti. </para
+></callout>
+
+<callout arearefs="pt-first-channel-3"
+><para
+>Seda nimetatakse <interface
+>hüüdnimede paneeliks</interface
+>. Siin on kirjas iga kanaliga ühinenud kasutaja hüüdnimi, kaasa arvatud sinu enda oma.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+>Need olid kõige olulisemad asjad. Kui soovid rohkem teada saada, loe edasi...</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="identity">
+<title
+>Identiteedi määramine</title>
+
+<para
+>Enne seda, kui hakkad regulaarselt &konversation;it kasutama, peaksid seadistustes kindlaks määrama, kuidas, kellena ja mismoodi sa võrgus esined.</para>
+
+<para
+>Vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Identiteedid</guisubmenu
+> </menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Identiteedid</guilabel
+>. Dialoogi <guilabel
+>Identiteedid</guilabel
+> saab avada ka klõpsuga nupule <guibutton
+>Muuda</guibutton
+> dialoogis <guilabel
+>Võrgu lisamine</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Identiteedid (kaart Üldine)</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-identity-gen-1" coords="1 1"/>
+				<area id="pt-identity-gen-2" coords="1 1"/>
+				<area id="pt-identity-gen-3" coords="1 1"/>
+				<area id="pt-identity-gen-4" coords="1 1"/>
+				<area id="pt-identity-gen-5" coords="1 1"/>
+				<area id="pt-identity-gen-6" coords="1 1"/>
+				<area id="pt-identity-gen-7" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="identities_gen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Identiteedid (kaart Üldine)</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-identity-gen-1"
+><para
+>Klõpsa siia muudetava <guilabel
+>identiteedi</guilabel
+> valimiseks.</para
+></callout>
+<callout arearefs="pt-identity-gen-2"
+><para
+>Nende nuppudega saab <guilabel
+>identiteet</guilabel
+>i lisada, duubeldada, ümber nimetada või eemaldada.</para
+></callout>
+<callout arearefs="pt-identity-gen-3"
+><para
+>Kirjuta siia oma pärisnimi. &irc; ei ole mõeldud sinu varjamiseks sõprade või vaenlaste eest. Pea seda meeles, kui tekib kiusatus midagi kurja ette võtta. Võltsitud "pärisnimi" võib muidugi hoida sind eemal kõikvõimalikest sulle ebameeldivatest tegelastest, aga arvuti, mille taga sa töötad, on nagunii võimalik alati üles leida, nii et päris anonüümseks ei õnnestu sul nii või teisiti jääda.</para
+></callout>
+<callout arearefs="pt-identity-gen-4"
+><para
+>Nuppudega <guibutton
+>Lisa</guibutton
+>, <guilabel
+>Muuda</guilabel
+> ja <guilabel
+>Kustuta</guilabel
+> saab hüüdnimega vastavaid toiminguid ette võtta.</para
+></callout>
+<callout arearefs="pt-identity-gen-5"
+><para
+>Kirjuta siia oma hüüdnimed. Hüüdnimi on nimi, mille all teised kasutajad sind näevad. Võid siin määrata just sellise nime, nagu soovid. Esimene märk peab olema täht, ülejäänud võivad olla tähed, numbrid või ka erimärgid <literal
+>-[]\`_^{}|</literal
+>.</para>
+
+<para
+>Kuna hüüdnimi peab olema serveri ulatuses unikaalne, võib juhtuda, et server keeldub seda aktsepteerimast, kui kellelgi on juba samasugune hüüdnimi. Selleks oleks mõttekas lisada vastavatesse kastidesse alternatiivsed hüüdnimed. Kui server lükkab esimesena sisestatu tagasi, on valmis järgmine hüüdnimi, mida &konversation; sellisel juhul serverile saadab. </para>
+
+<para
+>RFC 2812 kohaselt võib hüüdnimi olla maksimaalselt üheksamärgiline, kuid tegelikult on see serveri otsustada. Serveri maksimumi selgitamiseks võta serveriga ühendust. <interface
+>Serveri sõnumite</interface
+> kaardil otsi üles sõnum <computeroutput
+>[Support]</computeroutput
+>. See võib olla näiteks selline:</para>
+
+<para>
+<computeroutput
+>[18:51] *Eisfuchs* [21:45] [Support] Eisfuchs MODES=4 MAXCHANNELS=20 NICKLEN=16 USERLEN=10 HOSTLEN=63 TOPICLEN=450 KICKLEN=450 CHANNELLEN=30 KEYLEN=23 CHANTYPES=# PREFIX=@+ CASEMAPPING=ascii CAPAB IRCD=dancer </computeroutput>
+</para>
+
+<para
+><computeroutput
+>NICKLEN</computeroutput
+> määrab antud juhul, kui pikk tohib olla hüüdnimi. </para>
+</callout>
+
+<callout arearefs="pt-identity-gen-6"
+><para
+>Nende nuppudega saab muuta hüüdnimede järjekorda. Kõigepealt üritatakse kasutada esimesena seisvat hüüdnime, seejärel teist ja nii edasi.</para
+></callout>
+<callout arearefs="pt-identity-gen-7"
+><para
+>Kui oled oma hüüdnime &irc; võrgus registreerinud, sisesta ka teenus ja oma hüüdnime autentimisel kasutatav parool. Kui &konversation; ühendust loob, saadab rakendus automaatselt serverile <userinput
+><command
+>/msg</command
+> <replaceable
+>teenus</replaceable
+> <command
+>IDENTIFY</command
+> <replaceable
+>parool</replaceable
+></userinput
+>. Kui sa ei tea, mida see tähendab, jäta need sisestamata.</para
+></callout>
+</calloutlist>
+</para>
+
+<anchor id="identity-away"/>
+
+<para
+>Klõpsa kaardile <guilabel
+>Eemalolek</guilabel
+>.</para>
+
+<para>
+	<screenshot>
+		<screeninfo
+>Identiteedid (kaart Eemalolek)</screeninfo>
+		<mediaobjectco>
+			<imageobjectco>
+				<areaspec units="calspair">
+					<area id="pt-identity-away-1" coords="1 1"/>
+					<area id="pt-identity-away-2" coords="1 1"/>
+					<area id="pt-identity-away-3" coords="1 1"/>
+				</areaspec>
+				<imageobject>
+					<imagedata fileref="identities_away_co.png" format="PNG"/>
+				</imageobject>
+			</imageobjectco>
+			<textobject>
+				<phrase
+>Identiteedid (kaart Eemalolek)</phrase>
+			</textobject>
+		</mediaobjectco>
+	</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-identity-away-1"
+><para
+>Kirjuta hüüdnimi, mis osutab, et oled eemal. Kui annad käsu <userinput
+><command
+>/away </command
+><replaceable
+>sõnum</replaceable
+></userinput
+> mis tahes kanalil, millega oled ühinenud antud <guilabel
+>identiteet</guilabel
+>i kasutades, asub tegevusse &konversation; ja sinu hüüdnimi asendatakse <guilabel
+>eemaloleku hüüdnimega</guilabel
+>. Ühtlasi saadetakse <guilabel
+>eemalolekusõnum</guilabel
+> kõigile kanalitele, millega oled antud <guilabel
+>identiteeti</guilabel
+> kasutades liitunud. <userinput
+><replaceable
+>%s</replaceable
+></userinput
+> asemele pannakse <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>. Kui annad käsu <userinput
+><command
+>/away</command
+></userinput
+>, muutub sinu hüüdnimi taas tavaliseks ja <guilabel
+>naasmissõnum</guilabel
+> saadetakse kõigile kanalitele, millega oled antud <guilabel
+>identiteeti</guilabel
+> kasutades liitunud.</para
+></callout>
+<callout arearefs="pt-identity-away-2"
+><para
+>Selle kasti märkimisel lisatakse kanali aknasse alati rõhtrida, kui annad käsu <userinput
+><command
+>/away</command
+></userinput
+>. See tähistab kohta, kus sa eemale läksid. Teised &irc; kasutajad seda ei näe. </para
+></callout>
+<callout arearefs="pt-identity-away-3"
+><para
+>Selle kasti märkimisel saadab &konversation; automaatselt <guilabel
+>eemalolekusõnum</guilabel
+>i kõigile kanalitele, millega oled antud <guilabel
+>identiteeti</guilabel
+> kasutades liitunud. <userinput
+><replaceable
+>%s</replaceable
+></userinput
+> asemele pannakse <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>. Kui annad käsu <userinput
+><command
+>/away</command
+></userinput
+>, muutub sinu hüüdnimi taas tavaliseks ja <guilabel
+>naasmissõnum</guilabel
+> saadetakse kõigile kanalitele, millega oled antud <guilabel
+>identiteeti</guilabel
+> kasutades liitunud.</para>
+
+<note
+><para
+>Paljud kasutajad peavad eemalolekusõnumeid päris häirivaks, seepärast kasuta seda võimalust ettevaatlikult ja ürita arvestada teiste &irc; kasutajate huvidega. </para
+></note>
+</callout>
+</calloutlist>
+</para>
+
+<anchor id="identity-advanced"/>
+
+<para
+>Klõpsa kaardile <guilabel
+>Muud</guilabel
+>.</para>
+
+<para>
+	<screenshot>
+		<screeninfo
+>Identiteedid (kaart Muud)</screeninfo>
+		<mediaobjectco>
+			<imageobjectco>
+				<areaspec units="calspair">
+					<area id="pt-identity-adv-1" coords="1 1"/>
+					<area id="pt-identity-adv-2" coords="1 1"/>
+					<area id="pt-identity-adv-3" coords="1 1"/>
+					<area id="pt-identity-adv-4" coords="1 1"/>
+					<area id="pt-identity-adv-5" coords="1 1"/>
+					<area id="pt-identity-adv-6" coords="1 1"/>
+				</areaspec>
+				<imageobject>
+					<imagedata fileref="identities_adv_co.png" format="PNG"/>
+				</imageobject>
+			</imageobjectco>
+			<textobject>
+				<phrase
+>Identiteedid (kaart Muud)</phrase>
+			</textobject>
+		</mediaobjectco>
+	</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-identity-adv-1"
+><para
+>Siia saab sisestada käsu, mis täidetakse enne serveriga ühendumist. Kui kasutad antud identiteeti mitmes serveris, täidetakse käsk neis kõigis.</para
+></callout>
+<callout arearefs="pt-identity-adv-2"
+><para
+>See mõjutab seda, millises kodeeringus saadetakse sinu kirjutatud märgid serverile. Samuti mõjutab see sõnumite näitamist. &konversation;i esmakordsel käivitamisel hangib rakendus kodeeringu operatsioonisüsteemist. Kui sul aga tekib raskusi teiste kasutajate sõnumite nägemisega, võiksid proovida kodeeringut vahetad.</para
+></callout>
+<callout arearefs="pt-identity-adv-3"
+><para
+>Ühendumisel esitavad paljud serverid sinu arvutile IDENT-päringu. Kui sinu arvutis IDENT-serverit ei tööta, saadab &konversation; siinmääratud vastuse. Tühikud ei ole vastuses lubatud. Vaikimisi kasutatakse sinu eesnime.</para
+></callout>
+<callout arearefs="pt-identity-adv-4"
+><para
+>Kui lahkud kanalilt, saadetakse kanalile siinmääratud sõnum.</para
+></callout>
+<callout arearefs="pt-identity-adv-5"
+><para
+>Kui sind kanalilt välja visatakse (tavaliselt saab seda teha &irc; operaator), saadetakse see sõnum kanalile.</para
+></callout>
+<callout arearefs="pt-identity-adv-6"
+><para
+>Klõpsa siia tehtud muudatuste rakendamiseks. Et kõik rakenduks, tuleb ühendus serveriga katkestada ja siis uuesti ühendust võtta. Lihtsaim viis selleks on väljuda &konversation;ist ja see uuesti käivitada.</para
+></callout>
+</calloutlist>
+</para>
+
+<!--
+<para
+>TODO:
+<itemizedlist>
+
+<listitem
+><para>
+The characters allowed in a nick given above comes from RFC 2812.  Any special Konversation considerations?
+</para
+></listitem>
+
+<listitem
+><para>
+Limits on Real Name and Ident?
+</para
+></listitem>
+
+</itemizedlist>
+</para>
+-->
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="serverlist">
+<title
+>Uute võrkude, serverite ja automaatselt liituvate kanalite määramine</title>
+
+<para
+>&konversation;i käivitamisel avatakse aken <guilabel
+>Serverite nimekiri</guilabel
+>. See avatakse ka menüükäsuga <menuchoice
+> <guisubmenu
+>Fail</guisubmenu
+> <guisubmenu
+>Serverite nimekiri</guisubmenu
+> </menuchoice
+>. <action
+>The <guilabel
+>Serverite nimekiri</guilabel
+></action
+> näitab gruppidesse jagatult sinu olemasolevaid &irc; <guilabel
+>võrk</guilabel
+>e. &irc; võrk on koostööd tegevate serverite kogum. Võrgu mis tahes serveriga ühendudes saad ligipääsu kõigile võrgu kanalitele. &irc; võrgud on näiteks <userinput
+><replaceable
+>Freenode</replaceable
+></userinput
+> ja <userinput
+><replaceable
+>Undernet</replaceable
+></userinput
+>. </para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Serverite nimekiri</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-serverlist-1" coords="1 1"/>
+				<area id="pt-serverlist-2" coords="1 1"/>
+				<area id="pt-serverlist-3" coords="1 1"/>
+				<area id="pt-serverlist-4" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="serverlist_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Serverite nimekiri</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-serverlist-1"
+><para
+>Siin on kirjas sinu juba olemasolev <guilabel
+>võrk</guilabel
+> või võrgud, samuti <guilabel
+>identiteet</guilabel
+>, millega sa võrku ühendud, ning <guilabel
+>kanalid</guilabel
+>, millega ühendumisel automaatselt liitutakse. Kui oled määranud võrkudele grupi, näidatakse võrke grupis. Valimiseks klõpsa võrgu nimele. </para
+></callout>
+<callout arearefs="pt-serverlist-2"
+><para
+>Nupuga <guibutton
+>Lisa</guibutton
+> saab lisada uue võrgu, nupuga <guibutton
+>Muuda</guibutton
+> muuta valitud võrku ning nupuga <guibutton
+>Kustuta</guibutton
+> eemaldada valitud võrgu. </para
+></callout>
+<callout arearefs="pt-serverlist-3"
+><para
+>Sellele nupule klõpsates luuakse ühendus valitud <guilabel
+>võrguga</guilabel
+> ja suletakse <guilabel
+>serverite nimekiri</guilabel
+>. Soovi korral võid valida ka mitu võrku, sellisel juhul luuakse ühendus nende kõigiga.</para
+></callout>
+<callout arearefs="pt-serverlist-4"
+><para
+>Klõps sellele nupule ei tähenda mitte tehtud muudatustest loobumist, vaid lihtsalt seda, et sa ei soovi hetkel ühegi võrguga ühenduda.</para
+></callout>
+</calloutlist>
+</para>
+
+<anchor id="serverlist-addnetwork"/>
+
+<para
+>Klõpsuga nupule <guilabel
+>Lisa</guilabel
+> ilmub dialoog <guilabel
+>Võrgu lisamine</guilabel
+>.</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Võrgu lisamine</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-addnetwork-1" coords="1 1"/>
+				<area id="pt-addnetwork-2" coords="1 1"/>
+				<area id="pt-addnetwork-3" coords="1 1"/>
+				<area id="pt-addnetwork-4" coords="1 1"/>
+				<area id="pt-addnetwork-5" coords="1 1"/>
+				<area id="pt-addnetwork-6" coords="1 1"/>
+				<area id="pt-addnetwork-7" coords="1 1"/>
+				<area id="pt-addnetwork-8" coords="1 1"/>
+				<area id="pt-addnetwork-9" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="addnetwork_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Võrgu lisamine</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-addnetwork-1"
+><para
+>Siia tuleb kirjutada <guilabel
+>võrgu</guilabel
+> nimi. <guilabel
+>Serverite nimekirjas</guilabel
+> võib olla ka ühesuguse nimega <guilabel
+>võrk</guilabel
+>e just nii palju, kui sa vaid soovid.</para
+></callout>
+<callout arearefs="pt-addnetwork-2"
+><para
+>Lisavõimalus. Kui siia midagi kirjutada, näidatakse <guilabel
+>serverite nimekirjas</guilabel
+> samasse <guilabel
+>grupp</guilabel
+>i kuuluvaid <guilabel
+>võrk</guilabel
+>e üheskoos.</para
+></callout>
+<callout arearefs="pt-addnetwork-3"
+><para
+>Vali olemasolev <guilabel
+>identiteet</guilabel
+> või klõpsa nupule <guibutton
+>Muuda</guibutton
+>, kui soovid lisada uue identiteedi või olemasolevat muuta. <guilabel
+>Identiteet</guilabel
+>i kasutatakse sinu tuvastamiseks ja sinu hüüdnime määramiseks ühenduse loomisel võrguga.</para
+></callout>
+<callout arearefs="pt-addnetwork-4"
+><para
+>Lisavõimalus. See käsk saadetakse serverile pärast ühendumist. Näide: <userinput
+>/msg NickServ IDENTIFY <replaceable
+>konvirocks</replaceable
+></userinput
+>. See näide käib freenode võrgu kohta, mis nõuab, et kasutaja ühendumisel oma hüüdnime parooli ja kasutajanimega registreeriks. <userinput
+><replaceable
+>konvirocks</replaceable
+></userinput
+> on parool hüüdnimele, mis on antud kaardil <guilabel
+>Vaikeidentiteet</guilabel
+>. Korraga võib anda ka mitu käsku, eraldades need semikooloniga.</para
+></callout>
+<callout arearefs="pt-addnetwork-5"
+><para
+>Selle kasti märkimisel loob &konversation; automaatselt ühenduse antud võrguga &konversation;i käivitamisel.</para
+></callout>
+<callout arearefs="pt-addnetwork-6"
+><para
+>See on võrgusolevate &irc; <guilabel
+>serverite</guilabel
+> nimekiri. Võrguga ühendumisel püüab &konversation; ühenduda nimekirjas kõige esimesena seisva serveriga. Kui see ei õnnestu, üritatakse ühenduda nimekirjas teisel kohal seisva serveriga, seejärel kolmandaga ja nii edasi. Määrata tuleb vähemalt üks server. Serveri saab valida selle nimele klõpsates.</para
+></callout>
+<callout arearefs="pt-addnetwork-7"
+><para
+>Nupuga <guibutton
+>Lisa</guibutton
+> saab serveri lisada, nupuga <guibutton
+>Muuda</guibutton
+> valitud serverit muuta ning nupuga <guibutton
+>Kustuta</guibutton
+> valitud serveri eemaldada. Samuti saab muuta serverite järjekorda nimekirjas, mis muudab ka järjekorda, milles püütakse nendega ühendust luua.</para
+></callout>
+<callout arearefs="pt-addnetwork-8"
+><para
+>Lisavõimalus. See on kanalite nimekiri, millega liitutakse automaatselt pärast seda, kui &konversation; on serveriga ühenduse loonud. Kui see tühjaks jätta, ei liituta automaatselt ühegi kanaliga.</para
+></callout>
+<callout arearefs="pt-addnetwork-9"
+><para
+>Nupuga <guibutton
+>Lisa</guibutton
+> saab kanali lisada, nupuga <guibutton
+>Muuda</guibutton
+> valitud kanalit muuta ning nupuga <guibutton
+>Kustuta</guibutton
+> valitud kanali eemaldada. Muuta saab ka järjekorda, millega kanalitega liitutakse. </para
+></callout>
+</calloutlist>
+</para>
+
+<note
+><para
+>Püüa mitte seada ühe ja sama <guilabel
+>võrgu</guilabel
+> alla erinevate &irc; võrkude kanaleid. Ürita vältida ühe ja sama serveri lisamist erinevatesse <guilabel
+>võrk</guilabel
+>udesse. Vastasel juhul ei pruugi korralikult toimida &konversation;i <link linkend="linkaddressbook"
+>koostöö sinu aadressiraamatuga</link
+> ning <link linkend="nicksonline"
+>võrgusviibijate jälgimine</link
+>.</para>
+</note>
+
+<anchor id="serverlist-addserver"/>
+
+<para
+>Klõpsuga  nupule <guibutton
+>Lisa</guibutton
+> sektsioonis <guilabel
+>Serverid</guilabel
+> ilmub serveri lisamise dialoog.</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Serveri lisamine</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-addserver-1" coords="1 1"/>
+				<area id="pt-addserver-2" coords="1 1"/>
+				<area id="pt-addserver-3" coords="1 1"/>
+				<area id="pt-addserver-4" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="addserver_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Serveri lisamine</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-addserver-1"
+><para
+>Serveri nimi või IP aadress. Serverite <ulink url="http://www.irchelp.org/irchelp/networks/"
+>nimekirja</ulink
+> haldab irchelp.org.</para
+></callout>
+<callout arearefs="pt-addserver-2"
+><para
+>Sisesta port, mida on vaja serveriga ühendumiseks. Enamasti peaks sobima <userinput
+>6667</userinput
+>.</para
+></callout>
+<callout arearefs="pt-addserver-3"
+><para
+>Kui server nõuab ühinemiseks parooli, anna see siin, muidu jäta tühjaks.</para
+></callout>
+<callout arearefs="pt-addserver-4"
+><para
+>Selle märkimisel saab serveriga suhtlemiseks kasutada turvalise soklikihi (SSL) protokolli. See tagab sinu arvuti ja &irc; serveri suhtlemise privaatsuse. Selleks peab aga SSL protokolli toetama ka server. Kui server seda ei toeta, siin enamasti ei õnnestugi ühendust luua.</para
+></callout>
+</calloutlist>
+</para>
+
+<anchor id="serverlist-addchannel"/>
+
+<para
+>Klõpsuga  nupule <guibutton
+>Lisa</guibutton
+> sektsioonis <guilabel
+>Automaatne liitumine kanalitega</guilabel
+> ilmub <guilabel
+>kanali lisamise</guilabel
+> dialoog.</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Kanali lisamine</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="addchannel.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Kanali lisamine</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Kirjuta siia kanali nimi. Ära unusta selle ette lisamast märki <userinput
+><replaceable
+>#</replaceable
+></userinput
+>. Kui kanal nõuab liitumiseks parooli, anna ka see siin, vastasel juhul jäta vastav lahter tühjaks. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="list-channels">
+<title
+>Saadaolevate kanalite nimekiri</title>
+
+<para
+>Saadaolevate kanalite nägemiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Aknad</guisubmenu
+> <guisubmenu
+>Kanalite nimekiri</guisubmenu
+> </menuchoice
+>. <action
+>Pärast hoiatusdialoogi luuakse uus kaart nimetusega <guilabel
+>Kanalite nimekiri</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Kanalite nimekirja kaart.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-channellist-1" coords="1 1"/>
+				<area id="pt-channellist-2" coords="1 1"/>
+				<area id="pt-channellist-3" coords="1 1"/>
+				<area id="pt-channellist-4" coords="1 1"/>
+				<area id="pt-channellist-5" coords="1 1"/>
+				<area id="pt-channellist-6" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="channellist_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Kanalite nimekirja kaart.</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-channellist-1"
+><para
+>Sisesta siia filtristring.</para
+></callout>
+
+<callout arearefs="pt-channellist-2"
+><para
+>Kanalite nimekirja saab kärpida, kui siin määrata sellel olevate kasutajate miinimum või maksimum. 0 tühistab vastava parameetri kasutamise.</para
+></callout>
+
+<callout arearefs="pt-channellist-3"
+><para
+>Klõpsa siia serverist kanalite nimekirja tõmbamiseks ja filtri rakendamiseks.</para
+></callout>
+
+<callout arearefs="pt-channellist-4"
+><para
+>Siin on näha kanalite nimekiri. Pane tähele, et kui sa ei kasuta regulaaravaldisi, näitab &konversation; kõiki kanaleid, mille nimi sisaldab sisestatud filtristringi. Kanali nimi ei pea ilmtingimata algama sisestatud filtristringiga.</para
+></callout>
+
+<callout arearefs="pt-channellist-5"
+><para
+>Vali klõpsuga kanal, millega soovid liituda. Paremklõps kanali nimel näitab kõiki kanali teemas mainitud veebiaadresse.</para
+></callout>
+
+<callout arearefs="pt-channellist-6"
+><para
+>Klõpsa siia kanaliga liitumiseks. Kanalile luuakse uus kaart.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+>Võimaluse korral tuleks vältida nupu <guibutton
+>Värskenda nimekirja</guibutton
+> kasutamist. Enamikul serveritest on tuhandeid kanaleid ning selle käsu andmine paneb serverile korraliku koormuse. Pealegi kulub selleks sõltuvalt sinu internetiühenduse võimekusest päris mitu minutit. Kui klient on liiga aeglane, võib server isegi sinuga ühenduse katkestada. </para>
+
+<para
+>Mõnikord on serveris "salajasi kanaleid", mida mõistagi <guilabel
+>kanalite nimekiri</guilabel
+> ei näita. Nendega saab siiski liituda, kui tead kanali täpset nime. Selleks kirjuta <interface
+>sisendreale</interface
+> <userinput
+><command
+>/join</command
+> <replaceable
+>#kanalinimi</replaceable
+></userinput
+> (<userinput
+>#</userinput
+> on kindlasti vajalik). Kanalile luuakse uus kaart. Kui liitud kanaliga ja hüüdnimede paneelil asetseb ainult sinu enda &nickname;, tähendab see, et antud kanalit ei olnud varem olemas. Server lõi selle ja sina oled sellel nüüd operaator. Sellisel juhul on usutavasti mõttekas kanal sulgeda, kirjutades käsu <userinput
+><command
+>/part</command
+></userinput
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="channel-screen-tour">
+<title
+>Peaakna tutvustus</title>
+
+<para
+>Vaatame lähemalt, mida siis sisaldab <interface
+>peaaken</interface
+>. Alltoodud pildil on see näha avatud kanalikaardiga.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Peaaken.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-channeltour-1" coords="1 1"/>
+				<area id="pt-channeltour-2" coords="1 1"/>
+				<area id="pt-channeltour-3" coords="1 1"/>
+				<area id="pt-channeltour-4" coords="1 1"/>
+				<area id="pt-channeltour-5" coords="1 1"/>
+				<area id="pt-channeltour-6" coords="1 1"/>
+				<area id="pt-channeltour-7" coords="1 1"/>
+				<area id="pt-channeltour-8" coords="1 1"/>
+				<area id="pt-channeltour-9" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="channel_screen_tour_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Peaaken</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-channeltour-1"
+><para
+>See kannab nimetust <interface
+>sisendrida</interface
+>. See on näha ainult siis, kui tegemist on kanalikaardiga. Sõnumi saatmiseks kõigile kanalil viibijatele kirjuta siia oma sõnum ja vajuta klahvi &Enter;. Nagu teiste, nii ka sinu sõnum ilmub üleval vastavalt sõnumite kirjutamisele pidevalt edasiliikuvasse aknasse. Igale sõnumile eelneb selle kirjutamise aeg ja kirjutaja hüüdnimi.</para>
+
+ <para
+>Teksti võib asetada ka lõikepuhvrist. Kui asetatud tekstis on enam kui üks rida (see tähendab, reavahetusi), ilmub dialoog. Redigeeri teksti, et see võtaks sulle meelepärase kuju ja klõpsa <guibutton
+>OK</guibutton
+>. </para>
+
+ <para
+>Kui asetatud tekst on pikem kui 256 sümbolit või sisaldab enam kui ühe rea, ilmub hoiatus, mis teatab, et pikad sõnumid võivad põhjustada ühenduse katkestusi ja üleujutusi. Sa võid muidugi ka sellisel juhul sõnumi teele saata, kuid see pole üldse eriti hea mõte, sest üleujutus ei meeldi kindlasti teistele kasutajatele ja pealegi võib server sinuga ühenduse katkestada. Märksa mõttekam oleks saata sõnum teele lühemate tükkidena.</para>
+
+ <!-- Uncomment when this is implemented.
+ &konversation; will automatically split messages that exceed the 510 character RFC limit into multiple messages.
+ -->
+
+ <para
+>Paljudel kanalitel on kombeks lisada konkreetsele kasutajale mõeldud sõnumi ette ka tema hüüdnimi. &konversation; pakub mugava võimaluse hüüdnimi automaatselt lõpetada. Alusta kirjutamist ja kui hüüdnime on juba paari tähe jagu kirja pandud, vajuta klahvi <keycap
+>Tab</keycap
+>. &konversation; hoolitseb ise selle eest, et hüüdnimi saaks korrektselt lõpetatud ja ka koolon selle järele lisatud. Lõpetamisvõimaluse kohandamiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> </menuchoice
+>, ava ilmuvas dialoogis kaart <guilabel
+>Käitumine</guilabel
+>, seejärel <guilabel
+>Üldine</guilabel
+>ning siis <guilabel
+>Lõpetamise režiim</guilabel
+> </para>
+
+ <para
+>Siia võib ka sisestada mõne &irc; käsu, kirjutades kõigepealt <userinput
+><command
+>/</command
+></userinput
+> ja seejärel mõne kehtiva &irc; käsu (vaata osa <link linkend="irc-cmds"
+>Sagedamini kasutatavad &irc; käsud</link
+>). Mõne serveri korral võib anda käsu <userinput
+><command
+>/help</command
+></userinput
+>, mis näitab saadaolevaid käske, või siis <userinput
+><command
+>/help</command
+> <replaceable
+>käsk</replaceable
+></userinput
+>, mis näitab abi konkreetse käsu kohta. </para
+></callout>
+
+<callout arearefs="pt-channeltour-2">
+
+<para
+>Liituda võib mitme serveri ja kanaliga. Iga server ja kanal saab peaaknas eraldi kaardi. Kõigi kanalite nimekirja saamise kohta vaata osa <link linkend="list-channels"
+>Saadaolevate kanalite nimekiri</link
+>. Kanaliga liitumiseks anna sisendreal käsk <userinput
+><command
+>/join</command
+> <replaceable
+>#kanalinimi</replaceable
+></userinput
+> (<userinput
+>#</userinput
+> on kindlasti vajalik). Kanalilt lahkumiseks anna käsk <userinput
+><command
+>/part</command
+></userinput
+>. Kaardid on näha ka siis, kui avad <guilabel
+>kanalite nimekirja</guilabel
+>, pead <link linkend="query"
+>privaatvestlust</link
+>, avad <guilabel
+>&URL; püüdja</guilabel
+> või ühe või rohkem <guilabel
+>konsooli</guilabel
+>. Teisele kaardile lülitumiseks klõpsa vastava kaardi tähisele või kasuta nende vahel liikumiseks hiireratast. </para>
+
+<para
+>Kaartide kohandamiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+></menuchoice
+> ning ilmuvast dialoogist <guilabel
+>Käitumine</guilabel
+> ja <guilabel
+>Üldine</guilabel
+>. </para>
+
+</callout>
+
+<callout arearefs="pt-channeltour-3"
+><para
+>Need tulukesed (&led;) hakkavad vilkuma, kui kaardil juhtub midagi, mida sa veel näinud pole. &led; vilgub aeglasemalt, kui nägemata sõnumid on kõigest käsud <command
+>join</command
+>, <command
+>part</command
+>, <command
+>quit</command
+> või on kellegi hüüdnimi muutunud. Nad vilguvad aga kiiremini, kui tegemist on päris sõnumiga. Värvid tähendavad järgmist: <itemizedlist>
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="led_green_on.png" format="PNG"/></imageobject
+></inlinemediaobject
+> Kanal </para>
+</listitem>
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="led_blue_on.png" format="PNG"/></imageobject
+></inlinemediaobject
+> <interface
+>Serveri sõnumid</interface
+>, <link linkend="list-channels"
+>kanalite nimekiri</link
+> või <guilabel
+>&URL; püüdja</guilabel
+>. </para>
+</listitem>
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="led_yellow_on.png" format="PNG"/></imageobject
+></inlinemediaobject
+> <guilabel
+>Konsool</guilabel
+> või <link linkend="dcc"
+>DCC olek</link
+>. </para>
+</listitem>
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="led_red_on.png" format="PNG"/></imageobject
+></inlinemediaobject
+> <link linkend="query"
+>Privaatsõnum (päring)</link
+>. </para>
+</listitem>
+</itemizedlist>
+</para
+></callout>
+
+<callout arearefs="pt-channeltour-4"
+><para
+>Klõpsa siia kaardi sulgemiseks. <interface
+>Kanal</interface
+>i kaardi sulgemisega lahkud kanalilt. <interface
+>Serveri sõnumite</interface
+> kaardi sulgemisega lahkud kõigilt kanalitelt, millega olid liitunud, sulged kõik avatud päringud antud serveris ja katkestad ühenduse serveriga.</para
+></callout>
+
+<callout arearefs="pt-channeltour-5"
+><para
+>Sellele nupule klõpsates saad muuta oma hüüdnime. See on näha ainult siis, kui tegemist on kanalikaardiga. Nupu peitmiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> </menuchoice
+>, ava kaart <guilabel
+>Välimus</guilabel
+> ja seejärel <guilabel
+>Vestlusaken</guilabel
+> ning eemalda märge kastist <guilabel
+>Kasti näitamine oma hüüdnime muutmiseks</guilabel
+>. </para
+></callout>
+
+<callout arearefs="pt-channeltour-6"
+><para
+>Siin näeb kanali teemat. Hiirt teema kohal seisma jättes näeb seda täies pikkuses. Teemat saab muuta sellest vasakul asuvale nupule klõpsates. Kanali teema peitmiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> </menuchoice
+>, ava kaart <guilabel
+>Välimus</guilabel
+> ja seejärel <guilabel
+>Vestlusaken</guilabel
+> ning eemalda märge kastist <guilabel
+>Kanali teema näitamine</guilabel
+>. </para
+></callout>
+
+<callout arearefs="pt-channeltour-7"
+><para
+>Need nupud näitavad kanalirežiimide parajasti kehtivat olekut. Kui režiim kehtib, on nupp alla vajutatud. Kui sul on vastavad õigused, võid kanali režiime muuta neile nuppudele või siis teemast vasakul asuvale nupule klõpsates. Kanalirežiimi nuppude peitmiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> </menuchoice
+>, ava kaart <guilabel
+>Välimus</guilabel
+> ja seejärel <guilabel
+>Vestlusaken</guilabel
+> ning eemalda märge kastist <guilabel
+>Kanalirežiimi nuppude näitamine</guilabel
+>. </para
+></callout>
+
+<callout arearefs="pt-channeltour-8">
+<para
+>Seda nimetatakse <interface
+>hüüdnimede paneel</interface
+>iks. Seda näidatakse alati, kui avatud on kanalikaart. Siin on kirjas iga kanaliga liitunud kasutaja hüüdnimi, kaasa arvatud sinu enda oma. Hiirt mõne hüüdnime kohale viies näeb antud kasutaja kohta lisainfot. Seda, millist ikooni näidatakse hüüdnimede juures, saab muuta hüüdnimede ikooniteemat vahetades. Täpsemalt räägib sellest osa <link linkend="nickthemes"
+>Hüüdnimeteemade seadistamine</link
+>. Teema <guilabel
+>Big Bullets</guilabel
+> korral, mida näeb siinsel pildi, kasutatakse järgmisi ikoone: <itemizedlist>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_normal.png" format="PNG"/></imageobject
+></inlinemediaobject
+> tavaline kasutaja </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_voice.png" format="PNG"/></imageobject
+></inlinemediaobject
+> häälega kasutaja, kes võib kõnelda modereeritaval kanalil. </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_halfop.png" format="PNG"/></imageobject
+></inlinemediaobject
+> kanali pooloperaator </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_op.png" format="PNG"/></imageobject
+></inlinemediaobject
+> kanali operaator </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_owner.png" format="PNG"/></imageobject
+></inlinemediaobject
+> kanali omanik </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_admin.png" format="PNG"/></imageobject
+></inlinemediaobject
+> kanali administraator </para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+<para
+>Kui kasutaja on eemal, näidatakse ikooni peal väikest punast risti. <inlinemediaobject
+><imageobject
+><imagedata fileref="irc_away.png" format="PNG"/></imageobject
+></inlinemediaobject
+></para>
+
+<para
+>Kui valida mõni hüüdnimi ja klõpsata sellel &HPN;ga, ilmub kontekstimenüü operatsioonidega, mida antud hüüdnime puhul on võimalik ette võtta. Näiteks on võimalik <link linkend="dcc"
+>saata fail</link
+> hüüdnimele. Samuti saab nii <link linkend="linkaddressbook"
+>luua seose hüüdnime ja sinu aadressiraamatus oleva kontakti vahel.</link
+> </para>
+
+<para
+><interface
+>Hüüdnimede paneel</interface
+>i peitmiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Aken</guisubmenu
+> <guisubmenu
+>Peida hüüdnimede nimekiri</guisubmenu
+> </menuchoice
+>. </para>
+
+</callout>
+
+<callout arearefs="pt-channeltour-9"
+><para
+>Need on niinimetatud <interface
+>kiirnupud</interface
+>. Vaikimisi neid ei näidata. Sellest, kuidas neid näha, räägib <link linkend="quick-buttons"
+>Kiirnuppude seadistamine</link
+>. Sul on võimalik kõiki nendega seotud käske omatahtsi määrata.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+><emphasis
+>Märkus</emphasis
+>: sul on võimalik määrata, kuidas näidatakse kanali- ja päringuakendes üle ekraani kerivaid sõnumeid. Sa võid näiteks muuta sõnumite värvi, lasta esitada heli teatud stringi sisaldava sõnumi saabumisel või lasta automaatselt teatud sõnumitele vastata. Täpsemalt räägib sellest osa <link linkend="highlighting"
+>Sõnumite esiletõstmine</link
+>. </para>
+
+<para
+><emphasis
+>Märkus:</emphasis
+> kanalinimede alguses seisab mõnikord <userinput
+>&amp;</userinput
+>, <userinput
+>&plus;</userinput
+> või <userinput
+>!</userinput
+>. Kanalinime esimene märk määrab selle tüübi (RFC 2811 kohaselt) järgmiselt: <itemizedlist
+> <listitem
+><para
+> <userinput
+>#</userinput
+> -tavalised kanalid. </para
+></listitem
+> <listitem
+><para
+> <userinput
+>!</userinput
+> -tavalised kanalid. </para
+></listitem
+> <listitem
+><para
+> <userinput
+>&amp;</userinput
+> - kohalikud kanalid, nendega saab ühineda ainult kanalit pakkuvast serverist (kõigi muude kanalitega saab liituda mis tahes serverist). </para
+></listitem
+> <listitem
+><para
+> <userinput
+>&plus;</userinput
+> - kanalid, mis ei toeta kanalirežiime. See tähendab, et sisse ei ole lülitatud ühtki režiimi, välja arvatud kanali lipp 't'. </para
+></listitem
+> </itemizedlist
+> Kanalinimed võivad olla kuni 200 sümbolit pikad ning sisaldada mis tahes sümboleid, välja arvatud tühik, koma ja Ctrl+G. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="quickconnect">
+<title
+>Kiirühendumine</title>
+
+<para
+>Võib juhtuda, et sul on soov ühineda serveriga ilma kogu uue serveri loomist <link linkend="serverlist"
+>serverite nimekirjas</link
+> läbi tegemata. </para>
+
+<para
+>Selleks vali menüükäsk <menuchoice
+> <guisubmenu
+>Fail</guisubmenu
+> <guisubmenu
+>Kiirühendus</guisubmenu
+> </menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Kiirühendus</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Kiirühenduse aken.</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="quickconnect_screen.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Kiirühenduse aken</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Sisesta serveri aadress kasti <guilabel
+>Server</guilabel
+>, meelepärane hüüdnimi kasti <guilabel
+>Hüüdnimi</guilabel
+> ja klõpsa nupule <guibutton
+>Ühenda</guibutton
+>. Kui &konversation; on serveriga ühenduse loonud, anna kanaliga liitumiseks käsk <userinput
+><command
+>/join</command
+> <replaceable
+>#kanalinimi</replaceable
+></userinput
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="irc-cmds">
+<title
+>Sagedamini kasutatavad &irc; käsud</title>
+
+<para
+>Siin on ära toodud sagedamini kasutatavad &irc; käsud. Nende täieliku nimekirja annab <ulink url="http://www.faqs.org/rfcs/rfc2812.html"
+>RFC 2812</ulink
+>, samuti leiab selle veebileheküljelt <ulink url="http://www.irchelp.org/"
+>irchelp.org</ulink
+>. Kui soovid näha käske, mida &konversation; spetsiaalselt kohtleb, vaata osa <link linkend="konvi-cmds"
+>&konversation;i käsud</link
+>. </para>
+
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/help</command
+></userinput
+></term>
+<listitem
+><para
+>Näitab kõiki antud serveris saadaolevaid käske. Kõik serverid seda käsku ei toeta.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/help</command
+> <replaceable
+>käsk</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Näitab abi <userinput
+><replaceable
+>käsu</replaceable
+></userinput
+> kohta. Kõik serverid seda käsku ei toeta.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/join <replaceable
+>#kanal</replaceable
+></command
+></userinput
+></term>
+<listitem
+><para
+>Käsk <userinput
+><replaceable
+>#kanal</replaceable
+></userinput
+>iga liitumiseks. Kui kanalit ei ole olemas, see luuakse ja sa saad selle operaatoriks.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/part</command
+></userinput
+></term>
+<listitem
+><para
+>Käsk antud kanalilt lahkumiseks, sulgeb ka <interface
+>peaakna</interface
+> kaardi.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/part </command
+> <replaceable
+>#kanal</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Käsk <userinput
+><replaceable
+>#kanal</replaceable
+></userinput
+>ilt lahkumiseks, sulgeb <interface
+>peaakna</interface
+> kaardi. Sama, mis <userinput
+><command
+>/leave</command
+></userinput
+></para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/me </command
+><replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Saadab <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>i kanalile, selle ette lisatakse sinu hüüdnimi. Kui näiteks hüüdnimi on <userinput
+><replaceable
+>Tux</replaceable
+></userinput
+>, siis kirjutades <userinput
+><replaceable
+>/me joob parajasti teed</replaceable
+></userinput
+>, ilmub sõnum <interface
+>Tux joob parajasti teed</interface
+>. Kui kasutajad ei ole just mingil põhjusel rakendanud filtrit teatud sõnumite mittenäitamiseks, peaksid seda nägema kõik kanalil viibijad. Tavaliselt kasutatakse selliseid sõnumeid mitteverbaalse info edastamiseks, näiteks enda tunnete edastamiseks või teatamiseks, mida parajasti tehakse. Kui lahkud aga mõneks ajaks arvuti juurest, kasuta käsku /away.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/away </command
+> <replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kui keegi püüab sulle privaatsõnumit saata või sind mõnele kanalile kutsuda, saab ta <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>iga teada, et oled parajasti eemal.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/away</command
+></userinput
+></term>
+<listitem
+><para
+>Katkestab käsu <command
+>/away </command
+> <replaceable
+>sõnum</replaceable
+> kehtivuse.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/query </command
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Loob uue kaardi kasutajaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> privaatvestluse alustamiseks. Tavaliselt nimetatakse seda &irc;-s <link linkend="query"
+>päringuks</link
+>. Kõik, mida siin kirjutatakse, on näha ainult sulle ja sinu partnerile.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/msg </command
+><replaceable
+>hüüdnimi</replaceable
+> <replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Saadab <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>i kasutajale, kelle hüüdnimi on määratud muutujaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+>. Ainult <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> näeb seda sõnumit. Pikema vestluse jaoks kasuta käsku <userinput
+><command
+>/query</command
+></userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/invite </command
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kutsub kasutaja, kelle hüüdnimi on määratud muutujaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+>, kanaliga liituma. See on eriti kasulik siis, kui kanaliga saabki liituda ainult kutse alusel.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="query">
+<title
+>Privaatvestlused (päringud)</title>
+
+<para
+>Privaatvestlus on vestlus, mida näed ainult sina ja sinu partner. &konversation; nimetab privaatvestlusi "päringuks". Selle alustamiseks kirjuta sisendreale <userinput
+><command
+>/query</command
+> <replaceable
+>hüüdnimi</replaceable
+></userinput
+>, kus <replaceable
+>hüüdnimi</replaceable
+> on selle kasutaja hüüdnimi, kellega soovid vestlust alustada. Võimalik on ka leida kasutaja hüüdnimi <guilabel
+>hüüdnimede paneel</guilabel
+>il, klõpsata sellel &HPNga; ja valida <menuchoice
+><guisubmenu
+>Ava päring</guisubmenu
+></menuchoice
+>. <action
+>Luuakse uus kaart.</action
+> Anna seejärel endast teada juba sõnumit saates. </para>
+
+<para
+>Päringud on nagu kanalid, ainult et sellel kanalil on võimalik tegutseda vaid sinul ja veel ühel isikul.</para>
+
+<para
+>Päringu lõpetamiseks sulge lihtsalt kaart. Pane siiski tähele, et kui sinu partner saadab sulle veel sõnumeid, avatakse see kaart uuesti.</para>
+
+<para
+>Kõigi päringute sulgemiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Aken</guisubmenu
+> <guisubmenu
+>Sulge kõik avatud päringud</guisubmenu
+></menuchoice
+> või vajuta klahvi <keycap
+>F11</keycap
+>.</para>
+
+<para
+>Kui keegi tahab sinuga privaatvestlust alustada, loob &konversation; uue kaardi, kus osaleb siis see kasutaja ja sina. Kui sa ei soovi vestelda, sulge kaart. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="cfg-notifications">
+<title
+>Märguannete määramine</title>
+
+<para
+><guilabel
+>Märguanded</guilabel
+> on toimingud, mida &konversation; võtab ette teatud sündmuste toimumisel. Oletame, et &konversation; töötab, kuid on minimeeritud või varjatud töölaual teiste avatud akende taha. Kui keegi soovib nüüd sinuga suhelda või mõni sinu sõber kanaliga liitub, oleks hea, kui sa sellest teada saaksid. Selleks ongi märguanded. </para>
+
+<para
+>Märguannete seadistamiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Märguannete seadistamine</guisubmenu
+> </menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Märguannete seadistused</guilabel
+>.</action
+> </para>
+
+<para
+>Klõpsa kohe nupule <guibutton
+>Muud valikud</guibutton
+>.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Märguannete seadistustedialoog.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-notification-1" coords="1 1"/>
+				<area id="pt-notification-2" coords="1 1"/>
+				<area id="pt-notification-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="notification_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Märguannete seadistustedialoog</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-notification-1"
+><para
+>Klõpsa siia sündmuse valimiseks.</para
+></callout>
+
+<callout arearefs="pt-notification-2"
+><para
+>Märgi, millist tüüpi märguannet peaks kasutama, kui vastav sündmus toimub (<guilabel
+>Näidatakse tegumireal</guilabel
+> paneb ikooni tegumireal vastava sündmuse korral vilkuma).</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+>Korda seda, valides uue sündmuse ja meelepärase märguande. Kui oled seadistanud kõik vajalikud märguanded, klõpsa nupule <guibutton
+>Rakenda</guibutton
+>.</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-notification-3"
+><para
+>Kui oled juba märguanded seadistanud, saad siin lubada või keelata mis tahes toimingud. Näiteks võid soovida, et kõlaks mingi heli, kui sinu hüüdnimi esineb mõnes sõnumis. Kui oled oma arvuti taga, võid helid välja lülitada, aga näiteks arvuti juurest kuhugi lähedusse ära minnes need sisse lülitada, et huvipakkuvast sündmusest kohe teada saada.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<tip
+><para
+>Sa võid lasta ka endale märku anda, kui keegi mainib sinu hüüdnime oma sõnumis. kasutades selleks &konversation;i <link linkend="highlighting"
+>esiletõstmise võimalust</link
+>.</para
+></tip>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="nicksonline">
+<title
+>Võrgusviibijate jälgimine</title>
+
+<para
+>&konversation; võib sulle teada anda, kas sinu sõbrad on parajasti &irc; võrguga ühenduses või mitte. </para>
+
+<para
+>Sa võid seostada hüüdnimed oma aadressiraamatu kirjetega. Sellisel juhul lisatakse aadressiraamatu kontaktile sinu sõbra hüüdnimi ja &irc; võrk, milles hüüdnimi parajasti tegutseb. &irc; võrk pannakse kirja seepärast, et hüüdnimi on konkreetses &irc; võrgus unikaalne. Üks ja sama hüüdnimi kahes erinevas &irc; võrgus ei pruugi olla sugugi üks ja sama isik, kuid üldjuhul on üks ja sama hüüdnimi ühe ja sama &irc; võrgu erinevates serverites just üks ja sama isik.</para>
+
+<note
+><para
+>Seepärast ongi oluline kasutada sama <guilabel
+>võrk</guilabel
+>u kõigi ühe ja sama &irc; võrgu serverite jaoks <link linkend="serverlist"
+> võrke, servereid ja automaatselt liituvaid kanaleid määrates</link
+>.</para
+></note>
+
+<para
+>Sa võid muidugi lasta jälgida ka sellist hüüdnime, keda sinu aadressiraamatus ei esine. Sellisel juhul on iga hüüdnimi seotud &irc; võrguga. Vaata täpsemalt allpool.</para>
+
+<para
+>Hüüdnime jälgimiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Aknad</guisubmenu
+> <guisubmenu
+>Jälgitavad hüüdnimed võrgus</guisubmenu
+></menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Jälgitavad hüüdnimed võrgus.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-nicksonline-1" coords="1 1"/>
+				<area id="pt-nicksonline-2" coords="1 1"/>
+				<area id="pt-nicksonline-3" coords="1 1"/>
+				<area id="pt-nicksonline-4" coords="1 1"/>
+				<area id="pt-nicksonline-5" coords="1 1"/>
+				<area id="pt-nicksonline-6" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="nicksonline_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Jälgitavad hüüdnimed võrgus</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-nicksonline-1"
+><para
+>Siin on kirjas sinu jälgimisnimekirjas olevad hüüdnimed, samuti sinu aadressiraamatu kirjetega seostatud hüüdnimed. Need on ära toodud nendega seotud &irc; võrkude all. Kui kirjas pole ühtegi hüüdnime, siis sa kas pole määranud ühtegi hüüdnime, mida jälgida, või tuleb sul veel hüüdnime jälgimise võimalsus aktiveerida (vaata allpool). Võrgusolevaid hüüdnimesid avades näed kanaleid, millega antud hüüdnimi on parajasti liitunud. Ikoonid kanalite ees on samad ikoonidega <link linkend="channel-screen-tour"
+>kanaliakende</link
+> <interface
+>hüüdnimede paneel</interface
+>il. </para
+></callout>
+<callout arearefs="pt-nicksonline-2"
+><para
+>Siin näeb hüüdnime kohta teadaolevat infot. Dialoogi <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+> esmakordsel avamisel on info üsna kesine. Iga 8 sekundi järel saadetakse serverile automaatselt käsk <userinput
+><command
+>WHOIS</command
+></userinput
+> kõigi hüüdnimede kohta, kelle kohta info puudub. Seda käsku korratakse seni, kuni kõigi hüüdnimede kohta on info olemas. </para
+></callout>
+<callout arearefs="pt-nicksonline-3"
+><para
+>Hüüdnimed, kes ei ole ühenduses ühegi &irc; võrguga, millega sina oled ühenduses, on kirjas sektsioonis <guilabel
+>Pole võrgus</guilabel
+>. </para
+></callout>
+<callout arearefs="pt-nicksonline-4"
+><para
+>Hüüdnimede juures, mis on seotud kirjega sinu aadressiraamatus, näeb vastavat ikooni (<inlinemediaobject
+><imageobject
+><imagedata fileref="kaddressbook.png" format="PNG"/></imageobject
+></inlinemediaobject
+>). </para
+></callout>
+<callout arearefs="pt-nicksonline-5"
+><para
+>Nende nuppudega saab siduda hüüdnime kirjega aadressiraamatus, seose eemaldada või avada aadressiraamatu, et kontakti infot muuta. Vaata ka <ulink url="help:kaddressbook"
+>&aadressiraamat;u käsiraamatut</ulink
+>, kus saad põhjalikumalt teada, kuidas ja mida aadressiraamatuga saab ette võtta. </para
+></callout>
+</calloutlist>
+</para>
+
+<para
+>Uute jälgitavate hüüdnimede lisamiseks klõpsa nupule <guilabel
+>Muuda jälgimisnimekirja</guilabel
+>. Ilmub dialoog <guilabel
+>Jälgitavad hüüdnimed</guilabel
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Jälgitavad hüüdnimed</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-notifylist-1" coords="1 1"/>
+				<area id="pt-notifylist-2" coords="1 1"/>
+				<area id="pt-notifylist-3" coords="1 1"/>
+				<area id="pt-notifylist-4" coords="1 1"/>
+				<area id="pt-notifylist-5" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="notifylist_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Jälgitavad hüüdnimed</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-notifylist-1"
+><para
+>Märgi see kastike <guilabel
+>hüüdnimede jälgimise</guilabel
+> sisselülitamiseks.</para
+></callout>
+
+<callout arearefs="pt-notifylist-2"
+><para
+>Kui soovid, et aken <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+> avataks automaatselt &konversation;i käivitamisel, märgi ära see kastike.</para
+></callout>
+
+<callout arearefs="pt-notifylist-3"
+><para
+>Siin on kirjas nende kasutajate hüüdnimed, keda soovid jälgida. Iga hüüdnimega on seotud &irc; võrk.</para
+></callout>
+
+<callout arearefs="pt-notifylist-4"
+><para
+>Nende nuppudega on võimalik hüüdnimi nimekirja lisada või sealt eemaldada.</para
+></callout>
+
+<callout arearefs="pt-notifylist-5"
+><para
+>Võimalus <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+> saadab perioodiliselt vastava päringu serverile. Siin saab määrata, kui sageli selline päring saadetakse. Ära anna vähemat väärtust kui 20 sekundit, sest see seab serverile muidu liiga ränga koormuse.</para
+></callout>
+
+<callout arearefs="pt-notifylist-5"
+><para
+>Ülalnäidatud aknas <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+> võib hüüdnimel topeltklõpsu tehes saata serverile päringu. Muutuja <userinput
+><command
+>%u</command
+></userinput
+> asendatakse hüüdnimga. Käsu lõpus peab olema <userinput
+><command
+>%n</command
+></userinput
+>.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+>Klõpsa <guibutton
+>OK</guibutton
+>, kui iga soovitud hüüdnimi on nimekirja lisatud või sealt eemaldatud.</para>
+
+<para
+><emphasis
+>Märkus:</emphasis
+> kui avad akna <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+>, kulub veidi aega, enne kui iga vajalik hüüdnimi seal näha on, sest &konversation; peab kõigepealt serverilt andmed hankima. Tavaliselt oleks mõttekas aken <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+> üldse lahti jätta. </para>
+
+<para
+>&konversation; näitab ka teadet kõigil <link linkend="channel-screen-tour"
+>kanalitel</link
+>, kui kasutaja, kes on sinu <guilabel
+>jälgitavate hüüdnimede</guilabel
+> nimekirjas, serveriga liitub või lahkub. See sõnum näeb välja umbes selline: </para>
+
+<para
+><computeroutput
+>[17:52] [Märguanne] psn on võrgus (irc.kde.org).</computeroutput
+></para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="highlighting">
+<title
+>Sõnumite esiletõstmine</title>
+
+<para
+>Sul on võimalik määrata, kuidas näidatakse sõnumeid kanali- ja päringuaknas.</para>
+
+<para
+>Esiletõstmise sisselülitamiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>&konversation;i seadistamine</guisubmenu
+></menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Seadistused</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Esiletõstmiste dialoog.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-highlight-1" coords="1 1"/>
+				<area id="pt-highlight-2" coords="1 1"/>
+				<area id="pt-highlight-3" coords="1 1"/>
+				<area id="pt-highlight-4" coords="1 1"/>
+				<area id="pt-highlight-5" coords="1 1"/>
+				<area id="pt-highlight-6" coords="1 1"/>
+				<area id="pt-highlight-7" coords="1 1"/>
+				<area id="pt-highlight-8" coords="1 1"/>
+				<area id="pt-highlight-9" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="highlighting_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Esiletõstmiste dialoog</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-highlight-1"
+><para
+>Klõpsa siia <guilabel
+>Esiletõstmiste</guilabel
+> dialoogi valimiseks.</para
+></callout>
+<callout arearefs="pt-highlight-2"
+><para
+>Klõpsa siia uue elemendi lisamiseks <guilabel
+>esiletõstude nimekirja</guilabel
+>. Nimekirjas mõne elemendi valimisel saab seda allpool muuta.</para
+></callout>
+<callout arearefs="pt-highlight-3"
+><para
+>Kirjuta siia otsingumuster. Kõik saabuvad sõnumid, milles leitakse antud mustrile vastav tekst, tõstetakse esile. Kui sinu süsteemi on paigaldatud &kde; regulaaravaldiste redaktor, saad seda kasutada mustrist paremal asuvale nupule klõpsates. See redaktor aitab sul vähese vaevaga luua ka väga keerulisi mustreid (&kde; regulaaravaldiste redaktor kuulub paketti <command
+>kdeutils</command
+>). </para
+></callout>
+<callout arearefs="pt-highlight-4"
+><para
+>Kui sõnumis leitakse muster, näidatakse kogu sõnumit siin valitud värviga.</para
+></callout>
+<callout arearefs="pt-highlight-5"
+><para
+>Soovi korral võib &konversation; mustri esinemisel ka heli esitada. Klõpsa sellele nupule esitatava helifaili valimiseks. Testinupule klõpsates saad heli kuulda.</para
+></callout>
+<callout arearefs="pt-highlight-6"
+><para
+>Kui soovid, et &konversation; saadaks mustri esinemisel automaatselt vastussõnumi, kirjuta selle tekst siia. Kasuta seda võimalust siiski ettevaatlikult, sest sellised sõnumid võivad pahandada teisi &irc; kasutajaid, eriti kui neid peaks sageli saadetama. Siin võib anda ka &irc; või &konversation;i käske.</para
+></callout>
+<callout arearefs="pt-highlight-7"
+><para
+>Kui oled mõne esiletõstu jaoks määranud heli, saad kõik need keelata sellest kastist märget eemaldades.</para
+></callout>
+<callout arearefs="pt-highlight-8"
+><para
+>Selle kasti märkimisel näidatakse juhul, kui keegi mainib sinu hüüdnime oma sõnumis, antud sõnum paremal valitavas värviga.</para
+></callout>
+<callout arearefs="pt-highlight-9"
+><para
+>Tavaliselt ei tõsteta esile sõnumeid, mida sa ise kirjutad. Kui aga soovid lasta esile tõsta ka enda kirjutatud sõnumeid, märgi see kast ja vali paremal pool värv.</para
+></callout>
+
+</calloutlist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="cfg-osd">
+<title
+>Ekraaniesituse (&osd;) seadistamine</title>
+
+<para
+>Ekraaniesitus (<acronym
+>On Screen Display</acronym
+> ehk &osd;) on &konversation;i unikaalne omadus. &osd; sisselülitamisel ilmuvad kanali sõnumid otse ekraanile ka siis, kui &konversation; on minimeeritud. Siin on näha &osd; tegevus. Sõnum ekraani ülemises vasakpoolses osas on pärit &konversation;ist, mis ise aga töötab süsteemsesse salve minimeerituna.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Ekraaniesituse näide</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="osd_demo.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Ekraaniesituse näide</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>&osd; sisselülitamiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>&konversation;i seadistamine</guisubmenu
+></menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Seadistused</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Ekraaniesituse dialoog.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-osd-1" coords="1 1"/>
+				<area id="pt-osd-2" coords="1 1"/>
+				<area id="pt-osd-3" coords="1 1"/>
+				<area id="pt-osd-4" coords="1 1"/>
+				<area id="pt-osd-5" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="osd_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Ekraaniesituse dialoog</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-osd-1"
+><para
+>Klõpsa siia elemendi <guilabel
+>Märguanne</guilabel
+> avamiseks.</para
+></callout>
+
+<callout arearefs="pt-osd-2"
+><para
+>Klõpsa siia <guilabel
+>OSD</guilabel
+> valimiseks.</para
+></callout>
+
+<callout arearefs="pt-osd-3"
+><para
+>Märgi see kastike &osd; sisselülitamiseks.</para
+></callout>
+
+<callout arearefs="pt-osd-4"
+><para
+>Klõpsa sellele nupule &osd; fondi valimiseks. <emphasis
+>Märkus:</emphasis
+> mitte kõik fondid ei sobi; kindlasti sobivad näiteks Luxi Sans 22 ja Impact 22.</para
+></callout>
+
+<callout arearefs="pt-osd-5"
+><para
+>Märgi siin kastid vastavalt sellele, millist laadi sõnumeid soovid ekraanile ilmumas näha, ja klõpsa siis nupule <guibutton
+>Rakenda</guibutton
+>.</para
+></callout>
+
+</calloutlist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="color-msgs">
+<title
+>Värviliste sõnumite saatmine</title>
+
+<para
+>Iga sõnumi võib saata ka värvilisena. Selleks hakka mis tahes kanali <interface
+>sisendreal</interface
+> sõnumit kirjutama. Klõpsa <inlinemediaobject
+> <imageobject
+> <imagedata fileref="colorize.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>&irc; värvi lisamise nupp</phrase
+> </textobject
+> </inlinemediaobject
+> &irc; värvi lisamise nupule või vali menüükäsk <menuchoice
+> <guisubmenu
+>Lisamine</guisubmenu
+> <guisubmenu
+>&irc; värv</guisubmenu
+> </menuchoice
+>. <action
+>Ilmub <guilabel
+>&irc; värvivalija</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>&irc; värvivalija.</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="colorchooser_screen.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>&irc; värvivalija</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Vali värv ja klõpsa nupule <guibutton
+>OK</guibutton
+>. Jätka sõnumi kirjutamist <interface
+>sisendireal</interface
+>. Kui soovid uuesti värvi muuta, klõpsa taas nupule <guibutton
+>Lisa &irc; värv</guibutton
+>. Vali mõni muu värv ja klõpsa nupule <guibutton
+>OK</guibutton
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="nickthemes">
+<title
+>Hüüdnimeteemade seadistamine</title>
+
+<para
+>Sul on võimalik muuta ikoone, mida näidatakse kanalikaartidel <interface
+>hüüdnimede paneel</interface
+>il hüüdnimede juures. Hüüdnimeteema muutmiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> </menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Seadistused</guilabel
+>.</action
+> Klõpsa kirjele <guilabel
+>Välimus</guilabel
+> ja seejärel <guilabel
+>Teemad</guilabel
+>, mis avab dialoogi <guilabel
+>Teemad</guilabel
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Teemade dialoog.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-themes-1" coords="1 1"/>
+				<area id="pt-themes-2" coords="1 1"/>
+				<area id="pt-themes-3" coords="1 1"/>
+				<area id="pt-themes-4" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="nickthemes_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Teemade dialoog</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-themes-1"
+><para
+>Klõpsa siia hüüdnimede <guilabel
+>teema</guilabel
+> valimiseks.</para
+></callout>
+<callout arearefs="pt-themes-2"
+><para
+>Vali teema.</para
+></callout>
+<callout arearefs="pt-themes-3"
+><para
+>Teema valimisel näidatakse mõningaid näidisikoone.</para
+></callout>
+<callout arearefs="pt-themes-4"
+><para
+>Kui oled tõmmanud hüüdnimedeteema kusagilt mujalt, klõpsa selle paigaldamiseks.</para
+></callout>
+
+</calloutlist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="quick-buttons">
+<title
+>Kiirnuppude seadistamine</title>
+
+<para
+>Kui valida <link linkend="channel-screen-tour"
+>peaaknas</link
+> kanali kaart, ilmub nähtavale kaheksa <interface
+>kiirnuppu</interface
+>. <interface
+>Kiirnuppude</interface
+> näitamiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> </menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Seadistused</guilabel
+>.</action
+> Vali kaart <guilabel
+>Käitumine</guilabel
+> ja seejärel <guilabel
+>Vestlusaken</guilabel
+>, märgi ära kasti <guilabel
+>Kiirnuppude näitamine</guilabel
+> ja klõpsa <guibutton
+>OK</guibutton
+>. </para>
+
+<para
+>Kiirnuppe võib oma maitse järgi seadistada, pannes nad sooritama &irc; mõningaid kõige sagedamini ettetulevaid käske. <interface
+>Kiirnuppude</interface
+> seadistamiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+></menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Seadistused</guilabel
+>.</action
+> Klõpsa kirjele <guilabel
+>Käitumine</guilabel
+> ja seejärel <guilabel
+>Kiirnupud</guilabel
+>, mis avab dialoogi <guilabel
+>Kiirnupud</guilabel
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Kiirnupud</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="quickbuttons_screen.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Kiirnupud</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Siin on kaheksa <interface
+>kiirnuppu</interface
+>. Muutmiseks klõpsa vajalikule kirjele. Veerus <guilabel
+>Nupu nimi</guilabel
+> on nimi, mille all nupp on näha <link linkend="channel-screen-tour"
+>peaaknas</link
+>. Püüa nimed võimalikult lühikesed hoida. Veerus <guilabel
+>Nupu toiming</guilabel
+> on toiming, mis sooritatakse, kui klõpsad <interface
+>kiirnupule</interface
+>. Toimingute määramisel saab näha ka vihjeid. </para>
+
+<para
+>Muudatuste rakendamiseks klõpsa nupule <guibutton
+>OK</guibutton
+>. </para>
+
+<para
+>Näide:</para>
+
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><guilabel
+>Nupu nimi</guilabel
+>: <userinput
+><replaceable
+>Sõnum</replaceable
+></userinput
+> </term>
+		<listitem>
+			<para
+><guilabel
+>Nupu toiming</guilabel
+>: <userinput
+><replaceable
+>Msg %u </replaceable
+></userinput
+> (siin tuleb jätta tühik <userinput
+><replaceable
+>%u</replaceable
+></userinput
+> järele) </para>
+		</listitem>
+	</varlistentry>
+</variablelist>
+</para>
+
+<para
+>Nupu kasutamiseks <link linkend="channel-screen-tour"
+>peaaknas</link
+> vali hüüdnimi <interface
+>hüüdnimede paneelilt</interface
+> ja klõpsa siis nupule. Näed, et <interface
+>sisendreale</interface
+> ilmub <computeroutput
+>/MSG </computeroutput
+>, millele järgneb valitud hüüdnimi. Kirjuta nüüd sõnum, mida soovid antud isikule saata, ja vajuta klahvi &Enter;. Sõnum saadetakse valitud kasutajale ja seda sõnumit näebki peale sinu veel ainult tema. </para>
+
+<para
+><emphasis
+>Märkus: </emphasis
+><interface
+>kiirnuppe</interface
+> ei saa lisada ega kustutada. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="dcc">
+<title
+>Failide saatmine ja saamine</title>
+
+<para
+>&irc; võimaldab saata faile teistele võrgusviibivatele kasutajatele või neilt faile vastu võtta. </para>
+
+<para>
+<emphasis
+>HOIATUS: ära kunagi ava sulle saadetud faili, kui seda ei ole saatnud usaldusväärne isik. Nii võidakse levitada ka viiruseid.</emphasis>
+</para>
+
+<para
+>Faili saatmiseks mõnele kanalilviibijale vali &HPN;ga klõpsates soovitud isiku hüüdnimi <interface
+>hüüdnimede paneelil</interface
+> (<link linkend="channel-screen-tour"
+>peaaknas</link
+>). Vali käsk <menuchoice
+> <guisubmenu
+>Saada fail</guisubmenu
+> </menuchoice
+>. <action
+>Ilmuvas dialoogis saad valida, millist faili saata.</action
+> Seejärel ilmub uus kaart <guilabel
+>DCC olek</guilabel
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>DCC oleku kaart</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-dccstatus-1" coords="1 1"/>
+				<area id="pt-dccstatus-2" coords="1 1"/>
+				<area id="pt-dccstatus-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="dccstatus_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>DCC oleku kaart</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-dccstatus-1"
+><para
+>Siin on näha vastuvõtja hüüdnimi ja faili nimi.</para
+></callout>
+
+<callout arearefs="pt-dccstatus-2">
+<para
+>Veerg <guilabel
+>Olek</guilabel
+> näitab faili saatmise või vastuvõtmise olekut järgmiselt:</para>
+
+<para>
+<variablelist>
+	<varlistentry>
+		<term>
+			<guilabel
+>Pakkumine</guilabel>
+		</term>
+		<listitem>
+			<para
+>Püüad saata faili ja &konversation; ootab vastuvõtmisega soostumist. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Ühendumine</guilabel>
+		</term>
+		<listitem>
+			<para
+>&konversation; püüab luua partneriga ühendust. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Saatmine</guilabel>
+		</term>
+		<listitem>
+			<para
+>&konversation; saadab faili. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Saamine</guilabel>
+		</term>
+		<listitem>
+			<para
+>&konversation; saab faili. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Tehtud</guilabel>
+		</term>
+		<listitem>
+			<para
+>Fail on edukalt edastatud. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Seiskunud</guilabel>
+		</term>
+		<listitem>
+			<para
+>Edastus algas, aga peatus mingil põhjusel. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Katkestatud</guilabel>
+		</term>
+		<listitem>
+			<para
+>Kas klõpsasid sina  nupule <guibutton
+>Katkesta</guibutton
+> või katkestas partner edastuse. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Ebaõnnestus</guilabel>
+		</term>
+		<listitem>
+			<para
+>Tekkis viga, edastus ei õnnestunud. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Järjekorras</guilabel>
+		</term>
+		<listitem>
+			<para
+>Edastusega oldi nõus ning see algab kohe, kui selleks on valmis saaja tarkvara. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Otsimine</guilabel>
+		</term>
+		<listitem>
+			<para
+>&konversation; püüab leida saatja IP aadressi. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Jätkamine</guilabel>
+		</term>
+		<listitem>
+			<para
+>Kui edastuse alates leitakse, et fail on juba kasutaja süsteemis olemas, päritakse kasutajalt: <interface
+>Fail on juba olemas. Kas jätkata edastust?</interface
+> See staatus annab märku, et kasutaja on edastust jätkanud. </para>
+		</listitem>
+	</varlistentry>
+</variablelist>
+</para>
+
+</callout>
+
+<callout arearefs="pt-dccstatus-3">
+<para
+>Kui keegi soovib sulle faili saata, luuakse kaart <guilabel
+>DCC olek</guilabel
+> (kui seda juba olemas ei ole). Klõpsa selle nägemiseks kaardi <guilabel
+>DCC olek</guilabel
+> tähisel ja kui seejärel klõpsad faili vastuvõtmisega nõustumise nuppu, algabki edastus. <emphasis
+>Märkus:</emphasis
+> &konversation; on võimalik panna faile automaatselt vastu võtma (<menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> <guisubmenu
+>DCC seadistused</guisubmenu
+> </menuchoice
+>). </para>
+</callout>
+
+</calloutlist>
+</para>
+
+<para
+>Kui sul on failide saatmise või saamisega probleeme, blokeerib võib-olla tulemüür või ruuter DCC porte. Vaata osa <link linkend="faq"
+>Küsimused ja vastused</link
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="linkaddressbook">
+<title
+>Põimimine &aadressiraamat;uga.</title>
+
+<para
+>Iga hüüdnimi on võimalik seostada &aadressiraamat;us leiduva kontaktiga. Kui oled seda teinud, näitab &konversation; <interface
+>hüüdnimede paneelil</interface
+> hüüdnime järel sulgudes ka tema tegelikku nime. </para>
+
+<para
+>Et seostada hüüdnimi kontaktiga &aadressiraamat;us, klõpsa &HPNga; <link linkend="channel-screen-tour"
+>peaakna</link
+> <interface
+>hüüdnimede paneelil</interface
+> vajaliku isiku hüüdnimel. Vali <menuchoice
+> <guisubmenu
+>Keson</guisubmenu
+> </menuchoice
+>, mis <action
+>näitab infot, mille põhjal saad kindlaks teha kasutaja tegeliku nime</action
+>. Nüüd tee &HPNga; veel kord klõps isiku hüüdnimel ja vali <menuchoice
+> <guisubmenu
+>Aadressiraamatu seosed</guisubmenu
+> </menuchoice
+>. <action
+>Avaneb alammenüüd</action
+>. Kui hüüdnimi ei ole veel seotud mõne kontaktiga, vali <menuchoice
+> <guisubmenu
+>Loo uus kontakt</guisubmenu
+> </menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Kontakti muutmine</guilabel
+></action
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Kontakti muutmise dialoog.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-kimproxy-create-1" coords="1 1"/>
+				<area id="pt-kimproxy-create-2" coords="1 1"/>
+				<area id="pt-kimproxy-create-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="kimproxy_create_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Kontakti muutmise dialoog.</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-kimproxy-create-1"
+><para
+>Siin on hüüdnimi automaatselt ette antud. Kui tead isiku tegelikku nime, kustuta hüüdnimi ja kirjuta tegelik nimi asemele. </para
+></callout>
+
+<callout arearefs="pt-kimproxy-create-2">
+<para
+>Pane tähele, et hüüdnimi <emphasis
+>ei ole</emphasis
+> siin näha. Selleks...</para>
+</callout>
+
+<callout arearefs="pt-kimproxy-create-3">
+<para
+>klõpsa siia akna <guilabel
+>IM aadressid</guilabel
+> avamiseks.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>IM aadresside aken.</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="kimproxy_create_screen2.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>IM aadresside aken.</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Pane tähele, et &konversation; annab ise hüüdnime <guilabel
+>IRC</guilabel
+> protokolli tarbeks juba ette. </para>
+
+<para
+>Vaata ka <ulink url="help:kaddressbook"
+>&aadressiraamat;u käsiraamatut</ulink
+>, kus saad põhjalikumalt teada, kuidas ja mida &kde; aadressiraamatuga saab ette võtta.</para>
+
+<para
+>Anna hüüdnime kohta kõikvõimalik lisainfo, mida soovid ja tead, ning klõpsa nupule <guilabel
+>OK</guilabel
+>. Seejärel näitab &konversation; <guilabel
+>hüüdnimede paneel</guilabel
+>il hüüdnime järel sulgudes ka isiku tegelikku nime. Tegelik nimi ilmub nähtavale ka siis, kui viia hiirekursor hüüdnime kohale.</para>
+
+<para
+>Kui hüüdnimi on seostatud kontaktiga &aadressiraamat;us, võid teha <guilabel
+>hüüdnimede paneel</guilabel
+>il isiku hüüdnime peal klõpsu &HPNga; ning muuta seostatud kontakti, seostada hüüdnime mõne muu kontaktiga või seose kustutada. </para>
+
+<para
+>Kui hüüdnimi on kontaktiga seostatud, aga kasutaja muudab oma hüüdnime ajal, mil sinul &konversation; töötab, muudetakse automaatselt seost ning uus hüüdnimi seostatakse kontaktiga, säilitades samas ka algse seose.</para>
+
+<para
+>Kui seostada &irc; hüüdnimi kontaktiga <ulink url="help:kopete"
+>&kopete;s</ulink
+>, näeb seda seost ka &konversation;is ning vastupidi.</para>
+
+<para
+>Märkus: <guilabel
+>hüüdnimede paneel</guilabel
+>il on võimalik ära märkida ka enam kui üks hüüdnimi, klõpsata neil &HPN;ga ja luua mitmikseosed. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="urlcatcher">
+<title
+>&URL;-i hankimine sõnumist</title>
+
+<para
+>Igal <link linkend="channel-screen-tour"
+>kanalil</link
+> edastavad kasutajad mõnikord huvipakkuvate veebilehekülgede või muude internetiressursside &URL;-e. Kui teed sellisel &URL;-il topeltklõpsu, käivitab &konversation; &URL;-iga seonduva rakenduse. Käivitatav rakendus sõltub &URL;-i &MIME; tüübist. Näiteks &URL;, mille alguses seisab <interface
+>http:</interface
+>, avab sinu vaikeveebilehitseja ja näitab veebilehekülge (sa võid ka määrata, millist <link linkend="webbrowser"
+>veebilehitsejat</link
+> kasutada). Kui &URL; sõnumite reas üle ekraani libiseb, võib olla üpris keeruline seda uuesti üles leida. &konversation; suudab aga sinu eest mugavalt vajalikud &URL;-id meeles pidada. Selleks vali menüükäsk <menuchoice
+> <guisubmenu
+>Aknad</guisubmenu
+> <guisubmenu
+>&url; püüdja</guisubmenu
+> </menuchoice
+>. <action
+>Luuakse uus kaart nimetusega <guilabel
+>&url; püüdja</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>&url; püüdja.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-urlcatcher-1" coords="1 1"/>
+				<area id="pt-urlcatcher-2" coords="1 1"/>
+				<area id="pt-urlcatcher-3" coords="1 1"/>
+				<area id="pt-urlcatcher-4" coords="1 1"/>
+				<area id="pt-urlcatcher-5" coords="1 1"/>
+				<area id="pt-urlcatcher-6" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="urlcatcher_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>&url; püüdja.</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-urlcatcher-1"
+><para
+>See on &URL;-ide nimekiri, mis on esinenud alates &konversation;i käivitamisest. Veerus <guilabel
+>Hüüdnimi</guilabel
+> on selle isiku hüüdnimi, kes &URL;-i edastas. Kui hüüdnimi puudub, esines see <interface
+>serveri sõnumite</interface
+> kaardil (&URL;-e, mis esinevad liitumis- ja lahkumisteadetes, nimekiri ei kajasta). Valimiseks klõpsa soovitud &URL;-il.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-2"
+><para
+>Klõpsa siia valitud &URL;-iga seonduva rakenduse käivitamiseks. Käivitatav rakendus sõltub antud &URL;-i &MIME; tüübist. Näiteks &URL;, mille alguses seisab <interface
+>http:</interface
+>, käivitab sinu vaikeveebilehitseja ja avab vastava veebilehekülje. Veebiviitade puhul on sul võimalik ka määrata, millist <link linkend="webbrowser"
+>veebilehitsejat</link
+> kasutada.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-3"
+><para
+>Klõpsa siia valitud &URL;-i kopeerimiseks &kde; lõikepuhvrisse.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-4"
+><para
+>Klõpsa siia valitud &URL;-i kustutamiseks nimekirjast.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-5"
+><para
+>Klõpsa siia &URL;-ide nimekirja salvestamiseks failina.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-6"
+><para
+>Klõpsa siia nimekirja puhastamiseks.</para
+></callout>
+
+</calloutlist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="webbrowser">
+<title
+>Eelistatud veebilehitseja määramine</title>
+
+<para
+>Kui klõpsad &konversation;is esile tõstetud &URL;-ile, avatakse see rakendusega, mida &kde; vaikimisi seostab antud &URL;-i &MIME; tüübiga. Näiteks klõps &URL;-ile, mille alguses seisab <interface
+>http</interface
+>, avab &konqueror;i ja näitab veebilehekülge. Sa võid siiski määrata mõne muu rakenduse kui &kde; vaikevalik, näiteks kasutada veebilehitsejat Mozilla. </para>
+
+<para
+>Muu veebilehitseja määramiseks vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>&konversation;i seadistamine</guisubmenu
+></menuchoice
+>. <action
+>Ilmub dialoog <guilabel
+>Seadistused</guilabel
+>.</action
+> </para>
+
+ <para>
+<screenshot>
+<screeninfo
+>Veebilehitseja dialoog</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-webbrowser-1" coords="1 1"/>
+				<area id="pt-webbrowser-2" coords="1 1"/>
+				<area id="pt-webbrowser-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="webbrowser_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Veebilehitseja dialoog</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-webbrowser-1"
+><para
+>Klõpsa siia <guilabel
+>veebilehitseja</guilabel
+> dialoogi avamiseks.</para
+></callout>
+
+<callout arearefs="pt-webbrowser-2"
+><para
+>Klõpsa siia kinnitamaks, et soovid kasutada muud veebilehitsejat.</para
+></callout>
+
+<callout arearefs="pt-webbrowser-3"
+><para
+>Kirjuta käsk, millega soovitud veebilehitseja käivitada. Kui klõpsad &URL;-ile, asendatakse <userinput
+><replaceable
+>%u</replaceable
+></userinput
+> &URL;-iga.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+><emphasis
+>Vihje: </emphasis
+>(ainult &UNIX; süsteemides) Vaikekäsk on <userinput
+>mozilla '%u'</userinput
+>, mis käivitab uue Mozilla protsessi iga kord, kui klõpsad &URL;-ile. Kui eelistad, et Mozilla näitaks veebilehekülge juba töötava akna uuel kaardil, loo järgmise sisuga fail: </para>
+
+<para>
+<literallayout
+>#!/bin/sh
+mozilla -remote "openURL($@, new-tab)" || exec mozilla "$@";
+</literallayout>
+</para>
+
+<para
+>Anna failile nimeks <userinput
+><replaceable
+>moz</replaceable
+></userinput
+>, kontrolli, et see asuks sinu otsinguteel (PATH) ja tee fail käivitataks (<userinput
+>chmod a+x moz</userinput
+>). Seejärel kirjuta ülalolevasse veebilehitseja käsureale <userinput
+> <replaceable
+>moz '%u'</replaceable
+></userinput
+>. </para>
+
+<para
+><emphasis
+>Märkus:</emphasis
+> <guilabel
+>veebilehitseja</guilabel
+> seadistused ei rakendu <interface
+>mailto:</interface
+> &URL;-idele. <interface
+>mailto:</interface
+> &URL;-id käivitavad alati &kde; vaikimisi e-posti rakenduse. </para>
+
+<para
+>Klõpsa muudatuste rakendamiseks nupule <guibutton
+>Rakenda</guibutton
+>. Et kõik rakenduks, tuleb ühendus kõigi serverite ja kanalitega katkestada ja siis uuesti ühendust võtta. Lihtsaim viis selleks on väljuda &konversation;ist ja see uuesti käivitada. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="rememberlines">
+<title
+>Kanali- ja päringulogide märkimine</title>
+
+<para
+>Sul on võimalik lisada marker <link linkend="channel-screen-tour"
+>kanali</link
+> ja <link linkend="query"
+>päringu</link
+> aknasse, mis aitab kiiresti vajaliku info üles leida. Selleks vali menüükäsk <menuchoice
+> <guisubmenu
+>Lisamine</guisubmenu
+> <guisubmenu
+>Meelespidamisrida</guisubmenu
+> </menuchoice
+> või kasuta kiirklahvi <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+>. <action
+>See tekitab aknas teksti alla rea, mis kerib edasi koos ülejäänud tekstiga.</action
+> </para>
+
+<para
+>Kui soovid lisada <interface
+>meelespidamisrea</interface
+> kõigile kanalitele ja päringutele korraga, vali menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> </menuchoice
+>, ava kaart <guilabel
+>Käitumine</guilabel
+> ja seejärel <guilabel
+>Vestlusaken</guilabel
+> ning märgi ära kast <guilabel
+>Meelespidamisrea näitamine kõigil kanalitel/päringutes</guilabel
+>. </para>
+
+<para
+>Seda, kuidas &konversation; lisab automaatselt <interface
+>meelespidamisrea</interface
+>, kui annad käsu <userinput
+><command
+>/away</command
+> <replaceable
+>sõnum</replaceable
+></userinput
+>. selgitab <link linkend="identity-away"
+>Identiteedi määramine</link
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="logging">
+<title
+>Logimine</title>
+
+<para
+>Kui logimine on lubatud, peab &konversation; logi iga <interface
+>server</interface
+>i, <link linkend="channel-screen-tour"
+>kanal</link
+>i ja <link linkend="query"
+>privaatvestluse (päringu)</link
+> seansi kohta. Kõik seansid salvestatakse kettal logifaili. Kui avad sama seansi uuesti, lisab &konversation; uued andmed logifaili lõppu. Logi kasvab suuruseni, mille sa saad ise kindlaks määrata (vaata allpool). Suuruspiirini jõudes hakatakse vanemaid teateid kustutama. </para>
+
+<para
+>Seansi taasavamisel loetakse eelmise seansi lõpust umbkaudu 1024 märki ning näidatakse ekraanil. </para>
+
+<para
+>Seansi kestel liiguvad sõnumid üle ekraani ja kaovad silmist. Nende nägemiseks saad tagasi kerida. Lõpuks hakatakse siiski selleks, et mälu mitte liigselt kurnata, vanemaid sõnumeid kustutamata. See kannabki nime <guilabel
+>tagasikerimise limiit</guilabel
+>. Sõnumid, mis <guilabel
+>tagasikerimise limiidi</guilabel
+> tõttu ekraanilt kaovad, jäävad siiski alles logifaili - seda mõistagi juhul, kui logimine on sisse lülitatud.</para>
+
+<para
+>Seansi logifaili nägemiseks klõpsa seansi kaardil, millega muudad antud seansi aktiivseks seansiks, ning vali menüükäsk <menuchoice
+> <guisubmenu
+>Aken</guisubmenu
+> <guisubmenu
+>Ava logifail</guisubmenu
+> </menuchoice
+>. <action
+>Ilmub uus kaart</action
+>, mis näitabki logifaili. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Logifail</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-logviewer-1" coords="1 1"/>
+				<area id="pt-logviewer-2" coords="1 1"/>
+				<area id="pt-logviewer-3" coords="1 1"/>
+				<area id="pt-logviewer-4" coords="1 1"/>
+				<area id="pt-logviewer-5" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="logviewer_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Logifail</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-logviewer-1"
+><para
+>Siin näeb logifaili sõnumeid. Vanemad teated on ülal, uusimad all.</para
+></callout>
+<callout arearefs="pt-logviewer-2"
+><para
+>Klõpsa sellele nupule logifaili salvestamiseks teise failina.</para
+></callout>
+<callout arearefs="pt-logviewer-3"
+><para
+>Klõpsa siia logifaili värskendamiseks. Logifaili vaatamise ajal <emphasis
+>ei lisata</emphasis
+> pärast faili avamist seanssi tekkinud sõnumeid automaatselt vaatesse. Selle nupuga saab neid aga näidata lasta.</para
+></callout>
+<callout arearefs="pt-logviewer-4"
+><para
+>Klõpsa siia logifaili vaate ning kettale salvestatud logifaili puhastamiseks.</para
+></callout>
+<callout arearefs="pt-logviewer-5"
+><para
+>Siin saab määrata logifaili maksimaalse suuruse. See hakkab kehtima pärast &konversation;i taaskäivitamist. Igal logifailil võib maksimaalne suurus olla teistest erinev.</para
+></callout>
+</calloutlist>
+</para>
+
+<para
+><guilabel
+>Tagasikerimise limiit</guilabel
+>i saab muuta, kui valida menüükäsk <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>&konversation;i seadistamine</guisubmenu
+> </menuchoice
+> ning ilmuvast dialoogist <guilabel
+>Käitumine</guilabel
+> ja <guilabel
+>Vestlusaken</guilabel
+>. Kui kastis <guilabel
+>Tagasikerimise limiit</guilabel
+> valida <guilabel
+>Piiramatu</guilabel
+>, ei hakatagi ekraanil sõnumeid kustutama. </para>
+
+<para
+>Logimise saab lubada või keelata ning selle valikuid määrata menüükäsuga <menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>&konversation;i seadistamine</guisubmenu
+></menuchoice
+> ning ilmuvast dialoogist <guilabel
+>Käitumine</guilabel
+> ja <guilabel
+>Logimine</guilabel
+> valides. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="konvi-cmds">
+<title
+>&konversation;i käsud</title>
+
+<para
+>Allpool on toodud käsud, mida &konversation; iseseisvalt tõlgendab ja mis võivad erineda standardsetest &irc; käskudest. Nurksulgudes asuv osa ei ole kohustuslik. Püstkriipsuga (|) on eraldatud käsu erinevad vormid. Käsud, mida siin ei leitud, saadetakse serverile nii, nagu need sisestatakse. </para>
+
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/me</command
+> <replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Saadab <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>i kanalile, selle ette lisatakse sinu hüüdnimi. Kui näiteks hüüdnimi on <userinput
+><replaceable
+>Tux</replaceable
+></userinput
+>, siis kirjutades <userinput
+><replaceable
+>/me joob parajasti teed</replaceable
+></userinput
+>, ilmub sõnum <interface
+>Tux joob parajasti teed</interface
+>. Kui kasutajad ei ole just mingil põhjusel rakendanud filtrit teatud sõnumite mittenäitamiseks, peaksid seda nägema kõik kanalil viibijad. Tavaliselt kasutatakse selliseid sõnumeid mitteverbaalse info edastamiseks, näiteks enda tunnete edastamiseks või teatamiseks, mida parajasti tehakse. Kui lahkud aga mõneks ajaks arvuti juurest, kasuta käsku /away.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ame</command
+> <replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Nagu käsk <userinput
+><command
+>/me</command
+></userinput
+>, ainult et sõnum saadetakse kõigile kanalitele ja päringutele, mis on avatud ükspuha millises serveris, millega &konversation; on ühendatud.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/join</command
+> <replaceable
+>kanal</replaceable
+> <replaceable
+>[parool]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Ühineb <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>iga. Kui server seda lubab ja kanalit ei ole olemas, luuakse sellenimeline kanal ja sa saad selle operaatoriks. Kui kanal nõuab liitumiseks parooli, anna see pärast kanali nime (<userinput
+><replaceable
+>parool</replaceable
+></userinput
+>). Enamasti seisab kanalinime alguses <userinput
+><replaceable
+>#</replaceable
+></userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/j</command
+> <replaceable
+>kanal</replaceable
+> <replaceable
+>[parool]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sama, mis  <userinput
+><command
+>/join</command
+></userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/part</command
+> <replaceable
+>[kanal]</replaceable
+> <replaceable
+>[põhjus]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Lahkub <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>ilt toodud <userinput
+><replaceable
+>põhjus</replaceable
+></userinput
+>el ja sulgeb vastava <interface
+>kanal</interface
+>i kaardi. &konversation;i kanali või päringukaardil võib anda lihtsalt käsu <userinput
+><command
+>/part</command
+></userinput
+>, mis sulgeb antud kanali või päringu vaikepõhjusega, mille saab määrata kindlaks <link linkend="identity"
+>seadistustedialoogis</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><userinput
+><command
+>/leave</command
+> <replaceable
+>[kanal]</replaceable
+> <replaceable
+>[põhjus]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sama, mis <userinput
+><command
+>/part</command
+></userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><userinput
+><command
+>/quit</command
+></userinput
+></term>
+<listitem
+><para
+>Kanali, päringu või DCC kaardil antuna katkestab ühenduse vastava serveriga ja sulgeb kõik sellel serveril avatud kanali-, päringu- või DCC kaardid.</para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><userinput
+><command
+>/notice</command
+> <replaceable
+>hüüdnimi|kanal</replaceable
+> <replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Saadab <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>i kasutajale, kelle hüüdnimi on määratud muutujaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> või kõigile antud <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>il. See võib välja näha näiteks selline (kanalikaardil):</para>
+
+<para
+><computeroutput
+>[17:14] [Teade] Teate "Ma arvan, et ma saan aru" saatmine kanalile #konversation</computeroutput
+></para>
+
+<para
+>Ja saajad näevad seda sellisena:</para>
+
+<para
+><computeroutput
+>[17:15] [Teade] -Eisfuchs- Ma arvan, et ma saan aru</computeroutput
+></para>
+
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/query </command
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Loob uue kaardi kasutajaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> privaatvestluse alustamiseks. Tavaliselt nimetatakse seda &irc;-s <link linkend="query"
+>päringuks</link
+>. Kõik, mida siin kirjutatakse, on näha ainult sulle ja sinu partnerile. Kui siin anda tühikutega eraldatult enam kui üks hüüdnimi, avatakse päringukaart iga hüüdnime tarbeks. Iga päringukaart ja seal kõneldav on nähtav ainult sulle ja konkreetsele partnerile.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/msg </command
+><replaceable
+>hüüdnimi|kanal</replaceable
+></userinput
+> <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Saadab <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>i kasutajale, kelle hüüdnimi on määratud muutujaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+>, või kõigile kasutajatele <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>il. Erinevalt käsust <userinput
+><command
+>/query</command
+></userinput
+> ei avata uut kaarti. Kui <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+> algab käsuga <userinput
+><command
+>/me </command
+></userinput
+>, vormindatakse sõnum samamoodi, nagu käsu <userinput
+><command
+>/me</command
+></userinput
+> korral.</para>
+
+<para
+>Näited:</para>
+
+<para
+><userinput
+><replaceable
+>/msg Eisfuchs Mul läheks vaja veidi abi msg käsuga</replaceable
+></userinput
+></para>
+
+<para
+><userinput
+><replaceable
+>/msg #konversation Uus Konvi versioon on üleval!</replaceable
+></userinput
+></para>
+
+<para
+><userinput
+><replaceable
+>/msg Eisfuchs /me kompileerib parajasti käsiraamatut.</replaceable
+></userinput
+></para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/smsg </command
+><replaceable
+>hüüdnimi|kanal</replaceable
+></userinput
+> <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sama, mis <userinput
+><command
+>/msg</command
+></userinput
+>, ainult et sõnumit sinu ekraanil ei näidata. See on mõttekas näiteks paroolide ja muu tundliku info varjamiseks ekraanil või logimise vältimiseks.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/amsg </command
+><replaceable
+>hüüdnimi|kanal</replaceable
+></userinput
+> <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sama, mis <userinput
+><command
+>/msg</command
+></userinput
+>, ainult et sõnum saadetakse kõigile kanalitele ja päringutele kõigis serverites, millega &konversation; on ühendatud.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/op </command
+> <replaceable
+>hüüdnimi</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kanalikaardil sisestatuna püüab anda kasutajale <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> kanali operaatori õigusi. See ei pruugi toimida, kui käsu andjal ei ole kanalil vastavaid õigusi (selleks peab ise olema eelnevalt kanali operaator). Soovi korral võib anda enam kui ühe hüüdnime, eraldajaks tühikud.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/deop </command
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kanalikaardil sisestatuna võtab kasutajalt <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> kanali operaatori õigused. Soovi korral võib anda enam kui ühe hüüdnime, eraldajaks tühikud.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/oper </command
+><replaceable
+>[hüüdnimi]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Annab kasutajale, kelle hüüdnimi on määratud muutujaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> &irc;-Op ehk administraatori privileegid. See on võimalik ainult siis, kui hüüdnimi esineb serveri O: real. &irc; operaatoritel on õigus suvaline hüüdnimi kõrvaldada (<userinput
+><command
+>/kill</command
+></userinput
+>), ühendada serverid &irc; võrguga (<userinput
+><command
+>/connect</command
+></userinput
+>) ja veel palju muid õigusi. Kui jätta <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> sisestamata, püütakse &irc;-Op privileegid anda sulle endale. Nii või teisiti päritakse sinu käest igal juhul &irc;-Op kasutajanime ja parooli.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/voice </command
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Teatud kanalitel (lipuga +m) ei saa kasutajad sõnumeid saata, kui neil ei ole niinimetatud hääleprivileegi. Selle käsuga püütakse anda kasutajale <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> just selline õigus. Selle andmiseks peab olema kanali operaator. Enamasti pruugitakse seda siis, kui tegemist on modereeritava kanaliga.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/unvoice </command
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Võtab kasutajalt <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> kanalil hääleprivileegi.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/topic </command
+><replaceable
+>[kanal]</replaceable
+> <replaceable
+>[sõnum]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Püüab määrata <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>i teemaks <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>i. Kanalikaardil sisestatuna võib <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>i ära jätta, sellisel juhul eeldatakse vaikimisi kaardil aktiivset kanalit. Kui ära jätta <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>, näidatakse kanali parajasti kehtivat teemat. Kanali teema muutmine ei pruugi aga õnnestuda, kui sul selleks õigusi pole.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/away </command
+> <replaceable
+>põhjus</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kui keegi püüab sulle privaatsõnumit saata või sind mõnele kanalile kutsuda, saab ta teada, et oled parajasti arvutist eemal toodud <userinput
+><replaceable
+>põhjus</replaceable
+></userinput
+>el. Oleku muutmiseks tagasi normaalseks anna käsk <userinput
+><command
+>/away</command
+></userinput
+> ilma põhjuseta.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/aaway </command
+> <replaceable
+>põhjus</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sama, mis <userinput
+><command
+>/away</command
+></userinput
+>, ainult et käsk saadetakse kõigile serveritele, millega &konversation; on ühendatud.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/invite </command
+><replaceable
+>hüüdnimi</replaceable
+> <replaceable
+>[kanal]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kutsub kasutaja, kelle hüüdnimi on määratud muutujaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+>, <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>iga liituma. See on eriti kasulik siis, kui kanaliga saabki liituda ainult kutse alusel. Kanalikaardil sisestatuna võib <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>i ära jätta.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/exec </command
+><replaceable
+>skript</replaceable
+> <replaceable
+>[parameetrid]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Käivitab &konversation;iga ühilduva skripti nimega <userinput
+><replaceable
+>skript</replaceable
+></userinput
+> ja annab sellele vajadusel <userinput
+><replaceable
+>parameetrid</replaceable
+></userinput
+>. Rohkem infot skriptide kasutamise ja kirjutamise kohta annab osa <link linkend="scripting"
+>Skriptide kasutamine</link
+>.</para>
+<para
+>Näited:</para>
+
+<para
+><userinput
+><replaceable
+>/exec kdeversion</replaceable
+></userinput
+></para>
+
+<para
+>Saadab kanalile sinu süsteemi &kde; ja &Qt; versiooni info.</para>
+
+<para
+><userinput
+><replaceable
+>/exec cmd uname -a</replaceable
+></userinput
+></para>
+
+<para
+>Saadab kanalile sinu &Linux; versiooni info.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/notify </command
+><replaceable
+>[hüüdnimi]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Lisab või eemaldab kasutaja <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> sinu loendist <link linkend="nicksonline"
+>Jälgitavad hüüdnimed võrgus</link
+>. Kui hüüdnimi on juba nimekirjas, eemaldatakse ta sealt, kui mitte, siis lisatakse. Kui <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> ära jätta, näidatakse nimekirja, kus on kirjas iga parajasti jälgitav hüüdnimi.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/prefs </command
+>[<command
+>list</command
+>|<replaceable
+>grupp</replaceable
+>] [<command
+>list</command
+>|<replaceable
+>võti</replaceable
+>] [<replaceable
+>väärtus</replaceable
+>]</userinput
+></term>
+<listitem
+><para
+>Näitab või kehtestab &konversation;i seadistusi ilma seadistustedialoogi avamata. Kui parameetris esineb tühikuid, aseta see jutumärkidesse.</para>
+
+<para
+>Näited:</para>
+
+<para
+><userinput
+><replaceable
+>/prefs list</replaceable
+></userinput
+></para>
+
+<para
+>Näitab saadaolevaid võtmegruppe.</para>
+
+<para
+><userinput
+><replaceable
+>/prefs "General Options" list</replaceable
+></userinput
+></para>
+
+<para
+>Näitab võtmeid grupis <userinput
+><replaceable
+>General Options</replaceable
+></userinput
+> koos nende parajasti kehtivate väärtustega.</para>
+
+<para
+><userinput
+><replaceable
+>/prefs "General Options" ShowTrayIcon</replaceable
+></userinput
+></para>
+
+<para
+>Näitab parajasti kehtivat väärtust &konversation;i ikooni süsteemses salves näitamise seadistuse kohta.</para>
+
+<para
+><userinput
+><replaceable
+>/prefs "General Options" ShowTrayIcon false</replaceable
+></userinput
+></para>
+
+<para
+>Lülitab &konversation;i ikooni näitamise süsteemses salves välja.</para>
+
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/kick </command
+><replaceable
+>hüüdnimi</replaceable
+> <replaceable
+>põhjus</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kanalikaardil sisestatuna püüab lüüa kasutaja, kelle hüüdnimi on määratud muutujaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+>, kanalilt minema toodud <userinput
+><replaceable
+>põhjus</replaceable
+></userinput
+>el. Kui jätta <userinput
+><replaceable
+>põhjus</replaceable
+></userinput
+> andmata, kasutatakse vaikepõhjust, mida saab määrata <link linkend="identity"
+>seadistustedialoogis</link
+>. Seda käsku saab kasutada ainult kanalikaardil.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ban </command
+> [<command
+>-host</command
+>|<command
+>-domain</command
+>| <command
+>-userhost</command
+>|<command
+>-userdomain</command
+>] <replaceable
+>[kanal]</replaceable
+> <replaceable
+>kasutaja</replaceable
+>|<replaceable
+>mask</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Püüab pagendada <userinput
+><replaceable
+>kasutaja</replaceable
+></userinput
+> või <userinput
+><replaceable
+>mask</replaceable
+></userinput
+>i <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>ilt. Kanalikaardil sisestatuna võib <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>i ära jätta. Rohkem infot masinate, domeenide ja maskide kohta leiab veebist <ulink url="http://www.irchelp.org/"
+>irchelp.org</ulink
+>. Kanalilt parajasti pagendatute nimekirja näeb käsuga <userinput
+><command
+>/mode </command
+><replaceable
+>kanal</replaceable
+> <command
+>b</command
+></userinput
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/unban </command
+> <replaceable
+>[kanal]</replaceable
+> <replaceable
+>muster</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Tühistab varasema kanalilt pagendamise. Kanalikaardil sisestatuna võib <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>i ära jätta. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ignore </command
+> [<command
+>-all</command
+>] <replaceable
+>hüüdnimi</replaceable
+> </userinput
+></term>
+<listitem
+><para
+><userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> lisatakse sinu ignoreeritavate loendisse. Anda võib ka enam kui ühe hüüdnime, eraldajaks tühikud. Kanali sõnumeid ignoreeritavate loendis olevatelt kasutajatelt ei näidata. Lisaks sellele ignoreeritakse <userinput
+><command
+>-all</command
+></userinput
+> andmisel üldse igasuguseid kasutajalt pärit sõnumeid (päringud, teadaanded, &CTCP;, DCC, erandid). </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/quote </command
+> <replaceable
+>käsk</replaceable
+></userinput
+></term>
+<listitem
+><para
+><userinput
+><replaceable
+>käsk</replaceable
+></userinput
+> saadetakse serverile. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/say </command
+> <replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kanalikaardil sisestatuna saadab <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>i kanalile. Sama, mis <userinput
+><replaceable
+>sõnum</replaceable
+></userinput
+>i sisestamine kanali <interface
+>sisendreal</interface
+>. Mõttekas &irc; käskude saatmiseks, kui sa ei soovi käske käivitada. Kaks käsumärki üksteise järel (//) tähendavad samuti <userinput
+><command
+>/say</command
+></userinput
+>. Seda kasutatakse ka <link linkend="scripting"
+>skriptides</link
+> sõnumite saatmiseks. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/raw </command
+> [<command
+>open</command
+>|<command
+>close</command
+>]</userinput
+></term>
+<listitem
+><para
+>Seab serveri logi toorrežiimi (<command
+>open</command
+>) või peatab selle (<command
+>close</command
+>). Kui antud pole ei <command
+>open</command
+> ega <command
+>close</command
+>, eeldatakse vaikimisi, et mõeldud oli <command
+>open</command
+>. Toorrežiimis näitab logi iga serverilt saadud sõnumit &irc; loomupärases vormingus. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/konsole </command
+></userinput
+></term>
+<listitem
+><para
+>Avab uue kaardi &kde; Konsooliga. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/server </command
+> <replaceable
+>[url]</replaceable
+> <replaceable
+>[parool]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Võtab ühendust serveriga aadressil <userinput
+><replaceable
+>url</replaceable
+></userinput
+>. Kui <userinput
+><replaceable
+>url</replaceable
+></userinput
+> ära jätta, võetakse ühendust serveriga, mis on seotud kaardiga, millel käsk sisestati. See on kasulik taasühendumiseks serveriga, kui ühendus mingil põhjusel katkes. Kui server nõuab ühendumiseks parooli, anna see muutujaga <userinput
+><replaceable
+>parool</replaceable
+></userinput
+>. Kui server nõuab mingit muud porti kui vaikeport (6667), sisesta <userinput
+><replaceable
+>url</replaceable
+></userinput
+> kujul <replaceable
+>irc.kde.org:6665</replaceable
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/dcc </command
+> <command
+>SEND </command
+><replaceable
+>hüüdnimi</replaceable
+> <replaceable
+>[failinimi]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Saadab faili <userinput
+><replaceable
+>failinimi</replaceable
+></userinput
+> kasutajale, kelle hüüdnimi on määratud muutujaga <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+>. Kui <userinput
+><replaceable
+>failinimi</replaceable
+></userinput
+> ära jätta, ilmub dialoog, kus saab faili valida. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/dcc </command
+></userinput
+></term>
+<listitem
+><para
+>Avab DCC oleku kaardi, </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ctcp </command
+><replaceable
+>hüüdnimi|kanal</replaceable
+> <command
+>ping</command
+></userinput
+></term>
+<listitem
+><para
+>Saadab PING sõnumi kasutajale <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> või <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>ile. Sellest on abi selgitamisel, kas isikul, kellega vestled, on äkki suur võrguviivitus või kas see on sul endal (kui saata käsk kanalile). </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ctcp </command
+><replaceable
+>hüüdnimi|kanal</replaceable
+> <replaceable
+>sõnum</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Saadab sõnumi kasutajale <userinput
+><replaceable
+>hüüdnimi</replaceable
+></userinput
+> või kõigile kasutajatele <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>il. Sama, mis <userinput
+><command
+>/msg</command
+></userinput
+>, ainult et sõnum saadetakse &CTCP; protokolli kasutades. Vastus sellele oleneb teise poole kasutatavast &irc; klientprogrammist. Näiteks teise &konversation;i kasutajaga vesteldes tagastab <userinput
+><replaceable
+>/ctcp Eisfuchs TIME</replaceable
+></userinput
+> Eisfuchsi arvuti süsteemse aja, <userinput
+><replaceable
+>/ctcp Eisfuchs VERSION</replaceable
+></userinput
+> aga Eisfuchsi arvutis töötava &konversation;i versiooni. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="scripting">
+<title
+>Skriptide kasutamine</title>
+
+<para
+>&konversation; pakub mitu vahvat skripti, mida saab käivitada otse rakendusest. Skripti käivitamiseks kanali-, päringu-, DCC või serverikaardil anna käsk kujul</para>
+
+<para
+><userinput
+><command
+>/exec </command
+> <replaceable
+>skript</replaceable
+> [<replaceable
+>parameetrid</replaceable
+>]</userinput
+></para>
+
+<para
+>mis käivitab skripti nimega <userinput
+><replaceable
+>skript</replaceable
+></userinput
+>, edastades sellele (kui on määratud) <userinput
+><replaceable
+>parameetrid</replaceable
+></userinput
+>.</para>
+
+<para
+>Kirjuta näiteks kanalikaardil käsk</para>
+
+<para
+><userinput
+><replaceable
+>/exec kdeversion</replaceable
+></userinput
+></para>
+
+<para
+>mis edastab kanalile sinu süsteemi &kde; ja &Qt; versiooni.</para>
+
+<para
+><userinput
+><replaceable
+>/exec cmd uname -a</replaceable
+></userinput
+></para>
+
+<para
+>käivitab skripti <userinput
+><replaceable
+>cmd</replaceable
+></userinput
+>, edastades sellele parameetri <userinput
+><replaceable
+>uname -a</replaceable
+></userinput
+>. See saadab kanalile sinu &Linux; versiooni.</para>
+
+<para
+>Kõigi saadaolevate skriptide nägemiseks anna Konsoolis järgmine käsk:</para>
+
+<para
+><userinput
+><replaceable
+>ls $KDEDIR/share/apps/konversation/scripts</replaceable
+></userinput
+></para>
+
+<para
+>Skripte võib ka ise kirja panna. Need on shelliskriptid ning neid võib kirjutada mis tahes shellikeeles, näiteks bash, perl või python. Kui &konversation; skripti käivitab, saadetakse skriptile kõigepealt kolm parameetrit:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Selle kaardi &irc; serveri pordi number, millel käsk <userinput
+><command
+>/exec</command
+></userinput
+> anti.</para>
+</listitem>
+
+<listitem
+><para
+>Serveri aadress.</para
+></listitem>
+
+<listitem
+><para
+>Kanali nimi.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Toome siin näite shelliskriptist (cmd).</para>
+
+<para>
+<programlisting
+>#!/bin/sh
+
+# Käivitab käsu ja saadab väljundi Konversationi.
+
+PORT=$1;
+SERVER=$2;
+TARGET=$3;
+shift;shift;shift;
+
+$@ | while read line; do dcop $PORT Konversation say $SERVER "$TARGET" "$@: $line"; done
+</programlisting>
+</para>
+
+<para
+>Pane tähele, et skript kasutab &konversation;iga suhtlemisel &DCOP;-i. Käsk <computeroutput
+>say</computeroutput
+> sunnib väljundi kanalile tavalise sõnumina saatma. Millegi näitamiseks kaardil ilma seda teistele kasutajatele saatmata kasuta käsku <computeroutput
+>info</computeroutput
+>. Skriptide kirjutamisega aitab kindlasti paremini tutvuda näiteskriptide põhjalik uurimine.</para>
+
+<para
+>Kui soovid enda loodud skripti käivitada, tuleb see sul paigadalda, kopeerides skripti kataloogi $KDEDIR/share/apps/konversation/scripts või $HOME/.kde/share/apps/konversation/scripts. Failile tuleb anda ka käivitamisõigused, näiteks käsuga <userinput
+><replaceable
+>chmod a+x minuskript</replaceable
+></userinput
+>.</para>
+
+</sect1>
+
+</chapter>
+
+<!-- =================================================================== -->
+
+<chapter id="commands">
+<title
+>Käskude seletused</title>
+
+<!-- (OPTIONAL, BUT RECOMMENDED) This chapter should list all of the
+application windows and their menubar and toolbar commands for easy reference.
+Also include any keys that have a special function but have no equivalent in the
+menus or toolbars. This may not be necessary for small apps or apps with no tool
+or menu bars. -->
+
+<!-- =================================================================== -->
+
+<sect1 id="kapp-mainwindow">
+<title
+>&konversation;i peaaken</title>
+
+<sect2>
+<title
+>Failimenüü</title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+><keycap
+>F2</keycap
+></shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Serverite nimekiri</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Näitab <link linkend="irc-basics"
+>serverite ja kanalite nimekirja</link
+>. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+><keycap
+>F7</keycap
+></shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Kiirühendus</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Avab <link linkend="quickconnect"
+>kiirühenduse</link
+> dialoogi serveriga ühendumiseks. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Fail</guimenu
+> <guimenuitem
+>Ühenda uuesti</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Loob uuesti ühenduse kõigi serveritega, millega see katkes võrguvea või mõne muu probleemi tõttu. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>J</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Liitu kanaliga</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Avab dialoogi, kus saad määrata kanali nime, millega soovid liituda. Sama, mis käsk <command
+>/join <userinput
+>#kanalinimi</userinput
+></command
+> kanali- või serverikaardil.</action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt; &Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Määra globaalselt eemalolevaks</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Muudab sinu hüüdnime oleku kõigil kanalitel eemalolevaks. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fail</guimenu
+> <guimenuitem
+>Välju</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Lõpetab</action
+> &konversation;i töö.</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Redigeerimine</guimenu
+></title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Otsi</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Otsib vajalikku teksti aktiivsel ekraanil.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+><keycap
+>F3</keycap
+></shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Otsi järgmine</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Otsib uuesti vajalikku teksti aktiivsel ekraanil, kasutades varem määratud otsingustringi.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Puhasta aken</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Puhastab aktiivse akna sisu.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl; &Shift;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>Puhasta kõik aknad</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Puhastab kõigi akende sisu.</action>
+			</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Lisamine</guimenu
+></title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Lisamine</guimenu
+> <guimenuitem
+>&irc; värv</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Vaata osa <link linkend="color-msgs"
+>Värviliste sõnumite saatmine</link
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Lisamine</guimenu
+> <guimenuitem
+>Meelespidamisrida</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Vaata osa <link linkend="rememberlines"
+>Kanali- ja päringulogide märkimine</link
+>.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt; &Shift;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Lisamine</guimenu
+> <guimenuitem
+>Erisümbol</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Lisab erimärgi, näiteks klaviatuuril mitteleiduva tähe.</action>
+			</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Järjehoidjad</guimenu
+></title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Järjehoidjad</guimenu
+> <guimenuitem
+>Lisa järjehoidja</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+		    <action
+>Lisab aktiivse võrgu ja kanali järjehoidjatesse</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Järjehoidjad</guimenu
+> <guimenuitem
+>Redigeeri järjehoidjaid</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Avab järjehoidjate redaktori</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Järjehoidjad</guimenu
+> <guimenuitem
+>Uus järjehoidjate kataloog</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Loob uue järjehoidjate kataloogi</action>
+			</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Seadistused</guimenu
+></title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Menüüriba peitmine</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Peidab menüüriba. Selle taasnägemiseks kasuta kiirklahvi <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Tööriistariba peitmine</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Peidab tööriistariba.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Olekuriba peitmine</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Peidab akna allservas asuva olekuriba.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Identiteedid</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Avab <link linkend="quickconnect"
+>identiteetide</link
+> dialoogi oma identiteediinfo määramiseks. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Kiirklahvide seadistamine</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Võimaldab muuta &konversation;i kiirklahve.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Tööriistaribade seadistamine</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Võimaldab lisada nuppe &konversation;i tööriistaribale või neid sealt eemaldada.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>Märguannete seadistamine</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Avab <link linkend="cfg-notifications"
+>märguannete seadistamise</link
+> dialoogi.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>&konversation;i seadistamine</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Avab dialoogi <guilabel
+>Seadistused</guilabel
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menüü <guimenu
+>Aken</guimenu
+></title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Aken</guimenu
+> <guimenuitem
+>Eelmine kaart</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Näitab järjekorras eelmist kaarti.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Aken</guimenu
+> <guimenuitem
+>Järgmine kaart</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Näitab järjekorras järgmist kaarti.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Aken</guimenu
+> <guimenuitem
+>Sulge kaart</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Sulgeb aktiivse kaardi. Kui see on kanal, lahkub kanalilt. Kui see on <interface
+>serveri teadete</interface
+> kaart, sulgeb kõik antud serveri avatud kanalid ja katkestab ühenduse serveriga. </action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+><keycap
+>F11</keycap
+></shortcut
+> <guimenu
+>Aken</guimenu
+> <guimenuitem
+>Sulge kõik avatud päringud</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Sulgeb kõik <link linkend="query"
+>privaatvestlused (päringud)</link
+>. </action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Aken</guimenu
+> <guimenuitem
+>Peida hüüdnimede nimekiri</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Peidab või toob nähtavale hüüdnimede paneeli kanalikaartidel. </action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+><keycap
+>F4</keycap
+></shortcut
+> <guimenu
+>Aken</guimenu
+> <guimenuitem
+>Jälgitavad hüüdnimed võrgus</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Näitab dialoogi <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+>. Vaata osa <link linkend="nicksonline"
+>Võrgusviibijate jälgimine</link
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+><keycap
+>F5</keycap
+></shortcut
+> <guimenu
+>Aken</guimenu
+> <guimenuitem
+>Kanalite nimekiri</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Näitab serveris saadaolevate <link linkend="list-channels"
+>kanalite nimekirja</link
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+><keycap
+>F6</keycap
+></shortcut
+> <guimenu
+>Redigeerimine</guimenu
+> <guimenuitem
+>&url; püüdja</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Avab <link linkend="urlcatcher"
+>&url; püüdja</link
+> dialoogi.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Aken</guimenu
+> <guimenuitem
+>Uus konsool</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Avab terminaliakna. Avada võib nii mitu <guilabel
+>konsool</guilabel
+>iakent, kui süda lustib.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Aken</guimenu
+> <guimenuitem
+>Ava logifail</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Avab dialoogi aktiivse kaardi logiteadetega. Toimib ainult <interface
+>kanal</interface
+>i, <interface
+>serveri teadete</interface
+> ja <interface
+>päring</interface
+>ute kaartide korral. Logimine peab olema sisse lülitatud (<menuchoice
+> <guisubmenu
+>Seadistused</guisubmenu
+> <guisubmenu
+>Konversationi seadistamine</guisubmenu
+> <guisubmenu
+>Käitumine</guisubmenu
+> <guisubmenu
+>Logimine</guisubmenu
+> </menuchoice
+>). </action>
+		</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+><guimenu
+>Abi</guimenu
+>menüü</title>
+&help.menu.documentation; </sect2>
+
+</sect1>
+</chapter>
+
+<!-- =================================================================== -->
+
+<chapter id="faq">
+<title
+>Küsimused ja vastused</title>
+&reporting.bugs; &updating.documentation; <qandaset id="faqlist">
+
+<qandaentry>
+<question>
+<para
+>Tahaksin &konversation;i käivitades kohe ühenduda serveriga, aga mitte mõne konkreetse kanaliga. Kuidas seda teha?</para>
+</question>
+<answer>
+<para
+>Jäta dialoogis <link linkend="serverlist-addnetwork"
+>Serveri redigeerimine</link
+> sektsioon <guilabel
+>Kanalid</guilabel
+> puutumata.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para
+>&konversation; ei saa ühegi serveriga ühendust. Milles asi?</para>
+</question>
+<answer>
+<para
+>Sellel võib olla mitu põhjust.</para>
+<orderedlist>
+<listitem>
+<para
+>Kontrolli, et <guilabel
+>serveri nimi</guilabel
+> ja <guilabel
+>port</guilabel
+> on dialoogis <link linkend="serverlist-addserver"
+>Serveri lisamine</link
+> korrektselt sisestatud. </para>
+</listitem>
+<listitem>
+<para
+>Kontrolli kaardi <link linkend="channel-screen-tour"
+>Serveri sõnumid</link
+> teateid. Kas seal on teateid mingitest vigadest? Kas server keeldus ühendusest vigase parooli tõttu? Kas server keeldus seepärast, et talle on vajalik <acronym
+>IDENTD</acronym
+>, aga sinu arvuti serveri <acronym
+>IDENTD</acronym
+> soovile ei vastanud? Kas oled märkinud SSL protokolli kasutamist lubava kasti, aga server ei toeta SSL-i? </para>
+</listitem>
+<listitem>
+<para
+>Kui oled tulemüüri taga, kontrolli, et korrektsed pordid oleks ikka lubatud. &konversation; vajab tööks järgmisi porte: </para>
+
+<para>
+<itemizedlist>
+<listitem
+><para
+>Väljapoole TCP 6667 (või selle serveri port, millega ühendust soovid võtta)</para
+></listitem>
+<listitem
+><para
+>Sissepoole TCP 113 (kui serverile on vajalik IDENTD)</para
+></listitem>
+<!-- <listitem
+><para
+>TODO (Incoming port numbers?)</para
+></listitem
+> -->
+</itemizedlist>
+</para>
+
+<para
+>Rohkem infot &irc; ühenduse probleemide kohta annab <ulink url="http://www.irchelp.org/irchelp/networks/connectprob.html"
+>irchelp.org</ulink
+>. </para>
+
+</listitem>
+
+</orderedlist>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para
+>Kui ma püüan valida käsku <menuchoice
+> <guisubmenu
+>Aken</guisubmenu
+> <guisubmenu
+>Kanalite nimekiri</guisubmenu
+> </menuchoice
+>, ei saa ma seda teha. Miks?</para>
+</question>
+<answer>
+<para
+><menuchoice
+> <guisubmenu
+>Aken</guisubmenu
+> <guisubmenu
+>Kanalite nimekiri</guisubmenu
+></menuchoice
+> on hall ja mittekasutatav, kui parajasti on avatud mingi kanaliväline kaart, näiteks <guilabel
+>Jälgitavad hüüdnimed võrgus</guilabel
+>. Et seda käsku valida, muuda aktiivseks mõne kanali või serveri kaart. </para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Autorid ja litsents</title>
+
+<para
+>&konversation; </para>
+<para
+>Rakenduse autoriõigus 2002-2005: &konversation;i meeskond. </para>
+<para
+><ulink url="&konviwebsite;"
+>&konviwebsite;</ulink>
+</para>
+<para
+>Kaasautorid: <itemizedlist>
+<listitem
+><para
+>Dario Abatianni <email
+>eisfuchs@tigress.com</email
+></para
+></listitem>
+<listitem
+><para
+>Peter Simonsson <email
+>psn@linux.se</email
+></para
+></listitem>
+<listitem
+><para
+>Christian Muehlhaeuser <email
+>chris@chris.de</email
+></para
+></listitem>
+<listitem
+><para
+>John Tapsel <email
+>john@geola.geo.uk</email
+></para
+></listitem>
+<listitem
+><para
+>Ismail Donmez <email
+>ismail.donmez@boun.edu.tr</email
+></para
+></listitem>
+<listitem
+><para
+>Shintaro Matsuoka <email
+>shin@shoegazed.org</email
+></para
+></listitem>
+<listitem
+><para
+>Gary Cramblitt <email
+>garycramblitt@comcast.net</email
+></para
+></listitem>
+<listitem
+><para
+>Matthias Gierlings <email
+>gismore@users.sourceforge.net</email
+></para
+></listitem>
+<listitem
+><para
+>&Alex.Zepeda; <email
+>garbanzo@hooked.net</email
+></para
+></listitem>
+<listitem
+><para
+>Stanislav Karchebny <email
+>berkus@users.sourceforge.net</email
+></para
+></listitem>
+<listitem
+><para
+>Mickael Marchand <email
+>marchand@kde.org</email
+></para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>Tänusõnad: <itemizedlist>
+<listitem
+><para
+>Michael Goettsche <email
+>michael.goettsche@kdemail.net</email
+></para
+></listitem>
+<listitem
+><para
+>Benjamin Meyer <email
+>ben+konversation@kdemail.net</email
+></para
+></listitem>
+<listitem
+><para
+>Jacub Stachowski <email
+>qbast@go2.pl</email
+></para
+></listitem>
+<listitem
+><para
+>Sabastian Sariego <email
+>segfault@kde.cl</email
+></para
+></listitem>
+<listitem
+><para
+>Olivier Bedard <email
+>www.konversation.org hosting</email
+></para
+></listitem>
+<listitem
+><para
+>Frauke Oster <email
+>frauke@frsv.de</email
+></para
+></listitem>
+<listitem
+><para
+>Lucijan Busch <email
+>lucijan@kde.org</email
+></para
+></listitem>
+<listitem
+><para
+>Sascha Cunz <email
+>mail@sacu.de</email
+></para
+></listitem>
+<listitem
+><para
+>Steve Wollkind <email
+>steve@njord.org</email
+></para
+></listitem>
+<listitem
+><para
+>Thomas Nagy <email
+>thomas.nagy@eleve.emn.fr</email
+></para
+></listitem>
+<listitem
+><para
+>Tobias Olry <email
+>tobias.olry@web.de</email
+></para
+></listitem>
+<listitem
+><para
+>Ruud Nabben <email
+>r.nabben@gawab.com</email
+></para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>Dokumentatsiooni autoriõigus &copy; 2003-2005: Gary R. Cramblitt <email
+>garycramblitt@comcast.net</email
+> </para>
+
+<para
+>Tõlge eesti keelde: Marek Laane <email
+>bald@starman.ee</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Paigaldamine</title>
+
+<!-- =================================================================== -->
+
+<sect1 id="getting-kapp">
+<title
+>&konversation;i hankimine</title>
+&install.intro.documentation; <para
+>&konversation;i uusima versiooni, sealhulgas lähtekoodi ja paigaldamise juhised leiab ka <ulink url="&konviwebsite;"
+>&konversation;i koduleheküljelt</ulink
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="requirements">
+<title
+>Nõuded</title>
+
+<!--
+List any special requirements for your application here. This should include:
+.Libraries or other software that is not included in kdesupport,
+kdelibs, or kdebase.
+.Hardware requirements like amount of RAM, disk space, graphics card
+capabilities, screen resolution, special expansion cards, etc.
+.Operating systems the app will run on. If your app is designed only for a
+specific OS, (you wrote a graphical LILO configurator for example) put this
+information here.
+-->
+
+<para
+>&konversation;i edukaks kasutamiseks on vajalik &kde; 3.2 või uuem ning internetiühendus. Varasematel &kde; versioonidel puudusid mitmed huvitavad võimalused. Kui kasutad &konversation;i tulemüüri taga asudes, vaata osa <link linkend="faq"
+>Küsimused ja vastused</link
+>. Kui soovid kasutada SSL protokolli, on vajalik OpenSSL. </para>
+
+</sect1>
+</appendix>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+-->

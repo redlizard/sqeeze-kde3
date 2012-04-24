@@ -1,0 +1,55 @@
+Here are some scripts that can help you in everyday life with konvi.
+
+They are usually put in ~/.kde/share/apps/konversation/scripts/ and executed by
+typing /exec <scriptname> in konversation.
+
+Since scripts are executed by system, they should have 'executable' flag on.
+This is most easily achieved by running chmod +x <scriptname>
+
+Please add descriptions here as new scripts appear:
+
+bug		Opens up konqueror with kde bugzilla on specified bug number.
+		usage: /bug 65090
+
+gauge		Displays funny "beer load" meter. Author: Eisfuchs, Idea: berkus.
+                usage: /gauge 55
+
+
+uptime          Displays the system uptime on the current channel.
+                usage: /uptime
+
+fortune         Displays a random fortune cookie
+		usage: /fortune
+
+kdeversion	Displays the Qt/KDE version.
+		usage: /kdeversion
+
+cmd		Prints the output of a given command.
+		usage: /cmd command
+
+sayclip         Prints the contents of the clipboard on the current channel 
+                with flood protection.  Klipper must be running.
+                usage: /sayclip [pause-time]
+
+weather         Displays current weather using KWeather applet.
+		usage: /weather
+
+colorizer       Randomly colorizes the message.
+		usage: /colorize message
+
+media		Plays the currently played media.
+		Supports amaroK,JuK,Noatun,Kaffeine
+		Usage: /media
+
+mail		Print the number of unread emails in your inbox folder in
+		kmail.  Kmail or kontact must be running.
+		Usage: /mail [folder-substring]
+
+google		Use Google services
+		Usage: /google (--search) <query> # Search <query> in Google
+		       /google --spell <word> # Spellcheck <word> using Google
+		       /google -b|--browser <query> # Launch konqueror with google search for <query>
+
+qurl            Display a short version of the url using qurl.net
+                Requires Ruby.
+		usage: /qurl http://some.very.long.url.com/

@@ -1,0 +1,82 @@
+<!DOCTYPE kpartgui>
+<kpartgui name="konversation" version="51">
+
+  <MenuBar>
+    <Menu name="file">
+      <Action name="open_server_list" />
+      <Action name="quick_connect_dialog" />
+      <Separator />
+      <Action name="disconnect_server" />
+      <Action name="reconnect_server" />
+      <Separator />
+      <Action name="join_channel" />
+      <Separator />
+      <Action name="toggle_away" />
+    </Menu>
+    <Menu name="edit">
+      <Action name="clear_lines" />
+      <Separator />
+      <Action name="clear_window" />
+      <Action name="clear_tabs" />
+    </Menu>
+    <Menu name="insert">
+      <Text>&amp;Insert</Text>
+      <Action name="irc_colors" />
+      <Action name="insert_marker_line" />
+      <Action name="insert_character" />
+    </Menu>
+    <Menu name="bookmarks">
+      <Text>&amp;Bookmarks</Text>
+    </Menu>
+    <Menu name="settings">
+      <Action name="hide_nicknamelist" />
+      <Separator />
+      <Action name="identities_dialog" append="save_merge" />
+    </Menu>
+    <Menu name="windows" append="settings_merge">
+      <Text>&amp;Window</Text>
+      <Action name="previous_tab" />
+      <Action name="next_tab" />
+      <Action name="next_active_tab" />
+      <Separator />
+      <Action name="move_tab_left" />
+      <Action name="move_tab_right" />
+      <Action name="close_tab" />
+      <Action name="close_queries" />
+      <Separator />
+      <Action name="tab_notifications" />
+      <Action name="tab_encoding" />
+      <Separator />
+      <Action name="open_nicksonline_window" />
+      <Action name="open_url_catcher" />
+      <Action name="open_dccstatus_window" />
+      <Action name="open_konsole" />
+      <Separator />
+      <Action name="open_channel_list" />
+      <Action name="open_logfile" />
+      <Action name="channel_settings" />
+    </Menu>
+  </MenuBar>
+
+  <ToolBar fullWidth="true" hidden="true" name="mainToolBar">
+    <Action name="open_server_list" />
+    <Action name="quick_connect_dialog" />
+    <Separator />
+    <Action name="toggle_away" />
+    <Separator />
+    <Action name="irc_colors" />
+  </ToolBar>
+
+  <Menu name="tabContextMenu">
+    <Action name="tab_notifications" />
+    <Action name="tab_encoding" />
+    <Separator />
+    <ActionList name="server_actions" />
+    <Separator />
+    <Action name="move_tab_left" />
+    <Action name="move_tab_right" />
+    <Action name="close_tab" />
+</Menu>
+
+</kpartgui>
+

@@ -1,0 +1,31 @@
+--- a/konversation/src/main.cpp
++++ b/konversation/src/main.cpp
+@@ -24,6 +24,19 @@
+ #include "version.h"
+ #include "commit.h"
+ 
++#define HACKSTR(x) #x
++#define STRHACK(x) HACKSTR(x)
++
++/*
++  Add extra version string (if any) to the about dialog
++*/
++
++#ifdef EXTRA_VERSION_STRING
++#  define _EXTRA_VERSION_STRING " " STRHACK(EXTRA_VERSION_STRING)
++#else
++#  define _EXTRA_VERSION_STRING ""
++#endif
++
+ /*
+   Don't use i18n() here, use I18N_NOOP() instead!
+   i18n() will only work as soon as a kapplication object was made.
+@@ -47,7 +60,7 @@
+ {
+     KAboutData aboutData("konversation",
+         I18N_NOOP("Konversation"),
+-        KONVI_VERSION,
++        KONVI_VERSION _EXTRA_VERSION_STRING,
+         shortDescription,
+         KAboutData::License_GPL,
+         I18N_NOOP("(C) 2002-2008 by the Konversation team"),

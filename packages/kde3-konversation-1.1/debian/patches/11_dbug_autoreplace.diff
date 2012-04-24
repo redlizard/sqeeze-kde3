@@ -1,0 +1,10 @@
+--- a/konversation/src/config/preferences.cpp	2007-07-16 23:18:38.000000000 +0300
++++ b/konversation/src/config/preferences.cpp	2007-07-17 02:38:09.000000000 +0300
+@@ -127,6 +127,7 @@
+ const QStringList Preferences::defaultAutoreplaceList()
+ {
+     return QStringList() << "1,o,\\[\\[([^\\s]+)\\]\\],http://en.wikipedia.org/wiki/Special:Search?go=Go&search=%1"
++                         << "1,o,([Dd][Bb][Uu][Gg]:)(\\w+),http://bugs.debian.org/%2"
+                          << "1,o,(BUG:|bug:)([0-9]+),http://bugs.kde.org/show_bug.cgi?id=%2";
+ }
+ 

@@ -1,0 +1,5935 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       CVS -->
+  <!ENTITY kappname "&konversation;">
+  <!ENTITY package "kdeextragear-2">
+  <!ENTITY irc "<acronym
+>IRC</acronym
+>">
+  <!ENTITY CTCP "<acronym
+>CTCP</acronym
+>">
+  <!ENTITY nickname "<acronym
+>nickname</acronym
+>">
+  <!ENTITY Nickname "<acronym
+>Nickname</acronym
+>">
+  <!ENTITY led "<acronym
+>LED</acronym
+>">
+  <!ENTITY osd "<acronym
+>OSD</acronym
+>">
+  <!ENTITY url "<acronym
+>URL</acronym
+>">
+  <!ENTITY mime "<acronym
+>MIME</acronym
+>">
+  <!ENTITY konviwebsite "http://konversation.kde.org">
+  <!ENTITY % imageobjectco.module "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Danish "INCLUDE"
+> <!-- ONLY If you are writing non-English
+                                     original documentation, change
+                                     the language here -->
+
+  <!-- Do not define any other entities; instead, use the entities
+       from entities/general.entities and $LANG/user.entities. -->
+]>
+
+
+<!-- ................................................................ -->
+
+<!-- The language must NOT be changed here. -->
+<!-- If you are writing original documentation in a language other -->
+<!-- than English, change the language above ONLY, not here -->
+<book lang="&language;">
+
+<!-- This header contains all of the meta-information for the document such
+as Authors, publish date, the abstract, and Keywords -->
+
+<bookinfo>
+<title
+>&konversation;-håndbogen</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Gary</firstname
+> <othername
+>R.</othername
+> <surname
+>Cramblitt</surname
+> </personname
+> <email
+>garycramblitt@comcast.net</email
+> </author>
+&erik.kjaer.pedersen.role; 
+</authorgroup>
+
+<!-- Note to Translators:
+	This document contains a number of screen images with callouts.  Because the stylesheets do not currently
+	support merging callout images with screen images, the "areaspec" elements herein are dummy entries
+	used to satisfy the "callout" elements.
+
+	-grc
+-->
+
+<copyright>
+<year
+>2003-2005</year>
+<holder
+>Gary R. Cramblitt</holder>
+</copyright>
+
+<!-- Translators: put here the copyright notice of the translation -->
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date and version information of the documentation
+Don't forget to include this last date and this last revision number, we
+need them for translation coordination !
+Please respect the format of the date (YYYY-MM-DD) and of the version
+(V.MM.LL), it could be used by automation scripts.
+Do NOT change these in the translation. -->
+
+<date
+>2005-05-23</date>
+<releaseinfo
+>0.18</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>&konversation; er en brugervenlig &irc;-klient for K-desktopmiljøet. </para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeextragear-2</keyword>
+<keyword
+>Konversation</keyword>
+<keyword
+>irc</keyword>
+<keyword
+>internet relay chat</keyword>
+<keyword
+>chat</keyword>
+<keyword
+>kommunikationer</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labelled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<!-- CODE SNIPPETS
+The following are useful snippets for cross-referencing to sections of this document.
+If using the snippets plugin, copy them to your snippets.
+Please keep synced with id attributes.
+
+See <link linkend="irc-basics"
+>If you haven't used &irc; before...</link
+> for more information
+See <link linkend="identity"
+>Setting your identity</link
+> for more information
+See <link linkend="identity-away"
+>Setting your identity</link
+> for more information
+See <link linkend="identity-advanced"
+>Setting your identity</link
+> for more information
+See <link linkend="serverlist"
+>Defining new networks, servers and auto join channels</link
+> for more information
+See <link linkend="serverlist-addnetwork"
+>Defining new networks, servers and auto join channels</link
+> for more information
+See <link linkend="serverlist-addserver"
+>Defining new networks, servers and auto join channels</link
+> for more information
+See <link linkend="serverlist-addchannel"
+>Defining new networks, servers and auto join channels</link
+> for more information
+See <link linkend="list-channels"
+>Listing available channels</link
+> for more information
+See <link linkend="channel-screen-tour"
+>A tour of the main screen</link
+> for more information
+See <link linkend="quickconnect"
+>Quick Connect</link
+> for more information
+See <link linkend="irc-cmds"
+>Frequently-used &irc; commands</link
+> for more information
+See <link linkend="query"
+>Private conversations (queries)</link
+> for more information
+See <link linkend="cfg-notifications"
+>Setting notifications</link
+> for more information
+See <link linkend="nicksonline"
+>Monitoring who is online</link
+> for more information
+See <link linkend="highlighting"
+>Message highlighting</link
+> for more information
+See <link linkend="cfg-osd"
+>Configuring On Screen Display (&osd;)</link
+> for more information
+See <link linkend="color-msgs"
+>Sending colorful messages</link
+> for more information
+See <link linkend="nickthemes"
+>Configuring &nickname; themes</link
+> for more information.
+See <link linkend="quick-buttons"
+>Configuring Quick Buttons</link
+> for more information
+See <link linkend="dcc"
+>Sending and receiving files</link
+> for more information
+See <link linkend="linkaddressbook"
+>Integrating with &kaddressbook;</link
+> for more information
+See <link linkend="urlcatcher"
+>Capturing &URL;s from messages.</link
+> for more information
+See <link linkend="webbrowser"
+>Setting your preferred web browser.</link
+> for more information
+See <link linkend="rememberlines"
+>Marking Channel and Query Logs</link
+> for more information
+See <link linkend="logging"
+>Logging</link
+> for more information
+See <link linkend="konvi-cmds"
+>&konversation; commands</link
+> for more information
+See <link linkend="scripting"
+>Scripting</link
+> for more information
+See <link linkend="kapp-mainwindow"
+>The main &konversation; window</link
+> for more information
+See <link linkend="getting-kapp"
+>How to obtain &konversation;</link
+> for more information
+See <link linkend="requirements"
+>Requirements</link
+> for more information
+
+-->
+
+<chapter id="introduction">
+<title
+>Indledning</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+
+<para
+>&konversation; er en &irc;-klient for &kde; 3.2 eller senere. Den tilbyder følgende funktioner. </para>
+
+<para>
+<itemizedlist>
+<listitem
+><para
+>Støtte for SSL.</para
+></listitem>
+<listitem
+><para
+>Brugervenlig fanebladsgrænseflade.</para
+></listitem>
+<listitem
+><para
+>Brugerindstillelige hurtigknapper til ofte brugte kommandoer</para
+></listitem>
+<listitem
+><para
+>Automatisk genforbindelse og gendeltagelse i kanal.</para
+></listitem>
+<listitem
+><para
+>DCC sende og modtage.</para
+></listitem>
+<listitem
+><para
+>&Nickname;-overvågningsliste.</para
+></listitem>
+<listitem
+><para
+>Visuelle og lydmæssige påmindelser for et vidt område af begivenheder, såsom beskeder der indeholder dit alias, eller aliasser på din overvågningsliste der kommer på eller går af nettet. </para
+></listitem>
+<listitem
+><para
+>Brugerindstillelig fremhævning a beskeder efter alias eller regulært udtryk.</para
+></listitem>
+<listitem
+><para
+>&Nickname;-komplettering.</para
+></listitem>
+<listitem
+><para
+>Indfangning og gemning af &URL;'er fra meddelelser.</para
+></listitem>
+<listitem
+><para
+>Visning af meddelelser på skærmen, selv minimeret.</para
+></listitem>
+<listitem
+><para
+>&Nickname;-ignoreringsliste.</para
+></listitem>
+<listitem
+><para
+>Automatisk logning og log-håndtering.</para
+></listitem>
+<listitem
+><para
+>Markering af linjer i logger.</para
+></listitem>
+<listitem
+><para
+>Scripting.</para
+></listitem>
+<listitem
+><para
+>Integration med &kaddressbook;.</para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>Hjemmesiden for &konversation; er  <ulink url="&konviwebsite;"
+>&konviwebsite;</ulink
+>. Spørgsmål og svar om &konversation; kan diskuteres via e-mail-listen <ulink url="http://lists.sourceforge.net/mailman/listinfo/konversation-users"
+>&konversation;-Users</ulink
+>. Abonnér venligst for at lære om nye funktioner, fejlrapporter og lignende. For at blive informeret om nye udgaver, kan du gå med i e-mail-listen <ulink url="http://lists.sourceforge.net/mailman/listinfo/konversation-announce"
+>&konversation;-Announce</ulink
+>. Dette er en e-mail-liste med et lille antal breve, som kun bruges til at annoncere nye udgaver eller programrettelser. </para>
+
+<para
+>Udviklere af &konversation; kan ofte kontaktes via &irc; på <ulink url="irc://irc.kde.org/%23konversation"
+>irc.kde.org kanalen #konversation</ulink
+>. </para>
+
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Brug af &konversation;</title>
+
+<!-- =================================================================== -->
+
+<sect1 id="irc-basics">
+<title
+>Hvis du ikke har brugt &irc; tidligere...</title>
+
+<para
+>Enkelt udtrykt er &irc; en chat-protokol, defineret af officielle Internetstandarder, med mulighed for at stjæle mange timer af dit liv. For at bruge &irc; skal du være forbundet til en server, og derefter gå med i en kanal (som svarer til et chatrum) eller blot deltage i en privat konversation.</para>
+
+<para
+>For at blive forbundet til en server og kanal, startes &konversation;. Skærmen <guilabel
+>Serverliste</guilabel
+> vises.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Serverliste</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-first-serverlist-1" coords="1 1"/>
+				<area id="pt-first-serverlist-2" coords="1 1"/>
+				<area id="pt-first-serverlist-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="first_serverlist_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Serverliste</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-first-serverlist-1"
+><para
+>Listen med indstellede &irc;-<guilabel
+>netværk</guilabel
+> angives her. Et &irc;-netværk er en samling samarbejdende servere. Du behøver kun at forbinde dig til en af serverne i netværket for at være forbundet til hele &irc;-netværket. Når du er forbundet, vil  &konversation; automatisk gå med i de viste <guilabel
+>Kanaler</guilabel
+>. Når &konversation; startes for første gang, er netværket <userinput
+><replaceable
+>Freenode</replaceable
+></userinput
+> og kanalen <userinput
+><replaceable
+>#kde</replaceable
+></userinput
+> allerede skrevet indfor dig. Klik på et netværk for at vælge det.</para
+></callout>
+<callout arearefs="pt-first-serverlist-2"
+><para
+>Klik her for at definere et nyt <guilabel
+>Netværk</guilabel
+>, inklusive serveren at forbinde til, og <guilabel
+>Kanalerne</guilabel
+> som automatisk skal gås med i efter forbindelse. Se <link linkend="serverlist"
+>Definér nye netværk, servere og kanaler at gå med i automatisk</link
+> for mere information.</para
+></callout>
+<callout arearefs="pt-first-serverlist-3"
+><para
+>Klik her for at forbinde til den valgte &irc; netværk og kanal.</para
+></callout>
+</calloutlist>
+</para>
+
+<note>
+<para
+>Når du klikker på knappen <guibutton
+>Forbind</guibutton
+> første gang du åbner &konversation;, ser du måske følgende meddelelse, som fortæller dig at din standard<guilabel
+>identitet</guilabel
+> ikke er rigtigt indstillet.</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Kontrollér identiteter</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="checkidentities.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Kontrollér identiteter</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Første gang du åbner &konversation; hentes information om nuværende bruger fra operativsystemet, og standardværdier for identiteten udfyldes. Hvis brugerinformationen i operativsystemet ikke er fuldstændig, for eksempel hvis intet Fuldstændigt navn er defineret, vil du se meddelelsen ovenfor. For at rette problemet, klikkes på <guibutton
+>O.k.</guibutton
+> og så kigges i <link linkend="identity"
+>Opsætning af din identitet</link
+> for mere information.</para>
+</note>
+
+<para
+><interface
+>Hovedskærmen</interface
+> åbnes og viser meddelelser som sendes af serveren til klienten. (Hvis &konversation; ikke vil forbindes til serveren, se <link linkend="faq"
+>Ofte stillede spørgsmål</link
+>.) Når servermeddelelser er færdige med at rulle forbi, går &konversation; med i den kanal eller de kanaler som blev valgt. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Kanal.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-first-channel-1" coords="1 1"/>
+				<area id="pt-first-channel-2" coords="1 1"/>
+				<area id="pt-first-channel-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="first_channel_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Kanal</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-first-channel-1"
+><para
+>Dette kaldes <interface
+>indtastningslinjen</interface
+>. For at sende en meddelelse til alle på kanalen, indskrives meddelelsen her og der trykkes på &Enter;. Meddelelsen samt alle andres meddelelser ses i kanalvinduet ovenfor. Hver meddelelse indledes med tiden og brugerens alias.</para
+></callout>
+
+<callout arearefs="pt-first-channel-2"
+><para
+>Du kan gå med i yderligere servere og kanaler. Hver server, kanal, kanalliste og anden skærm får et separat faneblad her. For at vise en liste med tilgængelige kanaler, se <link linkend="list-channels"
+>Liste over tilgængelige kanaler</link
+>. For at gå med i en kanal, skriv: <userinput
+><command
+>/join</command
+> <replaceable
+>#kanalnavn</replaceable
+></userinput
+> på inddatalinjen. (Tegnet <userinput
+>#</userinput
+> kræves.) Du kan også skrive <userinput
+><command
+>/j</command
+></userinput
+> som forkortelse af <userinput
+><command
+>/join</command
+></userinput
+>. For at forlade en kanal, skrives blot <userinput
+><command
+>/part</command
+></userinput
+>. For at skifte visning til en anden server eller kanal, klikkes på det tilsvarende faneblad. </para
+></callout>
+
+<callout arearefs="pt-first-channel-3"
+><para
+>Dette kaldes <interface
+>Aliaspanelet</interface
+>. Det er en liste over aliasser for alle brugere som er gået med på kanalen, inklusive dig selv.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+>Dette er det grundlæggende, for mere detaljeret information, læs videre...</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="identity">
+<title
+>Indstil din identitet</title>
+
+<para
+>Inden du begynder at bruge &konversation; regelmæssigt bør du indstille hvordan du vil være identificeret på netværket.</para>
+
+<para
+>Klik på <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Identiteter</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Identiteter</guilabel
+> vises. Du kan også vise skærmen <guilabel
+>Identiteter</guilabel
+> ved at klikke på knappen <guibutton
+>Redigér</guibutton
+> på skærmen <guilabel
+>Tilføj netværk</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Identiteter (fanebladet Generelt)</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-identity-gen-1" coords="1 1"/>
+				<area id="pt-identity-gen-2" coords="1 1"/>
+				<area id="pt-identity-gen-3" coords="1 1"/>
+				<area id="pt-identity-gen-4" coords="1 1"/>
+				<area id="pt-identity-gen-5" coords="1 1"/>
+				<area id="pt-identity-gen-6" coords="1 1"/>
+				<area id="pt-identity-gen-7" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="identities_gen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Identiteter (fanebladet Generelt)</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-identity-gen-1"
+><para
+>Klik her for at vælge en <guilabel
+>Identitet</guilabel
+> at redigere.</para
+></callout>
+<callout arearefs="pt-identity-gen-2"
+><para
+>Brug disse knapper for at tilføje, duplikere, omdøbe eller fjerne en <guilabel
+>Identitet</guilabel
+>.</para
+></callout>
+<callout arearefs="pt-identity-gen-3"
+><para
+>Indtast dit rigtige navn her. &irc; er ikke beregnet til skjule sig for dine venner eller fjender. Husk det hvis du bliver fristet til at opføre dig ondartet. Et forkert "rigtigt navn" kan være en god måde at skjule om du er mand eller kvinde for alle tumperne derude, men maskinen som du bruger kan altid spores, så du kan aldrig være virkeligt anonym.</para
+></callout>
+<callout arearefs="pt-identity-gen-4"
+><para
+>Brug disse knapperne for handlingerne <guibutton
+>Tilføj</guibutton
+>, <guilabel
+>Redigér</guilabel
+> eller <guilabel
+>Slet</guilabel
+> et alias.</para
+></callout>
+<callout arearefs="pt-identity-gen-5"
+><para
+>Dette er din liste af alsiasser. Et alias er navnet som de øvrige brugere kender dig som. Du kan indtaste hvilket som helst navn du ønsker. Det første tegn skal være et bogstav, mens øvrige tegn kan være bogstaver, tal eller specialtegn <literal
+>-[]\`_^{}|</literal
+>.</para>
+
+<para
+>Eftersom aliasser skal være entydige på hele &irc;-netværket, kan dit ønskede navn måske ikke tillades af servere eftersom en anden allerede bruger det. Indtast alternative aliasser for dig selv. Hvis dit første valg ikke tillades af serveren, forsøger &konversation; med de alternative aliasser. </para>
+
+<para
+>Ifølge RFC 2812 er den maksimale aliasnavnelængde 9, men det afgøres i virkeligheden af serveren. For at afgøre maksimum for en server, forbindes til serveren. Led efter meddelelsen <computeroutput
+>[Support]</computeroutput
+> i fanebladet <interface
+>Servermeddelelsen</interface
+>. For eksempel:</para>
+
+<para>
+<computeroutput
+>[18:51] *Eisfuchs* [21:45] [Support] Eisfuchs MODES=4 MAXCHANNELS=20 NICKLEN=16 USERLEN=10 HOSTLEN=63 TOPICLEN=450 KICKLEN=450 CHANNELLEN=30 KEYLEN=23 CHANTYPES=# PREFIX=@+ CASEMAPPING=ascii CAPAB &irc;D=dancer </computeroutput>
+</para>
+
+<para
+>Parameteren <computeroutput
+>NICKLEN</computeroutput
+> angiver den maksimale længde på alias. </para>
+</callout>
+
+<callout arearefs="pt-identity-gen-6"
+><para
+>Brug disse knapper for at ændre rækkefølge på aliasser. Det øverste alias prøves først, derefter det næste, og så videre.</para
+></callout>
+<callout arearefs="pt-identity-gen-7"
+><para
+>Hvis du har registreret dit alias med &irc;-netværket, indtastes tjenesten og kodeordet for godkende dit alias. Når &konversation; forbinder, sendes automatisk <userinput
+><command
+>/msg</command
+> <replaceable
+>tjeneste</replaceable
+> <command
+>IDENTIFY</command
+> <replaceable
+>kodeord</replaceable
+></userinput
+> til serveren. Hvis du ikke ved hvad dette er, så lad felterne være tomme.</para
+></callout>
+</calloutlist>
+</para>
+
+<anchor id="identity-away"/>
+
+<para
+>Klik på fanebladet <guilabel
+>Borte</guilabel
+>.</para>
+
+<para>
+	<screenshot>
+		<screeninfo
+>Identiteter (fanebladet Borte)</screeninfo>
+		<mediaobjectco>
+			<imageobjectco>
+				<areaspec units="calspair">
+					<area id="pt-identity-away-1" coords="1 1"/>
+					<area id="pt-identity-away-2" coords="1 1"/>
+					<area id="pt-identity-away-3" coords="1 1"/>
+				</areaspec>
+				<imageobject>
+					<imagedata fileref="identities_away_co.png" format="PNG"/>
+				</imageobject>
+			</imageobjectco>
+			<textobject>
+				<phrase
+>Identiteter (fanebladet Borte)</phrase>
+			</textobject>
+		</mediaobjectco>
+	</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-identity-away-1"
+><para
+>Indtast et alias som angiver at du er borte. Så snart du udfører kommandoen <userinput
+><command
+>/away </command
+><replaceable
+>meddelelse</replaceable
+></userinput
+> i en kanal som du gået med i med denne <guilabel
+>Identitet</guilabel
+>, ændrer &konversation; automatisk dit alias til <guilabel
+>Borte alias</guilabel
+>. Andre brugere mærker at du er væk fra maskinen. Så snart du udfører kommandoen <userinput
+><command
+>/away</command
+></userinput
+> i den kanal hvor du er borte, ændrer &konversation; automatisk dit alias tilbage til det normale. Hvis du ikke automatisk vil ændre dit alias når du er borte, så lad det være tomt.</para
+></callout>
+<callout arearefs="pt-identity-away-2"
+><para
+>Hvis du markerer dette felt, så tegnes en vandret linje i kanalen så snart du udfører kommandoen <userinput
+><command
+>/away</command
+></userinput
+>, som markerer stedet du gik væk fra. Andre &irc;-brugere ser ikke denne vandrette linje. </para
+></callout>
+<callout arearefs="pt-identity-away-3"
+><para
+>Hvis du markerer dette felt sender &konversation; automatisk <guilabel
+>Bortemeddelelse</guilabel
+> til alle kanaler som du gået med i med denne <guilabel
+>Identitet</guilabel
+>. <userinput
+><replaceable
+>%s</replaceable
+></userinput
+> erstattes med <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+>. Så snart du udfører kommandoen <userinput
+><command
+>/away</command
+></userinput
+>, vises <guilabel
+>Genkomstmeddelelse</guilabel
+>i alle kanaler du gået med i med denne <guilabel
+>Identitet</guilabel
+>.</para>
+
+<note
+><para
+>Borte-meddelelser anses ofte for at være irriterende af andre brugere. Brug  dette med forsigtighed, og tag hensyn til andre &irc;-brugere. </para
+></note>
+</callout>
+</calloutlist>
+</para>
+
+<anchor id="identity-advanced"/>
+
+<para
+>Klik på fanebladet <guilabel
+>Avanceret</guilabel
+>.</para>
+
+<para>
+	<screenshot>
+		<screeninfo
+>Identiteter (fanebladet Avanceret)</screeninfo>
+		<mediaobjectco>
+			<imageobjectco>
+				<areaspec units="calspair">
+					<area id="pt-identity-adv-1" coords="1 1"/>
+					<area id="pt-identity-adv-2" coords="1 1"/>
+					<area id="pt-identity-adv-3" coords="1 1"/>
+					<area id="pt-identity-adv-4" coords="1 1"/>
+					<area id="pt-identity-adv-5" coords="1 1"/>
+					<area id="pt-identity-adv-6" coords="1 1"/>
+				</areaspec>
+				<imageobject>
+					<imagedata fileref="identities_adv_co.png" format="PNG"/>
+				</imageobject>
+			</imageobjectco>
+			<textobject>
+				<phrase
+>Identiteter (fanebladet Avanceret)</phrase>
+			</textobject>
+		</mediaobjectco>
+	</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-identity-adv-1"
+><para
+>Du kan indtaste et kommando her som køres inden forbindelse til serveren. Hvis identiteten bruges for mere end en server, køres kommandoen for hver server.</para
+></callout>
+<callout arearefs="pt-identity-adv-2"
+><para
+>Denne indstilling påvirker hvordan tegn du skriver kodes når de skal sendes til serveren. Den påvirker også hvordan meddelelser vises. Når du først åbner &konversation;, hentes denne indstilling automatisk fra operativsystemet. Hvis du synes at have problemer med at se andre brugeres meddelelser rigtigt, så forsøg at ændre denne indstilling.</para
+></callout>
+<callout arearefs="pt-identity-adv-3"
+><para
+>Når du forbinder, spørger mange servere din maskine efter et IDENT-svar. Hvis din maskine ikke kører en IDENT-server, sendes svaret af &konversation;. Ingen mellemrum er tilladt. Et forslag er at bruge dit fornavn.</para
+></callout>
+<callout arearefs="pt-identity-adv-4"
+><para
+>Så snart du forlader en kanal, sendes denne meddelelse til kanalen.</para
+></callout>
+<callout arearefs="pt-identity-adv-5"
+><para
+>Så snart du sparkes ud fra en kanal (oftest af en &irc;-operatør), sendes denne meddelelse til kanalen.</para
+></callout>
+<callout arearefs="pt-identity-adv-6"
+><para
+>Klik for at anvende dine ændringer. For at alle ændringer skal få virkning, skal du afbryde fra serveren og forbinde igen. Den enkleste måde at gøre det er at afslutte &konversation; og starte forfra.</para
+></callout>
+</calloutlist>
+</para>
+
+<!--
+<para
+>TODO:
+<itemizedlist>
+
+<listitem
+><para>
+The characters allowed in a nick given above comes from RFC 2812.  Any special Konversation considerations?
+</para
+></listitem>
+
+<listitem
+><para>
+Limits on Real Name and Ident?
+</para
+></listitem>
+
+</itemizedlist>
+</para>
+-->
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="serverlist">
+<title
+>Definér nye netværk, servere og autodeltage-kanaler</title>
+
+<para
+>Skærmen <guilabel
+>Serverliste</guilabel
+> vises når du starter programmet &konversation;. Den vises også når du vælger <menuchoice
+><guisubmenu
+>Fil</guisubmenu
+> <guisubmenu
+>Serverliste</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Serverliste</guilabel
+></action
+> angiver de eksisterende definerede &irc;-<guilabel
+>netværk</guilabel
+>, efter gruppe. Et &irc;-netværk er en samling samarbejdende servere. Når du forbinder til en server i et netværk, kan du få adgang til alle kanaler i netværket. Eksempel på &irc;-netværk er <userinput
+><replaceable
+>Freenode</replaceable
+></userinput
+> og <userinput
+><replaceable
+>Undernet</replaceable
+></userinput
+>. </para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Serverliste</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-serverlist-1" coords="1 1"/>
+				<area id="pt-serverlist-2" coords="1 1"/>
+				<area id="pt-serverlist-3" coords="1 1"/>
+				<area id="pt-serverlist-4" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="serverlist_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Serverliste</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-serverlist-1"
+><para
+>Dine eksisterende definerede <guilabel
+>netværk</guilabel
+> er på listen her sammen med den <guilabel
+>identitet</guilabel
+> som bruges til at forbinde til netværket, og de <guilabel
+>kanaler</guilabel
+> som du automatisk går med i når du er forbundet. Hvis du har angivet en gruppe for dine netværk, er netværkene indrykket på listen under gruppen. Klik på et netværk for at markere det. </para
+></callout>
+<callout arearefs="pt-serverlist-2"
+><para
+>Brug disse knapperne for at <guibutton
+>tilføje</guibutton
+> et nyt netværk, <guibutton
+>redigere</guibutton
+> et markeret netværk eller <guibutton
+>slette</guibutton
+> et markeret netværk. </para
+></callout>
+<callout arearefs="pt-serverlist-3"
+><para
+>Klik på denne knap for at forbinde til et markeret <guilabel
+>netværk</guilabel
+> og lukke skærmen <guilabel
+>Serverliste</guilabel
+>. Du kan markere mere end et netværk hvis du ønsker det, hvilket forbinder til alle de markerede netværk.</para
+></callout>
+<callout arearefs="pt-serverlist-4"
+><para
+>At klikke på denne knap kasserer ikke de ændringer du har gjort. Det betyder kun at du ikke vil forbinde til noget netværk for øjeblikket.</para
+></callout>
+</calloutlist>
+</para>
+
+<anchor id="serverlist-addnetwork"/>
+
+<para
+>Når du klikker på knappen <guilabel
+>Tilføj</guilabel
+> vises skærmen <guilabel
+>Tilføj netværk</guilabel
+>.</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Tilføj netværk</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-addnetwork-1" coords="1 1"/>
+				<area id="pt-addnetwork-2" coords="1 1"/>
+				<area id="pt-addnetwork-3" coords="1 1"/>
+				<area id="pt-addnetwork-4" coords="1 1"/>
+				<area id="pt-addnetwork-5" coords="1 1"/>
+				<area id="pt-addnetwork-6" coords="1 1"/>
+				<area id="pt-addnetwork-7" coords="1 1"/>
+				<area id="pt-addnetwork-8" coords="1 1"/>
+				<area id="pt-addnetwork-9" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="addnetwork_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Tilføj netværk</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-addnetwork-1"
+><para
+>Indtast navnet på et <guilabel
+>netværk</guilabel
+> her. Du kan oprette så mange indgange på skærmen <guilabel
+>Serverliste</guilabel
+> med samme <guilabel
+>netværk</guilabel
+> som du vil.</para
+></callout>
+<callout arearefs="pt-addnetwork-2"
+><para
+>Valgfrit. Hvis du skriver noget her, kommer alle <guilabel
+>netværk</guilabel
+> med samme <guilabel
+>gruppe</guilabel
+> sammen på en liste på skærmen <guilabel
+>Serverliste</guilabel
+>.</para
+></callout>
+<callout arearefs="pt-addnetwork-3"
+><para
+>Vælg en eksisterende <guilabel
+>identitet</guilabel
+> eller klik på knappen <guibutton
+>Redigér</guibutton
+> for at tilføje en ny identitet eller redigere en eksisterende. En <guilabel
+>identitet</guilabel
+> vil identificere dig og afgøre dit alias når du forbinder til netværket.</para
+></callout>
+<callout arearefs="pt-addnetwork-4"
+><para
+>Valgfrit. Kommandoen sendes til serveren efter forbindelse. Eksempel: <userinput
+>/msg NickServ IDENTIFY <replaceable
+>konvirocks</replaceable
+></userinput
+>. Eksemplet gælder for netværket freenode, som kræver at brugere registrerer deres aliasser med et kodeord og brugernavn ved forbindelse. <userinput
+><replaceable
+>konvirocks</replaceable
+></userinput
+> er kodeordet for aliasset som angives under <interface
+>Identitet</interface
+>. Du kan indtaste mere end en kommando ved at skille dem ad med semikolon.</para
+></callout>
+<callout arearefs="pt-addnetwork-5"
+><para
+>Markér dette hvis du ønsker at &konversation; automatisk skal forbinde til netværket så snart du åbner &konversation;.</para
+></callout>
+<callout arearefs="pt-addnetwork-6"
+><para
+>Dette er en liste med &irc;-<guilabel
+>servere</guilabel
+> i netværket. Ved forbindelse til netværket, forsøger &konversation; at forbinde til den øverste server først. Hvis det mislykkes, forsøger den med den anden server. Hvis det mislykkes, forsøger den med den tredje, og så videre. I det mindste en server skal angives. Klik på en server for at markere den.</para
+></callout>
+<callout arearefs="pt-addnetwork-7"
+><para
+>Brug disse knapper til at <guibutton
+>tilføje</guibutton
+> en server, <guibutton
+>redigere</guibutton
+> en markeret server eller <guibutton
+>slette</guibutton
+> en markeret server. Du kan også justere servernes rækkefølge, og på den måde rækkefølgen af forbindelsesforsøg.</para
+></callout>
+<callout arearefs="pt-addnetwork-8"
+><para
+>Valgfrit. Dette er en liste over kanalerne du automatisk går med i så snart &konversation; er forbundet til en server. Du kan lade den være tom hvis du ikke vil gå med i nogen kanaler automatisk.</para
+></callout>
+<callout arearefs="pt-addnetwork-9"
+><para
+>Brug disse knapper til at <guibutton
+>tilføje</guibutton
+> en kanal, <guibutton
+>redigere</guibutton
+> en markeret kanal eller <guibutton
+>slette</guibutton
+> en markeret kanal. Du kan også ændre rækkefølgen som du går med i kanalerne. </para
+></callout>
+</calloutlist>
+</para>
+
+<note
+><para
+>Undgå at blande servere på forskellige &irc;-netværk under samme <guilabel
+>netværk</guilabel
+>. Undgå at indtaste samme server under to forskellige <guilabel
+>netværk</guilabel
+>. Ellers virker &konversation;s <link linkend="linkaddressbook"
+>integration med adressbogen</link
+> og <link linkend="nicksonline"
+>overvågning af online aliasser</link
+> ikke rigtigt.</para>
+</note>
+
+<anchor id="serverlist-addserver"/>
+
+<para
+>Når du klikker på knappen <guibutton
+>Tilføj</guibutton
+> i feltet <guilabel
+>Servere</guilabel
+>, vises skærmen Tilføj server.</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Tilføj server</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-addserver-1" coords="1 1"/>
+				<area id="pt-addserver-2" coords="1 1"/>
+				<area id="pt-addserver-3" coords="1 1"/>
+				<area id="pt-addserver-4" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="addserver_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Tilføj server</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-addserver-1"
+><para
+>Navnet eller IP-adressen på serveren. En <ulink url="http://www.irchelp.org/irchelp/networks/"
+>liste</ulink
+> med servere findes på irchelp.org.</para
+></callout>
+<callout arearefs="pt-addserver-2"
+><para
+>Indtast portnummeret som kræves for at forbinde til serveren. For de fleste servere skal det være <userinput
+>6667</userinput
+>.</para
+></callout>
+<callout arearefs="pt-addserver-3"
+><para
+>Hvis serveren kræver et kodeord for at forbinde, så indtast dette. Lad det ellers være tomt.</para
+></callout>
+<callout arearefs="pt-addserver-4"
+><para
+>Markér hvis du vil bruge SSL-protokollen (Secure Socket Layer) til at kommunikere med serveren. Det beskytter kommunikationen mellem din maskine og &irc;-servern, og gør den privat. Serveren skal understøtte SSL-protokollen for at det skal virke. I de fleste tilfælde, hvis serveren ikke understøtter SSL, mislykkes forbindelsen.</para
+></callout>
+</calloutlist>
+</para>
+
+<anchor id="serverlist-addchannel"/>
+
+<para
+>Når du klikker på knappen <guibutton
+>Tilføj</guibutton
+> i feltet <guilabel
+>Gå automatisk med i kanaler</guilabel
+>, vises skærmen <guilabel
+>Tilføj kanal</guilabel
+>.</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Tilføj kanal</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="addchannel.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Tilføj kanal</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Indtast et kanalnavn. Glem ikke det indledende tegn <userinput
+><replaceable
+>#</replaceable
+></userinput
+>. Hvis kanalen kræver et kodeord for at gå med, så indtast det, lad det ellers være tomt. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="list-channels">
+<title
+>Liste over tilgængelige kanaler</title>
+
+<para
+>For at vise en liste med tilgængelige kanaler, vælges <menuchoice
+><guisubmenu
+>Vindue</guisubmenu
+> <guisubmenu
+>Kanalliste</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Efter en advarselsskærm laves et nyt faneblad som hedder <guilabel
+>Kanalliste</guilabel
+>.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Fanebladet med kanallisten.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-channellist-1" coords="1 1"/>
+				<area id="pt-channellist-2" coords="1 1"/>
+				<area id="pt-channellist-3" coords="1 1"/>
+				<area id="pt-channellist-4" coords="1 1"/>
+				<area id="pt-channellist-5" coords="1 1"/>
+				<area id="pt-channellist-6" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="channellist_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Fanebladet med kanallisten.</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-channellist-1"
+><para
+>Indtast en filterstreng her.</para
+></callout>
+
+<callout arearefs="pt-channellist-2"
+><para
+>Her kan du begrænse kanallisten til de kanaler som har et minimalt eller maksimalt antal brugere. At vælge 0 deaktiverer det respektive kriterium.</para
+></callout>
+
+<callout arearefs="pt-channellist-3"
+><para
+>Klik her for at hente listen over kanaler fra serveren og tilpasse filtret.</para
+></callout>
+
+<callout arearefs="pt-channellist-4"
+><para
+>Den filtrerede liste med kanaler vises her. Bemærk at hvis du ikke bruger regulære udtryk, giver &konversation; en liste over alle kanaler hvis navn indeholder filterstrengen som du indskrev. Kanalnavnet behøver ikke begynde med strengen du skrev.</para
+></callout>
+
+<callout arearefs="pt-channellist-5"
+><para
+>Vælg en kanal som du vil gå med i ved at klikke på den. Højreklik på kanalen for at få en liste med alle netadresser som nævnes i kanalens emne.</para
+></callout>
+
+<callout arearefs="pt-channellist-6"
+><para
+>Klik her for at gå med i en kanal. Et nyt faneblad laves for kanalen.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+>Du skal undgå at klikke på knappen <guibutton
+>Genopfrisk liste</guibutton
+>. De fleste servere har tusindvis af kanaler, og udførsel af dette giver høj belastning på serveren. Desuden kan det kræve flere minutter at udføre, afhængig af din netværksbåndbredde. Hvis din klient er for langsom, kan serveren til og med afbryde forbindelsen til dig. </para>
+
+<para
+>Sommetider er der "hemmelige" kanaler på en server. Sådanne kanaler kommer ikke på <guilabel
+>Kanallisten</guilabel
+>. Du kan stadigvæk gå med i kanalerne hvis du kender til deres navn. Skriv i en hvilken som helst <interface
+>indtastningslinje</interface
+>, <userinput
+><command
+>/join</command
+> <replaceable
+>#kanalnavn</replaceable
+></userinput
+>. (Tegnet <userinput
+>#</userinput
+> kræves.) Så laves et nyt faneblad for kanalen. Hvis du går med i en kanal og aliaspanelet kun har dit alias, betyder det at kanalen ikke fandtes tidligere. Serveren oprettede kanalen, og du er operator. I dette tilfælde vil du formodentlig lukke kanalen ved at skrive: <userinput
+><command
+>/part</command
+></userinput
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="channel-screen-tour">
+<title
+>En oversigt over hovedskærmen</title>
+
+<para
+>Lad os lære mere om <interface
+>hovedskærmen</interface
+>. Skærmen vises nedenfor med en kanals faneblad valgt.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Hovedskærmen.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-channeltour-1" coords="1 1"/>
+				<area id="pt-channeltour-2" coords="1 1"/>
+				<area id="pt-channeltour-3" coords="1 1"/>
+				<area id="pt-channeltour-4" coords="1 1"/>
+				<area id="pt-channeltour-5" coords="1 1"/>
+				<area id="pt-channeltour-6" coords="1 1"/>
+				<area id="pt-channeltour-7" coords="1 1"/>
+				<area id="pt-channeltour-8" coords="1 1"/>
+				<area id="pt-channeltour-9" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="channel_screen_tour_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Hovedskærmen</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-channeltour-1"
+><para
+>Dette kaldes <interface
+>indtastningslinjen</interface
+>. Den vises kun hvis det nuværende faneblad er en kanal. For at sende en meddelelse til alle i kanalen, skrives meddelelsen og der trykkes på &Enter;. Meddelelsen samt alle andres meddelelser ses i kanalvinduet ovenfor. Hver meddelelse indledes med tiden og brugerens alias.</para>
+
+ <para
+>Du kan også indsætte tekst fra klippebordet. Hvis indsat tekst har mere end én line (newlines), kommer en dialog frem. Redigér teksten som ønsket og klik på <guibutton
+>O.k</guibutton
+>. </para>
+
+ <para
+>Hvis den indsatte tekst er længere end 256 tegn, eller den indeholder mere end en linje, kommer en advarselsbesked frem, der fortæller dig at store indsendelser kan forårsage nulstilling af forbindelsen og oversvømmelse. Du kan stadig fortsætte med din meddelelse, men det er en dårlig idé at gøre det, da oversvømmelse vil irritere andre brugere på kanalen, eller din forbindelse til serveren kan blive afbrudt. Det er bedre at sende beskederne i  mindre stumper.</para>
+
+ <!-- Uncomment when this is implemented.
+ &konversation; will automatically split messages that exceed the 510 character RFC limit into multiple messages.
+ -->
+
+ <para
+>En konvention som bruges i mange kanaler er at indlede meddelelser rettede til en bruger med deres alias. &konversation; sørger for en bekvem funktion til at komplettere aliasser. Begynd med at skrive brugerens alias, tryk derefter på <keycap
+>Tab</keycap
+>. &konversation; kompletterer så resten af brugerens alias, fulgt af et kolon. For at brugerindstille kompletteringsegenskaben, vælges <menuchoice
+> <guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+> </menuchoice
+> fra hovedmenuen, udvid <guilabel
+>Opførsel</guilabel
+>, klik på <guilabel
+>Generelt</guilabel
+>, og klik på feltet <guilabel
+>Kompletteringstilstand</guilabel
+>. </para>
+
+ <para
+>Du kan også indtaste &irc;-kommandoen her ved først at skrive <userinput
+><command
+>/</command
+></userinput
+> fulgt af en gyldig &irc;-kommando. Se <link linkend="irc-cmds"
+>Ofte brugte &irc;-kommandoer</link
+>. På visse servere kan du skrive <userinput
+><command
+>/help</command
+></userinput
+> for at få en liste over tilgængelige kommandoer, eller skrive <userinput
+><command
+>/help</command
+> <replaceable
+>kommando</replaceable
+></userinput
+> for at få hjælp med en angiven kommando. </para
+></callout>
+
+<callout arearefs="pt-channeltour-2">
+
+<para
+>Du kan gå med i yderligere servere og kanaler. Hver server og kanal får et separat faneblad her. For at vise en liste over tilgængelige kanaler, se <link linkend="list-channels"
+>Liste over tilgængelige kanaler</link
+>. For at gå med i en kanal, skriv: <userinput
+><command
+>/join</command
+> <replaceable
+>#kanalnavn</replaceable
+></userinput
+> på inddatalinjen. (Tegnet <userinput
+>#</userinput
+> kræves.) For at forlade en kanal, skrives blot <userinput
+><command
+>/part</command
+></userinput
+>. Faneblade vises også her hvis du åbner en  <link linkend="list-channels"
+>Kanalliste</link
+>, deltager i en  <link linkend="query"
+>privat konversation (query)</link
+>, åbner <link linkend="urlcatcher"
+>&URL;-indfangeren</link
+>, eller åbner en eller flere <guilabel
+>Terminaler</guilabel
+>. For at skifte til en anden skærm, klikkes på det tilsvarende faneblad, eller musehjulet bruges til at gå gennem fanebladene cyklisk. </para>
+
+<para
+>For at indstille andre tilvalg for faneblade, vælg <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+></menuchoice
+> i hovedmenuen, udvid <guilabel
+>Opførsel</guilabel
+> og klik på <guilabel
+>Generelt</guilabel
+>. </para>
+
+</callout>
+
+<callout arearefs="pt-channeltour-3"
+><para
+>Disse lys vil blinke når der er noget du ikke har set i dette faneblad. Lyset vil blinke langsommere når de eneste ikke sete beskeder er <command
+>join</command
+>, <command
+>part</command
+>, <command
+>quit</command
+>, eller alias ændringer. De blinker hurtigere hvis der er ikke  sete regulære beskeder. Farverne er følgende: <itemizedlist>
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="led_green_on.png" format="PNG"/></imageobject
+></inlinemediaobject
+> Kanal </para>
+</listitem>
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="led_blue_on.png" format="PNG"/></imageobject
+></inlinemediaobject
+> <interface
+>Servermeddelelse</interface
+>, <link linkend="list-channels"
+>Kanalliste</link
+> eller <link linkend="urlcatcher"
+>&URL;-indfangning</link
+> </para>
+</listitem>
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="led_yellow_on.png" format="PNG"/></imageobject
+></inlinemediaobject
+> <guilabel
+>Terminal</guilabel
+> eller <link linkend="dcc"
+>DCC Status</link
+>. </para>
+</listitem>
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="led_red_on.png" format="PNG"/></imageobject
+></inlinemediaobject
+> <link linkend="query"
+>Privat meddelelse (forespørgsel)</link
+>. </para>
+</listitem>
+</itemizedlist>
+</para
+></callout>
+
+<callout arearefs="pt-channeltour-4"
+><para
+>Klik her for at lukke nuværende faneblad. Hvis et <interface
+>kanalfaneblad</interface
+> lukkes forlades kanalen. Lukkes et faneblad med <interface
+>servermeddelelser</interface
+> forlades alle kanaler som du var gået med i, alle åbne spørgsmålskanaler på serveren lukkes og serveren afbrydes.</para
+></callout>
+
+<callout arearefs="pt-channeltour-5"
+><para
+>Klik på knappen for at ændre dit eget alias. Det vises kun når  nuværende faneblad er en kanal. Vælg <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+></menuchoice
+> i hovedmenuen, udvid <guilabel
+>Opførsel</guilabel
+>, klik på <guilabel
+>Chat-vindue</guilabel
+> og afmarkér feltet <guilabel
+>Vis felt til  at ændre eget alias</guilabel
+> for at skjule knappen. </para
+></callout>
+
+<callout arearefs="pt-channeltour-6"
+><para
+>Kanalemnet vises her. Hold musen stille over emnet for at se det lange emne. Du kan ændre emnet ved at klikke på knappen til venstre for emnet. Vælg <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+></menuchoice
+> i hovedmenuen, udvid <guilabel
+>Opførsel</guilabel
+>, klik på <guilabel
+>Chat-vindue</guilabel
+> og afmarkér feltet <guilabel
+>Vis kanalemne</guilabel
+> for at skjule kanalemnerne. </para
+></callout>
+
+<callout arearefs="pt-channeltour-7"
+><para
+>Disse knapper viser nuværende status af kanaltilstande. En knap er trykket ned hvis tilstanden er aktiveret. Hvis du har de rette privilegier kan du også ændre kanaltilstande ved at klikke på knapperne, eller ved at klikke på knappen til venstre for emnet. Vælg <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+></menuchoice
+> i hovedmenuen, udvid <guilabel
+>Opførsel</guilabel
+>, klik på <guilabel
+>Chat-vindue</guilabel
+> og afmarkér feltet <guilabel
+>Vis kanaltilstandsknapper</guilabel
+> for at skjule kanaltilstandsknapperne. </para
+></callout>
+
+<callout arearefs="pt-channeltour-8">
+<para
+>Dette kaldes <interface
+>alias panelet</interface
+>. Det vises så snart det nuværende faneblad er en kanal. Det lister aliasserne for alle brugere som er gået med i kanalen, inklusive dig selv. Hold musen stille over et alias for at vise yderligere information om brugeren. Du kan ændre hvordan ikoner vises ved siden af hvert alias ved at ændre ikontemaet for alias. Se <link linkend="nickthemes"
+>Indstil aliasstemaer</link
+> for mere information. Temaet <guilabel
+>Big Bullets</guilabel
+>, som vises på skærmen ovenfor, bruger følgende ikoner: <itemizedlist>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_normal.png" format="PNG"/></imageobject
+></inlinemediaobject
+> normale brugere </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_voice.png" format="PNG"/></imageobject
+></inlinemediaobject
+> brugere med stemme. Brugeren kan tale i en modereret kanal. </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_halfop.png" format="PNG"/></imageobject
+></inlinemediaobject
+> deloperator for kanalen </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_op.png" format="PNG"/></imageobject
+></inlinemediaobject
+> operator for kanalen </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_owner.png" format="PNG"/></imageobject
+></inlinemediaobject
+> ejer af kanalen </para>
+</listitem>
+
+<listitem>
+<para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="irc_admin.png" format="PNG"/></imageobject
+></inlinemediaobject
+> kanaladministrator </para>
+</listitem>
+
+</itemizedlist>
+</para>
+
+<para
+>Derudover, hvis en bruger er borte, vil et lille rødt kryds blive tegnet i hjørnet af ikonen. <inlinemediaobject
+><imageobject
+><imagedata fileref="irc_away.png" format="PNG"/></imageobject
+></inlinemediaobject
+></para>
+
+<para
+>Klik med højreknappen på et hvilket som helst alias for at vise en sammenhængsafhængig menu med handlinger som du kan udføre med aliasset. Du kan for eksempel <link linkend="dcc"
+>sende en fil</link
+> til aliasset. Dette er også stedet hvor du kan <link linkend="linkaddressbook"
+>knytte et alias til en kontakt i din adressebog.</link
+> </para>
+
+<para
+>For at skjule <interface
+>alias panelet</interface
+>, vælg <menuchoice
+><guisubmenu
+>Vindue</guisubmenu
+> <guisubmenu
+>Skjul aliasliste</guisubmenu
+></menuchoice
+> i hovedmenuen. </para>
+
+</callout>
+
+<callout arearefs="pt-channeltour-9"
+><para
+>Disse kaldes <interface
+>Hurtigknapper</interface
+>. Normalt vises de ikke. For at vise dem, se <link linkend="quick-buttons"
+>Indstil hurtigknapper</link
+>. Du kan indstille deres definitioner til hvilken som helst  kommando du vil.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+><emphasis
+>Bemærk</emphasis
+>: Du kan kontrollere hvordan meddelelser vises for meddelelser som vises i kanal- og forespørgselsfaneblade. Du kan for eksempel ændre meddelelsens farve, afspille en lyd når en meddelelse som indeholder en streng modtages, eller svare på meddelelser automatisk. Se <link linkend="highlighting"
+>Fremhævning af meddelelser</link
+> for mere information. </para>
+
+<para
+>Bemærk: Kanalnavne begynder sommetider med <userinput
+>&amp;</userinput
+>, <userinput
+>&plus;</userinput
+>, eller <userinput
+>!</userinput
+>. Det første tegn i et kanalnavn afgør typen af kanal (RFC 2811) ifølge følgende: <itemizedlist
+><listitem
+><para
+> <userinput
+>#</userinput
+> - Sædvanlige kanaler. </para
+></listitem
+> <listitem
+><para
+> <userinput
+>!</userinput
+> - Sædvanlige kanaler. </para
+></listitem
+> <listitem
+><para
+> <userinput
+>&amp;</userinput
+> - Lokal. Kanaler som man kun kan gå med i fra serveren som er vært for kanalen. Alle andre kanaler kan man gå med i fra en hvilken somhelst server på netværket. </para
+></listitem
+> <listitem
+><para
+> <userinput
+>&plus;</userinput
+> - Kanaler som ikke understøtter kanaltilstande. Det betyder at ingen tilstande er aktiverede, med undtagelse af kanalflaget 't' som er aktiveret. </para
+></listitem
+></itemizedlist
+>Kanalnavne kan være op til 50 tegn lange og indeholde alle tegn undtagen mellemrum, kommategn og Ctrl+G. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="quickconnect">
+<title
+>Hurtigforbind</title>
+
+<para
+>Sommetider ønsker du at forbinde til en server uden at gå gennem besværet med at oprette en ny server i <link linkend="serverlist"
+>Serverlisten</link
+>. </para>
+
+<para
+>Vælg <menuchoice
+><guisubmenu
+>Fil</guisubmenu
+> <guisubmenu
+>Hurtigforbindelse</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Hurtigforbindelse</guilabel
+> vises.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Hurtigforbins-skærmen.</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="quickconnect_screen.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Hurtigforbind-skærmen</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Indtast serveradressen i feltet <guilabel
+>Server-vært</guilabel
+> box, dit ønskede &nickname; i <guilabel
+>Nick</guilabel
+>-feltet, og klik på <guibutton
+>Forbind</guibutton
+>-kanppen. Når &konversation; er forbundet til serveren, indtastes kommandoen <userinput
+><command
+>/join</command
+> <replaceable
+>#channelname</replaceable
+></userinput
+> for at gå med i en kanal. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="irc-cmds">
+<title
+>Ofte brugte &irc;-kommandoer</title>
+
+<para
+>Det følgende er en kort liste over ofte brugte &irc;-kommandoer. Se <ulink url="http://www.faqs.org/rfcs/rfc2812.html"
+>RFC 2812</ulink
+> for en fuldstændig liste over alle kommandoer, eller besøg <ulink url="http://www.irchelp.org/"
+>irchelp.org</ulink
+>. For en liste af kommandoer der behandles specielt af &konversation;, se <link linkend="konvi-cmds"
+>Konversations kommandoer</link
+> </para>
+
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/help</command
+></userinput
+></term>
+<listitem
+><para
+>Giver en liste over kommander tilgængelige på denne server. Understøttes ikke af alle servere.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/help </command
+><replaceable
+>kommando</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sørger for hjælp for <userinput
+><replaceable
+>kommando</replaceable
+></userinput
+>. Understøttes ikke af alle servere.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/join <replaceable
+>#kanal</replaceable
+></command
+></userinput
+></term>
+<listitem
+><para
+>Går med i <userinput
+><replaceable
+>#kanal</replaceable
+></userinput
+>. Hvis kanalen ikke allerede findes, oprettes den og du bliver kanaloperator.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/part</command
+></userinput
+></term>
+<listitem
+><para
+>Forlader nuværende kanal og lukker <interface
+>kanal</interface
+>-fanebladet .</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/part </command
+> <replaceable
+>#kanal</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Forlader <userinput
+><replaceable
+>#kanal</replaceable
+></userinput
+> og lukker det tilsvarende <interface
+>kanal</interface
+>-faneblad. Synonym for <userinput
+><command
+>/leave</command
+></userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/me </command
+><replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sender <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+> til kanalen ud for dit alias. Hvis dit alias for eksempel er <userinput
+><replaceable
+>Tux</replaceable
+></userinput
+>, ville meddelelsen <interface
+>Tux brygger en kop te</interface
+> vises ved at skrive  <userinput
+><replaceable
+>/me brygger en kop te</replaceable
+></userinput
+>. Hvis der ikke er filtre for denne slags meddelelser, ser alle brugere dem. Denne slags meddelelser bruges oftest til at udtrykke ikke-verbal information, såsom din følelsesmæssige tilstand lige nu, eller hvad du fysisk sysler med. Hvis du forlader maskinen en kort stund, så brug kommandoen /away i stedet for.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/away </command
+> <replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Hvis nogen forsøger at sende dig en privat meddelelse eller indbyde dig til en kanal, vil de blive fortalt at du er borte fra din maskine med <userinput
+><replaceable
+>msg</replaceable
+></userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/away</command
+></userinput
+></term>
+<listitem
+><para
+>Annullerer en <userinput
+><command
+>/away</command
+> <replaceable
+>meddelelse</replaceable
+></userinput
+> kommando.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/query </command
+><replaceable
+>alias</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Opretter et nyt faneblad med brugerens <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> for en privat konversation, almindeligvis kendt på &irc; som en <link linkend="query"
+>forespørgsel</link
+>. Alt som skrives her ses kun hos dig og din partner.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/msg </command
+><replaceable
+>alias</replaceable
+> <replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sender <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+> til brugeren med alias <userinput
+><replaceable
+>alias</replaceable
+></userinput
+>. Kun <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> ser meddelelsen. Brug <userinput
+><command
+>/query</command
+></userinput
+> til længere konversationer.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/invite </command
+><replaceable
+>alias</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Indbyder brugeren med alias <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> til at gå med i en kanal. Kommandoen er især nyttig hvis kanalen kun er åben for indbudte.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="query">
+<title
+>Private konversationer (forespørgsler)</title>
+
+<para
+>En privat konversation er en som kun du og en anden person kan se. Private konversationer kalde "forespørgsler" i &konversation;. For at starte en privat konversation, skrives <userinput
+><command
+>/query </command
+><replaceable
+>alias</replaceable
+></userinput
+> på en hvilken som helst indtastningslinje, hvor <replaceable
+>alias</replaceable
+> er alias på personen som du vil tale med. Du kan også klikke med højre museknap i <guilabel
+>aliaspanelet</guilabel
+> og vælge <menuchoice
+><guisubmenu
+>Åbn forespørgsel</guisubmenu
+></menuchoice
+>. <action
+>Et nyt faneblad oprettes.</action
+>. Tilkendegiv dig ved at sende en meddelelse. </para>
+
+<para
+>Forespørgsler er nøjagtig ligesom andre kanaler, bortset fra at kun du og den anden person kan deltage i kanalen.</para>
+
+<para
+>For at forlade forespørgslen, lukkes blot fanebladet. Bemærk dog at hvis den anden person sender en meddelelse til i forespørgslen, åbnes fanebladet igen.</para>
+
+<para
+>For at forlade alle forespørgsler, vælges <menuchoice
+><guisubmenu
+>Vindue</guisubmenu
+> <guisubmenu
+>Luk alle åbne forespørgsler</guisubmenu
+></menuchoice
+> i hovedmenuen, eller tryk på <keycap
+>F11</keycap
+>. </para>
+
+<para
+>Når en anden åbner en forespørgsel til dig, laver &konversation; et nyt faneblad med deres alias. Hvis du ikke vil tale med personen, så luk fanebladet. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="cfg-notifications">
+<title
+>Indstil påmindelser</title>
+
+<para
+><guilabel
+>Påmindelser</guilabel
+> er handlinger som &konversation; udfører så snart en begivenhed indtræffer. Antag at du lader &konversation; køre, men minimeret eller skjult bagved andre programvinduer på desktoppen. Hvis nogen vil kommunikere med dig, eller hvis en ven går med i en kanal, vil du gerne have det at vide. Bekendtgørelser dørger for dette. </para>
+
+<para
+>For at indstille påmindelser, vælges <menuchoice
+><guisubmenu
+>Indstillinger</guisubmenu
+> <guisubmenu
+>Indstil bekendtgørelser</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+><guilabel
+>Skærmen til opsætning af bekendtgørelser</guilabel
+> vises.</action
+> </para>
+
+<para
+>Klik med det samme på knappen <guibutton
+>Flere valgmuligheder</guibutton
+>.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Skærmen til opsætning af bekendtgørelser.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-notification-1" coords="1 1"/>
+				<area id="pt-notification-2" coords="1 1"/>
+				<area id="pt-notification-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="notification_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Skærmen til opsætning af bekendtgørelser.</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-notification-1"
+><para
+>Klik her for at vælge en begivenhed.</para
+></callout>
+
+<callout arearefs="pt-notification-2"
+><para
+>Markér de typer af påmindelser som du vil skal vises når begivenheden indtræffer. (<guilabel
+>Brug opgavelinjen til underretning om ny begivenhed</guilabel
+> får ikonen i opgavelinjen til at blinke når begivenheden indtræffer.)</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+>Gentag ved at vælge en anden begivenhed og afkrydse ønsket påmindelse. Når du har indstiller alle ønskede påmindelser, klik så på knappen <guibutton
+>Anvend</guibutton
+>.</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-notification-3"
+><para
+>Når du har indstillet dine påmindelser, kan du aktivere eller deaktivere alle meddelelseshandlinger her. Du kan for eksempel vælge at afspille en lyd så snart dit alias nævnes i en meddelelse. Når du er ved computeren kan du deaktivere lyd, men mens du er væk fra maskinen men i nærheden, kan du aktivere lyden så den kan få din opmærksomhed.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<tip
+><para
+>Du kan også selv blive underrette når nogle nævner dit alias i en meddelelse med &konversation;s <link linkend="highlighting"
+>fremhævningsfunktion</link
+>.</para
+></tip>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="nicksonline">
+<title
+>Overvåg hvem der er på nettet</title>
+
+<para
+>&konversation; holder dig informeret om dine venner er forbundet til &irc;-netværket eller ej. </para>
+
+<para
+>Du kan tilknytte online aliasser til kontaktindgange i adressebogen. Når du gør det, skrives aliasset og &irc;-netværket hvor aliasset er forbundet til ind i adressebogens kontakt. &irc;-netværket opbevares fordi aliasser er entydige i et enkelt &irc;-netværk. Aliasser i to forskellige &irc;-netværk svarer ikke nødvendigtvis til samme person, men samme alias på to forskellige servere i samme &irc;-netværk svarer til samme person.</para>
+
+<note
+><para
+>Dette er grunden til at det er vigtigt at bruge samme <guilabel
+>netværk</guilabel
+> for alle servere i samme &irc;-netværk, når <link linkend="serverlist"
+>netværk, servere og kanaler til automatisk at gå med i</link
+> defineres.</para
+></note>
+
+<para
+>Du kan også definere aliasser som du vil overvåge som ikke findes i din adressebog. I dette tilfalde har hvert alias også et tilknyttet &irc;-netværk. Se nedenfor.</para>
+
+<para
+>For at aktivere aliasovervågningsfunktionen, vælges <menuchoice
+><guisubmenu
+>Vindue</guisubmenu
+> <guisubmenu
+>Overvågede aliasser</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Overvågede aliasser</guilabel
+> vises.</action
+> </para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Overvågede online aliasser.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-nicksonline-1" coords="1 1"/>
+				<area id="pt-nicksonline-2" coords="1 1"/>
+				<area id="pt-nicksonline-3" coords="1 1"/>
+				<area id="pt-nicksonline-4" coords="1 1"/>
+				<area id="pt-nicksonline-5" coords="1 1"/>
+				<area id="pt-nicksonline-6" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="nicksonline_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Overvågede online alias</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-nicksonline-1"
+><para
+>Aliasserne i overvågningslisten og også aliasset som hører sammen med indgange i adressebogen angives her. De angives under tilhørende &irc;-netværk. Hvis ingen alias angives, har du enten ikke specificeret noget alias at overvåge, eller du har brug for at aktivere funktionen for aliasovervågning (se nedenfor). Ekspandér hvert online alias for at se en liste med kanaler som aliasset er gået med i. Ikonerne før hver kanal er de samme som ikonerne som vises i <interface
+>aliaspanelet</interface
+> på skærmene med <link linkend="channel-screen-tour"
+>kanaler</link
+>. </para
+></callout>
+<callout arearefs="pt-nicksonline-2"
+><para
+>Informationen som er kendt om aliasset vises her. Når skærmen <guilabel
+>Overvågede online aliasser</guilabel
+> først vises, er informationen tynd. Hvert ottende sekund, sendes automatisk kommandoen <userinput
+><command
+>WHOIS</command
+></userinput
+> til serveren for at bede om information om aliasser som ikke har nogen information. Dette fortsætter indtil alle aliasser har information. </para
+></callout>
+<callout arearefs="pt-nicksonline-3"
+><para
+>Aliasser som ikke er online på et af &irc;-netværkerne du er forbundet til er under <guilabel
+>Offline</guilabel
+> i listen. </para
+></callout>
+<callout arearefs="pt-nicksonline-4"
+><para
+>Aliasser som hører sammen med en kontaktindgang i din adressebog har denne ikon (<inlinemediaobject
+><imageobject
+><imagedata fileref="kaddressbook.png" format="PNG"/></imageobject
+></inlinemediaobject
+>) ved siden af informationen. </para
+></callout>
+<callout arearefs="pt-nicksonline-5"
+><para
+>Brug disse knapper til at tilknytte et alias til en kontakt i din adressebog, fjerne en tilknytning, eller åbne adressebogen for at redigere kontaktinformationen. Se <ulink url="help:kaddressbook"
+>&kaddressbook;-håndbogen</ulink
+> for yderligere instruktioner om hvordan man bruger &kde;'s adressebog. </para
+></callout>
+</calloutlist>
+</para>
+
+<para
+>For at tilføje yderligere aliasser at overvåge, klik på knappen <guilabel
+>Redigér overvågningsliste</guilabel
+>. Så vises skærmen <guilabel
+>Overvågede aliasser</guilabel
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Overvågede aliasser</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-notifylist-1" coords="1 1"/>
+				<area id="pt-notifylist-2" coords="1 1"/>
+				<area id="pt-notifylist-3" coords="1 1"/>
+				<area id="pt-notifylist-4" coords="1 1"/>
+				<area id="pt-notifylist-5" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="notifylist_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Overvågede aliasser</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-notifylist-1"
+><para
+>Afkryds dette felt for at aktivere funktionen <guilabel
+>aliasovervågning</guilabel
+>.</para
+></callout>
+
+<callout arearefs="pt-notifylist-2"
+><para
+>Hvis du ønsker at skærmen <guilabel
+>Overvågede online aliasser</guilabel
+> automatisk skal vises når du starter &konversation;, så markér dette felt.</para
+></callout>
+
+<callout arearefs="pt-notifylist-3"
+><para
+>Aliasserne for på brugerne som du vil overvåge er på denne liste. Hvert alias har et tilknyttet &irc;-netværk.</para
+></callout>
+
+<callout arearefs="pt-notifylist-4"
+><para
+>Klik på disse knapper for at tilføje eller fjerne at alias fra listen.</para
+></callout>
+
+<callout arearefs="pt-notifylist-5"
+><para
+>Funktionen <guilabel
+>Overvågede aliasser</guilabel
+> virker ved at periodisk at spørge serveren. Dette felt angiver hvor ofte dette sker. Undgå tal mindre end 20 sekunder, eftersom det forårsager unødig stor belastning på serveren.</para
+></callout>
+
+<callout arearefs="pt-notifylist-5"
+><para
+>På skærmen <guilabel
+>Overvågede online aliasser</guilabel
+> ovenfor, kan du dobbeltklikke på et hvilket som helst alias, så sendes denne kommando til serveren. <userinput
+><command
+>%u</command
+></userinput
+> erstattes med aliasset. <userinput
+><command
+>%n</command
+></userinput
+> er krævet i slutningen af kommandoen.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+>Klik på knappen <guibutton
+>O.k.</guibutton
+> når du er færdig med at tilføje eller fjerne aliasser.</para>
+
+<para
+><emphasis
+>Bemærk: </emphasis
+>Når du viser skærmen <guilabel
+>Overvågede aliasser</guilabel
+>, kan det tage et stykke tid inden nogen aliasser vises, indtil &konversation; har spurgt serveren. Normalt lader du skærmen <guilabel
+>Overvågede aliasser</guilabel
+> være i gang. </para>
+
+<para
+>&konversation; viser også meddelelser i alle <link linkend="channel-screen-tour"
+>kanaler</link
+> så snart en bruger fra din <guilabel
+>Overvågede aliasser</guilabel
+> forbindes til eller afbryder fra serveren. Meddelelsen ser sådan her ud: </para>
+
+<para
+><computeroutput
+>[17:52] [Underretning] psn er online (irc.kde.org).</computeroutput
+></para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="highlighting">
+<title
+>Fremhævning af meddelelser</title>
+
+<para
+>Du kan kontrollere hvordan meddelelser vises på kanal- og forespørgselsskærme.</para>
+
+<para
+>For at aktivere fremhævelsesfunktionen, vælges <menuchoice
+><guisubmenu
+>Indstillinger</guisubmenu
+> <guisubmenu
+>Indstil &konversation;</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Redigér indstillinger</guilabel
+> vises.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Fremhævningsskærmen.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-highlight-1" coords="1 1"/>
+				<area id="pt-highlight-2" coords="1 1"/>
+				<area id="pt-highlight-3" coords="1 1"/>
+				<area id="pt-highlight-4" coords="1 1"/>
+				<area id="pt-highlight-5" coords="1 1"/>
+				<area id="pt-highlight-6" coords="1 1"/>
+				<area id="pt-highlight-7" coords="1 1"/>
+				<area id="pt-highlight-8" coords="1 1"/>
+				<area id="pt-highlight-9" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="highlighting_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Fremhævelsesskærmen</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-highlight-1"
+><para
+>Klik her for at vælge skærmen <guilabel
+>Fremhævelse</guilabel
+>.</para
+></callout>
+<callout arearefs="pt-highlight-2"
+><para
+>Klik her for at tilføje et nyt punkt til <guilabel
+>Fremhævningslisten</guilabel
+>. Når et punkt i listen markeres, kan du redigere det i feltet nedenfor.</para
+></callout>
+<callout arearefs="pt-highlight-3"
+><para
+>Indtast et strengmønster her. Alle modtagne meddelelser som matcher mønstret, noget sted i meddelelsen, aktiverer fremhævning af meddelelsen. Hvis du har værktøjet &kde;editor for regulære udtryk installeret på systemet, er knappen til højre aktiveret. Klik for at vise editoren, som hjælper dig med at oprette mere komplicerede mønstre. (&kde;editor for regulære udtryk er en del af pakken <command
+>kdeutils</command
+>.) </para
+></callout>
+<callout arearefs="pt-highlight-4"
+><para
+>Hvis mønstret findes i en meddelelse, vises hele meddelelsen med farven du vælger her.</para
+></callout>
+<callout arearefs="pt-highlight-5"
+><para
+>Hvis du vil kan &konversation; afspille en lyd når mønstret matches. Klik på knappen for at vælge en lydfil at afspille. Klik på testknappen for at høre lyden.</para
+></callout>
+<callout arearefs="pt-highlight-6"
+><para
+>Hvis du ønsker at &konversation; automatisk skal sende en svarmeddelelse når mønstret matches, skriv  meddelelsen her. Brug denne funktion med forsigtighed eftersom du kan irritere &irc;-brugere med for meget snak hvis du ikke er forsigtig. Du kan også indtaste &irc;- eller &konversation;-kommandoer her.</para
+></callout>
+<callout arearefs="pt-highlight-7"
+><para
+>Hvis du har indstillet lyd for nogle af dine fremhævninger, kan du deaktivere alle ved at afmarkere dette felt.</para
+></callout>
+<callout arearefs="pt-highlight-8"
+><para
+>Hvis du markerer dette flet, og en eller anden nævner dit alias i en meddelelse, vises meddelelsen med farven som du vælger til højre.</para
+></callout>
+<callout arearefs="pt-highlight-9"
+><para
+>Normalt gælder fremhævning ikke for meddelelser du skriver ind. Hvis du vil fremhæve meddelelser du skriver ind, markeres dette felt og en farve vælges til højre.</para
+></callout>
+
+</calloutlist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="cfg-osd">
+<title
+>Indstil meddelelser på skærmen (&osd;)</title>
+
+<para
+>Meddelelser på skærmen (<acronym
+>OSD</acronym
+>) er en unik funktion i &konversation;. Når &osd; er aktiveret, vises kanalmeddelelser på desktoppens skærm, også selvom &konversation; er minimeret. Her er et eksempel på &osd; i funktion. Meddelelsen længst oppe til venstre på skærmen er fra &konversation;, som kører minimeret i statusfeltet.</para>
+
+<para>
+<screenshot>
+<screeninfo
+>Eksempel på meddelelser på skærmen</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="osd_demo.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Eksempel på meddelelser på skærmen</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>For at aktivere meddelelser på skærmen, vælges <menuchoice
+><guisubmenu
+>Indstillinger</guisubmenu
+> <guisubmenu
+>Indstil &konversation;</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Redigér indstillinger</guilabel
+> vises.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Meddelelser på skærmen.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-osd-1" coords="1 1"/>
+				<area id="pt-osd-2" coords="1 1"/>
+				<area id="pt-osd-3" coords="1 1"/>
+				<area id="pt-osd-4" coords="1 1"/>
+				<area id="pt-osd-5" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="osd_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Meddelelser på skærmen</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-osd-1"
+><para
+>Klik her for at ekspandere punktet <guilabel
+>Påmindelse</guilabel
+>.</para
+></callout>
+
+<callout arearefs="pt-osd-2"
+><para
+>Klik her for at vælge skærmen <guilabel
+>Meddelelser på skærmen</guilabel
+>.</para
+></callout>
+
+<callout arearefs="pt-osd-3"
+><para
+>Markér dette felt for at aktivere meddelelser på skærmen.</para
+></callout>
+
+<callout arearefs="pt-osd-4"
+><para
+>Klik på denne knap for at vælge en skrifttype for meddelelser på skærmen. (<emphasis
+>Bemærk: </emphasis
+>Ikke alle skrifttyper virker. Det er kendt at Luxi Sans 22 og Impact 22 virker.)</para
+></callout>
+
+<callout arearefs="pt-osd-5"
+><para
+>Markér feltet her for at vælge typerne af meddelelser som du vil skal vises på skærmen, og klik derefter på knappen <guibutton
+>Anvend</guibutton
+>.</para
+></callout>
+
+</calloutlist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="color-msgs">
+<title
+>Send farvelagte meddelelser</title>
+
+<para
+>Du kan tilføje farve til meddelelser du sender i hvilken som helst kanal. Begynd med at skrive meddelelsen i <interface
+>indtastningslinjen</interface
+> for hvilken som helst kanal. Klik så på <inlinemediaobject
+> <imageobject
+> <imagedata fileref="colorize.png" format="PNG"/> </imageobject
+> <textobject
+> <phrase
+>knappen Indsæt &irc;-farve</phrase
+> </textobject
+> </inlinemediaobject
+> knappen Indsæt &irc;-farve eller vælg <menuchoice
+><guisubmenu
+>Indsæt</guisubmenu
+> <guisubmenu
+>&irc;-farve</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>&irc;-farvevælger</guilabel
+> vises.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Skærmen &irc;-farvevælger.</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="colorchooser_screen.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Skærmen &irc;-farvevælger</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Vælg en farve og klik på <guibutton
+>O.k</guibutton
+>. Fortsæt med at indtaste meddelelsen på <interface
+>indtastningslinjen</interface
+>. For at ændre farve igen, klikkes på knappen <guibutton
+>Indsæt &irc;-farve</guibutton
+>. Vælg en anden farve og klik på <guibutton
+>O.k</guibutton
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="nickthemes">
+<title
+>Indstilling af &nickname;-temaer</title>
+
+<para
+>Du kan ændre ikonerne som vises ved siden af alias i <interface
+>aliaspanelet</interface
+> i kanalfanablade. For at ændre aliastema, vælg <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Redigér indstillinger</guilabel
+> vises.</action
+> Klik på <guilabel
+>Udseende</guilabel
+> for at udvide den, klik derefter på <guilabel
+>Temaer</guilabel
+> for at vis skærmen <guilabel
+>Temaer</guilabel
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Temaer-kærmen.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-themes-1" coords="1 1"/>
+				<area id="pt-themes-2" coords="1 1"/>
+				<area id="pt-themes-3" coords="1 1"/>
+				<area id="pt-themes-4" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="nickthemes_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Temaer-skærmen</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-themes-1"
+><para
+>Klik her for at vælge skærmen <guilabel
+>Temaer</guilabel
+>.</para
+></callout>
+<callout arearefs="pt-themes-2"
+><para
+>Vælg et tema.</para
+></callout>
+<callout arearefs="pt-themes-3"
+><para
+>Eksempelikoner vises her med det valgte tema.</para
+></callout>
+<callout arearefs="pt-themes-4"
+><para
+>Hvis du har hentet et aliastema far et andet sted, så klik for at installere det.</para
+></callout>
+
+</calloutlist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="quick-buttons">
+<title
+>Indstil hurtigknapper</title>
+
+<para
+>Du kan aktivere funktionen at vis <interface
+>hurtigknapper</interface
+> på <link linkend="channel-screen-tour"
+>hovedskærmen</link
+>. Så vises otte <interface
+>hurtigknapper</interface
+>. For at vise hurtigknapperne, vælg <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+></menuchoice
+> i hovedmenuen. Skærmen <guilabel
+>Redigér indstillinger</guilabel
+> vises. Klik på <guilabel
+>Udseende</guilabel
+> for at udvid den, og klik så på <guilabel
+>Chat-vindue</guilabel
+>. Markér feltet <guilabel
+>Vis hurtigknapper</guilabel
+> og klik på <guibutton
+>O.k</guibutton
+>. </para>
+
+<para
+>Knapperne kan indstilles som du synes til at udføre &irc;-kommandoer som ofte bruges. For at indstille <interface
+>hurtigknapperne</interface
+>, vælg <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Redigér indstillinger</guilabel
+> vises.</action
+> Klik på <guilabel
+>Udseende</guilabel
+> for at udvide den, og klik så på <guilabel
+>Hurtigknapper</guilabel
+> for at vise skærmen <guilabel
+>Hurtigknapper</guilabel
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Skærmen hurtigknapper</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="quickbuttons_screen.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Skærmen hurtigknapper</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Der er otte <interface
+>hurtigknapper</interface
+>. Klik på en indgang for at ændre den. Søjlen <guilabel
+>Knapnavn</guilabel
+> er navnet som vises på knappen på <link linkend="channel-screen-tour"
+>hovedskærmen</link
+>. Hold navnene korte. Søjlen <guilabel
+>Knapbegivenhed</guilabel
+> er handlingen som udføres når du klikker på <interface
+>hurtigknappen</interface
+>. Vink til at oprette handlinger gives på skærmen. </para>
+
+<para
+>Klik på <guibutton
+>O.k.</guibutton
+> for at gøre ændringerne færdige. </para>
+
+<para
+>Eksempel:</para>
+
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><guilabel
+>Knapnavn</guilabel
+>: <userinput
+><replaceable
+>Meddelelse</replaceable
+></userinput
+> </term>
+		<listitem>
+			<para
+><guilabel
+>Knapbegivenhed</guilabel
+>: <userinput
+><replaceable
+>Msg %u </replaceable
+></userinput
+> (der er et mellemrum efter <userinput
+><replaceable
+>%u</replaceable
+></userinput
+>) </para>
+		</listitem>
+	</varlistentry>
+</variablelist>
+</para>
+
+<para
+>For at bruge denne knap på <link linkend="channel-screen-tour"
+>hovedskærmen</link
+>, klikkes på et alias i <interface
+>aliaspanelet</interface
+>, og derefter klikkes på knappen. <computeroutput
+>/MSG </computeroutput
+> vises på <interface
+>indtastningslinjen</interface
+> fulgt af det valgte alias. Indtast en meddelelse som du vil sende til personen og tryk så på &Enter;. Meddelelsen sendes til brugeren. Kun denne bruger vil se meddelelsen. </para>
+
+<para
+><emphasis
+>Bemærk:</emphasis
+> Du kan ikke tilføje eller fjerne <interface
+>hurtigkanpper</interface
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="dcc">
+<title
+>Sende og modtage filer</title>
+
+<para
+>Du kan sende filer via &irc; til andre brugere der er forbundet, eller også kan de sende filer til dig. </para>
+
+<para>
+<emphasis
+>Advarsel: Åbn aldrig en fil nogen sender til dig hvis det ikke er en pålidelig kilde. Det kan være en virus.</emphasis>
+</para>
+
+<para
+>For at sende en fil til en i en kanal, klikkes med højre museknap på personens alias i <interface
+>aliaspanelet</interface
+> på <link linkend="channel-screen-tour"
+>hovedskærmen</link
+>. Vælg <menuchoice
+><guisubmenu
+>Send fil</guisubmenu
+></menuchoice
+>. <action
+>En dialog kommer frem  hvor du kan vælge filen som skal sendes</action
+>. Derefter vises et nyt faneblad med <guilabel
+>DCC Status</guilabel
+>. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Fanebladet DCC Status</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-dccstatus-1" coords="1 1"/>
+				<area id="pt-dccstatus-2" coords="1 1"/>
+				<area id="pt-dccstatus-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="dccstatus_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Fanebladet DCC Status</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-dccstatus-1"
+><para
+>Modtagerens alias og filnavnet vises her.</para
+></callout>
+
+<callout arearefs="pt-dccstatus-2">
+<para
+>Søjlen <guilabel
+>Status</guilabel
+> angiver status for sendingen eller modtagelsen af filen som følger:</para>
+
+<para>
+<variablelist>
+	<varlistentry>
+		<term>
+			<guilabel
+>Tilbyder</guilabel>
+		</term>
+		<listitem>
+			<para
+>Du forsøger at sende en fil til modtageren. &konversation; venter på at modtageren skal acceptere filen. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Forbinder</guilabel>
+		</term>
+		<listitem>
+			<para
+>&konversation; forsøger at oprette en forbindelse med den anden ende. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Sender</guilabel>
+		</term>
+		<listitem>
+			<para
+>&konversation; sender filen til den anden ende. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Modtager</guilabel>
+		</term>
+		<listitem>
+			<para
+>&konversation; modtager filen fra den anden ende. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Færdig</guilabel>
+		</term>
+		<listitem>
+			<para
+>Filen er overført uden problemer. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Hænger</guilabel>
+		</term>
+		<listitem>
+			<para
+>Overførslen er startet men går for øjeblikket ikke videre. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Afbrudt</guilabel>
+		</term>
+		<listitem>
+			<para
+>Enten klikkede du på knappen <guibutton
+>Afbryd</guibutton
+>, eller også afbrød den anden person overførslen. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Mislykket</guilabel>
+		</term>
+		<listitem>
+			<para
+>En fejl opstod og overførslen lykkedes ikke. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>I kø</guilabel>
+		</term>
+		<listitem>
+			<para
+>Overførslen er blevet accepteret og vil begynde når programmellet på den modtagende ende anerkender det. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Slå op</guilabel>
+		</term>
+		<listitem>
+			<para
+>&konversation; forsøger at hente afsenderens IP-adresse. </para>
+		</listitem>
+	</varlistentry>
+	<varlistentry>
+		<term>
+			<guilabel
+>Genoptager</guilabel>
+		</term>
+		<listitem>
+			<para
+>Når en overførsel begynder men filen allerede findes på brugerens system, vil brugeren blive spurgt <interface
+>Filen eksisterer allerede. Genoptag overførsel?</interface
+> Denne status indikerer at brugeren genoptog overførslen. </para>
+		</listitem>
+	</varlistentry>
+</variablelist>
+</para>
+
+</callout>
+
+<callout arearefs="pt-dccstatus-3">
+<para
+>Når nogen vil sende en fil til dig, oprettes fanebladet <guilabel
+>DCC Status</guilabel
+> (hvis det ikke allerede er der). Klik på fanebladet <guilabel
+>DCC Status</guilabel
+> for at vise det. Klik på filen for at markere den, og klik derefter på denne knap for at acceptere filen, så begynder overførslen. Bemærk: Du kan indstille &konversation; til automatisk at acceptere overførsler fra andre personer ved at vælge <menuchoice
+><guisubmenu
+>Indstillinger</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+> <guisubmenu
+>DCC-indstillinger</guisubmenu
+></menuchoice
+> i hovedmenuen. </para>
+</callout>
+
+</calloutlist>
+</para>
+
+<para
+>Hvis du har problemer med at sende eller modtage filer, så er det måske din brandmur der blokerer DCC-portene. Se <link linkend="faq"
+>Spørgsmål og svar</link
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="linkaddressbook">
+<title
+>Integration med &kaddressbook;.</title>
+
+<para
+>Du kan tilknytte ethvert &nickname;til en kontakt i KAddressBook. Når du har gjort dette vil &konversation; vise kontaktens rigtige navn i parentes efter &nickname; i  <interface
+>Alias-Panelet</interface
+>. </para>
+
+<para
+>For at tilknytte et alias til en kontakt i adressebogen, klikkes med højreknappen på personens alias i <interface
+>aliaspanelet</interface
+> på <link linkend="channel-screen-tour"
+>hovedskærmen</link
+>. Vælg <menuchoice
+><guisubmenu
+>Hvem-er-det</guisubmenu
+></menuchoice
+> for at <action
+>vise information som hjælper dig til at afgøre brugerens rigtige navn</action
+>. Klik derefter med højreknappen på personens alias og vælg <menuchoice
+><guisubmenu
+>Adressebogstilknytninger</guisubmenu
+></menuchoice
+>. <action
+>En undermenu vises</action
+>. Hvis aliasset ikke allerede er tilknyttet en kontakt, vælges <menuchoice
+><guisubmenu
+>Opret ny kontakt</guisubmenu
+></menuchoice
+>. <action
+>Skærmen <guilabel
+>Redigér kontakt</guilabel
+> vises.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Skærmen Redigér kontakter</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-kimproxy-create-1" coords="1 1"/>
+				<area id="pt-kimproxy-create-2" coords="1 1"/>
+				<area id="pt-kimproxy-create-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="kimproxy_create_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Skærmen Redigér kontakter</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-kimproxy-create-1"
+><para
+>Aliasset udfyldes automatisk her. Hvis du kender personens rigtige navn, erstattes aliasset med det rigtige navn. </para
+></callout>
+
+<callout arearefs="pt-kimproxy-create-2">
+<para
+>Bemærk at aliasset <emphasis
+>ikke</emphasis
+> vises her. I stedet, ...</para>
+</callout>
+
+<callout arearefs="pt-kimproxy-create-3">
+<para
+>Klik her. Fanebladet <guilabel
+>IM-adresser</guilabel
+>-vinduet kommer frem.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para>
+<screenshot>
+	<screeninfo
+>Vinduet IM-adresser.</screeninfo>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="kimproxy_create_screen2.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+			<phrase
+>Vinduet IM-adresser.</phrase>
+		</textobject>
+	</mediaobject>
+</screenshot>
+</para>
+
+<para
+>Bemærk at &konversation; udfylder aliasset for dig med protokollen <guilabel
+>&irc;</guilabel
+>. </para>
+
+<para
+>Se <ulink url="help:kaddressbook"
+>&kaddressbook;'s håndbog</ulink
+> for yderligere instruktioner om hvordan man bruger &kde;s adressebog.</para>
+
+<para
+>Udfyld mulig yderligere information om aliasset du kender til og klik på <guilabel
+>O.k</guilabel
+>. Personens rigtige navn vises i parenteser foran aliasset i <guilabel
+>Aliaspanelet</guilabel
+> i &konversation;. Det rigtige navn vises også når musen holdes stille over aliasset.</para>
+
+<para
+>Så snart et alias er knyttet sammen med en kontakt i adressebogen, kan du højreklikke på personens alias i <interface
+>Aliaspanelet</interface
+> og redigere den tilknyttede kontakt, knytte aliasset sammen med en anden kontakt, eller fjerne tilknytningen. </para>
+
+<para
+>Hvis du har tilknyttet et alias til en kontakt, og brugeren ændrer sit alias mens du kører &konversation;, tilknyttes det nye alias automatisk til kontakten, og desuden beholdes den oprindelige tilknytning.</para>
+
+<para
+>Hvis du knytter et alias i &irc; til en kontakt i <ulink url="help:kopete"
+>Kopete</ulink
+>, vises også tilknytningen i &konversation; og modsat.</para>
+
+<para
+>Bemærk: Det er muligt at markere mere end et alias i <interface
+>Aliaspanelet</interface
+>, klik med musens højre knap, og udfør flere tilknytninger. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="urlcatcher">
+<title
+>Indfangning af &URL;'er fra meddelelser</title>
+
+<para
+>Brugere sender ind imellem &URL;'er for interessante steder eller andre ressourcer på nettet, i hvilken som helst <link linkend="channel-screen-tour"
+>kanal</link
+>. Du kan dobbeltklikke på alle sådanne &URL;'er så starter &konversation; programmet som hører sammen med &URL;'en. Programmet som startes afhænger af &MIME;-typen som &URL;'en har. For eksempel aktiveres din almindelige browser for en &URL; som begynder med <interface
+>http:</interface
+>, og viser den. Hvis &URL;'en ruller forbi på skærmen, kan det være svært at finde den igen. &konversation; kan gemme en bekvem liste med alle &URL;'er for dig. For at aktivere denne funktion, vælges <menuchoice
+><guisubmenu
+>Vindue</guisubmenu
+> <guisubmenu
+>&URL;-indfangning</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Et nyt faneblad som hedder <guilabel
+>&URL;-indfangning</guilabel
+> laves.</action
+> </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Fanebladet &URL;-indfangning.</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-urlcatcher-1" coords="1 1"/>
+				<area id="pt-urlcatcher-2" coords="1 1"/>
+				<area id="pt-urlcatcher-3" coords="1 1"/>
+				<area id="pt-urlcatcher-4" coords="1 1"/>
+				<area id="pt-urlcatcher-5" coords="1 1"/>
+				<area id="pt-urlcatcher-6" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="urlcatcher_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Fanebladet &URL;-indfangning.</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-urlcatcher-1"
+><para
+>Dette er listen med &URL;'er som er set siden du startede &konversation;. Søjlen <guilabel
+>Alias</guilabel
+> er alias på personen som sendte &URL;'en. Hvis alias er blankt, blev &URL;'en vist i fanebladet <interface
+>Servermeddelelser</interface
+>. (&URL;'er som vises i meddelelser for at gå med i eller forlade kanaler er ikke på listen.) Klik på en &URL; for at markere den.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-2"
+><para
+>Klik her for at aktivere programmet som hører sammen med den markerede &URL;. Programmet som startes afhænger af &MIME;-typen som &URL;'en har. For eksempel aktiveres din almindelige browser for en &URL; som begynder med <interface
+>http:</interface
+>, og viser netsiden.  For netsider kan du også specificere den <link linkend="webbrowser"
+>browser</link
+> der skal bruges.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-3"
+><para
+>Klik her for at kopiere markeret &URL; til &kde;'s klippebord.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-4"
+><para
+>Klik her for at slette markeret &URL; fra listen.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-5"
+><para
+>Klik her for at gemme listen med &URL;'er i en fil.</para
+></callout>
+
+<callout arearefs="pt-urlcatcher-6"
+><para
+>Klik her for at rydde listen.</para
+></callout>
+
+</calloutlist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="webbrowser">
+<title
+>Opsætning af din foretrukne browser</title>
+
+<para
+>Når du klikker på en fremhævet &URL; hvorsomhelst i &konversation;, vil den starte standardprogrammet i &kde; tilknyttet &MIME;-typen for denne &URL;. For eksempel, når der klikkes på en &URL; der begynder med <interface
+>http</interface
+>, startes &konqueror; for at vise netsiden. Du kan angive et andet program end &kde;'s standard. For eksempel, kan du bruge  Mozilla i stedet for. </para>
+
+<para
+>For at vælge en anden browser, vælges <menuchoice
+><guisubmenu
+>Opsætning</guisubmenu
+> <guisubmenu
+>Indstil &konversation;</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Skærmen <guilabel
+>Redigér indstillinger</guilabel
+> vil så komme frem.</action
+> </para>
+
+ <para>
+<screenshot>
+<screeninfo
+>Browser-skærmen</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-webbrowser-1" coords="1 1"/>
+				<area id="pt-webbrowser-2" coords="1 1"/>
+				<area id="pt-webbrowser-3" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="webbrowser_screen_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Browser-skærmen</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+
+<callout arearefs="pt-webbrowser-1"
+><para
+>Klik her for at vise skærmen <guilabel
+>Browser</guilabel
+>.</para
+></callout>
+
+<callout arearefs="pt-webbrowser-2"
+><para
+>Klik her for at angive at du ønsker at bruge en selvvalgt browser.</para
+></callout>
+
+<callout arearefs="pt-webbrowser-3"
+><para
+>Indtast kommandoen til at starte din ønskede browser. Når du klikker på en &URL; vil <userinput
+><replaceable
+>%u</replaceable
+></userinput
+> blive erstattet med &URL;'en.</para
+></callout>
+
+</calloutlist>
+</para>
+
+<para
+><emphasis
+>Vink: </emphasis
+>(kun for &UNIX;-systemer) Standardkommandoen er <userinput
+>mozilla '%u'</userinput
+>, hvilket vil starte en ny udgave af  Mozilla hver gang du klikker på en &URL;. Hvis du foretrækker at Mozilla viser netsiden i et nyt faneblad af en allerede-kørende udgave, så lav en fil der indeholder følgende: </para>
+
+<para>
+<literallayout
+>#!/bin/sh
+mozilla -remote "openURL($@, new-tab)" || exec mozilla "$@";
+</literallayout>
+</para>
+
+<para
+>Navngiv filen <userinput
+><replaceable
+>moz</replaceable
+></userinput
+>, placér den i din PATH, og gør den kørbar (<userinput
+>chmod a+x moz</userinput
+>). Skriv så <userinput
+> <replaceable
+>moz '%u'</replaceable
+></userinput
+> for browser-kommandoen i skærmen ovenfor. </para>
+
+<para
+><emphasis
+>Bemærk: </emphasis
+><guilabel
+>Browser</guilabel
+>-opsætningen kommer ikke til at gælde <interface
+>mailto:</interface
+> &URL;'er. <interface
+>mailto:</interface
+> &URL;'er starter altid &kde;s standardprogram. </para>
+
+<para
+>Klik på <guibutton
+>Anvend</guibutton
+> for at gemme dine ændringer. Du skal forbinde til hver server igen for at alle ændringer skal få virkning. Den nemmeste måde at gøre det er at afslutte &konversation; og starte forfra. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="rememberlines">
+<title
+>Markering af kanaler og forespørgselslogger</title>
+
+<para
+>Du kan indsætte en markering i <link linkend="channel-screen-tour"
+>channel</link
+> og <link linkend="query"
+>query</link
+> skærmene for at hjælpe dig til hurtigt at finde information. For at gøre dette vælg <menuchoice
+> <guisubmenu
+>Indsæt</guisubmenu
+> <guisubmenu
+>Huskelinje</guisubmenu
+> </menuchoice
+> i hovedmenuen, eller tryk på <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+>. <action
+>En linje vil så komme frem for neden af teksten på skærmen. Linjen vil rulle med resten af teksten på skærmen.</action
+> </para>
+
+<para
+>For at få en <interface
+>Huske-linje</interface
+> til at blive indsat i alle kanaler og spørgsmål samtidigt, vælges <menuchoice
+><guisubmenu
+>Indstillinger</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+></menuchoice
+> i hovedmenuen, ekspandér <guilabel
+>Opførsel</guilabel
+>, klik på <guilabel
+>Chat-vindue</guilabel
+> og markér feltet <guilabel
+>Vis en huske-linje for alle kanaler og spørgsmål</guilabel
+>. </para>
+
+<para
+>For at få &konversation; til automatisk at indsætte en <interface
+>huske-linje</interface
+> så snart du sender kommandoen <userinput
+><command
+>/away</command
+> <replaceable
+>meddelelse</replaceable
+></userinput
+>, se <link linkend="identity-away"
+>Opsætning af din identitet</link
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="logging">
+<title
+>Logning</title>
+
+<para
+>Hvis logning er aktiveret, logger &konversation; hver <interface
+>server</interface
+>, <link linkend="channel-screen-tour"
+>kanal</link
+> og <link linkend="query"
+>privat konversation (spørgsmål)</link
+>. Hver session opbevares i en logfil på disken. Når du åbner samme session igen, tilføjer &konversation; til loggen. Loggen vokser til en grænse som du kan indstille (se nedenfor). Når grænsen nås, kasseres de ældste meddelelser. </para>
+
+<para
+>Så snart du åbner en session igen, læses cirka de sidste 1024 tegn af foregående session fra slutningen af loggen og vises på skærmen. </para>
+
+<para
+>Mens sessionen er i gang, ruller meddelelser væk højst oppe på skærmen. Du kan rulle baglæns for at se disse meddelelser. Før eller siden, for at spare hukommelse, tages de ældste meddelelser væk fra skærmen. Dette kaldes for <guilabel
+>historikgrænsen</guilabel
+>. Meddelelser som forsvinder fra skærmen på grund af denne <guilabel
+>historikgrænse</guilabel
+> er stadigvæk tilgængelige i logfilen, hvis logning er aktiveret.</para>
+
+<para
+>For at vise logfilen for en session, klikkes på sessionens faneblad for at gøre den til aktuel session og så vælges <menuchoice
+><guisubmenu
+>Vindue</guisubmenu
+> <guisubmenu
+>Åbn logfil</guisubmenu
+></menuchoice
+> i hovedmenuen. <action
+>Et nyt faneblad åbnes</action
+> som viser logfilen. </para>
+
+<para>
+<screenshot>
+<screeninfo
+>Logfil</screeninfo>
+	<mediaobjectco>
+		<imageobjectco>
+			<areaspec units="calspair">
+				<area id="pt-logviewer-1" coords="1 1"/>
+				<area id="pt-logviewer-2" coords="1 1"/>
+				<area id="pt-logviewer-3" coords="1 1"/>
+				<area id="pt-logviewer-4" coords="1 1"/>
+				<area id="pt-logviewer-5" coords="1 1"/>
+			</areaspec>
+			<imageobject>
+				<imagedata fileref="logviewer_co.png" format="PNG"/>
+			</imageobject>
+		</imageobjectco>
+		<textobject>
+			<phrase
+>Logfil</phrase>
+		</textobject>
+	</mediaobjectco>
+</screenshot>
+</para>
+
+<para>
+<calloutlist>
+<callout arearefs="pt-logviewer-1"
+><para
+>Meddelelser fra logfilen vises her. De ældste meddelelser er højst oppe og de seneste forneden.</para
+></callout>
+<callout arearefs="pt-logviewer-2"
+><para
+>Klik på denne knap for at gemme logfilen til en anden fil.</para
+></callout>
+<callout arearefs="pt-logviewer-3"
+><para
+>Klik for at opdatere visningen af logfilen. Mens du kigger på en logfil, tilføjes nye meddelelser i tilsvarende session <emphasis
+>ikke</emphasis
+>  automatisk til visningen af logfilen. Brug denne knap for at kigge på de seneste meddelelser.</para
+></callout>
+<callout arearefs="pt-logviewer-4"
+><para
+>Klik for at rydde skærmen med logfilen og fjerne logfilen på disken.</para
+></callout>
+<callout arearefs="pt-logviewer-5"
+><para
+>Brug dette felt til at indstille maksimal størrelse på logfilen. Indstillingen får ingen effekt førend du genstarter &konversation;. Hver logfil kan have en separat indstilling.</para
+></callout>
+</calloutlist>
+</para>
+
+<para
+><guilabel
+>Historikgrænsen</guilabel
+> kan ændres ved at vælge <menuchoice
+><guisubmenu
+>Indstillinger</guisubmenu
+> <guisubmenu
+>Indstil &konversation;</guisubmenu
+></menuchoice
+> i hovedmenuen, og derefter ekspandere <guilabel
+>Opførsel</guilabel
+> og klikke på <guilabel
+>Chat-vindue</guilabel
+>. Feltet <guilabel
+>Historikgrænse</guilabel
+> vises så på skærmen. Hvis du indstiller den til <guilabel
+>Ubegrænset</guilabel
+>, tages meddelelser ikke bort fra skærmen. </para>
+
+<para
+>Du kan aktivere eller deaktivere logning og indstille andre logningstilvalg ved at vælge <menuchoice
+><guisubmenu
+>Indstillinger</guisubmenu
+> <guisubmenu
+>Indstil &konversation;</guisubmenu
+></menuchoice
+> i hovedmenuen, og derefter ekspandere <guilabel
+>Opførsel</guilabel
+> og klikke på <guilabel
+>Logning</guilabel
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="konvi-cmds">
+<title
+>&konversation;'s kommandoer</title>
+
+<para
+>Følgende kommandoer tolkes af &konversation; og kan være forskellige fra almindelige &irc;-kommandoer. Flag indenfor forkantede parenteser er valgfrie. Flag adskilte med en lodret streg (|) er forskellige former af kommandoen. Kommandoer som ikke er på denne liste, sendes til serveren som de skrives ind. </para>
+
+<para>
+<variablelist>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/me</command
+> <replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sender <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+> til kanalen ud for dit alias. Hvis dit alias for eksempel er <userinput
+><replaceable
+>Tux</replaceable
+></userinput
+>, ville meddelelsen <interface
+>Tux brygger en kop te</interface
+> vises ved at skrive  <userinput
+><replaceable
+>/me brygger en kop te</replaceable
+></userinput
+>. Hvis der ikke er filtre for denne slags meddelelser, ser alle brugere dem. Denne slags meddelelser bruges oftest til at udtrykke ikke-verbal information, såsom din følelsesmæssige tilstand lige nu, eller hvad du fysisk sysler med. Hvis du forlader maskinen en kort stund, så brug kommandoen /away i stedet for.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ame </command
+> <replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Ligesom kommandoen <userinput
+><command
+>/me</command
+></userinput
+> ovenfor, undtagen at meddelelsen sendes til alle kanaler og forespørgsler som er åbne på alle servere du er tilsluttet i &konversation;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/join</command
+> <replaceable
+>kanal</replaceable
+> <replaceable
+>[pwd]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Går med i <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>. Hvis serveren tillader det, og hvis kanalen ikke allerede findes, laves den og du bliver kanaloperator. Hvis kanalen kræver et kodeord for at gå med, angives det som <userinput
+><replaceable
+>kodeord</replaceable
+></userinput
+>. De fleste kanalnavne begynder med <userinput
+><replaceable
+>#</replaceable
+></userinput
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/j</command
+> <replaceable
+>kanal</replaceable
+> <replaceable
+>[pwd]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Samme som <userinput
+><command
+>/join</command
+></userinput
+> ovenfor.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/part</command
+> <replaceable
+>[kanal]</replaceable
+> <replaceable
+>[grund]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Forlader <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+> med <userinput
+><replaceable
+>grund</replaceable
+></userinput
+> og lukker tilsvarende <interface
+>kanalfaneblad</interface
+>. Inde i en &konversation; kanal eller et forespørgselsfaneblad, kan du kun indtaste <userinput
+><command
+>/part</command
+></userinput
+> hvilket lukker kanalen eller forespørgslen med din standardbegrundelse som angivet i <link linkend="identity"
+>Indstillinger</link
+>.</para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><userinput
+><command
+>/leave</command
+> <replaceable
+>[kanal]</replaceable
+> <replaceable
+>[grund]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Samme som <userinput
+><command
+>/part</command
+></userinput
+> ovenfor.</para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><userinput
+><command
+>/quit</command
+></userinput
+></term>
+<listitem
+><para
+>Når dette indtastes i et kanalfaneblad, forespørgselsfaneblad eller DCC-faneblad, afbrydes forbindelsen til den tilsvarende server og alle kanalfaneblade, forespørgselsfaneblade eller DCC-faneblade som er åbne for denne server lukkes.</para
+></listitem>
+</varlistentry>
+
+<varlistentry
+><term
+><userinput
+><command
+>/notice</command
+> <replaceable
+>alias|kanal</replaceable
+> <replaceable
+>msg</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sender <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+> til brugeren med aliasset <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> eller til alle i en <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>. Det følgende er et eksempel på hvad du ser i kanalfanebladet</para>
+
+<para
+><computeroutput
+>[17:14] [Notits] Sender meddelelse "Jeg tror jeg forstår" til #konversation</computeroutput
+></para>
+
+<para
+>Og dette er hvad modtagerne ser</para>
+
+<para
+><computeroutput
+>[17:15] [Notits] -Eisfuchs- Jeg tror jeg forstår</computeroutput
+></para>
+
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/query </command
+><replaceable
+>alias</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Opretter et nyt faneblad med brugerens <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> for en privat konversation, almindeligvis kendt på &irc; som en <link linkend="query"
+>forespørgsel</link
+>. Alt som skrives her ses kun hos dig og din partner. Du kan indtaste mere end et &nickname; adskilt af mellemrum og et forspørgselsfanebald for hvert &nickname;. Hver sådan forespørgselsfaneblad vil være privat mellem dig og den forespurgte partner.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/msg</command
+> <replaceable
+>alias|kanal</replaceable
+></userinput
+> <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sender en privat meddelelse til brugeren med aliasset <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> eller til alle brugere i <userinput
+><replaceable
+>kanalen</replaceable
+></userinput
+>. I modsætning til <userinput
+><command
+>/query</command
+></userinput
+> åbner det ikke et nyt faneblad. Hvis <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+> begynder med <userinput
+><command
+>/me</command
+></userinput
+>, formateres meddelelsen på samme måde som en <userinput
+><command
+>/me</command
+></userinput
+>-kommando.</para>
+
+<para
+>Eksempler</para>
+
+<para
+><userinput
+><replaceable
+>/msg Eisfuchs Jeg har brug for en del hjælp med kommandoen msg</replaceable
+></userinput
+></para>
+
+<para
+><userinput
+><replaceable
+>/msg #konversation Ny version af Konvi er online!</replaceable
+></userinput
+></para>
+
+<para
+><userinput
+><replaceable
+>/msg Eisfuchs /me kompilerer håndbogen lige nu.</replaceable
+></userinput
+></para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/smsg</command
+> <replaceable
+>alias|kanal</replaceable
+></userinput
+> <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Samme som <userinput
+><command
+>/msg</command
+></userinput
+> undtagen at meddelelsen ikke vises på din skærm. Dette er nyttigt for at forhindre at kodeord og anden følsom information forbliver synlig på din skærm eller logges.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/amsg</command
+> <replaceable
+>alias|kanal</replaceable
+></userinput
+> <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Samme som <userinput
+><command
+>/msg</command
+></userinput
+> kommandoen ovenfor, undtagen at meddelelsen sendes til alle kanaler og forespørgsler som du har åbnet på alle servere du er tilknyttet i &konversation;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/op</command
+> <replaceable
+>alias</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Når dette indtastes i et kanalfaneblad, forsøges det at give <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> operatorrettigheder for kanalen. Måske virker dette ikke hvis du mangler tilstrækkelige rettigheder til kanalen (du skal selv være kanaloperator). Du kan indtaste mere end et alias adskilt med mellemrum.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/deop</command
+> <replaceable
+>alias</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Når dette indtastes i et kanalfaneblad, fjernes operatorrettigheder  fra <userinput
+><replaceable
+>alias</replaceable
+></userinput
+>. Du kan indtaste mere end et alias adskilt med mellemrum.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/oper</command
+> <replaceable
+>[alias]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Giver brugeren med aliasset <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> &irc;-op rettigheder (administrator). Dette virker kun hvis aliasset er på listen på servernes O:-linje. En &irc;-op har ret til at udføre <userinput
+><command
+>/kill</command
+></userinput
+> for et alias, forbinde servere til &irc;-netværket med <userinput
+><command
+>/connect</command
+></userinput
+> med mere. Hvis <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> ikke indtastes, forsøges det at give dig selv &irc;-op rettigheder. Du bliver spurgt om dit &irc;-op brugernavn og kodeord i begge tilfælde.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/voice</command
+> <replaceable
+>alias</replaceable
+></userinput
+></term>
+<listitem
+><para
+>I visse kanaler (med +m flag) kan brugere ikke sende meddelelser hvis de ikke har stemmeret. Denne kommandoen forsøger at give <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> stemmeret. Du skal have kanaloperatorrettigheder for at udføre kommandoen. Kommandoen bruges oftest når du er operator på en modereret kanal.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/unvoice</command
+> <replaceable
+>alias</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Fjerner stemmeret fra <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> i kanalen.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/topic</command
+> <replaceable
+>[kanal]</replaceable
+> <replaceable
+>[meddelelse]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Forsøger at ændre emnet i <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+> til <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+>. Når det indtastes i et kanalfaneblad, kan <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+> udelades, og bliver som standard til kanalen som er aktiv i fanebladet. Hvis <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+> udelades, vises kanalens nuværende emne. Ændring af kanalens emne kan mislykkes hvis du mangler tilstrækkelige rettigheder.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/away </command
+> <replaceable
+>grund</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Hvis nogen forsøger at sende dig en privat meddelelse eller indbyde dig til en kanal, vil de blive fortalt at du er borte fra din maskine med <userinput
+><replaceable
+>grund</replaceable
+></userinput
+>. For at ændre din tilstand tilbage til det normale indtastes <userinput
+><command
+>/away</command
+></userinput
+> uden en grund.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/aaway</command
+> <replaceable
+>grund</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Ligesom kommandoen <userinput
+><command
+>/away</command
+></userinput
+> ovenfor, bortset fra at kommandoen sendes til alle servere du er forbundet til i &konversation;.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/invite</command
+> <replaceable
+>alias</replaceable
+> <replaceable
+>[kanal]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Indbyder brugeren med aliasset <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> til at gå med i <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>. Kommandoen er særlig nyttig hvis kanalen kun er åben for indbudte. Når indtastes i et kanalfaneblad kan <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+> udelades.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/exec</command
+> <replaceable
+>script</replaceable
+> <replaceable
+>[parametre]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Kører et skalscript som virker sammen med &konversation; som hedder <userinput
+><replaceable
+>script</replaceable
+></userinput
+>, og sender det <userinput
+><replaceable
+>parametre</replaceable
+></userinput
+>. Se <link linkend="scripting"
+>Scripter</link
+> for mere information om at bruge og skrive scripter.</para>
+<para
+>Eksempler:</para>
+
+<para
+><userinput
+><replaceable
+>/exec kdeversion</replaceable
+></userinput
+></para>
+
+<para
+>Sender dit systems &kde;- og &Qt;-versionsnummer til kanalen.</para>
+
+<para
+><userinput
+><replaceable
+>/exec cmd uname -a</replaceable
+></userinput
+></para>
+
+<para
+>Sender din Linux-versionsstreng til kanalen.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/notify</command
+> <replaceable
+>[alias]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Tilføjer eller fjerner <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> fra listen <link linkend="nicksonline"
+>Overvågede tilsluttede aliasser</link
+>. Hvis aliasset allerede er på listen, fjernes det. Hvis det ikke er på listen, tilføjes det. Hvis <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> udelades, vises den nuværende liste over overvågede aliasser.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/prefs </command
+>[<command
+>list</command
+>|<replaceable
+>gruppe</replaceable
+>] [<command
+>liste</command
+>|<replaceable
+>flag</replaceable
+>] [<replaceable
+>værdi</replaceable
+>]</userinput
+></term>
+<listitem
+><para
+>Viser eller indstiller opsætning af &konversation; uden at bruge opsætningsskærmen. Hvis en parameter indeholder mellemrum, omgive den med citationstegn.</para>
+
+<para
+>Eksempler:</para>
+
+<para
+><userinput
+><replaceable
+>/prefs list</replaceable
+></userinput
+></para>
+
+<para
+>giver en liste af tilgængelige alternative grupper.</para>
+
+<para
+><userinput
+><replaceable
+>/prefs "General Options" list</replaceable
+></userinput
+></para>
+
+<para
+>giver en liste af valgmulighederne tilgængelige i gruppen<userinput
+><replaceable
+>General Options</replaceable
+></userinput
+> sammen med deres aktuelle værdier</para>
+
+<para
+><userinput
+><replaceable
+>/prefs "General Options" ShowTrayIcon</replaceable
+></userinput
+></para>
+
+<para
+>Viser nuværende værdi af indstillingen som viser &konversation;s ikon i statusfeltet.</para>
+
+<para
+><userinput
+><replaceable
+>/prefs "General Options" ShowTrayIcon false</replaceable
+></userinput
+></para>
+
+<para
+>Lukker for &konversation;s ikon i statusfeltet.</para>
+
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/kick</command
+> <replaceable
+>alias</replaceable
+> <replaceable
+>grund</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Når dette indtastes i et kanalfaneblad, forsøges det at sparke brugeren med aliasset <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> væk fra kanalen med <userinput
+><replaceable
+>grund</replaceable
+></userinput
+> som begrundelse. Hvis <userinput
+><replaceable
+>grund</replaceable
+></userinput
+> ikke indskrives, bruges standardgrunden fra <link linkend="identity"
+>Indstillinger</link
+>. Kommandoen må kun bruges i et kanalfaneblad.</para>
+</listitem
+></varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ban </command
+> [<command
+>-host</command
+>|<command
+>-domain</command
+>| <command
+>-userhost</command
+>|<command
+>-userdomain</command
+>] <replaceable
+>[kanal]</replaceable
+> <replaceable
+>brugere</replaceable
+>|<replaceable
+>mask</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Forsøger at bandlyse <userinput
+><replaceable
+>bruger</replaceable
+></userinput
+> eller <userinput
+><replaceable
+>mask</replaceable
+></userinput
+> fra <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>. Når dette indtastes i et kanalfaneblad, kan <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+> udelades. For mere information om værter, domæner og masker, se dokumenterne på <ulink url="http://www.irchelp.org/"
+>irchelp.org</ulink
+>. For at hente den nuværende bandlysningsliste for en kanal, indtastes <userinput
+><command
+>/mode</command
+> <replaceable
+>kanal</replaceable
+> <command
+>b</command
+></userinput
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/unban</command
+> <replaceable
+>[kanal]</replaceable
+> <replaceable
+>mønster</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Tager en en tidligere bandlysning tilbage fra en kanal. Når dette indtastes i et kanalfaneblad kan <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+> udelades. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ignore</command
+> [<command
+>-all</command
+>] <replaceable
+>alias</replaceable
+> </userinput
+></term>
+<listitem
+><para
+>Tilføjer <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> til din ignorér-liste. Du kan angive mere end et alias adskilt af mellemrum. Kanalmeddelelser fra brugere på din ignorér-liste vises ikke. Hvis du desuden indtaster <userinput
+><command
+>-all</command
+></userinput
+>, ignoreres alle typer af meddelelser fra brugeren (spørgsmål, notitser, CRCP, DCC og undtagelser) så vel som kanalmeddelelser. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/quote</command
+> <replaceable
+>kommando</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sender <userinput
+><replaceable
+>kommando</replaceable
+></userinput
+> til serveren. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/say</command
+> <replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Når dette indtastes i et kanalfaneblad, sendes <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+> til kanalen. Dette er det samme som at indtaste <userinput
+><replaceable
+>meddelelse</replaceable
+></userinput
+> i kanalens <interface
+>indtastningsfelt</interface
+>. Nyttigt for at sende &irc;-kommandoer når du ikke vil udføre kommandoen. To kommandotegn efter hinanden (//) gør samme som <userinput
+><command
+>/say</command
+></userinput
+>. Bruges også af <link linkend="scripting"
+>script</link
+> til at sende meddelelser. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/raw </command
+> [<command
+>open</command
+>|<command
+>close</command
+>]</userinput
+></term>
+<listitem
+><para
+>Indstiller serverloggen til ubehandlet tilstand (<command
+>open</command
+>) eller afslutter ubehandlet tilstand (<command
+>close</command
+>). Hvis hverken <command
+>open</command
+> eller <command
+>close</command
+> indtastes, er standardværdien <command
+>open</command
+>. I ubehandlet tilstand viser loggen alle meddelelser som modtages fra serveren i rigtigt &irc;-format. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/konsole </command
+></userinput
+></term>
+<listitem
+><para
+>Åbner et nyt faneblad som kører en &kde;-terminal. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/server</command
+> <replaceable
+>[url]</replaceable
+> <replaceable
+>[kodeord]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Forbinder til serveren på adressen <userinput
+><replaceable
+>url</replaceable
+></userinput
+>. Hvis <userinput
+><replaceable
+>url</replaceable
+></userinput
+> udelades, forbindes til serveren som hører sammen med fanebladet hvor du indtastede kommandoen. Dette er nyttigt for at forbinde til en server igen hvis du blev afbrudt. Hvis serveren kræver et kodeord for at forbinde til den, indtastes det som <userinput
+><replaceable
+>kodeord</replaceable
+></userinput
+>. Hvis serveren kræver et andet portnummer end  standardnummeret (6667), indtastes <userinput
+><replaceable
+>url</replaceable
+></userinput
+> sådan her: <replaceable
+>irc.kde.org:6665</replaceable
+>. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/dcc</command
+> <command
+>SEND</command
+> <replaceable
+>alias</replaceable
+> <replaceable
+>[filnavn]</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sender <userinput
+><replaceable
+>filnavn</replaceable
+></userinput
+> til brugeren med aliasset <userinput
+><replaceable
+>alias</replaceable
+></userinput
+>. Hvis <userinput
+><replaceable
+>filnavn</replaceable
+></userinput
+> udelades, vises en dialog så du kan vælge en fil. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/dcc </command
+></userinput
+></term>
+<listitem
+><para
+>Åbner et DCC-statusfaneblad </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ctcp</command
+> <replaceable
+>alias|kanal</replaceable
+> <command
+>ping</command
+></userinput
+></term>
+<listitem
+><para
+>Sender en PING-meddelelse til <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> eller <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>. Dette er nyttigt for at afgøre om nogen som du taler med har en lang netværksforsinkelse eller (når det sendes til en kanal) om dit system har en lang forsinkelse. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><userinput
+><command
+>/ctcp</command
+> <replaceable
+>alias|kanal</replaceable
+> <replaceable
+>meddelelse</replaceable
+></userinput
+></term>
+<listitem
+><para
+>Sender en meddelelse til <userinput
+><replaceable
+>alias</replaceable
+></userinput
+> eller alle brugere i <userinput
+><replaceable
+>kanal</replaceable
+></userinput
+>. Det ligner kommandoen <userinput
+><command
+>/msg</command
+></userinput
+> ovenfor, bortset fra at meddelelsen sendes med CTCP-protokollen. Svaret fra den anden side afhænger af &irc;-klientprogrammet brugeren kører. Hvis du for eksempel taler med en anden brugere af &konversation;, returneres <userinput
+><replaceable
+>/ctcp Eisfuchs TIME</replaceable
+></userinput
+> systemtiden på Eisfuchs maskine. <userinput
+><replaceable
+>/ctcp Eisfuchs VERSION</replaceable
+></userinput
+> returnerer versionsnumret for &konversation; fra Eisfuchs maskine. </para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="scripting">
+<title
+>Scripter</title>
+
+<para
+>&konversation; levereres med nogle praktiske scripter som du kan køre fra programmet. For at køre et script i et kanalfaneblad, DCC-faneblad eller serverfaneblad, indtastes en kommando på formen</para>
+
+<para
+><userinput
+><command
+>/exec </command
+> <replaceable
+>script</replaceable
+> [<replaceable
+>parametre</replaceable
+>]</userinput
+></para>
+
+<para
+>som kører et script som hedder <userinput
+><replaceable
+>script</replaceable
+></userinput
+> og sender det (valgfrie) <userinput
+><replaceable
+>parametre</replaceable
+></userinput
+>.</para>
+
+<para
+>Skriv for eksempel følgende kommandoer i et kanalfaneblad</para>
+
+<para
+><userinput
+><replaceable
+>/exec kdeversion</replaceable
+></userinput
+></para>
+
+<para
+>for at sende dine &kde;- og &Qt;-versionsnumre til kanalen.</para>
+
+<para
+><userinput
+><replaceable
+>/exec cmd uname -a</replaceable
+></userinput
+></para>
+
+<para
+>kører scriptet <userinput
+><replaceable
+>cmd</replaceable
+></userinput
+>, og sender <userinput
+><replaceable
+>uname -a</replaceable
+></userinput
+> til det. Det sender din Linux-versionsstreng til kanalen.</para>
+
+<para
+>For at få en liste over alle tilgængelige scripter, indtastes følgende kommando i en terminal:</para>
+
+<para
+><userinput
+><replaceable
+>ls $KDEDIR/share/apps/konversation/scripts</replaceable
+></userinput
+></para>
+
+<para
+>Du kan skrive dine egne scripter. Scripter er skalscripter og kan skrives med hvilket som helst skalsprog, såsom bash, perl eller python. Når &konversation; kører et script, er de  første tre parametre som sendes til scriptet:</para>
+
+<itemizedlist>
+
+<listitem
+><para
+>Portnumret for &irc;-serveren i fanebladet hvor kommandoen <userinput
+><command
+>/exec</command
+></userinput
+> blev skrevet.</para>
+</listitem>
+
+<listitem
+><para
+>Serverens adresse.</para
+></listitem>
+
+<listitem
+><para
+>Kanalens navn.</para
+></listitem>
+
+</itemizedlist>
+
+<para
+>Her er et eksempel på et skalscript (cmd).</para>
+
+<para>
+<programlisting
+>#!/bin/sh
+
+# Kører en kommando og skriver resultatet ud i Konversation.
+
+PORT=$1;
+SERVER=$2;
+TARGET=$3;
+shift;shift;shift;
+
+$@ | while read line; do dcop $PORT Konversation say $SERVER "$TARGET" "$@: $line"; done
+</programlisting>
+</para>
+
+<para
+>Bemærk at scriptet bruger DCOP til at kommunikere med &konversation;. Kommandoen <computeroutput
+>/say</computeroutput
+> gør at udskriften sendes til kanalen som en normal meddelelse. For at vise noget i fanebladet uden at sende det til andre brugere, bruges <computeroutput
+>info</computeroutput
+> i stedet. Kig i eksisterende scriptfiler for flere eksempler på at skrive scripter.</para>
+
+<para
+>For at kunne køre et script som du har skrevet, skal du installere det ved at kopiere det til $KDEDIR/share/apps/konversation/scripts eller til $HOME/.kde/share/apps/konversation/scripts. Du skal også give filen kørerettigheder, for eksempel med <userinput
+><replaceable
+>chmod a+x mit_script</replaceable
+></userinput
+>.</para>
+
+</sect1>
+
+</chapter>
+
+<!-- =================================================================== -->
+
+<chapter id="commands">
+<title
+>Kommandoreference</title>
+
+<!-- (OPTIONAL, BUT RECOMMENDED) This chapter should list all of the
+application windows and their menubar and toolbar commands for easy reference.
+Also include any keys that have a special function but have no equivalent in the
+menus or toolbars. This may not be necessary for small apps or apps with no tool
+or menu bars. -->
+
+<!-- =================================================================== -->
+
+<sect1 id="kapp-mainwindow">
+<title
+>Hovedvinduet for &konversation;</title>
+
+<sect2>
+<title
+>Fil-menuen</title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycap
+>F2</keycap
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Serverliste</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Viser <link linkend="irc-basics"
+>listen med servere og kanaler</link
+>. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycap
+>F7</keycap
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Hurtigforbindelse</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Viser <link linkend="quickconnect"
+>Hurtigforbind</link
+>-skærmen til at forbinde til en server. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Fil</guimenu
+> <guimenuitem
+>Forbind igen</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Forbinder igen til alle servere som blev afbrudt på grund af en netværksfejl eller andet problem. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>J</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Gå med i kanal</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Viser en dialog hvor du kan indtaste navnet på en kanal at gå med i. Gør det samme som at indtaste <command
+>/join <userinput
+>#kanalnavn</userinput
+></command
+> i en kanal eller er serverfaneblad.</action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt; &Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+> Angiv som borte globalt</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Ændrer status for dit alias til borte i alle kanaler. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Fil</guimenu
+> <guimenuitem
+>Afslut</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Afslutter</action
+> &konversation;</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menuen <guimenu
+>Redigér</guimenu
+></title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>F</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Søg</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Søger efter tekststrenge på nuværende skærm.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycap
+>F3</keycap
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Søg igen</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Søger igen efter tekststrenge på nuværende skærm ved brug af den tidligere søgestreng.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Ryd vindue</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Rydder nuværende skærm.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl; &Shift;<keycap
+>L</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Redigér</guimenu
+> <guimenuitem
+>Tøm alle vinduer</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Tømmer alle skærme.</action>
+			</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menuen <guimenu
+>Indsæt</guimenu
+></title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>K</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Indsæt</guimenu
+> <guimenuitem
+>&irc;-farve</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Se <link linkend="color-msgs"
+>Send farvelagte meddelelser</link
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Indsæt</guimenu
+> <guimenuitem
+>Huske-linje</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Se <link linkend="rememberlines"
+>Markering af kanal- og forspørgselslogger</link
+>.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Alt; &Shift;<keycap
+>C</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Indsæt</guimenu
+> <guimenuitem
+> Specialtegn</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Bruges til at indtaste specialtegn, såsom tegn på fremmede sprog.</action>
+			</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+>Menuen <guimenu
+>Bogmærker</guimenu
+></title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>B</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Bogmærker</guimenu
+> <guimenuitem
+>Tilføj bogmærke</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+		    <action
+>Lægger et bogmærke til for nuværende netværk og kanal</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Bogmærker</guimenu
+> <guimenuitem
+>Redigér bogmærker</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Åbner bogmærkeeditoren</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Bogmærker</guimenu
+> <guimenuitem
+>Ny bogmærkemappe</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Opretter en ny bogmærkemappe</action>
+			</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+><guimenu
+>Opsætnings</guimenu
+>menuen</title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Indstillinger</guimenu
+> <guimenuitem
+>Skjul menulinje</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Skjuler hovedmenuen. Tryk på <keycombo action="simul"
+>&Ctrl;<keycap
+>M</keycap
+></keycombo
+> for at vise den igen.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Skjul værktøjslinje</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Skjuler værktøjslinjen.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Skjul statuslinjen</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Skjuler statuslinjen for neden på hovedskærmen.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Opsætning</guimenu
+> <guimenuitem
+>Identiteter</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para
+><action
+>Viser skærmen <link linkend="identity"
+>Identiteter</link
+> til indstilling af  din identifikationsinformation. </action
+></para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Opsætnings</guimenu
+> <guimenuitem
+>Indstil genveje</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Tillader dig at ændre tastaturgenveje for &konversation;.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Opsætnings</guimenu
+> <guimenuitem
+>Indstil værktøjslinjer</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Tillader dig at tilføje eller fjerne knapper fra &konversation;'s værktøjslinje.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Opsætnings</guimenu
+> <guimenuitem
+>Indstil påmindelser</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Viser skærmen <link linkend="cfg-notifications"
+>Opsætning af påmindelser</link
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Opsætnings</guimenu
+> <guimenuitem
+>Indstil &konversation;</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Viser skærmen <guilabel
+>Redigér indstillinger</guilabel
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+><guimenu
+>Vinduer</guimenu
+>-menuen</title>
+<para>
+<variablelist>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>.</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Foregående faneblad</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Viser skærmen som svarer til foregående faneblad.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>,</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Næste faneblad</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Viser skærmen som svarer til næste faneblad.</action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>W</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Luk faneblad</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Lukker den nuværende skærm. Hvis en kanal lukkes, forlades kanalen. Hvis et faneblad med <interface
+>Servermeddelelser</interface
+> lukkes, lukkes alle åbne kanaler på serveren og afbryder fra serveren. </action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+><keycap
+>F11</keycap
+></shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Luk alle åbne forespørgsler</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Lukker for alle <link linkend="query"
+>Private konversationer (spørgsmål)</link
+>. </action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Skjul aliasliste</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+				<action
+>Skjuler (eller viser) panelet med aliasser i kanalfaneblade. </action>
+			</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycap
+>F4</keycap
+> </shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Overvågede tilkoblede aliasser</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Viser skærmen <guilabel
+>Overvågede aliasser</guilabel
+>. Se <link linkend="nicksonline"
+>Overvåg hvem der er på</link
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycap
+>F5</keycap
+> </shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Kanaler</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Viser en <link linkend="list-channels"
+>liste over kanaler</link
+> tilgængelige på serveren.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycap
+>F6</keycap
+> </shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>URL-indfangning</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Viser skærmen <link linkend="urlcatcher"
+>&URL;-indfangning</link
+>.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Ny terminal</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Viser en terminalskærm. Du kan åbne så mange <guilabel
+>konsoller</guilabel
+> som du vil.</action>
+		</para
+></listitem>
+	</varlistentry>
+	<varlistentry>
+		<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Vindue</guimenu
+> <guimenuitem
+>Åbn logfil</guimenuitem
+> </menuchoice
+></term>
+		<listitem
+><para>
+			<action
+>Viser en skærm med meddelelsesloggen fra nuværende faneblad. Virker kun for fanebladene <interface
+>kanal</interface
+>, <interface
+>servermeddelelser</interface
+> og <interface
+>spørgsmålskanal</interface
+>. Logning skal være aktiveret med <menuchoice
+><guisubmenu
+>Indstillinger</guisubmenu
+> <guisubmenu
+>Indstil Konversation</guisubmenu
+> <guisubmenu
+>Logning</guisubmenu
+></menuchoice
+> i hovedmenuen. </action>
+		</para
+></listitem>
+	</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title
+><guimenu
+>Hjælpe</guimenu
+>menuen</title>
+&help.menu.documentation; </sect2>
+
+</sect1>
+</chapter>
+
+<!-- =================================================================== -->
+
+<chapter id="faq">
+<title
+>Spørgsmål of svar</title>
+&reporting.bugs; &updating.documentation; <qandaset id="faqlist">
+
+<qandaentry>
+<question>
+<para
+>Når jeg starter &konversation; vil jeg forbindes til en server uden at gå med i nogen kanaler. Hvordan gør jeg det?</para>
+</question>
+<answer>
+<para
+>Efterlad feltet <guilabel
+>Kanaler</guilabel
+> tomt på skærmen <link linkend="serverlist-addnetwork"
+>Redigér server</link
+>.</para>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para
+>&konversation; forbinder ikke til nogen server. Hvad er der  galt?</para>
+</question>
+<answer>
+<para
+>Der er flere ting som kan være galt.</para>
+<orderedlist>
+<listitem>
+<para
+>Sørg for dig at du har indtastet det rigtige <guilabel
+>Servernavn</guilabel
+> og den rigtige <guilabel
+>Port</guilabel
+> på skærmen <link linkend="serverlist-addserver"
+>Tilføj server</link
+>. </para>
+</listitem>
+<listitem>
+<para
+>Kontrollér udskriften på skærmen <link linkend="channel-screen-tour"
+>Servermeddelelser</link
+> for om der er nogen fejlmeddelelser. Afslog  serveren forbindelsen på grund af et forkert kodeord? Afslog serveren forbindelsen fordi den kræver <acronym
+>IDENTD</acronym
+> og din maskine ikke svarede på forespørgsler om <acronym
+>IDENT</acronym
+>? Markerede du feltet SSL-protokol, men serveren understøtter ikke SSL? </para>
+</listitem>
+<listitem>
+<para
+>Hvis du er bag en brandmur, så sørg for at de rigtige porte er aktiverede. &konversation; kræver at følgende porte er aktiverede: </para>
+
+<para>
+<itemizedlist>
+<listitem
+><para
+>Udgående TCP 6667 (eller porten på serveren som du forbinder til)</para
+></listitem>
+<listitem
+><para
+>Indkommende TCP 113 (hvis serveren kræver IDENTD)</para
+></listitem>
+<!-- <listitem
+><para
+>TODO (Incoming port numbers?)</para
+></listitem
+> -->
+</itemizedlist>
+</para>
+
+<para
+>For mere information om &irc;-forbindelsesproblemer, se <ulink url="http://www.irchelp.org/irchelp/networks/connectprob.html"
+>irchelp.org</ulink
+>. </para>
+
+</listitem>
+
+</orderedlist>
+</answer>
+</qandaentry>
+
+<qandaentry>
+<question>
+<para
+>Når jeg går til <menuchoice
+><guisubmenu
+>Vindue</guisubmenu
+> <guisubmenu
+>Kanalliste</guisubmenu
+></menuchoice
+>, kan jeg ikke vælge den. Hvad skyldes det?</para>
+</question>
+<answer>
+<para
+>Menupunktet <menuchoice
+><guisubmenu
+>Vinduer</guisubmenu
+> <guisubmenu
+>Kanalliste</guisubmenu
+></menuchoice
+> er gråt hvis et faneblad som ikke er en kanal, f.eks. <guilabel
+>Overvågede forbundne  aliasser</guilabel
+> vises for øjeblikket. For at gøre det muligt at vælge igen, gå tilbage til et kanalfaneblad eller serverfanebladet. </para>
+</answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Medvirkende og licens</title>
+
+<para
+>Konversation </para>
+<para
+>Program ophavsret 2002-2005 ved Konversation-gruppen. </para>
+<para
+><ulink url="&konviwebsite;"
+>&konviwebsite;</ulink>
+</para>
+<para
+>Bidragydere: <itemizedlist>
+<listitem
+><para
+>Dario Abatianni <email
+>eisfuchs@tigress.com</email
+></para
+></listitem>
+<listitem
+><para
+>Peter Simonsson <email
+>psn@linux.se</email
+></para
+></listitem>
+<listitem
+><para
+>Christian Muehlhaeuser <email
+>chris@chris.de</email
+></para
+></listitem>
+<listitem
+><para
+>John Tapsel <email
+>john@geola.geo.uk</email
+></para
+></listitem>
+<listitem
+><para
+>Ismail Donmez <email
+>ismail.donmez@boun.edu.tr</email
+></para
+></listitem>
+<listitem
+><para
+>Shintaro Matsuoka <email
+>shin@shoegazed.org</email
+></para
+></listitem>
+<listitem
+><para
+>Gary Cramblitt <email
+>garycramblitt@comcast.net</email
+></para
+></listitem>
+<listitem
+><para
+>Matthias Gierlings <email
+>gismore@users.sourceforge.net</email
+></para
+></listitem>
+<listitem
+><para
+>Alex Zepeda <email
+>garbanzo@hooked.net</email
+></para
+></listitem>
+<listitem
+><para
+>Stanislav Karchebny <email
+>berkus@users.sourceforge.net</email
+></para
+></listitem>
+<listitem
+><para
+>Mickael Marchand <email
+>marchand@kde.org</email
+></para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>Tak til: <itemizedlist>
+<listitem
+><para
+>Michael Goettsche <email
+>michael.goettsche@kdemail.net</email
+></para
+></listitem>
+<listitem
+><para
+>Benjamin Meyer <email
+>ben+konversation@kdemail.net</email
+></para
+></listitem>
+<listitem
+><para
+>Jacub Stachowski <email
+>qbast@go2.pl</email
+></para
+></listitem>
+<listitem
+><para
+>Sabastian Sariego <email
+>segfault@kde.cl</email
+></para
+></listitem>
+<listitem
+><para
+>Olivier Bedard <email
+>www.konversation.org hosting</email
+></para
+></listitem>
+<listitem
+><para
+>Frauke Oster <email
+>frauke@frsv.de</email
+></para
+></listitem>
+<listitem
+><para
+>Lucijan Busch <email
+>lucijan@kde.org</email
+></para
+></listitem>
+<listitem
+><para
+>Sascha Cunz <email
+>mail@sacu.de</email
+></para
+></listitem>
+<listitem
+><para
+>Steve Wollkind <email
+>steve@njord.org</email
+></para
+></listitem>
+<listitem
+><para
+>Thomas Nagy <email
+>thomas.nagy@eleve.emn.fr</email
+></para
+></listitem>
+<listitem
+><para
+>Tobias Olry <email
+>tobias.olry@web.de</email
+></para
+></listitem>
+<listitem
+><para
+>Ruud Nabben <email
+>r.nabben@gawab.com</email
+></para
+></listitem>
+</itemizedlist>
+</para>
+
+<para
+>Dokumentation ophavsret &copy; 2003-2005 Gary R. Cramblitt <email
+>garycramblitt@comcast.net</email
+> </para>
+
+&erik.kjaer.pedersen.credit; 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Installation</title>
+
+<!-- =================================================================== -->
+
+<sect1 id="getting-kapp">
+<title
+>Hvordan får man fat på &konversation;</title>
+&install.intro.documentation; <para
+>Den seneste version af &konversation;, inklusive kildekode og byggeinstruktioner kan også hentes fra <ulink url="&konviwebsite;"
+>&konviwebsite; hjemmeside</ulink
+>. </para>
+
+</sect1>
+
+<!-- =================================================================== -->
+
+<sect1 id="requirements">
+<title
+>Krav</title>
+
+<!--
+List any special requirements for your application here. This should include:
+.Libraries or other software that is not included in kdesupport,
+kdelibs, or kdebase.
+.Hardware requirements like amount of RAM, disk space, graphics card
+capabilities, screen resolution, special expansion cards, etc.
+.Operating systems the app will run on. If your app is designed only for a
+specific OS, (you wrote a graphical LILO configurator for example) put this
+information here.
+-->
+
+<para
+>For at det skal lykkes at bruge &konversation; har du brug for &kde; 3.2 eller senere, og en netværksforbindelse. For tidligere &kde;-versioner kan visse funktioner mangles. Hvis du vil køre &konversation; bag en brandmur, så se <link linkend="faq"
+>Spørgsmål og svar</link
+>. Hvis du ønsker at bruge SSL-protokollen, vil du måske have brug for OpenSSL. </para>
+
+</sect1>
+</appendix>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+-->

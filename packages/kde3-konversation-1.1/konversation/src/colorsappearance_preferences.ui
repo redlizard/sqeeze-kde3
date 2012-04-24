@@ -1,0 +1,1395 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>ColorsAppearance_Config</class>
+<comment>This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.</comment>
+<author>İsmail Dönmez</author>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>ColorsAppearance_Config</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>457</width>
+            <height>512</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <widget class="QGroupBox" row="0" column="0">
+            <property name="name">
+                <cstring>groupBox1</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>7</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="title">
+                <string>Custom Colors</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QCheckBox" row="5" column="0" rowspan="1" colspan="5">
+                    <property name="name">
+                        <cstring>kcfg_InputFieldsBackgroundColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Use custom colors for input box, nickname list and tab list</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="3" column="4">
+                    <property name="name">
+                        <cstring>kcfg_TimeColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="4" column="4">
+                    <property name="name">
+                        <cstring>kcfg_AlternateBackgroundColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="2" column="4">
+                    <property name="name">
+                        <cstring>kcfg_QueryMessageColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="4">
+                    <property name="name">
+                        <cstring>kcfg_CommandMessageColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="4">
+                    <property name="name">
+                        <cstring>kcfg_BacklogMessageColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="4" column="1">
+                    <property name="name">
+                        <cstring>kcfg_TextViewBackgroundColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="3" column="1">
+                    <property name="name">
+                        <cstring>kcfg_ServerMessageColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="2" column="1">
+                    <property name="name">
+                        <cstring>kcfg_HyperlinkColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="1">
+                    <property name="name">
+                        <cstring>kcfg_ChannelMessageColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="1">
+                    <property name="name">
+                        <cstring>kcfg_ActionMessageColor</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <spacer row="0" column="2">
+                    <property name="name">
+                        <cstring>spacer185</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="2">
+                    <property name="name">
+                        <cstring>spacer186</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="2" column="2">
+                    <property name="name">
+                        <cstring>spacer187</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="3" column="2">
+                    <property name="name">
+                        <cstring>spacer188</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="4" column="2">
+                    <property name="name">
+                        <cstring>spacer189</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="0" column="5">
+                    <property name="name">
+                        <cstring>spacer190</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="5">
+                    <property name="name">
+                        <cstring>spacer191</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="2" column="5">
+                    <property name="name">
+                        <cstring>spacer192</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="3" column="5">
+                    <property name="name">
+                        <cstring>spacer193</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="4" column="5">
+                    <property name="name">
+                        <cstring>spacer194</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLabel" row="4" column="0">
+                    <property name="name">
+                        <cstring>textLabel3</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Background:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_TextViewBackgroundColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>textLabel2_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Server message:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_ServerMessageColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>textLabel1_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>H&amp;yperlink:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_HyperlinkColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>textLabel2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Channel &amp;message:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_ChannelMessageColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Actio&amp;n:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_ActionMessageColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="3">
+                    <property name="name">
+                        <cstring>textLabel4</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Bac&amp;klog:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_BacklogMessageColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="3">
+                    <property name="name">
+                        <cstring>textLabel5</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Comman&amp;d message:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_CommandMessageColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="3">
+                    <property name="name">
+                        <cstring>textLabel1_8</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Query message:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_QueryMessageColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="3">
+                    <property name="name">
+                        <cstring>textLabel1_9</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Timestamp:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_TimeColor</cstring>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="3">
+                    <property name="name">
+                        <cstring>textLabel1_10</cstring>
+                    </property>
+                    <property name="text">
+                        <string>A&amp;lternate background:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>kcfg_AlternateBackgroundColor</cstring>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QGroupBox" row="1" column="0">
+            <property name="name">
+                <cstring>kcfg_UseColoredNicks</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="title">
+                <string>Colored Nicks</string>
+            </property>
+            <property name="checkable">
+                <bool>true</bool>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="1" column="6">
+                    <property name="name">
+                        <cstring>textLabel9</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>5:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="7">
+                    <property name="name">
+                        <cstring>kcfg_NickColor4</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="6">
+                    <property name="name">
+                        <cstring>textLabel8</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>4:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="7">
+                    <property name="name">
+                        <cstring>kcfg_NickColor5</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="3">
+                    <property name="name">
+                        <cstring>textLabel7</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>3:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="4">
+                    <property name="name">
+                        <cstring>kcfg_NickColor2</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="4">
+                    <property name="name">
+                        <cstring>kcfg_NickColor3</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="3">
+                    <property name="name">
+                        <cstring>textLabel6</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>2:</string>
+                    </property>
+                </widget>
+                <spacer row="0" column="5">
+                    <property name="name">
+                        <cstring>spacer196</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="5">
+                    <property name="name">
+                        <cstring>spacer197</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="2">
+                    <property name="name">
+                        <cstring>spacer197_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="0" column="2">
+                    <property name="name">
+                        <cstring>spacer196_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="KColorButton" row="0" column="1">
+                    <property name="name">
+                        <cstring>kcfg_NickColor0</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel4_2</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>0:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="1">
+                    <property name="name">
+                        <cstring>kcfg_NickColor1</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>textLabel5_2</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>1:</string>
+                    </property>
+                </widget>
+                <spacer row="1" column="8">
+                    <property name="name">
+                        <cstring>spacer197_3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="0" column="8">
+                    <property name="name">
+                        <cstring>spacer196_3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>40</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="KColorButton" row="1" column="10">
+                    <property name="name">
+                        <cstring>kcfg_NickColor7</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="10">
+                    <property name="name">
+                        <cstring>kcfg_NickColor6</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="9">
+                    <property name="name">
+                        <cstring>textLabel11</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>7:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="9">
+                    <property name="name">
+                        <cstring>textLabel10</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>6:</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="12">
+                    <property name="name">
+                        <cstring>layout18</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel1_3</cstring>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Own nick color:</string>
+                            </property>
+                            <property name="buddy" stdset="0">
+                                <cstring>kcfg_NickColor8</cstring>
+                            </property>
+                        </widget>
+                        <widget class="KColorButton">
+                            <property name="name">
+                                <cstring>kcfg_NickColor8</cstring>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer204</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>271</width>
+                                    <height>20</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </hbox>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QGroupBox" row="2" column="0">
+            <property name="name">
+                <cstring>kcfg_AllowColorCodes</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="title">
+                <string>&amp;Allow Colored Text in IRC Messages</string>
+            </property>
+            <property name="checkable">
+                <bool>true</bool>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>By enabling this option, color codes added to IRC messages will be displayed in your chat window as colored text. You can add color codes to your messages, by selecting Insert -&gt; IRC Color</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>textLabel12_2</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>1:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>textLabel12_3</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>2:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>textLabel12_4</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>3:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="3" column="1">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode3</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="2" column="1">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode2</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="1">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode0</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="1">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode1</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel12_14</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>0:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="3">
+                    <property name="name">
+                        <cstring>textLabel12_8</cstring>
+                    </property>
+                    <property name="text">
+                        <string>7:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="3">
+                    <property name="name">
+                        <cstring>textLabel12_7</cstring>
+                    </property>
+                    <property name="text">
+                        <string>6:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="3">
+                    <property name="name">
+                        <cstring>textLabel12_6</cstring>
+                    </property>
+                    <property name="text">
+                        <string>5:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="3">
+                    <property name="name">
+                        <cstring>textLabel12_5</cstring>
+                    </property>
+                    <property name="text">
+                        <string>4:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="4">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode5</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="4">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode4</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="3" column="4">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode7</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="2" column="4">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode6</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <spacer row="3" column="2">
+                    <property name="name">
+                        <cstring>spacer211_4</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="2" column="2">
+                    <property name="name">
+                        <cstring>spacer211_3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="2">
+                    <property name="name">
+                        <cstring>spacer211_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="0" column="2">
+                    <property name="name">
+                        <cstring>spacer211</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="2" column="5">
+                    <property name="name">
+                        <cstring>spacer211_3_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="0" column="5">
+                    <property name="name">
+                        <cstring>spacer211_5</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="5">
+                    <property name="name">
+                        <cstring>spacer211_2_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="3" column="5">
+                    <property name="name">
+                        <cstring>spacer211_4_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="KColorButton" row="3" column="7">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode11</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="6">
+                    <property name="name">
+                        <cstring>textLabel12_12</cstring>
+                    </property>
+                    <property name="text">
+                        <string>11:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="7">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode9</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="2" column="7">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode10</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="7">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode8</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="6">
+                    <property name="name">
+                        <cstring>textLabel12_10</cstring>
+                    </property>
+                    <property name="text">
+                        <string>9:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="6">
+                    <property name="name">
+                        <cstring>textLabel12_9</cstring>
+                    </property>
+                    <property name="text">
+                        <string>8:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="6">
+                    <property name="name">
+                        <cstring>textLabel12_11</cstring>
+                    </property>
+                    <property name="text">
+                        <string>10:</string>
+                    </property>
+                </widget>
+                <spacer row="0" column="8">
+                    <property name="name">
+                        <cstring>spacer211_6</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="1" column="8">
+                    <property name="name">
+                        <cstring>spacer211_2_3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="2" column="8">
+                    <property name="name">
+                        <cstring>spacer211_3_3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <spacer row="3" column="8">
+                    <property name="name">
+                        <cstring>spacer211_4_3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>50</width>
+                            <height>20</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="KColorButton" row="3" column="10">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode15</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="9">
+                    <property name="name">
+                        <cstring>textLabel12_13</cstring>
+                    </property>
+                    <property name="text">
+                        <string>12:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="1" column="10">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode13</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="9">
+                    <property name="name">
+                        <cstring>textLabel12_16</cstring>
+                    </property>
+                    <property name="text">
+                        <string>15:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="0" column="10">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode12</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="2" column="10">
+                    <property name="name">
+                        <cstring>kcfg_IrcColorCode14</cstring>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="9">
+                    <property name="name">
+                        <cstring>textLabel12_15</cstring>
+                    </property>
+                    <property name="text">
+                        <string>14:</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="9">
+                    <property name="name">
+                        <cstring>textLabel12</cstring>
+                    </property>
+                    <property name="text">
+                        <string>13:</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <spacer row="3" column="0">
+            <property name="name">
+                <cstring>spacer227</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>20</width>
+                    <height>0</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<tabstops>
+    <tabstop>kcfg_ActionMessageColor</tabstop>
+    <tabstop>kcfg_ChannelMessageColor</tabstop>
+    <tabstop>kcfg_HyperlinkColor</tabstop>
+    <tabstop>kcfg_ServerMessageColor</tabstop>
+    <tabstop>kcfg_TextViewBackgroundColor</tabstop>
+    <tabstop>kcfg_BacklogMessageColor</tabstop>
+    <tabstop>kcfg_CommandMessageColor</tabstop>
+    <tabstop>kcfg_QueryMessageColor</tabstop>
+    <tabstop>kcfg_TimeColor</tabstop>
+    <tabstop>kcfg_AlternateBackgroundColor</tabstop>
+    <tabstop>kcfg_InputFieldsBackgroundColor</tabstop>
+    <tabstop>kcfg_UseColoredNicks</tabstop>
+    <tabstop>kcfg_NickColor0</tabstop>
+    <tabstop>kcfg_NickColor1</tabstop>
+    <tabstop>kcfg_NickColor2</tabstop>
+    <tabstop>kcfg_NickColor3</tabstop>
+    <tabstop>kcfg_NickColor4</tabstop>
+    <tabstop>kcfg_NickColor5</tabstop>
+    <tabstop>kcfg_NickColor6</tabstop>
+    <tabstop>kcfg_NickColor7</tabstop>
+    <tabstop>kcfg_NickColor8</tabstop>
+    <tabstop>kcfg_AllowColorCodes</tabstop>
+    <tabstop>kcfg_IrcColorCode0</tabstop>
+    <tabstop>kcfg_IrcColorCode1</tabstop>
+    <tabstop>kcfg_IrcColorCode2</tabstop>
+    <tabstop>kcfg_IrcColorCode3</tabstop>
+    <tabstop>kcfg_IrcColorCode4</tabstop>
+    <tabstop>kcfg_IrcColorCode5</tabstop>
+    <tabstop>kcfg_IrcColorCode6</tabstop>
+    <tabstop>kcfg_IrcColorCode7</tabstop>
+    <tabstop>kcfg_IrcColorCode8</tabstop>
+    <tabstop>kcfg_IrcColorCode9</tabstop>
+    <tabstop>kcfg_IrcColorCode10</tabstop>
+    <tabstop>kcfg_IrcColorCode11</tabstop>
+    <tabstop>kcfg_IrcColorCode12</tabstop>
+    <tabstop>kcfg_IrcColorCode13</tabstop>
+    <tabstop>kcfg_IrcColorCode14</tabstop>
+    <tabstop>kcfg_IrcColorCode15</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+<layoutfunctions spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
+<includehints>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+</includehints>
+<connections>
+    <connection>
+	<sender>kcfg_InputFieldsBackgroundColor</sender>
+        <signal>toggled(bool)</signal>
+	<receiver>kcfg_AlternateBackgroundColor</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+</connections>
+</UI>

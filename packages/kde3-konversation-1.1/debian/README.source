@@ -1,0 +1,18 @@
+This package uses CDBS (Common Debian Build System) for building.
+
+This package uses quilt to manage patches to the upstream source. Please read
+/usr/share/doc/quilt/README.source for more information how to either
+add, modify or remove patches being applied.
+
+All patches should be prefixed with the two digit decimal sequence number.
+Sequence numbers up to 09 are reserved for generic build system patches
+(autotools cleanups and libtool update), patches from 10 to 97 are real changes
+to the upstream source code and 98_buildprep.diff patch is a diff of what you
+get by running:
+
+$ make -f admin/Makefile.common dist; rm -rf autom4te.cache
+
+when all patches up to and including 97th are applied. You usually don't need
+to regenerate the 98_buildprep.diff patch unless you package a new upstream
+release or add/alter/remove a patch which modifies the build system (if you
+don't regenerate it, build system changes might not take effect).

@@ -1,0 +1,10 @@
+01_libtool_update.diff
+02_am_maintainer_mode.diff
+03_pedantic-errors.diff
+04_disable_no_undefined.diff
+kubuntu_01_kdepot.diff
+10_debian_channel.diff
+11_dbug_autoreplace.diff
+17_add_extra_version_string.diff
+18_debian_package_version_to_about.diff
+98_buildprep.diff

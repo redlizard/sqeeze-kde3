@@ -1,0 +1,24 @@
+--- a/configure.in.in
++++ b/configure.in.in
+@@ -9,3 +9,11 @@
+ 
+ KDE_INIT_DOXYGEN([KEG Network API Reference], [Version $VERSION])
+ 
++# Debian version
++AC_CHECK_PROG(DPKG_PARSECHANGELOG, "dpkg-parsechangelog", "yes")
++AC_CHECK_FILE("${srcdir}/debian/changelog", [debian_changelog="yes"], [debian_changelog="no"])
++if test x"$DPKG_PARSECHANGELOG" = "xyes" && test x"$debian_changelog" = "xyes"; then
++    debian_version=`dpkg-parsechangelog -l"${srcdir}/debian/changelog" | grep '^Version: ' | sed 's/^Version: *//'`
++    AC_DEFINE_UNQUOTED(EXTRA_VERSION_STRING, [(Debian $debian_version)], [Debian package version in the About dialog])
++fi
++
+--- a/konversation/src/main.cpp
++++ b/konversation/src/main.cpp
+@@ -23,6 +23,7 @@
+ #include "konversationapplication.h"
+ #include "version.h"
+ #include "commit.h"
++#include "config.h"
+ 
+ #define HACKSTR(x) #x
+ #define STRHACK(x) HACKSTR(x)

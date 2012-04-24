@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+PORT=$1
+SERVER=$2
+TARGET=$3
+
+shift
+shift
+shift
+
+PERCENTAGE=$1
+
+if [ ! $TARGET ]
+then
+  dcop $PORT default error "Can't write into status view."
+else
+  if [ ! $PERCENTAGE ]
+  then
+    dcop $PORT default error "USAGE: $0 <percentage>"
+  else
+    PERCENTAGE=`echo $PERCENTAGE | sed 's/^0\+//'`
+    LEFT=$(($PERCENTAGE/5))
+    RIGHT=$((20-$LEFT))
+
+    if [[ $PERCENTAGE -lt 0 ]]; then
+      dcop $PORT default error "Percentage has to be bigger than 0"
+      exit
+    fi
+    
+    if [[ $PERCENTAGE -gt 100 ]]; then
+      dcop $PORT default error "Percentage has to be smaller than 100"
+      exit
+    fi
+
+
+    if [ $PERCENTAGE = 50 ]
+    then
+      METER="|"
+    else
+      if [[ $PERCENTAGE -lt 50 ]]
+      then
+        METER="\\"
+      else
+        METER="/"
+      fi
+    fi
+
+    for (( i=$LEFT ; $i != 0 ; i-- ))
+    do
+      OUTPUT="$OUTPUT,"
+    done
+
+    OUTPUT="$OUTPUT$METER"
+
+    for (( i=$RIGHT ; $i != 0 ; i-- ))
+    do
+      OUTPUT="$OUTPUT,"
+    done
+
+    OUTPUT=`echo $OUTPUT | sed 's/,/ /g'`
+    
+    OUTPUT="[$OUTPUT] $PERCENTAGE%"
+
+    if [ $PERCENTAGE = 100 ]
+    then
+	OUTPUT="$OUTPUT *ding*"
+    fi
+
+    dcop $PORT default say $SERVER "$TARGET" "Beer load $OUTPUT"
+  fi
+fi

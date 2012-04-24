@@ -1,0 +1,24 @@
+debian/tmp/opt/kde3/bin/konversation
+debian/tmp/opt/kde3/share/applications/kde/konversation.desktop
+debian/tmp/opt/kde3/share/apps/kconf_update/*
+debian/tmp/opt/kde3/share/apps/konversation/eventsrc
+debian/tmp/opt/kde3/share/apps/konversation/konversationui.rc
+debian/tmp/opt/kde3/share/apps/konversation/scripts/*
+debian/tmp/opt/kde3/share/apps/konversation/themes/*
+debian/tmp/opt/kde3/share/config.kcfg/konversation.kcfg
+debian/tmp/opt/kde3/share/doc/kde/HTML/da/konversation/*
+debian/tmp/opt/kde3/share/doc/kde/HTML/en/konversation/*
+debian/tmp/opt/kde3/share/doc/kde/HTML/es/konversation/*
+debian/tmp/opt/kde3/share/doc/kde/HTML/et/konversation/*
+debian/tmp/opt/kde3/share/doc/kde/HTML/it/konversation/*
+debian/tmp/opt/kde3/share/doc/kde/HTML/pt/konversation/*
+debian/tmp/opt/kde3/share/doc/kde/HTML/ru/konversation/*
+debian/tmp/opt/kde3/share/doc/kde/HTML/sv/konversation/*
+debian/tmp/opt/kde3/share/icons/*
+debian/tmp/opt/kde3/share/locale/*
+debian/tmp/opt/kde3/share/services/konvirc.protocol
+debian/tmp/opt/kde3/share/services/konvirc6.protocol
+
+# Debian menu XPM icons
+debian/*.xpm opt/kde3/share/pixmaps
+

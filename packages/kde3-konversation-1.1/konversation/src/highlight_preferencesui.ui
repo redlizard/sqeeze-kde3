@@ -1,0 +1,453 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>Highlight_ConfigUI</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>Highlight_ConfigUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>614</width>
+            <height>585</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <widget class="QGroupBox" row="0" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                <cstring>groupBox1</cstring>
+            </property>
+            <property name="title">
+                <string>Highlight List</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="KListView" row="0" column="0" rowspan="1" colspan="4">
+                    <column>
+                        <property name="text">
+                            <string>RegEx</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Highlights</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Sound</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Auto Text</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>highlightListView</cstring>
+                    </property>
+                    <property name="acceptDrops">
+                        <bool>true</bool>
+                    </property>
+                    <property name="allColumnsShowFocus">
+                        <bool>true</bool>
+                    </property>
+                    <property name="fullWidth">
+                        <bool>true</bool>
+                    </property>
+                    <property name="dragEnabled">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="0" column="4" rowspan="5" colspan="1">
+                    <property name="name">
+                        <cstring>layout13</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>newButton</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>1</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>&amp;New</string>
+                            </property>
+                        </widget>
+                        <widget class="KPushButton">
+                            <property name="name">
+                                <cstring>removeButton</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>1</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string>&amp;Remove</string>
+                            </property>
+                        </widget>
+                        <spacer>
+                            <property name="name">
+                                <cstring>spacer27</cstring>
+                            </property>
+                            <property name="orientation">
+                                <enum>Vertical</enum>
+                            </property>
+                            <property name="sizeType">
+                                <enum>Expanding</enum>
+                            </property>
+                            <property name="sizeHint">
+                                <size>
+                                    <width>20</width>
+                                    <height>250</height>
+                                </size>
+                            </property>
+                        </spacer>
+                    </vbox>
+                </widget>
+                <widget class="KPushButton" row="1" column="2" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>patternButton</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>0</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Click to run Regular Expression Editor (KRegExpEditor)</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+                    <property name="name">
+                        <cstring>patternLabel</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Pattern:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>patternInput</cstring>
+                    </property>
+                </widget>
+                <widget class="KLineEdit" row="1" column="1">
+                    <property name="name">
+                        <cstring>patternInput</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>1</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>colorLabel</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>Color:</string>
+                    </property>
+                </widget>
+                <widget class="KColorButton" row="2" column="1" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>patternColor</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>soundLabel</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Sound:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>soundURL</cstring>
+                    </property>
+                </widget>
+                <widget class="KURLRequester" row="3" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>soundURL</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>7</hsizetype>
+                            <vsizetype>0</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="filter">
+                        <string>audio/x-wav audio/x-mp3 application/ogg audio/x-adpcm</string>
+                    </property>
+                </widget>
+                <widget class="QToolButton" row="3" column="3">
+                    <property name="name">
+                        <cstring>soundPlayBtn</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>4</hsizetype>
+                            <vsizetype>5</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                    <property name="toolTip" stdset="0">
+                        <string>Test sound</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="0">
+                    <property name="name">
+                        <cstring>autoTextLabel</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Auto text:</string>
+                    </property>
+                    <property name="buddy" stdset="0">
+                        <cstring>autoTextInput</cstring>
+                    </property>
+                </widget>
+                <widget class="KLineEdit" row="4" column="1" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>autoTextInput</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QCheckBox" row="1" column="0">
+            <property name="name">
+                <cstring>kcfg_HighlightSoundsEnabled</cstring>
+            </property>
+            <property name="text">
+                <string>Ena&amp;ble sound for highlights</string>
+            </property>
+        </widget>
+        <widget class="KColorButton" row="2" column="1">
+            <property name="name">
+                <cstring>kcfg_HighlightNickColor</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="KColorButton" row="3" column="1">
+            <property name="name">
+                <cstring>kcfg_HighlightOwnLinesColor</cstring>
+            </property>
+            <property name="enabled">
+                <bool>false</bool>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QCheckBox" row="2" column="0">
+            <property name="name">
+                <cstring>kcfg_HighlightNick</cstring>
+            </property>
+            <property name="text">
+                <string>Alwa&amp;ys highlight own current nick:</string>
+            </property>
+        </widget>
+        <widget class="QCheckBox" row="3" column="0">
+            <property name="name">
+                <cstring>kcfg_HighlightOwnLines</cstring>
+            </property>
+            <property name="text">
+                <string>Always highlight own &amp;lines:</string>
+            </property>
+        </widget>
+        <spacer row="1" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>spacer11</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>120</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="2" column="2">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>50</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
+        <spacer row="3" column="2">
+            <property name="name">
+                <cstring>spacer2</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>50</width>
+                    <height>21</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>kcfg_HighlightNick</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>kcfg_HighlightNickColor</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+    <connection>
+        <sender>kcfg_HighlightOwnLines</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>kcfg_HighlightOwnLinesColor</receiver>
+        <slot>setEnabled(bool)</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>highlightListView</tabstop>
+    <tabstop>patternInput</tabstop>
+    <tabstop>patternButton</tabstop>
+    <tabstop>patternColor</tabstop>
+    <tabstop>soundURL</tabstop>
+    <tabstop>soundPlayBtn</tabstop>
+    <tabstop>autoTextInput</tabstop>
+    <tabstop>kcfg_HighlightSoundsEnabled</tabstop>
+    <tabstop>kcfg_HighlightNick</tabstop>
+    <tabstop>kcfg_HighlightNickColor</tabstop>
+    <tabstop>kcfg_HighlightOwnLines</tabstop>
+    <tabstop>kcfg_HighlightOwnLinesColor</tabstop>
+    <tabstop>newButton</tabstop>
+    <tabstop>removeButton</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+<includehints>
+    <includehint>klistview.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kurlrequester.h</includehint>
+    <includehint>klineedit.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+    <includehint>kcolorbutton.h</includehint>
+</includehints>
+</UI>

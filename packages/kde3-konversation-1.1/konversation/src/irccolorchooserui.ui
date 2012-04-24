@@ -1,0 +1,148 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>IRCColorChooserUI</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>IRCColorChooserUI</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>249</width>
+            <height>122</height>
+        </rect>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="margin">
+            <number>0</number>
+        </property>
+        <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>m_previewLbl</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>Panel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Sunken</enum>
+            </property>
+            <property name="text">
+                <string>Preview</string>
+            </property>
+            <property name="alignment">
+                <set>AlignCenter</set>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>This is how your message will look with these colors</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>&lt;qt&gt;This is a preview of how your readers may see view your message if you select these colors.&lt;br&gt;
+&lt;b&gt;Note: Not all clients support this, and some users may have chosen to ignore your color changes.&lt;/b&gt;
+&lt;/qt&gt;</string>
+            </property>
+        </widget>
+        <widget class="KComboBox" row="0" column="1">
+            <property name="name">
+                <cstring>m_fgColorCBox</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>The chosen text color is added to the input line.</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>&lt;qt&gt;Here you choose what color you want you the text in the next message you send to be.  If you choose a color and click Ok, the chosen color is added to the Input Line.  Any text written after this will be in the chosen color, until you change the color again.&lt;br&gt;
+&lt;b&gt;Note:  Not all users turn on the option to see this.&lt;/b&gt;&lt;/qt&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>m_fgColorLbl</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>4</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="text">
+                <string>&amp;Foreground color:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>m_fgColorCBox</cstring>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>The chosen text color is added to the input line.</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>&lt;qt&gt;Here you choose what color you want you the text in the next message you send to be.  If you choose a color and click Ok, the chosen color is added to the Input Line.  Any text written after this will be in the chosen color, until you change the color again.&lt;br&gt;
+&lt;b&gt;Note:  Not all users turn on the option to see this.&lt;/b&gt;&lt;/qt&gt;</string>
+            </property>
+        </widget>
+        <widget class="KComboBox" row="1" column="1">
+            <property name="name">
+                <cstring>m_bgColorCBox</cstring>
+            </property>
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>0</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>The chosen text-background color is added to the input line.</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>&lt;qt&gt;Here you choose what color you want you background for the text in the next message you send to be.
+If you choose a color and click Ok, the chosen color is added to the Input Line.
+Any text written after this will have the chosen color, until you change the color again.&lt;br&gt;
+Choosing the default "&lt;i&gt;None&lt;/i&gt;" will not change the background color of your message, so your readers will view your message with their normal background text color.&lt;br&gt;
+&lt;b&gt;Note:  Not all clients support this, and not all users turn on the option to see this.&lt;/b&gt;&lt;/qt&gt;</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>m_bgColorLbl</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Background color:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>m_bgColorCBox</cstring>
+            </property>
+            <property name="toolTip" stdset="0">
+                <string>The chosen text-background color is added to the input line.</string>
+            </property>
+            <property name="whatsThis" stdset="0">
+                <string>&lt;qt&gt;Here you choose what color you want you background for the text in the next message you send to be.
+If you choose a color and click Ok, the chosen color is added to the Input Line.
+Any text written after this will have the chosen color, until you change the color again.&lt;br&gt;
+Choosing the default "&lt;i&gt;None&lt;/i&gt;" will not change the background color of your message, so your readers will view your message with their normal background text color.&lt;br&gt;
+&lt;b&gt;Note:  Not all clients support this, and not all users turn on the option to see this.&lt;/b&gt;&lt;/qt&gt;</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+<layoutfunctions spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
+<includehints>
+    <includehint>kcombobox.h</includehint>
+    <includehint>kcombobox.h</includehint>
+</includehints>
+</UI>

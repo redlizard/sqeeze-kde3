@@ -1,0 +1,48 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/kde.mk
+include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+
+DEB_DH_STRIP_ARGS := --dbg-package=kde3-konversation-dbg
+DEB_INSTALL_DOCS_ALL = 
+
+# Do not build with --enable-final on arm
+ifneq (arm,$(DEB_HOST_ARCH))
+DEB_KDE_ENABLE_FINAL := yes
+endif
+
+### Manpages
+XP = xsltproc --nonet --output debian/man/
+DB2MAN = /usr/share/xml/docbook/stylesheet/nwalsh/manpages/docbook.xsl
+
+%.1 : %.1.docbook
+	$(XP) $(DB2MAN) $<
+
+GENERATED_MANPAGES := $(patsubst %.docbook,%,$(wildcard debian/man/*.docbook))
+build/kde3-konversation:: $(GENERATED_MANPAGES)
+clean::
+	-rm -f $(GENERATED_MANPAGES)
+
+### Extra file installation
+install/kde3-konversation::
+	install -D -m 644 konversation/scripts/README \
+	  debian/kde3-konversation/usr/share/doc/kde3-konversation/README.scripts
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done
+

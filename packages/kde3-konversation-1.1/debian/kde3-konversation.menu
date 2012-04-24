@@ -1,0 +1,9 @@
+?package(konversation):\
+	needs="X11"\
+	section="Applications/Network/Communication"\
+	title="Konversation IRC Client"\
+	hints="KDE,IRC Clients"\
+        icon="/opt/kde3/share/pixmaps/konversation32x32.xpm"\
+        icon16x16="/opt/kde3/share/pixmaps/konversation16x16.xpm"\
+        icon32x32="/opt/kde3/share/pixmaps/konversation32x32.xpm"\
+	command="/opt/kde3/bin/konversation"

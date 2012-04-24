@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
+]>
+<refentry>
+  <refentryinfo>
+    <author>
+      <firstname>Nathaniel</firstname>
+      <othername role="mi">W</othername>
+      <surname>Turner</surname>
+      <email>nate@houseofnate.net</email>
+    </author>
+    <copyright>
+      <year>2004</year>
+      <holder>Nathaniel W. Turner</holder>
+    </copyright>
+    <!-- XXX IMPORTANT XXX -->
+    <!-- Keep this date up to date: -->
+    <date>2005-05-31</date>
+    <!--  ^^^^^^^^^^ -->
+  </refentryinfo>
+  <refmeta>
+    <refentrytitle>KONVERSATION</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+  <refnamediv>
+    <refname>konversation</refname>
+    <refpurpose>user friendly IRC client for KDE</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>konversation</command>
+      <arg choice="opt">
+        <option><replaceable>Qt-options</replaceable></option>
+      </arg>
+      <arg choice="opt">
+        <option><replaceable>KDE-options</replaceable></option>
+      </arg>
+      <arg choice="opt">
+        <option><replaceable>options</replaceable></option>
+      </arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1>
+    <title>DESCRIPTION</title>
+    <para>
+      Konversation is client for the Internet Relay Chat (IRC) protocol.
+    </para>
+    <para>
+      IRC is a great way to meet friends on the net, make new acquaintances and
+      lose yourself in talk about your favorite subject.
+    </para>
+    <para>
+      Konversation is under active development and is currently in beta.
+    </para>
+  </refsect1>
+  <refsect1>
+    <title>OPTIONS</title>
+    <para>
+      All <productname>KDE</productname> and <productname>Qt</productname>
+      programs accept a some common command-line options.
+    </para>
+    <para>
+      <variablelist>
+        <title>Generic options:</title>
+        <varlistentry>
+          <term> <option>--help</option> </term>
+          <listitem> <para>Show help about options</para> </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term> <option>--help-qt</option> </term>
+          <listitem> <para>Show Qt specific options</para> </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term> <option>--help-kde</option> </term>
+          <listitem> <para>Show KDE specific options</para> </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term> <option>--help-all</option> </term>
+          <listitem> <para>Show all options</para> </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term> <option>--author</option> </term>
+          <listitem> <para>Show author information</para> </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term> <option>-v</option>, <option>--version</option> </term>
+          <listitem> <para>Show version information</para> </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term> <option>--license</option> </term>
+          <listitem> <para>Show license information</para> </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term> <option>--</option> </term>
+          <listitem> <para>Indicates end of options</para> </listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+    <para>
+      <variablelist>
+        <title>Options</title>
+        <varlistentry>
+          <term><option>--server</option>
+            <arg choice="req"><replaceable>server</replaceable></arg></term>
+          <listitem><para>Server to connect</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><option>--port</option>
+            <arg choice="req"><replaceable>port</replaceable></arg></term>
+          <listitem><para>Port to use (default: 6667)</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><option>--channel</option>
+            <arg choice="req"><replaceable>channel</replaceable></arg></term>
+          <listitem><para>Channel to join after connection</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><option>--nick</option>
+            <arg choice="req"><replaceable>nickname</replaceable></arg></term>
+          <listitem><para>Nickname to use</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><option>--password</option>
+            <arg choice="req"><replaceable>password</replaceable></arg></term>
+          <listitem><para>Password for connection</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term><option>--ssl</option></term>
+          <listitem><para>Use SSL for connection (default:
+              false)</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+    <!-- TODO * add all the rest of the options, but maybe find an automated
+    way to keep it up to date -->
+  </refsect1>
+  <refsect1>
+    <title>SCRIPTING</title>
+    <para>Konversation looks for scripts in <filename
+        class="directory">/usr/share/apps/konversation/scripts</filename> and
+      in <filename
+        class="directory">~/.kde/share/apps/konversation/scripts</filename>.
+      To execute a script, use the <command>exec</command> command:</para>
+    <cmdsynopsis>
+      <command>/exec</command> 
+      <arg choice="req"><replaceable>scriptname</replaceable></arg>
+      <arg choice="opt"><replaceable>arguments</replaceable></arg>
+    </cmdsynopsis>
+    <para>
+      For example:
+    </para>
+    <para><userinput>/exec gauge 75</userinput></para>
+  </refsect1>
+  <refsect1>
+    <title>FILES</title>
+    <para>
+      <variablelist>
+        <varlistentry>
+          <term><filename>~/.kde/share/config/konversationrc</filename></term>
+          <listitem><para>Main configuration</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <filename>~/.kde/share/config/konversation.eventsrc</filename>
+          </term>
+          <listitem><para>Notification settings</para></listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <filename
+              class="directory">~/.kde/share/apps/konversation/logs</filename>
+          </term>
+          <listitem><para>Directory containing channel log
+              files</para></listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </refsect1>
+  <refsect1>
+    <title>SEE ALSO</title>
+    <para>
+      The Konversation Handbook is an excellent resource for further reading.
+      It can be found under the <guimenu>Help</guimenu> menu in Konversation.
+    </para>
+    <para>
+      The following manual pages may also be of interest:
+      <citerefentry>
+        <refentrytitle>konversationircprotocolhandler</refentrytitle>
+        <manvolnum>1</manvolnum>
+      </citerefentry>,
+      <citerefentry>
+        <refentrytitle>dcop</refentrytitle>
+        <manvolnum>1</manvolnum>
+      </citerefentry>
+    </para>
+  </refsect1>
+  <refsect1>
+    <title>COPYRIGHT</title>
+    <para>
+      This manual page was written by Nathaniel W. Turner
+      <email>nate@houseofnate.net</email> for the
+      <productname>Debian</productname> system (but may be used by others).
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the <acronym>GNU</acronym> General Public License,
+      Version 2 or any later version published by the Free Software Foundation.
+    </para>
+    <para>
+      On Debian systems, the complete text of the GNU General Public
+      License can be found in
+      <filename>/usr/share/common-licenses/GPL</filename>.
+    </para>
+  </refsect1>
+</refentry>
