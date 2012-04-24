@@ -1,0 +1,3210 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+  <!ENTITY kile "<application
+>Kile</application
+>">
+  <!ENTITY latex "L<superscript
+>A</superscript
+>T<subscript
+>E</subscript
+>X">
+  <!ENTITY tex "T<subscript
+>E</subscript
+>X">
+  <!ENTITY tetex "<application
+>teT<subscript
+>E</subscript
+>X</application
+>">
+  <!ENTITY bibtex "BibT<subscript
+>E</subscript
+>X">
+  <!ENTITY gnuplot "<application
+>GnuPlot</application
+>">
+  <!ENTITY kde "<acronym
+>KDE</acronym
+>">
+  <!ENTITY kdvi "<application
+>KDVI</application
+>">
+  <!ENTITY pybliographer "<application
+>pyBliographer</application
+>">
+  <!ENTITY gbib "<application
+>gBib</application
+>">
+  <!ENTITY makeidx "<application
+>makeidx</application
+>">
+  <!ENTITY kate "<application
+>Kate</application
+>">
+  <!ENTITY xfig "<application
+>XFig</application
+>">
+  <!ENTITY cjk "<abbrev
+>CJK</abbrev
+>">
+  <!ENTITY ucs "<abbrev
+>ucs</abbrev
+>">
+  <!ENTITY kappname "&kile;">
+  <!ENTITY package "kdeextragear-2">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Estonian  "INCLUDE">
+]>
+
+<book lang="&language;">
+
+<bookinfo>
+<title
+>&kile; käsiraamat</title>
+
+<authorgroup>
+	<author
+><firstname
+>Jonathan</firstname
+><surname
+>Pechta</surname
+></author>
+	<author
+><firstname
+>Federico</firstname
+><surname
+>Zenith</surname
+> <affiliation
+><address
+><email
+>zenith@chemeng.ntnu.no</email
+></address
+></affiliation
+></author>
+	<othercredit role="developer"
+><firstname
+>Jeroen</firstname
+><surname
+>Wijnhout</surname
+> <affiliation
+> <address
+><email
+>Jeroen.Wijnhout@kdemail.net</email
+></address>
+		</affiliation>
+	</othercredit>
+</authorgroup>
+
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@online.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+
+<copyright>
+<year
+>2003</year>
+<holder
+>Jonathan Pechta</holder>
+</copyright>
+
+<copyright>
+<year
+>2003</year
+><year
+>2005</year>
+<holder
+>Federico Zenith</holder>
+</copyright>
+
+<date
+>2005-01-18</date>
+<releaseinfo
+>1.7</releaseinfo>
+
+<legalnotice>
+&FDLNotice;
+</legalnotice>
+
+<abstract>
+<para
+>&kile; on &latex; lähtetekstide redaktor, &tex;i shell ja &gnuplot;i kasutajaliides. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdenonbeta</keyword>
+<keyword
+>Kile</keyword>
+<keyword
+>LaTeX</keyword>
+<keyword
+>TeX</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="preface">
+
+<title
+>Eessõna</title>
+
+	<sect1 id="preface_sect">
+
+		<title
+>Nõuded</title>
+			
+		<para
+>&kile; kasutamiseks peavad sinu süsteemi olema paigaldatud järgmised komponendid:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+><ulink url="http://www.kde.org/"
+>K töölaua keskkond (&kde;)</ulink
+>: &kde; on populaarne vaba tarkvara töölaua keskkond.</para
+></listitem>
+			<listitem
+><para
+><ulink url="http://www.trolltech.com/products/qt/"
+>Qt</ulink
+>: Qt on &kile; kompileerimiseks vajalik C++ arendusvahend.</para
+></listitem>
+			<listitem
+><para
+><ulink url="http://www.ctan.org/"
+>&latex;</ulink
+>: kvaliteetne dokumendi ladumissüsteem. Usutavasti on sul kasutusel &tetex;, sest tegemist on ju UNIXilaadse süsteemiga.</para
+></listitem>
+		</itemizedlist>
+
+		<para
+>Lisapaketid:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+><ulink url="http://devel-home.kde.org/~kdvi/"
+>&kdvi;</ulink
+>: &kde; rakendus DVI eelvaatluseks.</para
+></listitem>
+			<listitem
+><para
+><ulink url="http://www.gnuplot.info/"
+>&gnuplot;</ulink
+>: professionaalne andmejooniste ja -graafikute loomise rakendus.</para
+></listitem>
+			<listitem
+><para
+><ulink url="http://www.xfig.org/"
+>&xfig;</ulink
+>: X Window süsteemi joonistamisrakendus.</para
+></listitem>
+		</itemizedlist>
+
+		<para
+>Mõned loetletuist võivad olla kaasas sinu Linuxi distributsiooniga. Nende paigaldamiseks arvutisse uuri oma distributsiooni dokumentatsiooni või vaata üle paigaldus-CD või -DVD.</para>
+
+		<para
+>&kile; projekt pakub mitmeid erinevaid &kile; pakette, mida võib hõlpsasti paigaldada ja tööle panna ka ilma kompileerimata. Vaata täpsemalt <ulink url="http://kile.sourceforge.net/"
+>&kile; koduleheküljelt</ulink
+>.</para>
+
+	</sect1>
+
+	<sect1 id="preface_audience">
+
+		<title
+>Eeldatav kasutajaskond</title>
+
+		<para
+>See käsiraamat on mõeldud kõigile sõltumata nende kogemustest &latex;i, &kde;, &kile; või Linuxiga.</para>
+
+		<para
+>Edasijõudnumad kasutajad vaevalt käsiraamatut loevad, küll aga sooviks meie saada nende ettepanekuid dokumentatsiooni parandamise kohta. Kui soovid anda omapoolse panuse projekti või dokumentatsiooni, uuri palun veidi <ulink url="http://kile.sourceforge.net/"
+>&kile; veebilehekülge</ulink
+>. Kommentaarid dokumentatsiooni kohta võib saata aadressile <email
+>zenith@chemeng.ntnu.no</email
+>.</para>
+
+		<para
+>Kas sul tekkis &kile; kohta mingeid küsimusi? Või probleeme kompileerimisel? Või soovid näha mõnda uut võimalust? Kõige mõttekam on tehnilist laadi küsimusi esitada või diskussiooni alustada meie meililistis <email
+>kile-devel@lists.sourceforge.net</email
+>.</para>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="introduction">
+
+	<title
+>Sissejuhatus</title>
+
+	<sect1 id="intro_about">
+
+		<title
+>Põhiasjad</title>
+
+		<sect2>
+
+			<title
+>Mis on &kile;?</title>
+
+			<para
+>&kile; on integreeritud &latex;i keskkond &kde; töölaua tarbeks. &kile; pakub kõiki &latex;i funktsioone graafilises liideses, võimaldades hõlpsat, vahetut ja kohandatavat ligipääsu kõigile &latex;i kompileerimise, järeltöötluse, silumise, teisendamise ja vaatamise vahenditele. Samuti võimaldab see kasutada käepäraseid nõustajaid, &latex;i viiteid, &gnuplot;i ja &xfig;i liidest ning projektihaldust.</para>
+
+		</sect2>
+
+		<sect2>
+
+			<title
+>Mis on &latex;?</title>
+
+			<para
+>&latex; on tekstitöötlussüsteem, mille aluseks on juba 1977. aastal loodud programm &tex;, mis püüdis abistada autoreid enda töö professionaalsel esitamisel ladumissüsteemi pakkudes. Ladumissüsteem on professionaalne tekstitöötlemisvahend, mis esitab dokumendi välimuse vastavalt dokumenditüübi spetsifikatsioonile. &latex;i looja Leslie Lamporti eesmärk oli pakkuda autoritele automaatset ladumissüsteemi, mis oleks eriti abiks siis, kui tegemist on töömahuka matemaatiliste valemite ja ja muu sellise kirjapanemisega, mida <emphasis
+>mitte mingil juhul</emphasis
+> ei asetata &latex;is dollarimärkide vahele. Tänapäeval pakuvad selliseid võimalusi igale kasutajale paljud tekstitöötlusrakendused, kuid seniajani soovivad paljud, et dokument näeks hea välja, ei soovi aga kulutada tunde sellise väljanägemise kujundamisele. &latex; võtabki selle koorma sinu õlult ning lubab pühendada kogu tähelepanu dokumendi sisule, mitte välimusele. Ja muidugi <emphasis
+>näebki</emphasis
+> tulemus hea välja!</para>
+
+		</sect2>
+
+		<sect2>
+
+			<title
+>Kuidas seda hääldada ja miks selle kirjapilt nii imelik on?</title>
+
+			<para
+>&tex;-iga seotud pakettidel on naljakas komme kasutada kõige veidramat hääldust ja väljanägemist, mida vähegi võib ette kujutada. &tex; tulenevat kreekakeelsest täheühendist <emphasis
+>τεχ</emphasis
+>, mis ladina tähtedega näeb välja <emphasis
+>tech</emphasis
+>. Selle põhjuste kohta on arvukalt erinevaid seletusi, kuid tõenäoline põhjus on sellest, et &latex; oli algselt mõeldud tehniliste raportite kirjapanemiseks ning seniajani ongi selle silmatorkavaim omadus matemaatiliste valemite äärmiselt korrektne ja ülilihtne kirjapanek, mis omal ajal nõudis väga palju aega, vaeva ja närvikulu.</para>
+			<para
+>Hääldus peaks olema selline: <emphasis
+>T</emphasis
+> nagu ikka, <emphasis
+>E</emphasis
+> täpselt samuti nagu <emphasis
+>e</emphasis
+> ikka ja <emphasis
+>X</emphasis
+> kreekapäraselt tugevana, umbes <emphasis
+>hh</emphasis
+>. Kui veel täpsem olla, siis see <emphasis
+>hh</emphasis
+> on suhteliselt kurguhäälne. Selle IPA sümbol on /ç/. Mõned on pakkunud häälduseks pehmema <emphasis
+>hh</emphasis
+> (IPA sümbol /x/), kuid ma pärisin seda mõne kreeklase käest ja nemad kinnitasid, et esimene variant on õige. Aga igatahes ütlevad paljud ka /teks/ või /tek/.</para>
+			<para
+>Ja lõpuks tasuks märkida, et &latex;is hääldatakse alguses olevad L<superscript
+>A</superscript
+> nagu inglise sõnas <emphasis
+>lay</emphasis
+> (umbes 'lei'). Seda sellepärast, et kui puhas &tex; on üsna keeruline kasutada, siis isegi lihtinimene (inglise keeles <emphasis
+>lay</emphasis
+>man) suudab toime tulla &latex;i makrodega. Natuke lihtsam, aga samas usutavam seletus seob need tähed &latex;i looja Leslie Lamporti perekonnanime esitähtedega. Vaat nii!</para>
+
+		</sect2>
+
+	</sect1>
+
+	<sect1 id="intro_latexbasics">
+
+		<title
+>&latex;i põhitõed</title>
+
+		<para
+>&latex;i ladumissüsteem sarnaneb muudele märkekeeltele, näiteks XML, mida tarvitatakse paljudes dokumenditüüpides (ka selles, mida sa parajasti loed), või veebilehekülgedel pruugitav HTML. Põhimõte on kasutada spetsiaalselt vormindatud võtmesõnu ehk <emphasis
+>silte</emphasis
+>, mis annavad rakendusele (tekstitöötlusrakendus, veebilehitseja või &kile; kompilaator) teada, kuidas teksti esitada. &kile; pakub arvukalt silte menüüribalt leitava menüü <guimenu
+>LaTeX</guimenu
+> vahendusel.</para>
+
+		<para
+>Kuigi me püüame sulle võimalikult hästi &latex;it tutvustada, ei ole see kindlasti mitte &latex;i <quote
+>piibel</quote
+>. Kui soovid &latex;it paremini tundma õppida, võiksid pöörduda paremini varustatud raamatukogu poole. Selle käsiraamatu autorile on jätnud väga hea mulle H. Kopka ja P. W. Daley kirjutatud 'A Guide to &latex;', mis on mul seniajani raamaturiiulis.</para>
+
+		<para
+>Sarnaselt muudele märkekeeltele sisaldab &latex; <emphasis
+>preambulat</emphasis
+>, mis määrab ära globaalsed käsud, näiteks paberi suuruse, lehekülgede nummerdamise, teksti mõõtmed leheküljel, ning <emphasis
+>sisu</emphasis
+>, mis sisaldab dokumendi teksti. Preambula sisaldab minimaalselt käsku <userinput
+>\documentclass</userinput
+> ning eelneb sisule, mis algab käsuga <userinput
+>\begin{document}</userinput
+> ja lõpeb ootuspäraselt käsuga <userinput
+>\end{document}</userinput
+>.</para>
+
+	</sect1>
+
+	<sect1 id="intro_mainfeat">
+
+		<title
+>&kile; põhiomadused</title>
+
+		<sect2 id="intro_docwizard">
+
+			<title
+>Kiirkäivituse nõustaja</title>
+
+			<para
+>&kile; pakutav nõustaja võimaldab väga hõlpsasti alustada dokumentide loomist &kile;s. Kui valid menüüribalt nõustaja, saad valida mitme dokumendi loomise võimaluse vahel: artikkel, raamat, kiri, raport või tühi dokument. Samuti saab kohe määrata mõningad dokumenti puudutavad omadused.</para>
+
+			<para
+>Nõustaja valikud:</para>
+
+			<itemizedlist>
+				<listitem
+><para
+><guilabel
+>Dokumendiklass</guilabel
+>: millist dokumenti soovid luua? On see artikkel, kiri, raport, raamat?</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Kirjatüübi suurus</guilabel
+>: millises punktis kirja peaks &kile; kasutama?</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Paberi suurus</guilabel
+>: millises suuruses või stiilis paberit sinu dokumendi jaoks kasutada?</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Kodeering</guilabel
+>: millist kodeeringut kasutada lähtefaili jaoks? On üsna tõenäoline, et soovid kasutada kodeeringut Latin 1 või UTF-8, mis võimaldab kirjutada näiteks <userinput
+>naïveté</userinput
+>, mitte aga ASCII-d, kus sedasama sõna tuleb kirjutada <userinput
+>na\"\ivet\'e</userinput
+>.</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Autori nimi</guilabel
+>: siia läheb tõenäoliselt sinu enda nimi.</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Dokumendi pealkiri</guilabel
+>: sinu dokumendi pealkiri.</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Muud valikud</guilabel
+>: siin saab määrata muid trükkimise ja muu sellisega seonduvaid asju.</para
+></listitem>
+			</itemizedlist>
+
+		</sect2>
+
+		<sect2 id="intro_templates">
+
+			<title
+>Eelnevalt määratud mallid</title>
+
+			<para
+>&kile; kasutab järgmisi eelnevalt määratud malle:</para>
+
+			<itemizedlist>
+				<listitem
+><para
+>Tühi dokument: ässad alustavad kõike nullist!</para
+></listitem>
+				<listitem
+><para
+>Artikkel: määratleb artikli vormingu, mis on piisavalt lühike, et sda ei pea jagama peatükkideks.</para
+></listitem>
+				<listitem
+><para
+>Raport: määratleb raporti vormingu keskmise pikkusega dokumentide jaoks, kus lehekülje numbrid asuvad reeglina välisserval.</para
+></listitem>
+				<listitem
+><para
+>Raamat: määratleb raamatu vormingu, mis pakub kõiki võimalusi, isegi sel määral, et selle abil kirjutatakse seniajani paljusid ülikooliõpikuid.</para
+></listitem>
+				<listitem
+><para
+>Kiri: määratleb kirja vormingu, mis tekitab automaatselt need neetud taandused, mida muidu ei ole kunagi meeles jälgida.</para
+></listitem>
+			</itemizedlist>
+
+			<para
+>Uutel kasutajatel ei pruugi muretseda: siin kirjeldame omadusi väga lühidalt, pikemalt kirjeldab kõiki ülesannete teostamise võimalusi edaspidi <xref linkend="quickstart"/>.</para>
+
+		</sect2>
+
+		<sect2 id="intro_highlight">
+
+			<title
+>Süntaksi esiletõstmine</title>
+
+			<para
+>&kile; sarnaneb muudele lähtekoodi redigeerimisega tegelevatele rakendustele, pakkudes võimalust tõsta automaatselt esile käsud, võtmed ning muud vajalikud elemendid. Nii võimaldab &kile; kiiresti tuvastada probleemsed alad: kui näiteks märkad, et mingi suurem tekstiosa on rohelist värvi, on usutav, et unustasid kuskil matemaatikakeskkonna sulgemata. Küllaps oleksid nagunii märganud, kui jube väljundfail välja näeb, aga esiletõstmine säästab märgatavalt sinu aega.</para>
+
+		</sect2>
+
+		<sect2 id="intro_autocoml">
+
+			<title
+>Keskkonna automaatne lõpetamine</title>
+
+			<para
+>&kile; pakub võimalust keskkond automaatselt lõpetada: see tähendab, et kui alustad keskkonda, kirjutades <userinput
+>\begin{environment}</userinput
+>, lisab &kile; aitomaatselt käsu <userinput
+>\end{environment}</userinput
+>, jättes vahele rea sinu teksti tarbeks. Selle võimaluse võib muidugi soovi korral ka välja lülitada (<menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>&kile; seadistamine...</guimenuitem
+><guilabel
+>LaTeX</guilabel
+></menuchoice
+>).</para>
+
+		</sect2>
+
+		<sect2 id="intro_jump">
+
+			<title
+>Hüppamine struktuurielementidele</title>
+
+			<para
+>Kõik dokumendid struktureeritakse tavapäraselt teatud hierarhiasse. &latex; lubab dokumendi jaotamisel kasutada järgmist hierarhiat (kus osa on hierarhias suurim ja alamlõik väikseim jaotis)</para>
+
+			<itemizedlist>
+				<listitem
+><para
+>\osa</para
+></listitem>
+				<listitem
+><para
+>\peatükk</para
+></listitem>
+				<listitem
+><para
+>\sektsioon</para
+></listitem>
+				<listitem
+><para
+>\alamsektsioon</para
+></listitem>
+				<listitem
+><para
+>\alamalamsektsioon</para
+></listitem>
+				<listitem
+><para
+>\lõik</para
+></listitem>
+				<listitem
+><para
+>\alamlõik</para
+></listitem>
+			</itemizedlist>
+
+			<para
+>Dokumenti <guilabel
+>struktuur</guilabel
+>ivaates vaadates võib elementide vahel liikuda klõpsuga elemendile, mida soovid vaadata.</para>
+
+		</sect2>
+
+		<sect2 id="intro_inverse">
+
+			<title
+>Pöördotsing</title>
+
+			<para
+>Oma &latex;-faili luues võib pöördotsing päris kasuks tulla. Kui oled loonud DVI-faili (seadmest sõltumatu fail), hüppab &kile; juhul, kui klõpsad DVI näitamise rakenduses hiire keskmise nupuga, vastavale reale &latex; lähtetekstis.</para>
+
+			<para
+>DVI (DeVice Independent file) definitsioon: DVI on failitüüp, mis sisaldab vormindatud dokumendi kirjeldust koos muu vajaliku infoga, näiteks kasutatud font. See on tavapärane &tex;/&latex;i väljund. DVI-failide vaatamiseks ja trükkimiseks mitmesugustes süsteemides ja seadmetel on olemas päris palju vahendeid. Vahel on DVI-faili nimetatud metafailiks.</para>
+
+		</sect2>
+
+		<sect2 id="intro_forward">
+
+			<title
+>Edasiotsing</title>
+
+			<para
+>Pöördotsingut kasutades seostatakse DVI-failis valitud elemendid redaktoriga, nii et kui klõpsata DVI-failis, hüpatakse vastavale kohale &latex;i lähtetekstis. Edasiotsing on täpselt vastupidine: võimaldab klõpsata mingil tekstiosal &latex; lähtetekstis, misjärel hüpatakse sellega seotud tekstosale DVI näitamise aknas.</para>
+
+		</sect2>
+
+	</sect1>
+
+	<sect1 id="intro_toolbar">
+
+		<title
+>Tööriistariba: mis teeb mida</title>
+
+		<itemizedlist>
+			<listitem
+><para
+><guibutton
+>Uus</guibutton
+>: avab uue dokumendi.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Ava</guibutton
+>: avab uue dokumendi.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Sulge</guibutton
+>: sulgeb dokumendi.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Defineeri dokument 'peadokumendina'</guibutton
+>: seda kasutatakse mitme failiga töötades. Peadokument võimaldab kaasata dokumenti muid .tex-faile.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Kiire ehitamine</guibutton
+>: kompileerib &latex;i lähteteksti ja näitab tulemust automaatselt, kui tekstis ei ole just vigu.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Faili jälgimise režiim</guibutton
+>: selles režiimis "jälgitakse" DVI-failis tehtavaid muudatusi ning uuendatakse faili automaatselt pärast <guibutton
+>kiire ehitamise</guibutton
+> kasutamist ilma &kdvi;d uuesti käivitamata.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Vaata logifaili</guibutton
+>: näitab .log-faili, mis lubab vaadata vigu.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Eelmine viga</guibutton
+>: hüppab .log-failis tagasi ja tõstab esile lähtetekstis oleva vea.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Järgmine viga</guibutton
+>: hüppab .log-failis edasi ja tõstab esile lähtetekstis oleva vea.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Stopp</guibutton
+>: peatab parajasti täidetava toimingu.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>LaTeX</guibutton
+>: käivitab &latex;i aktiivse dokumendiga.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>DVI vaatamine</guibutton
+>: käivitab DVI vaataja.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>DVI->PS</guibutton
+>: teisendab DVI-faili PostScript (PS) failiks.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>PS vaatamine</guibutton
+>: käivitab PostScript (PS) vaataja.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>PDFLaTeX</guibutton
+>: loob &latex;i lähtetekstist PDF-faili, kui on olemas &latex;i päis.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>PDF vaatamine</guibutton
+>: näitab PDF-faili.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>DVI->PDF</guibutton
+>: teisendab DVI PDF-iks.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>PS->PDF</guibutton
+>: teisendab PS-i PDF-ks.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>LaTeX->HTML</guibutton
+>: loob &latex;i lähtetekstist HTML-teksti.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>HTML vaatamine</guibutton
+>: näitab loodud HTML-teksti.</para
+></listitem>
+			<listitem
+><para
+><guibutton
+>Kdvi edasiotsing</guibutton
+>: hüppab leheküljele, mis vastab redaktoris parajasti aktiivsele reale.</para
+></listitem>
+		</itemizedlist>
+
+		<para
+>Kui vaatad <guilabel
+>redigeerimisriba</guilabel
+>, näed kolme laia hüpikmenüüd. Need võimaldavad kiiresti lisada dokumenti enamkasutatavaid omadusi. Esimest neist kasutatakse dokumendi kiireks struktureerimiseks osadeks, peatükkideks, lõikudeks jne. Saadaolevad käsud jaotiste lisamiseks &latex;i lähteteksti on järgmised:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+><guilabel
+>osa</guilabel
+>: dokumendi struktuuri kõrgeim tasand.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>peatükk</guilabel
+>: loob uue peatüki.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>sektsioon</guilabel
+>: loob uue sektsiooni.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>alamsektsioon</guilabel
+>: loob uue alamsektsiooni.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>alamalamsektsioon</guilabel
+>: sekundaarne jaotis alamsektsiooni ja lõigu vahel.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>lõik</guilabel
+>: loob uue lõigu.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>alamlõik</guilabel
+>: loob uue alamlõigu.</para
+></listitem>
+		</itemizedlist>
+
+		<para
+>Hüpikmenüü kirjaga <guilabel
+>pealdis</guilabel
+> lubab dokumenti sisestada mitmesuguseid elemente, näiteks indekseid, allmärkusi, viiteid. Kasutada saab järgmisi käske:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+><guilabel
+>pealdis</guilabel
+>: käsk, mis tekitab antud tasandile pealdise.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>indeks</guilabel
+>: loob indeksikirje.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>allmärkus</guilabel
+>: loob dokumenti allmärkuse.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>viide</guilabel
+>: kasutatakse viitamiseks eelnevalt määratud pealdisele, mille saab valida hüpikmenüüst.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>leheküljeviide</guilabel
+>: nagu <guilabel
+>viide</guilabel
+>, ainult et viitab struktuurielemendi asemel leheküljele.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>tsitaat</guilabel
+>: loob dokumendis bibliograafia põhjal tsitaadi.</para
+></listitem>
+		</itemizedlist>
+
+		<screenshot>
+			<screeninfo
+><guilabel
+>Pealdis</guilabel
+>e hüpikmenüü</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_ref_choose.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+><guilabel
+>Pealdis</guilabel
+>e hüpikmenüü</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+		<screenshot>
+			<screeninfo
+>Pealdise valimine viitele</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_ref_select.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Pealdise valimine viitele</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+		<para
+>Võimaluse <guilabel
+>tsitaat</guilabel
+> kasutamisel pakutakse hüpikmenüüna biblioelemente, aga kui sul on kasutusel &bibtex;, siis toimib see ainult juhul, kui fail kuulub projekti. Samuti võib kasutada sellisel juhul &gbib;i või &pybliographer;it või teha seda käsitsi.</para>
+
+		<para
+>Viimane hüpikmenüü kirjaga <guilabel
+>tilluke</guilabel
+> võimaldab määrata teksti suuruse. Võimalik on määrata teksti, allmärkuste jne. suurust. Kasutada saab järgmisi käske:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+><guilabel
+>tilluke</guilabel
+>: kõige väiksem.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>skript</guilabel
+>: väga väike.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>allmärkus</guilabel
+>: väiksem.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>väike</guilabel
+>: väike.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>normaalne</guilabel
+>: normaalne.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>suur</guilabel
+>: suur.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>Suur</guilabel
+>: suurem.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>SUUR</guilabel
+>: veel suurem.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>hiiglaslik</guilabel
+>: veelgi suurem.</para
+></listitem>
+			<listitem
+><para
+><guilabel
+>Hiiglaslik</guilabel
+>: kõige suurem.</para
+></listitem>
+		</itemizedlist>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="quickstart">
+
+	<title
+>Kiirülevaade</title>
+
+	<sect1 id="quick_begin">
+
+		<title
+>&latex;i dokumendi kirjutamine &kile;s algajatele</title>
+
+		<para
+>Igal &kile; kasutajal on uut dokumenti alustades kaks võimalust: ta võib selleks kasutada <guimenu
+>nõustaja</guimenu
+>t, valides loodava dokumendi tüübi ning muud valikud, näiteks fondi suuruse, paberi suuruse jne., või siis alustada kõige kirjutamist käsitsi.</para>
+
+		<screen
+><userinput>
+                \documentclass[12pt]{article}
+                \begin{document}
+                Siia tuleb LaTeXi lähtetekst.
+                \end{document}</userinput
+></screen>
+
+		<para
+>Iga &latex;i dokument algab käsuga <userinput
+>\documentclass{dokumenditüüp}</userinput
+>, kui sa just ei kasuta &latex;i vanemat versiooni,millisel juhul käsk on <userinput
+>\documentstyle{dokumenditüüp}</userinput
+>. &latex;ist on praegu kasutusel kaks levinumat versiooni: 2.09, kus dokumendi alustamiseks on tarvitusel <userinput
+>\documentstyle</userinput
+> ja 2<subscript
+>ε</subscript
+>, kus pruugitakse käsku <userinput
+>\documentclass</userinput
+>. Käsk <userinput
+>\documentclass</userinput
+> kasutab alati süntaksit <userinput
+>\documentclass[lisaargument]{klass}</userinput
+>.</para>
+
+		<para
+>Ülaltoodu koodinäite kirjutamisel saadakse selline väljund:</para>
+
+		<screen
+><computeroutput>
+                Siia tuleb LaTeXi lähtetekst.</computeroutput
+></screen>
+
+		<para
+>Nurksulud pärast käsku <userinput
+>\documentclass</userinput
+> tähistavad kasutatavat võtit. Võti <userinput
+>[12pt]</userinput
+> määrab artikli fondi suuruse. Kui fondi suurust ei määrata alguses, võib seda teha ka tekstis hiljem.</para>
+
+		<para
+>Kui oled toodud näite kirja pannud, tuleb &latex;i lähtetekst ka kompileerida. Lihtsaim viis &latex;i lähteteksti kompileerida on kasutada <guimenu
+>ehitamise</guimenu
+>menüüd või <guilabel
+>kiire ehitamise</guilabel
+> nuppu.</para>
+
+		<para
+>Lähteteksti saab kompileerida ka kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>2</keycap
+></keycombo
+>.</para>
+
+		<para
+>Lähtetekst tuleb enne kompileerimist salvestada. &kile; teeb selle sinu eest automaatselt ära.</para>
+
+		<para
+>Kui dokumendi kompileerimine ei õnnestu, uuri logifaile, kus võib leida vead. <guilabel
+>Kiire ehitamise</guilabel
+> nuppu kasutades peaks &kdvi; automaatselt käivituma. Kui seda ei juhtu, uuri logifailist, mis viga.</para>
+
+	</sect1>
+
+	<sect1 id="quick_env">
+		<title
+>Keskkonnad</title>
+
+		<para
+>Keskkond on käsk, mis võimaldab teatud tekstiosa käsitleda ülejäänud dokumendist erinevalt. Oletame näiteks, et lood raportit fondi suurusega 12, kuid mõne lause jaoks vajad erinevat fondi suurust. Käsud <userinput
+>\begin{environment}</userinput
+>, <userinput
+>\huge</userinput
+> ja <userinput
+>\end{environment}</userinput
+> lubavad muuta teksti keskkonnakäskude vahel hiiglaslikuks.</para>
+
+		<para
+>Seega rakenduvad muudatused ainult käskude <userinput
+>\begin{environment}</userinput
+> ja <userinput
+>\end{environment}</userinput
+> vahel. Keskkonna sees võib teha kui palju tahes muudatusi.</para>
+
+		<para
+>Dokumendi loetavamaks ja kasutajasõbralikumaks muutmiseks on päris palju võimalusi. Dokumendile võib lisada näiteks spetsiaalseid fonte, rasvast või kaldkirja, allajoonitud teksti jne. Kõik need lõpevad kas käsuga <userinput
+>\end</userinput
+> või keskkonna lõppedes.</para>
+
+		<itemizedlist>
+			<listitem
+><para
+><userinput
+>\begin{emph}</userinput
+> või <userinput
+>\begin{em}</userinput
+>: paneb teksti kaldkirja, käsk kehtib, kuni koodis esineb <userinput
+>\end{em}</userinput
+>, <userinput
+>\end{emph}</userinput
+> või kuni keskkonna lõpuni. Lauses ühe sõna panemiseks kaldkirja kasuta süntaksit: see on <userinput
+>\em{minu}</userinput
+> lause.</para
+></listitem>
+			<listitem
+><para
+><userinput
+>\bfseries{Ma panen selle teksti sulgudes rasvasesse kirja}</userinput
+>: muudab teksti rasvaseks, käsk kehtib kuni sulgeva suluni.</para
+></listitem>
+			<listitem
+><para
+><userinput
+>\quote</userinput
+>: tekitab dokumendis jutumärkides osa, mis algab käsuga <userinput
+>\begin{quote}</userinput
+> ja lõpeb käsuga <userinput
+>\end{quote}</userinput
+>.</para
+></listitem>
+			<listitem
+><para
+><userinput
+>\center</userinput
+>: tsentreerib teksti.</para
+></listitem>
+			<listitem
+><para
+><userinput
+>\verse</userinput
+>: loob luuletustele vajaliku keskkonna.</para
+></listitem>
+			<listitem
+><para
+><userinput
+>\itemize</userinput
+>: tekitab loendi.</para
+></listitem>
+		</itemizedlist>
+
+	</sect1>
+
+	<sect1 id="quick_using">
+
+		<title
+>&kile; kasutamine</title>
+
+		<para
+>Nüüd, kus oleme andnud põgusa ülevaate, kuidas kirjutada teksti &latex;i märkekeeles, näitame samm-sammult, kuidas luua &kile;s dokument.</para>
+
+		<procedure>
+        		<step
+><para
+>Käivita &kile;</para
+></step>
+			<step
+><para
+>Loo uus dokument: <menuchoice
+><guimenu
+>Fail</guimenu
+><guimenuitem
+>Uus</guimenuitem
+><guilabel
+>Tühi dokument</guilabel
+></menuchoice
+>.</para
+></step>
+			<step
+><para
+>Vali <menuchoice
+><guimenu
+>Nõustaja</guimenu
+><guimenuitem
+>Kiirstart</guimenuitem
+></menuchoice
+>, seejärel vali vorming ja määra nõustajas oma eelistused.</para
+></step>
+			<step
+><para
+>Kui nõustaja on teksti sisestanud, kohanda dokument loetavamaks, lisa vähemalt üks tsitaat, üks rasvases ja üks kaldkirjas osa ning luuleosa, et näha, mille poolest ja kuidas käsud erinevad.</para
+></step>
+			<step
+><para
+>Salvesta fail ja anna sellele nimeks <filename
+>intro.tex</filename
+>.</para
+></step>
+			<step
+><para
+>Ehita dokument kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+> <keycap
+>2</keycap
+></keycombo
+> või klõpsuga nupul <guilabel
+>LaTeX</guilabel
+>.</para
+></step>
+			<step
+><para
+>Vali <guibutton
+>DVI vaatamine</guibutton
+>.</para
+></step>
+			<step
+><para
+>Kontrolli põhjalikult oma teksti.</para
+></step>
+			<step
+><para
+>Kui oled lõpetanud, klõpsa redaktorisse naasmiseks nupule <guibutton
+>Redaktorivaade</guibutton
+>, kui kasutad põimitud redaktorit, või sulge vaatamisrakenduse aken.</para
+></step>
+		</procedure>
+
+		<para
+>Ongi kõik! Oledki valmis saanud oma esimese &latex;i dokumendi!</para>
+
+		<para
+>Kui oled DVI loonud, võid oma dokumendi trükkida või teisendada soovi korral PostScript või PDF-failiks. Proovi ja katseta!</para>
+
+	</sect1>
+
+	<sect1 id="quick_dvi">
+
+		<title
+>DVI failid</title>
+
+		<para
+>DVI tähendab <emphasis
+>seadmest sõltumatu</emphasis
+> (inglise keeles 'DeVice Independent') fail. Neid loob &tex; või &latex;, et teksti oleks arvutil lihtsam näidata. DVI-faili võib suunata mitmesugustele väljunditele, näiteks printerile, PostScript või PDF konverterisse või arvutiekraanile.</para>
+
+	 	<sect2 id="quick_viewdvi">
+
+			<title
+>DVI vaatamine</title>
+
+			<para
+>Seda, kuidas DVI-faili ekraanil vaadata, sa juba tead: kasuta selleks tööriistariba nuppu <guibutton
+>DVI vaatamine</guibutton
+>.</para>
+
+		</sect2>
+
+		<sect2 id="quick_printdvi">
+
+        	<title
+>DVI trükkimine</title>
+
+			<para
+>DVI trükkimiseks saab kasutada sama meetodit, millega dokument luuakse (vaata <xref linkend="quick_using"/>). Pärast 7. sammu, kui oled klõpsanud <guibutton
+>DVI vaatamine</guibutton
+>, vali vaatajas <menuchoice
+><guimenu
+>Fail</guimenu
+><guimenuitem
+>Trüki</guimenuitem
+></menuchoice
+> ning kui printer on korrektselt seadistatud, DVI trükitaksegi.</para>
+
+		</sect2>
+
+		<sect2 id="quick_manprint">
+
+			<title
+>DVI trükkimine käsitsi konsoolilt</title>
+
+			<para
+>DVI trükkimiseks käsitsi konsoolilt kasuta käsku <userinput
+>dvips intro.dvi</userinput
+>. See käsk teisendab DVI PostScript-failiks. Kui fail on teisendatud, saab selle trükkida käsuga <userinput
+>lpr intro.ps</userinput
+>.</para>
+
+		</sect2>
+
+		<sect2 id="quick_exportdvi">
+
+			<title
+>DVI eksportimine</title>
+
+			<para
+>Tööriistariba võimaldab eksportida DVI mitmesse vormingusse. Kui &latex;i lähtetekstist on loodud DVI, peaks olema seda võimalik tööriistariba nuppude abil eksportida just sulle meelepärasesse vormingusse.</para>
+
+		</sect2>
+
+	</sect1>
+
+	<sect1 id="quick_inverseforward">
+
+		<title
+>Edasi- ja pöördotsing &kile; ja &kdvi; vahel</title>
+
+		<sect2>
+
+			<title
+>Edasiotsing</title>
+
+			<para
+>Edasiotsing tarvitab &kdvi;d ja välist faili (&latex;is nimetatakse väliseid faile <emphasis
+>pakettideks</emphasis
+>) nimega <filename
+>srcltx.sty</filename
+>. Võiksid oma failid läbi otsida, et tuvastada, kas distributsiooniga on kaasa tulnud fail <filename
+>srcltc.sty</filename
+>. Kui seda ei leidu, siis saad selle <ulink url="http://valis.cs.uiuc.edu/~sariel/research/latex/srcltx.sty"
+>siit alla laadida</ulink
+>. Kopeeri fail &tex;i kataloogi (näiteks <userinput
+>/usr/share/texmf/tex/latex/srcltx/</userinput
+>) ja anna käsk <userinput
+><command
+>texhash</command
+></userinput
+>, et &latex; saaks selle asukoha teada. Seejärel tuleb preambulas määrata järgmine käsk:</para>
+
+			<screen
+><userinput>
+                \documentclass[12pt, a4paper]{book}
+                \usepackage[active]{srcltx}
+                \pagestyle{empty}
+                \renewcommand{\baselinestretch}{2}
+                \begin{document}
+                \begin{verse}
+                KDE \LaTeX\i lähtekoodi redaktor &kile; on mu lemmik.
+                
+                \emph{Sest} seda on nii lihtne kasutada!
+                \end{verse}
+                \end{document}</userinput
+></screen>
+
+			<para
+>Kui oled avanud paketi <filename
+>srcltx</filename
+>, võid &kdvi; avatuks jätta. Edasiotsing võimaldab klõpsata mingile tekstiosale lähtetekstis ning hüpata käsuga <guilabel
+>Kdvi edasiotsing</guilabel
+> vastavale asukohale DVI vaataja aknas.</para>
+
+		</sect2>
+
+		<sect2>
+
+			<title
+>Pöördotsing</title>
+
+			<para
+>Pöördotsing toimib, kui:</para>
+
+			<itemizedlist>
+				<listitem
+><para
+>fail <filename
+>srcltx.sty</filename
+> on kasutusel.</para
+></listitem>
+				<listitem
+><para
+>Lähteteksti fail on edukalt kompileeritud.</para
+></listitem>
+				<listitem
+><para
+>&kdvi; teab, millist redaktorit kasutada.</para
+></listitem>
+			</itemizedlist>
+
+			<para
+>See &kdvi; võimalus lubab hiire keskmise nupu klõpsuga DVI dokumendis avada &kile;s vastava &tex;i dokumendi ja hea õnne korral vastavale reale minna. Pea meeles, et sul tuleb anda &kdvi;le korraldus kasutada tekstiredaktorina &kile;t (&kdvi; menüükäsk <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>DVI valikud...</guimenuitem
+></menuchoice
+>).</para>
+
+			<screenshot>
+				<screeninfo
+>&kdvi; seadistamine</screeninfo>
+				<mediaobject>
+				<imageobject>
+				<imagedata fileref="snap_kdvi_settings.png" format="PNG"/>
+				</imageobject>
+				<textobject>
+				<phrase
+>&kdvi; seadistamine</phrase>
+				</textobject>
+				</mediaobject>
+			</screenshot>
+		</sect2>
+
+		<sect2>
+
+			<title
+>Vigade lahendamine</title>
+
+			<para
+>Kui kasutasid kiiret ehitamist ning DVI vaataja ei avanenud, on tõenäoline, et tegemist on mingi veaga. Sellisel juhul võib viga näha logifaili/teate alal, kus näidatakse vea kokkuvõtlikku kirjeldust.</para>
+
+			<para
+>Logifail selgitab, millise veaga lähtetekstis on tegemist. Redaktoris saab kasutada tööriistaribal olevaid nuppe <guibutton
+>Eelmine LaTeXi viga</guibutton
+> ja <guibutton
+>Järgmine LaTeXi viga</guibutton
+> vigade vahel liikumiseks. Logifail annab alati teada, millisel real viga esines. Kui soovid seda rida näha, klõpsa logiaknas veal ning &kile; viib sind vastavat viga sisaldavale reale.</para>
+
+		</sect2>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="startnew">
+
+	<title
+>Uue dokumendi loomine</title>
+
+	<para
+>Kui klõpsad tööriistaribal uue dokumendi loomise nupule, ilmub dialoog, mis pärib, millist mallitüüpi soovid dokumendi jaoks kasutada. Võimalused on vaikimisi järgmised:</para>
+
+	<itemizedlist>
+		<listitem
+><para
+>Tühi dokument</para
+></listitem>
+		<listitem
+><para
+>Kiri</para
+></listitem>
+		<listitem
+><para
+>Raamat</para
+></listitem>
+		<listitem
+><para
+>Artikkel</para
+></listitem>
+		<listitem
+><para
+>Raport</para
+></listitem>
+	</itemizedlist>
+
+	<para
+>Kui valid <guilabel
+>tühja dokumendi</guilabel
+>, võid alustada dokumendi loomist päris tühjalt kohalt või kasutada nõustajat uue dokumendi kiireks tekitamiseks (vaata <xref linkend="intro_docwizard"/>).</para>
+
+
+	<sect1 id="startnew_templates">
+
+		<title
+>Mallid</title>
+
+		<para
+>&latex;i sagedasemad kasutajad tarvitavad tihtipeale peaaegu igal dokumendil üht ja sama preambulat, mille on hoolsalt just enda maitsele kohandanud. Selleks ongi olemas mallid: iga pidevalt sarnaseid dokumente loov &kile; kasutaja võidab kahtlemata võimalusest luua just enda maitsele vastavaid malle.</para>
+
+
+		<sect2>
+			<title
+>Uue malli loomine</title>
+
+			<para
+>Uue malli loomiseks tuleb esmalt avada &tex;/&latex;-fail või luua uus fail. &kile; võib malli luua olemasoleva dokumendi põhjal, kui avad soovitud dokumendi ja kasutad menüükäsku <menuchoice
+><guimenu
+>Fail</guimenu
+> <guimenuitem
+>Loo dokumendi põhjal mall</guimenuitem
+></menuchoice
+>.</para>
+
+		</sect2>
+
+		<sect2>
+
+			<title
+>Kohatäitjate kasutamine</title>
+
+			<para
+>Kui lood uue dokumendi malli põhjal käsuga <menuchoice
+><guimenu
+>Fail</guimenu
+><guimenuitem
+>Uus</guimenuitem
+></menuchoice
+>, võidakse teatud sümbolite kombinatsioonid asendada mõningate andmetega, näiteks sinu nime või kasutatava kodeeringuga. Nende muutujate seadistamiseks kasuta menüükäsku <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>&kile; seadistamine</guimenuitem
+></menuchoice
+>. Mallimuutujad võid määrata just sellised, nagu sulle vaja.</para>
+
+			<para
+>Kui lood malli omal käel, on kasulik teada, millised sümbolite kombinatsioonid milliseid mallimuutujaid tähistavad:</para>
+
+			<itemizedlist>
+				<listitem
+><para
+><userinput
+>$$AUTHOR$$</userinput
+>: asendatakse autorimuutujaga.</para
+></listitem>
+				<listitem
+><para
+><userinput
+>$$DOCUMENTCLASSOPTIONS$$</userinput
+>: asendatakse dokumendiklassi võtme muutujaga. Tavaliselt kasutatakse seda umbes nii: <userinput
+>\documentclass[$$DOCUMENTCLASSOPTIONS$$]{article}</userinput
+>.</para
+></listitem>
+				<listitem
+><para
+><userinput
+>$$INPUTENCODING$$</userinput
+>: kui sisendi kodeeringu muutuja väärtuseks on näiteks <userinput
+>latin1</userinput
+>, asendatakse string <userinput
+>\input[latin1]{inputenc}</userinput
+>.</para
+></listitem>
+			</itemizedlist>
+
+		</sect2>
+
+		<sect2 id="templ_wiz">
+
+			<title
+>Malli loomine nõustajas</title>
+
+			<para
+>Lihtsaim viis uut malli luua on käivitada nõustaja ning seejärel anda vajalikud käsud paremal redaktoris. Kui dokument on võtnud sulle meelepärase kuju:</para>
+
+			<procedure>
+				<step
+><para
+>Salvesta fail</para
+></step>
+				<step
+><para
+>Ava menüü <guimenu
+>Fail</guimenu
+></para
+></step>
+				<step
+><para
+>Vali <guimenuitem
+>Loo dokumendi põhjal mall</guimenuitem
+></para
+></step>
+				<step
+><para
+>Vajadusel muuda veel malli</para
+></step>
+				<step
+><para
+>Sisesta oma uue malli nimi</para
+></step>
+				<step
+><para
+>Klõpsa <guibutton
+>OK</guibutton
+> malli lisamiseks menüüsse</para
+></step>
+			</procedure>
+
+			<para
+>Kui nüüd lood uue dokumendi, võid tavapärase kirja, raporti, raamatu, artikli ja tühja dokumendi kõrval valida ka omaloodud malli.</para>
+
+		</sect2>
+
+		<sect2>
+
+			<title
+>Malli loomine mis tahes faili põhjal</title>
+
+			<para
+>Malli võib luua mis tahes faili põhjal. Kui püüad võimalikult vähese vaevaga läbi ajada, võid otsida vajalikku malli internetis ning siis võtta ette samad sammud, mida kirjeldab <xref linkend="templ_wiz"/>.</para>
+
+			<para
+>Oletame, et soovid luua korralikku A0 postert, mida kasutatakse tihtipeale teaduskonverentsidel. &latex; mõistagi aitab sul luua väga külgetõmbava ja köitva posteri. A0 posteri malli võid leida <ulink url="http://www.stats.ox.ac.uk/~marchini/a0poster.html"
+>Jonathan Marchini koduleheküljelt</ulink
+>, kuid neid on märksa enamgi. Pea meeles, et sul läheb vaja paketti <filename
+>a0poster</filename
+>, mida standardse &tetex;i tarkvaraga kaasas ei ole, nii et sul tuleb see <ulink url="http://www.tug.org/tex-archive/help/Catalogue/entries/a0poster.html"
+>alla laadida</ulink
+>, kopeerida &tex;i kataloogi (näiteks <userinput
+>/usr/share/texmf/tex/latex/a0poster/</userinput
+>) ning anda käsk <userinput
+><command
+>texhash</command
+></userinput
+>, et ka &latex; selle olemasolust teada saaks.</para>
+
+		</sect2>
+
+		 <sect2 id="templ_rem">
+
+	 		<title
+>Malli eemaldamine</title>
+
+			<para
+>Malli eemaldamiseks &kile;st vali:</para>
+
+			<procedure>
+				<step
+><para
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>Eemalda mall...</guimenuitem
+></para
+></step>
+				<step
+><para
+>Ilmub kõiki malle näitav dialoog, kus vali mall</para
+></step>
+				<step
+><para
+>Klõpsa <guilabel
+>OK</guilabel
+> ja mall eemaldataksegi</para
+></step>
+			</procedure>
+			
+			<para
+>Malle märkega * ei saa eemaldada, kui sul selleks õigusi pole</para>
+
+		</sect2>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="editing">
+
+	<title
+>&latex; dokumentide redigeerimine</title>
+
+	<para
+>&kile; seesmine redaktor kasutab ära &kate;t. Kate on programmeerijatele loodud tekstiredaktor, mis suudab lugeda ja kasutada esiletõstmist paljude tekstifailide tüüpide korral, sealhulgas &latex; ja &bibtex;. Suurt osa &kate; võimalustest saab kasutada otse &kile;s menüü <guimenu
+>Tööriistad</guimenu
+> vahendusel.</para>
+
+	 <para
+>&kate; ja selle võimaluste kohta annab rohkem teavet <ulink url="help:kate"
+>Kate käsiraamat</ulink
+>. &kile; kasutajad võiksid ennekõike vaadata peatükki <quote
+>Töö Katega</quote
+>.</para>
+
+	 <sect1 id="editing_sect">
+
+		<title
+>&latex;i viited</title>
+
+		<para
+>&kile; pakub väga praktilist ülevaadet &latex;i viidetest, mida saab kasutada menüükäsuga <menuchoice
+><guimenu
+>Abi</guimenu
+><guimenuitem
+>LaTeXi viited</guimenuitem
+></menuchoice
+>. See sisaldab peaaegu kõigi &latex;is kasutatavate käskude põhjalikke selgitusi ning süntaksit.</para>
+
+	</sect1>
+
+	<sect1 id="editing_cursor">
+
+	 	<title
+>Kursori liikumine</title>
+		
+		<para
+>Kui soovid valida teksti, saab seda teha nii:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+>Hoia all hiire vasak nupp ja lohista hiirt teksti äramärkimiseks.</para
+></listitem>
+			<listitem
+><para
+>Klõpsa sõnal kursori liigutamiseks uuele alale.</para
+></listitem>
+			<listitem
+><para
+>Klõpsa sõnal kaks korda terve sõna valimiseks.</para
+></listitem>
+			<listitem
+><para
+>Klõpsa kolm korda terve lause valimiseks.</para
+></listitem>
+		</itemizedlist>
+
+		<para
+>Hiire vasakut nuppu all hoides ja valitavat teksti lohistades kopeeritakse valitud tekst automaatselt lõikepuhvrisse.</para>
+
+		<para
+>Klahvi Shift all hoides ning nooleklahve kasutades saab redaktoriaknas valida vajaliku lähteteksti osa.</para>
+
+	</sect1>
+
+	<sect1 id="editing_bracket">
+
+		<title
+>Sulgude lõpetamine ja paarilise näitamine</title>
+
+		<para
+>Sulgude lõpetamine on üks visuaalseid vahendeid, mida kasutatakse redaktorivaates paremaks näitamiseks, millised sulud teineteisega kokku lähevad. Kui avad .tex-faili ja valid suvalise sulu, olgu see ümarsulg (), nurksulg [] või looksulg{}, tõstab redaktor esile nii selle kui tema paarilise kollase värviga (seda vaikevärvi saab mõistagi muuta). Kui asetad kursori näiteks looksulule käsus <userinput
+>\section{Sissejuhatus}</userinput
+>, näed <userinput
+>\section{Sissejuhatus}</userinput
+> vaikimisi kollasena esiletõstetuna, näidates sulle sel moel alustavat ja lõpetavat looksulgu.</para>
+
+	</sect1>
+
+	<sect1 id="editing_highlight">
+
+		<title
+>Esiletõstmine</title>
+
+		<para
+>&kile; suudab tuvastada ja esile tõsta erinevat tüüpi koodi. Nii on näiteks &latex;i käsud eristatud tavalisest tekstist, mis muudab tavalise teksti lugemise hõlpsamaks. Erineva värviga on tähistatud ka valemid.</para>
+
+	</sect1>
+
+	<sect1 id="editing_completion">
+
+		<title
+>Keskkonna automaatne lõpetamine</title>
+
+		<para
+>Kui alustad uut keskkonda näiteks käsuga <userinput
+>\begin{environment}</userinput
+>, lisab &kile; automaatselt käsu <userinput
+>\end{environment}</userinput
+>, jättes nende vahele rea, kuhu saad sisestada oma teksti.</para>
+
+		<para
+>Automaatse lõpetamise saab välja lülitada <menuchoice
+><guimenu
+>Seadistused</guimenu
+><guimenuitem
+>&kile; seadistamine</guimenuitem
+></menuchoice
+> &latex;i kaardil. </para>
+
+		<screenshot>
+			<screeninfo
+>Võrrandikeskkonna lõpetamine</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_autocomplete.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Võrrandikeskkonna lõpetamine</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+	</sect1>
+
+	<sect1 id="editing_wizard">
+
+		<title
+>Massiivinõustaja</title>
+
+		<para
+>Üks igavamaid asju, mida &latex;is teha, on tabelkeskkonnas maatriksit kirja pana. Selleks tuleb silm peal hoida kõigil elementidel, kontrollida, et keskkond on ikka õigesti vormindatud ja et kõik on seal, kus olema peab. Taanduse kasutamine tuleb siin kasuks, kuid on ka lihtsam meetod: &kile; menüü <guimenu
+>_Nõustaja</guimenu
+>. Kirje <guimenuitem
+>Kiirkäivitus</guimenuitem
+> kõrval on seal ka kirjed <guimenuitem
+>Tabel</guimenuitem
+> ja <guimenuitem
+>Massiiv</guimenuitem
+> (kasutatakse matemaatikakeskkonnas). Neid valides saad maatriksikujulise sisendi, mille võid hõlpsasti täita vajalike väärtustega. Kirje <guimenuitem
+>Tabbing</guimenuitem
+> näitab lihtsamat menüüd tabbing-keskkonna loomiseks. Kõigis mainitud keskkondades saab määrata ridade ja veergude arvu ning veel mõned spetsiifilisemad omadused.</para>
+
+		<screenshot>
+			<screeninfo
+>Tabelkeskkonna lisamine</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_wizardry.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Tabelkeskkonna lisamine</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="latex">
+
+	<title
+>&latex;i erisildid</title>
+
+	<sect1 id="latex_library">
+		<title
+>&latex;i siltide kasutamine</title>
+
+		<para
+>&latex; pakub sadu silte, mida saab lisada sümbolite ja erimärkide tähistamiseks. Lihtsaim viis erimärki lisada on kasutada külgriba menüüd vasakul pool redaktoriakent.</para>
+
+		<screenshot>
+			<screeninfo
+>Külgriba menüü</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_sidebarmenu.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Külgriba menüü</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+		<para
+>Erimärgi lisamiseks klõpsa märgitüübil, mida soovid lisada. Kategooriad on järgmised:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+>Relatsioonisümbolid</para
+></listitem>
+			<listitem
+><para
+>Kreeka tähed</para
+></listitem>
+			<listitem
+><para
+>Nooled</para
+></listitem>
+			<listitem
+><para
+>Piiritlejad</para
+></listitem>
+			<listitem
+><para
+>Mitmesugused sümbolid</para
+></listitem>
+			<listitem
+><para
+>Võõrtähed</para
+></listitem>
+		</itemizedlist>
+
+	</sect1>
+
+	<sect1 id="latex_bib">
+
+		<title
+>Biblioelementide kasutamine</title>
+
+		<para
+><userinput
+>\bibitem</userinput
+> on käsk, mis viitab, et dokumendis on kasutusel <userinput
+>thebibliography</userinput
+>. Käsu <userinput
+>\bibitem</userinput
+> süntaks on <userinput
+>\bibitem[pealdis]{võti}</userinput
+>.</para>
+
+		<para
+>Võti <userinput
+>[pealdis]</userinput
+> võimaldab sul lisada bibliograafiakirjele omaenda pealdiste süsteemi. Kui seda ei ole määratud, seatakse kirjed numbrilisse järjekorda: [1], [2], [3] jne.</para>
+
+		<para
+>Argumenti <userinput
+>{võti}</userinput
+> kasutatakse viitamiseks ja käskude <userinput
+>\bibitem</userinput
+> ning <userinput
+>\cite</userinput
+> linkimiseks üksteise ning neis leiduva infoga. Käsk <userinput
+>\cite</userinput
+> sisaldab pealdist, mis on seotud käsuga <userinput
+>\bibitem</userinput
+>, mis asub keskkonnas <userinput
+>thebibliography</userinput
+> ja sisaldab viiteandmeid. Nii <userinput
+>\bibitem</userinput
+> kui <userinput
+>\cite</userinput
+> peab sisaldama sama <userinput
+>{võti}</userinput
+>t. Kõige hõlpsam on võtmeid mõistagi korraldada autori perekonnanime järgi. Sekundaarne <userinput
+>{}</userinput
+> käsus <userinput
+>{thebibliography}</userinput
+> tähistab pikimat bibliograafiapealdist, mis sul võib olla. Nii võib <userinput
+>{<replaceable
+>suva</replaceable
+>}</userinput
+> lisamisel pealdis olla maksimaalselt <userinput
+><replaceable
+>suva</replaceable
+></userinput
+> pikkune. Kui seda parameetrit korrektselt ei määrata, ei pruugi bibliograafia kuigi atraktiivne välja näha.</para>
+
+		<para
+>Bibliograafia seisab peadokumendist eraldi, selle näidiskood võib olla selline:</para>
+
+		<screen
+><userinput>
+                \begin{thebibliography}{50}
+                \bibitem{Simpson} Homer J. Simpson. \textsl{Mmmmm...doughnuts}.
+                Evergreen Terrace Printing Co., Springfield, SomewhereUSA, 1998
+                \end{thebibliography)</userinput
+></screen>
+
+		<para
+>Oletame nüüd, et sinu põhilähtetekstis leidub info, mida seob käsuga <userinput
+>\bibitem</userinput
+> käsk <userinput
+>\cite</userinput
+>. Lähtetekst näeb siis välja selline:</para>
+
+		<screen
+><userinput>
+                Minu töö aluseks Simpsonite\copyright filosoofia kohta
+                on mu lemmikraamat \cite{Simpson}.</userinput
+></screen>
+
+		<para
+>Paljude viidete korral on sageli raske meeles hoida täpset tsitaadivõtit, mistõttu &kile; pakub välja hõlpsa võimaluse tsitaadi lisamiseks. Klõpsa <guilabel
+>redigeerimisriba</guilabel
+>l teisele hüpikkastile (tavaliselt seisab seal <guilabel
+>pealdis</guilabel
+>) ja vali <guilabel
+>tsitaat</guilabel
+>. Ilmub nähtavale kõigi tsitaadivõtmete loend, kust saab valida vajaliku viite ning tsitaadikirje lisataksegi dokumenti. Võtmete loendi uuendamiseks salvesta fail või vali menüükäsk <menuchoice
+><guimenu
+>Redigeerimine</guimenu
+><guimenuitem
+>Värskenda struktuuri</guimenuitem
+></menuchoice
+>.</para>
+
+		<para
+>Sinu dokumendi bibliograafia näeb lõpuks välja siis selline:</para>
+
+		<para
+><computeroutput
+>[1] Homer J. Simpson. Mmmmm...doughnuts. Evergreen Terrace Printing Co., Springfield, Somewhere, 1998.</computeroutput
+></para>
+
+		<para
+>Lihtsaim viis käskude <userinput
+>\bibitem</userinput
+> ja <userinput
+>\cite</userinput
+> kasutamiseks on tööriistariba hüpikkast kirjaga <guilabel
+>tsitaat</guilabel
+>. Kui soovid lisada tsitaadi, pakutakse sulle seni loodud <userinput
+>bibitem</userinput
+>-ite loendit, millest võid valida vajaliku. &kile; suudab nüüd ka töötada käsikäes &bibtex;i redaktoritega, näiteks &gbib; ja &pybliographer;, mis muudab tsiteerimise märgatavalt hõlpsamaks.</para>
+
+	</sect1>
+
+	<sect1 id="latex_usertags">
+
+		<title
+>Kasutaja määratud sildid</title>
+
+		<para
+>&kile; võimaldab sul luua oma silte. Silt on põhimõtteliselt kiirkorraldus, mis käivitab mingi käsu või kirjutab sinu eest sageli ettetuleva teksti. Oletame näiteks, et Julius Sarvik kasutab sageli väljendeid <userinput
+>Ma eelistan \LaTeX\it \TeX\ile</userinput
+> ja <userinput
+>Mida ma küll hakkaksin peale Linuxita?</userinput
+> Kasutaja määratud siltide loomiseks, mis paneks Juliuse eest need fraasid kirja, tuleb tal valida menüükäsk <menuchoice
+><guimenu
+>Kasutaja</guimenu
+><guisubmenu
+>Kasutaja sildid</guisubmenu
+><guimenuitem
+>Redigeeri kasutaja silte</guimenuitem
+></menuchoice
+>. See avab dialoogi, kus Julius saabki luua just selliseid silte, mida tal vaja läheb.</para>
+
+		<screenshot>
+			<screeninfo
+>Kasutaja siltide redigeerimise dialoog</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_editusertag.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Kasutaja siltide redigeerimise dialoog</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+		<screenshot>
+			<screeninfo
+>Kasutaja määratud sildi sisestamine</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_usertag.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Kasutaja määratud sildi sisestamine</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+		<para
+>Oma kahe sildi loomiseks, mida kirjutamisel sageli vaja läheb, annab Julius neile selgelt eristava nime. Sildile antav nimi tuleb sisestada sektsiooni <guilabel
+>Menüükirje</guilabel
+>, vastav tekst aga sektsiooni <guilabel
+>Väärtus</guilabel
+>. Kui vajalikud andmed on sisestatud, võin neid silte kasutada kiirklahvidega <keycombo
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>1</keycap
+></keycombo
+>, mis lisab esimese sildi teksti <userinput
+>Ma eelistan \LaTeX\it \TeX\ile</userinput
+>, ning <keycombo
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>2</keycap
+></keycombo
+>, mis lisab teise sildi teksti <userinput
+>Mida ma küll hakkaksin peale Linuxita?</userinput
+></para>
+
+		<sect2 id="latex_usertags_uc">
+
+			<title
+>Kohanäitajad kasutaja määratud siltides</title>
+
+			<para
+>Kasutaja määratud siltides saab pruukida mõningaid kohanäitajaid: <userinput
+>%S</userinput
+>, <userinput
+>%M</userinput
+> ja <userinput
+>%C</userinput
+>.</para>
+
+			<itemizedlist>
+				<listitem
+><para
+><userinput
+>%S</userinput
+>: asendab lähtefaili nime.</para
+></listitem>
+				<listitem
+><para
+><userinput
+>%M</userinput
+> tähistab märgitud teksti; valitud tekst lisatakse kasutaja määratud siltide tarvitamisel selle asemele.</para
+></listitem>
+				<listitem
+><para
+><userinput
+>%C</userinput
+>: sinna viiakse kursor pärast kasutaja määratud sildi lisamist.</para
+></listitem>
+			</itemizedlist>
+
+			<para
+>Selgitamaks, kuidas see toimib, oletame, et mul on kasutaja määratud silt väärtusega <userinput
+>\bfseries{%M}%C</userinput
+> ning ma olen dokumendis ära märkinud teksti, mille tahan panna rasvasesse kirja. Seega tõstan esile fraasi <userinput
+>Ma armastan reedet</userinput
+>, lisan kasutaja määratud sildi, vajutades <keycombo
+><keycap
+>Ctrl</keycap
+><keycap
+>Shift</keycap
+><keycap
+>1</keycap
+></keycombo
+> ning tulemuseks on fraas <userinput
+>\bfseries{Ma armastan reedet}</userinput
+>, kusjuures kursor asetseb fraasi lõpus.</para>
+
+		</sect2>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="build">
+
+	<title
+>Ehitamisvahendite kasutamine</title>
+
+	<sect1 id="build_sect">
+
+		<title
+>Kompileerimine, teisendamine ja vaatamine</title>
+
+		<para
+>Oma töö tulemuste nägemiseks tuleb kõigepealt lähtetekst kompileerida. Kõik ehitamisvahendid asuvad ilusasti üksteise kõrval menüüs: <menuchoice
+><guimenu
+>Ehitamine</guimenu
+><guisubmenu
+>Kompileeri</guisubmenu
+></menuchoice
+>, <menuchoice
+><guimenu
+>Ehitamine</guimenu
+><guisubmenu
+>Teisenda</guisubmenu
+></menuchoice
+>, and <menuchoice
+><guimenu
+>Ehitamine</guimenu
+><guisubmenu
+>Vaata</guisubmenu
+></menuchoice
+></para>
+
+		<para
+>Lähtekoodi kompileerimiseks ekraanivaatajate tarbeks, nagu &kdvi; või muud DVI vaatajad, või edasiseks teisendamiseks saab kasutada kiirklahvi <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>2</keycap
+></keycombo
+>. Seejärel võib vaadata DVI faili vaikevaatajas kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>3</keycap
+></keycombo
+>, teisendada DVI faili PS failiks kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>4</keycap
+></keycombo
+> ning vaadata PS faili kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>5</keycap
+></keycombo
+>.</para>
+
+		<sect2>
+
+		<title
+>&bibtex;</title>
+
+			<para
+>Kui kasutad bibliograafiakirjete jaoks <ulink url="http://www.ecst.csuchico.edu/~jacobsd/bib/formats/bibtex.html"
+>&bibtex;i</ulink
+>, tuleb kasutada järgmist spetsiaalset kompileerimisvõimalust.</para>
+
+			<procedure>
+				<step
+><para
+>Käivita &latex; kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>2</keycap
+></keycombo
+>.</para
+></step>
+				<step
+><para
+>Käivita &bibtex; kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>-</keycap
+></keycombo
+>: see kompileerib bibliograafiafaili.</para
+></step>
+				<step
+><para
+>Käivita &latex; uuesti <emphasis
+>kaks korda</emphasis
+>, et kaasata kompileeritud bibliograafiline info ning tuvastada korrektselt tsitaadid ja ristviited.</para
+></step>
+			</procedure>
+
+			<para
+>&bibtex;-faili võib vaadata ka lemmikust &bibtex;-redaktoriga (näiteks &gbib;), kui valida menüükäsk <menuchoice
+><guimenu
+>Ehitamine</guimenu
+><guisubmenu
+>Vaade</guisubmenu
+><guimenuitem
+>Vaata Bibtexi</guimenuitem
+></menuchoice
+>. Vaikimisi &bibtex;i vaatajat saab muuta menüükäsuga <menuchoice
+><guimenu
+>Seadistamine</guimenu
+><guisubmenu
+>Kile seadistamine...</guisubmenu
+><guilabel
+>Tööriistad</guilabel
+></menuchoice
+>.</para>
+
+		</sect2>
+
+		<sect2>
+
+			<title
+>MakeIndex</title>
+
+			<para
+>Kui kasutad oma dokumendile tähestikule indeksi loomiseks vahendit <ulink url="http://ipagwww.med.yale.edu/latex/makeindex.pdf"
+>&makeidx;</ulink
+>, tuleks samuti kasutada järgmist spetsiaalset kompileerimisvõimalust.</para>
+
+			<procedure>
+				<step
+><para
+>Käivita &latex; kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>2</keycap
+></keycombo
+>.</para
+></step>
+				<step
+><para
+>Loo indeks kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>=</keycap
+></keycombo
+>: see kompileerib indeksifaili.</para
+></step>
+				<step
+><para
+>Käivita &latex; uuesti kompileeritud indeksi info kaasamiseks.</para
+></step>
+			</procedure>
+
+		</sect2>
+
+		<sect2>
+
+			<title
+>MetaPost</title>
+
+			<para
+>Kui soovid kompileerida oma dokumendi pildijoonistamisrakendusega <application
+>MetaPost</application
+>, saab seda teha menüükäsuga <menuchoice
+><guimenu
+>Ehitamine</guimenu
+><guisubmenu
+>Kompileeri</guisubmenu
+><guimenuitem
+>Mpost</guimenuitem
+></menuchoice
+>.</para>
+
+		</sect2>
+		
+		<sect2>
+
+			<title
+>PDF&latex;</title>
+
+			<para
+>Dokumenti saab veel ühel moel kompileerida, kui  soovid saada PDF-faili: käivita PDF&latex;, mis kompileerib lähteteksti otse PDF-failiks, kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>6</keycap
+></keycombo
+>. Seejärel võib kompileeritud faili vaadata kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>7</keycap
+></keycombo
+>.</para>
+
+			<para
+>Teine võimalus on teisendada PS-fail PDF-failiks kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>8</keycap
+></keycombo
+> või DVI-fail otse PDF-failiks kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>9</keycap
+></keycombo
+>.</para>
+
+			<para
+>PDF&latex;i eelistamine &latex;ile võib olla lihtsuse või harjumuse küsimus, kuid kohati on kahe programmi käitumine üpris erinev.</para>
+			
+		</sect2>
+
+		<sect2>
+
+			<title
+>&latex;2HTML</title>
+
+			<para
+>Sul võib olla ka soov avaldada oma töö veebis, mitte aga paberil. Selleks saab kasutada programmi <application
+>latex2html</application
+>, mille saab käivitada &kile; menüükäsuga <menuchoice
+><guimenu
+>Ehitamine</guimenu
+><guisubmenu
+>Teisenda</guisubmenu
+><guimenuitem
+>LaTeX -> HTML</guimenuitem
+></menuchoice
+>. Tulemus asetatakse sinu töökataloogi alamkataloogi, teisenduse saadust võid näha menüükäsuga <menuchoice
+><guimenu
+>Ehitamine</guimenu
+><guisubmenu
+>Vaata</guisubmenu
+><guimenuitem
+>Vaata HTML-i</guimenuitem
+></menuchoice
+>.</para>
+
+		</sect2>
+
+		<sect2 id="build_cl">
+
+			<title
+>Käsurea parameetrid</title>
+
+			<para
+>Võib juhtuda, et soovid anda töövahenditele oma failide kompileerimiseks, teisendamiseks või vaatamiseks mõningaid spetsiaalseid käsureaparameetreid. Standardseid tööriistu saab seadistada menüükäsuga <menuchoice
+><guimenu
+>Seadistused</guimenu
+> <guimenuitem
+>&kile; seadistamine...</guimenuitem
+></menuchoice
+></para>
+
+		</sect2>
+	
+	</sect1>
+
+	<sect1 id="build_graphics">
+
+		<title
+>Graafikafaili vormingud</title>
+
+		<para
+>Pane tähele, et PDF&latex; suudab pakettide <userinput
+>graphics</userinput
+> või <userinput
+>graphicx</userinput
+> kasutamisel kompileerida korrektselt PDF-faili PNG- ja JPG-failid, aga mitte EPS-failid. Ja vastupidi, kompileerimine DVI-failiks ning teisendamine PS- või PDF-failiks toetab EPS-ide kasutamist, aga mitte PNG- ja JPG-faile. Selle kurvastava asjaolu lahendamiseks ning nii EPS- kui ka PNG- ja JPG-failide kaasamiseks on mitu erinevat võimalust:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+>EPS-failid on võimalik teisendada PNG või mõnesse muusse vormingusse näiteks rakendusega <ulink url="http://www.gimp.org/"
+><application
+>Gimp</application
+></ulink
+> ning seejärel kasutada PDF&latex;it.</para
+></listitem>
+			<listitem
+><para
+>Teisendamise võib ette võtta ka teistpidi ning tarvitada &latex;it ja PS->PDF teisendust. See ei ole siiski soovitatav, sest JPG- või PNG-failid EPS-idena on üldiselt väga suured, mis võib kaasa tuua tarbetult mahukate dokumentide tekkimise. Mõneti sõltub see siiski kasutatavast graafikarakendusest, sest EPS võib kaasata endasse muud graafikat, kuid mitte kõik rakendused ei toeta seda võimalust ühtmoodi hästi - kasutada oleks mõtet näiteks programmi <ulink url="http://www.tex.uniyar.ac.ru/win32/tools/jpg2ps/"
+><application
+>jpg2ps</application
+></ulink
+>.</para
+></listitem>
+			<listitem
+><para
+>Kui sul on vaja faili PS vormingus, kuid JPG- või PNG-failidega, võid lihtsalt kasutada kõigepealt PDF&latex;it ja seejärel käsureaprogrammi <application
+>pdftops</application
+> või, veelgi parem, määrata omaenda sildi (vaata <xref linkend="latex_usertags"/>).</para
+></listitem>
+		</itemizedlist>
+
+		<para
+>Kasuta õiget faili õige graafika jaoks!</para>
+
+	 	<itemizedlist>
+			<listitem
+><para
+>EPS on omamoodi vektorgraafika skriptikeel, mis kirjeldab kõiki jooni ja punkte, millest graafika koosneb. See ei kaota eriti suurendamisel ning sobib kõige paremini diagrammide ja vektorgraafika jaoks, mille loomupärane väljund ongi EPS, mis näeb välja väga puhas ja terav, olles samal ajal mahult väike.</para
+></listitem>
+			<listitem
+><para
+>PNG (või iganenud GIF) on <emphasis
+>kaotusteta</emphasis
+> failivorming korraliku tihenduse ja kvaliteediga. See sobib hästi diagrammide, jooniste ja kõige muu jaoks, kus on oluline säilitada teravus. Siiski on see mõnikord liiga ülepakutud fotode jaoks.</para
+></listitem>
+			<listitem
+><para
+>JPG on <emphasis
+>kaotustega</emphasis
+> vorming, mis tihendab faile paremini kui PNG, ent kaotab sellevõrra omajagu pilditäpsuses. Fotode korral ei ole see tavaliselt oluline, kuid diagrammide ja jooniste puhul võib tulemuseks olla kesine kvaliteet ning mõned peenemad read võivad sootuks kaduma minna. Sellisel kuhul on EPS või PNG kindlasti parem valik.</para
+></listitem>
+		</itemizedlist>
+
+		<para
+>Kuid pea alati meeles: kus rämpsu juba on, seal seda vähemaks ei jää! Ükski teisendus ei saa muuta kehva pilti heaks.</para>
+
+	</sect1>
+
+	<sect1 id="build_master">
+
+		<title
+>Põhidokument</title>
+
+		<para
+>Dokumendi määratlemine põhidokumendina võimaldab töötada erinevate failidega, nii et sul on ülemdokument (ehk põhidokument) ja töö juurde käivad alamdokumendid. Pärast põhidokumendi määramist vastava käsuga menüüs <guimenu
+>Seadistused</guimenu
+> käivad kõik menüü <guimenu
+>Tööriistad</guimenu
+> vahendusel antud käsud ainult selle dokumendi kohta isegi juhul, kui töötatakse alamdokumentidega. Põhimõtteliselt võib peadokumendi isegi sulgeda.</para>
+	</sect1>
+
+	<sect1 id="build_errorhandling">
+
+		<title
+>Veahaldusest lähemalt</title>
+
+		<para
+>Pärast kompileerimist uurib &kile; lähemalt genereeritud veateateid. Kui esineb vigu või hoiatusi, antakse neist teada logi/teadeteaknas. Teateid saab lähemalt uurida menüükäsuga <menuchoice
+><guimenu
+>Ehitamine</guimenu
+> <guimenuitem
+>Vaata logi</guimenuitem
+></menuchoice
+> või kiirklahviga <keycombo
+><keycap
+>Alt</keycap
+><keycap
+>0</keycap
+></keycombo
+>. Genereeritud logi näidatakse siis logi/teadeteaknas ning vead ja hoiatused on esile tõstetud.</para>
+
+		<screenshot>
+			<screeninfo
+>Logi vaatamine</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_compile_error.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Logi vaatamine</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+		<para
+>Logifaili ühelt teatelt teisele saab hõlpsasti hüpata menüükäsuga <menuchoice
+><guimenu
+>Ehitamine</guimenu
+> <guimenuitem
+>Järgmine/Eelmine LaTeXi viga/hoiatus</guimenuitem
+></menuchoice
+> või vastavat tööriistariba nuppu klõpsates.</para>
+
+		<para
+>Hüppamaks &latex;i lähtetekstis reale, kus viga esineb, klõpsa logi/teadeteaknas lihtsalt vastaval veal/hoiatusel. &kile; viib su automaatselt vigasele reale.</para>
+
+	</sect1>
+
+	<sect1 id="build_watch">
+
+			<title
+>Faili jälgimise kasutamine</title>
+
+			<para
+>Kui käivitad käsu <guibutton
+>Kiire ehitamine</guibutton
+>, avatakse tavaliselt pärast kompileerimist mingi vaatamisrakendus. Kui sa ei kasuta põimitud vaatajat, avatakse alati uus aken.</para>
+
+			<para
+>Dokumendi välimuse kohendamisel võib juhtuda, et käivitad käsku <guibutton
+>Kiire ehitamine</guibutton
+> päris sageli ja su töölaud kattub aina uute avanevate akendega. Selle vältimiseks võib sisse lülitada <guibutton
+>faili jälgimise</guibutton
+> režiimi, mis takistab käsul <guibutton
+>Kiire ehitamine</guibutton
+> vaataja akent avamast.</para>
+			
+			<para
+>Hetkel toetab &kdvi; vaadatava DVI-faili korduvat uuendamist, kuid &kghostview; pole sugugi täiuslik: dokumendi uuendamiseks pärast kompileerimist tuleb sul muuta lehekülge, kuid &kghostview; ei näita seda muutust.</para>
+			
+			<para
+>Põimitud vaataja korral on see režiim mõistagi kasutu, sest sel juhul sulged nagunii akna, et pääseda tagasi dokumendi redigeerimise ja uue kompileerimise võimaluse juurde.</para>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="navigating">
+
+	<title
+>Liikumine &latex;i lähtetekstis</title>
+
+	<sect1 id="navigating_struct">
+
+		<title
+>Struktuurivaate kasutamine</title>
+
+		<para
+><guilabel
+>Struktuurivaade</guilabel
+> näitab &kile;s loodava dokumendi struktuuri ning võimaldab selles kiiresti liikuda. Dokumendis liikumiseks on vaja vaid hiire vasaku nupuga klõpsata mis tahes pealdisel, peatükil, sektsioonil, alamsektsioonil ja nii edasi ning sind viiakse vastava ala algusesse.</para>
+		
+		<para
+>Kui kaasad faili &latex;i dokumenti sildiga <userinput
+>\input</userinput
+> või <userinput
+>\include</userinput
+>, sisaldab <guilabel
+>struktuurivaade</guilabel
+> vastavat faili esindavat elementi. Topeltklõps failinimel paneb &kile; kaasatud faili redaktoriaknas näitama.</para>
+		
+		<para
+>Hierarhiapuus on omaette haru ka tekstis kasutatud pealdistele.</para>
+
+		<screenshot>
+			<screeninfo
+>Struktuurivaate kasutamine</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_structview_label.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Struktuurivaate kasutamine</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+		<sect2 id="navigating_update">
+
+			<title
+>Struktuurivaate uuendamine</title>
+
+			<para
+>Struktuurivaate uuendamiseks kasuta menüükäsku <menuchoice
+><guimenu
+>Redigeerimine</guimenu
+><guimenuitem
+>Uuenda struktuuri</guimenuitem
+></menuchoice
+> või salvesta dokument, mis samuti sunnib &kile; värskendama <guilabel
+>struktuurivaadet</guilabel
+>.</para>
+
+		</sect2>
+
+	</sect1>
+
+	<sect1 id="navigating_bookmarks">
+
+		<title
+>Järjehoidjad</title>
+
+		<para
+>Järjehoidjad viitavad tekstiosale või reale &kile; keskkonnas. Järjehoidja tarvitamiseks vali dokumendis rida, mille juurde soovid hiljem naasta, vajuta <keycombo
+><keycap
+>Ctrl</keycap
+> <keycap
+>B</keycap
+></keycombo
+> ja &kile; lisabki automaatselt sellele reale järjehoidja. Järjehoidja saab määrata ka siis, kui märkida ära rida, mille juurde soovid hiljem naasta, ja valida menüükäsk <menuchoice
+><guimenu
+>Järjehoidja</guimenu
+><guimenuitem
+>Lülita järjehoidjat</guimenuitem
+></menuchoice
+>.</para>
+
+		<para
+>Järjehoidjate eemaldamiseks kasuta menüükäsku <menuchoice
+><guimenu
+>Järjehoidjad</guimenu
+> <guimenuitem
+>Puhasta järjehoidjad</guimenuitem
+></menuchoice
+>.</para>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="projects">
+
+	<title
+>Projektid</title>
+
+	<sect1 id="projects_working">
+	
+		<title
+>Projektide kasutamine</title>
+
+		<para
+>&kile; pakub võimalust luua ja kasutada <emphasis
+>projekte</emphasis
+>. Projekt on rühm &latex;i, &tex;i või muid dokumente, mis kõik on seotud sinu põhidokumendiga. Projekti tüüpiline näide on mitmest peatükist koosnev dokument, kus peatükid kujutavad endast erinevaid <filename
+>.tex</filename
+>-faile. Kõik need võib kaasata projekti, mis muudab tervikdokumendi haldamise märksa hõlpsamaks. Projekti saab salvestada faile, mis ei kujuta endast lähteteksti, näiteks graafikafailid. Projekti spetsifikatsioon salvestatakse spetsiaalsesse faili laiendiga .kilepr.</para>
+
+		<para
+>Projekt pakub järgmisi võimalusi:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+>Põhidokumenti pole vaja määrata, &kile; teeb seda automaatselt</para
+></listitem>
+			<listitem
+><para
+>Projektifaile saab hõlpsasti koos arhiveerida</para
+></listitem>
+			<listitem
+><para
+>Vaade <guilabel
+>Failid ja projektid</guilabel
+> näitab, millised failid on dokumenti kaasatud.</para
+></listitem>
+			<listitem
+><para
+>Pärast projekti avamist taastatakse kõik varem avatud failid esialgse kodeeringu ja esiletõstmistega.</para
+></listitem>
+		</itemizedlist>
+
+	</sect1>
+
+	<sect1 id="projects_creating">
+
+		<title
+>Projekti loomine</title>
+
+		<para
+>Projekti loomiseks vali menüükäsk <menuchoice
+><guimenu
+>Projekt</guimenu
+> <guimenuitem
+>Uus projekt...</guimenuitem
+></menuchoice
+>. Projekti loomiseks päritakse sinu käest järgmisi asju:</para>
+		<itemizedlist>
+			<listitem
+><para
+>Sinu projekti pealkiri</para
+></listitem>
+			<listitem
+><para
+>Projektifaili nimi laiendiga .kilepr</para
+></listitem>
+			<listitem
+><para
+>Failinimi</para
+></listitem>
+			<listitem
+><para
+>Faili tüüp: tühi dokument, artikkel, raamat, kiri, raport</para
+></listitem>
+		</itemizedlist>
+
+		<para
+>Kui täidad kasti <guilabel
+>failinimi</guilabel
+>, tuleb määrata ka selle faili asukoht projektifaili (laiendiga .kilepr) suhtes.</para>
+
+	</sect1>
+
+	<sect1 id="projects_view">
+
+		<title
+>Faili ja projekti vaate kasutamine</title>
+
+		<para
+><guilabel
+>Faili ja projekti vaate</guilabel
+> nupp kujutab endast kaht paberilehte. Selles vaates on võimalik näha projekti struktuuri, selles olevaid faile ning projekti infot sisaldava .kilepr-faili nime. Failide lisamine projekti, nende eemaldamine või projekti seadistamine käibki ennekõike <guilabel
+>faili ja projekti</guilabel
+> vaate abil.</para>
+
+		<screenshot>
+			<screeninfo
+>Faili ja projekti vaade</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_projectview.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Faili ja projekti vaade</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+	</sect1>
+
+	<sect1 id="projects_adding">
+
+		<title
+>Failide lisamine ja eemaldamine</title>
+
+		<para
+>Faili lisamiseks projekti ava vajalik &tex;-fail, klõpsa selle nimel <guilabel
+>faili ja projekti</guilabel
+> vaates hiire parema nupuga ning vali <guilabel
+>Lisa projekti</guilabel
+>. Kui sul on avatud mitu projekti, küsib dialoog, millisesse projekti fail lisada.</para>
+
+		<para
+>Kui tahad lisada projekti mitu faili, vali <guilabel
+>faili ja projekti</guilabel
+> vaates projekt, klõpsa sellel hiire parema nupuga ja vali <guilabel
+>Lisa fail</guilabel
+>. Seejärel saab vajalikud failid valida ilmuvas dialoogis.</para>
+		
+		<para
+>Samuti võib klõpsata <guilabel
+>faili ja projekti</guilabel
+> vaates projekti nimel hiire parema nupuga ning valida <guilabel
+>Lisa failid...</guilabel
+>. Seejärel saab vajalikud failid valida ilmuvas dialoogis.</para>
+
+		<screenshot>
+			<screeninfo
+>Faili lisamine projekti</screeninfo>
+			<mediaobject>
+			<imageobject>
+			<imagedata fileref="snap_projectview_add.png" format="PNG"/>
+			</imageobject>
+			<textobject>
+			<phrase
+>Faili lisamine projekti</phrase>
+			</textobject>
+			</mediaobject>
+		</screenshot>
+
+		<para
+>Faili eemaldamiseks projektist klõpsa failinimel hiire parema nupuga ja vali <guilabel
+>Eemalda fail</guilabel
+>. Sinu fail eemaldataksegi projektist. See <emphasis
+>ei</emphasis
+> kustuta faili, vaid ainult eemaldab selle projektifailide nimekirjast.</para>
+
+	</sect1>
+
+	<sect1 id="projects_options">
+
+		<title
+>Projekti seadistuste muutmine</title>
+
+		<para
+>&kile; pakub mõned võimalused muuta projekti seadistusi. Selleks klõpsa hiire parema nupuga projekti pealkirjal ja vali <guilabel
+>Projekti valikud</guilabel
+>. Seejärel on võimalik muuta järgmisi asju:</para>
+
+		<itemizedlist>
+			<listitem
+><para
+>Projekti pealkiri</para
+></listitem>
+ 			<listitem
+><para
+>Arhiveerimiskäsk</para
+></listitem>
+ 			<listitem
+><para
+>Mitte-lähtetekstifailide tunnustatud laiendid</para
+></listitem>
+ 			<listitem
+><para
+>Võimalus kasutada faililaiendeid regulaaravaldistena.</para
+></listitem>
+		</itemizedlist>
+
+		<sect2 id="projects_archive">
+
+			<title
+>Projekti arhiveerimine</title>
+
+			<para
+>&kile; võimaldab vähese vaevaga teha projektist varukoopia, salvestades kõik projekti failid ühte arhiivi. Projekti arhiveerimiseks klõpsa <guilabel
+>faili ja projekti</guilabel
+> vaates hiire parema nupuga projekti nimele või vali menüükäsk <menuchoice
+><guimenu
+>Projekt</guimenu
+> <guimenuitem
+>Arhiveeri</guimenuitem
+></menuchoice
+>.</para>
+
+			<para
+>Vaikimisi lisatakse arhiivi projekti kõik failid. Kui sa aga ei soovi mõne faili arhiveerimist, klõpsa <guilabel
+>faili ja projekti</guilabel
+> vaates hiire parema nupuga vastaval faili ja lülita võimalus <guilabel
+>Kaasa arhiivi</guilabel
+> välja.</para>
+
+			<para
+>Arhiveerimiskäsud on shellikäsud, mis käivitatakse projektikataloogis (koht, kus on salvestatud .kilepr-fail). Käsu kirjutamisel võib kasutada järgmisi kohanäitajaid:</para>
+
+			<itemizedlist>
+				<listitem
+><para
+><userinput
+>%S</userinput
+>: asendatakse projektifaili nimega ilma laiendita .kilepr.</para
+></listitem>
+				<listitem
+><para
+><userinput
+>%F</userinput
+>: asendatakse arhiivi kaasatavate failide loendiga.</para
+></listitem>
+			</itemizedlist>
+
+		</sect2>
+
+		<sect2 id="projects_ext">
+
+			<title
+>Mitte-lähtetekstifailide laiendid</title>
+
+			<para
+>Mitte-lähtetekstifailid on pildid, PDF-failid, PostScript jne., mis samuti kaasatakse projekti, kuid mis ei ole laiendiga .tex lähtetekstifailid. Sul on võimalik kasutada regulaaravaldisi selliste mitte-lähtetekstifailide tuvastamiseks.</para>
+
+		</sect2>
+
+	</sect1>
+
+	<sect1 id="projects_closing">
+
+		<title
+>Projekti sulgemine</title>
+
+		<para
+>Projekti sulgemiseks vali <guilabel
+>faili ja projekti</guilabel
+> vaade, klõpsa hiire parema nupuga projekti nimel ning vali <guimenuitem
+>Sulge</guimenuitem
+>. See käsk sulgeb projekti ning kõik sellega seotud failid ja lisab ka suletud projekti nime menüüs <guimenu
+>Projekt</guimenu
+> valikusse <guisubmenu
+>Ava hiljutine projekt...</guisubmenu
+>.</para>
+
+	</sect1>
+
+</chapter>
+
+<chapter id="lang">
+
+	<title
+>Dokumendi kodeeringu määramine</title>
+
+	<para
+>&kile; üks võimsaid eeliseid on oskus lugeda, teisendada ja määrata tekstile just see kodeering, mida sa vajad. See lubab kasutada mittestandardseid tähti ja sümboleid, nii saab tarvitada näiteks itaalia või prantsuse keele rõhumärkidega tähti. Dokumendi kodeeringu saab valida kolmel moel:</para>
+
+	<itemizedlist>
+		<listitem
+><para
+>Kasutades liitkasti <guilabel
+>kodeering</guilabel
+>, mis asub <guilabel
+>faili avamise</guilabel
+> vaate allosas.</para
+></listitem>
+		<listitem
+><para
+>Kasutades menüükäsku <menuchoice
+><guimenu
+>Vaade</guimenu
+> <guimenuitem
+>Sea kodeering</guimenuitem
+></menuchoice
+>.</para
+></listitem>
+		<listitem
+><para
+>Valides vastava võimalus uue dokumendi loomisel nõustajas.</para
+></listitem>
+	</itemizedlist>
+
+	<para
+>Traditsiooniliselt mõistab &latex; ainult piiratud hulka sümboleid (ASCII), mis ei luba rõhumärkidega tähti või erisümboleid vahetult sisestada. Rõhumärkidega tähtede kasutamiseks pruugib &latex; lahendusena süntaksit, mis võimaldab selliseid tähti siiski kasutada, näiteks <userinput
+>\"e</userinput
+> <computeroutput
+>ë</computeroutput
+> jaoks. Selles aitab omaette pakett <application
+>inputenc</application
+>, mis on kaasatud preambulasse käsuga <userinput
+>\usepackage[latin1]{inputenc}</userinput
+>, kus võti tähistab kodeeringut, mida tahad kasutada (enamasti peaks sobima <userinput
+>latin1</userinput
+>). See annab &latex;ile korralduse tõlgendada kõik <userinput
+>ë</userinput
+> dokumendis kujule <userinput
+>\"e</userinput
+>. Rohkem infot <application
+>inputenc</application
+> kohta leiab <application
+>inputenc</application
+> dokumentatsioonist. Kontrolli, et fail oleks ka <emphasis
+>tegelikult</emphasis
+> selles kodeeringus, mida väidab <application
+>inputenc</application
+>!</para>
+
+	<screenshot>
+		<screeninfo
+>Lähteteksti kodeeringu valimine</screeninfo>
+		<mediaobject>
+		<imageobject>
+		<imagedata fileref="snap_encoding.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		<phrase
+>Lähteteksti kodeeringu valimine</phrase>
+		</textobject>
+		</mediaobject>
+	</screenshot>
+
+	<para
+>Erinevate sümbolite hiigelhulk tekitab probleeme paljudele rakendustele, mistõttu on jõutud üldisele veendumusele, et varem või hiljem on vajalik kasutusele võtta <ulink url="http://www.unicode.org"
+>Unicode</ulink
+>. Unicode erinevaid teostusi liigub päris mitu, Linuxi maailmas on neist kõige edukam olnud utf-8, samas Windows&reg; kasutab mõneti kohmakamat ja mitte nii paindlikku <abbrev
+>ucs-2</abbrev
+>. Mõned distributsioonid, näiteks RedHat, on juba hakanud oma vaikekodeeringuna kasutama <abbrev
+>utf-8</abbrev
+>, mistõttu ka sulle võiks huvi pakkuda argumendi <userinput
+>utf8</userinput
+> tarvitamine paketi <userinput
+>inputenc</userinput
+> korral.</para>
+
+	<para
+>Halb on see, et see ei olnud vähemalt käsiraamatu kirjutamise ajal &tetex;isse kaasatud, kuid samas on hea see, et <emphasis
+>on</emphasis
+> olemas &latex;i pakett, mis suudab seda teha, kuigi see tuleb ise paigaldada.</para>
+
+	<sect1 id="ucs">
+	
+		<title
+>&ucs;-pakett</title>
+		
+		<para
+>&ucs;-paketi saab selle koduleheküljelt <ulink url="http://www.unruh.de/DniQ/latex/unicode/"
+>Unicode support for &latex;</ulink
+>, mida haldab Karlsruhe ülikoolis tegutsev Dominique Unruh.</para>
+		
+		<para
+>Selle paigaldamiseks paki allalaaditud fail lahti ja paiguta lahtipakitud sisu kataloogi, kus &tex; seda otsida oskab. See võiks olla näiteks <userinput
+>/usr/share/texmf/tex/latex/ucs/</userinput
+> (kontrolli igal juhul, et see oleks keskkonnamuutuja $<envar
+>TEXMF</envar
+> tegelik määrang, sest mõnikord kipuvad distributsioonid seda muutma!). Kui kataloog seda veel ei ole, muuda see globaalselt kättesaadavaks ning anna alamkataloogidele käivitamise õigus käsuga <command
+>chmod</command
+>. Kõike seda tuleb teha administraatorina (root), nii et ole ettevaatlik.</para>
+		
+		<para
+>Kui oled valmis, käivita käsk <command
+>texhash</command
+>, et &tex; vaataks oma failid uuesti üle ja loodetavasti leiaks ka uue paketi. Täpsemat infot leiab paketi dokumentatsioonist, kuid enamasti on vaja lihtsalt lisada preambulasse järgmised käsud: <screen
+><userinput>
+                \usepackage{ucs}
+                \usepackage[utf8x]{inputenc}</userinput
+></screen
+></para>
+		
+	</sect1>
+	
+	<sect1 id="cjk">
+		
+		<title
+>Hiina, jaapani ja korea keele (&cjk;) toetus</title>
+		
+		<para
+>Ideograafiliste kirjade toetuse lisamine on üsna keerukas. Kui oled aga sellega hakkama saanud, peaks see täiesti korralikult töötama. Lisaks pakettide paigaldamisele tuleb siin ka üht-teist seadistada.</para>
+		
+		<tip
+><para
+>Võimalik, et sinu Linuxi distributsioon on juba &cjk;-paketi valmis pakendanud, mis vähendab märgatavalt vaeva kõige käsitsi paigaldamisega võrreldes. Kontrolli seda kindlasti!</para
+></tip>
+		
+		<para
+>Lühikeste &cjk;-tekstijuppide kirjutamiseks saab heal juhul kasutada ka &ucs;-paketti, aga see on tõesti väga piiratud, näiteks ei nii võimalik isegi reavahetusi korralikult määrata. Seepärast oleks mõttekas paigaldada täielik &cjk;-&latex;-pakett ja panna see tööle nii &latex; kui PDF&latex;i tarbeks. Suur osa siinsest tekstist on saanud innustust <ulink url="http://www.ece.uci.edu/~chou/"
+>Pai H. Chou</ulink
+> <ulink url="http://www.ece.uci.edu/~chou/unicode-tex.html"
+>veebileheküljest PDF&latex;i häälestamise kohta</ulink
+>.</para>
+		
+		<orderedlist>
+		
+		<listitem
+><para
+>Laadi alla <ulink url="http://www.ctan.org/tex-archive/help/Catalogue/entries/cjk.html"
+>&cjk;-pakett</ulink
+>. Kopeeri selle lahtipakitud failid $<envar
+>TEXMF</envar
+> vastavasse alamkataloogi täpselt nii, nagu see käib &ucs;-paketi puhul (vaata <xref linkend="ucs"/>). Failid pakitakse lahti kataloogi <filename
+>CJK/X_Y.Z</filename
+>. Neid ei ole oluline välja võtta, kuigi see muudab vahest hooldamise hiljem veidi vaevalisemaks.</para
+></listitem>
+		
+		<listitem
+><para
+>Nüüd tuleb alla laadida font, mis toetaks kõiki &cjk; sümboleid, mida sul vaja läheb. Sa võid valida igasuguse sobiva <literal role="extension"
+>*.ttf</literal
+>-faili, kuid siinkohal on meil näiteks <ulink url="ftp://ftp.netscape.com/pub/communicator/extras/fonts/windows/Cyberbit.ZIP"
+>Cyberbit</ulink
+>. Paki fail lahti ja nimeta <filename
+>Cyberbit.ttf</filename
+> ümber <filename
+>cyberbit.ttf</filename
+>, sest suured tähed võivad süsteemi segadusse ajada.</para>
+		<para
+>Paiguta <filename
+>cyberbit.ttf</filename
+> kataloogi koos failiga <ulink url="http://delloye.free.fr/Unicode.sfd"
+><filename
+>Unicode.sfd</filename
+></ulink
+> ning genereeri <literal role="extension"
+>*.tfm</literal
+>- ja <literal role="extension"
+>*.enc</literal
+>-failid käsuga <command
+>$ ttf2tfm cyberbit.ttf -w cyberbit@Unicode@</command
+>. Vahel ei pruugi see mingil põhjusel tekitada ettenähtud sadu faile. Sellisel juhul võid alla laadida nii <ulink url="http://www.ece.uci.edu/~chou/unicode/cyberbit-tfm.tgz"
+><literal role="extension"
+>*.tfm</literal
+></ulink
+>- kui ka <ulink url="http://www.ece.uci.edu/~chou/unicode/cyberbit-enc.tgz"
+><literal role="extension"
+>*.enc</literal
+></ulink
+>-failid.</para>
+		<para
+>Paiguta <literal role="extension"
+>*.tfm</literal
+>-failid sobivasse kataloogi, näiteks <filename
+>$TEXMF/fonts/tfm/bitstream/cyberbit/</filename
+>. <literal role="extension"
+>*.enc</literal
+>-failid võib paigutada näiteks kataloogi <filename
+>$TEXMF/pdftex/enc/cyberbit/</filename
+>.</para
+></listitem>
+		
+		<listitem
+><para
+>Nüüd läheb vaja seosefaili, mis ühendaks <literal role="extension"
+>*.enc</literal
+>-failid fondiga. Laadi alla <ulink url="http://delloye.free.fr/cyberbit.map"
+><filename
+>cyberbit.map</filename
+></ulink
+> ja paigalda see kataloogi <filename
+>$TEXMF/pdftex/config/</filename
+>.</para
+></listitem>
+		
+		<listitem
+><para
+>Laadi alla ka <ulink url="http://delloye.free.fr/c70cyberbit.fd"
+><filename
+>c70cyberbit.fd</filename
+></ulink
+> ja paiguta see sobivasse kataloogi, näiteks <filename
+>$TEXMF/tex/misc/</filename
+>.</para
+></listitem>
+		
+		<listitem
+><para
+>Lõpuks on meil vaja genereerida PostScript Type 1 font, mida on tarvis &latex;iga tekitatud DVI-failide lugemisel. Käivita käsk <command
+>$ ttf2pfb cyberbit.ttf -o cyberbit.pfb</command
+> ja kopeeri saadud <filename
+>cyberbit.pfb</filename
+> sobivasse kataloogi, näiteks <filename
+>$TEXMF/fonts/type1/cyberbit/</filename
+>.</para
+></listitem>
+		
+		<listitem
+><para
+>Seame nüüd <filename
+>cyberbit.ttf</filename
+> fontide sekka, mida &latex; suudab leida ja kasutada. See tuleks paigutada kataloogi <filename
+>$TEXMF/fonts/truetype/</filename
+>.</para
+></listitem>
+		
+		<listitem
+><para
+>Kontrolli konfiguratsioonifaili <filename
+>$TEXMF/web2c/texmf.cnf</filename
+> ja veendu, et rida, kus seisab <envar
+>TTFONTS</envar
+>, oleks kommenteerimata ning osutaks kataloogile, kuhu salvestasid <filename
+>cyberbit.ttf</filename
+>.</para
+></listitem>
+		
+		<listitem
+><para
+>Et PDF&latex; saaks &cjk; fonte kasutada, tuleb lisada rida konfiguratsioonifaili <filename
+>$TEXMF/pdftex/config/pdftex.cfg</filename
+>. Lisa <userinput
+>map +cyberbit.map</userinput
+> faili ja PDF&latex; on seadistatud.</para
+></listitem>
+		
+		<listitem
+><para
+>&latex;i seadistamiseks, et see saaks tekitada &cjk; sümbolitega DVI-faile, tuleb lisada rida faili <filename
+>ttfonts.map</filename
+>. Fail võib asuda kataloogis <filename
+>$TEXMF/ttf2pk/</filename
+>, aga võib-olla ka mitte. Lisa sellesse rida <userinput
+>cyberbit@Unicode@ cyberbit.ttf</userinput
+>.</para
+></listitem>
+		
+		<listitem
+><para
+>Nüüd tuleb käivitada <command
+>texhash</command
+> ja süsteem peaks korras olema.</para
+></listitem>
+		
+		</orderedlist>
+		
+		<para
+>Seadistuse testimiseks võid proovida kompileerida <ulink url="http://www.math.nus.edu.sg/aslaksen/cs/sample-utf8.tex"
+>seda testfaili</ulink
+>.</para>
+		
+		<sect2>
+			<title
+>&cjk; probleemid</title>
+			
+			<para
+>&cjk; toetuse käsitsi lisamisel võib päris palju asju viltu minna. Kui see ei paista korralikult töötavat, võiks kontrollida järgmisi asju.</para>
+			
+			<itemizedlist>
+			
+			<listitem
+><para
+>On selge, et kui kasutada &latex;it kasutajana, mitte administraatorina (root), tuleb sul <emphasis
+>lubada</emphasis
+> ka tavalistele kasutajatele ligipääs uutele failidele. Kasuta käsku <command
+>chmod</command
+> ning kontrolli, et kõik kataloogid ja failid on selliste õigustega.</para
+></listitem>
+			
+			<listitem
+><para
+>Kui &latex; kirjutab DVI probleemideta, aga sa ei näe seda, on ilmselgelt midagi viga <literal role="extension"
+>*.pk</literal
+>-fontide automaatse tekitamisega. Need peaks lennult loodama DVI-faili vaatamisel, aga see võib mitmel põhjusel ebaõnnestuda. Kontrolli kõigepealt üle faili <filename
+>ttfonts.map</filename
+> lisatud read. Samuti võib juhtuda, et käsk <command
+>ttf2pk</command
+>, mille DVI-näitaja tavaliselt välja kutsub, on kompileeritud <emphasis
+>ilma</emphasis
+> <application
+>kpathsea</application
+> teekide toetuseta. Sellisel juhul ei ütle käsk <command
+>$ ttf2pk --version</command
+> midagi <application
+>kpathsea</application
+> kohta. Et nende teekide toetus on hädavajalik, tuleks otsida uus pakett või kompileerida <application
+>FreeType 1</application
+> ise uuesti.</para
+></listitem>
+			
+			</itemizedlist>
+			
+		</sect2>
+			
+		
+		<sect2>
+		
+			<title
+>Kuidas sisestada &cjk; Unicode'is?</title>
+			
+			<para
+>Sisendmootoreid on päris mitu ja valik sõltub rohkem sinu eelistustest. Käesoleva käsiraamatu autori lemmikuks on <ulink url="http://www.scim-im.org/projects/skim"
+><application
+>Skim</application
+></ulink
+>, mis kujutab endast mootori <ulink url="http://www.scim-im.org"
+><application
+>Scim</application
+></ulink
+> porti &kde; jaoks. Uuri oma distributsiooni dokumentatsioonist, kuidas neid programme paigaldada. Ka nende programmide seadistamine ei pruugi olla lihtne, näiteks <application
+>Skim</application
+>i puhul tuleb defineerida keskkonnamuutuja <userinput
+>XMODIFIERS="@im=SCIM"</userinput
+> <emphasis
+>enne</emphasis
+> <application
+>X</application
+>'i käivitamist.</para>
+		
+		</sect2>
+	
+	</sect1>
+
+</chapter>
+
+<chapter id="credits">
+
+	<title
+>Autorid ja litsents</title>
+
+	<para
+>&kile; on kasutajasõbralik vaba tarkvara &latex;/&tex; lähteteksti redaktor. See töötab süsteemides, kuhu on paigaldatud &kde; töölaua keskkond. &kde; on saadaval erinevate Linuxi ja muude UNIXi-laadsete süsteemide jaoks. &kile; on ka osa projektist Fink, mis tähendab, et &kile;t saab kasutada isegi Mac OS-X tingimustes!</para>
+
+	<para
+>Suur tänu kuulub kõigile neile, kes on aidanud vedada &kile; projekti ja kulutanud arvukalt tunde arendusvahenditele, mida me kõik võime kasutada vastavalt <acronym
+>GNU</acronym
+> litsentsile. Toome siin lühidalt ära programmeerijad, redigeerijad, tõlkijad, kirjutajad, silujad, pakendajad, veebiarendajad ja kasutajad, tänu kellele on see projekt teoks saanud.</para>
+
+	<para
+>Rakenduse autoriõigus 2003 ja praegune hooldaja: Jeroen Wijnhout <email
+>Jeroen.Wijnhout@kdemail.net</email
+></para>
+
+	<para
+>Rakenduse autoriõigus 2002-2003: Pascal Brachet</para>
+
+	<para
+>&kile; sisaldab vaba (GPL) rakenduse <application
+>Xgfe</application
+> (X Windowsi graafiline kasutajaliides &gnuplot;i jaoks) lähtekoodi, mille autoriõigus &copy; 1998: David Ishee</para>
+
+	<para
+>Dokumentatsiooni autoriõigus &copy; 2003: Jonathan Pechta, 2003-2005: Rederico Zenith (lõplik viimistlemine)</para>
+
+	<para
+>Kaasautorid: Rob Lensen, Roland Schulz, Michael Margraf</para>
+
+	<para
+>Suur tänu kõigile kaasalöönutele!</para>
+&underFDL; &underGPL; </chapter>
+
+&documentation.index;
+
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+-->

@@ -1,0 +1,22 @@
+TODO
+ - allow users to set a preferred shell
+  
+ - improving template support
+ 
+ - create a plain text importer (one that would convert % to \%, $ to \$ etc.)
+ 
+ - create a fast powerful (La)TeX parser
+
+- recursive sectioning: also parse sections that were inserted with
+ \input or \include (optional)
+
+- file_selector could use a configurable filter. Now only *.tex files are
+ shown, some people might use a .ltx extension for their LaTeX files (or
+ something completely different).
+
+- #142987 project load crash
+
+- strange ref error see http://sourceforge.net/forum/forum.php?thread_id=1746112&forum_id=292014 and BTS
+
+docu:
+- explain tool stuff and the magic %... abbreviations

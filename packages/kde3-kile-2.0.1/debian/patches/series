@@ -1,0 +1,7 @@
+01_admin_cleanup.diff
+02_autotools_update.diff
+03_libtool_update.diff
+04_am_maintainer_mode.diff
+05_pedantic-errors.diff
+06_disable_no_undefined.diff
+98_buildprep.diff

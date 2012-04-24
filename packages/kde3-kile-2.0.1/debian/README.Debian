@@ -1,0 +1,10 @@
+kile for Debian
+---------------
+
+Kile no longer comes with a Gnuplot front end. The Gnuplot front end that used
+to be part of Kile is now a separate application named Qgfe maintained by
+Pascal Brachet at http://www.xm1math.net/qgfe/ .
+
+Syntax files bibtex.xml and latex.xml are provided by kdelibs-data package.
+
+ -- Ben Burton <bab@debian.org>, Sat, 23 Oct 2004 12:56:57 +1000

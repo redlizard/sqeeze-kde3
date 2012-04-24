@@ -74,7 +74,9 @@ katapult
 kdbg
 kdesudo
 kdiff3
+kile
 konversation
+ktorrent
 yakuake
 "
 

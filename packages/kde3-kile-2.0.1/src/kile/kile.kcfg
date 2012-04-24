@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+	<include>qapplication.h</include>
+	<include>qstring.h</include>
+	<include>qtextcodec.h</include>
+	<include>qdir.h</include>
+
+	<kcfgfile name="kilerc"/>
+
+	<group name="VersionInfo">
+		<entry name="RCVersion" type="Int">
+			<label>The resource file version.</label>
+			<default>0</default>
+		</entry>
+	</group>
+	<group name="Geometries">
+		<entry name="horizontalSplitterLeft" type="Int">
+			<label></label>
+			<default>100</default>
+		</entry>
+		<entry name="horizontalSplitterRight" type="Int">
+			<label></label>
+			<default>350</default>
+		</entry>
+		<entry name="verticalSplitterTop" type="Int">
+			<label></label>
+			<default>350</default>
+		</entry>
+		<entry name="verticalSplitterBottom" type="Int">
+			<label></label>
+			<default>100</default>
+		</entry>
+		<entry name="MainwindowWidth" type="Int">
+			<label>The main window's width.</label>
+			<default code="true">
+				QApplication::desktop()->screenGeometry().width() - 100
+			</default>
+		</entry>
+		<entry name="MainwindowHeight" type="Int">
+			<label>The main window's height.</label>
+			<default code="true">
+				QApplication::desktop()->screenGeometry().height() - 100
+			</default>
+		</entry>
+	</group>
+	<group name="Structure">
+		<entry name="DefaultLevel" type="Int">
+			<label>The expansion level for the structure view.</label>
+			<default>5</default>
+		</entry>
+		<entry name="SvShowLabels" type="Bool">
+			<label>Show label commands in the structure view</label>
+			<default>true</default>
+		</entry>
+		<entry name="SvShowReferences" type="Bool">
+			<label>Show undefined references in the structure view</label>
+			<default>false</default>
+		</entry>
+		<entry name="SvShowBibitems" type="Bool">
+			<label>Show bibitems commands in the structure view</label>
+			<default>true</default>
+		</entry>
+		<entry name="SvShowGraphics" type="Bool">
+			<label>Show includegraphics commands in the structure view</label>
+			<default>true</default>
+		</entry>
+		<entry name="SvShowFloats" type="Bool">
+			<label>Show float environments in the structure view</label>
+			<default>true</default>
+		</entry>
+		<entry name="SvShowInputFiles" type="Bool">
+			<label>Show file input commands in the structure view</label>
+			<default>true</default>
+		</entry>
+		<entry name="SvShowSectioningLabels" type="Bool">
+			<label>Show labels as child of sectioning items in the structure view</label>
+			<default>false</default>
+		</entry>
+		<entry name="SvShowTodo" type="Bool">
+			<label>Show TODO and FIXME comments</label>
+			<default>true</default>
+		</entry>
+		<entry name="SvOpenLabels" type="Bool">
+			<label>Open the parent item for all labels in the structure view as default</label>
+			<default>false</default>
+		</entry>
+		<entry name="SvOpenReferences" type="Bool">
+			<label>Open the parent item for all undefined references in the structure view</label>
+			<default>false</default>
+		</entry>
+		<entry name="SvOpenBibitems" type="Bool">
+			<label>Open the parent item for all bibitems in the structure view as default</label>
+			<default>false</default>
+		</entry>
+		<entry name="SvOpenTodo" type="Bool">
+			<label>Open the parent item for all TODO and FIXME comments as default</label>
+			<default>false</default>
+		</entry>
+	</group>
+	<group name="Tools">
+		<entry name="RunLyxServer" type="Bool">
+			<label>Whether to run the Lyx server.</label>
+			<default>true</default>
+		</entry>
+		<entry name="TeXPaths" type="String">
+			<label>Holds the TEXINPUTS environment variable.</label>
+			<whatsthis>Set the TEXINPUTS environment variable here. TEXINPUTS should be a colon-separated list of all paths TeX should look for additional packages and/or files. You do not have to add :$TEXINPUTS at the end.</whatsthis>
+			<default></default>
+		</entry>
+		<entry name="PreviewTeXPaths" type="String">
+			<label>Holds the TEXINPUTS environment variable for QuickPreview tools.</label>
+			<whatsthis>Set the TEXINPUTS environment variable for QuickPreview tools here. TEXINPUTS should be a colon-separated list of all paths TeX should look for additional packages and/or files. You do not have to add :$TEXINPUTS at the end.</whatsthis>
+			<default></default>
+		</entry>
+		 <entry name="BibInputPaths" type="String">
+			<label>Holds th BIBINPUTS environment variable.</label>
+			<whatsthis>Set the BIBINPUTS environment variable here. BIBINPUTS should be a colon-separated list of all paths bibtex should look for additional .bib files. You do not have to add :$BIBINPUTS at the end.</whatsthis>
+			<default></default>
+		</entry>
+		<entry name="BstInputPaths" type="String">
+			<label>Holds th BSTINPUTS environment variable.</label>
+			<whatsthis>Set the BSTINPUTS environment variable here. BSTINPUTS should be a colon-separated list of all paths bibtex should look for additional .bst files. You do not have to add :$BSTINPUTS at the end.</whatsthis>
+			<default></default>
+		</entry>
+	</group>
+	<group name="Show">
+		<entry name="BottomBar" type="Bool">
+			<label>Whether to show the bottom bar.</label>
+			<default>true</default>
+		</entry>
+        <entry name="BottomBarSize" type="Int">
+            <label>Height of the bottombar.</label>
+            <default>200</default>
+        </entry>
+        <entry name="SideBarSize" type="Int">
+            <label>Width of the sidebar.</label>
+            <default>300</default>
+        </entry>
+		<entry name="SideBar" type="Bool">
+			<label>Whether to show the side bar.</label>
+			<default>true</default>
+		</entry>
+		<entry name="HideProblemBadBox" type="Bool">
+			<label>Whether to show Bad Box warnings in the LogMsg view.</label>
+			<default>false</default>
+		</entry>
+		<entry name="HideProblemWarning" type="Bool">
+			<label>Whether to show (La)TeX warnings in the LogMsg view.</label>
+			<default>false</default>
+		</entry>
+		<entry name="SelectedLeftView" type="Int">
+			<label>The identifier of the selected view in the left pane.</label>
+			<default>1</default>
+		</entry>
+	</group>
+	<group name="Editor Ext">
+		<entry name="CompleteEnvironment" type="Bool">
+			<label>Automatic completion \begin{env} with \end{env}.</label>
+			<default>true</default>
+		</entry>
+		<entry name="envIndentation" type="Bool">
+			<label>Enable auto indentation of environemnts</label>
+			<default>true</default>
+		</entry>
+		<entry name="envIndentSpaces" type="Bool">
+			<label>Use spaces instead of a tabulator to autoindent environments</label>
+			<default>true</default>
+		</entry>
+		<entry name="envIndentNumSpaces" type="Int">
+			<label>Use this number of spaces to autoindent environments</label>
+			<default>1</default>
+		</entry>
+		<entry name="ShowUserCommands" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+		<entry name="InsertDoubleQuotes" type="Bool">
+			<label>Automatic insertion of double quotes.</label>
+			<default>true</default>
+		</entry>
+		<entry name="DoubleQuotes" type="Int">
+			<label>Language dependent type of double quotes.</label>
+			<default>0</default>
+		</entry>
+	</group>
+	<group name="IncludeGraphics">
+		<entry name="igCenter" type="Bool">
+			<label>Center the graphics.</label>
+			<default>true</default> 
+		</entry>
+		<entry name="igPdftex" type="Bool">
+			<label>Use PdfTeX or PdfLaTeX.</label>
+			<default>false</default> 
+		</entry>
+		<entry name="igGraphicspath" type="Bool">
+			<label>Filename is relative to a path given in graphicspath command.</label>
+			<default>false</default>
+		</entry>
+		<entry name="igFigure" type="Bool">
+			<label>Embed the graphics in a figure environment.</label>
+			<default>false</default>
+		</entry>
+		<entry name="imagemagick" type="Bool">
+			<label>Whether ImageMagick is installed.</label>
+			<default>false</default>
+		</entry>
+		<entry name="boundingbox" type="Bool">
+			<label>Try to determine the bounding box from the picture.</label>
+			<default>true</default>
+		</entry>
+		<entry name="resolution" type="Int">
+			<label>The default image resolution.</label>
+			<default>300</default>
+		</entry>
+	</group>
+	<group name="Help">
+		<entry name="location" type="String">
+			<label>Location of the TeX documentation.</label>
+			<default>/usr/share/texmf/doc</default>
+		</entry>
+		<entry name="use" type="Int">
+			<label>Use the system's TeX reference for the contextual help.</label>
+			<default>0</default>
+		</entry>
+		<entry name="embedded" type="Int">
+			<label>Use embedded viewer for user help.</label>
+			<default>1</default>
+		</entry>
+	</group>
+	<group name="Files">
+		<entry name="DefaultEncoding" type="String">
+			<label>The default encoding.</label>
+			<default>invalid</default>
+		</entry>
+		<entry name="Restore" type="Bool">
+			<label>Reopen files and projects on startup.</label>
+			<default>true</default>
+		</entry>
+		<entry name="Autosave" type="Bool">
+			<label>Automatic save.</label>
+			<default>true</default>
+		</entry>
+		<entry name="CleanUpAfterClose" type="Bool">
+			<label>Automatically clean-up files after close.</label>
+			<default>false</default>
+		</entry>
+		<entry name="AutosaveInterval" type="Int">
+			<label>The autosave interval in minutes.</label>
+			<default>10</default>
+		</entry>
+		<entry name="CleanUpFileExtensions" type="String">
+			<label>The file extensions to clean on exit.</label>
+			<default>.log .aux .lof .lot .bit .idx .glo .blg .ilg .toc .ind</default>
+		</entry>
+		<entry name="LastDocument" type="Path">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="InputEncoding" type="String">
+			<label></label>
+			<default code="true">
+				QString::fromLatin1(QTextCodec::codecForLocale()->name())
+			</default>
+		</entry>
+		<entry name="lastDir" type="Path">
+			<label></label>
+			<default></default>
+		</entry>
+	</group>
+	<group name="User">
+		<entry name="Author" type="String">
+			<label>The Author template variable.</label>
+			<default></default>
+		</entry>
+		<entry name="DocumentClassOptions" type="String">
+			<label>The Documentclass template variable.</label>
+			<default>a4paper,10pt</default>
+		</entry>
+		<entry name="TemplateEncoding" type="String">
+			<label>The Input encoding template variable.</label>
+			<default></default>
+		</entry>
+		<entry name="DefaultProjectLocation" type="String">
+			<label>The default location where the projects must be created.</label>
+			<default code="true">
+				QDir::home().absPath()
+			</default>
+		</entry>
+	</group>
+	<group name="Complete">
+		<entry name="CompleteEnabled" type="Bool">
+			<label></label>
+			<default>true</default>
+		</entry>
+		<entry name="CompleteCursor" type="Bool">
+			<label></label>
+			<default>true</default>
+		</entry>
+		<entry name="CompleteBullets" type="Bool">
+			<label></label>
+			<default>true</default>
+		</entry>
+		<entry name="CompleteCloseEnv" type="Bool">
+			<label></label>
+			<default>true</default>
+		</entry>
+		<entry name="CompleteAuto" type="Bool">
+			<label></label>
+			<default>true</default>
+		</entry>
+		<entry name="CompleteAutoText" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+		<entry name="completeAutoAbbrev" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+		<entry name="completeShowAbbrev" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+		<entry name="completeCitationMove" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+		<entry name="CompleteAutoThreshold" type="Int">
+			<label></label>
+			<default>3</default>
+		</entry>
+		<entry name="CompleteAutoTextThreshold" type="Int">
+			<label></label>
+			<default>3</default>
+		</entry>
+		<entry name="CompleteChangedLists" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+		<entry name="CompleteChangedCommands" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+		<entry name="CompleteTex" type="StringList">
+			<label></label>
+			<default>1-latex-document,1-tex</default>
+		</entry>
+		<entry name="CompleteDict" type="StringList">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="CompleteAbbrev" type="StringList">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="autoInsertDollar" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+	</group>
+	<group name="FilesOpenOnStart">
+		<entry name="Master" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+	</group>
+	<group name="QuickPreview">
+		<entry name="previewTask" type="String">
+			<label></label>
+			<default>LaTeX ---> DVI</default>
+		</entry>
+		<entry name="dvipng" type="Bool">
+			<label>Whether Dvipng is installed.</label>
+			<default>false</default>
+		</entry>
+		<entry name="convert" type="Bool">
+			<label>Whether Convert is installed.</label>
+			<default>false</default>
+		</entry>
+		<entry name="dvipngResolution" type="String">
+			<label></label>
+			<default>120</default>
+		</entry>
+		<entry name="envPreviewInWidget" type="Bool">
+			<label>Show preview of environments in bottom bar.</label>
+			<default>false</default>
+		</entry>
+		<entry name="selPreviewInWidget" type="Bool">
+			<label>Show preview of selected text in bottom bar.</label>
+			<default>false</default>
+		</entry>
+		<entry name="mathgroupPreviewInWidget" type="Bool">
+			<label>Show preview of mathgroups in bottom bar.</label>
+			<default>false</default>
+		</entry>
+		<entry name="envPreviewTool" type="Int">
+			<label>Conversion tool for preview of environments in bottom bar.</label>
+			<default>0</default>
+		</entry>
+		<entry name="selPreviewTool" type="Int">
+			<label>Conversion tool for preview of selected text in bottom bar.</label>
+			<default>0</default>
+		</entry>
+	</group>
+	<group name="QuickDocument">
+		<entry name="userClasses" type="StringList">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="documentClass" type="String">
+			<label></label>
+			<default>article</default>
+		</entry>
+		<entry name="encoding" type="String">
+			<label></label>
+			<default>latin1</default>
+		</entry>
+		<entry name="optionsArticle" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="optionsBook" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="optionsReport" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="optionsLetter" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="optionsScrartcl" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="optionsScrbook" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="optionsScrreprt" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="optionsProsper" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="optionsBeamer" type="String">
+			<label></label>
+			<default></default>
+		</entry>
+	</group>
+	<group name="QuickDocument/Packages">
+		<entry name="packagesList" type="StringList">
+			<label></label>
+			<default></default>
+		</entry>
+	</group>
+	<group name="KileGrepDialog">
+		<entry name="LastSearchItems" type="StringList">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="LastSearchPaths" type="StringList">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="LastSearchTemplates" type="StringList">
+			<label></label>
+			<default></default>
+		</entry>
+		<entry name="GrepRecursive" type="Bool">
+			<label></label>
+			<default>true</default>
+		</entry>
+	</group>
+	<group name="KileConfigDialog">
+		<entry name="UnfoldConfigTree" type="Bool">
+			<label></label>
+			<default>false</default>
+		</entry>
+	</group>
+	<group name="Scripting">
+		<entry name="ScriptingEnabled" type="Bool">
+			<label>Enable the scripting support.</label>
+			<default>true</default>
+		</entry>
+		<entry name="TimeLimitEnabled" type="Bool">
+			<label>Set a time limit for the execution of scripts.</label>
+			<default>true</default>
+		</entry>
+		<entry name="TimeLimit" type="Int">
+			<label>Time limit for the execution of scripts.</label>
+			<default>5</default>
+		</entry>
+	</group>
+	<group name="MostUsedSymbols">
+		<entry name="numSymbolsMFUS" type="UInt">
+			<label>Number of symbols to store in the Most Frequently Used Symbols view.</label>
+			<default>30</default>
+		</entry>
+		<entry name="displayMFUS" type="Bool">
+			<label>Display the Most Frequently Used Symbols view.</label>
+			<default>true</default>
+		</entry>
+		<entry name="clearMFUS" type="Bool">
+			<label>Clear the list of the most frequently used symbols whilst closing Kile.</label>
+			<default>false</default>
+		</entry>
+	</group>
+</kcfg>

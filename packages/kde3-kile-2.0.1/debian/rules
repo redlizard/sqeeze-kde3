@@ -1,0 +1,61 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/kde.mk
+include /usr/share/cdbs/1/rules/patchsys-quilt.mk
+include /usr/share/cdbs/1/rules/utils.mk
+
+DEB_CONFIGURE_SCRIPT_ENV += LDFLAGS="-Wl,--as-needed"
+DEB_DH_INSTALL_ARGS := --sourcedir=debian/tmp
+DEB_INSTALL_MANPAGES_kde3-kile := debian/kile.1
+
+install/kde3-kile-i18n-br::
+	-for language in `cd translations; ls -1d */`; do \
+		cd $(CURDIR)/$(DEB_BUILDDIR)/translations/$$language; \
+		$(MAKE) install DESTDIR=$(CURDIR)/debian/kde3-kile-i18n-$$language; \
+	done
+
+	cd $(CURDIR)/$(DEB_BUILDDIR)/translations/en_GB/; \
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/kde3-kile-i18n-engb
+
+	cd $(CURDIR)/$(DEB_BUILDDIR)/translations/pt_BR/; \
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/kde3-kile-i18n-ptbr
+
+	cd $(CURDIR)/$(DEB_BUILDDIR)/translations/sr@Latn/;\
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/kde3-kile-i18n-srlatin
+
+	cd $(CURDIR)/$(DEB_BUILDDIR)/translations/zh_CN/; \
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/kde3-kile-i18n-zhcn
+
+install/kde3-kile::
+	# Install pixmap
+	install -D -p -m0644 debian/kile.xpm debian/kde3-kile/opt/kde3/share/pixmaps/kile.xpm
+
+	chmod +x debian/tmp/opt/kde3/share/apps/kile/test/runTests.sh
+
+clean::
+	rm -rf debian/kde3-kile-i18n-*
+
+get-orig-source:
+	@@dh_testdir
+	@@[ -d ../tarballs/. ]
+	@@dpatch-get-origtargz ../tarballs
+
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done
+
