@@ -1,0 +1,119 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+export DEB_UPSTREAM_VERSION=1.6.3
+
+languages = `ls -1d *i18n*`
+rename=`ls -1d *l10n*/`
+
+build: build-stamp
+-include debian/debiandirs
+
+
+#debian/debiandirs: admin/debianrules
+#	perl -w admin/debianrules echodirs > debian/debiandirs
+
+build-stamp:
+	dh_testdir
+	
+	#Extract languages from bzip2.
+	-for i in `ls -1d koffice-l10n*.bz2`;do \
+	  tar xfj $$i;\
+	done
+	
+	#Rename language dirs from *l10n* to *i18n*
+	#-for i in $(rename); do \
+	#  orig=$$i; \
+	#  dest=$$(echo $$i | sed -e "s/l10n/i18n/"); \
+	#  mv $$orig $$dest; \
+	#done
+	
+	rename 's/l10n/i18n/' *$(DEB_UPSTREAM_VERSION)
+	
+	#Configure languages.
+	-for i in $(languages); do \
+	  cd  $$i; \
+	  ./configure $(configkde); \
+	  $(MAKE); \
+	  cd ..; \
+	done
+
+	touch build-stamp
+
+clean: 
+	dh_clean
+	dh_testdir
+	
+	# Remove all language directories.
+	rm -rf build-stamp 
+	rm -rf *18n* 
+	rm -rf *$(DEB_UPSTREAM_VERSION)
+	rm -rf debian/*18n*
+
+binary-indep: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	
+	-for i in $(languages); do \
+	  cd $$i; \
+	  echo $$(install_dir); \
+	  $(MAKE) install DESTDIR=`pwd`/../debian/kde3-`echo $$i|sed -e "s/-$(DEB_UPSTREAM_VERSION)//"`; \
+	  cd ..; \
+	done
+	
+
+	mkdir debian/kde3-koffice-i18n-engb
+	cp -aR debian/kde3-koffice-i18n-en_GB/* debian/kde3-koffice-i18n-engb/
+	
+	mkdir debian/kde3-koffice-i18n-ptbr
+	cp -aR debian/kde3-koffice-i18n-pt_BR/* debian/kde3-koffice-i18n-ptbr/
+	
+	mkdir debian/kde3-koffice-i18n-srlatin
+	cp -aR debian/kde3-koffice-i18n-sr@Latn/* debian/kde3-koffice-i18n-srlatin/
+	
+	mkdir debian/kde3-koffice-i18n-zhcn
+	cp -aR debian/kde3-koffice-i18n-zh_CN/* debian/kde3-koffice-i18n-zhcn/
+
+	mkdir debian/kde3-koffice-i18n-zhtw
+	cp -aR debian/kde3-koffice-i18n-zh_TW/* debian/kde3-koffice-i18n-zhtw/
+	
+
+	#Removing duplicate kdgantt.mo files.
+	-rm -f `find . -name "kdgantt.mo"`
+
+	dh_installdocs
+	dh_installmenu
+	dh_installchangelogs
+	dh_strip
+	dh_link
+	dh_compress -X.docbook -X.css -X-license -X.dcl -X.bz2
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary:	binary-indep 
+
+.PHONY: binary binary-indep clean
+
+DEB_CONFIGURE_PREFIX := /opt/kde3
+
+DEB_SHLIBDEPS_INCLUDE := /opt/kde3/lib
+
+$(patsubst %,binary-install/%,$(DEB_ALL_PACKAGES)) ::
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || mkdir -p debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || cp -a debian/$(cdbs_curpkg)/usr/share/man debian/$(cdbs_curpkg)/opt/kde3/share
+	test ! -d debian/$(cdbs_curpkg)/usr/share/man || rm -r debian/$(cdbs_curpkg)/usr/share/man
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || mkdir -p debian/$(cdbs_curpkg)/usr/share/doc
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || cp -a debian/$(cdbs_curpkg)/opt/kde3/share/doc debian/$(cdbs_curpkg)/usr/share
+	test ! -d debian/$(cdbs_curpkg)/opt/kde3/share/doc || rm -r debian/$(cdbs_curpkg)/opt/kde3/share/doc
+	test ! -d debian/$(cdbs_curpkg)/usr/share/doc || for f in debian/$(cdbs_curpkg)/usr/share/doc/*; do \
+		if ! echo $$f | grep ^debian/$(cdbs_curpkg)/usr/share/doc/kde3-  >/dev/null; then \
+			mv $$f debian/$(cdbs_curpkg)/usr/share/doc/kde3-`basename $$f`; \
+		fi; \
+	done
+

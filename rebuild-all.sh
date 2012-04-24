@@ -43,6 +43,7 @@ kdewebdev
 koffice
 meta-kde
 kde-i18n
+koffice-l10n
 
 kde-icons-crystal
 kde-icons-crystalproject
@@ -167,7 +168,7 @@ echo "Building in directory $dir"
 cd $dir
 
 for package in $packages; do
-	fullpackage=`ls -F $packagesdir | grep / | tr '/' ' ' | grep kde3-$package-`
+	fullpackage=`ls -F $packagesdir | grep / | sed -e 's:/::' | grep "kde3-$package-[0-9a-zA-Z\\.]*\$"`
 	test -n "$fullpackage"
 	test -d $packagesdir/$fullpackage
 	
