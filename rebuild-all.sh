@@ -77,6 +77,7 @@ kdesudo
 kdiff3
 kile
 konversation
+ktorrent2.2
 yakuake
 "
 

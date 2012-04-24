@@ -1,0 +1,61 @@
+Source: kde3-ktorrent2.2
+Section: kde
+Priority: optional
+Maintainer: Ruud Koolen <ruudkoolen@ruudkoolen.nl>
+Uploaders: Joel Johnson <mrjoel@lixil.net>, Modestas Vainius <modestas@vainius.eu>
+Dm-Upload-Allowed: yes
+Build-Depends: debhelper (>= 5.0.0), autotools-dev, kde3-kdelibs4-dev, libpcre3-dev, libx11-dev, libgmp3-dev, libgeoip-dev, quilt (>= 0.40)
+Standards-Version: 3.7.3.0
+Homepage: http://ktorrent.org
+
+Package: kde3-ktorrent2.2
+Architecture: any
+Depends: ${shlibs:Depends}
+Recommends: kde3-kdebase-data, kde3-kdebase-kio-plugins | kdebase-runtime-data-common
+Suggests: php5-cli
+Conflicts: ktorrent
+Description: KTorrent v2.2.x - BitTorrent client for KDE3
+ KTorrent is a BitTorrent program for KDE. You can use it to download and upload
+ files on the BitTorrent network. This package contains the latest revision of
+ KTorrent 2.2 series which is the last release for KDE3.
+ .
+ Additional KTorrent features include:
+   - uTorrent compatible peer exchange
+   - Zeroconf extension to find peers on the local network
+   - WebGUI plugin
+   - RSS plugin
+   - Grouping feature to put torrents into groups
+   - Downloads torrent files
+   - Upload and download speed capping
+   - Speed limits for individual torrents
+   - Internet searching using various search engines, you can even add
+     your own
+   - UDP Trackers
+   - Port forwarding with UPnP
+   - IP blocking plugin
+   - Importing of partially or fully downloaded files
+   - Support for distributed hash tables (mainline version)
+   - Protocol encryption
+   - Bandwith scheduling
+   - Directory scanner to automatically load torrents in certain directories
+   - Trackers can now be added to torrents
+   - File prioritization for multi file torrents
+   - Option to fully preallocate diskspace to avoid fragmentation
+   - Diskspace monitoring, with option to stop torrents when diskspace is
+     running low
+   - Statistics plugin
+ .
+
+Package: kde3-ktorrent2.2-dbg
+Architecture: any
+Priority: extra
+Depends: kde3-ktorrent2.2 (= ${binary:Version})
+Recommends: kde3-kdelibs-dbg
+Conflicts: ktorrent-dbg
+Description: KTorrent v2.2.x debugging symbols
+ This package contains debugging symbols for KTorrent. When KTorrent crashes,
+ in most cases this package is needed to get a backtrace that is useful for
+ developers. If you have experienced KTorrent crash without this package
+ installed, please install it, try to reproduce the problem and fill a bug
+ report with a new backtrace attached.
+

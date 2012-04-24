@@ -1,0 +1,11 @@
+--- ktorrent-2.2.5.dfsg.1/plugins/infowidget/Makefile.am	2008-02-06 22:25:31.000000000 +0200
++++ ktorrent-2.2.5.dfsg.1/plugins/infowidget/Makefile.am	2008-02-06 22:50:28.000000000 +0200
+@@ -1,7 +1,7 @@
+ INCLUDES = -I$(srcdir)/../../libktorrent $(all_includes)
+ METASOURCES = AUTO
+ kde_module_LTLIBRARIES = ktinfowidgetplugin.la
+-noinst_HEADERS = infowidgetplugin.h infowidgetprefpage.h trackerview.h GeoIP.h \
++noinst_HEADERS = infowidgetplugin.h infowidgetprefpage.h trackerview.h \
+ 	statustab.h fileview.h 
+ ktinfowidgetplugin_la_SOURCES = infowidgetplugin.cpp availabilitychunkbar.cpp \
+ 	chunkbar.cpp chunkdownloadview.cpp downloadedchunkbar.cpp flagdb.cpp peerview.cpp \

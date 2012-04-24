@@ -1,0 +1,14 @@
+--- ktorrent-2.2.4.dfsg.1/admin/acinclude.m4.in	2007-11-22 02:44:06.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/admin/acinclude.m4.in	2007-11-22 01:50:08.000000000 +0200
+@@ -1589,6 +1589,11 @@
+   fi
+ done
+ 
++# Export just Qt libs in LIB_QT, "extended" version will be exported as LIB_QT_EXT
++LIB_QT_EXT="$LIB_QT"
++LIB_QT="$kde_int_qt"
++
++AC_SUBST(LIB_QT_EXT)
+ AC_SUBST(LIB_QT)
+ AC_SUBST(LIB_QPE)
+ 

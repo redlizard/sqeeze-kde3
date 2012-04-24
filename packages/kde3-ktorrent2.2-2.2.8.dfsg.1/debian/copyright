@@ -1,0 +1,5580 @@
+This package was debianized by Joel Johnson <mrjoel@lixil.net> on
+Tue, 21 Jun 2005 11:19:46 -0700.
+This package has been maintained by Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
+since Thu, 10 May 2007 13:11:35 +0300
+
+The original source was downloaded from 
+http://ktorrent.org/index.php?page=downloads
+
+Upstream Authors:
+  Joris Guisson <joris.guisson@gmail.com>
+  Ivan Vasic <ivasic@gmail.com>
+
+License for all components:
+  * GNU General Public License version 2 or later (GPL-2+)
+
+    On Debian systems, the complete text of the GNU General Public License
+    version 2 can be found in `/usr/share/common-licenses/GPL-2'
+
+Debian packaging (debian/*) is under:
+
+Copyright: © 2005-2007 Joel Johnson <mrjoel@lixil.net>
+           © 2007-2008 Modestas Vainius <modestas@vainius.eu>
+License:   GPL-2+
+
+----------------------------------------------------------------------
+--                  Short Copyright Holders Summary                 --
+--           (93 holders out of 673 copyright statements)           --
+----------------------------------------------------------------------
+
+Copyright: © 2005-2006 Joris Guisson <joris.guisson@gmail.com>
+Copyright: © 2005-2007 Ivan Vasić <ivasic@gmail.com>
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+Copyright: © 2001-2004 Frerich Raabe <raabe@kde.org>
+Copyright: © 2004-2005 Alexander Dymo <adymo@kdevelop.org>
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+Copyright: © 2005-2006 Vincent Wagelaar <vincent@ricardis.tudelft.nl>
+Copyright: © 2006 Kevin Andre
+Copyright: © 2005-2007 Slobodan Simic <simicsl@verat.net> <slsimic@gmail.com>
+Copyright: © 2006 Lesly Weyts
+Copyright: © 2005-2006 Jonas Widarsson <jonas@widarsson.com>
+Copyright: © 2006-2007 Jannick Kuhr <jannick.kuhr@kdemail.net> <jakuhr-linux@gmx.de> <opensource@kuhr.org>
+Copyright: © 2007 Modestas Vainius <modestas@vainius.eu>
+Copyright: © 2005-2007 Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com> <fr.ivan@ukrainian-orthodox.org>
+Copyright: © 2006 Xavier Batlle i Pèlach <tevibp@wanadoo.es> <tevi@eltercer.cat>
+Copyright: © 2007 Lukasz Fibinger <lucke@o2.pl>
+Copyright: © 2007 Serdar Soytetir <tulliana@gmail.com>
+Copyright: © 2005-2007 Stefan Asserhäll <stefan.asserhall@comhem.se>
+Copyright: © 2005-2007 Nicola Ruggero <nixprog.adsl@tiscali.it> <nicola@nxnt.org>
+Copyright: © 2006 Rusudan Tsiskreli <tsiskreli@gmail.com> <r_tsiskreli@caucasus.net>
+Copyright: © 2005 Adam Treat <treat@kde.org>
+Copyright: © 2005 Waldemar Silva Júnior <wsjunior@kdemail.net>
+Copyright: © 2005-2008 Rinse de Vries <rinsedevries@kde.nl> <RinseDeVries@home.nl>
+Copyright: © 2005 Amanpreet Singh Alam <aalam@redhat.com> <amanpreetalam@yahoo.com>
+Copyright: © 2006 Danny Kukawka <danny.kukawka@web.de>
+Copyright: © 2007 Václav Čermák <vaclav.cermak@gmail.com>
+Copyright: © 2005 Andrew Coles <andrew_coles@yahoo.co.uk>
+Copyright: © 2005 Maarten Rütten <maartenrutten@kde.nl>
+Copyright: © 2005-2007 Erik Kjær Pedersen <erik@binghamton.edu>
+Copyright: © 2005 Златко Попов <zlatkopopov@fsa-bg.org>
+Copyright: © 2007 Kéménczy Kálmán <kkemenczy@novell.com>
+Copyright: © 2006 Manfred Wiese <m.j.wiese@web.de>
+Copyright: © 2005 Maggioni Marcello <marcello.maggioni@gmail.com>
+Copyright: © 2007 Jerzy Trzeciak <artusek@wp.pl>
+Copyright: © 2005 Carole Karema <karemacarole@hotmail.com>
+Copyright: © 2007 MaryamSadat Razavi <razavi@itland.ir>
+Copyright: © 2005 JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>
+Copyright: © 2005-2007 Spiros Georgaras <sng@hellug.gr>
+Copyright: © 2005 Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>
+Copyright: © 2005-2006 Bram Schoenmakers <bramschoenmakers@kde.nl>
+Copyright: © 2006 Martin Moeller <martin@martinm-76.dk>
+Copyright: © 2005 Steve Murphy <murf@e-tools.com>
+Copyright: © 2007 Gabor Kelemen <kelemeng@gnome.hu>
+Copyright: © 2005-2006 Marcin Zasada <emzeta76@gazeta.pl>
+Copyright: © 2006 Simon Horsburgh <simondo42@ihug.co.nz>
+Copyright: © 2005 Barış Metin <baris@uludag.org.tr>
+Copyright: © 2006-2007 Martijn van Vliet <mvanvliet@gmail.com>
+Copyright: © 2007 Nasim Daniarzadeh <daniarzadeh@itland.ir>
+Copyright: © 2006 Engin Çağatay <engincagatay@yahoo.com>
+Copyright: © 2006 Mohamed SAAD <metehyi@free.fr>
+Copyright: © 2005-2006 Klara Cihlarova <koty@seznam.cz>
+Copyright: © 2005 Antoine Bigirimana <antoine@e-tools.com>
+Copyright: © 2005-2006 Malcolm Hunter <malcolm.hunter@gmx.co.uk>
+Copyright: © 2005-2007 Toussis Manolis <manolis@koppermind.homelinux.org>
+Copyright: © 2007 Akın Ömeroğlu <akin@omeroglu.net>
+Copyright: © 2005 Augustin KIBERWA <akiberwa@yahoo.co.uk>
+Copyright: © 2005 Lukáš Tinkl <lukas@kde.org>
+Copyright: © 2006-2007 Sönke Dibbern <s_dibbern@web.de>
+Copyright: © 2006 Frank Weng (a.k.a. Franklin) <franklin@goodhorse.idv.tw>
+Copyright: © 2005-2007 Alexander Nicolaysen Sørnes <alex@thehandofagony.com>
+Copyright: © 2006 Jozef Riha <jose1711@gmail.com>
+Copyright: © 2005 Nicolas Ternisien <nicolas.ternisien@gmail.com>
+Copyright: © 2005 Tamas Szanto <tszanto@interware.hu>
+Copyright: © 2007 Jaime Robles <jaime@kde.org>
+Copyright: © 2005-2007 Krzysztof Lichota <lichota@mimuw.edu.pl>
+Copyright: © 2005-2006 Patrick Trettenbrein <patrick.trettenbrein@kdemail.net>
+Copyright: © 2005, 2007 Donatas Glodenis <dgvirtual@akl.lt>
+Copyright: © 2005-2007 Zlatko Popov <zlatkopopov@fsa-bg.org>
+Copyright: © 2007 doutor.zero <doutor.zero@gmail.com>
+Copyright: © 2005 Noëlla Mupole <s24211045@tuks.co.za>
+Copyright: © 2005 Philibert Ndandali <ndandali@yahoo.fr>
+Copyright: © 2005-2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+Copyright: © 2005-2007 Marek Laane <bald@starman.ee>
+Copyright: © 2005-2007 Nick Shaforostoff <shafff@ukr.net>
+Copyright: © 2007 Klára Cihlářová <koty@seznam.cz>
+Copyright: © 2007 Kováts Dóra <dorcssa@gmail.com>
+Copyright: © 2008 Martin Schlander <suse@linuxin.dk>
+Copyright: © 2006 Eugen Tarabčák <flashmann@szm.sk>
+Copyright: © 2007 Xavier Batlle Pelach <tevi@eltercer.cat>
+Copyright: © 2005-2007 Thomas Reitelbach <tr@erdfunkstelle.de>
+Copyright: © 2005 Viateur MUGENZI <muvia1@yahoo.fr>
+Copyright: © 2007 Marek Stopka <marekstopka@gmail.com>
+Copyright: © 2005-2007 Yukiko Bando <ybando@k6.dion.ne.jp>
+Copyright: © 2006 Josep Ma. Ferrer <txemaq@gmail.com>
+Copyright: © 2006 Hasso Tepper <hasso@kde.org>
+Copyright: © 2005 sejishikong <sejishikong@263.net>
+Copyright: © 2005 Gregory Mokhin <mok@kde.ru>
+Copyright: © 2005 Stephan Johach <hunsum@gmx.de>
+Copyright: © 2005-09-23 Funda Wang <fundawang@linux.net.cn>
+Copyright: © 2005-2006 mvillarino <mvillarino@users.sourceforge.net>
+Copyright: © 2005 Sylvain Garsault <sylvain.garsault@freesbee.fr>
+Copyright: © 2005 Pablo de Vicente <pablo.devicente@gmail.com>
+
+
+----------------------------------------------------------------------
+--                     Copyright Holders Report                     --
+--           (93 holders out of 673 copyright statements)           --
+----------------------------------------------------------------------
+
+Copyright: © Joris Guisson <joris.guisson@gmail.com>
+Credited: 417 times
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 417
+Copyrighted-Files:
+  apps/ktcachecheck/cachecheck.cpp
+  apps/ktcachecheck/cachechecker.cpp
+  apps/ktcachecheck/cachechecker.h
+  apps/ktcachecheck/multicachechecker.cpp
+  apps/ktcachecheck/multicachechecker.h
+  apps/ktcachecheck/singlecachechecker.cpp
+  apps/ktcachecheck/singlecachechecker.h
+  apps/ktorrent/dcopinterface.h
+  apps/ktorrent/fileselectdlg.cpp
+  apps/ktorrent/fileselectdlg.h
+  apps/ktorrent/groups/allgroup.cpp
+  apps/ktorrent/groups/allgroup.h
+  apps/ktorrent/groups/downloadgroup.cpp
+  apps/ktorrent/groups/downloadgroup.h
+  apps/ktorrent/groups/group.cpp
+  apps/ktorrent/groups/group.h
+  apps/ktorrent/groups/groupmanager.cpp
+  apps/ktorrent/groups/groupmanager.h
+  apps/ktorrent/groups/groupview.cpp
+  apps/ktorrent/groups/groupview.h
+  apps/ktorrent/groups/torrentdrag.cpp
+  apps/ktorrent/groups/torrentdrag.h
+  apps/ktorrent/groups/torrentgroup.cpp
+  apps/ktorrent/groups/torrentgroup.h
+  apps/ktorrent/groups/uploadgroup.cpp
+  apps/ktorrent/groups/uploadgroup.h
+  apps/ktorrent/ktorrent.cpp
+  apps/ktorrent/ktorrent.h
+  apps/ktorrent/ktorrentcore.cpp
+  apps/ktorrent/ktorrentcore.h
+  apps/ktorrent/ktorrentdcop.cpp
+  apps/ktorrent/ktorrentdcop.h
+  apps/ktorrent/ktorrentview.cpp
+  apps/ktorrent/ktorrentview.h
+  apps/ktorrent/ktorrentviewitem.cpp
+  apps/ktorrent/ktorrentviewitem.h
+  apps/ktorrent/ktorrentviewmenu.cpp
+  apps/ktorrent/ktorrentviewmenu.h
+  apps/ktorrent/main.cpp
+  apps/ktorrent/pastedialog.cpp
+  apps/ktorrent/pastedialog.h
+  apps/ktorrent/pref.cpp
+  apps/ktorrent/pref.h
+  apps/ktorrent/scandialog.cpp
+  apps/ktorrent/scandialog.h
+  apps/ktorrent/speedlimitsdlg.cpp
+  apps/ktorrent/speedlimitsdlg.h
+  apps/ktorrent/torrentcreatordlg.cpp
+  apps/ktorrent/torrentcreatordlg.h
+  apps/ktorrent/trayhoverpopup.cpp
+  apps/ktorrent/trayhoverpopup.h
+  apps/ktorrent/trayicon.cpp
+  apps/ktorrent/trayicon.h
+  apps/ktorrent/viewmanager.cpp
+  apps/ktorrent/viewmanager.h
+  apps/kttorinfo/main.cpp
+  apps/ktupnptest/main.cpp
+  apps/ktupnptest/upnptestapp.cpp
+  apps/ktupnptest/upnptestapp.h
+  libktorrent/datachecker/datachecker.cpp
+  libktorrent/datachecker/datachecker.h
+  libktorrent/datachecker/datacheckerlistener.cpp
+  libktorrent/datachecker/datacheckerlistener.h
+  libktorrent/datachecker/datacheckerthread.cpp
+  libktorrent/datachecker/datacheckerthread.h
+  libktorrent/datachecker/multidatachecker.cpp
+  libktorrent/datachecker/multidatachecker.h
+  libktorrent/datachecker/singledatachecker.cpp
+  libktorrent/datachecker/singledatachecker.h
+  libktorrent/expandablewidget.cpp
+  libktorrent/expandablewidget.h
+  libktorrent/functions.cpp
+  libktorrent/functions.h
+  libktorrent/interfaces/chunkdownloadinterface.cpp
+  libktorrent/interfaces/chunkdownloadinterface.h
+  libktorrent/interfaces/coreinterface.cpp
+  libktorrent/interfaces/coreinterface.h
+  libktorrent/interfaces/exitoperation.cpp
+  libktorrent/interfaces/exitoperation.h
+  libktorrent/interfaces/filetreediritem.cpp
+  libktorrent/interfaces/filetreediritem.h
+  libktorrent/interfaces/filetreeitem.cpp
+  libktorrent/interfaces/filetreeitem.h
+  libktorrent/interfaces/functions.cpp
+  libktorrent/interfaces/functions.h
+  libktorrent/interfaces/guiinterface.cpp
+  libktorrent/interfaces/guiinterface.h
+  libktorrent/interfaces/ipblockinginterface.cpp
+  libktorrent/interfaces/ipblockinginterface.h
+  libktorrent/interfaces/logmonitorinterface.cpp
+  libktorrent/interfaces/logmonitorinterface.h
+  libktorrent/interfaces/monitorinterface.cpp
+  libktorrent/interfaces/monitorinterface.h
+  libktorrent/interfaces/peerinterface.cpp
+  libktorrent/interfaces/peerinterface.h
+  libktorrent/interfaces/peersource.cpp
+  libktorrent/interfaces/peersource.h
+  libktorrent/interfaces/plugin.cpp
+  libktorrent/interfaces/plugin.h
+  libktorrent/interfaces/prefpageinterface.cpp
+  libktorrent/interfaces/prefpageinterface.h
+  libktorrent/interfaces/torrentfileinterface.cpp
+  libktorrent/interfaces/torrentfileinterface.h
+  libktorrent/interfaces/torrentinterface.cpp
+  libktorrent/interfaces/torrentinterface.h
+  libktorrent/interfaces/trackerslist.cpp
+  libktorrent/kademlia/announcetask.cpp
+  libktorrent/kademlia/announcetask.h
+  libktorrent/kademlia/database.cpp
+  libktorrent/kademlia/database.h
+  libktorrent/kademlia/dht.cpp
+  libktorrent/kademlia/dht.h
+  libktorrent/kademlia/dhtbase.cpp
+  libktorrent/kademlia/dhtbase.h
+  libktorrent/kademlia/dhttrackerbackend.cpp
+  libktorrent/kademlia/dhttrackerbackend.h
+  libktorrent/kademlia/kbucket.cpp
+  libktorrent/kademlia/kbucket.h
+  libktorrent/kademlia/kclosestnodessearch.cpp
+  libktorrent/kademlia/kclosestnodessearch.h
+  libktorrent/kademlia/key.cpp
+  libktorrent/kademlia/key.h
+  libktorrent/kademlia/node.cpp
+  libktorrent/kademlia/node.h
+  libktorrent/kademlia/nodelookup.cpp
+  libktorrent/kademlia/nodelookup.h
+  libktorrent/kademlia/pack.cpp
+  libktorrent/kademlia/pack.h
+  libktorrent/kademlia/rpccall.cpp
+  libktorrent/kademlia/rpccall.h
+  libktorrent/kademlia/rpcmsg.cpp
+  libktorrent/kademlia/rpcmsg.h
+  libktorrent/kademlia/rpcserver.cpp
+  libktorrent/kademlia/rpcserver.h
+  libktorrent/kademlia/task.cpp
+  libktorrent/kademlia/task.h
+  libktorrent/kademlia/taskmanager.cpp
+  libktorrent/kademlia/taskmanager.h
+  libktorrent/ktversion.h
+  libktorrent/labelview.cpp
+  libktorrent/labelview.h
+  libktorrent/migrate/cachemigrate.cpp
+  libktorrent/migrate/cachemigrate.h
+  libktorrent/migrate/ccmigrate.cpp
+  libktorrent/migrate/ccmigrate.h
+  libktorrent/migrate/migrate.cpp
+  libktorrent/migrate/migrate.h
+  libktorrent/mse/bigint.cpp
+  libktorrent/mse/bigint.h
+  libktorrent/mse/encryptedauthenticate.cpp
+  libktorrent/mse/encryptedauthenticate.h
+  libktorrent/mse/encryptedserverauthenticate.cpp
+  libktorrent/mse/encryptedserverauthenticate.h
+  libktorrent/mse/functions.cpp
+  libktorrent/mse/functions.h
+  libktorrent/mse/rc4encryptor.cpp
+  libktorrent/mse/rc4encryptor.h
+  libktorrent/mse/streamsocket.cpp
+  libktorrent/mse/streamsocket.h
+  libktorrent/net/address.cpp
+  libktorrent/net/address.h
+  libktorrent/net/bufferedsocket.cpp
+  libktorrent/net/bufferedsocket.h
+  libktorrent/net/circularbuffer.cpp
+  libktorrent/net/circularbuffer.h
+  libktorrent/net/downloadthread.cpp
+  libktorrent/net/downloadthread.h
+  libktorrent/net/networkthread.cpp
+  libktorrent/net/networkthread.h
+  libktorrent/net/portlist.cpp
+  libktorrent/net/portlist.h
+  libktorrent/net/socket.cpp
+  libktorrent/net/socket.h
+  libktorrent/net/socketgroup.cpp
+  libktorrent/net/socketgroup.h
+  libktorrent/net/socketmonitor.cpp
+  libktorrent/net/socketmonitor.h
+  libktorrent/net/speed.cpp
+  libktorrent/net/speed.h
+  libktorrent/net/uploadthread.cpp
+  libktorrent/net/uploadthread.h
+  libktorrent/pluginmanager.cpp
+  libktorrent/pluginmanager.h
+  libktorrent/pluginmanagerprefpage.cpp
+  libktorrent/pluginmanagerprefpage.h
+  libktorrent/torrent/advancedchokealgorithm.cpp
+  libktorrent/torrent/advancedchokealgorithm.h
+  libktorrent/torrent/announcelist.cpp
+  libktorrent/torrent/announcelist.h
+  libktorrent/torrent/authenticate.cpp
+  libktorrent/torrent/authenticate.h
+  libktorrent/torrent/authenticatebase.cpp
+  libktorrent/torrent/authenticatebase.h
+  libktorrent/torrent/authenticationmonitor.cpp
+  libktorrent/torrent/authenticationmonitor.h
+  libktorrent/torrent/bdecoder.cpp
+  libktorrent/torrent/bdecoder.h
+  libktorrent/torrent/bencoder.cpp
+  libktorrent/torrent/bencoder.h
+  libktorrent/torrent/bnode.cpp
+  libktorrent/torrent/bnode.h
+  libktorrent/torrent/cache.cpp
+  libktorrent/torrent/cache.h
+  libktorrent/torrent/cachefile.cpp
+  libktorrent/torrent/cachefile.h
+  libktorrent/torrent/cap.cpp
+  libktorrent/torrent/cap.h
+  libktorrent/torrent/choker.cpp
+  libktorrent/torrent/choker.h
+  libktorrent/torrent/chunk.cpp
+  libktorrent/torrent/chunk.h
+  libktorrent/torrent/chunkcounter.cpp
+  libktorrent/torrent/chunkcounter.h
+  libktorrent/torrent/chunkdownload.cpp
+  libktorrent/torrent/chunkdownload.h
+  libktorrent/torrent/chunkmanager.cpp
+  libktorrent/torrent/chunkmanager.h
+  libktorrent/torrent/chunkselector.cpp
+  libktorrent/torrent/chunkselector.h
+  libktorrent/torrent/dndfile.cpp
+  libktorrent/torrent/dndfile.h
+  libktorrent/torrent/downloadcap.cpp
+  libktorrent/torrent/downloadcap.h
+  libktorrent/torrent/downloader.cpp
+  libktorrent/torrent/downloader.h
+  libktorrent/torrent/globals.cpp
+  libktorrent/torrent/globals.h
+  libktorrent/torrent/httptracker.cpp
+  libktorrent/torrent/httptracker.h
+  libktorrent/torrent/ipblocklist.cpp
+  libktorrent/torrent/ipblocklist.h
+  libktorrent/torrent/movedatafilesjob.cpp
+  libktorrent/torrent/movedatafilesjob.h
+  libktorrent/torrent/multifilecache.cpp
+  libktorrent/torrent/multifilecache.h
+  libktorrent/torrent/newchokealgorithm.cpp
+  libktorrent/torrent/newchokealgorithm.h
+  libktorrent/torrent/oldchokealgorithm.cpp
+  libktorrent/torrent/oldchokealgorithm.h
+  libktorrent/torrent/packet.cpp
+  libktorrent/torrent/packet.h
+  libktorrent/torrent/packetreader.cpp
+  libktorrent/torrent/packetreader.h
+  libktorrent/torrent/packetwriter.cpp
+  libktorrent/torrent/packetwriter.h
+  libktorrent/torrent/peer.cpp
+  libktorrent/torrent/peer.h
+  libktorrent/torrent/peerdownloader.cpp
+  libktorrent/torrent/peerdownloader.h
+  libktorrent/torrent/peerid.cpp
+  libktorrent/torrent/peerid.h
+  libktorrent/torrent/peermanager.cpp
+  libktorrent/torrent/peermanager.h
+  libktorrent/torrent/peersourcemanager.cpp
+  libktorrent/torrent/peersourcemanager.h
+  libktorrent/torrent/peeruploader.cpp
+  libktorrent/torrent/peeruploader.h
+  libktorrent/torrent/piece.cpp
+  libktorrent/torrent/piece.h
+  libktorrent/torrent/preallocationthread.cpp
+  libktorrent/torrent/preallocationthread.h
+  libktorrent/torrent/queuemanager.cpp
+  libktorrent/torrent/queuemanager.h
+  libktorrent/torrent/request.cpp
+  libktorrent/torrent/request.h
+  libktorrent/torrent/server.cpp
+  libktorrent/torrent/server.h
+  libktorrent/torrent/serverauthenticate.cpp
+  libktorrent/torrent/serverauthenticate.h
+  libktorrent/torrent/singlefilecache.cpp
+  libktorrent/torrent/singlefilecache.h
+  libktorrent/torrent/speedestimater.cpp
+  libktorrent/torrent/speedestimater.h
+  libktorrent/torrent/statsfile.cpp
+  libktorrent/torrent/statsfile.h
+  libktorrent/torrent/torrent.cpp
+  libktorrent/torrent/torrent.h
+  libktorrent/torrent/torrentcontrol.cpp
+  libktorrent/torrent/torrentcontrol.h
+  libktorrent/torrent/torrentcreator.cpp
+  libktorrent/torrent/torrentcreator.h
+  libktorrent/torrent/torrentfile.cpp
+  libktorrent/torrent/torrentfile.h
+  libktorrent/torrent/torrentmonitor.cpp
+  libktorrent/torrent/torrentmonitor.h
+  libktorrent/torrent/tracker.cpp
+  libktorrent/torrent/tracker.h
+  libktorrent/torrent/udptracker.cpp
+  libktorrent/torrent/udptracker.h
+  libktorrent/torrent/udptrackersocket.cpp
+  libktorrent/torrent/udptrackersocket.h
+  libktorrent/torrent/uploadcap.cpp
+  libktorrent/torrent/uploadcap.h
+  libktorrent/torrent/uploader.cpp
+  libktorrent/torrent/uploader.h
+  libktorrent/torrent/upspeedestimater.cpp
+  libktorrent/torrent/upspeedestimater.h
+  libktorrent/torrent/utpex.cpp
+  libktorrent/torrent/utpex.h
+  libktorrent/torrent/value.cpp
+  libktorrent/torrent/value.h
+  libktorrent/util/array.cpp
+  libktorrent/util/array.h
+  libktorrent/util/autorotatelogjob.cpp
+  libktorrent/util/autorotatelogjob.h
+  libktorrent/util/bitset.cpp
+  libktorrent/util/bitset.h
+  libktorrent/util/constants.h
+  libktorrent/util/error.cpp
+  libktorrent/util/error.h
+  libktorrent/util/file.cpp
+  libktorrent/util/file.h
+  libktorrent/util/fileops.cpp
+  libktorrent/util/fileops.h
+  libktorrent/util/functions.cpp
+  libktorrent/util/functions.h
+  libktorrent/util/httprequest.cpp
+  libktorrent/util/httprequest.h
+  libktorrent/util/log.cpp
+  libktorrent/util/log.h
+  libktorrent/util/mmapfile.cpp
+  libktorrent/util/mmapfile.h
+  libktorrent/util/profiler.cpp
+  libktorrent/util/profiler.h
+  libktorrent/util/ptrmap.cpp
+  libktorrent/util/ptrmap.h
+  libktorrent/util/sha1hash.cpp
+  libktorrent/util/sha1hash.h
+  libktorrent/util/sha1hashgen.cpp
+  libktorrent/util/sha1hashgen.h
+  libktorrent/util/timer.cpp
+  libktorrent/util/timer.h
+  libktorrent/util/urlencoder.cpp
+  libktorrent/util/urlencoder.h
+  libktorrent/util/waitjob.cpp
+  libktorrent/util/waitjob.h
+  plugins/infowidget/availabilitychunkbar.cpp
+  plugins/infowidget/availabilitychunkbar.h
+  plugins/infowidget/chunkbar.cpp
+  plugins/infowidget/chunkbar.h
+  plugins/infowidget/chunkdownloadview.cpp
+  plugins/infowidget/chunkdownloadview.h
+  plugins/infowidget/downloadedchunkbar.cpp
+  plugins/infowidget/downloadedchunkbar.h
+  plugins/infowidget/fileview.cpp
+  plugins/infowidget/fileview.h
+  plugins/infowidget/floatspinbox.cpp
+  plugins/infowidget/floatspinbox.h
+  plugins/infowidget/infowidgetplugin.cpp
+  plugins/infowidget/infowidgetplugin.h
+  plugins/infowidget/infowidgetprefpage.cpp
+  plugins/infowidget/infowidgetprefpage.h
+  plugins/infowidget/iwfiletreediritem.cpp
+  plugins/infowidget/iwfiletreediritem.h
+  plugins/infowidget/iwfiletreeitem.cpp
+  plugins/infowidget/iwfiletreeitem.h
+  plugins/infowidget/ktorrentmonitor.cpp
+  plugins/infowidget/ktorrentmonitor.h
+  plugins/infowidget/localefloatvalidator.cpp
+  plugins/infowidget/localefloatvalidator.h
+  plugins/infowidget/peerview.cpp
+  plugins/infowidget/peerview.h
+  plugins/infowidget/statustab.cpp
+  plugins/infowidget/statustab.h
+  plugins/infowidget/trackerview.cpp
+  plugins/infowidget/trackerview.h
+  plugins/ipfilter/antip2p.cpp
+  plugins/ipfilter/antip2p.h
+  plugins/ipfilter/convertdialog.cpp
+  plugins/ipfilter/convertdialog.h
+  plugins/ipfilter/ipblockingprefpage.cpp
+  plugins/ipfilter/ipblockingprefpage.h
+  plugins/ipfilter/ipfilterplugin.cpp
+  plugins/ipfilter/ipfilterplugin.h
+  plugins/logviewer/logviewer.cpp
+  plugins/logviewer/logviewer.h
+  plugins/logviewer/logviewerplugin.cpp
+  plugins/logviewer/logviewerplugin.h
+  plugins/partfileimport/importdialog.cpp
+  plugins/partfileimport/importdialog.h
+  plugins/partfileimport/partfileimportplugin.cpp
+  plugins/partfileimport/partfileimportplugin.h
+  plugins/search/htmlpart.cpp
+  plugins/search/htmlpart.h
+  plugins/search/searchenginelist.cpp
+  plugins/search/searchenginelist.h
+  plugins/search/searchplugin.cpp
+  plugins/search/searchplugin.h
+  plugins/search/searchprefpage.cpp
+  plugins/search/searchprefpage.h
+  plugins/search/searchtab.cpp
+  plugins/search/searchtab.h
+  plugins/search/searchwidget.cpp
+  plugins/search/searchwidget.h
+  plugins/upnp/soap.cpp
+  plugins/upnp/soap.h
+  plugins/upnp/upnpdescriptionparser.cpp
+  plugins/upnp/upnpdescriptionparser.h
+  plugins/upnp/upnpmcastsocket.cpp
+  plugins/upnp/upnpmcastsocket.h
+  plugins/upnp/upnpplugin.cpp
+  plugins/upnp/upnpplugin.h
+  plugins/upnp/upnpprefpage.cpp
+  plugins/upnp/upnpprefpage.h
+  plugins/upnp/upnpprefwidget.cpp
+  plugins/upnp/upnpprefwidget.h
+  plugins/upnp/upnprouter.cpp
+  plugins/upnp/upnprouter.h
+  plugins/webinterface/httpclienthandler.cpp
+  plugins/webinterface/httpclienthandler.h
+  plugins/webinterface/httpresponseheader.cpp
+  plugins/webinterface/httpresponseheader.h
+  plugins/zeroconf/zeroconfplugin.cpp
+  plugins/zeroconf/zeroconfplugin.h
+  templates/cpp
+  templates/h
+  translations/es/messages/ktorrent.po
+
+Copyright: © Ivan Vasić <ivasic@gmail.com>
+Credited: 71 times
+Other-Names: Ivan Vasic
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 71
+Copyrighted-Files:
+  apps/ktorrent/addpeerwidget.cpp
+  apps/ktorrent/addpeerwidget.h
+  apps/ktorrent/groups/activedownloadsgroup.cpp
+  apps/ktorrent/groups/activedownloadsgroup.h
+  apps/ktorrent/groups/activegroup.cpp
+  apps/ktorrent/groups/activegroup.h
+  apps/ktorrent/groups/activeuploadsgroup.cpp
+  apps/ktorrent/groups/activeuploadsgroup.h
+  apps/ktorrent/groups/inactivedownloadsgroup.cpp
+  apps/ktorrent/groups/inactivedownloadsgroup.h
+  apps/ktorrent/groups/inactivegroup.cpp
+  apps/ktorrent/groups/inactivegroup.h
+  apps/ktorrent/groups/inactiveuploadsgroup.cpp
+  apps/ktorrent/groups/inactiveuploadsgroup.h
+  apps/ktorrent/groups/queueddownloadsgroup.cpp
+  apps/ktorrent/groups/queueddownloadsgroup.h
+  apps/ktorrent/groups/queueduploadsgroup.cpp
+  apps/ktorrent/groups/queueduploadsgroup.h
+  apps/ktorrent/groups/userdownloadsgroup.cpp
+  apps/ktorrent/groups/userdownloadsgroup.h
+  apps/ktorrent/groups/useruploadsgroup.cpp
+  apps/ktorrent/groups/useruploadsgroup.h
+  apps/ktorrent/ipfilterwidget.cpp
+  apps/ktorrent/ipfilterwidget.h
+  apps/ktorrent/ktorrent.cpp
+  apps/ktorrent/ktorrentcore.cpp
+  apps/ktorrent/ktorrentview.cpp
+  apps/ktorrent/ktorrentview.h
+  apps/ktorrent/queuedialog.cpp
+  apps/ktorrent/queuedialog.h
+  apps/ktorrent/trayicon.cpp
+  apps/ktorrent/trayicon.h
+  libktorrent/interfaces/trackerslist.h
+  libktorrent/torrent/chunkmanager.cpp
+  libktorrent/torrent/timeestimator.cpp
+  libktorrent/torrent/timeestimator.h
+  libktorrent/torrent/torrent.cpp
+  libktorrent/torrent/torrent.h
+  libktorrent/torrent/torrentcontrol.cpp
+  libktorrent/torrent/torrentcontrol.h
+  libktorrent/torrent/torrentfile.cpp
+  libktorrent/torrent/torrentfile.h
+  plugins/infowidget/trackerview.h
+  plugins/logviewer/logflags.cpp
+  plugins/logviewer/logflags.h
+  plugins/logviewer/logprefpage.cpp
+  plugins/logviewer/logprefpage.h
+  plugins/logviewer/logprefwidget.cpp
+  plugins/logviewer/logprefwidget.h
+  plugins/scanfolder/scanfolder.cpp
+  plugins/scanfolder/scanfolder.h
+  plugins/scanfolder/scanfolderplugin.cpp
+  plugins/scanfolder/scanfolderplugin.h
+  plugins/scanfolder/scanfolderprefpage.cpp
+  plugins/scanfolder/scanfolderprefpage.h
+  plugins/scanfolder/scanfolderprefpagewidget.cpp
+  plugins/scanfolder/scanfolderprefpagewidget.h
+  plugins/scheduler/bwscheduler.cpp
+  plugins/scheduler/bwscheduler.h
+  plugins/scheduler/bwsprefpagewidget.cpp
+  plugins/scheduler/bwsprefpagewidget.h
+  plugins/scheduler/bwswidget.cpp
+  plugins/scheduler/bwswidget.h
+  plugins/scheduler/schedulerplugin.cpp
+  plugins/scheduler/schedulerplugin.h
+  plugins/scheduler/schedulerprefpage.cpp
+  plugins/scheduler/schedulerprefpage.h
+  plugins/scheduler/schedulerprefpagewidget.cpp
+  plugins/scheduler/schedulerprefpagewidget.h
+  plugins/search/searchprefpage.cpp
+  plugins/search/searchwidget.cpp
+
+Copyright: © Krzysztof Kundzicz <athantor@gmail.com>
+Credited: 16 times
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 16
+Copyrighted-Files:
+  plugins/stats/ChartDrawer.cc
+  plugins/stats/ChartDrawer.h
+  plugins/stats/ChartDrawerData.cc
+  plugins/stats/ChartDrawerData.h
+  plugins/stats/PeerMonitor.cc
+  plugins/stats/PeerMonitor.h
+  plugins/stats/StatsCon.cc
+  plugins/stats/StatsCon.h
+  plugins/stats/StatsPluginPrefs.cc
+  plugins/stats/StatsPluginPrefs.h
+  plugins/stats/StatsPluginPrefsPage.cc
+  plugins/stats/StatsPluginPrefsPage.h
+  plugins/stats/StatsSpd.cc
+  plugins/stats/StatsSpd.h
+  plugins/stats/statsplugin.cc
+  plugins/stats/statsplugin.h
+
+Copyright: © Frerich Raabe <raabe@kde.org>
+Credited: 14 times
+Years: 2001-2004
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 14
+Copyrighted-Files:
+  plugins/rssfeed/rss/article.cpp
+  plugins/rssfeed/rss/article.h
+  plugins/rssfeed/rss/document.cpp
+  plugins/rssfeed/rss/document.h
+  plugins/rssfeed/rss/global.h
+  plugins/rssfeed/rss/image.cpp
+  plugins/rssfeed/rss/image.h
+  plugins/rssfeed/rss/librss.h
+  plugins/rssfeed/rss/loader.cpp
+  plugins/rssfeed/rss/loader.h
+  plugins/rssfeed/rss/textinput.cpp
+  plugins/rssfeed/rss/textinput.h
+  plugins/rssfeed/rss/tools_p.cpp
+  plugins/rssfeed/rss/tools_p.h
+
+Copyright: © Alexander Dymo <adymo@kdevelop.org>
+Credited: 13 times
+Years: 2004-2005
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 13
+Copyrighted-Files:
+  apps/ktorrent/newui/button.cpp
+  apps/ktorrent/newui/button.h
+  apps/ktorrent/newui/buttonbar.cpp
+  apps/ktorrent/newui/buttonbar.h
+  apps/ktorrent/newui/comdefs.h
+  apps/ktorrent/newui/ddockwindow.cpp
+  apps/ktorrent/newui/ddockwindow.h
+  apps/ktorrent/newui/dmainwindow.cpp
+  apps/ktorrent/newui/dmainwindow.h
+  apps/ktorrent/newui/docksplitter.cpp
+  apps/ktorrent/newui/docksplitter.h
+  apps/ktorrent/newui/dtabwidget.cpp
+  apps/ktorrent/newui/dtabwidget.h
+
+Copyright: © Alan Jones <skyphyr@gmail.com>
+Credited: 12 times
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 12
+Copyrighted-Files:
+  plugins/rssfeed/rssarticle.cpp
+  plugins/rssfeed/rssarticle.h
+  plugins/rssfeed/rssfeed.cpp
+  plugins/rssfeed/rssfeed.h
+  plugins/rssfeed/rssfeedmanager.cpp
+  plugins/rssfeed/rssfeedmanager.h
+  plugins/rssfeed/rssfeedplugin.cpp
+  plugins/rssfeed/rssfeedplugin.h
+  plugins/rssfeed/rssfilter.cpp
+  plugins/rssfeed/rssfilter.h
+  plugins/rssfeed/rsslinkdownloader.cpp
+  plugins/rssfeed/rsslinkdownloader.h
+
+Copyright: © Diego R. Brogna <dierbro@gmail.com>
+Credited: 12 times
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 12
+Copyrighted-Files:
+  plugins/webinterface/httpserver.cpp
+  plugins/webinterface/httpserver.h
+  plugins/webinterface/php_handler.cpp
+  plugins/webinterface/php_handler.h
+  plugins/webinterface/php_interface.cpp
+  plugins/webinterface/php_interface.h
+  plugins/webinterface/webinterfaceplugin.cpp
+  plugins/webinterface/webinterfaceplugin.h
+  plugins/webinterface/webinterfaceprefpage.cpp
+  plugins/webinterface/webinterfaceprefpage.h
+  plugins/webinterface/webinterfaceprefwidget.cpp
+  plugins/webinterface/webinterfaceprefwidget.h
+
+Copyright: © Vincent Wagelaar <vincent@ricardis.tudelft.nl>
+Credited: 6 times
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 6
+Copyrighted-Files:
+  plugins/infowidget/chunkbar.cpp
+  plugins/infowidget/chunkbar.h
+  plugins/infowidget/floatspinbox.cpp
+  plugins/infowidget/floatspinbox.h
+  plugins/infowidget/localefloatvalidator.cpp
+  plugins/infowidget/localefloatvalidator.h
+
+Copyright: © Kevin Andre
+Credited: 4 times
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 4
+Copyrighted-Files:
+  plugins/zeroconf/avahiservice.cpp
+  plugins/zeroconf/avahiservice.h
+  plugins/zeroconf/localbrowser.cpp
+  plugins/zeroconf/localbrowser.h
+
+Copyright: © Slobodan Simic
+Credited: 4 times
+Email-Addresses: <simicsl@verat.net>, <slsimic@gmail.com>
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 2
+Copyrighted-Files:
+  translations/sr/messages/ktorrent.po
+  translations/sr@Latn/messages/ktorrent.po
+
+Copyright: © Lesly Weyts
+Credited: 4 times
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 4
+Copyrighted-Files:
+  plugins/zeroconf/avahiservice.cpp
+  plugins/zeroconf/avahiservice.h
+  plugins/zeroconf/localbrowser.cpp
+  plugins/zeroconf/localbrowser.h
+
+Copyright: © Jonas Widarsson <jonas@widarsson.com>
+Credited: 4 times
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 4
+Copyrighted-Files:
+  plugins/infowidget/floatspinbox.cpp
+  plugins/infowidget/floatspinbox.h
+  plugins/infowidget/localefloatvalidator.cpp
+  plugins/infowidget/localefloatvalidator.h
+
+Copyright: © Jannick Kuhr
+Credited: 3 times
+Email-Addresses: <jannick.kuhr@kdemail.net>, <jakuhr-linux@gmx.de>, <opensource@kuhr.org>
+Years: 2006-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/de/messages/ktorrent.po
+
+Copyright: © Modestas Vainius <modestas@vainius.eu>
+Credited: 3 times
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 3
+Copyrighted-Files:
+  plugins/infowidget/flagdb.cpp
+  plugins/infowidget/flagdb.h
+  plugins/infowidget/peerview.cpp
+
+Copyright: © Ivan Petrouchtchak
+Credited: 2 times
+Email-Addresses: <ivanpetrouchtchak@yahoo.com>, <fr.ivan@ukrainian-orthodox.org>
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/uk/messages/ktorrent.po
+
+Copyright: © Xavier Batlle i Pèlach
+Credited: 2 times
+Other-Names: Xavier Batlle i Pelach
+Email-Addresses: <tevibp@wanadoo.es>, <tevi@eltercer.cat>
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/ca/messages/ktorrent.po
+
+Copyright: © Lukasz Fibinger <lucke@o2.pl>
+Credited: 2 times
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 2
+Copyrighted-Files:
+  apps/ktorrent/filterbar.cpp
+  apps/ktorrent/filterbar.h
+
+Copyright: © Serdar Soytetir <tulliana@gmail.com>
+Credited: 2 times
+Other-Names: serdar soytetir
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/tr/messages/ktorrent.po
+
+Copyright: © Stefan Asserhäll <stefan.asserhall@comhem.se>
+Credited: 2 times
+Other-Names: Stefan Asserhall
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/sv/messages/ktorrent.po
+
+Copyright: © Nicola Ruggero
+Credited: 2 times
+Email-Addresses: <nixprog.adsl@tiscali.it>, <nicola@nxnt.org>
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/it/messages/ktorrent.po
+
+Copyright: © Rusudan Tsiskreli
+Credited: 2 times
+Email-Addresses: <tsiskreli@gmail.com>, <r_tsiskreli@caucasus.net>
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/ka/messages/ktorrent.po
+
+Copyright: © Adam Treat <treat@kde.org>
+Credited: 2 times
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files-Count: 2
+Copyrighted-Files:
+  apps/ktorrent/ktorrentapp.cpp
+  apps/ktorrent/ktorrentapp.h
+
+Copyright: © Waldemar Silva Júnior <wsjunior@kdemail.net>
+Credited: 2 times
+Other-Names: Waldemar Silva Junior
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/pt_BR/messages/ktorrent.po
+
+Copyright: © Rinse de Vries
+Credited: 2 times
+Email-Addresses: <rinsedevries@kde.nl>, <RinseDeVries@home.nl>
+Years: 2005-2008
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/nl/messages/ktorrent.po
+
+Copyright: © Amanpreet Singh Alam
+Credited: 2 times
+Email-Addresses: <aalam@redhat.com>, <amanpreetalam@yahoo.com>
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/pa/messages/ktorrent.po
+
+Copyright: © Danny Kukawka <danny.kukawka@web.de>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/de/messages/ktorrent.po
+
+Copyright: © Václav Čermák <vaclav.cermak@gmail.com>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/cs/messages/ktorrent.po
+
+Copyright: © Andrew Coles <andrew_coles@yahoo.co.uk>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/en_GB/messages/ktorrent.po
+
+Copyright: © Maarten Rütten <maartenrutten@kde.nl>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/nl/messages/ktorrent.po
+
+Copyright: © Erik Kjær Pedersen <erik@binghamton.edu>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/da/messages/ktorrent.po
+
+Copyright: © Златко Попов <zlatkopopov@fsa-bg.org>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/bg/messages/ktorrent.po
+
+Copyright: © Kéménczy Kálmán <kkemenczy@novell.com>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/hu/messages/ktorrent.po
+
+Copyright: © Manfred Wiese <m.j.wiese@web.de>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/nds/messages/ktorrent.po
+
+Copyright: © Maggioni Marcello <marcello.maggioni@gmail.com>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  libktorrent/datachecker/multidatachecker.cpp
+
+Copyright: © Jerzy Trzeciak <artusek@wp.pl>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/pl/messages/ktorrent.po
+
+Copyright: © Carole Karema <karemacarole@hotmail.com>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © MaryamSadat Razavi <razavi@itland.ir>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/fa/messages/ktorrent.po
+
+Copyright: © JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © Spiros Georgaras <sng@hellug.gr>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/el/messages/ktorrent.po
+
+Copyright: © Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © Bram Schoenmakers <bramschoenmakers@kde.nl>
+Credited: 1 time
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/nl/messages/ktorrent.po
+
+Copyright: © Martin Moeller <martin@martinm-76.dk>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/da/messages/ktorrent.po
+
+Copyright: © Steve Murphy <murf@e-tools.com>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © Gabor Kelemen <kelemeng@gnome.hu>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/hu/messages/ktorrent.po
+
+Copyright: © Marcin Zasada <emzeta76@gazeta.pl>
+Credited: 1 time
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/pl/messages/ktorrent.po
+
+Copyright: © Simon Horsburgh <simondo42@ihug.co.nz>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/en_GB/messages/ktorrent.po
+
+Copyright: © Barış Metin <baris@uludag.org.tr>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/tr/messages/ktorrent.po
+
+Copyright: © Martijn van Vliet <mvanvliet@gmail.com>
+Credited: 1 time
+Years: 2006-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/nl/messages/ktorrent.po
+
+Copyright: © Nasim Daniarzadeh <daniarzadeh@itland.ir>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/fa/messages/ktorrent.po
+
+Copyright: © Engin Çağatay <engincagatay@yahoo.com>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/tr/messages/ktorrent.po
+
+Copyright: © Mohamed SAAD <metehyi@free.fr>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/ar/messages/ktorrent.po
+
+Copyright: © Klara Cihlarova <koty@seznam.cz>
+Credited: 1 time
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/cs/messages/ktorrent.po
+
+Copyright: © Antoine Bigirimana <antoine@e-tools.com>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © Malcolm Hunter <malcolm.hunter@gmx.co.uk>
+Credited: 1 time
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/en_GB/messages/ktorrent.po
+
+Copyright: © Toussis Manolis <manolis@koppermind.homelinux.org>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/el/messages/ktorrent.po
+
+Copyright: © Akın Ömeroğlu <akin@omeroglu.net>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/tr/messages/ktorrent.po
+
+Copyright: © Augustin KIBERWA <akiberwa@yahoo.co.uk>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © Lukáš Tinkl <lukas@kde.org>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/cs/messages/ktorrent.po
+
+Copyright: © Sönke Dibbern <s_dibbern@web.de>
+Credited: 1 time
+Years: 2006-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/nds/messages/ktorrent.po
+
+Copyright: © Frank Weng (a.k.a. Franklin) <franklin@goodhorse.idv.tw>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/zh_TW/messages/ktorrent.po
+
+Copyright: © Alexander Nicolaysen Sørnes <alex@thehandofagony.com>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/nb/messages/ktorrent.po
+
+Copyright: © Jozef Riha <jose1711@gmail.com>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/sk/messages/ktorrent.po
+
+Copyright: © Nicolas Ternisien <nicolas.ternisien@gmail.com>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/fr/messages/ktorrent.po
+
+Copyright: © Tamas Szanto <tszanto@interware.hu>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/hu/messages/ktorrent.po
+
+Copyright: © Jaime Robles <jaime@kde.org>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/es/messages/ktorrent.po
+
+Copyright: © Krzysztof Lichota <lichota@mimuw.edu.pl>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/pl/messages/ktorrent.po
+
+Copyright: © Patrick Trettenbrein <patrick.trettenbrein@kdemail.net>
+Credited: 1 time
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/de/messages/ktorrent.po
+
+Copyright: © Donatas Glodenis <dgvirtual@akl.lt>
+Credited: 1 time
+Years: 2005, 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/lt/messages/ktorrent.po
+
+Copyright: © Zlatko Popov <zlatkopopov@fsa-bg.org>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/bg/messages/ktorrent.po
+
+Copyright: © doutor.zero <doutor.zero@gmail.com>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/pt_BR/messages/ktorrent.po
+
+Copyright: © Noëlla Mupole <s24211045@tuks.co.za>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © Philibert Ndandali <ndandali@yahoo.fr>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/es/messages/ktorrent.po
+
+Copyright: © Marek Laane <bald@starman.ee>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/et/messages/ktorrent.po
+
+Copyright: © Nick Shaforostoff <shafff@ukr.net>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/ru/messages/ktorrent.po
+
+Copyright: © Klára Cihlářová <koty@seznam.cz>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/cs/messages/ktorrent.po
+
+Copyright: © Kováts Dóra <dorcssa@gmail.com>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/hu/messages/ktorrent.po
+
+Copyright: © Martin Schlander <suse@linuxin.dk>
+Credited: 1 time
+Years: 2008
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/da/messages/ktorrent.po
+
+Copyright: © Eugen Tarabčák <flashmann@szm.sk>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/sk/messages/ktorrent.po
+
+Copyright: © Xavier Batlle Pelach <tevi@eltercer.cat>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/ca/messages/ktorrent.po
+
+Copyright: © Thomas Reitelbach <tr@erdfunkstelle.de>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/de/messages/ktorrent.po
+
+Copyright: © Viateur MUGENZI <muvia1@yahoo.fr>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/rw/messages/ktorrent.po
+
+Copyright: © Marek Stopka <marekstopka@gmail.com>
+Credited: 1 time
+Years: 2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/cs/messages/ktorrent.po
+
+Copyright: © Yukiko Bando <ybando@k6.dion.ne.jp>
+Credited: 1 time
+Years: 2005-2007
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/ja/messages/ktorrent.po
+
+Copyright: © Josep Ma. Ferrer <txemaq@gmail.com>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/ca/messages/ktorrent.po
+
+Copyright: © Hasso Tepper <hasso@kde.org>
+Credited: 1 time
+Years: 2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/et/messages/ktorrent.po
+
+Copyright: © sejishikong <sejishikong@263.net>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/zh_CN/messages/ktorrent.po
+
+Copyright: © Gregory Mokhin <mok@kde.ru>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/ru/messages/ktorrent.po
+
+Copyright: © Stephan Johach <hunsum@gmx.de>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/de/messages/ktorrent.po
+
+Copyright: © Funda Wang <fundawang@linux.net.cn>
+Credited: 1 time
+Years: 2005-09-23
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/zh_CN/messages/ktorrent.po
+
+Copyright: © mvillarino <mvillarino@users.sourceforge.net>
+Credited: 1 time
+Years: 2005-2006
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/gl/messages/ktorrent.po
+
+Copyright: © Sylvain Garsault <sylvain.garsault@freesbee.fr>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/fr/messages/ktorrent.po
+
+Copyright: © Pablo de Vicente <pablo.devicente@gmail.com>
+Credited: 1 time
+Years: 2005
+Used-Licenses: GPL-2+
+Copyrighted-Files:
+  translations/es/messages/ktorrent.po
+
+
+----------------------------------------------------------------------
+--   Detailed copyright and license information for each file can   --
+--                          be found below                          --
+----------------------------------------------------------------------
+
+Directory: /
+License: GPL-2+
+
+Files: AUTHORS
+License: GPL-2+ (implicit)
+
+Files: COPYING-DOCS
+License: GPL-2+ (implicit)
+
+Files: ChangeLog
+License: GPL-2+ (implicit)
+
+Files: Doxyfile
+License: GPL-2+ (implicit)
+
+Files: INSTALL
+License: GPL-2+ (implicit)
+
+Files: Makefile.am
+License: GPL-2+ (implicit)
+
+Files: Makefile.in
+License: GPL-2+ (implicit)
+
+Files: NEWS
+License: GPL-2+ (implicit)
+
+Files: README
+License: GPL-2+ (implicit)
+
+Files: TODO
+License: GPL-2+ (implicit)
+
+Files: acinclude.m4
+License: GPL-2+ (implicit)
+
+Files: aclocal.m4
+License: GPL-2+ (implicit)
+
+Files: config.h.in
+License: GPL-2+ (implicit)
+
+Files: configure
+License: GPL-2+ (implicit)
+
+Files: configure.files
+License: GPL-2+ (implicit)
+
+Files: configure.in
+License: GPL-2+ (implicit)
+
+Files: configure.in.bot
+License: GPL-2+ (implicit)
+
+Files: configure.in.in
+License: GPL-2+ (implicit)
+
+Files: inst-apps
+License: GPL-2+ (implicit)
+
+Files: ktorrent.kdevelop
+License: GPL-2+ (implicit)
+
+Files: stamp-h.in
+License: GPL-2+ (implicit)
+
+Files: subdirs
+License: GPL-2+ (implicit)
+
+Directory: admin/
+License: GPL-2+ (implicit)
+
+Files: admin/Doxyfile.am
+License: GPL-2+ (implicit)
+
+Files: admin/Doxyfile.global
+License: GPL-2+ (implicit)
+
+Files: admin/Makefile.common
+License: GPL-2+ (implicit)
+
+Files: admin/acinclude.m4.in
+License: GPL-2+ (implicit)
+
+Files: admin/am_edit
+License: GPL-2+ (implicit)
+
+Files: admin/bcheck.pl
+License: GPL-2+ (implicit)
+
+Files: admin/compile
+License: GPL-2+ (implicit)
+
+Files: admin/conf.change.pl
+License: GPL-2+ (implicit)
+
+Files: admin/config.guess
+License: GPL-2+ (implicit)
+
+Files: admin/config.pl
+License: GPL-2+ (implicit)
+
+Files: admin/config.sub
+License: GPL-2+ (implicit)
+
+Files: admin/configure.in.bot.end
+License: GPL-2+ (implicit)
+
+Files: admin/configure.in.min
+License: GPL-2+ (implicit)
+
+Files: admin/cvs.sh
+License: GPL-2+ (implicit)
+
+Files: admin/debianrules
+License: GPL-2+ (implicit)
+
+Files: admin/depcomp
+License: GPL-2+ (implicit)
+
+Files: admin/deps.am
+License: GPL-2+ (implicit)
+
+Files: admin/detect-autoconf.pl
+License: GPL-2+ (implicit)
+
+Files: admin/doxygen.sh
+License: GPL-2+ (implicit)
+
+Files: admin/install-sh
+License: GPL-2+ (implicit)
+
+Files: admin/libtool.m4.in
+License: GPL-2+ (implicit)
+
+Files: admin/ltmain.sh
+License: GPL-2+ (implicit)
+
+Files: admin/missing
+License: GPL-2+ (implicit)
+
+Files: admin/mkinstalldirs
+License: GPL-2+ (implicit)
+
+Files: admin/nmcheck
+License: GPL-2+ (implicit)
+
+Files: admin/oldinclude.m4.in
+License: GPL-2+ (implicit)
+
+Files: admin/pkg.m4.in
+License: GPL-2+ (implicit)
+
+Files: admin/ylwrap
+License: GPL-2+ (implicit)
+
+Directory: apps/
+License: GPL-2+ (implicit)
+
+Files: apps/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: apps/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: apps/ktcachecheck/
+License: GPL-2+ (implicit)
+
+Files: apps/ktcachecheck/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: apps/ktcachecheck/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: apps/ktcachecheck/cachecheck.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktcachecheck/cachechecker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktcachecheck/cachechecker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktcachecheck/multicachechecker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktcachecheck/multicachechecker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktcachecheck/singlecachechecker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktcachecheck/singlecachechecker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: apps/ktorrent/
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/README
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/addpeerwidget.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/addpeerwidget.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/addpeerwidgetbase.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/advancedpref.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/custom_widgets.cw
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/dcopinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/downloadpref.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/fileselectdlg.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/fileselectdlg.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/fileselectdlgbase.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/filterbar.cpp
+Copyright: © 2007 Lukasz Fibinger <lucke@o2.pl>
+License: GPL-2+
+
+Files: apps/ktorrent/filterbar.h
+Copyright: © 2007 Lukasz Fibinger <lucke@o2.pl>
+License: GPL-2+
+
+Files: apps/ktorrent/generalpref.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi128-app-ktorrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi128-mime-torrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi16-app-ktorrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi16-mime-torrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi22-action-ktencrypted.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi22-action-ktremove.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi22-action-ktstart.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi22-action-ktstart_all.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi22-action-ktstop.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi22-action-ktstop_all.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi22-app-ktorrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi22-mime-torrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi32-app-ktorrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi32-mime-torrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi48-action-ktplugins.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi48-app-ktorrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi48-mime-torrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi64-action-ktinfowidget.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi64-action-ktqueuemanager.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi64-action-ktupnp.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi64-app-ktorrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi64-filesys-ktprefdownloads.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hi64-mime-torrent.png
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hisc-app-ktorrent.svgz
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/hisc-mime-torrent.svgz
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/ipfilterwidget.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ipfilterwidget.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ipfilterwidgetbase.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/ktorrent.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrent.desktop
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/ktorrent.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrent.lsm
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/ktorrentapp.cpp
+Copyright: © 2005 Adam Treat <treat@kde.org>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentapp.h
+Copyright: © 2005 Adam Treat <treat@kde.org>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentcore.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentcore.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentdcop.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentdcop.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/ktorrentui.rc
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/ktorrentview.cpp
+Copyright: © 2005, 2006 Joris Guisson <joris.guisson@gmail.com>
+           © 2005, 2006 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentview.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentviewitem.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentviewitem.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentviewmenu.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/ktorrentviewmenu.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/leaktrace.cpp
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/main.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/pastedialog.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/pastedialog.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/pastedlgbase.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/pref.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/pref.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/queuedialog.cpp
+Copyright: © 2005 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/queuedialog.h
+Copyright: © 2005 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/queuedlg.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/scandialog.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/scandialog.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/scandlgbase.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/speedlimitsdlg.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/speedlimitsdlg.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/speedlimitsdlgbase.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/torrentcreatordlg.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/torrentcreatordlg.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/torrentcreatordlgbase.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/trayhoverpopup.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/trayhoverpopup.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/trayicon.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/trayicon.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/viewmanager.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/viewmanager.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/x-bittorrent.desktop
+License: GPL-2+ (implicit)
+
+Directory: apps/ktorrent/groups/
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/groups/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/groups/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/groups/activedownloadsgroup.cpp
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/activedownloadsgroup.h
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/activegroup.cpp
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/activegroup.h
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/activeuploadsgroup.cpp
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/activeuploadsgroup.h
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/allgroup.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/allgroup.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/downloadgroup.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/downloadgroup.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/group.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/group.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/groupmanager.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/groupmanager.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/groupview.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/groupview.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/inactivedownloadsgroup.cpp
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/inactivedownloadsgroup.h
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/inactivegroup.cpp
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/inactivegroup.h
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/inactiveuploadsgroup.cpp
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/inactiveuploadsgroup.h
+Copyright: © 2007 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/queueddownloadsgroup.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/queueddownloadsgroup.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/queueduploadsgroup.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/queueduploadsgroup.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/torrentdrag.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/torrentdrag.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/torrentgroup.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/torrentgroup.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/uploadgroup.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/uploadgroup.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/userdownloadsgroup.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/userdownloadsgroup.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/useruploadsgroup.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: apps/ktorrent/groups/useruploadsgroup.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Directory: apps/ktorrent/newui/
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/button.cpp
+Copyright: © 2004 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/button.h
+Copyright: © 2004 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/buttonbar.cpp
+Copyright: © 2004 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/buttonbar.h
+Copyright: © 2004 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/comdefs.h
+Copyright: © 2004 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/ddockwindow.cpp
+Copyright: © 2005 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/ddockwindow.h
+Copyright: © 2005 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/dmainwindow.cpp
+Copyright: © 2005 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/dmainwindow.h
+Copyright: © 2005 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/docksplitter.cpp
+Copyright: © 2004 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/docksplitter.h
+Copyright: © 2004 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/dtabwidget.cpp
+Copyright: © 2005 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Files: apps/ktorrent/newui/dtabwidget.h
+Copyright: © 2005 Alexander Dymo <adymo@kdevelop.org>
+License: GPL-2+ (implicit)
+
+Directory: apps/kttorinfo/
+License: GPL-2+ (implicit)
+
+Files: apps/kttorinfo/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: apps/kttorinfo/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: apps/kttorinfo/main.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: apps/ktupnptest/
+License: GPL-2+ (implicit)
+
+Files: apps/ktupnptest/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: apps/ktupnptest/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: apps/ktupnptest/main.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktupnptest/mainwidget.ui
+License: GPL-2+ (implicit)
+
+Files: apps/ktupnptest/upnptestapp.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: apps/ktupnptest/upnptestapp.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: libktorrent/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/expandablewidget.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/expandablewidget.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/functions.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/functions.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/ktorrent.kcfg
+License: GPL-2+ (implicit)
+
+Files: libktorrent/ktversion.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/labelview.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/labelview.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/labelviewitembase.ui
+License: GPL-2+ (implicit)
+
+Files: libktorrent/pluginmanager.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/pluginmanager.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/pluginmanagerprefpage.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/pluginmanagerprefpage.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/pluginmanagerwidget.ui
+License: GPL-2+ (implicit)
+
+Files: libktorrent/settings.kcfgc
+License: GPL-2+ (implicit)
+
+Directory: libktorrent/datachecker/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/datachecker/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/datachecker/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/datachecker/datachecker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/datachecker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/datacheckerlistener.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/datacheckerlistener.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/datacheckerthread.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/datacheckerthread.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/multidatachecker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Maggioni Marcello <marcello.maggioni@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/multidatachecker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/singledatachecker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/datachecker/singledatachecker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: libktorrent/interfaces/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/interfaces/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/interfaces/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/interfaces/chunkdownloadinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/chunkdownloadinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/coreinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/coreinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/exitoperation.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/exitoperation.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/filetreediritem.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/filetreediritem.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/filetreeitem.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/filetreeitem.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/functions.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/functions.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/guiinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/guiinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/ipblockinginterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/ipblockinginterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/logmonitorinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/logmonitorinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/monitorinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/monitorinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/peerinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/peerinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/peersource.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/peersource.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/plugin.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/plugin.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/prefpageinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/prefpageinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/torrentfileinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/torrentfileinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/torrentinterface.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/torrentinterface.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/trackerslist.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/interfaces/trackerslist.h
+Copyright: © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Directory: libktorrent/kademlia/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/kademlia/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/kademlia/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/kademlia/announcetask.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/announcetask.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/database.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/database.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/dht.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/dht.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/dhtbase.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/dhtbase.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/dhttrackerbackend.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/dhttrackerbackend.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/kbucket.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/kbucket.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/kclosestnodessearch.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/kclosestnodessearch.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/key.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/key.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/node.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/node.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/nodelookup.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/nodelookup.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/pack.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/pack.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/rpccall.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/rpccall.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/rpcmsg.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/rpcmsg.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/rpcserver.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/rpcserver.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/task.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/task.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/taskmanager.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/kademlia/taskmanager.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: libktorrent/migrate/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/migrate/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/migrate/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/migrate/cachemigrate.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/migrate/cachemigrate.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/migrate/ccmigrate.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/migrate/ccmigrate.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/migrate/migrate.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/migrate/migrate.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: libktorrent/mse/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/mse/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/mse/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/mse/bigint.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/bigint.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/encryptedauthenticate.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/encryptedauthenticate.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/encryptedserverauthenticate.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/encryptedserverauthenticate.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/functions.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/functions.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/rc4encryptor.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/rc4encryptor.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/streamsocket.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/mse/streamsocket.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: libktorrent/net/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/net/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/net/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/net/address.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/address.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/bufferedsocket.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/bufferedsocket.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/circularbuffer.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/circularbuffer.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/downloadthread.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/downloadthread.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/networkthread.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/networkthread.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/portlist.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/portlist.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/socket.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/socket.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/socketgroup.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/socketgroup.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/socketmonitor.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/socketmonitor.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/speed.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/speed.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/uploadthread.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/net/uploadthread.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: libktorrent/torrent/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/torrent/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/torrent/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/torrent/advancedchokealgorithm.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/advancedchokealgorithm.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/announcelist.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/announcelist.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/authenticate.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/authenticate.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/authenticatebase.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/authenticatebase.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/authenticationmonitor.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/authenticationmonitor.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/bdecoder.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/bdecoder.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/bencoder.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/bencoder.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/bnode.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/bnode.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/cache.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/cache.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/cachefile.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/cachefile.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/cap.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/cap.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/choker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/choker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunk.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunk.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunkcounter.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunkcounter.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunkdownload.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunkdownload.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunkmanager.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunkmanager.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunkselector.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/chunkselector.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/dndfile.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/dndfile.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/downloadcap.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/downloadcap.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/downloader.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/downloader.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/globals.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/globals.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/httptracker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/httptracker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/ipblocklist.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/ipblocklist.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/movedatafilesjob.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/movedatafilesjob.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/multifilecache.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/multifilecache.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/newchokealgorithm.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/newchokealgorithm.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/oldchokealgorithm.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/oldchokealgorithm.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/packet.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/packet.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/packetreader.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/packetreader.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/packetwriter.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/packetwriter.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peer.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peer.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peerdownloader.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peerdownloader.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peerid.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peerid.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peermanager.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peermanager.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peersourcemanager.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peersourcemanager.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peeruploader.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/peeruploader.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/piece.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/piece.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/preallocationthread.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/preallocationthread.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/queuemanager.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/queuemanager.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/request.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/request.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/server.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/server.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/serverauthenticate.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/serverauthenticate.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/singlefilecache.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/singlefilecache.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/speedestimater.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/speedestimater.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/statsfile.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/statsfile.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/timeestimator.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/timeestimator.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrent.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrent.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrentcontrol.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrentcontrol.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrentcreator.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrentcreator.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrentfile.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrentfile.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrentmonitor.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/torrentmonitor.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/tracker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/tracker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/udptracker.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/udptracker.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/udptrackersocket.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/udptrackersocket.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/uploadcap.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/uploadcap.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/uploader.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/uploader.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/upspeedestimater.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/upspeedestimater.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/utpex.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/utpex.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/value.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/torrent/value.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: libktorrent/util/
+License: GPL-2+ (implicit)
+
+Files: libktorrent/util/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: libktorrent/util/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: libktorrent/util/array.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/array.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/autorotatelogjob.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/autorotatelogjob.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/bitset.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/bitset.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/constants.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/error.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/error.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/file.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/file.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/fileops.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/fileops.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/functions.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/functions.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/httprequest.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/httprequest.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/log.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/log.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/mmapfile.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/mmapfile.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/profiler.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/profiler.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/ptrmap.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/ptrmap.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/sha1hash.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/sha1hash.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/sha1hashgen.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/sha1hashgen.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/timer.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/timer.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/urlencoder.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/urlencoder.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/waitjob.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: libktorrent/util/waitjob.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: plugins/
+License: GPL-2+ (implicit)
+
+Files: plugins/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: plugins/infowidget/
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/availabilitychunkbar.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/availabilitychunkbar.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/chunkbar.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Vincent Wagelaar <vincent@ricardis.tudelft.nl>
+License: GPL-2+
+
+Files: plugins/infowidget/chunkbar.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Vincent Wagelaar <vincent@ricardis.tudelft.nl>
+License: GPL-2+
+
+Files: plugins/infowidget/chunkdownloadview.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/chunkdownloadview.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/chunkdownloadviewbase.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/downloadedchunkbar.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/downloadedchunkbar.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/fileview.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/fileview.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/flagdb.cpp
+Copyright: © 2007 Modestas Vainius <modestas@vainius.eu>
+License: GPL-2+
+
+Files: plugins/infowidget/flagdb.h
+Copyright: © 2007 Modestas Vainius <modestas@vainius.eu>
+License: GPL-2+
+
+Files: plugins/infowidget/floatspinbox.cpp
+Copyright: © 2006 Joris Guisson <joris.guisson@gmail.com>
+           © 2006 Vincent Wagelaar <vincent@ricardis.tudelft.nl>
+           © 2006 Jonas Widarsson <jonas@widarsson.com>
+License: GPL-2+
+
+Files: plugins/infowidget/floatspinbox.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Vincent Wagelaar <vincent@ricardis.tudelft.nl>
+           © 2005 Jonas Widarsson <jonas@widarsson.com>
+License: GPL-2+
+
+Files: plugins/infowidget/infowidgetplugin.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/infowidgetplugin.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/infowidgetpluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/infowidgetprefpage.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/infowidgetprefpage.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/iwfiletreediritem.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/iwfiletreediritem.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/iwfiletreeitem.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/iwfiletreeitem.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/iwpref.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/ktinfowidgetplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/ktinfowidgetplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/ktorrentmonitor.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/ktorrentmonitor.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/localefloatvalidator.cpp
+Copyright: © 2006 Joris Guisson <joris.guisson@gmail.com>
+           © 2006 Vincent Wagelaar <vincent@ricardis.tudelft.nl>
+           © 2006 Jonas Widarsson <jonas@widarsson.com>
+License: GPL-2+
+
+Files: plugins/infowidget/localefloatvalidator.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Vincent Wagelaar <vincent@ricardis.tudelft.nl>
+           © 2005 Jonas Widarsson <jonas@widarsson.com>
+License: GPL-2+
+
+Files: plugins/infowidget/peerview.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2007 Modestas Vainius <modestas@vainius.eu>
+License: GPL-2+
+
+Files: plugins/infowidget/peerview.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/statustab.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/statustab.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/statustabbase.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/trackerview.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/trackerview.h
+Copyright: © 2006 Joris Guisson <joris.guisson@gmail.com>
+           © 2006 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/infowidget/trackerviewbase.ui
+License: GPL-2+ (implicit)
+
+Directory: plugins/infowidget/geoip/
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/geoip/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/infowidget/geoip/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: plugins/ipfilter/
+License: GPL-2+ (implicit)
+
+Files: plugins/ipfilter/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/ipfilter/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/ipfilter/antip2p.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/ipfilter/antip2p.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/ipfilter/convert_dlg.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/ipfilter/convertdialog.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/ipfilter/convertdialog.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/ipfilter/ipblockingpref.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/ipfilter/ipblockingprefpage.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/ipfilter/ipblockingprefpage.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/ipfilter/ipfilterplugin.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/ipfilter/ipfilterplugin.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/ipfilter/ipfilterpluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Files: plugins/ipfilter/ktipfilterplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/ipfilter/ktipfilterplugin.kcfg
+License: GPL-2+ (implicit)
+
+Directory: plugins/logviewer/
+License: GPL-2+ (implicit)
+
+Files: plugins/logviewer/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/logviewer/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/logviewer/ktlogviewerplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/logviewer/ktlogviewerplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/logviewer/logflags.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logflags.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logprefpage.cpp
+Copyright: © 2006 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logprefpage.h
+Copyright: © 2006 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logprefwidget.cpp
+Copyright: © 2006 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logprefwidget.h
+Copyright: © 2006 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logprefwidgetbase.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/logviewer/logviewer.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logviewer.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logviewerplugin.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logviewerplugin.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/logviewer/logviewerpluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Directory: plugins/partfileimport/
+License: GPL-2+ (implicit)
+
+Files: plugins/partfileimport/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/partfileimport/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/partfileimport/importdialog.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/partfileimport/importdialog.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/partfileimport/importdlgbase.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/partfileimport/ktpartfileimportplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/partfileimport/ktpartfileimportpluginui.rc
+License: GPL-2+ (implicit)
+
+Files: plugins/partfileimport/partfileimportplugin.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/partfileimport/partfileimportplugin.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: plugins/rssfeed/
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/ktrssfeedplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/ktrssfeedplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rssarticle.cpp
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssarticle.h
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssfeed.cpp
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssfeed.h
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssfeedmanager.cpp
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssfeedmanager.h
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssfeedplugin.cpp
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssfeedplugin.h
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssfeedwidget.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rssfilter.cpp
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rssfilter.h
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rsslinkdownloader.cpp
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Files: plugins/rssfeed/rsslinkdownloader.h
+Copyright: © 2006 Alan Jones <skyphyr@gmail.com>
+License: GPL-2+
+
+Directory: plugins/rssfeed/rss/
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/COPYING
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/README
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/article.cpp
+Copyright: © 2001, 2002, 2003, 2004 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/article.h
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/document.cpp
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/document.h
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/global.h
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/image.cpp
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/image.h
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/librss.doxyfile
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/librss.h
+Copyright: © 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/loader.cpp
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/loader.h
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/rss-faq.html
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/testlibrss.cpp
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/testlibrss.h
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/textinput.cpp
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/textinput.h
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/tools_p.cpp
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Files: plugins/rssfeed/rss/tools_p.h
+Copyright: © 2001, 2002, 2003 Frerich Raabe <raabe@kde.org>
+License: GPL-2+ (implicit)
+
+Directory: plugins/scanfolder/
+License: GPL-2+ (implicit)
+
+Files: plugins/scanfolder/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/scanfolder/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/scanfolder/ktscanfolderplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/scanfolder/ktscanfolderplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/scanfolder/scanfolder.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scanfolder/scanfolder.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scanfolder/scanfolderplugin.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scanfolder/scanfolderplugin.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scanfolder/scanfolderpluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Files: plugins/scanfolder/scanfolderprefpage.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scanfolder/scanfolderprefpage.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scanfolder/scanfolderprefpagewidget.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scanfolder/scanfolderprefpagewidget.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scanfolder/sfprefwidgetbase.ui
+License: GPL-2+ (implicit)
+
+Directory: plugins/scheduler/
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/bwscheduler.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/bwscheduler.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/bwspage.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/bwsprefpage.cpp
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/bwsprefpage.h
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/bwsprefpagewidget.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/bwsprefpagewidget.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/bwswidget.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/bwswidget.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/cell-a-0000.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-a-0001.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-a-0002.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-a-0003.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-a-0004.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-b-0000.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-b-0001.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-b-0002.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-b-0003.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/cell-b-0004.png
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/ktschedulerplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/ktschedulerplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/ktschedulerpluginui.rc
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/schedulerpage.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/schedulerplugin.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/schedulerplugin.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/schedulerpluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Files: plugins/scheduler/schedulerprefpage.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/schedulerprefpage.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/schedulerprefpagewidget.cpp
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/scheduler/schedulerprefpagewidget.h
+Copyright: © 2006 Ivan Vasić <ivasic@gmail.com>
+License: GPL-2+
+
+Directory: plugins/search/
+License: GPL-2+ (implicit)
+
+Files: plugins/search/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/search/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/search/htmlpart.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/htmlpart.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/ktsearchplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/search/ktsearchplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/search/searchbar.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/search/searchenginelist.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchenginelist.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchplugin.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchplugin.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchpluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Files: plugins/search/searchpref.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/search/searchprefpage.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchprefpage.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchtab.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchtab.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchwidget.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Ivan Vasic <ivasic@gmail.com>
+License: GPL-2+
+
+Files: plugins/search/searchwidget.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: plugins/stats/
+License: GPL-2+ (implicit)
+
+Files: plugins/stats/ChartDrawer.cc
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/ChartDrawer.h
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/ChartDrawerData.cc
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/ChartDrawerData.h
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/stats/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/stats/PeerMonitor.cc
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/PeerMonitor.h
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/StatsCon.cc
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/StatsCon.h
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/StatsPluginPrefs.cc
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/StatsPluginPrefs.h
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/StatsPluginPrefsPage.cc
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/StatsPluginPrefsPage.h
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/StatsSpd.cc
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/StatsSpd.h
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/ktstatsplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/stats/ktstatsplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/stats/sprefwgt.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/stats/statsconwgt.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/stats/statsplugin.cc
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/statsplugin.h
+Copyright: © 2007 Krzysztof Kundzicz <athantor@gmail.com>
+License: GPL-2+
+
+Files: plugins/stats/statspluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Files: plugins/stats/statsspdwgt.ui
+License: GPL-2+ (implicit)
+
+Directory: plugins/upnp/
+License: GPL-2+ (implicit)
+
+Files: plugins/upnp/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/upnp/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/upnp/ktupnpplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/upnp/ktupnpplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/upnp/soap.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/soap.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpdescriptionparser.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpdescriptionparser.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpmcastsocket.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpmcastsocket.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpplugin.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpplugin.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnppluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Files: plugins/upnp/upnpprefpage.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpprefpage.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpprefwidget.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpprefwidget.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnprouter.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnprouter.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/upnp/upnpwidget.ui
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/httpclienthandler.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/httpclienthandler.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/httpresponseheader.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/httpresponseheader.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/httpserver.cpp
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/httpserver.h
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/ktwebinterfaceplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/ktwebinterfaceplugin.kcfg
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/php_handler.cpp
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/php_handler.h
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/php_interface.cpp
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/php_interface.h
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/webinterfaceplugin.cpp
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/webinterfaceplugin.h
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/webinterfacepluginsettings.kcfgc
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/webinterfacepref.ui
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/webinterfaceprefpage.cpp
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/webinterfaceprefpage.h
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/webinterfaceprefwidget.cpp
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Files: plugins/webinterface/webinterfaceprefwidget.h
+Copyright: © 2006 Diego R. Brogna <dierbro@gmail.com>
+License: GPL-2+
+
+Directory: plugins/webinterface/www/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/coldmilk/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/favicon.ico
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icon.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/interface.js
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/interface.php
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/login.html
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/page_update.js
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/rest.php
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/shutdown.php
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/style.css
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/coldmilk/icons/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/coldmilk/icons/16x16/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/16x16/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/16x16/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/16x16/edit_user.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/16x16/high_priority.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/16x16/low_priority.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/16x16/normal_priority.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/16x16/only_seed.png
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/coldmilk/icons/22x22/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/22x22/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/22x22/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/22x22/exit.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/22x22/ktstart_all.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/22x22/ktstop_all.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/22x22/remove.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/22x22/start.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/22x22/stop.png
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/coldmilk/icons/32x32/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/32x32/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/32x32/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/32x32/configure.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/32x32/extender_opened.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/32x32/fileopen.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/32x32/folder1.png
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/coldmilk/icons/48x48/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/48x48/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/48x48/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/48x48/exit.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/48x48/switchuser.png
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/coldmilk/icons/64x64/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/64x64/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/64x64/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/64x64/down.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/64x64/folder1_man.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/coldmilk/icons/64x64/looknfeel.png
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/default/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/details.php
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/favicon.ico
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/grad1.jpg
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/grad2.jpg
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/header_tile.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/high_priority.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/icon.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/interface.php
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/ktorrentwebinterfacelogo.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/login.html
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/low_priority.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/menu_bg.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/normal_priority.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/only_seed.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/remove.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/shutdown.php
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/start.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/stop.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/style.css
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/stylen.css
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/default/wz_tooltip.js
+License: GPL-2+ (implicit)
+
+Directory: plugins/webinterface/www/mobile/
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/favicon.ico
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/interface.php
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/ktorrentwebinterfacelogo.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/login.html
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/remove.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/settings.php
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/start.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/stop.png
+License: GPL-2+ (implicit)
+
+Files: plugins/webinterface/www/mobile/torrent.php
+License: GPL-2+ (implicit)
+
+Directory: plugins/zeroconf/
+License: GPL-2+ (implicit)
+
+Files: plugins/zeroconf/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: plugins/zeroconf/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: plugins/zeroconf/avahiservice.cpp
+Copyright: © 2006 Lesly Weyts
+           © 2006 Kevin Andre
+License: GPL-2+
+
+Files: plugins/zeroconf/avahiservice.h
+Copyright: © 2006 Lesly Weyts
+           © 2006 Kevin Andre
+License: GPL-2+
+
+Files: plugins/zeroconf/ktzeroconfplugin.desktop
+License: GPL-2+ (implicit)
+
+Files: plugins/zeroconf/localbrowser.cpp
+Copyright: © 2006 Lesly Weyts
+           © 2006 Kevin Andre
+License: GPL-2+
+
+Files: plugins/zeroconf/localbrowser.h
+Copyright: © 2006 Lesly Weyts
+           © 2006 Kevin Andre
+License: GPL-2+
+
+Files: plugins/zeroconf/zeroconfplugin.cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: plugins/zeroconf/zeroconfplugin.h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: scripts/
+License: GPL-2+ (implicit)
+
+Files: scripts/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: scripts/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: scripts/ktshell
+License: GPL-2+ (implicit)
+
+Directory: templates/
+License: GPL-2+ (implicit)
+
+Files: templates/cpp
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Files: templates/h
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+License: GPL-2+
+
+Directory: translations/
+License: GPL-2+ (implicit)
+
+Files: translations/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/ar/
+License: GPL-2+ (implicit)
+
+Files: translations/ar/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ar/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/ar/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/ar/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ar/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/ar/messages/ktorrent.po
+Copyright: © 2006 Mohamed SAAD <metehyi@free.fr>
+License: GPL-2+ (implicit)
+
+Directory: translations/bg/
+License: GPL-2+ (implicit)
+
+Files: translations/bg/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/bg/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/bg/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/bg/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/bg/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/bg/messages/ktorrent.po
+Copyright: © 2005 Златко Попов <zlatkopopov@fsa-bg.org>
+           © 2005, 2006, 2007 Zlatko Popov <zlatkopopov@fsa-bg.org>
+License: GPL-2+ (implicit)
+
+Directory: translations/br/
+License: GPL-2+ (implicit)
+
+Files: translations/br/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/br/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/br/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/br/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/br/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/br/messages/ktorrent.po
+License: GPL-2+ (implicit)
+
+Directory: translations/ca/
+License: GPL-2+ (implicit)
+
+Files: translations/ca/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ca/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/ca/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/ca/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ca/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/ca/messages/ktorrent.po
+Copyright: © 2006 Josep Ma. Ferrer <txemaq@gmail.com>
+           © 2006 Xavier Batlle i Pèlach <tevibp@wanadoo.es>
+           © 2006 Xavier Batlle i Pelach <tevi@eltercer.cat>
+           © 2007 Xavier Batlle Pelach <tevi@eltercer.cat>
+License: GPL-2+ (implicit)
+
+Directory: translations/cs/
+License: GPL-2+ (implicit)
+
+Files: translations/cs/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/cs/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/cs/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/cs/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/cs/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/cs/messages/ktorrent.po
+Copyright: © 2005, 2006 Klara Cihlarova <koty@seznam.cz>
+           © 2005 Lukáš Tinkl <lukas@kde.org>
+           © 2007 Marek Stopka <marekstopka@gmail.com>
+           © 2007 Klára Cihlářová <koty@seznam.cz>
+           © 2007 Václav Čermák <vaclav.cermak@gmail.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/cy/
+License: GPL-2+ (implicit)
+
+Files: translations/cy/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/cy/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/cy/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/cy/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/cy/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/cy/messages/ktorrent.po
+License: GPL-2+ (implicit)
+
+Directory: translations/da/
+License: GPL-2+ (implicit)
+
+Files: translations/da/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/da/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/da/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/da/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/da/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/da/messages/ktorrent.po
+Copyright: © 2005, 2006, 2007 Erik Kjær Pedersen <erik@binghamton.edu>
+           © 2006 Martin Moeller <martin@martinm-76.dk>
+           © 2008 Martin Schlander <suse@linuxin.dk>
+License: GPL-2+ (implicit)
+
+Directory: translations/de/
+License: GPL-2+ (implicit)
+
+Files: translations/de/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/de/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/de/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/de/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/de/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/de/messages/ktorrent.po
+Copyright: © 2005, 2006 Patrick Trettenbrein <patrick.trettenbrein@kdemail.net>
+           © 2005 Stephan Johach <hunsum@gmx.de>
+           © 2005, 2006, 2007 Thomas Reitelbach <tr@erdfunkstelle.de>
+           © 2006 Danny Kukawka <danny.kukawka@web.de>
+           © 2006, 2007 Jannick Kuhr <jannick.kuhr@kdemail.net>
+           © 2007 Jannick Kuhr <jakuhr-linux@gmx.de>
+           © 2007 Jannick Kuhr <opensource@kuhr.org>
+License: GPL-2+ (implicit)
+
+Directory: translations/el/
+License: GPL-2+ (implicit)
+
+Files: translations/el/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/el/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/el/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/el/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/el/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/el/messages/ktorrent.po
+Copyright: © 2005, 2006, 2007 Spiros Georgaras <sng@hellug.gr>
+           © 2005, 2006, 2007 Toussis Manolis <manolis@koppermind.homelinux.org>
+License: GPL-2+ (implicit)
+
+Directory: translations/en_GB/
+License: GPL-2+ (implicit)
+
+Files: translations/en_GB/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/en_GB/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/en_GB/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/en_GB/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/en_GB/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/en_GB/messages/ktorrent.po
+Copyright: © 2005 Andrew Coles <andrew_coles@yahoo.co.uk>
+           © 2005, 2006 Malcolm Hunter <malcolm.hunter@gmx.co.uk>
+           © 2006 Simon Horsburgh <simondo42@ihug.co.nz>
+License: GPL-2+ (implicit)
+
+Directory: translations/es/
+License: GPL-2+ (implicit)
+
+Files: translations/es/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/es/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/es/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/es/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/es/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/es/messages/ktorrent.po
+Copyright: © 2005 Joris Guisson <joris.guisson@gmail.com>
+           © 2005 Pablo de Vicente <pablo.devicente@gmail.com>
+           © 2005, 2006, 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+           © 2007 Jaime Robles <jaime@kde.org>
+License: GPL-2+ (implicit)
+
+Directory: translations/et/
+License: GPL-2+ (implicit)
+
+Files: translations/et/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/et/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/et/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/et/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/et/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/et/messages/ktorrent.po
+Copyright: © 2005-2007 Marek Laane <bald@starman.ee>
+           © 2006 Hasso Tepper <hasso@kde.org>
+License: GPL-2+ (implicit)
+
+Directory: translations/fa/
+License: GPL-2+ (implicit)
+
+Files: translations/fa/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/fa/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/fa/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/fa/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/fa/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/fa/messages/ktorrent.po
+Copyright: © 2007 MaryamSadat Razavi <razavi@itland.ir>
+           © 2007 Nasim Daniarzadeh <daniarzadeh@itland.ir>
+License: GPL-2+ (implicit)
+
+Directory: translations/fr/
+License: GPL-2+ (implicit)
+
+Files: translations/fr/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/fr/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/fr/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/fr/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/fr/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/fr/messages/ktorrent.po
+Copyright: © 2005 Sylvain Garsault <sylvain.garsault@freesbee.fr>
+           © 2005 Nicolas Ternisien <nicolas.ternisien@gmail.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/gl/
+License: GPL-2+ (implicit)
+
+Files: translations/gl/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/gl/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/gl/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/gl/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/gl/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/gl/messages/ktorrent.po
+Copyright: © 2005, 2006 mvillarino <mvillarino@users.sourceforge.net>
+License: GPL-2+ (implicit)
+
+Directory: translations/hu/
+License: GPL-2+ (implicit)
+
+Files: translations/hu/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/hu/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/hu/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/hu/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/hu/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/hu/messages/ktorrent.po
+Copyright: © 2005 Tamas Szanto <tszanto@interware.hu>
+           © 2007 Kováts Dóra <dorcssa@gmail.com>
+           © 2007 Kéménczy Kálmán <kkemenczy@novell.com>
+           © 2007 Gabor Kelemen <kelemeng@gnome.hu>
+License: GPL-2+ (implicit)
+
+Directory: translations/it/
+License: GPL-2+ (implicit)
+
+Files: translations/it/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/it/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/it/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/it/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/it/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/it/messages/ktorrent.po
+Copyright: © 2005, 2006 Nicola Ruggero <nixprog.adsl@tiscali.it>
+           © 2006, 2007 Nicola Ruggero <nicola@nxnt.org>
+License: GPL-2+ (implicit)
+
+Directory: translations/ja/
+License: GPL-2+ (implicit)
+
+Files: translations/ja/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ja/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/ja/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/ja/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ja/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/ja/messages/ktorrent.po
+Copyright: © 2005, 2006, 2007 Yukiko Bando <ybando@k6.dion.ne.jp>
+License: GPL-2+ (implicit)
+
+Directory: translations/ka/
+License: GPL-2+ (implicit)
+
+Files: translations/ka/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ka/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/ka/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/ka/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ka/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/ka/messages/ktorrent.po
+Copyright: © 2006 Rusudan Tsiskreli <tsiskreli@gmail.com>
+           © 2006 Rusudan Tsiskreli <r_tsiskreli@caucasus.net>
+License: GPL-2+ (implicit)
+
+Directory: translations/lt/
+License: GPL-2+ (implicit)
+
+Files: translations/lt/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/lt/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/lt/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/lt/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/lt/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/lt/messages/ktorrent.po
+Copyright: © 2005, 2007 Donatas Glodenis <dgvirtual@akl.lt>
+License: GPL-2+ (implicit)
+
+Directory: translations/ms/
+License: GPL-2+ (implicit)
+
+Files: translations/ms/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ms/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/ms/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/ms/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ms/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/ms/messages/ktorrent.po
+License: GPL-2+ (implicit)
+
+Directory: translations/nb/
+License: GPL-2+ (implicit)
+
+Files: translations/nb/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/nb/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/nb/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/nb/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/nb/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/nb/messages/ktorrent.po
+Copyright: © 2005, 2006, 2007 Alexander Nicolaysen Sørnes <alex@thehandofagony.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/nds/
+License: GPL-2+ (implicit)
+
+Files: translations/nds/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/nds/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/nds/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/nds/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/nds/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/nds/messages/ktorrent.po
+Copyright: © 2006 Manfred Wiese <m.j.wiese@web.de>
+           © 2006, 2007 Sönke Dibbern <s_dibbern@web.de>
+License: GPL-2+ (implicit)
+
+Directory: translations/nl/
+License: GPL-2+ (implicit)
+
+Files: translations/nl/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/nl/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/nl/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/nl/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/nl/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/nl/messages/ktorrent.po
+Copyright: © 2005, 2006, 2007, 2008 Rinse de Vries <rinsedevries@kde.nl>
+           © 2005 Maarten Rütten <maartenrutten@kde.nl>
+           © 2005, 2006 Bram Schoenmakers <bramschoenmakers@kde.nl>
+           © 2006, 2007 Martijn van Vliet <mvanvliet@gmail.com>
+           © 2006 Rinse de Vries <RinseDeVries@home.nl>
+License: GPL-2+ (implicit)
+
+Directory: translations/pa/
+License: GPL-2+ (implicit)
+
+Files: translations/pa/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/pa/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/pa/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/pa/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/pa/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/pa/messages/ktorrent.po
+Copyright: © 2005 Amanpreet Singh Alam <aalam@redhat.com>
+           © 2005 Amanpreet Singh Alam <amanpreetalam@yahoo.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/pl/
+License: GPL-2+ (implicit)
+
+Files: translations/pl/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/pl/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/pl/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/pl/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/pl/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/pl/messages/ktorrent.po
+Copyright: © 2005, 2006, 2007 Krzysztof Lichota <lichota@mimuw.edu.pl>
+           © 2005, 2006 Marcin Zasada <emzeta76@gazeta.pl>
+           © 2007 Jerzy Trzeciak <artusek@wp.pl>
+License: GPL-2+ (implicit)
+
+Directory: translations/pt/
+License: GPL-2+ (implicit)
+
+Files: translations/pt/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/pt/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/pt/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/pt/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/pt/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/pt/messages/ktorrent.po
+License: GPL-2+ (implicit)
+
+Directory: translations/pt_BR/
+License: GPL-2+ (implicit)
+
+Files: translations/pt_BR/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/pt_BR/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/pt_BR/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/pt_BR/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/pt_BR/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/pt_BR/messages/ktorrent.po
+Copyright: © 2005 Waldemar Silva Júnior <wsjunior@kdemail.net>
+           © 2005 Waldemar Silva Junior <wsjunior@kdemail.net>
+           © 2007 doutor.zero <doutor.zero@gmail.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/ru/
+License: GPL-2+ (implicit)
+
+Files: translations/ru/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ru/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/ru/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/ru/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/ru/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/ru/messages/ktorrent.po
+Copyright: © 2005-2007 Nick Shaforostoff <shafff@ukr.net>
+           © 2005 Gregory Mokhin <mok@kde.ru>
+License: GPL-2+ (implicit)
+
+Directory: translations/rw/
+License: GPL-2+ (implicit)
+
+Files: translations/rw/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/rw/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/rw/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/rw/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/rw/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/rw/messages/ktorrent.po
+Copyright: © 2005 Steve Murphy <murf@e-tools.com>
+           © 2005 Philibert Ndandali <ndandali@yahoo.fr>
+           © 2005 Viateur MUGENZI <muvia1@yahoo.fr>
+           © 2005 Noëlla Mupole <s24211045@tuks.co.za>
+           © 2005 Carole Karema <karemacarole@hotmail.com>
+           © 2005 JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>
+           © 2005 Augustin KIBERWA <akiberwa@yahoo.co.uk>
+           © 2005 Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>
+           © 2005 Antoine Bigirimana <antoine@e-tools.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/sk/
+License: GPL-2+ (implicit)
+
+Files: translations/sk/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/sk/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/sk/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/sk/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/sk/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/sk/messages/ktorrent.po
+Copyright: © 2006 Eugen Tarabčák <flashmann@szm.sk>
+           © 2006 Jozef Riha <jose1711@gmail.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/sr/
+License: GPL-2+ (implicit)
+
+Files: translations/sr/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/sr/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/sr/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/sr/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/sr/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/sr/messages/ktorrent.po
+Copyright: © 2005, 2007 Slobodan Simic <simicsl@verat.net>
+           © 2006, 2007 Slobodan Simic <slsimic@gmail.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/sr@Latn/
+License: GPL-2+ (implicit)
+
+Files: translations/sr@Latn/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/sr@Latn/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/sr@Latn/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/sr@Latn/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/sr@Latn/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/sr@Latn/messages/ktorrent.po
+Copyright: © 2005, 2007 Slobodan Simic <simicsl@verat.net>
+           © 2006, 2007 Slobodan Simic <slsimic@gmail.com>
+License: GPL-2+ (implicit)
+
+Directory: translations/sv/
+License: GPL-2+ (implicit)
+
+Files: translations/sv/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/sv/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/sv/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/sv/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/sv/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/sv/messages/ktorrent.po
+Copyright: © 2005, 2006, 2007 Stefan Asserhäll <stefan.asserhall@comhem.se>
+           © 2005 Stefan Asserhall <stefan.asserhall@comhem.se>
+License: GPL-2+ (implicit)
+
+Directory: translations/tr/
+License: GPL-2+ (implicit)
+
+Files: translations/tr/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/tr/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/tr/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/tr/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/tr/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/tr/messages/ktorrent.po
+Copyright: © 2005 Barış Metin <baris@uludag.org.tr>
+           © 2006 Engin Çağatay <engincagatay@yahoo.com>
+           © 2007 Serdar Soytetir <tulliana@gmail.com>
+           © 2007 serdar soytetir <tulliana@gmail.com>
+           © 2007 Akın Ömeroğlu <akin@omeroglu.net>
+License: GPL-2+ (implicit)
+
+Directory: translations/uk/
+License: GPL-2+ (implicit)
+
+Files: translations/uk/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/uk/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/uk/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/uk/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/uk/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/uk/messages/ktorrent.po
+Copyright: © 2005, 2006, 2007 Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com>
+           © 2007 Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>
+License: GPL-2+ (implicit)
+
+Directory: translations/zh_CN/
+License: GPL-2+ (implicit)
+
+Files: translations/zh_CN/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/zh_CN/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/zh_CN/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/zh_CN/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/zh_CN/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/zh_CN/messages/ktorrent.po
+Copyright: © 2005 sejishikong <sejishikong@263.net>
+           © 2005-09-23 Funda Wang <fundawang@linux.net.cn>
+License: GPL-2+ (implicit)
+
+Directory: translations/zh_TW/
+License: GPL-2+ (implicit)
+
+Files: translations/zh_TW/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/zh_TW/Makefile.in
+License: GPL-2+ (implicit)
+
+Directory: translations/zh_TW/messages/
+License: GPL-2+ (implicit)
+
+Files: translations/zh_TW/messages/Makefile.am
+License: GPL-2+ (implicit)
+
+Files: translations/zh_TW/messages/Makefile.in
+License: GPL-2+ (implicit)
+
+Files: translations/zh_TW/messages/ktorrent.po
+Copyright: © 2006 Frank Weng (a.k.a. Franklin) <franklin@goodhorse.idv.tw>
+License: GPL-2+ (implicit)
+
+

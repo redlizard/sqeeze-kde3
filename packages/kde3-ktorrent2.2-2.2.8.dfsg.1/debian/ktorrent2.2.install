@@ -1,0 +1,17 @@
+debian/tmp/opt/kde3/bin/ktorrent
+debian/tmp/opt/kde3/bin/ktshell
+debian/tmp/opt/kde3/lib/libktorrent-*.so
+debian/tmp/opt/kde3/lib/kde3/*
+debian/tmp/opt/kde3/share/applications/kde/ktorrent.desktop
+debian/tmp/opt/kde3/share/apps/ktorrent/icons/*
+debian/tmp/opt/kde3/share/apps/ktorrent/www/*
+debian/tmp/opt/kde3/share/apps/ktorrent/ktorrentui.rc
+debian/tmp/opt/kde3/share/apps/ktorrent/ktpartfileimportpluginui.rc
+debian/tmp/opt/kde3/share/apps/ktorrent/ktschedulerpluginui.rc
+debian/tmp/opt/kde3/share/config.kcfg/*
+debian/tmp/opt/kde3/share/icons/*
+debian/tmp/opt/kde3/share/locale/*
+debian/tmp/opt/kde3/share/services/*
+debian/tmp/opt/kde3/share/servicetypes/*
+
+debian/ktorrent.xpm opt/kde3/share/pixmaps/

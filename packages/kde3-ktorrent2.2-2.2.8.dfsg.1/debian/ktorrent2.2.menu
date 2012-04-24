@@ -1,0 +1,8 @@
+?package(ktorrent):\
+  needs="X11"\
+  section="Applications/Network/File Transfer"\
+  title="KTorrent"\
+  command="ktorrent"\
+  hints="KDE,Network,FileTransfer"\
+  icon="/opt/kde3/share/pixmaps/ktorrent.xpm"
+

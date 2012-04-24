@@ -1,0 +1,24 @@
+This package was debianized by Joel Johnson <mrjoel@lixil.net> on
+Tue, 21 Jun 2005 11:19:46 -0700.
+This package has been maintained by Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
+since Thu, 10 May 2007 13:11:35 +0300
+
+The original source was downloaded from 
+http://ktorrent.org/index.php?page=downloads
+
+Upstream Authors:
+  Joris Guisson <joris.guisson@gmail.com>
+  Ivan Vasic <ivasic@gmail.com>
+
+License for all components:
+  * GNU General Public License version 2 or later (GPL-2+)
+
+    On Debian systems, the complete text of the GNU General Public License
+    version 2 can be found in `/usr/share/common-licenses/GPL-2'
+
+Debian packaging (debian/*) is under:
+
+Copyright: © 2005-2007 Joel Johnson <mrjoel@lixil.net>
+           © 2007-2008 Modestas Vainius <modestas@vainius.eu>
+License:   GPL-2+
+

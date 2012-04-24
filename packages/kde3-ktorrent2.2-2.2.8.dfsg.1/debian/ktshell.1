@@ -1,0 +1,66 @@
+.TH KTSHELL 1 "JUNE 2007"
+.SH NAME
+ktshell \- the script that uses KDE DCOP interface to control a running instance of KTorrent
+.SH SYNOPSIS
+\fBktshell\fP
+.SH DESCRIPTION
+\fBktshell\fP uses KDE DCOP interface to control a running instance of KTorrent.
+It uses the console DCOP client, dcop, to connect. It organizes the features of and
+simplifies the use of this interface. It is intended to be used as a replacement for
+a true console BitTorrent client for KTorrent users.
+
+.SH MENU STRUCTURE
+.PD 1
+Once \fBktshell\fP is run, current KTorrent totals are displayed and the user is presented
+with the menu structure described below:
+.P
+\fB
+  1. List All Torrents
+  2. List Seeds
+  3. List Downloads
+\fP
+
+If any of the above are chosen, the requested torrent list is displayed with extensive
+infomation about each torrent like name, ETA, current download/upload speed,
+download/upload rate and more. Then the user is promted to enter the number of the torrent
+to select for editing. Once a correct torrent number is entered, the following actions
+might be performed on the torrent:
+    1) Stop Torrent
+    2) Start Torrent
+    3) Remove Torrent
+    4) Manual Announce
+    5) File Names & Priorities (allows to change priorities of individual files)
+.P
+\fB
+  4. Start All
+  5. Stop All
+\fP
+
+Starts or stops all torrents
+.P
+\fB
+  6. Load a Torrent
+\fP
+
+It allows to import a new torrent into KTorrent from the supplied URL or from the
+local filesystem.
+.P
+\fB
+  7. Change Settings
+\fP
+
+The following settings might be changed:
+    1) Set Max Downloads
+    2) Set Max Seeds
+    3) Set Keep Seeding When Complete
+    4) Set Max Upload Speed
+    5) Set Max Download Speed
+    6) Set Max Connections Per Download
+    7) Set Show System Tray Icon
+    8) Change Temporary Data Dir
+.P
+.SH AUTHOR
+The script was written by Adam Forsyth.
+.PD 0
+.P
+The man page was written for Debian distribution by Modestas Vainius.

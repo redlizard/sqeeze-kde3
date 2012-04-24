@@ -1,0 +1,340 @@
+kde3-ktorrent2.2 (2.2.8.dfsg.1-squeeze1) squeeze; urgency=medium
+
+  * Ported to squeeze
+
+ -- Ruud Koolen <ruudkoolen@ruudkoolen.nl>  Tue, 24 Apr 2012 02:27:01 +0200
+
+ktorrent2.2 (2.2.8.dfsg.1-1) unstable; urgency=low
+
+  * New upstream release:
+    - WebInterface security fixes only (Closes: #504178).
+
+ -- Modestas Vainius <modestas@vainius.eu>  Sun, 02 Nov 2008 12:59:04 +0200
+
+ktorrent2.2 (2.2.7.dfsg.1-1) unstable; urgency=low
+
+  * Since ktorrent source package is about provide KDE4 based version, keep old
+    KDE3 based KTorrent in ktorrent2.2 source package for lenny. The following
+    changes were done:
+    - Rename ktorrent source package to ktorrent2.2.
+    - Rename ktorrent and ktorrent-dbg binary packages to ktorrent2.2 and
+      ktorrent2.2-dbg respectively.
+    - Make "new" binary packages conflict with ktorrent and ktorrent-dbg
+      respectively. ktorrent2.2 2.2.x and ktorrent 3.x packages are not
+      co-installable. 
+    - Add NEWS entry.
+    - Explain KTorrent 2.2.x vs. KTorrent 3.x situation in README.Debian.
+
+ -- Modestas Vainius <modestas@vainius.eu>  Tue, 01 Jul 2008 00:03:36 +0300
+
+ktorrent (2.2.7.dfsg.1-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+    - This release fixes a nasty infinite loop in the QM.
+
+ -- Modestas Vainius <modestas@vainius.eu>  Mon, 26 May 2008 05:04:11 +0300
+
+ktorrent (2.2.6.dfsg.1-1) unstable; urgency=low
+  
+  * New upstream bugfix release.
+
+  [ Modestas Vainius ]
+  * Drop 11_ktorrent_kde3_branch_r775289.diff patch - taken from upstream.
+  * Disable 10_ru_translation_fix.diff - fuzzy translation as of 2.2.6.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Sun, 20 Apr 2008 23:17:38 +0300
+
+ktorrent (2.2.5.dfsg.1-2) unstable; urgency=low
+
+  [ Modestas Vainius ]
+  * Pull fixes from ktorrent kde3 branch up to r775289.
+    That's a new patch 11_ktorrent_kde3_branch_r775289.diff.
+  * Describe a new option --silent in debian/ktorrent.1 man page.
+  * Update debian/copyright. Fixes lintian warning.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Sun, 17 Feb 2008 19:41:39 +0200
+
+ktorrent (2.2.5.dfsg.1-1) unstable; urgency=low
+
+  [ Modestas Vainius ]
+  * New upstream bugfix release.
+    - Fixes "Refuses to add downloads to existing group" bug (probably
+      upstream SVN commit r762299) (Closes: #460470)
+  * Remove unused GeoIP.{c,h} from tarball. Update debian/copyright
+    accordingly and add patch 07_ to shut automake up.
+  * Add "DM-Upload-Allowed: yes" debian/control source section.
+  * Update Standards-Version to 3.7.3.0
+  * Move Homepage from ktorrent long Description to debian/control source
+    section.
+  * Add kdebase-runtime-data-common as an alternative for kdebase-data in
+    ktorrent Recommends. They both ship flags used by ktorrent infowidget
+    plugin.
+  * Add a new patch (10_ru_translation_fix.diff) to swap "Отдано" with
+    "Принято" in translation of "Transferred down: %1 / up: %2".
+    Thanks go to Alex Fomenko (Closes: #459241)
+  * Do not install empty /usr/share/apps/ktorrent/geoip directory. As a
+    result, replaced usr/share/apps/ktorrent/* in ktorrent.install with a
+    couple of more specific patterns.
+  * Replace - with \- in debian/ktorrent.1 where a minus sign was intended.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Wed, 06 Feb 2008 23:07:08 +0200
+
+ktorrent (2.2.4.dfsg.1-1) unstable; urgency=medium
+
+  [ Modestas Vainius]
+  * New upstream release (Closes: #452334):
+    - Resolves frequent crashes on some systems (esp. SMP) (hence medium
+      urgency).
+    - "Set max upload/download rate" via tray icon menu should work correctly
+      now.
+    - A few additional web gui features.
+  * Add a few new patches to make cleverer dpkg-shlibdeps happy (almost):
+    - 05_cleanup_am_lib_qt.diff - originally a few other libraries like
+      libpng12 etc. were exported in automake LIB_QT variable. Only a few (if
+      any) KDE applications use them directly so linking any single binary
+      against them is unnecessary. KTorrent is not an exception. This patch
+      reduces LIB_QT to contain just the main Qt library. Previous version of the
+      variable has been made available under the name LIB_QT_EXT. As a result of
+      this patch, KTorrent depencences shrank to the bare minumum solving tons
+      of dpkg-shlibdeps warnings too.
+    - 06_makefile_am_fixups.diff - various fixes to Makefile.am's all around
+      the source code with the intention to resolve warnings reported by
+      dpkg-shlibdeps. The only type of warnings left are those regarding
+      libm.so.6, which can't be fixed because they come from g++ itself.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Thu, 22 Nov 2007 04:34:54 +0200
+
+ktorrent (2.2.3.dfsg.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Add kdebase-kio-plugins to Recommends. Users willing to use IP Blocking
+    plugin should install it. (Closes: #443624)
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Wed, 14 Nov 2007 23:49:56 +0200
+
+ktorrent (2.2.2.dfsg.1-1) unstable; urgency=low
+
+  [ Modestas Vainius ]
+  * New upstream bugfix release.
+  * Change ktorrent.menu section to Applications/Network/File Transfer.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Wed, 29 Aug 2007 23:06:30 +0300
+
+ktorrent (2.2.1.dfsg.1-1) unstable; urgency=low
+
+  * New upstream release:
+    - Fixes a few output format issues with ktshell. Thanks to
+      Avi Rozen for the patches (Closes: #432433, #432655).
+    - Also fixes the file selection bug and a number of other bugs.
+  * Corrent README.Debian. The patches mentioned there have been merged
+    upstream.
+  * Don't build with --enable-final on arm.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Mon, 23 Jul 2007 21:47:47 +0300
+
+ktorrent (2.2.0.dfsg.1-1) unstable; urgency=low
+
+  [Modestas Vainius]
+  * New upstream release.
+  * Fix override disparity - change ktorrent-dbg priority to extra.
+  * Drop ktorrent-dbg from ktorrent Recommends. 2.2 is stable now.
+  * Update patches:
+    - 10_use_system_geoip.diff - remove, merged upstream.
+    - 11_flagdb-alternative-source.diff - remove, merged upstream.
+    - 12_gnu_kfreebsd.diff - remove, merged upstream.
+    - 13_inst_apps.diff - remove, merged upstream.
+    - 14_wz_tooltip_CVE-2007-3154.diff - remove, merged upstream.
+    - 98_buildprep.diff - regenerate (relibtoolize).
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Wed, 04 Jul 2007 01:46:19 +0300
+
+ktorrent (2.2~rc1.dfsg.1-1) experimental; urgency=low
+
+  [Modestas Vainius]
+  * New upstream development release.
+  * Update patches:
+    - 10_use_system_geoip.diff - fix offsets.
+    - 11_flagdb-alternative-source.diff - fix offsets.
+    - 98_buildprep.diff - regenerate.
+  * Add patch 14_wz_tooltip_CVE-2007-3154.diff - fixes CVE-2007-3154.
+    The patch is based on wz_tooltip.js from eGroupWare 1.4.001
+    (Closes: #429209).
+  * Fix "debian-rules-ignores-make-clean-error" lintian warning.
+  * Use ${binary:Version} instead of ${Source-Version} for ktorrent-dbg
+    dependency on ktorrent.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Tue, 26 Jun 2007 11:17:02 +0300
+
+ktorrent (2.2~beta1.dfsg.1-2) experimental; urgency=low
+
+  [Modestas Vainius]
+  * Correct invalid character(s) in debian/control.
+  * Install *.la files for plugins (Closes: #427432).
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Mon, 04 Jun 2007 04:54:27 +0300
+
+ktorrent (2.2~beta1.dfsg.1-1) experimental; urgency=low
+
+  [Modestas Vainius]
+  * New upstream development release (2.2 beta1).
+  * Prune upstream tarball from non-free parts, remove useless autotools
+    cache directory and create a new dfsg-free orig tarball.
+  * Update debian/patches:
+    01_libtool_update.diff - regenerate.
+    10_use_system_geoip.diff - adapt to upstream changes.
+    11_flagdb-alternative-source.diff - adapt to upstream changes.
+    98_buildprep.diff - regenerate.
+  * Add a new binary package, ktorrent-dbg, to hold debugging symbols.
+    Make appropriate changes to debian/control and debian/rules.
+  * Since this release is a development beta release, crashes are expected.
+    Therefore add ktorrent-dbg to ktorrent Recommends till final release.
+  * Add php5-cli to ktorrent Suggests. It is needed for KTorrent WebInterface
+    plugin.
+  * Update description of the ktorrent binary package.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Sun, 03 Jun 2007 22:19:03 +0300
+
+ktorrent (2.1.4.dfsg.1-1) unstable; urgency=low
+
+  * ktorrent is now maintained by Debian KDE Extras Team.
+
+  [Modestas Vainius]
+  * New major upstream release (2.1): (Closes: #400186)
+    - µTorrent compatible peer exchange
+    - Zeroconf extension to find peers on the local network
+    - Switched the GUI to an IDEAl style GUI (like KDevelop)
+    - WebGUI plugin
+    - RSS plugin
+    - MAJOR improvements in down and upload performance
+    - Grouping feature to put torrents into groups
+    - Improved search plugin, which now allows multiple searches
+    - Allows setting priority for files in multifile torrents (Closes: #367120)
+    - Download speed is shown individually for each chunk in the chunk
+      window (Closes: #372162)
+  * New bugfix upstream release (2.1.4): (Closes: #420913)
+   - Fixed crash in parsing of DHT messages (Closes: #425043)
+   - Fixed problem with files with .. in their name (Closes: #425948)
+   - ScanFolder can now handle incomplete torrent files properly
+  * Prune upstream tarball from non-free parts (GeoIP Country Database and
+    country flag images). Patches 10 and 11 have been developed to make
+    impact of this as minimal as possible on the users.
+  * Remove LDFLAGS patch. It has been integrated upstream.
+  * debian/rules: upstream no longer ships .desktop files in applnk.
+  * Pass --enable-largefile to configure to enable large file (over 2GB)
+    support on 32bit architectures. There are known problems with >4GB files
+    on all architectures though (Closes: #402185).
+  * Use quilt as a patch management system.
+  * New patches:
+    - 10_use-system-geoip.diff - adds support for the --enable-system-geoip
+      configure parameter. It makes ktorrent build against system-wide GeoIP
+      library (libgeoip1) and use libgeoip1 default GeoIP Country database.
+    - 11_flagdb-alternative-source.diff - adds support for the
+      --disable-builtin-country-flags configure parameter. It allows to skip
+      installation of non-free ktorrent builtin country flags. In addition,
+      the patch adds support for the "flag database" that lets ktorrent get
+      country flag images from more than one filesystem source transparently.
+      It also adds additional (and the only for the debian package) source -
+      flag images shipped with kdebase.
+    - 12_gnu_kfreebsd.diff - fix FTBFS on GNU/kFreeBSD. Thanks to Petr Salinger
+      (Closes: #401753).
+    - Usual build system patches for relibtoolization.
+  * Add libgeoip-dev to Build-Depends. Build ktorrent with system GeoIP.
+  * Add kdebase-data to Recommends. It is needed as a source of the country
+    flag images for the Peer View. If not installed, country flags won't be
+    shown.
+  * Add debian/ktorrent.install. Prepare for multiple binary packages.
+  * Add Ktorrent to Debian menu (Closes: #392893).
+  * Now 'clean' target fully cleans the source tree after build
+    (Closes: #424476).
+  * Fully support DEB_BUILD_OPTIONS.
+  * Add manual pages for ktorrent and ktshell.
+  * Update README.Debian with new information about GeoIP and country flag
+    images and add NEWS about accuracy of the default GeoIP Country database.
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Sun, 03 Jun 2007 16:03:17 +0300
+
+ktorrent (2.0.3+dfsg1-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Redo the previous patch without kilt, integrating it into the buildsystem
+    directly (yuck !).
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 22 Mar 2007 16:41:39 +0100
+
+ktorrent (2.0.3+dfsg1-2.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Fix security issue (Closes: 414832, 414830):
+    + drop patch from #414832 in debian/patches.
+    + use quilt as a patches management system to deal with it.
+    + urgency set to high due to RC bugfix.
+
+ -- Pierre Habouzit <madcoder@debian.org>  Thu, 22 Mar 2007 11:11:20 +0100
+
+ktorrent (2.0.3+dfsg1-2) unstable; urgency=low
+
+  * Resolve FTBFS - remove nonportable "-z now" from LDFLAGS  (Closes: 395897)
+
+ -- Joel Johnson <mrjoel@lixil.net>  Wed, 01 Nov 2006 14:06:36 -0800
+
+ktorrent (2.0.3+dfsg1-1) unstable; urgency=medium
+
+  * new upstream release (Closes: 392687)
+      + speed issues fix
+  * urgency=medium in order to get this into etch in time
+
+ -- Joel Johnson <mrjoel@lixil.net>  Fri, 20 Oct 2006 11:13:24 -0700
+
+ktorrent (2.0.2+dfsg1-1) unstable; urgency=medium
+
+  * New upstream release (skipping 2.0, 2.0.1) (Closes: 378947, 384131)
+  * built with GeoIP support enabled, but removed the database file
+       and country flags due to licensing restrictions (see README.Debian)
+  * urgency=medium in order to get this into etch in time
+
+ -- Joel Johnson <mrjoel@lixil.net>  Fri, 06 Oct 2006 09:15:07 -0700
+
+ktorrent (1.2-1) unstable; urgency=low
+
+  * Acknowledge NMU (Closes: 349983)
+      Actually removed debian libtoolization temporarily due to
+      package inclusion of a library in upstream. Soon to be reapplied
+      with proper support for avoiding redundant dependencies.
+  * New upstream release (Closes: 348605)
+      + Doesn't freeze/lock anymore (Closes: 340766)
+      + Properly builds with G++ 4.1 (Closes: 357096)
+  * add shlib support and post{inst,rm} via debhelper for new shared library
+  * Set --enable-final as configure directive
+  * Update copyright file to reflect additional files and changed dir layout
+  * patch upstream Makefile.in to include translations directory
+  * Update upstream homepage URL in control
+
+ -- Joel Johnson <mrjoel@lixil.net>  Tue, 6 Jun 2006 22:07:58 -0700
+
+ktorrent (1.1-2.1) unstable; urgency=low 
+
+   * Non-maintainer upload by sponsor due to no maintainer reaction.
+   * Relibtoolize _after_ setting AM_MAINTAINER_MODE (Closes: #349983)
+
+ -- Florian Ernst <florian@debian.org>  Tue, 7 Feb 2006 13:15:30 +0100
+
+ktorrent (1.1-2) unstable; urgency=low
+
+  * Limit build dependencies to what we directly depend on
+    and set AM_MAINTAINER_MODE in configure.in.in
+  * Change section from net to kde
+  * Remove sponsor as Uploader as requested
+
+ -- Joel Johnson <mrjoel@lixil.net>  Thu,  1 Dec 2005 13:11:22 -0800
+
+ktorrent (1.1-1) unstable; urgency=low
+
+  * Initial Debian Upload (Closes: #313659)
+  * Update copyright file with new FSF address
+  * Incorporate changes to a previous package version
+      - disable rpath in ./configure
+      - add lintian override (missing manpage)
+    Thanks to Jonathan Riddell <jriddell@ubuntu.com>
+  * Add linda override (missing manpage)
+
+ -- Joel Johnson <mrjoel@lixil.net>  Thu, 24 Oct 2005 08:47:09 -0700

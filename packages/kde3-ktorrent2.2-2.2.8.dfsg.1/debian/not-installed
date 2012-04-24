@@ -1,0 +1,8 @@
+# Various utilities shipped with ktorrent 
+debian/tmp/opt/kde3/bin/ktcachecheck
+debian/tmp/opt/kde3/bin/kttorinfo
+debian/tmp/opt/kde3/bin/ktupnptest
+
+# Development stuff
+debian/tmp/opt/kde3/lib/libktorrent.so
+debian/tmp/opt/kde3/lib/libktorrent.la

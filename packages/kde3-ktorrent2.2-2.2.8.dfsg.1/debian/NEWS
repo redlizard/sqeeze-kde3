@@ -1,0 +1,33 @@
+ktorrent2.2 (2.2.7.dfsg.1-1) unstable; urgency=low
+
+  * Since there have been two stable KTorrent 3.x (for KDE4) releases by the
+    time of writing and KTorrent 2.2.x (for KDE3) has not been updated much in
+    the meantime, I decided to ship both versions in Debian Lenny choosing
+    KTorrent 3.x as default. Therefore:
+    - you can get the old KTorrent 2.2.x release by installing ktorrent2.2
+      package if you don't want to install KDE4 runtime dependencies or new
+      features are not important for you;
+    - since ktorrent binary package provides KDE4 based release from now on,
+      it will pull in KDE4 runtime dependencies. However, it is a newer
+      KTorrent upstream release and has more features. It should work fine
+      with KDE3 desktop environment;
+    - you cannot co-install both ktorrent2.2 and ktorrent. They conflict with
+      each other and you can have only one of them on the system at the same
+      time.
+    - KTorrent 3.1 supports migration of torrents from KTorrent 2.2 but not
+      vice-versa. Therefore, if you start downloading/uploading torrents with
+      KTorrent 3.1, you will probably not be able to resume them with
+      KTorrent 2.2 if you downgrade.
+
+ -- Modestas Vainius <modestas@vainius.eu>  Mon, 30 Jun 2008 22:46:56 +0300
+
+ktorrent (2.1.4.dfsg.1-1) unstable; urgency=low
+
+  * Now KTorrent uses system-wide GeoIP library (libgeoip1) and its default
+    GeoIP Country database to determine countries, which BitTorrent peers
+    originate from. The default free database provided by libgeoip is a bit
+    outdated and not very accurate. If you wish to upgrade the database,
+    please read /usr/share/doc/ktorrent/README.Debian and
+    /usr/share/doc/libgeoip1/README.Debian.
+
+ -- Modestas Vainius <modestas@vainius.eu>  Sun, 03 Jun 2007 15:40:07 +0300

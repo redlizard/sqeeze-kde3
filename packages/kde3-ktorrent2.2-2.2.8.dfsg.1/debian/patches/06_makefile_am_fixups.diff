@@ -1,0 +1,159 @@
+--- ktorrent-2.2.4.dfsg.1/apps/ktorrent/Makefile.am	2007-11-20 21:09:28.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/apps/ktorrent/Makefile.am	2007-11-22 03:00:17.000000000 +0200
+@@ -14,8 +14,8 @@
+ ktorrent_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+ 
+ # the libraries to link against.
+-ktorrent_LDADD = ../../apps/ktorrent/newui/libnewui.la $(LIB_KFILE) \
+-	$(LIB_KIO) $(LIB_KPARTS) ../../apps/ktorrent/groups/libgroups.la \
++ktorrent_LDADD = ../../apps/ktorrent/newui/libnewui.la  \
++	 ../../apps/ktorrent/groups/libgroups.la \
+ 	../../libktorrent/libktorrent.la
+ 
+ # which sources should be compiled for ktorrent
+--- ktorrent-2.2.4.dfsg.1/libktorrent/Makefile.am	2007-11-20 21:09:24.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/libktorrent/Makefile.am	2007-11-22 02:42:45.000000000 +0200
+@@ -18,5 +18,6 @@
+ libktorrent_la_LIBADD = ../libktorrent/net/libnet.la \
+ 	../libktorrent/datachecker/libdatachecker.la ../libktorrent/mse/libmse.la ../libktorrent/migrate/libmigrate.la \
+ 	../libktorrent/util/libutil.la ../libktorrent/torrent/libtorrent.la \
+-	../libktorrent/kademlia/libkademlia.la ../libktorrent/interfaces/libinterfaces.la $(LIB_KPARTS)
++	../libktorrent/kademlia/libkademlia.la ../libktorrent/interfaces/libinterfaces.la \
++	$(LIB_KPARTS) $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KIO)
+ KDE_CXXFLAGS = $(USE_EXCEPTIONS) $(USE_RTTI)
+--- ktorrent-2.2.4.dfsg.1/plugins/scanfolder/Makefile.am	2007-11-20 21:09:08.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/scanfolder/Makefile.am	2007-11-22 02:11:32.000000000 +0200
+@@ -25,7 +25,7 @@
+ 	scanfolderpluginsettings.kcfgc scanfolderprefpage.cpp sfprefwidgetbase.ui scanfolderprefpagewidget.cpp \
+ 	scanfolder.cpp
+ ktscanfolderplugin_la_LIBADD = $(LIB_KPARTS) ../../libktorrent/libktorrent.la \
+-		       $(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
++	$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
+ 
+ 
+ KDE_CXXFLAGS = $(USE_EXCEPTIONS) $(USE_RTTI)
+--- ktorrent-2.2.4.dfsg.1/plugins/webinterface/Makefile.am	2007-11-20 21:09:12.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/webinterface/Makefile.am	2007-11-22 02:13:44.000000000 +0200
+@@ -11,8 +11,8 @@
+ 		httpclienthandler.cpp httpresponseheader.cpp
+ # Libs needed by the plugin
+ ktwebinterfaceplugin_la_LIBADD = ../../libktorrent/libktorrent.la \
+-			   $(LIB_KHTML) $(LIB_KPARTS) $(LIB_QT) \
+-			   $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
++	$(LIB_KPARTS) $(LIB_QT) \
++	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
+ 
+ # LD flags for the plugin
+ # -module says: this is a module, i.e. something you're going to dlopen
+--- ktorrent-2.2.4.dfsg.1/plugins/infowidget/Makefile.am	2007-11-21 21:02:28.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/infowidget/Makefile.am	2007-11-22 02:13:58.000000000 +0200
+@@ -11,8 +11,8 @@
+ 
+ # Libs needed by the plugin
+ ktinfowidgetplugin_la_LIBADD = ../../libktorrent/libktorrent.la \
+-			   $(LIB_KHTML) $(LIB_KPARTS) $(LIB_QT) \
+-			   $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
++	$(LIB_KPARTS) $(LIB_QT) \
++	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
+ 
+ 
+ # LD flags for the plugin
+--- ktorrent-2.2.4.dfsg.1/plugins/ipfilter/Makefile.am	2007-11-20 21:09:08.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/ipfilter/Makefile.am	2007-11-22 02:28:07.000000000 +0200
+@@ -8,9 +8,8 @@
+ 	convertdialog.cpp
+ 
+ # Libs needed by the plugin
+-ktipfilterplugin_la_LIBADD = $(LIB_KHTML) $(LIB_KPARTS) \
+-	../../libktorrent/libktorrent.la $(LIB_QT) \
+-	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
++ktipfilterplugin_la_LIBADD = $(LIB_KPARTS) ../../libktorrent/libktorrent.la \
++	$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
+ 
+ 
+ 
+--- ktorrent-2.2.4.dfsg.1/plugins/stats/Makefile.am	2007-11-20 21:09:09.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/stats/Makefile.am	2007-11-22 02:26:13.000000000 +0200
+@@ -9,7 +9,8 @@
+ ktstatsplugin_la_SOURCES = ChartDrawerData.cc ChartDrawer.cc statsspdwgt.ui statsconwgt.ui StatsSpd.cc StatsCon.cc sprefwgt.ui statspluginsettings.kcfgc \
+ 		 StatsPluginPrefsPage.cc StatsPluginPrefs.cc statsplugin.cc
+ 
+-ktstatsplugin_la_LIBADD = $(LIB_QT) ../../libktorrent/libktorrent.la
++ktstatsplugin_la_LIBADD = $(LIB_QT) ../../libktorrent/libktorrent.la \
++	$(LIB_KPARTS) $(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ noinst_HEADERS = ChartDrawerData.h ChartDrawer.h StatsSpd.h StatsCon.h StatsPluginPrefsPage.h StatsPluginPrefs.h statsplugin.h 
+ 
+--- ktorrent-2.2.4.dfsg.1/plugins/partfileimport/Makefile.am	2007-11-20 21:09:08.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/partfileimport/Makefile.am	2007-11-22 02:27:33.000000000 +0200
+@@ -6,8 +6,7 @@
+ ktpartfileimportplugin_la_SOURCES = partfileimportplugin.cpp importdlgbase.ui importdialog.cpp
+ 
+ # Libs needed by the plugin
+-ktpartfileimportplugin_la_LIBADD = $(LIB_KHTML) $(LIB_KPARTS) \
+-	../../libktorrent/libktorrent.la \
++ktpartfileimportplugin_la_LIBADD = $(LIB_KPARTS) ../../libktorrent/libktorrent.la \
+ 	$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
+ 
+ # LD flags for the plugin
+--- ktorrent-2.2.4.dfsg.1/plugins/rssfeed/Makefile.am	2007-11-20 21:09:08.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/rssfeed/Makefile.am	2007-11-22 02:26:42.000000000 +0200
+@@ -24,7 +24,7 @@
+ ktrssfeedplugin_la_SOURCES = rssfeedplugin.cpp rssfeedmanager.cpp \
+ 			rssfeedwidget.ui rssfeed.cpp rssfilter.cpp rssarticle.cpp rsslinkdownloader.cpp
+ ktrssfeedplugin_la_LIBADD = $(LIB_KIO) $(LIB_QT) rss/librsslocal.la \
+-	../../libktorrent/libktorrent.la $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KHTML) $(LIB_KPARTS)
++	../../libktorrent/libktorrent.la $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KPARTS)
+ 
+ SUBDIRS = rss
+ KDE_CXXFLAGS = $(USE_EXCEPTIONS) $(USE_RTTI)
+--- ktorrent-2.2.4.dfsg.1/plugins/scheduler/Makefile.am	2007-11-20 21:09:09.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/scheduler/Makefile.am	2007-11-22 02:27:17.000000000 +0200
+@@ -8,8 +8,7 @@
+ 	bwsprefpagewidget.cpp bwswidget.cpp schedulerprefpage.cpp
+ 
+ # Libs needed by the plugin
+-ktschedulerplugin_la_LIBADD = $(LIB_KHTML) $(LIB_KPARTS) \
+-	../../libktorrent/libktorrent.la \
++ktschedulerplugin_la_LIBADD = $(LIB_KPARTS) ../../libktorrent/libktorrent.la \
+ 	$(LIB_QT) $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
+ 
+ # LD flags for the plugin
+--- ktorrent-2.2.4.dfsg.1/plugins/logviewer/Makefile.am	2007-11-20 21:09:08.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/logviewer/Makefile.am	2007-11-22 02:39:43.000000000 +0200
+@@ -5,9 +5,8 @@
+ 
+ 
+ # Libs needed by the plugin
+-ktlogviewerplugin_la_LIBADD = $(LIB_KHTML) $(LIB_KPARTS) \
+-	../../libktorrent/libktorrent.la $(LIB_QT) \
+-	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
++ktlogviewerplugin_la_LIBADD = $(LIB_KPARTS) ../../libktorrent/libktorrent.la $(LIB_QT) \
++	$(LIB_KDECORE) $(LIB_KDEUI)
+ 
+ 
+ 
+--- ktorrent-2.2.4.dfsg.1/plugins/search/Makefile.am	2007-11-20 21:09:08.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/search/Makefile.am	2007-11-22 02:11:44.000000000 +0200
+@@ -8,8 +8,8 @@
+ 
+ # Libs needed by the plugin
+ ktsearchplugin_la_LIBADD = ../../libktorrent/libktorrent.la \
+-			   $(LIB_KHTML) $(LIB_KPARTS) $(LIB_QT) \
+-			   $(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
++	$(LIB_KHTML) $(LIB_KPARTS) $(LIB_QT) \
++	$(LIB_KDECORE) $(LIB_KDEUI) $(LIB_KFILE)
+ 
+ # LD flags for the plugin
+ # -module says: this is a module, i.e. something you're going to dlopen
+--- ktorrent-2.2.4.dfsg.1/plugins/zeroconf/Makefile.am	2007-11-20 21:09:08.000000000 +0200
++++ ktorrent-2.2.4.dfsg.1.n/plugins/zeroconf/Makefile.am	2007-11-22 02:39:11.000000000 +0200
+@@ -11,7 +11,7 @@
+ ktzeroconfplugin_la_SOURCES = localbrowser.cpp avahiservice.cpp \
+ 	zeroconfplugin.cpp
+ 
+-ktzeroconfplugin_la_LIBADD = $(LIB_KDECORE) $(LIB_KFILE) $(LIB_KPARTS) $(LIB_KDEUI)\
++ktzeroconfplugin_la_LIBADD = $(LIB_KDECORE) $(LIB_KPARTS) $(LIB_KDEUI) \
+ 	$(LIB_QT) ../../libktorrent/libktorrent.la
+ 
+ noinst_HEADERS = zeroconfplugin.h

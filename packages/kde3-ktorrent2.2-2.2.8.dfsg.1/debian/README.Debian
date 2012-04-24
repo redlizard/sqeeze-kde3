@@ -1,0 +1,51 @@
+--- KTorrent 2.2.x (KDE3) and KTorrent 3.x (KDE4) in Debian 5.0 (Lenny) ---
+
+Since there have been two stable KTorrent 3.x (for KDE4) releases by the time
+of writing and KTorrent 2.2.x (for KDE3) has not been updated much in the
+meantime, I decided to ship both versions in Debian 5.0 (Lenny) choosing
+KTorrent 3.x as default. As a result of this decision:
+
+* You can get the old KTorrent 2.2.x release by installing ktorrent2.2 package if
+  you don't want to install KDE4 runtime dependencies or new features are not
+  important for you.
+
+* Since ktorrent binary package provides KDE4 based release from now on,
+  it will pull in KDE4 runtime dependencies. However, it is a newer KTorrent
+  upstream release and has more features. It should work fine with KDE3 desktop
+  environment.
+
+* You cannot co-install both ktorrent2.2 and ktorrent. They conflict with
+  each other and you can have only one of them on the system at the same time.
+
+* KTorrent 3.1 supports migration of torrents from KTorrent 2.2 but not
+  vice-versa. Therefore, if you start downloading/uploading torrents with
+  KTorrent 3.1, you will probably not be able to resume them with KTorrent 2.2
+  if you downgrade.
+
+--- GeoIP and builtin contry flags licensing issues ---
+
+Due to licensing restrictions, the source and binary packages of ktorrent do
+not include a GeoIP database. The upstream source has been patched to use
+system-wide GeoIP library (available in the libgeoip1 package). That package
+provides a free GeoIP Country database that is a bit outdated and not very
+accurate but it may still be sufficient for most KTorrent users, because
+determination of the peer geographic location is only additional and 
+non-crucial KTorrent functionality, implemented for information purposes.
+
+However, if you wish to get more accurate information about peer geographic
+location, there is a free to download (but undistributable by Debian) "GeoLite
+Country" database and even more accurate paid "GeoIP Country" database
+available at the following URL:
+
+http://www.maxmind.com/app/geoip_country
+
+Please consult libgeop1 documentation how to upgrade GeoIP database on your
+system once you obtain a proper database file (geoip.dat).
+
+The KTorrent builtin country flag images are also not distributed with this
+package due to obscure license. If you would like to see country flags next
+to the country names, please install kdebase-data package (that is
+recommended by the ktorrent binary package).
+
+The commands used to modify upstream source tarball can be found at debian/rules 
+"prune-tarball" target.

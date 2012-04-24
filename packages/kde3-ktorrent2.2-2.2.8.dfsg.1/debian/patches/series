@@ -1,0 +1,8 @@
+01_libtool_update.diff
+02_am_maintainer_mode.diff
+03_pedantic-errors.diff
+04_disable_no_undefined.diff
+05_cleanup_am_lib_qt.diff
+06_makefile_am_fixups.diff
+07_drop_geoip_from_makefile_am.diff
+98_buildprep.diff
